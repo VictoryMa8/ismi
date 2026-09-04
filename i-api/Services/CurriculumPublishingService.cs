@@ -12,43 +12,70 @@ public sealed class CurriculumPublishingService(
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
 
     public async Task EnsureSeededAsync(
-        LessonResponse initialLesson,
+        IReadOnlyList<LessonResponse> initialLessons,
         CancellationToken cancellationToken = default)
     {
-        if (await database.CurriculumVersions.AnyAsync(cancellationToken)) return;
-
         var now = DateTime.UtcNow;
-        var version = new CurriculumVersionRecord
+        foreach (var initialLesson in initialLessons)
         {
-            LessonId = initialLesson.Id,
-            VersionNumber = 1,
-            Status = CurriculumStatuses.Published,
-            ContentJson = Serialize(initialLesson with { Version = $"curriculum-{initialLesson.Id}-v1" }),
-            CreatedAtUtc = now,
-            CreatedBy = "system migration",
-            ApprovedAtUtc = now,
-            ApprovedBy = "system migration",
-            PublishedAtUtc = now,
-            PublishedBy = "system migration",
-            Sources =
-            [
-                new CurriculumSourceRecord
-                {
-                    SourceType = "internal-demonstration",
-                    Title = "Original Ismi demonstrative lesson",
-                    Locator = "internal:seed/levantine-day-01",
-                    Rights = "Internal demonstrative material; not reviewed launch curriculum.",
-                    Notes = "Migrated from the original runtime seed so future changes use the publication workflow."
-                }
-            ],
-            AuditEvents =
-            [
-                Audit("migrated", "system migration", now, "Initial demonstrative lesson migrated into the versioned curriculum store."),
-                Audit("published", "system migration", now, "Established the initial published learner version.")
-            ]
-        };
+            var existing = await database.CurriculumVersions
+                .Include(version => version.AuditEvents)
+                .Where(version => version.LessonId == initialLesson.Id)
+                .OrderByDescending(version => version.VersionNumber)
+                .FirstOrDefaultAsync(cancellationToken);
 
-        database.CurriculumVersions.Add(version);
+            if (existing is not null)
+            {
+                if (existing.CreatedBy == "system migration")
+                {
+                    var stored = Deserialize(existing.ContentJson);
+                    if (stored.CourseOrder == 0)
+                    {
+                        existing.ContentJson = Serialize(initialLesson with
+                        {
+                            Version = $"curriculum-{initialLesson.Id}-v{existing.VersionNumber}"
+                        });
+                        existing.AuditEvents.Add(Audit(
+                            "migrated",
+                            "system migration",
+                            now,
+                            "Added course placement metadata to the original demonstrative lesson."));
+                    }
+                }
+                continue;
+            }
+
+            database.CurriculumVersions.Add(new CurriculumVersionRecord
+            {
+                LessonId = initialLesson.Id,
+                VersionNumber = 1,
+                Status = CurriculumStatuses.Published,
+                ContentJson = Serialize(initialLesson with { Version = $"curriculum-{initialLesson.Id}-v1" }),
+                CreatedAtUtc = now,
+                CreatedBy = "system migration",
+                ApprovedAtUtc = now,
+                ApprovedBy = "system migration",
+                PublishedAtUtc = now,
+                PublishedBy = "system migration",
+                Sources =
+                [
+                    new CurriculumSourceRecord
+                    {
+                        SourceType = "internal-demonstration",
+                        Title = "Ismi week-one demonstrative lesson",
+                        Locator = $"internal:seed/{initialLesson.Id}",
+                        Rights = "Internal demonstrative material; not reviewed launch curriculum.",
+                        Notes = "Uses only the original demonstrative language set to prove course sequencing."
+                    }
+                ],
+                AuditEvents =
+                [
+                    Audit("migrated", "system migration", now, "Demonstrative lesson added to the versioned curriculum store."),
+                    Audit("published", "system migration", now, "Established the initial published learner version.")
+                ]
+            });
+        }
+
         await database.SaveChangesAsync(cancellationToken);
     }
 
@@ -65,6 +92,25 @@ public sealed class CurriculumPublishingService(
 
         var lesson = content is null ? null : Deserialize(content);
         return lesson is null ? null : new LessonDefinition(lesson);
+    }
+
+    public async Task<IReadOnlyList<LessonDefinition>> ListPublishedLessonsAsync(
+        string trackId,
+        CancellationToken cancellationToken = default)
+    {
+        var content = await database.CurriculumVersions
+            .AsNoTracking()
+            .Where(version => version.Status == CurriculumStatuses.Published)
+            .Select(version => version.ContentJson)
+            .ToListAsync(cancellationToken);
+
+        return content
+            .Select(Deserialize)
+            .Where(lesson => string.Equals(lesson.TrackId, trackId, StringComparison.OrdinalIgnoreCase))
+            .OrderBy(lesson => lesson.CourseOrder)
+            .ThenBy(lesson => lesson.Id, StringComparer.OrdinalIgnoreCase)
+            .Select(lesson => new LessonDefinition(lesson))
+            .ToList();
     }
 
     public async Task<IReadOnlyList<CurriculumVersionSummary>> ListAsync(
@@ -227,10 +273,27 @@ public sealed class CurriculumPublishingService(
         await using var transaction = await database.Database.BeginTransactionAsync(cancellationToken);
         var record = await LoadAsync(versionId, cancellationToken);
         RequireStatus(record, CurriculumStatuses.Approved, "Only an approved version can be published.");
+        var lessonToPublish = Deserialize(record.ContentJson);
         var validation = validator.Validate(
-            Deserialize(record.ContentJson),
+            lessonToPublish,
             record.Sources.Select(ToSource).ToList());
         if (!validation.IsValid) throw new CurriculumValidationException(validation.Errors);
+
+        var publishedContent = await database.CurriculumVersions
+            .AsNoTracking()
+            .Where(version => version.Status == CurriculumStatuses.Published
+                && version.LessonId != record.LessonId)
+            .Select(version => version.ContentJson)
+            .ToListAsync(cancellationToken);
+        if (publishedContent.Select(Deserialize).Any(lesson =>
+                string.Equals(lesson.TrackId, lessonToPublish.TrackId, StringComparison.OrdinalIgnoreCase)
+                && string.Equals(lesson.UnitId, lessonToPublish.UnitId, StringComparison.OrdinalIgnoreCase)
+                && lesson.CourseOrder == lessonToPublish.CourseOrder))
+        {
+            throw new CurriculumWorkflowException(
+                "course_order_conflict",
+                $"Another published lesson already uses course order {lessonToPublish.CourseOrder} in this unit.");
+        }
 
         var now = DateTime.UtcNow;
         var current = await database.CurriculumVersions

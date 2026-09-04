@@ -6,14 +6,15 @@ The current product slice includes:
 
 - A Vue 3 + TypeScript progressive web app.
 - An ASP.NET Core 10 API.
-- A personalized three-track dashboard.
-- An API-delivered, four-step Levantine conversation lesson with contextual feedback.
+- A personalized three-track dashboard with a real ordered Levantine course path.
+- A six-lesson demonstrative Week 1 loop built from the original four-step conversation material.
 - Credential-free Arabic prompt previews using the browser's available device voice.
 - Optional email/password accounts with secure cookie sessions and persistent per-user progress.
-- An offline-ready application shell, downloaded lesson cache, and queued completion sync.
-- Idempotent lesson completion updates for the demonstrative learner session.
+- An offline-ready application shell, three-lesson look-ahead cache, and queued completion sync.
+- Idempotent lesson completion updates, per-browser guest isolation, and persistent account progress.
 - Unit tests for lesson evaluation, lesson structure, and completion behavior.
 - An owner-only curriculum console with versioned drafts, provenance, deterministic validation, approval, publication, audit history, and rollback.
+- Playwright coverage for mobile offline completion, reconnection, exactly-once sync, and keyboard access.
 
 Product constraints and research live in `AGENTS.md` and `docs/research/`.
 
@@ -59,9 +60,12 @@ This beta slice does not yet send email, so email confirmation and password-rese
 
 ```bash
 dotnet test Ismi.slnx
-cd i-web && npm run build
+cd i-web
+npm run build
+npx playwright install chromium
+npm run test:e2e
 ```
 
 The initially migrated lesson is intentionally demonstrative. It is tagged as such in its provenance and is not reviewed launch curriculum. All subsequent learner-facing changes must pass through the publication workflow, and Quranic content must follow the provenance and publication rules in `AGENTS.md`.
 
-The browser keeps downloaded lesson packages and unsynchronized completion events in IndexedDB. Authenticated progress is durable in the local SQLite database; guest server progress remains in memory and the browser queue remains the source for reconnection. SQLite is the beta implementation, not a commitment to the eventual production database.
+The browser keeps the next three lesson packages, the last dashboard snapshot, and unsynchronized completion events in IndexedDB. Authenticated progress is durable in the local SQLite database. Guest server progress is isolated by an HttpOnly browser identifier and remains in memory; the browser queue is the source for reconnection. SQLite is the beta implementation, not a commitment to the eventual production database.

@@ -41,13 +41,17 @@ public sealed class LessonEvaluatorTests
     }
 
     [Fact]
-    public void Lesson_ContainsCompleteFourStepSequence()
+    public void SeedCurriculum_ContainsOrderedDemonstrativeWeekAndCheckpoint()
     {
-        var lesson = _curriculum.FindLesson("levantine-day-01");
+        var lessons = _curriculum.GetInitialLessons();
+        var checkpoint = _curriculum.FindLesson("levantine-day-06");
 
-        Assert.NotNull(lesson);
-        Assert.Equal(4, lesson.Response.Steps.Count);
-        Assert.All(lesson.Response.Steps, step =>
+        Assert.Equal(6, lessons.Count);
+        Assert.Equal(Enumerable.Range(1, 6), lessons.Select(lesson => lesson.CourseOrder));
+        Assert.All(lessons, lesson => Assert.Equal("demonstrative", lesson.ReviewStatus));
+        Assert.NotNull(checkpoint);
+        Assert.Equal(4, checkpoint.Response.Steps.Count);
+        Assert.All(checkpoint.Response.Steps, step =>
         {
             Assert.Equal(3, step.Answers.Count);
             Assert.Contains(step.Answers, answer => answer.Id == step.Evaluation.CorrectAnswerId);

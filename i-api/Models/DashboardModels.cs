@@ -15,7 +15,19 @@ public sealed record DailyPlanSummary(
     int GoalMinutes,
     int CompletedMinutes,
     string PrimaryTrack,
-    string NextLessonId);
+    string NextLessonId,
+    IReadOnlyList<CourseLessonSummary> Lessons);
+
+public sealed record CourseLessonSummary(
+    string Id,
+    string Title,
+    string UnitId,
+    string UnitTitle,
+    int CourseOrder,
+    int EstimatedMinutes,
+    string ReviewStatus,
+    bool IsCompleted,
+    bool IsCurrent);
 
 public sealed record TrackProgress(
     string Id,

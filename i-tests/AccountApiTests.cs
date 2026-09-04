@@ -61,7 +61,8 @@ public sealed class AccountApiTests : IAsyncLifetime
         var dashboard = await client.GetFromJsonAsync<DashboardSnapshot>("/api/dashboard");
         Assert.NotNull(dashboard);
         Assert.Equal("Nadia", dashboard.Learner.DisplayName);
-        Assert.Equal(14, dashboard.DailyPlan.CompletedMinutes);
+        Assert.Equal(5, dashboard.DailyPlan.CompletedMinutes);
+        Assert.Equal("levantine-day-02", dashboard.DailyPlan.NextLessonId);
 
         var logout = await PostWithCsrfAsync(client, "/api/auth/logout", new { });
         Assert.Equal(HttpStatusCode.NoContent, logout.StatusCode);
@@ -89,7 +90,8 @@ public sealed class AccountApiTests : IAsyncLifetime
         var restoredDashboard = await client.GetFromJsonAsync<DashboardSnapshot>("/api/dashboard");
         Assert.NotNull(restoredDashboard);
         Assert.Equal("Nadia", restoredDashboard.Learner.DisplayName);
-        Assert.Equal(14, restoredDashboard.DailyPlan.CompletedMinutes);
+        Assert.Equal(5, restoredDashboard.DailyPlan.CompletedMinutes);
+        Assert.Equal("levantine-day-02", restoredDashboard.DailyPlan.NextLessonId);
     }
 
     [Fact]
@@ -185,7 +187,7 @@ public sealed class AccountApiTests : IAsyncLifetime
 
     private sealed record LearnerSnapshot(string DisplayName);
 
-    private sealed record DailyPlanSnapshot(int CompletedMinutes);
+    private sealed record DailyPlanSnapshot(int CompletedMinutes, string NextLessonId);
 
     private sealed record ApiErrorSnapshot(string Code, string Message);
 }

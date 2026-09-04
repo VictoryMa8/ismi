@@ -59,6 +59,10 @@ export function getCachedLesson(lessonId: string): Promise<LessonResponse | unde
   return useStore(lessonStore, 'readonly', store => store.get(lessonId))
 }
 
+export function getCachedLessonCount(): Promise<number> {
+  return useStore(lessonStore, 'readonly', store => store.count())
+}
+
 export function cacheDashboard(dashboard: DashboardResponse): Promise<IDBValidKey> {
   const snapshot: Snapshot<DashboardResponse> = { key: 'dashboard', value: dashboard }
   return useStore(snapshotStore, 'readwrite', store => store.put(snapshot))

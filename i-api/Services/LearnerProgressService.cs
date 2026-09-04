@@ -5,51 +5,95 @@ namespace Ismi.Api.Services;
 public sealed class LearnerProgressService
 {
     private readonly object _gate = new();
-    private readonly HashSet<string> _completionIds = new(StringComparer.OrdinalIgnoreCase);
-    private readonly HashSet<string> _completedLessonIds = new(StringComparer.OrdinalIgnoreCase);
-    private int _earnedMinutes;
+    private readonly Dictionary<string, GuestState> _guests =
+        new(StringComparer.OrdinalIgnoreCase);
 
-    public DashboardResponse GetDashboard(SeedCurriculum curriculum)
+    public DashboardResponse GetDashboard(
+        string guestId,
+        SeedCurriculum curriculum,
+        IReadOnlyList<LessonDefinition> publishedLessons)
     {
         lock (_gate)
         {
-            var dashboard = curriculum.GetDashboard();
-            var completedMinutes = Math.Min(
-                dashboard.DailyPlan.GoalMinutes,
-                dashboard.DailyPlan.CompletedMinutes + _earnedMinutes);
-
-            return dashboard with
-            {
-                DailyPlan = dashboard.DailyPlan with { CompletedMinutes = completedMinutes }
-            };
+            var guest = GetGuest(guestId);
+            var completedIds = guest.CompletionsByLesson.Keys.ToHashSet(StringComparer.OrdinalIgnoreCase);
+            var completedMinutesToday = CalculateTodayMinutes(guest, publishedLessons);
+            return curriculum.BuildDashboard(
+                "Guest",
+                publishedLessons,
+                completedIds,
+                completedMinutesToday);
         }
     }
 
     public LessonCompletionResponse Complete(
+        string guestId,
         SeedCurriculum curriculum,
+        IReadOnlyList<LessonDefinition> publishedLessons,
         LessonDefinition lesson,
-        string completionId)
+        string completionId,
+        DateTimeOffset completedAt)
     {
         lock (_gate)
         {
-            var dashboard = curriculum.GetDashboard();
-            var duplicateEvent = !_completionIds.Add(completionId);
-            var firstLessonCompletion = !duplicateEvent && _completedLessonIds.Add(lesson.Response.Id);
-
-            if (firstLessonCompletion)
+            var guest = GetGuest(guestId);
+            var duplicateEvent = guest.CompletionsByEvent.ContainsKey(completionId);
+            var duplicateLesson = guest.CompletionsByLesson.ContainsKey(lesson.Response.Id);
+            if (!duplicateEvent && !duplicateLesson)
             {
-                _earnedMinutes += lesson.Response.EstimatedMinutes;
+                var completion = new GuestCompletion(
+                    completionId,
+                    lesson.Response.Id,
+                    completedAt.ToUniversalTime());
+                guest.CompletionsByEvent[completionId] = completion;
+                guest.CompletionsByLesson[lesson.Response.Id] = completion;
             }
 
             var completedMinutes = Math.Min(
-                dashboard.DailyPlan.GoalMinutes,
-                dashboard.DailyPlan.CompletedMinutes + _earnedMinutes);
-
+                SeedCurriculum.DefaultDailyGoalMinutes,
+                CalculateTodayMinutes(guest, publishedLessons));
             return new LessonCompletionResponse(
                 true,
-                duplicateEvent || !firstLessonCompletion,
+                duplicateEvent || duplicateLesson,
                 completedMinutes,
-                dashboard.DailyPlan.GoalMinutes);
+                SeedCurriculum.DefaultDailyGoalMinutes);
         }
+    }
+
+    private GuestState GetGuest(string guestId)
+    {
+        if (_guests.TryGetValue(guestId, out var guest)) return guest;
+        guest = new GuestState();
+        _guests[guestId] = guest;
+        return guest;
+    }
+
+    private static int CalculateTodayMinutes(
+        GuestState guest,
+        IReadOnlyList<LessonDefinition> publishedLessons)
+    {
+        var minutesByLesson = publishedLessons.ToDictionary(
+            lesson => lesson.Response.Id,
+            lesson => lesson.Response.EstimatedMinutes,
+            StringComparer.OrdinalIgnoreCase);
+        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+
+        return guest.CompletionsByLesson.Values
+            .Where(completion => DateOnly.FromDateTime(completion.CompletedAt.UtcDateTime) == today)
+            .Sum(completion => minutesByLesson.GetValueOrDefault(completion.LessonId));
+    }
+
+    private sealed record GuestCompletion(
+        string CompletionId,
+        string LessonId,
+        DateTimeOffset CompletedAt);
+
+    private sealed class GuestState
+    {
+        public Dictionary<string, GuestCompletion> CompletionsByEvent { get; } =
+            new(StringComparer.OrdinalIgnoreCase);
+
+        public Dictionary<string, GuestCompletion> CompletionsByLesson { get; } =
+            new(StringComparer.OrdinalIgnoreCase);
     }
 }

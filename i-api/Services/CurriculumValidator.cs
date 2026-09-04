@@ -19,6 +19,13 @@ public sealed class CurriculumValidator
 
         Required(errors, lesson.Title, "Lesson title is required.");
         Required(errors, lesson.Scenario, "Lesson scenario is required.");
+        Required(errors, lesson.UnitId, "Unit ID is required.");
+        Required(errors, lesson.UnitTitle, "Unit title is required.");
+        if (lesson.CourseOrder < 1) errors.Add("Course order must be 1 or greater.");
+        if (lesson.ReviewStatus is not ("demonstrative" or "reviewed"))
+        {
+            errors.Add("Review status must be 'demonstrative' or 'reviewed'.");
+        }
         if (lesson.EstimatedMinutes is < 1 or > 30)
         {
             errors.Add("Estimated minutes must be between 1 and 30.");

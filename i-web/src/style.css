@@ -1833,6 +1833,86 @@ h3 {
   color: var(--ink-soft);
 }
 
+.lesson-details > .review-status-note {
+  margin: -8px 0 20px;
+  padding: 6px 9px;
+  border: 1px solid #dfcc96;
+  border-radius: 7px;
+  color: #76571b;
+  background: var(--gold-soft);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.course-path {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.course-path li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #d5d8cf;
+  border-radius: 10px;
+  color: var(--ink-soft);
+  background: rgba(255, 250, 240, 0.72);
+}
+
+.course-path li.current {
+  border-color: var(--teal);
+  color: var(--ink);
+  background: var(--teal-soft);
+  box-shadow: 3px 3px 0 rgba(39, 73, 62, 0.2);
+}
+
+.course-path li.completed {
+  color: var(--teal-dark);
+  background: #edf4e9;
+}
+
+.course-path-marker {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--paper);
+  background: #8a9187;
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.course-path .current .course-path-marker,
+.course-path .completed .course-path-marker {
+  background: var(--teal);
+}
+
+.course-path-copy {
+  display: grid;
+  min-width: 0;
+}
+
+.course-path-copy strong {
+  overflow: hidden;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.course-path-copy > span {
+  margin-top: 3px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
 .track-label {
   color: var(--teal);
   font-weight: 800;
@@ -1952,6 +2032,11 @@ h3 {
   border-radius: 8px;
   color: var(--paper);
   background: var(--teal-dark);
+}
+
+.round-action:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
 }
 
 .quran-card .round-action {
@@ -2305,6 +2390,10 @@ h3 {
 
   .lesson-details h3 {
     font-size: 29px;
+  }
+
+  .course-path {
+    grid-template-columns: 1fr;
   }
 
   .track-card {

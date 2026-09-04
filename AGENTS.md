@@ -156,14 +156,15 @@ Do not include billing, a social network, or a live-news content operation in th
 ## Current implementation
 
 - The active repository uses the root-level directories `i-api`, `i-web`, and `i-tests`.
-- The Vue PWA displays a mobile-first three-track dashboard and loads a four-step demonstrative Levantine lesson from the ASP.NET API.
-- Downloaded lesson packages, the last dashboard snapshot, and pending completion events are stored in IndexedDB. The client can grade the downloaded structured evaluation records offline and retries idempotent completion events after reconnection.
-- The API exposes dashboard, lesson, attempt, and completion endpoints. Authenticated progress is stored in SQLite and survives API restarts; guest server progress remains intentionally in memory, with the browser's offline queue handling reconnection.
+- The Vue PWA displays a mobile-first three-track dashboard and an ordered six-lesson demonstrative Levantine Week 1 path built only from the original four-step language set.
+- The next three lesson packages, the last dashboard snapshot, and pending completion events are stored in IndexedDB. The client can grade downloaded structured evaluation records offline, advance the path locally, and retry idempotent completion events after reconnection.
+- The API exposes dashboard, lesson, attempt, and completion endpoints. Authenticated progression is stored in SQLite and survives API restarts; guest server progress is isolated per browser and remains intentionally in memory, with the browser's offline queue handling reconnection.
 - Levantine prompts currently offer an explicitly labeled browser/device voice preview when no reviewed recording is available; voice availability and pronunciation vary by device.
 - Optional accounts support registration, login, logout, remembered browser sessions, and persistent per-user lesson progress while preserving guest study. Email confirmation, password reset, account deletion, and external identity providers remain unimplemented.
 - An owner-email-gated curriculum console now supports versioned Levantine drafts, provenance records, deterministic validation, human approval, publication, audit history, and rollback. Learner lesson endpoints serve only the currently published database version; the original demonstration lesson is migrated into that store on first startup.
 - The MSA and Quranic cards, reviewed lesson audio assets, navigation destinations, broader curriculum authoring experience, and production content workflow remain unimplemented. The bounded console explicitly rejects MSA and Quranic publication.
-- Seed Arabic is demonstrative and must not be described as reviewed launch curriculum.
+- Playwright covers the mobile online-download, offline-reload, offline-completion, reconnection, exactly-once sync, and core keyboard-access path.
+- All six seeded lessons are demonstrative delivery fixtures, reuse the same small language set, and must not be described as a reviewed or pedagogically complete week of launch curriculum.
 
 ## Content and AI guardrails
 

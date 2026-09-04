@@ -46,7 +46,9 @@ public sealed class CurriculumApiTests : IAsyncLifetime
 
         var versions = await client.GetFromJsonAsync<List<CurriculumVersionSummary>>(
             "/api/admin/curriculum/versions");
-        var initial = Assert.Single(versions!);
+        Assert.NotNull(versions);
+        Assert.Equal(6, versions.Count(version => version.Status == CurriculumStatuses.Published));
+        var initial = versions.Single(version => version.LessonId == "levantine-day-01");
         Assert.Equal(CurriculumStatuses.Published, initial.Status);
 
         var initialDetail = await client.GetFromJsonAsync<CurriculumVersionDetail>(
@@ -143,7 +145,8 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         using var owner = CreateClient();
         await RegisterAsync(owner, "Owner", "owner@example.test");
         var initial = (await owner.GetFromJsonAsync<List<CurriculumVersionSummary>>(
-            "/api/admin/curriculum/versions"))!.Single();
+            "/api/admin/curriculum/versions"))!
+            .Single(version => version.LessonId == "levantine-day-01");
         var detail = await owner.GetFromJsonAsync<CurriculumVersionDetail>(
             $"/api/admin/curriculum/versions/{initial.Id}");
         Assert.NotNull(detail);

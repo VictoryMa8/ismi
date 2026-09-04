@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
 import {
   BookOpen,
   BookCheck,
@@ -34,6 +34,7 @@ import {
   cacheLesson,
   getCachedDashboard,
   getCachedLesson,
+  getCachedLessonCount,
   getPendingCompletions,
   queueCompletion,
   removePendingCompletion,
@@ -77,13 +78,20 @@ const authSession = ref<AuthSession>({
 const speechSupported = ref(false)
 const speechVoices = ref<SpeechSynthesisVoice[]>([])
 const speakingPromptId = ref<string | null>(null)
+const lessonCloseButton = ref<HTMLButtonElement | null>(null)
 
 let activeAudio: HTMLAudioElement | null = null
 let playbackToken = 0
 
 const dashboard = ref<DashboardResponse>({
-  learner: { displayName: 'Maya', streakDays: 8, offlineLessonCount: 3 },
-  dailyPlan: { goalMinutes: 15, completedMinutes: 8, primaryTrack: 'levantine', nextLessonId: 'levantine-day-01' },
+  learner: { displayName: 'Guest', streakDays: 0, offlineLessonCount: 0 },
+  dailyPlan: {
+    goalMinutes: 15,
+    completedMinutes: 0,
+    primaryTrack: 'levantine',
+    nextLessonId: 'levantine-day-01',
+    lessons: [],
+  },
   tracks: [],
   connection: { arabic: 'يَوْم', levantine: 'yōm', formal: 'yawm', meaning: 'day' },
 })
@@ -143,6 +151,12 @@ const progressNote = computed(() => {
   if (remainingMinutes.value === 1) return '1 minute to go'
   return `${remainingMinutes.value} minutes to go`
 })
+const completedCourseLessons = computed(() =>
+  dashboard.value.dailyPlan.lessons.filter(item => item.isCompleted).length,
+)
+const courseProgressLabel = computed(() =>
+  `${completedCourseLessons.value} of ${dashboard.value.dailyPlan.lessons.length} lessons complete`,
+)
 const todayLabel = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(new Date())
 const syncStatus = computed(() => {
   if (pendingSyncCount.value > 0) {
@@ -163,13 +177,7 @@ onMounted(async () => {
   await syncPendingCompletions()
   await loadDashboard()
 
-  const nextLessonId = dashboard.value.dailyPlan.nextLessonId
-  try {
-    const nextLesson = await getLesson(nextLessonId)
-    await cacheLesson(nextLesson)
-  } catch {
-    // A previously downloaded copy remains available when the network is absent.
-  }
+  await cacheUpcomingLessons()
 })
 
 onBeforeUnmount(() => {
@@ -239,6 +247,7 @@ async function submitAccount() {
     accountPassword.value = ''
     await syncPendingCompletions()
     await loadDashboard()
+    await cacheUpcomingLessons()
     accountOpen.value = false
   } catch (error) {
     accountError.value = error instanceof Error
@@ -342,24 +351,88 @@ async function loadDashboard() {
     }
   }
 
-  if (loadedDashboard) dashboard.value = loadedDashboard
+  if (loadedDashboard) {
+    loadedDashboard.dailyPlan.lessons ??= []
+    dashboard.value = loadedDashboard
+  }
 
   try {
     const pending = await getPendingCompletions()
     pendingSyncCount.value = pending.length
-    const pendingMinutes = pending.reduce((total, item) => total + item.estimatedMinutes, 0)
+    const completedIds = new Set(
+      dashboard.value.dailyPlan.lessons
+        .filter(item => item.isCompleted)
+        .map(item => item.id),
+    )
+    const pendingMinutes = pending
+      .filter(item => !completedIds.has(item.lessonId))
+      .reduce((total, item) => total + item.estimatedMinutes, 0)
     dashboard.value.dailyPlan.completedMinutes = Math.min(
       dashboard.value.dailyPlan.goalMinutes,
       dashboard.value.dailyPlan.completedMinutes + pendingMinutes,
     )
+    for (const completion of pending) {
+      await markLessonCompletedLocally(completion.lessonId)
+    }
   } catch {
     pendingSyncCount.value = 0
+  }
+}
+
+async function cacheUpcomingLessons() {
+  if (!apiLive.value) return
+
+  const upcoming = dashboard.value.dailyPlan.lessons
+    .filter(item => !item.isCompleted)
+    .slice(0, 3)
+  for (const item of upcoming) {
+    try {
+      await cacheLesson(await getLesson(item.id))
+    } catch {
+      break
+    }
+  }
+
+  try {
+    dashboard.value.learner.offlineLessonCount = await getCachedLessonCount()
+    await cacheDashboard(dashboard.value)
+  } catch {
+    // Learning remains available when storage reporting is unavailable.
+  }
+}
+
+async function markLessonCompletedLocally(lessonId: string) {
+  const completed = dashboard.value.dailyPlan.lessons.find(item => item.id === lessonId)
+  if (completed) {
+    completed.isCompleted = true
+    completed.isCurrent = false
+  }
+  const next = dashboard.value.dailyPlan.lessons.find(item => !item.isCompleted)
+    ?? dashboard.value.dailyPlan.lessons.at(-1)
+  if (next) {
+    next.isCurrent = true
+    dashboard.value.dailyPlan.nextLessonId = next.id
+    const track = dashboard.value.tracks.find(item => item.id === dashboard.value.dailyPlan.primaryTrack)
+    if (track) {
+      track.currentLessonTitle = next.title
+      track.label = next.unitTitle
+      track.plannedMinutes = next.estimatedMinutes
+      track.progressPercent = Math.round(
+        completedCourseLessons.value * 100 / dashboard.value.dailyPlan.lessons.length,
+      )
+    }
+  }
+  try {
+    await cacheDashboard(dashboard.value)
+  } catch {
+    // The completion event remains the durable offline source of truth.
   }
 }
 
 async function handleOnline() {
   await syncPendingCompletions()
   await loadDashboard()
+  await cacheUpcomingLessons()
 }
 
 async function syncPendingCompletions() {
@@ -432,6 +505,8 @@ async function startLesson() {
     }
   } finally {
     lessonLoading.value = false
+    await nextTick()
+    lessonCloseButton.value?.focus()
   }
 }
 
@@ -518,6 +593,7 @@ async function finishLesson() {
     dashboard.value.dailyPlan.goalMinutes,
     dashboard.value.dailyPlan.completedMinutes + lesson.value.estimatedMinutes,
   )
+  await markLessonCompletedLocally(lesson.value.id)
 
   try {
     const result = await submitLessonCompletion(
@@ -530,7 +606,8 @@ async function finishLesson() {
     try {
       await removePendingCompletion(completion.completionId)
       pendingSyncCount.value = Math.max(0, pendingSyncCount.value - 1)
-      await cacheDashboard(dashboard.value)
+      await loadDashboard()
+      await cacheUpcomingLessons()
     } catch {
       // The idempotent completion can safely be cleared on the next sync attempt.
     }
@@ -546,7 +623,7 @@ async function finishLesson() {
 <template>
   <a class="skip-link" href="#main-content">Skip to today’s lesson</a>
 
-  <div class="app-shell">
+  <div class="app-shell" :inert="lessonOpen || accountOpen || consoleOpen">
     <aside class="side-nav" aria-label="Primary navigation">
       <a class="brand" href="#" aria-label="Ismi home">
         <span class="brand-mark" aria-hidden="true">ا</span>
@@ -582,7 +659,7 @@ async function finishLesson() {
       </div>
     </aside>
 
-    <main id="main-content" class="main-content">
+    <main id="main-content" class="main-content" tabindex="-1">
       <header class="mobile-header">
         <a class="brand" href="#" aria-label="Ismi home">
           <span class="brand-mark" aria-hidden="true">ا</span>
@@ -607,7 +684,7 @@ async function finishLesson() {
           </button>
           <div class="status-pill streak-pill">
             <Flame :size="19" aria-hidden="true" />
-            <span><strong>{{ dashboard.learner.streakDays }}</strong> day streak</span>
+            <span>{{ courseProgressLabel }}</span>
           </div>
           <div class="status-pill offline-pill" :class="{ 'sync-pending': pendingSyncCount > 0 }">
             <Check v-if="apiLive && pendingSyncCount === 0" :size="18" aria-hidden="true" />
@@ -647,10 +724,11 @@ async function finishLesson() {
           <div class="lesson-details">
             <div class="track-label levantine-label">
               <MessageCircle :size="17" aria-hidden="true" />
-              <span>{{ primaryTrack?.name ?? 'Palestinian Levantine' }} · {{ primaryTrack?.label ?? 'Unit 2' }}</span>
+              <span>{{ primaryTrack?.name ?? 'Palestinian Levantine' }} · {{ primaryTrack?.label ?? 'Week 1' }}</span>
             </div>
             <h3>{{ primaryTrack?.currentLessonTitle ?? 'Tell them about your day' }}</h3>
             <p>Respond naturally, add one detail, and preview each prompt aloud.</p>
+            <p class="review-status-note">Demonstrative content · not reviewed launch curriculum</p>
 
             <div class="skill-list" aria-label="Skills practiced">
               <span><Volume2 :size="15" aria-hidden="true" /> Listening</span>
@@ -663,6 +741,23 @@ async function finishLesson() {
             </button>
           </div>
         </article>
+
+        <ol class="course-path" aria-label="Week one Levantine course path">
+          <li
+            v-for="item in dashboard.dailyPlan.lessons"
+            :key="item.id"
+            :class="{ completed: item.isCompleted, current: item.isCurrent }"
+          >
+            <span class="course-path-marker" aria-hidden="true">
+              <Check v-if="item.isCompleted" :size="16" />
+              <span v-else>{{ item.courseOrder }}</span>
+            </span>
+            <span class="course-path-copy">
+              <strong>{{ item.title }}</strong>
+              <span>{{ item.estimatedMinutes }} min · {{ item.isCompleted ? 'Complete' : item.isCurrent ? 'Up next' : 'Later' }}</span>
+            </span>
+          </li>
+        </ol>
       </section>
 
       <section class="section-block" aria-labelledby="tracks-heading">
@@ -678,12 +773,12 @@ async function finishLesson() {
           <article class="track-card msa-card">
             <div class="track-card-icon"><Newspaper :size="22" aria-hidden="true" /></div>
             <div class="track-card-copy">
-              <span class="track-name">MSA · 4 min</span>
-              <h3>Reading the headline</h3>
-              <p>Spot the action and identify who did it.</p>
-              <div class="mini-progress" aria-label="MSA unit progress: 60 percent"><span style="width: 60%"></span></div>
+              <span class="track-name">MSA · coming later</span>
+              <h3>MSA pilot not yet published</h3>
+              <p>This checkpoint is focused on proving the Levantine course loop.</p>
+              <div class="mini-progress" aria-label="MSA unit progress: 0 percent"><span style="width: 0%"></span></div>
             </div>
-            <button type="button" class="round-action" aria-label="Continue MSA lesson">
+            <button type="button" class="round-action" aria-label="MSA lessons are not yet available" disabled>
               <ChevronRight :size="20" aria-hidden="true" />
             </button>
           </article>
@@ -691,12 +786,12 @@ async function finishLesson() {
           <article class="track-card quran-card">
             <div class="track-card-icon"><BookOpen :size="22" aria-hidden="true" /></div>
             <div class="track-card-copy">
-              <span class="track-name">Quranic · 5 min</span>
-              <h3>Al-Ikhlas: core words</h3>
-              <p>Connect three recurring words to their direct meaning.</p>
-              <div class="mini-progress" aria-label="Quranic unit progress: 35 percent"><span style="width: 35%"></span></div>
+              <span class="track-name">Quranic · coming later</span>
+              <h3>Quranic pilot not yet published</h3>
+              <p>Canonical text and source permissions remain gated before publication.</p>
+              <div class="mini-progress" aria-label="Quranic unit progress: 0 percent"><span style="width: 0%"></span></div>
             </div>
-            <button type="button" class="round-action" aria-label="Continue Quranic Arabic lesson">
+            <button type="button" class="round-action" aria-label="Quranic Arabic lessons are not yet available" disabled>
               <ChevronRight :size="20" aria-hidden="true" />
             </button>
           </article>
@@ -801,7 +896,7 @@ async function finishLesson() {
           <span v-else class="section-kicker">Guided conversation</span>
           <h2 id="lesson-title">{{ lesson?.title ?? 'Your lesson' }}</h2>
         </div>
-        <button class="close-button" type="button" aria-label="Close lesson" @click="closeLesson">×</button>
+        <button ref="lessonCloseButton" class="close-button" type="button" aria-label="Close lesson" @click="closeLesson">×</button>
       </header>
 
       <div v-if="lessonLoading" class="lesson-state" role="status">

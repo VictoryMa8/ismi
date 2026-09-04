@@ -90,6 +90,10 @@ function startNewLesson() {
     scenario: 'Describe the real-life scenario.',
     estimatedMinutes: 6,
     version: 'draft',
+    unitId: 'levantine-week-01',
+    unitTitle: 'Week 1 · Talk about your day',
+    courseOrder: versions.value.filter(version => version.lessonId.startsWith('levantine-')).length + 1,
+    reviewStatus: 'demonstrative',
     steps: [
       {
         id: 'respond',

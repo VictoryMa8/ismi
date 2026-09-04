@@ -9,6 +9,7 @@ export type DashboardResponse = {
     completedMinutes: number
     primaryTrack: string
     nextLessonId: string
+    lessons: CourseLessonSummary[]
   }
   tracks: Array<{
     id: string
@@ -25,6 +26,18 @@ export type DashboardResponse = {
     formal: string
     meaning: string
   }
+}
+
+export type CourseLessonSummary = {
+  id: string
+  title: string
+  unitId: string
+  unitTitle: string
+  courseOrder: number
+  estimatedMinutes: number
+  reviewStatus: 'demonstrative' | 'reviewed'
+  isCompleted: boolean
+  isCurrent: boolean
 }
 
 export type LessonPrompt = {
@@ -66,6 +79,10 @@ export type LessonResponse = {
   steps: LessonStep[]
   estimatedMinutes: number
   version: string
+  unitId: string
+  unitTitle: string
+  courseOrder: number
+  reviewStatus: 'demonstrative' | 'reviewed'
 }
 
 export type LessonAttemptResponse = {

@@ -35,4 +35,9 @@ export default defineConfig({
       '/api': apiProxyTarget,
     },
   },
+  preview: {
+    proxy: {
+      '/api': apiProxyTarget,
+    },
+  },
 })

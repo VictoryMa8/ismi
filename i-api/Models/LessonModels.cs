@@ -7,7 +7,11 @@ public sealed record LessonResponse(
     string Scenario,
     IReadOnlyList<LessonStep> Steps,
     int EstimatedMinutes,
-    string Version);
+    string Version,
+    string UnitId,
+    string UnitTitle,
+    int CourseOrder,
+    string ReviewStatus);
 
 public sealed record LessonStep(
     string Id,

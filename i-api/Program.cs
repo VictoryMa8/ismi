@@ -131,7 +131,7 @@ await using (var scope = app.Services.CreateAsyncScope())
     await CurriculumSchemaInitializer.EnsureCurriculumSchemaAsync(database);
     var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
     var seed = scope.ServiceProvider.GetRequiredService<SeedCurriculum>();
-    await publishing.EnsureSeededAsync(seed.GetInitialLesson());
+    await publishing.EnsureSeededAsync(seed.GetInitialLessons());
 }
 
 if (app.Environment.IsDevelopment())
@@ -265,22 +265,16 @@ app.MapGet("/api/dashboard", async (
     CancellationToken cancellationToken) =>
 {
     var user = await userManager.GetUserAsync(context.User);
-    var dashboard = user is null
-        ? guestProgress.GetDashboard(curriculum)
-        : await accountProgress.GetDashboardAsync(curriculum, user, cancellationToken);
-    var nextLesson = await publishing.FindPublishedLessonAsync(
-        dashboard.DailyPlan.NextLessonId,
+    var publishedLessons = await publishing.ListPublishedLessonsAsync(
+        "levantine",
         cancellationToken);
-    if (nextLesson is not null)
-    {
-        dashboard = dashboard with
-        {
-            Tracks = dashboard.Tracks.Select(track =>
-                track.Id == nextLesson.Response.TrackId
-                    ? track with { CurrentLessonTitle = nextLesson.Response.Title }
-                    : track).ToList()
-        };
-    }
+    var dashboard = user is null
+        ? guestProgress.GetDashboard(GuestId(context), curriculum, publishedLessons)
+        : await accountProgress.GetDashboardAsync(
+            curriculum,
+            publishedLessons,
+            user,
+            cancellationToken);
     return Results.Ok(dashboard);
 });
 
@@ -351,13 +345,23 @@ app.MapPost("/api/lessons/{lessonId}/completions", async Task<IResult> (
     }
 
     var user = await userManager.GetUserAsync(context.User);
+    var publishedLessons = await curriculum.ListPublishedLessonsAsync(
+        "levantine",
+        cancellationToken);
     if (user is null)
     {
-        return Results.Ok(guestProgress.Complete(dashboardCurriculum, lesson, request.CompletionId));
+        return Results.Ok(guestProgress.Complete(
+            GuestId(context),
+            dashboardCurriculum,
+            publishedLessons,
+            lesson,
+            request.CompletionId,
+            request.CompletedAt));
     }
 
     return Results.Ok(await accountProgress.CompleteAsync(
         dashboardCurriculum,
+        publishedLessons,
         lesson,
         user,
         request.CompletionId,
@@ -484,6 +488,27 @@ static AuthSessionResponse ToSession(
     ApplicationUser user,
     CurriculumAccessService curriculumAccess) =>
     new(true, user.Id, user.DisplayName, user.Email, curriculumAccess.CanManage(user));
+
+static string GuestId(HttpContext context)
+{
+    const string cookieName = "Ismi.Guest";
+    if (context.Request.Cookies.TryGetValue(cookieName, out var existing)
+        && Guid.TryParseExact(existing, "N", out _))
+    {
+        return existing;
+    }
+
+    var guestId = Guid.NewGuid().ToString("N");
+    context.Response.Cookies.Append(cookieName, guestId, new CookieOptions
+    {
+        HttpOnly = true,
+        IsEssential = true,
+        SameSite = SameSiteMode.Lax,
+        Secure = context.Request.IsHttps,
+        MaxAge = TimeSpan.FromDays(30)
+    });
+    return guestId;
+}
 
 static string CurriculumActor(HttpContext context) =>
     context.User.Identity?.Name ?? "curriculum approver";

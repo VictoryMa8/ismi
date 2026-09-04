@@ -8,36 +8,43 @@ public sealed class AccountProgressService(IsmiDbContext database)
 {
     public async Task<DashboardResponse> GetDashboardAsync(
         SeedCurriculum curriculum,
+        IReadOnlyList<LessonDefinition> publishedLessons,
         ApplicationUser user,
         CancellationToken cancellationToken = default)
     {
-        var dashboard = curriculum.GetDashboard();
-        var earnedMinutes = await database.LearnerProgress
-            .Where(progress => progress.UserId == user.Id)
-            .Select(progress => progress.EarnedMinutes)
-            .SingleOrDefaultAsync(cancellationToken);
+        var completions = await database.LessonCompletions
+            .AsNoTracking()
+            .Where(completion => completion.UserId == user.Id)
+            .Select(completion => new { completion.LessonId, completion.CompletedAtUtc })
+            .ToListAsync(cancellationToken);
+        var completedIds = completions
+            .Select(completion => completion.LessonId)
+            .ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var minutesByLesson = publishedLessons.ToDictionary(
+            lesson => lesson.Response.Id,
+            lesson => lesson.Response.EstimatedMinutes,
+            StringComparer.OrdinalIgnoreCase);
+        var today = DateOnly.FromDateTime(DateTime.UtcNow);
+        var completedMinutesToday = completions
+            .Where(completion => DateOnly.FromDateTime(completion.CompletedAtUtc) == today)
+            .Sum(completion => minutesByLesson.GetValueOrDefault(completion.LessonId));
 
-        return dashboard with
-        {
-            Learner = dashboard.Learner with { DisplayName = user.DisplayName },
-            DailyPlan = dashboard.DailyPlan with
-            {
-                CompletedMinutes = Math.Min(
-                    dashboard.DailyPlan.GoalMinutes,
-                    dashboard.DailyPlan.CompletedMinutes + earnedMinutes)
-            }
-        };
+        return curriculum.BuildDashboard(
+            user.DisplayName,
+            publishedLessons,
+            completedIds,
+            completedMinutesToday);
     }
 
     public async Task<LessonCompletionResponse> CompleteAsync(
         SeedCurriculum curriculum,
+        IReadOnlyList<LessonDefinition> publishedLessons,
         LessonDefinition lesson,
         ApplicationUser user,
         string completionId,
         DateTimeOffset completedAt,
         CancellationToken cancellationToken = default)
     {
-        var dashboard = curriculum.GetDashboard();
         var alreadyRecorded = await database.LessonCompletions.AnyAsync(
             completion => completion.UserId == user.Id
                 && (completion.CompletionId == completionId
@@ -64,14 +71,15 @@ public sealed class AccountProgressService(IsmiDbContext database)
             await database.SaveChangesAsync(cancellationToken);
         }
 
-        var completedMinutes = Math.Min(
-            dashboard.DailyPlan.GoalMinutes,
-            dashboard.DailyPlan.CompletedMinutes + progress.EarnedMinutes);
-
+        var dashboard = await GetDashboardAsync(
+            curriculum,
+            publishedLessons,
+            user,
+            cancellationToken);
         return new LessonCompletionResponse(
             true,
             alreadyRecorded,
-            completedMinutes,
+            dashboard.DailyPlan.CompletedMinutes,
             dashboard.DailyPlan.GoalMinutes);
     }
 }
