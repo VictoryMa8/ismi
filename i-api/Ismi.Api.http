@@ -1,0 +1,36 @@
+@Ismi.Api_HostAddress = http://127.0.0.1:5062
+
+GET {{Ismi.Api_HostAddress}}/api/health
+Accept: application/json
+
+###
+
+GET {{Ismi.Api_HostAddress}}/api/dashboard
+Accept: application/json
+
+###
+
+GET {{Ismi.Api_HostAddress}}/api/lessons/levantine-day-01
+Accept: application/json
+
+###
+
+POST {{Ismi.Api_HostAddress}}/api/lessons/levantine-day-01/attempts
+Content-Type: application/json
+
+{
+  "stepId": "respond",
+  "answerId": "a"
+}
+
+###
+
+POST {{Ismi.Api_HostAddress}}/api/lessons/levantine-day-01/completions
+Content-Type: application/json
+
+{
+  "completionId": "manual-check-1",
+  "completedAt": "2026-09-02T18:00:00-05:00"
+}
+
+###

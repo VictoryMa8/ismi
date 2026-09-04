@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="i-api/Ismi.Api.csproj" />
+  <Project Path="i-tests/Ismi.Api.Tests.csproj" />
+</Solution>
