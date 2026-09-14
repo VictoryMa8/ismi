@@ -23,6 +23,7 @@ public sealed class CurriculumApiTests : IAsyncLifetime
                 configuration.AddInMemoryCollection(new Dictionary<string, string?>
                 {
                     ["Database:Path"] = _databasePath,
+                    ["Recordings:Path"] = _databasePath + "-recordings",
                     ["Curriculum:ApproverEmail"] = "owner@example.test"
                 }));
         });
@@ -32,6 +33,7 @@ public sealed class CurriculumApiTests : IAsyncLifetime
     public Task DisposeAsync()
     {
         _factory.Dispose();
+        if (Directory.Exists(_databasePath + "-recordings")) Directory.Delete(_databasePath + "-recordings", true);
         DeleteDatabaseFile(_databasePath);
         DeleteDatabaseFile($"{_databasePath}-shm");
         DeleteDatabaseFile($"{_databasePath}-wal");
@@ -171,6 +173,66 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         var body = await approve.Content.ReadAsStringAsync();
         Assert.Contains("only Levantine", body, StringComparison.OrdinalIgnoreCase);
     }
+
+    [Fact]
+    public async Task RecordingsRequireOwnerCsrfProvenanceAndPublication()
+    {
+        using var owner = CreateClient();
+        using var learner = CreateClient();
+        var bytes = RecordingTests.Wave();
+        var unauthorized = await learner.PostAsync("/api/admin/curriculum/recordings", new ByteArrayContent(bytes));
+        Assert.Equal(HttpStatusCode.Unauthorized, unauthorized.StatusCode);
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        var noCsrf = await owner.PostAsync("/api/admin/curriculum/recordings", new ByteArrayContent(bytes));
+        Assert.Equal(HttpStatusCode.BadRequest, noCsrf.StatusCode);
+        var csrf = await owner.GetFromJsonAsync<CsrfToken>("/api/auth/csrf");
+        owner.DefaultRequestHeaders.Add("X-CSRF-TOKEN", csrf!.Token);
+        var invalid = await owner.PostAsync("/api/admin/curriculum/recordings", new ByteArrayContent([1, 2, 3]));
+        Assert.Equal(HttpStatusCode.BadRequest, invalid.StatusCode);
+        var upload = await owner.PostAsync("/api/admin/curriculum/recordings", new ByteArrayContent(bytes));
+        Assert.Equal(HttpStatusCode.OK, upload.StatusCode);
+        var url = (await upload.Content.ReadFromJsonAsync<RecordingUpload>())!.AudioUrl;
+        var duplicate = await owner.PostAsync("/api/admin/curriculum/recordings", new ByteArrayContent(bytes));
+        Assert.Equal(url, (await duplicate.Content.ReadFromJsonAsync<RecordingUpload>())!.AudioUrl);
+        Assert.Equal(bytes, await owner.GetByteArrayAsync(url));
+        Assert.Equal(HttpStatusCode.NotFound, (await learner.GetAsync(url)).StatusCode);
+        owner.DefaultRequestHeaders.Remove("X-CSRF-TOKEN");
+
+        var versions = (await owner.GetFromJsonAsync<List<CurriculumVersionSummary>>("/api/admin/curriculum/versions"))!;
+        var original = versions.Single(v => v.LessonId == "levantine-day-01");
+        var detail = (await owner.GetFromJsonAsync<CurriculumVersionDetail>($"/api/admin/curriculum/versions/{original.Id}"))!;
+        var step = detail.Lesson.Steps[0];
+        var recording = new LessonRecording(step.Prompt.Arabic, "Test speaker", "palestinian-urban", url, "Test fixture only, no linguistic review claim.");
+        var lesson = detail.Lesson with { Steps = [step with { Prompt = step.Prompt with { AudioUrl = url, Recording = recording } }] };
+        var source = new CurriculumSourceInput("recording", "Synthetic silence fixture", url, "Test-only generated audio; playback and download permitted.", "Not speech or curriculum.");
+        var draftResponse = await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/admin/curriculum/drafts", new CurriculumDraftRequest(lesson, detail.Sources));
+        var draft = (await draftResponse.Content.ReadFromJsonAsync<CurriculumVersionDetail>())!;
+        var rejected = await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/approve", new { });
+        Assert.Equal(HttpStatusCode.BadRequest, rejected.StatusCode);
+        Assert.Contains("recording provenance", await rejected.Content.ReadAsStringAsync());
+        var mismatched = lesson with { Steps = [step with { Prompt = step.Prompt with { AudioUrl = url, Recording = recording with { Transcript = "different" } } }] };
+        await SendWithCsrfAsync(owner, HttpMethod.Put, $"/api/admin/curriculum/versions/{draft.Id}", new CurriculumDraftRequest(mismatched, [source]));
+        var badTranscript = await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/approve", new { });
+        Assert.Equal(HttpStatusCode.BadRequest, badTranscript.StatusCode);
+        await SendWithCsrfAsync(owner, HttpMethod.Put, $"/api/admin/curriculum/versions/{draft.Id}", new CurriculumDraftRequest(lesson, [source]));
+        var approve = await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/approve", new { });
+        Assert.Equal(HttpStatusCode.OK, approve.StatusCode);
+        Assert.Equal(HttpStatusCode.NotFound, (await learner.GetAsync(url)).StatusCode);
+        var publish = await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/publish", new { });
+        Assert.Equal(HttpStatusCode.OK, publish.StatusCode);
+        Assert.Equal(bytes, await learner.GetByteArrayAsync(url));
+        using var range = new HttpRequestMessage(HttpMethod.Get, url);
+        range.Headers.Range = new System.Net.Http.Headers.RangeHeaderValue(0, 43);
+        var partial = await learner.SendAsync(range);
+        Assert.Equal(HttpStatusCode.PartialContent, partial.StatusCode);
+        Assert.Equal(44, (await partial.Content.ReadAsByteArrayAsync()).Length);
+        var published = (await learner.GetFromJsonAsync<LessonResponse>("/api/lessons/levantine-day-01"))!;
+        Assert.Equal(recording, published.Steps[0].Prompt.Recording);
+        await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/admin/curriculum/lessons/levantine-day-01/rollback", new CurriculumRollbackRequest(original.Id));
+        Assert.Equal(HttpStatusCode.NotFound, (await learner.GetAsync(url)).StatusCode);
+    }
+
+    private sealed record RecordingUpload(string AudioUrl);
 
     private HttpClient CreateClient() =>
         _factory.CreateClient(new WebApplicationFactoryClientOptions

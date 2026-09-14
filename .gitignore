@@ -30,6 +30,7 @@ Thumbs.db
 **/coverage/
 
 # Local overrides (Vite, etc.)
+**/.vercel/
 **/*.local
 
 # Local SQLite and app data (accounts, progress, curriculum)

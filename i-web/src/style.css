@@ -1370,6 +1370,7 @@ h3 {
 
 .json-editor:focus-visible,
 .source-card input:focus-visible,
+.source-card select:focus-visible,
 .source-card textarea:focus-visible {
   border-color: var(--teal);
   outline: 3px solid rgba(46, 130, 120, 0.18);
@@ -1409,6 +1410,7 @@ h3 {
 .source-card label.wide { grid-column: 1 / -1; }
 
 .source-card input,
+.source-card select,
 .source-card textarea {
   width: 100%;
   border: 1px solid #cfc4b5;
@@ -2462,3 +2464,13 @@ h3 {
     transform: none;
   }
 }
+
+/* Keep recording credits and source locators inside narrow lesson cards. */
+.scenario-panel > div { min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.scenario-panel .audio-button { flex: 0 0 48px; }
+.recording-details { margin-top: 10px; font-size: 13px; line-height: 1.5; }
+.recording-details summary { cursor: pointer; }
+.recording-details summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+.recording-details p[lang="ar"] { font-size: 24px; }
+.version-item, .version-item-top, .version-item strong { min-width: 0; }
+.editor-section audio { max-width: 100%; }

@@ -40,11 +40,20 @@ export type CourseLessonSummary = {
   isCurrent: boolean
 }
 
+export type LessonRecording = {
+  transcript: string
+  speaker: string
+  dialect: 'palestinian-urban' | 'jordanian'
+  sourceLocator: string
+  reviewNotes: string
+}
+
 export type LessonPrompt = {
   arabic: string
   arabizi: string
   meaning: string
   audioUrl: string | null
+  recording?: LessonRecording | null
 }
 
 export type LessonAnswer = {

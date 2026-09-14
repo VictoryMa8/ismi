@@ -1,0 +1,23 @@
+# Only the frontend and Vercel configuration belong in this deployment.
+.git
+.env
+.env.*
+i-api
+i-tests
+docs
+AGENTS.md
+**/node_modules
+**/dist
+**/test-results
+**/playwright-report
+**/*.db
+**/*.db-*
+**/*.sqlite*
+**/*.pem
+**/*.key
+**/*.pfx
+**/*.p12
+
+deploy
+Dockerfile
+.dockerignore

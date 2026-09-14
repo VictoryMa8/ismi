@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
+import RecordingEditor from './RecordingEditor.vue'
 import {
   ArrowLeft,
   CheckCircle2,
@@ -38,6 +39,9 @@ const selected = ref<CurriculumVersionDetail | null>(null)
 const lessonJson = ref('')
 const sources = ref<CurriculumSource[]>([])
 const busy = ref(false)
+const uploading = ref(false)
+const savedSnapshot = ref('')
+const dirty = computed(() => savedSnapshot.value !== JSON.stringify([lessonJson.value, sources.value]))
 const loading = ref(true)
 const error = ref<string | null>(null)
 const notice = ref<string | null>(null)
@@ -80,6 +84,7 @@ function setSelected(detail: CurriculumVersionDetail) {
   selected.value = detail
   lessonJson.value = JSON.stringify(detail.lesson, null, 2)
   sources.value = detail.sources.map(source => ({ ...source }))
+  savedSnapshot.value = JSON.stringify([lessonJson.value, sources.value])
 }
 
 function startNewLesson() {
@@ -301,7 +306,7 @@ function formatDate(value: string | null): string {
             <span class="section-kicker">Version history</span>
             <h2>Lessons</h2>
           </div>
-          <button class="icon-action" type="button" aria-label="Create a new lesson" title="Create a new lesson" @click="startNewLesson">
+          <button class="icon-action" type="button" aria-label="Create a new lesson" title="Create a new lesson" :disabled="uploading" @click="startNewLesson">
             <Plus :size="20" aria-hidden="true" />
           </button>
         </div>
@@ -314,7 +319,7 @@ function formatDate(value: string | null): string {
             type="button"
             class="version-item"
             :class="{ selected: selected?.id === version.id }"
-            @click="selectVersion(version.id)"
+            :disabled="uploading" @click="selectVersion(version.id)"
           >
             <span class="version-item-top">
               <strong>{{ version.title }}</strong>
@@ -324,7 +329,7 @@ function formatDate(value: string | null): string {
           </button>
         </div>
 
-        <button v-if="selected?.id" class="secondary-action clone-action" type="button" :disabled="busy" @click="cloneDraft">
+        <button v-if="selected?.id" class="secondary-action clone-action" type="button" :disabled="busy || uploading" @click="cloneDraft">
           <FilePlus2 :size="17" aria-hidden="true" /> New draft from selected
         </button>
       </aside>
@@ -340,19 +345,19 @@ function formatDate(value: string | null): string {
               <p v-else>New unpublished lesson</p>
             </div>
             <div class="workflow-actions">
-              <button v-if="canEdit" class="secondary-action" type="button" :disabled="busy" @click="saveDraft">
+              <button v-if="canEdit" class="secondary-action" type="button" :disabled="busy || uploading" @click="saveDraft">
                 <Save :size="17" aria-hidden="true" /> Save draft
               </button>
-              <button v-if="selected.status === 'draft'" class="secondary-action" type="button" :disabled="busy" @click="runValidation">
+              <button v-if="selected.status === 'draft'" class="secondary-action" type="button" :disabled="busy || uploading || dirty" @click="runValidation">
                 <ClipboardCheck :size="17" aria-hidden="true" /> Validate
               </button>
-              <button v-if="selected.status === 'draft'" class="primary-action" type="button" :disabled="busy" @click="approve">
+              <button v-if="selected.status === 'draft'" class="primary-action" type="button" :disabled="busy || uploading || dirty" @click="approve">
                 <CheckCircle2 :size="17" aria-hidden="true" /> Approve
               </button>
-              <button v-if="selected.status === 'approved'" class="primary-action" type="button" :disabled="busy" @click="publish">
+              <button v-if="selected.status === 'approved'" class="primary-action" type="button" :disabled="busy || uploading" @click="publish">
                 <Rocket :size="17" aria-hidden="true" /> Publish
               </button>
-              <button v-if="selected.status === 'superseded'" class="secondary-action" type="button" :disabled="busy" @click="rollback">
+              <button v-if="selected.status === 'superseded'" class="secondary-action" type="button" :disabled="busy || uploading" @click="rollback">
                 <RotateCcw :size="17" aria-hidden="true" /> Restore this version
               </button>
             </div>
@@ -373,8 +378,11 @@ function formatDate(value: string | null): string {
               </div>
               <span>{{ canEdit ? 'Editable draft' : 'Immutable snapshot' }}</span>
             </div>
-            <textarea v-model="lessonJson" class="json-editor" :readonly="!canEdit" spellcheck="false" aria-label="Structured lesson JSON"></textarea>
+            <textarea v-model="lessonJson" class="json-editor" :readonly="!canEdit || uploading" spellcheck="false" aria-label="Structured lesson JSON"></textarea>
           </section>
+
+          <p v-if="dirty && canEdit" role="status">Save your changes before validation or approval.</p>
+          <RecordingEditor v-model="lessonJson" :editable="canEdit && !busy" @busy="uploading = $event" @source="sources.push($event)" />
 
           <section class="editor-section" aria-labelledby="provenance-heading">
             <div class="editor-section-heading">

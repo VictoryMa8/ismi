@@ -2,7 +2,7 @@ using Ismi.Api.Models;
 
 namespace Ismi.Api.Services;
 
-public sealed class CurriculumValidator
+public sealed class CurriculumValidator(RecordingStore recordings)
 {
     public CurriculumValidationResult Validate(
         LessonResponse lesson,
@@ -43,6 +43,29 @@ public sealed class CurriculumValidator
             Required(errors, step.Prompt.Arabic, $"{label} needs an Arabic prompt.");
             Required(errors, step.Prompt.Arabizi, $"{label} needs Arabizi/transliteration.");
             Required(errors, step.Prompt.Meaning, $"{label} needs an English meaning.");
+
+            if (step.Prompt.AudioUrl is not null || step.Prompt.Recording is not null)
+            {
+                var recording = step.Prompt.Recording;
+                if (recordings.Find(step.Prompt.AudioUrl) is null)
+                    errors.Add($"{label} needs an uploaded recording asset.");
+                if (recording is null)
+                    errors.Add($"{label} needs recording metadata and provenance.");
+                else
+                {
+                    Required(errors, recording.Transcript, $"{label} needs a recording transcript.");
+                    if (recording.Transcript != step.Prompt.Arabic)
+                        errors.Add($"{label}'s transcript must match the Arabic prompt exactly.");
+                    Required(errors, recording.Speaker, $"{label} needs a speaker credit or pseudonym.");
+                    Required(errors, recording.ReviewNotes, $"{label} needs recording review notes.");
+                    if (recording.Dialect is not ("palestinian-urban" or "jordanian"))
+                        errors.Add($"{label} needs a Palestinian urban or Jordanian dialect label.");
+                    if (string.IsNullOrWhiteSpace(recording.SourceLocator) || !sources.Any(source =>
+                        source.SourceType == "recording" && source.Locator == recording.SourceLocator &&
+                        !string.IsNullOrWhiteSpace(source.Rights)))
+                        errors.Add($"{label} needs a matching recording provenance source with permission for playback and offline distribution.");
+                }
+            }
 
             if (step.Answers.Count < 2) errors.Add($"{label} needs at least two answer choices.");
             DuplicateErrors(errors, step.Answers.Select(answer => answer.Id), $"answer ID in {label}");

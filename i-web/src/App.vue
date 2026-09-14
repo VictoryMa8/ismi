@@ -30,6 +30,7 @@ import {
   submitLessonCompletion,
 } from './api'
 import {
+  recordingPlaybackUrl,
   cacheDashboard,
   cacheLesson,
   getCachedDashboard,
@@ -55,6 +56,7 @@ const apiLive = ref(false)
 const lesson = ref<LessonResponse | null>(null)
 const lessonLoading = ref(false)
 const lessonError = ref<string | null>(null)
+const downloadError = ref<string | null>(null)
 const currentStepIndex = ref(0)
 const lessonFinished = ref(false)
 const completionWasQueued = ref(false)
@@ -80,6 +82,8 @@ const speechVoices = ref<SpeechSynthesisVoice[]>([])
 const speakingPromptId = ref<string | null>(null)
 const lessonCloseButton = ref<HTMLButtonElement | null>(null)
 
+const audioError = ref<string | null>(null)
+let activeObjectUrl: string | null = null
 let activeAudio: HTMLAudioElement | null = null
 let playbackToken = 0
 
@@ -278,6 +282,9 @@ async function signOut() {
 
 function stopPromptAudio() {
   playbackToken += 1
+  audioError.value = null
+  if (activeObjectUrl) URL.revokeObjectURL(activeObjectUrl)
+  activeObjectUrl = null
 
   if (activeAudio) {
     activeAudio.pause()
@@ -305,18 +312,31 @@ async function playPromptAudio() {
   const finishPlayback = () => {
     if (token !== playbackToken) return
     activeAudio = null
+    if (activeObjectUrl) URL.revokeObjectURL(activeObjectUrl)
+    activeObjectUrl = null
     speakingPromptId.value = null
   }
 
   if (step.prompt.audioUrl) {
-    const audio = new Audio(step.prompt.audioUrl)
+    const url = await recordingPlaybackUrl(step.prompt.audioUrl)
+    if (token !== playbackToken) {
+      if (url.startsWith('blob:')) URL.revokeObjectURL(url)
+      return
+    }
+    activeObjectUrl = url.startsWith('blob:') ? url : null
+    const audio = new Audio(url)
+    const failPlayback = () => {
+      if (token !== playbackToken) return
+      audioError.value = 'The recording could not play. You can read the transcript and continue, or try again.'
+      finishPlayback()
+    }
     activeAudio = audio
     audio.addEventListener('ended', finishPlayback, { once: true })
-    audio.addEventListener('error', finishPlayback, { once: true })
+    audio.addEventListener('error', failPlayback, { once: true })
     try {
       await audio.play()
     } catch {
-      finishPlayback()
+      failPlayback()
     }
     return
   }
@@ -382,6 +402,7 @@ async function loadDashboard() {
 async function cacheUpcomingLessons() {
   if (!apiLive.value) return
 
+  downloadError.value = null
   const upcoming = dashboard.value.dailyPlan.lessons
     .filter(item => !item.isCompleted)
     .slice(0, 3)
@@ -389,6 +410,7 @@ async function cacheUpcomingLessons() {
     try {
       await cacheLesson(await getLesson(item.id))
     } catch {
+      downloadError.value = 'Some lesson downloads could not finish. Previously downloaded lessons remain available. Reconnect to retry.'
       break
     }
   }
@@ -670,6 +692,8 @@ async function finishLesson() {
         </button>
       </header>
 
+      <p v-if="downloadError" role="status">{{ downloadError }}</p>
+
       <section class="welcome-row" aria-labelledby="today-heading">
         <div>
           <p class="eyebrow">{{ todayLabel }} · Your {{ dashboard.dailyPlan.goalMinutes }}-minute plan</p>
@@ -944,6 +968,15 @@ async function finishLesson() {
             <p class="arabic-prompt" lang="ar" dir="rtl">{{ currentStep.prompt.arabic }}</p>
             <p class="arabizi-prompt">{{ currentStep.prompt.arabizi }}</p>
             <p class="prompt-meaning">{{ currentStep.prompt.meaning }}</p>
+            <template v-if="currentStep.prompt.recording">
+              <p class="audio-source-note">Recorded · {{ currentStep.prompt.recording.speaker }} · {{ currentStep.prompt.recording.dialect === 'jordanian' ? 'Jordanian variant' : 'Urban Palestinian' }}</p>
+              <details class="recording-details">
+                <summary>Recording transcript and source</summary>
+                <p lang="ar" dir="rtl">{{ currentStep.prompt.recording.transcript }}</p>
+                <p>Source: {{ currentStep.prompt.recording.sourceLocator }}</p>
+              </details>
+            </template>
+            <p v-if="audioError" role="alert">{{ audioError }}</p>
             <p v-if="!currentStep.prompt.audioUrl" class="audio-source-note">
               {{ deviceVoiceDescription }}
             </p>

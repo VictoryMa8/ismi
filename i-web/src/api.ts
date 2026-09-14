@@ -45,7 +45,7 @@ async function getCsrfToken(): Promise<string> {
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const method = (options?.method ?? 'GET').toUpperCase()
   const headers = new Headers(options?.headers)
-  headers.set('Content-Type', 'application/json')
+  if (!headers.has('Content-Type')) headers.set('Content-Type', 'application/json')
 
   if (!['GET', 'HEAD', 'OPTIONS'].includes(method)) {
     headers.set('X-CSRF-TOKEN', await getCsrfToken())
@@ -203,5 +203,13 @@ export function rollbackCurriculumVersion(
   return request<CurriculumVersionDetail>(`/api/admin/curriculum/lessons/${lessonId}/rollback`, {
     method: 'POST',
     body: JSON.stringify({ targetVersionId }),
+  })
+}
+
+export function uploadRecording(file: File): Promise<{ audioUrl: string }> {
+  return request('/api/admin/curriculum/recordings', {
+    method: 'POST',
+    headers: { 'Content-Type': 'audio/wav' },
+    body: file,
   })
 }

@@ -2,6 +2,9 @@ using Ismi.Api.Data;
 using Ismi.Api.Models;
 using Ismi.Api.Services;
 using Microsoft.AspNetCore.Antiforgery;
+using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
+using Microsoft.AspNetCore.DataProtection.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
@@ -9,6 +12,19 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Persist cookie encryption keys alongside the beta database on container hosts.
+builder.Services.AddDataProtection().SetApplicationName("Ismi");
+builder.Services.AddOptions<KeyManagementOptions>()
+    .Configure<IConfiguration, IWebHostEnvironment, ILoggerFactory>((options, configuration, environment, loggerFactory) =>
+    {
+        var keysPath = configuration["DataProtection:KeysPath"];
+        if (!string.IsNullOrWhiteSpace(keysPath))
+        {
+            var directory = Directory.CreateDirectory(Path.GetFullPath(keysPath, environment.ContentRootPath));
+            options.XmlRepository = new FileSystemXmlRepository(directory, loggerFactory);
+        }
+    });
 
 builder.Services.AddOpenApi();
 builder.Services.AddDbContext<IsmiDbContext>((services, options) =>
@@ -119,6 +135,7 @@ builder.Services.AddSingleton<LessonEvaluator>();
 builder.Services.AddSingleton<LearnerProgressService>();
 builder.Services.AddScoped<AccountProgressService>();
 builder.Services.AddScoped<CurriculumPublishingService>();
+builder.Services.AddSingleton<RecordingStore>();
 builder.Services.AddSingleton<CurriculumValidator>();
 builder.Services.AddSingleton<CurriculumAccessService>();
 
@@ -372,6 +389,51 @@ app.MapPost("/api/lessons/{lessonId}/completions", async Task<IResult> (
 var curriculumAdmin = app.MapGroup("/api/admin/curriculum")
     .RequireAuthorization()
     .AddEndpointFilter<CurriculumApproverFilter>();
+
+// Draft assets can be previewed by the owner; only published assets reach learners.
+app.MapGet("/api/recordings/{file}", async Task<IResult> (
+    string file, HttpContext context, RecordingStore recordings,
+    CurriculumPublishingService publishing, UserManager<ApplicationUser> users,
+    CurriculumAccessService access, CancellationToken cancellationToken) =>
+{
+    var url = "/api/recordings/" + file;
+    var path = recordings.Find(url);
+    if (path is null) return Results.NotFound();
+    if (!access.CanManage(await users.GetUserAsync(context.User)) &&
+        !await publishing.IsPublishedRecordingAsync(url, cancellationToken)) return Results.NotFound();
+    context.Response.Headers.CacheControl = "private, no-store";
+    context.Response.Headers["X-Content-Type-Options"] = "nosniff";
+    return Results.File(path, "audio/wav", enableRangeProcessing: true);
+});
+
+curriculumAdmin.MapPost("/recordings", async Task<IResult> (
+    HttpContext context, IAntiforgery antiforgery, RecordingStore recordings,
+    CancellationToken cancellationToken) =>
+{
+    var error = await ValidateAntiforgeryAsync(context, antiforgery);
+    if (error is not null) return error;
+    if (context.Request.ContentLength > RecordingStore.MaxBytes)
+        return Results.StatusCode(StatusCodes.Status413PayloadTooLarge);
+    // Bound the read even for chunked uploads without a Content-Length header.
+    using var buffer = new MemoryStream();
+    var chunk = new byte[8192];
+    int count;
+    while ((count = await context.Request.Body.ReadAsync(chunk, cancellationToken)) > 0)
+    {
+        if (buffer.Length + count > RecordingStore.MaxBytes)
+            return Results.StatusCode(StatusCodes.Status413PayloadTooLarge);
+        buffer.Write(chunk, 0, count);
+    }
+    try
+    {
+        var url = await recordings.SaveAsync(buffer.ToArray(), cancellationToken);
+        return Results.Ok(new { audioUrl = url });
+    }
+    catch (InvalidDataException exception)
+    {
+        return Results.BadRequest(new ApiError("invalid_recording", exception.Message));
+    }
+});
 
 curriculumAdmin.MapGet("/versions", async (
     CurriculumPublishingService publishing,
