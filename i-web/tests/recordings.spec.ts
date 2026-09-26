@@ -31,7 +31,7 @@ test('console recording publication downloads audio and plays after offline relo
     await page.goto('/')
     await page.getByRole('button', { name: 'Account synced' }).click()
     await page.getByRole('button', { name: 'Open curriculum console' }).click()
-    await page.getByRole('button', { name: /Answer a friend’s check-in/ }).click()
+    await page.getByRole('complementary', { name: 'Curriculum versions' }).getByRole('button', { name: /Answer a friend’s check-in/ }).click()
     await page.getByRole('button', { name: 'New draft from selected' }).click()
     await expect(page.getByRole('button', { name: 'Save draft' })).toBeVisible()
     await page.getByLabel(/Upload recording for/).setInputFiles({ name: 'transport-fixture.wav', mimeType: 'audio/wav', buffer: silentWave() })
