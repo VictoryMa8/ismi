@@ -35,7 +35,7 @@ export type CourseLessonSummary = {
   unitTitle: string
   courseOrder: number
   estimatedMinutes: number
-  reviewStatus: 'demonstrative' | 'reviewed'
+  reviewStatus: 'demonstrative' | 'reviewed' | 'owner-review'
   isCompleted: boolean
   isCurrent: boolean
 }
@@ -47,7 +47,18 @@ export type LessonPrompt = {
   audioUrl: string | null
 }
 
+export type LessonIntroduction = {
+  goal: string
+  dialogue: Array<{ speaker: string; line: LessonPrompt }>
+  expressions: LessonPrompt[]
+  usageNote: string
+  dialectNote: string
+  recordingNote: string
+  sourceLocators: string[]
+}
+
 export type LessonAnswer = {
+  rationale?: string
   id: string
   arabic: string
   arabizi: string
@@ -72,6 +83,8 @@ export type LessonStep = {
 }
 
 export type LessonResponse = {
+  englishHelpInitiallyHidden?: boolean
+  introduction?: LessonIntroduction | null
   id: string
   trackId: string
   title: string
@@ -82,7 +95,7 @@ export type LessonResponse = {
   unitId: string
   unitTitle: string
   courseOrder: number
-  reviewStatus: 'demonstrative' | 'reviewed'
+  reviewStatus: 'demonstrative' | 'reviewed' | 'owner-review'
 }
 
 export type LessonAttemptResponse = {

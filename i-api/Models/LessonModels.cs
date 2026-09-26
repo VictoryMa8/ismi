@@ -11,7 +11,20 @@ public sealed record LessonResponse(
     string UnitId,
     string UnitTitle,
     int CourseOrder,
-    string ReviewStatus);
+    string ReviewStatus,
+    LessonIntroduction? Introduction = null,
+    bool EnglishHelpInitiallyHidden = false);
+
+public sealed record LessonIntroduction(
+    string Goal,
+    IReadOnlyList<DialogueTurn> Dialogue,
+    IReadOnlyList<LessonPrompt> Expressions,
+    string UsageNote,
+    string DialectNote,
+    string RecordingNote,
+    IReadOnlyList<string> SourceLocators);
+
+public sealed record DialogueTurn(string Speaker, LessonPrompt Line);
 
 public sealed record LessonStep(
     string Id,
@@ -30,7 +43,8 @@ public sealed record LessonAnswer(
     string Id,
     string Arabic,
     string Arabizi,
-    string Meaning);
+    string Meaning,
+    string? Rationale = null);
 
 public sealed record LessonEvaluation(
     string CorrectAnswerId,

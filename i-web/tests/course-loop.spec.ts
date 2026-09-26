@@ -20,7 +20,7 @@ async function waitForOfflinePackage(page: Page) {
 
 test('download, offline completion, and exactly-once reconnection advance the course', async ({ page, context }) => {
   await page.goto('/')
-  await expect(page.getByRole('list', { name: 'Week one Levantine course path' }).getByRole('listitem')).toHaveCount(6)
+  await expect(page.getByRole('list', { name: 'Levantine course path' }).getByRole('listitem')).toHaveCount(6)
   await expect(page.getByText('0 of 6 lessons complete')).toBeVisible()
   await waitForOfflinePackage(page)
 

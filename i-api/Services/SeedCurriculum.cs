@@ -104,7 +104,8 @@ public sealed class SeedCurriculum
     {
         var ordered = publishedLessons
             .Where(lesson => string.Equals(lesson.Response.TrackId, "levantine", StringComparison.OrdinalIgnoreCase))
-            .OrderBy(lesson => lesson.Response.CourseOrder)
+            .OrderBy(lesson => lesson.Response.UnitId, StringComparer.OrdinalIgnoreCase)
+            .ThenBy(lesson => lesson.Response.CourseOrder)
             .ThenBy(lesson => lesson.Response.Id, StringComparer.OrdinalIgnoreCase)
             .ToList();
 

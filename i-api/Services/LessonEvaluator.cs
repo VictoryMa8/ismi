@@ -25,7 +25,8 @@ public sealed class LessonEvaluator
                 false,
                 evaluation.CorrectAnswerId,
                 evaluation.IncorrectTitle,
-                evaluation.IncorrectExplanation,
+                step.Answers.FirstOrDefault(answer => string.Equals(answer.Id, answerId.Trim(), StringComparison.OrdinalIgnoreCase))?.Rationale
+                    ?? evaluation.IncorrectExplanation,
                 evaluation.RetryHint);
     }
 }

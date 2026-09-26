@@ -1,0 +1,475 @@
+{
+  "lesson": {
+    "id": "levantine-everyday-01-03",
+    "trackId": "levantine",
+    "title": "Want tea or coffee?",
+    "scenario": "Omar offers Lina a drink while they settle in. Preferences can be personal; choose the response requested by this particular scene.",
+    "steps": [
+      {
+        "id": "e03-01",
+        "instruction": "Offer a choice of drinks to Lina.",
+        "prompt": {
+          "arabic": "شاي ولا قهوة؟",
+          "arabizi": "Shāy walla ʾahwe?",
+          "meaning": "Tea or coffee?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بدك شاي ولا قهوة؟",
+            "arabizi": "Biddak shāy walla ʾahwe?",
+            "meaning": "Do you want tea or coffee? (to Omar)",
+            "rationale": "Biddak addresses Omar, but Lina is the listener here."
+          },
+          {
+            "id": "b",
+            "arabic": "بدك شاي ولا قهوة؟",
+            "arabizi": "Biddik shāy walla ʾahwe?",
+            "meaning": "Do you want tea or coffee? (to Lina)",
+            "rationale": "Biddik addresses Lina, and walla presents the two drinks as alternatives."
+          },
+          {
+            "id": "c",
+            "arabic": "بدك شاي وقهوة؟",
+            "arabizi": "Biddik shāy w-ʾahwe?",
+            "meaning": "Do you want tea and coffee? (to Lina)",
+            "rationale": "W means “and”; this offers both together instead of a choice."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Biddik addresses Lina, and walla presents the two drinks as alternatives.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Choose the feminine address and the word for “or.”"
+        }
+      },
+      {
+        "id": "e03-02",
+        "instruction": "Lina wants tea. Reply politely to Omar’s offer.",
+        "prompt": {
+          "arabic": "بدك شاي ولا قهوة؟",
+          "arabizi": "Biddik shāy walla ʾahwe?",
+          "meaning": "Do you want tea or coffee? (to Lina)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "قهوة، لو سمحتي.",
+            "arabizi": "ʾAhwe, law samaḥti.",
+            "meaning": "Coffee, please. (to Lina)",
+            "rationale": "This selects coffee and addresses Lina, so both the preference and listener differ."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "This politely declines both drinks rather than accepting tea."
+          },
+          {
+            "id": "c",
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Omar)",
+            "rationale": "This selects tea and uses law samaḥt for the male listener Omar."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This selects tea and uses law samaḥt for the male listener Omar.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Choose tea and a request addressed to Omar."
+        }
+      },
+      {
+        "id": "e03-03",
+        "instruction": "Lina does not want sugar. Respond to Omar.",
+        "prompt": {
+          "arabic": "بدك سكر؟",
+          "arabizi": "Biddik sukkar?",
+          "meaning": "Do you want sugar? (to Lina)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، بدون سكر، شكراً.",
+            "arabizi": "Laʾ, bidūn sukkar, shukran.",
+            "meaning": "No, without sugar, thank you.",
+            "rationale": "This explicitly declines sugar while retaining the drink request."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، مع سكر.",
+            "arabizi": "Āh, maʿ sukkar.",
+            "meaning": "Yes, with sugar.",
+            "rationale": "This asks for sugar, the opposite of Lina’s preference."
+          },
+          {
+            "id": "c",
+            "arabic": "بحب الشاي أكتر.",
+            "arabizi": "Baḥibb ish-shāy aktar.",
+            "meaning": "I like tea more.",
+            "rationale": "This expresses a drink preference but leaves the sugar question unanswered."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This explicitly declines sugar while retaining the drink request.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Look for bidūn, “without.”"
+        }
+      },
+      {
+        "id": "e03-04",
+        "instruction": "Explain that you like tea more than coffee.",
+        "prompt": {
+          "arabic": "ليش شاي؟",
+          "arabizi": "Lēsh shāy?",
+          "meaning": "Why tea?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بحب القهوة أكتر.",
+            "arabizi": "Baḥibb il-ʾahwe aktar.",
+            "meaning": "I like coffee more.",
+            "rationale": "This names coffee as the preferred drink."
+          },
+          {
+            "id": "b",
+            "arabic": "بدي شاي.",
+            "arabizi": "Biddi shāy.",
+            "meaning": "I want tea.",
+            "rationale": "This repeats the request without expressing the comparison asked for."
+          },
+          {
+            "id": "c",
+            "arabic": "بحب الشاي أكتر.",
+            "arabizi": "Baḥibb ish-shāy aktar.",
+            "meaning": "I like tea more.",
+            "rationale": "Baḥibb ish-shāy aktar gives a reason: tea is your preference."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Baḥibb ish-shāy aktar gives a reason: tea is your preference.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The preferred drink comes after baḥibb."
+        }
+      },
+      {
+        "id": "e03-05",
+        "instruction": "Omar offers Lina coffee later. She wants no drink now. Decline politely.",
+        "prompt": {
+          "arabic": "بدك قهوة هلّق؟",
+          "arabizi": "Biddik ʾahwe hallaʾ?",
+          "meaning": "Do you want coffee now? (to Lina)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، لو سمحت.",
+            "arabizi": "Āh, law samaḥt.",
+            "meaning": "Yes, please. (to Omar)",
+            "rationale": "This accepts the coffee."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "A short no plus thanks fits the requested refusal."
+          },
+          {
+            "id": "c",
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Omar)",
+            "rationale": "This asks for a different drink; Lina wants no drink in this situation."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "A short no plus thanks fits the requested refusal.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "You can decline without giving another order."
+        }
+      },
+      {
+        "id": "e03-06",
+        "instruction": "You are Lina. Say what you yourself want, rather than asking Omar.",
+        "prompt": {
+          "arabic": "بدك شاي ولا قهوة؟",
+          "arabizi": "Biddik shāy walla ʾahwe?",
+          "meaning": "Do you want tea or coffee? (to Lina)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بدي شاي.",
+            "arabizi": "Biddi shāy.",
+            "meaning": "I want tea.",
+            "rationale": "Biddi is the first-person form; the sentence states Lina’s own request."
+          },
+          {
+            "id": "b",
+            "arabic": "بدك شاي؟",
+            "arabizi": "Biddak shāy?",
+            "meaning": "Do you want tea? (to Omar)",
+            "rationale": "This asks the listener instead of answering about yourself."
+          },
+          {
+            "id": "c",
+            "arabic": "بدها شاي.",
+            "arabizi": "Biddha shāy.",
+            "meaning": "She wants tea.",
+            "rationale": "This reports another woman’s wish, not your own."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Biddi is the first-person form; the sentence states Lina’s own request.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Use the ending for “I.”"
+        }
+      },
+      {
+        "id": "e03-07",
+        "instruction": "Closing exchange, part 1: Lina now hosts Omar. He chooses coffee. Respond as Omar to Lina.",
+        "prompt": {
+          "arabic": "بدك شاي ولا قهوة؟",
+          "arabizi": "Biddak shāy walla ʾahwe?",
+          "meaning": "Do you want tea or coffee? (to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Omar)",
+            "rationale": "This chooses tea and directs “please” to a man."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "This declines the offer instead of accepting coffee."
+          },
+          {
+            "id": "c",
+            "arabic": "قهوة، لو سمحتي.",
+            "arabizi": "ʾAhwe, law samaḥti.",
+            "meaning": "Coffee, please. (to Lina)",
+            "rationale": "Coffee matches Omar’s choice, and law samaḥti addresses Lina."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Coffee matches Omar’s choice, and law samaḥti addresses Lina.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The person receiving “please” is Lina."
+        }
+      },
+      {
+        "id": "e03-08",
+        "instruction": "Closing exchange, part 2: Omar wants his coffee without sugar. Answer Lina.",
+        "prompt": {
+          "arabic": "بدك سكر؟",
+          "arabizi": "Biddak sukkar?",
+          "meaning": "Do you want sugar? (to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، مع سكر.",
+            "arabizi": "Āh, maʿ sukkar.",
+            "meaning": "Yes, with sugar.",
+            "rationale": "This changes the order to coffee with sugar."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، بدون سكر، شكراً.",
+            "arabizi": "Laʾ, bidūn sukkar, shukran.",
+            "meaning": "No, without sugar, thank you.",
+            "rationale": "This completes the order by stating without sugar and thanking Lina."
+          },
+          {
+            "id": "c",
+            "arabic": "بحب القهوة أكتر.",
+            "arabizi": "Baḥibb il-ʾahwe aktar.",
+            "meaning": "I like coffee more.",
+            "rationale": "This says he prefers coffee, but does not settle the sugar choice."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This completes the order by stating without sugar and thanking Lina.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Answer the specific follow-up, not the earlier drink choice."
+        }
+      }
+    ],
+    "estimatedMinutes": 6,
+    "version": "authoring-draft-1",
+    "unitId": "levantine-everyday-01",
+    "unitTitle": "Everyday conversations with someone you love",
+    "courseOrder": 3,
+    "reviewStatus": "owner-review",
+    "introduction": {
+      "goal": "Offer a drink, express a preference, and politely accept or decline.",
+      "dialogue": [
+        {
+          "speaker": "Omar → Lina",
+          "line": {
+            "arabic": "بدك شاي ولا قهوة؟",
+            "arabizi": "Biddik shāy walla ʾahwe?",
+            "meaning": "Do you want tea or coffee? (to Lina)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina → Omar",
+          "line": {
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Omar)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar → Lina",
+          "line": {
+            "arabic": "بدك سكر؟",
+            "arabizi": "Biddik sukkar?",
+            "meaning": "Do you want sugar?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina",
+          "line": {
+            "arabic": "لا، بدون سكر، شكراً.",
+            "arabizi": "Laʾ, bidūn sukkar, shukran.",
+            "meaning": "No, without sugar, thank you.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "أنا بدي قهوة.",
+            "arabizi": "Ana biddi ʾahwe.",
+            "meaning": "I want coffee.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina",
+          "line": {
+            "arabic": "بحب الشاي أكتر.",
+            "arabizi": "Baḥibb ish-shāy aktar.",
+            "meaning": "I like tea more.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "بدك شاي ولا قهوة؟",
+          "arabizi": "Biddik shāy walla ʾahwe?",
+          "meaning": "Do you want tea or coffee? (to Lina)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "شاي، لو سمحت.",
+          "arabizi": "Shāy, law samaḥt.",
+          "meaning": "Tea, please. (to Omar)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "لا، بدون سكر، شكراً.",
+          "arabizi": "Laʾ, bidūn sukkar, shukran.",
+          "meaning": "No, without sugar, thank you.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "بحب الشاي أكتر.",
+          "arabizi": "Baḥibb ish-shāy aktar.",
+          "meaning": "I like tea more.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Biddi means “I want”; biddak addresses a man and biddik a woman. The ending follows the person who wants something, not the drink. In a choice question, walla means “or.” Baḥibb says what you like; adding aktar makes the comparison “more.” Law samaḥt is “please” when speaking to Omar; law samaḥti is the form addressed to Lina. Shukran is “thank you.” A short laʾ, shukran can politely decline; politeness also depends on tone and relationship. Practise both roles, then give your own preference aloud or silently. You may always use the transcript instead of audio.",
+      "dialectNote": "Urban Palestinian teaching target. This unit uses urban ʾahwe for قهوة. The approved publisher vocabulary reference gives a Gaza pronunciation with g; Maknuune encodes variation with Q. Neither spelling requires every Palestinian speaker to use the same sound. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Food and Drink in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi original dialogue and contextual answer design",
+      "locator": "internal:ismi/everyday-01/03/draft-1",
+      "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+      "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+    }
+  ]
+}

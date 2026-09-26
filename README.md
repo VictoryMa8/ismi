@@ -18,6 +18,8 @@ The current product slice includes:
 
 Product constraints and research live in `AGENTS.md` and `docs/research/`.
 
+The next implementation stage, its acceptance criteria, and owner decisions are documented in [the next-agent handoff](docs/next-stage-handoff.md).
+
 ## Project structure
 
 ```text

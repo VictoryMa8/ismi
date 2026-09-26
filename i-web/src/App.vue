@@ -49,6 +49,11 @@ import type {
 } from './types'
 
 const lessonOpen = ref(false)
+const previewMode = ref(false)
+const practiceMode = ref(false)
+const introductionOpen = ref(false)
+const showEnglishHelp = ref(true)
+let lessonOpener: HTMLElement | null = null
 const selectedAnswer = ref<string | null>(null)
 const attemptFeedback = ref<LessonAttemptResponse | null>(null)
 const apiLive = ref(false)
@@ -79,6 +84,9 @@ const speechSupported = ref(false)
 const speechVoices = ref<SpeechSynthesisVoice[]>([])
 const speakingPromptId = ref<string | null>(null)
 const lessonCloseButton = ref<HTMLButtonElement | null>(null)
+const practiceHeading = ref<HTMLElement | null>(null)
+const feedbackPanel = ref<HTMLElement | null>(null)
+const completionHeading = ref<HTMLElement | null>(null)
 
 let activeAudio: HTMLAudioElement | null = null
 let playbackToken = 0
@@ -150,6 +158,14 @@ const progressNote = computed(() => {
   if (remainingMinutes.value === 0) return 'Daily goal complete'
   if (remainingMinutes.value === 1) return '1 minute to go'
   return `${remainingMinutes.value} minutes to go`
+})
+const courseUnits = computed(() => {
+  const units = new Map<string, { id: string; title: string; lessons: DashboardResponse['dailyPlan']['lessons'] }>()
+  for (const item of dashboard.value.dailyPlan.lessons) {
+    if (!units.has(item.unitId)) units.set(item.unitId, { id: item.unitId, title: item.unitTitle, lessons: [] })
+    units.get(item.unitId)!.lessons.push(item)
+  }
+  return [...units.values()]
 })
 const completedCourseLessons = computed(() =>
   dashboard.value.dailyPlan.lessons.filter(item => item.isCompleted).length,
@@ -473,7 +489,29 @@ async function syncPendingCompletions() {
   }
 }
 
-async function startLesson() {
+async function previewLesson(draft: LessonResponse, opener: HTMLElement) {
+  lessonOpener = opener
+  stopPromptAudio()
+  previewMode.value = true
+  showEnglishHelp.value = !draft.englishHelpInitiallyHidden
+  lesson.value = draft
+  lessonOpen.value = true
+  introductionOpen.value = Boolean(draft.introduction)
+  selectedAnswer.value = null
+  attemptFeedback.value = null
+  lessonFinished.value = false
+  completionWasQueued.value = false
+  currentStepIndex.value = 0
+  lessonError.value = null
+  lessonLoading.value = false
+  await nextTick()
+  lessonCloseButton.value?.focus()
+}
+
+async function startLesson(requestedId?: string) {
+  lessonOpener = document.activeElement as HTMLElement | null
+  previewMode.value = false
+  practiceMode.value = Boolean(dashboard.value.dailyPlan.lessons.find(item => item.id === (requestedId ?? dashboard.value.dailyPlan.nextLessonId))?.isCompleted)
   stopPromptAudio()
   lessonOpen.value = true
   selectedAnswer.value = null
@@ -484,7 +522,7 @@ async function startLesson() {
   lessonError.value = null
   lessonLoading.value = true
 
-  const lessonId = dashboard.value.dailyPlan.nextLessonId
+  const lessonId = requestedId ?? dashboard.value.dailyPlan.nextLessonId
   try {
     lesson.value = await getLesson(lessonId)
     apiLive.value = true
@@ -505,6 +543,8 @@ async function startLesson() {
     }
   } finally {
     lessonLoading.value = false
+    introductionOpen.value = Boolean(lesson.value?.introduction)
+    showEnglishHelp.value = !lesson.value?.englishHelpInitiallyHidden
     await nextTick()
     lessonCloseButton.value?.focus()
   }
@@ -513,14 +553,44 @@ async function startLesson() {
 function closeLesson() {
   stopPromptAudio()
   lessonOpen.value = false
+  nextTick(() => lessonOpener?.focus())
+}
+
+function trapLessonFocus(event: KeyboardEvent) {
+  if (event.key !== 'Tab') return
+  const sheet = event.currentTarget as HTMLElement
+  const controls = [...sheet.querySelectorAll<HTMLElement>('button:not(:disabled), summary, a[href], [tabindex="0"]')]
+    .filter(element => element.getClientRects().length > 0)
+  const first = controls[0]
+  const last = controls.at(-1)
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault()
+    last?.focus()
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault()
+    first?.focus()
+  }
 }
 
 function chooseAnswer(id: string) {
   if (!attemptFeedback.value) selectedAnswer.value = id
 }
 
+async function beginPractice() {
+  introductionOpen.value = false
+  await nextTick()
+  practiceHeading.value?.focus()
+}
+
 async function checkAnswer() {
   if (!selectedAnswer.value || !lesson.value || !currentStep.value) return
+
+  if (previewMode.value) {
+    attemptFeedback.value = evaluateOffline(currentStep.value, selectedAnswer.value)
+    await nextTick()
+    feedbackPanel.value?.focus()
+    return
+  }
 
   try {
     attemptFeedback.value = await submitLessonAttempt(
@@ -533,11 +603,15 @@ async function checkAnswer() {
     apiLive.value = false
     attemptFeedback.value = evaluateOffline(currentStep.value, selectedAnswer.value)
   }
+  await nextTick()
+  feedbackPanel.value?.focus()
 }
 
-function retryAnswer() {
+async function retryAnswer() {
   selectedAnswer.value = null
   attemptFeedback.value = null
+  await nextTick()
+  practiceHeading.value?.focus()
 }
 
 function evaluateOffline(step: LessonStep, answerId: string): LessonAttemptResponse {
@@ -551,7 +625,7 @@ function evaluateOffline(step: LessonStep, answerId: string): LessonAttemptRespo
       : step.evaluation.incorrectTitle,
     explanation: isAnswerCorrect
       ? step.evaluation.correctExplanation
-      : step.evaluation.incorrectExplanation,
+      : step.answers.find(answer => answer.id === answerId)?.rationale ?? step.evaluation.incorrectExplanation,
     retryHint: isAnswerCorrect ? null : step.evaluation.retryHint,
   }
 }
@@ -564,16 +638,25 @@ async function continueLesson() {
     currentStepIndex.value += 1
     selectedAnswer.value = null
     attemptFeedback.value = null
+    await nextTick()
+    practiceHeading.value?.focus()
     return
   }
 
   await finishLesson()
+  await nextTick()
+  completionHeading.value?.focus()
 }
 
 async function finishLesson() {
   if (!lesson.value || lessonFinished.value) return
 
   stopPromptAudio()
+
+  if (previewMode.value || practiceMode.value) {
+    lessonFinished.value = true
+    return
+  }
 
   const completion: PendingCompletion = {
     completionId: crypto.randomUUID?.() ?? `${lesson.value.id}-${Date.now()}`,
@@ -727,24 +810,27 @@ async function finishLesson() {
               <span>{{ primaryTrack?.name ?? 'Palestinian Levantine' }} · {{ primaryTrack?.label ?? 'Week 1' }}</span>
             </div>
             <h3>{{ primaryTrack?.currentLessonTitle ?? 'Tell them about your day' }}</h3>
-            <p>Respond naturally, add one detail, and preview each prompt aloud.</p>
-            <p class="review-status-note">Demonstrative content · not reviewed launch curriculum</p>
+            <p>Read a conversation and practice choosing a response that fits.</p>
+            <p class="review-status-note">{{ dashboard.dailyPlan.lessons.find(item => item.isCurrent)?.reviewStatus === 'demonstrative' ? 'Demonstrative content · not reviewed launch curriculum' : 'Owner-approved content · no native-expert review' }}</p>
 
             <div class="skill-list" aria-label="Skills practiced">
-              <span><Volume2 :size="15" aria-hidden="true" /> Listening</span>
-              <span><MessageCircle :size="15" aria-hidden="true" /> Speaking</span>
+              <span><Volume2 :size="15" aria-hidden="true" /> Text comprehension</span>
+              <span><MessageCircle :size="15" aria-hidden="true" /> Guided responses</span>
             </div>
 
-            <button class="primary-action" type="button" @click="startLesson">
+            <button class="primary-action" type="button" @click="startLesson()">
               Continue in {{ primaryTrack?.name?.includes('Levantine') ? 'Levantine' : (primaryTrack?.name ?? 'your track') }}
               <ChevronRight :size="20" aria-hidden="true" />
             </button>
           </div>
         </article>
 
-        <ol class="course-path" aria-label="Week one Levantine course path">
+        <div id="practice">
+        <section v-for="unit in courseUnits" :key="unit.id" :aria-label="unit.title">
+        <h3>{{ unit.title }}</h3>
+        <ol class="course-path" aria-label="Levantine course path">
           <li
-            v-for="item in dashboard.dailyPlan.lessons"
+            v-for="item in unit.lessons"
             :key="item.id"
             :class="{ completed: item.isCompleted, current: item.isCurrent }"
           >
@@ -756,8 +842,16 @@ async function finishLesson() {
               <strong>{{ item.title }}</strong>
               <span>{{ item.estimatedMinutes }} min · {{ item.isCompleted ? 'Complete' : item.isCurrent ? 'Up next' : 'Later' }}</span>
             </span>
+            <button class="text-button" type="button" :aria-label="`${item.isCompleted ? 'Review' : 'Open'} ${item.title}`" @click="startLesson(item.id)">{{ item.isCompleted ? 'Review' : 'Open' }}<span class="sr-only"> {{ item.title }}</span></button>
           </li>
         </ol>
+        <div v-if="unit.lessons.every(item => item.isCompleted)" class="unit-complete" role="status">
+          <h3>Unit complete</h3>
+          <p>Keep the conversation going. Revisit any lesson for practice.</p>
+          <button class="secondary-action" type="button" @click="startLesson(unit.lessons[0]?.id)">Review the unit</button>
+        </div>
+        </section>
+        </div>
       </section>
 
       <section class="section-block" aria-labelledby="tracks-heading">
@@ -766,7 +860,7 @@ async function finishLesson() {
             <span class="section-kicker">Your other tracks</span>
             <h2 id="tracks-heading">Keep every lens moving</h2>
           </div>
-          <button class="text-button" type="button">Adjust plan</button>
+          <span class="review-status-note">Additional tracks are not available yet</span>
         </div>
 
         <div class="track-grid">
@@ -886,8 +980,8 @@ async function finishLesson() {
     </section>
   </div>
 
-  <div v-if="lessonOpen" class="lesson-overlay" role="presentation" @click.self="closeLesson">
-    <section class="lesson-sheet" role="dialog" aria-modal="true" aria-labelledby="lesson-title" @keydown.esc="closeLesson">
+  <div v-if="lessonOpen" class="lesson-overlay" :class="{ 'preview-overlay': previewMode }" role="presentation" @click.self="closeLesson">
+    <section class="lesson-sheet" role="dialog" aria-modal="true" aria-labelledby="lesson-title" @keydown.esc="closeLesson" @keydown="trapLessonFocus">
       <header class="lesson-sheet-header">
         <div>
           <span v-if="lesson && currentStep && !lessonFinished" class="section-kicker">
@@ -902,27 +996,57 @@ async function finishLesson() {
       <div v-if="lessonLoading" class="lesson-state" role="status">
         <span class="lesson-state-mark" aria-hidden="true">ا</span>
         <strong>Opening your downloaded lesson…</strong>
-        <p>Checking for the newest reviewed copy.</p>
+        <p>Checking for the latest published version.</p>
       </div>
 
       <div v-else-if="lessonError" class="lesson-state lesson-error" role="alert">
         <WifiOff :size="28" aria-hidden="true" />
         <strong>Lesson unavailable offline</strong>
         <p>{{ lessonError }}</p>
-        <button class="secondary-action" type="button" @click="startLesson">Try again</button>
+        <button class="secondary-action" type="button" @click="startLesson()">Try again</button>
       </div>
 
       <div v-else-if="lessonFinished" class="lesson-state lesson-success" role="status">
         <span class="completion-mark"><Check :size="32" aria-hidden="true" /></span>
-        <strong>Conversation complete</strong>
-        <p>You practiced describing your day, adding a detail, and making a plan.</p>
+        <strong ref="completionHeading" tabindex="-1">{{ previewMode ? 'Preview complete' : 'Conversation complete' }}</strong>
+        <p>{{ lesson?.introduction?.goal ?? 'You practiced responding in a guided conversation.' }}</p>
+        <p v-if="previewMode">No learner progress was saved. Preview does not approve or publish content.</p>
         <p v-if="completionWasQueued" class="queued-note">
           Saved on this device. Ismi will sync it when you reconnect.
         </p>
-        <button class="primary-action" type="button" @click="closeLesson">Back to today</button>
+        <button class="primary-action" type="button" @click="closeLesson">{{ previewMode ? 'Back to curriculum' : 'Back to today' }}</button>
       </div>
 
       <template v-else-if="lesson && currentStep">
+        <button class="text-button" type="button" :aria-pressed="showEnglishHelp" @click="showEnglishHelp = !showEnglishHelp">{{ showEnglishHelp ? 'Hide' : 'Show' }} English help</button>
+        <p v-if="previewMode" class="preview-notice" role="status">Owner preview · {{ lesson.version }} · no progress saved</p>
+        <section v-if="lesson.introduction" class="lesson-introduction" aria-label="Conversation and teaching notes">
+          <h3>{{ lesson.introduction.goal }}</h3>
+          <p>{{ lesson.scenario }}</p>
+          <button class="text-button" type="button" :aria-expanded="introductionOpen" @click="introductionOpen = !introductionOpen">{{ introductionOpen ? 'Hide' : 'Show' }} dialogue and notes</button>
+          <div v-if="introductionOpen">
+            <ol class="dialogue-transcript" aria-label="Dialogue transcript">
+              <li v-for="(turn, index) in lesson.introduction.dialogue" :key="index">
+                <strong>{{ turn.speaker }}</strong>
+                <p lang="ar" dir="rtl">{{ turn.line.arabic }}</p>
+                <p>{{ turn.line.arabizi }}</p>
+                <p v-if="showEnglishHelp">{{ turn.line.meaning }}</p>
+              </li>
+            </ol>
+            <h4>Expressions from the conversation</h4>
+            <ul class="expression-list">
+              <li v-for="expression in lesson.introduction.expressions" :key="expression.arabic"><span lang="ar" dir="rtl">{{ expression.arabic }}</span> · {{ expression.arabizi }}<span v-if="showEnglishHelp"> · {{ expression.meaning }}</span></li>
+            </ul>
+            <h4>Notice the pattern</h4>
+            <p>{{ lesson.introduction.usageNote }}</p>
+            <p>{{ lesson.introduction.dialectNote }}</p>
+            <p class="audio-source-note">{{ lesson.introduction.recordingNote }}</p>
+            <p class="review-status-note">{{ lesson.reviewStatus === 'demonstrative' ? 'Demonstrative material' : previewMode ? 'Draft/version preview · no native-expert review' : 'Owner-approved for publication · no native-expert review' }}</p>
+            <details><summary>Language references</summary><ul><li v-for="source in lesson.introduction.sourceLocators" :key="source">{{ source }}</li></ul></details>
+            <button class="primary-action" type="button" @click="beginPractice">Start practice</button>
+          </div>
+        </section>
+        <div v-show="!introductionOpen">
         <div class="lesson-step-progress" aria-hidden="true">
           <span :style="{ width: `${((currentStepIndex + 1) / lesson.steps.length) * 100}%` }"></span>
         </div>
@@ -943,7 +1067,7 @@ async function finishLesson() {
           <div>
             <p class="arabic-prompt" lang="ar" dir="rtl">{{ currentStep.prompt.arabic }}</p>
             <p class="arabizi-prompt">{{ currentStep.prompt.arabizi }}</p>
-            <p class="prompt-meaning">{{ currentStep.prompt.meaning }}</p>
+            <p v-if="showEnglishHelp" class="prompt-meaning">{{ currentStep.prompt.meaning }}</p>
             <p v-if="!currentStep.prompt.audioUrl" class="audio-source-note">
               {{ deviceVoiceDescription }}
             </p>
@@ -951,7 +1075,7 @@ async function finishLesson() {
         </div>
 
         <fieldset class="answer-group" :disabled="Boolean(attemptFeedback)">
-          <legend>{{ currentStep.instruction }}</legend>
+          <legend ref="practiceHeading" tabindex="-1">{{ currentStep.instruction }}</legend>
           <button
             v-for="answer in currentStep.answers"
             :key="answer.id"
@@ -969,13 +1093,13 @@ async function finishLesson() {
             <span class="answer-copy">
               <span class="answer-arabic" lang="ar" dir="rtl">{{ answer.arabic }}</span>
               <span class="answer-arabizi">{{ answer.arabizi }}</span>
-              <span class="answer-meaning">{{ answer.meaning }}</span>
+              <span v-if="showEnglishHelp" class="answer-meaning">{{ answer.meaning }}</span>
             </span>
             <Check v-if="attemptFeedback && answer.id === attemptFeedback.correctAnswerId" :size="21" aria-label="Correct answer" />
           </button>
         </fieldset>
 
-        <div v-if="attemptFeedback" class="feedback-panel" :class="isCorrect ? 'positive' : 'try-again'" aria-live="polite">
+        <div v-if="attemptFeedback" ref="feedbackPanel" tabindex="-1" class="feedback-panel" :class="isCorrect ? 'positive' : 'try-again'" aria-live="polite">
           <strong>{{ attemptFeedback.feedbackTitle }}</strong>
           <p>{{ attemptFeedback.explanation }}</p>
           <p v-if="!isCorrect && attemptFeedback.retryHint"><em>{{ attemptFeedback.retryHint }}</em></p>
@@ -994,9 +1118,10 @@ async function finishLesson() {
             <ChevronRight :size="20" aria-hidden="true" />
           </button>
         </footer>
+        </div>
       </template>
     </section>
   </div>
 
-  <CurriculumConsole v-if="consoleOpen" @close="consoleOpen = false" />
+  <CurriculumConsole v-if="consoleOpen" :inert="lessonOpen" @close="consoleOpen = false" @preview="previewLesson" />
 </template>

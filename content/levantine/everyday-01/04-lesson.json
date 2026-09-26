@@ -1,0 +1,475 @@
+{
+  "lesson": {
+    "id": "levantine-everyday-01-04",
+    "trackId": "levantine",
+    "title": "Let's eat together",
+    "scenario": "Lina and Omar decide on a simple meal at home. Neither has to guess what the other person wants.",
+    "steps": [
+      {
+        "id": "e04-01",
+        "instruction": "Omar is hungry. Say that directly in Omar’s role.",
+        "prompt": {
+          "arabic": "شو بدك تاكل؟",
+          "arabizi": "Shū biddak tākol?",
+          "meaning": "What do you want to eat? (to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا جوعانة كمان.",
+            "arabizi": "Ana jūʿāne kamān.",
+            "meaning": "I’m hungry too. (Lina speaking)",
+            "rationale": "This is Lina’s feminine description and adds “too.”"
+          },
+          {
+            "id": "b",
+            "arabic": "أنا مش جوعان هلّق.",
+            "arabizi": "Ana mish jūʿān hallaʾ.",
+            "meaning": "I’m not hungry now. (Omar speaking)",
+            "rationale": "Mish reverses the meaning and says Omar is not hungry."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا جوعان.",
+            "arabizi": "Ana jūʿān.",
+            "meaning": "I’m hungry. (Omar speaking)",
+            "rationale": "Jūʿān is the masculine description Omar uses here."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Jūʿān is the masculine description Omar uses here.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The speaker is Omar, and the meaning is positive."
+        }
+      },
+      {
+        "id": "e04-02",
+        "instruction": "Lina is also hungry. Agree with Omar about your own feeling.",
+        "prompt": {
+          "arabic": "أنا جوعان.",
+          "arabizi": "Ana jūʿān.",
+          "meaning": "I’m hungry. (Omar speaking)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا جوعانة كمان.",
+            "arabizi": "Ana jūʿāne kamān.",
+            "meaning": "I’m hungry too. (Lina speaking)",
+            "rationale": "Jūʿāne describes Lina and kamān connects her feeling to Omar’s."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا جوعان.",
+            "arabizi": "Ana jūʿān.",
+            "meaning": "I’m hungry. (Omar speaking)",
+            "rationale": "This uses the masculine description, while Lina is the speaker."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا مش جوعانة.",
+            "arabizi": "Ana mish jūʿāne.",
+            "meaning": "I’m not hungry. (Lina speaking)",
+            "rationale": "This denies hunger rather than sharing it."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Jūʿāne describes Lina and kamān connects her feeling to Omar’s.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Use the feminine description plus “too.”"
+        }
+      },
+      {
+        "id": "e04-03",
+        "instruction": "Invite Omar to eat together by asking his opinion.",
+        "prompt": {
+          "arabic": "أنا جوعان.",
+          "arabizi": "Ana jūʿān.",
+          "meaning": "I’m hungry. (Omar speaking)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "شو رأيك تاكل لحالك؟",
+            "arabizi": "Shū raʾyak tākol laḥālak?",
+            "meaning": "What do you think about eating on your own? (to Omar)",
+            "rationale": "This suggests that Omar eat alone, changing the shared plan."
+          },
+          {
+            "id": "b",
+            "arabic": "شو رأيك ناكل سوا؟",
+            "arabizi": "Shū raʾyak nākol sawa?",
+            "meaning": "What do you think about eating together? (to Omar)",
+            "rationale": "This proposes a shared action and addresses Omar with raʾyak."
+          },
+          {
+            "id": "c",
+            "arabic": "شو عملت اليوم؟",
+            "arabizi": "Shū ʿmilt il-yōm?",
+            "meaning": "What did you do today? (to Omar)",
+            "rationale": "This asks about completed activities, not a meal suggestion."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This proposes a shared action and addresses Omar with raʾyak.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The invitation needs sawa, “together.”"
+        }
+      },
+      {
+        "id": "e04-04",
+        "instruction": "The agreed idea is rice AND salad. Suggest both foods.",
+        "prompt": {
+          "arabic": "شو نعمل للأكل؟",
+          "arabizi": "Shū niʿmal lal-akel?",
+          "meaning": "What shall we make to eat?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "نعمل رز وسلطة؟",
+            "arabizi": "Niʿmal ruzz w-salaṭa?",
+            "meaning": "Shall we make rice and salad?",
+            "rationale": "W joins the two dishes as one meal."
+          },
+          {
+            "id": "b",
+            "arabic": "نعمل رز ولا سلطة؟",
+            "arabizi": "Niʿmal ruzz walla salaṭa?",
+            "meaning": "Shall we make rice or salad?",
+            "rationale": "Walla asks the listener to choose one option; the requested plan includes both."
+          },
+          {
+            "id": "c",
+            "arabic": "نعمل شاي؟",
+            "arabizi": "Niʿmal shāy?",
+            "meaning": "Shall we make tea?",
+            "rationale": "Tea is a drink and does not name the two agreed dishes."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "W joins the two dishes as one meal.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Join the foods with “and,” not “or.”"
+        }
+      },
+      {
+        "id": "e04-05",
+        "instruction": "Accept the specific suggestion to make rice and salad.",
+        "prompt": {
+          "arabic": "نعمل رز وسلطة؟",
+          "arabizi": "Niʿmal ruzz w-salaṭa?",
+          "meaning": "Shall we make rice and salad?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، بدي رز بس.",
+            "arabizi": "Laʾ, biddi ruzz bass.",
+            "meaning": "No, I want only rice.",
+            "rationale": "This removes the salad and changes the plan."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا مش جوعان هلّق.",
+            "arabizi": "Ana mish jūʿān hallaʾ.",
+            "meaning": "I’m not hungry now. (Omar speaking)",
+            "rationale": "This expresses lack of hunger without accepting the meal."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، خلّينا نعمل رز وسلطة.",
+            "arabizi": "Āh, khallīna niʿmal ruzz w-salaṭa.",
+            "meaning": "Yes, let’s make rice and salad.",
+            "rationale": "This accepts and repeats the proposed meal clearly."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This accepts and repeats the proposed meal clearly.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Agree and keep both dishes in the plan."
+        }
+      },
+      {
+        "id": "e04-06",
+        "instruction": "On another evening Omar is not hungry now. Choose that meaning.",
+        "prompt": {
+          "arabic": "جوعان هلّق؟",
+          "arabizi": "Jūʿān hallaʾ?",
+          "meaning": "Hungry now? (to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا جوعان.",
+            "arabizi": "Ana jūʿān.",
+            "meaning": "I’m hungry. (Omar speaking)",
+            "rationale": "This says he is hungry, reversing the meaning."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا مش جوعان هلّق.",
+            "arabizi": "Ana mish jūʿān hallaʾ.",
+            "meaning": "I’m not hungry now. (Omar speaking)",
+            "rationale": "Mish negates the description jūʿān; hallaʾ limits it to now."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا تعبان شوي.",
+            "arabizi": "Ana taʿbān shwayy.",
+            "meaning": "I’m a little tired. (Omar speaking)",
+            "rationale": "Tiredness is a different feeling; it does not answer whether he is hungry."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Mish negates the description jūʿān; hallaʾ limits it to now.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Use the negative description, not a different feeling."
+        }
+      },
+      {
+        "id": "e04-07",
+        "instruction": "Closing exchange, part 1: take Lina’s role and suggest rice and salad for a new shared meal.",
+        "prompt": {
+          "arabic": "شو رأيك ناكل سوا؟",
+          "arabizi": "Shū raʾyak nākol sawa?",
+          "meaning": "What do you think about eating together? (to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "نعمل رز وسلطة؟",
+            "arabizi": "Niʿmal ruzz w-salaṭa?",
+            "meaning": "Shall we make rice and salad?",
+            "rationale": "This turns the invitation into a concrete two-dish suggestion."
+          },
+          {
+            "id": "b",
+            "arabic": "بدك شاي ولا قهوة؟",
+            "arabizi": "Biddak shāy walla ʾahwe?",
+            "meaning": "Do you want tea or coffee? (to Omar)",
+            "rationale": "This offers drinks without deciding the meal."
+          },
+          {
+            "id": "c",
+            "arabic": "اشتغلت وبعدين ارتحت.",
+            "arabizi": "Ishtaghalt w-baʿdēn irtaḥt.",
+            "meaning": "I worked and then rested.",
+            "rationale": "This recounts past activities instead of suggesting food."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This turns the invitation into a concrete two-dish suggestion.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Move from eating together to what you will make."
+        }
+      },
+      {
+        "id": "e04-08",
+        "instruction": "Closing exchange, part 2: the meal is agreed. Accept tea without sugar.",
+        "prompt": {
+          "arabic": "بدك شاي مع الأكل؟",
+          "arabizi": "Biddik shāy maʿ il-akel?",
+          "meaning": "Do you want tea with the food? (to Lina)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "This refuses the tea rather than accepting it."
+          },
+          {
+            "id": "b",
+            "arabic": "بحب القهوة أكتر.",
+            "arabizi": "Baḥibb il-ʾahwe aktar.",
+            "meaning": "I like coffee more.",
+            "rationale": "This expresses a different preference without accepting the offered tea."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بدون سكر، شكراً.",
+            "arabizi": "Āh, bidūn sukkar, shukran.",
+            "meaning": "Yes, without sugar, thank you.",
+            "rationale": "This reuses the drink language to finish the meal arrangement."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This reuses the drink language to finish the meal arrangement.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Accept the offer and specify without sugar."
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "authoring-draft-1",
+    "unitId": "levantine-everyday-01",
+    "unitTitle": "Everyday conversations with someone you love",
+    "courseOrder": 4,
+    "reviewStatus": "owner-review",
+    "introduction": {
+      "goal": "Say you are hungry, suggest eating together, and agree on a meal.",
+      "dialogue": [
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "أنا جوعان.",
+            "arabizi": "Ana jūʿān.",
+            "meaning": "I’m hungry. (Omar speaking)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina → Omar",
+          "line": {
+            "arabic": "أنا جوعانة كمان. شو رأيك ناكل سوا؟",
+            "arabizi": "Ana jūʿāne kamān. Shū raʾyak nākol sawa?",
+            "meaning": "I’m hungry too. What do you think about eating together?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "نعمل رز وسلطة؟",
+            "arabizi": "Niʿmal ruzz w-salaṭa?",
+            "meaning": "Shall we make rice and salad?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina",
+          "line": {
+            "arabic": "آه، خلّينا نعمل رز وسلطة.",
+            "arabizi": "Āh, khallīna niʿmal ruzz w-salaṭa.",
+            "meaning": "Yes, let’s make rice and salad.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "بدك شاي مع الأكل؟",
+            "arabizi": "Biddik shāy maʿ il-akel?",
+            "meaning": "Do you want tea with the food?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina",
+          "line": {
+            "arabic": "آه، بدون سكر.",
+            "arabizi": "Āh, bidūn sukkar.",
+            "meaning": "Yes, without sugar.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "أنا جوعان.",
+          "arabizi": "Ana jūʿān.",
+          "meaning": "I’m hungry. (Omar speaking)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أنا جوعانة كمان.",
+          "arabizi": "Ana jūʿāne kamān.",
+          "meaning": "I’m hungry too. (Lina speaking)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "شو رأيك ناكل سوا؟",
+          "arabizi": "Shū raʾyak nākol sawa?",
+          "meaning": "What do you think about eating together? (to Omar)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "نعمل رز وسلطة؟",
+          "arabizi": "Niʿmal ruzz w-salaṭa?",
+          "meaning": "Shall we make rice and salad?",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Jūʿān describes Omar; jūʿāne describes Lina. Kamān adds “too.” To negate this description, put mish before it: ana mish jūʿān. This is a pattern for a description; do not treat it as a universal recipe for negating every Arabic verb. Shū raʾyak…? asks Omar’s opinion; shū raʾyik…? addresses Lina. Learn khallīna niʿmal… as a useful “let’s make…” chunk. Sawa means together, while w links the two foods. Read each role, then choose a meal you could suggest using these expressions. No recording or timed response is required.",
+      "dialectNote": "Urban Palestinian teaching target. Jūʿān is the selected form; jaʿān is also documented in Palestinian references, but is not a distractor treated as wrong. Feminine descriptions use jūʿāne here. Raʾyak and raʾyik mark the addressee. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 4909/4910 (hungry variants), 30759 (not), 15296 (together), 11472 (rice), 14642 (salad), 3185 (agreement). Food/drink entries hungry, rice, salad. Lingualism verbs entry “to do, make”; publisher sample p.109 plural pronouns and T104 wanting. Suggestion chunks are original compositions and need owner review for naturalness; no claim that every negative construction follows mish."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 4909/4910 (hungry variants), 30759 (not), 15296 (together), 11472 (rice), 14642 (salad), 3185 (agreement). Food/drink entries hungry, rice, salad. Lingualism verbs entry “to do, make”; publisher sample p.109 plural pronouns and T104 wanting. Suggestion chunks are original compositions and need owner review for naturalness; no claim that every negative construction follows mish."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 4909/4910 (hungry variants), 30759 (not), 15296 (together), 11472 (rice), 14642 (salad), 3185 (agreement). Food/drink entries hungry, rice, salad. Lingualism verbs entry “to do, make”; publisher sample p.109 plural pronouns and T104 wanting. Suggestion chunks are original compositions and need owner review for naturalness; no claim that every negative construction follows mish."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Food and Drink in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Maknuune IDs 4909/4910 (hungry variants), 30759 (not), 15296 (together), 11472 (rice), 14642 (salad), 3185 (agreement). Food/drink entries hungry, rice, salad. Lingualism verbs entry “to do, make”; publisher sample p.109 plural pronouns and T104 wanting. Suggestion chunks are original compositions and need owner review for naturalness; no claim that every negative construction follows mish."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi original dialogue and contextual answer design",
+      "locator": "internal:ismi/everyday-01/04/draft-1",
+      "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+      "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+    }
+  ]
+}

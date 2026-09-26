@@ -1,0 +1,475 @@
+{
+  "lesson": {
+    "id": "levantine-everyday-01-02",
+    "trackId": "levantine",
+    "title": "What did you do today?",
+    "scenario": "The next evening, Omar and Lina compare what they did. Keep track of who acted and what happened first.",
+    "steps": [
+      {
+        "id": "e02-01",
+        "instruction": "Recall Lina’s two activities in the order she mentioned them.",
+        "prompt": {
+          "arabic": "شو عملتي اليوم؟",
+          "arabizi": "Shū ʿmilti il-yōm?",
+          "meaning": "What did you do today? (to Lina)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "زرت أمي وبعدين اشتغلت.",
+            "arabizi": "Zurt immi w-baʿdēn ishtaghalt.",
+            "meaning": "I visited my mother and then worked.",
+            "rationale": "Both activities belong in her story, but this reverses their order."
+          },
+          {
+            "id": "b",
+            "arabic": "رحت عالبيت وبعدين ارتحت.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-baʿdēn irtaḥt.",
+            "meaning": "I went home and then rested.",
+            "rationale": "This is Omar’s story; Lina described work and a visit."
+          },
+          {
+            "id": "c",
+            "arabic": "اشتغلت، وبعدين زرت أمي.",
+            "arabizi": "Ishtaghalt, w-baʿdēn zurt immi.",
+            "meaning": "I worked, then visited my mother.",
+            "rationale": "Lina worked first and visited her mother afterwards; baʿdēn preserves that order."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Lina worked first and visited her mother afterwards; baʿdēn preserves that order.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Identify Lina’s first action before choosing."
+        }
+      },
+      {
+        "id": "e02-02",
+        "instruction": "Lina has said she visited her mother. Ask how her mother is.",
+        "prompt": {
+          "arabic": "اشتغلت، وبعدين زرت أمي.",
+          "arabizi": "Ishtaghalt, w-baʿdēn zurt immi.",
+          "meaning": "I worked, then visited my mother.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وكيفها؟",
+            "arabizi": "W-kīfha?",
+            "meaning": "And how is she?",
+            "rationale": "The -ha refers to her mother and makes the follow-up relevant."
+          },
+          {
+            "id": "b",
+            "arabic": "وكيفك؟",
+            "arabizi": "W-kīfik?",
+            "meaning": "And how are you? (to Lina)",
+            "rationale": "This asks about Lina herself, rather than the mother she just mentioned."
+          },
+          {
+            "id": "c",
+            "arabic": "كيف كان يومك؟",
+            "arabizi": "Kīf kān yōmak?",
+            "meaning": "How was your day? (to Omar)",
+            "rationale": "This asks about Omar’s day instead of following up on Lina’s mother."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "The -ha refers to her mother and makes the follow-up relevant.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The follow-up is about “her,” not “you.”"
+        }
+      },
+      {
+        "id": "e02-03",
+        "instruction": "Answer about Lina’s mother: she is well.",
+        "prompt": {
+          "arabic": "وكيفها؟",
+          "arabizi": "W-kīfha?",
+          "meaning": "And how is she?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "منيح.",
+            "arabizi": "Mnīḥ.",
+            "meaning": "He is well.",
+            "rationale": "The masculine form does not match the mother in this scene."
+          },
+          {
+            "id": "b",
+            "arabic": "منيحة.",
+            "arabizi": "Mnīḥa.",
+            "meaning": "She’s well.",
+            "rationale": "The feminine form fits the mother being discussed."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا منيحة.",
+            "arabizi": "Ana mnīḥa.",
+            "meaning": "I’m well. (Lina speaking)",
+            "rationale": "Adding ana makes this about Lina, not her mother."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "The feminine form fits the mother being discussed.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Keep the answer about the mother."
+        }
+      },
+      {
+        "id": "e02-04",
+        "instruction": "Ask Lina, rather than Omar, what she did today.",
+        "prompt": {
+          "arabic": "اليوم",
+          "arabizi": "Il-yōm",
+          "meaning": "Today",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "شو عملتي اليوم؟",
+            "arabizi": "Shū ʿmilti il-yōm?",
+            "meaning": "What did you do today? (to Lina)",
+            "rationale": "The final -i in ʿmilti marks the question to Lina."
+          },
+          {
+            "id": "b",
+            "arabic": "شو عملت اليوم؟",
+            "arabizi": "Shū ʿmilt il-yōm?",
+            "meaning": "What did you do today? (to Omar)",
+            "rationale": "This question uses masculine singular address in this scene."
+          },
+          {
+            "id": "c",
+            "arabic": "كيف كان يومك؟",
+            "arabizi": "Kīf kān yōmak?",
+            "meaning": "How was your day? (to Omar)",
+            "rationale": "This asks how a day went, rather than asking which activities happened."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "The final -i in ʿmilti marks the question to Lina.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Listen for the final -i in the verb addressed to Lina."
+        }
+      },
+      {
+        "id": "e02-05",
+        "instruction": "Your story is work first, rest second. Choose the matching sequence.",
+        "prompt": {
+          "arabic": "وبعدين؟",
+          "arabizi": "W-baʿdēn?",
+          "meaning": "And then?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "ارتحت وبعدين اشتغلت.",
+            "arabizi": "Irtaḥt w-baʿdēn ishtaghalt.",
+            "meaning": "I rested and then worked.",
+            "rationale": "This puts rest first, changing the sequence."
+          },
+          {
+            "id": "b",
+            "arabic": "رح أشتغل بكرا.",
+            "arabizi": "Raḥ ashtaghel bukra.",
+            "meaning": "I’ll work tomorrow.",
+            "rationale": "This is a future plan, not two completed activities."
+          },
+          {
+            "id": "c",
+            "arabic": "اشتغلت وبعدين ارتحت.",
+            "arabizi": "Ishtaghalt w-baʿdēn irtaḥt.",
+            "meaning": "I worked and then rested.",
+            "rationale": "Work comes before rest, with baʿdēn marking the second action."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Work comes before rest, with baʿdēn marking the second action.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The activity after baʿdēn must be rest."
+        }
+      },
+      {
+        "id": "e02-06",
+        "instruction": "Omar went home. Ask for the next event in his story.",
+        "prompt": {
+          "arabic": "رحت عالبيت.",
+          "arabizi": "Ruḥt ʿa-l-bēt.",
+          "meaning": "I went home.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وكيفها؟",
+            "arabizi": "W-kīfha?",
+            "meaning": "And how is she?",
+            "rationale": "This asks about a woman’s condition; no woman has been mentioned in this short story."
+          },
+          {
+            "id": "b",
+            "arabic": "وبعدين؟",
+            "arabizi": "W-baʿdēn?",
+            "meaning": "And then?",
+            "rationale": "“And then?” invites the next event without replacing the topic."
+          },
+          {
+            "id": "c",
+            "arabic": "وإنتِ؟",
+            "arabizi": "W-inti?",
+            "meaning": "And you? (to a woman)",
+            "rationale": "This returns a question to a woman instead of asking Omar what followed."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "“And then?” invites the next event without replacing the topic.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Ask what came afterwards."
+        }
+      },
+      {
+        "id": "e02-07",
+        "instruction": "Closing exchange, part 1: today Omar rested first and then worked. Tell that new story.",
+        "prompt": {
+          "arabic": "شو عملت اليوم؟",
+          "arabizi": "Shū ʿmilt il-yōm?",
+          "meaning": "What did you do today? (to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "ارتحت وبعدين اشتغلت.",
+            "arabizi": "Irtaḥt w-baʿdēn ishtaghalt.",
+            "meaning": "I rested and then worked.",
+            "rationale": "This transfers the sequence pattern to the new order, rather than repeating the dialogue."
+          },
+          {
+            "id": "b",
+            "arabic": "اشتغلت وبعدين ارتحت.",
+            "arabizi": "Ishtaghalt w-baʿdēn irtaḥt.",
+            "meaning": "I worked and then rested.",
+            "rationale": "This reverses the required order."
+          },
+          {
+            "id": "c",
+            "arabic": "رحت عالبيت وبعدين ارتحت.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-baʿdēn irtaḥt.",
+            "meaning": "I went home and then rested.",
+            "rationale": "This substitutes going home for working."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This transfers the sequence pattern to the new order, rather than repeating the dialogue.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Start with the activity that happened first: rest."
+        }
+      },
+      {
+        "id": "e02-08",
+        "instruction": "Closing exchange, part 2: Lina asks whether those activities were today. Confirm today.",
+        "prompt": {
+          "arabic": "اليوم؟",
+          "arabizi": "Il-yōm?",
+          "meaning": "Today?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، بكرا.",
+            "arabizi": "Laʾ, bukra.",
+            "meaning": "No, tomorrow.",
+            "rationale": "Tomorrow changes the time and cannot describe activities already completed today."
+          },
+          {
+            "id": "b",
+            "arabic": "منيحة.",
+            "arabizi": "Mnīḥa.",
+            "meaning": "She’s well.",
+            "rationale": "This answers a health check about a woman, not the time question."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، اليوم.",
+            "arabizi": "Āh, il-yōm.",
+            "meaning": "Yes, today.",
+            "rationale": "The reply directly confirms the time of the completed activities."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "The reply directly confirms the time of the completed activities.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Confirm the time word Lina used."
+        }
+      }
+    ],
+    "estimatedMinutes": 6,
+    "version": "authoring-draft-1",
+    "unitId": "levantine-everyday-01",
+    "unitTitle": "Everyday conversations with someone you love",
+    "courseOrder": 2,
+    "reviewStatus": "owner-review",
+    "introduction": {
+      "goal": "Describe two completed activities in order and answer a relevant follow-up.",
+      "dialogue": [
+        {
+          "speaker": "Omar → Lina",
+          "line": {
+            "arabic": "شو عملتي اليوم؟",
+            "arabizi": "Shū ʿmilti il-yōm?",
+            "meaning": "What did you do today? (to Lina)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina",
+          "line": {
+            "arabic": "اشتغلت، وبعدين زرت أمي.",
+            "arabizi": "Ishtaghalt, w-baʿdēn zurt immi.",
+            "meaning": "I worked, then visited my mother.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "وكيفها؟",
+            "arabizi": "W-kīfha?",
+            "meaning": "And how is she?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina → Omar",
+          "line": {
+            "arabic": "منيحة. وإنتَ، شو عملت؟",
+            "arabizi": "Mnīḥa. W-inta, shū ʿmilt?",
+            "meaning": "She’s well. And you, what did you do?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "رحت عالبيت وبعدين ارتحت.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-baʿdēn irtaḥt.",
+            "meaning": "I went home and then rested.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina",
+          "line": {
+            "arabic": "منيح! هلّق نرتاح سوا.",
+            "arabizi": "Mnīḥ! Hallaʾ nirtāḥ sawa.",
+            "meaning": "Good! Now let’s rest together.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "اشتغلت، وبعدين زرت أمي.",
+          "arabizi": "Ishtaghalt, w-baʿdēn zurt immi.",
+          "meaning": "I worked, then visited my mother.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "رحت عالبيت وبعدين ارتحت.",
+          "arabizi": "Ruḥt ʿa-l-bēt w-baʿdēn irtaḥt.",
+          "meaning": "I went home and then rested.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "وبعدين؟",
+          "arabizi": "W-baʿdēn?",
+          "meaning": "And then?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "وكيفها؟",
+          "arabizi": "W-kīfha?",
+          "meaning": "And how is she?",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "These are completed activities: ishtaghalt (I worked), zurt (I visited), ruḥt (I went), irtaḥt (I rested). These first-person forms work for either Lina or Omar; they do not identify the speaker’s gender. In this dialogue, the question to Omar uses ʿmilt; the question to Lina uses ʿmilti, with a final -i. Baʿdēn places the following event later. “I rested, then worked” changes the story from “I worked, then rested.” Read once for the story, then retell each person’s two activities without looking at the English. The last two interactions ask you to transfer the pattern to a different order of events.",
+      "dialectNote": "Urban Palestinian teaching target. ʿMilt addresses Omar or means “I did” when the speaker is the subject; context distinguishes these. ʿMilti addresses Lina. Immi is the “my mother” form used here; vowel choices vary within Palestinian speech. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "https://resources.lingualism.com/levantine-arabic/family-3/"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 16471/16467 (work), 13367/13362 (visit), 12399/12390 (go), 12403/12393 (rest), 1801 (then), 36285 (today), 528 (mother), 15296 (together). Lingualism verbs entries “to do, make,” “to go”; family entries mother, my mother and father. Publisher sample tables 1/2 illustrate first-person versus second-person feminine past endings; the four selected first-person forms are original inflections for owner review, not copied conjugation tables."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 16471/16467 (work), 13367/13362 (visit), 12399/12390 (go), 12403/12393 (rest), 1801 (then), 36285 (today), 528 (mother), 15296 (together). Lingualism verbs entries “to do, make,” “to go”; family entries mother, my mother and father. Publisher sample tables 1/2 illustrate first-person versus second-person feminine past endings; the four selected first-person forms are original inflections for owner review, not copied conjugation tables."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 16471/16467 (work), 13367/13362 (visit), 12399/12390 (go), 12403/12393 (rest), 1801 (then), 36285 (today), 528 (mother), 15296 (together). Lingualism verbs entries “to do, make,” “to go”; family entries mother, my mother and father. Publisher sample tables 1/2 illustrate first-person versus second-person feminine past endings; the four selected first-person forms are original inflections for owner review, not copied conjugation tables."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Family in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Maknuune IDs 16471/16467 (work), 13367/13362 (visit), 12399/12390 (go), 12403/12393 (rest), 1801 (then), 36285 (today), 528 (mother), 15296 (together). Lingualism verbs entries “to do, make,” “to go”; family entries mother, my mother and father. Publisher sample tables 1/2 illustrate first-person versus second-person feminine past endings; the four selected first-person forms are original inflections for owner review, not copied conjugation tables."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi original dialogue and contextual answer design",
+      "locator": "internal:ismi/everyday-01/02/draft-1",
+      "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+      "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+    }
+  ]
+}

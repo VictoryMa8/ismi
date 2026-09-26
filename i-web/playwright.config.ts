@@ -3,6 +3,7 @@ import { defineConfig, devices } from '@playwright/test'
 export default defineConfig({
   testDir: './tests',
   fullyParallel: false,
+  workers: 1,
   retries: 0,
   reporter: 'list',
   use: {
@@ -24,7 +25,8 @@ export default defineConfig({
       env: {
         ...process.env,
         ASPNETCORE_ENVIRONMENT: 'Development',
-        Database__Path: '/private/tmp/ismi-playwright.db',
+        Database__Path: `/private/tmp/ismi-playwright-${process.pid}.db`,
+        Curriculum__ApproverEmail: 'preview-owner@example.test',
       },
     },
     {

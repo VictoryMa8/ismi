@@ -2462,3 +2462,18 @@ h3 {
     transform: none;
   }
 }
+
+/* The owner preview uses the same lesson sheet above the curriculum console. */
+.preview-overlay { z-index: 150; }
+.package-import { display: grid; gap: 10px; margin: 20px 0; }
+.lesson-introduction { margin: 20px 0; line-height: 1.65; }
+.lesson-introduction h3 { font-size: 1.15rem; }
+.lesson-introduction h4 { margin: 24px 0 8px; }
+.dialogue-transcript { padding-inline-start: 24px; }
+.dialogue-transcript li { padding: 12px; margin: 12px 0; background: #f5f2ea; border-radius: 12px; }
+.dialogue-transcript p { margin: 4px 0; }
+.dialogue-transcript [lang="ar"], .expression-list [lang="ar"] { font-size: 1.45rem; line-height: 1.8; }
+.expression-list { padding-inline-start: 22px; }
+.preview-notice, .unit-complete { padding: 16px; background: #f5f2ea; border-radius: 12px; }
+.lesson-introduction details { overflow-wrap: anywhere; margin: 16px 0; }
+.course-path .text-button { margin-inline-start: auto; flex-shrink: 0; }

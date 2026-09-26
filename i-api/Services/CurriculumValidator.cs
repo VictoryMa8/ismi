@@ -9,6 +9,8 @@ public sealed class CurriculumValidator
         IReadOnlyCollection<CurriculumSourceInput> sources)
     {
         var errors = new List<string>();
+        if (!HasReadableShape(lesson, sources))
+            return new(false, ["The package has missing or null lesson, step, answer, dialogue, or source fields."]);
 
         Required(errors, lesson.Id, "Lesson ID is required.");
         if (lesson.Id.Length > 100) errors.Add("Lesson ID cannot exceed 100 characters.");
@@ -22,9 +24,9 @@ public sealed class CurriculumValidator
         Required(errors, lesson.UnitId, "Unit ID is required.");
         Required(errors, lesson.UnitTitle, "Unit title is required.");
         if (lesson.CourseOrder < 1) errors.Add("Course order must be 1 or greater.");
-        if (lesson.ReviewStatus is not ("demonstrative" or "reviewed"))
+        if (lesson.ReviewStatus is not ("demonstrative" or "reviewed" or "owner-review"))
         {
-            errors.Add("Review status must be 'demonstrative' or 'reviewed'.");
+            errors.Add("Review status must be 'demonstrative', 'reviewed', or 'owner-review' (no expert review claimed).");
         }
         if (lesson.EstimatedMinutes is < 1 or > 30)
         {
@@ -70,6 +72,36 @@ public sealed class CurriculumValidator
             Required(errors, evaluation.RetryHint, $"{label} needs a retry hint.");
         }
 
+        if (lesson.Introduction is { } introduction)
+        {
+            Required(errors, introduction.Goal, "A visible learning goal is required.");
+            Required(errors, introduction.UsageNote, "A usage note is required.");
+            Required(errors, introduction.DialectNote, "A dialect/address note is required.");
+            Required(errors, introduction.RecordingNote, "Recording status and script instructions are required.");
+            if (introduction.Dialogue.Count is < 4 or > 6) errors.Add("The dialogue must contain four to six turns.");
+            if (introduction.Expressions.Count == 0) errors.Add("Introduce expressions from the dialogue.");
+            foreach (var turn in introduction.Dialogue)
+            {
+                Required(errors, turn.Speaker, "Each dialogue turn needs a speaker.");
+            }
+            foreach (var line in introduction.Dialogue.Select(turn => turn.Line).Concat(introduction.Expressions))
+            {
+                Required(errors, line.Arabic, "Dialogue and expressions need Arabic.");
+                Required(errors, line.Arabizi, "Dialogue and expressions need transliteration.");
+                Required(errors, line.Meaning, "Dialogue and expressions need English meaning.");
+            }
+            if (introduction.SourceLocators.Count == 0) errors.Add("Teaching notes need source locators.");
+            foreach (var locator in introduction.SourceLocators)
+            {
+                if (!sources.Any(source => source.Locator == locator)) errors.Add($"Teaching source '{locator}' is missing from provenance.");
+            }
+            if (lesson.Steps.Count is < 6 or > 10) errors.Add("A complete conversation lesson needs six to ten practice interactions.");
+            foreach (var answer in lesson.Steps.SelectMany(step => step.Answers))
+                Required(errors, answer.Rationale, $"Answer '{answer.Id}' needs a contextual rationale.");
+        }
+        if (lesson.ReviewStatus == "owner-review" && lesson.Introduction is null)
+            errors.Add("Owner-review lesson packages require a dialogue and teaching notes.");
+
         if (sources.Count == 0) errors.Add("At least one provenance source is required.");
         for (var index = 0; index < sources.Count; index++)
         {
@@ -83,6 +115,16 @@ public sealed class CurriculumValidator
 
         return new CurriculumValidationResult(errors.Count == 0, errors);
     }
+
+    public static bool HasReadableShape(LessonResponse? lesson, IReadOnlyCollection<CurriculumSourceInput>? sources) =>
+        lesson is { Id: not null, TrackId: not null, Steps: not null }
+        && sources is not null && sources.All(source => source is not null)
+        && lesson.Steps.All(step => step is { Prompt: not null, Answers: not null, Evaluation: not null }
+            && step.Answers.All(answer => answer is not null))
+        && (lesson.Introduction is null || lesson.Introduction is
+            { Dialogue: not null, Expressions: not null, SourceLocators: not null } introduction
+            && introduction.Dialogue.All(turn => turn is { Line: not null })
+            && introduction.Expressions.All(line => line is not null));
 
     private static void Required(List<string> errors, string? value, string message)
     {

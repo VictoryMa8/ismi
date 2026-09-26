@@ -1,0 +1,475 @@
+{
+  "lesson": {
+    "id": "levantine-everyday-01-05",
+    "trackId": "levantine",
+    "title": "How's your family?",
+    "scenario": "Lina asks Omar about his family. Omar returns the interest by asking about Lina’s mother. Share only the detail the scene gives you.",
+    "steps": [
+      {
+        "id": "e05-01",
+        "instruction": "Ask Omar about his family, rather than about your own.",
+        "prompt": {
+          "arabic": "وإنتَ؟",
+          "arabizi": "W-inta?",
+          "meaning": "And you? (to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "كيف أهلي؟",
+            "arabizi": "Kīf ahli?",
+            "meaning": "How is my family?",
+            "rationale": "Ahli refers to the speaker’s family instead of Omar’s."
+          },
+          {
+            "id": "b",
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlak?",
+            "meaning": "How’s your family? (to Omar)",
+            "rationale": "Ahlak means Omar’s family when he is the listener."
+          },
+          {
+            "id": "c",
+            "arabic": "كيفك؟",
+            "arabizi": "Kīfak?",
+            "meaning": "How are you? (to Omar)",
+            "rationale": "This asks about Omar himself, not his family."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Ahlak means Omar’s family when he is the listener.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The ending should mean “your” to Omar."
+        }
+      },
+      {
+        "id": "e05-02",
+        "instruction": "Omar says the family members are well. Respond as Omar.",
+        "prompt": {
+          "arabic": "كيف أهلك؟",
+          "arabizi": "Kīf ahlak?",
+          "meaning": "How’s your family? (to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "منيحة.",
+            "arabizi": "Mnīḥa.",
+            "meaning": "She’s well.",
+            "rationale": "This refers to one woman, not the family group."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا منيح.",
+            "arabizi": "Ana mnīḥ.",
+            "meaning": "I’m well. (Omar speaking)",
+            "rationale": "This updates only Omar’s condition."
+          },
+          {
+            "id": "c",
+            "arabic": "منيحين، شكراً.",
+            "arabizi": "Mnīḥīn, shukran.",
+            "meaning": "They’re well, thank you.",
+            "rationale": "Mnīḥīn refers to the family members as a group."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Mnīḥīn refers to the family members as a group.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Answer about the group of people."
+        }
+      },
+      {
+        "id": "e05-03",
+        "instruction": "Follow up specifically about Omar’s sister.",
+        "prompt": {
+          "arabic": "منيحين، شكراً.",
+          "arabizi": "Mnīḥīn, shukran.",
+          "meaning": "They’re well, thank you.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وأختك، كيفها؟",
+            "arabizi": "W-ukhtak, kīfha?",
+            "meaning": "And your sister, how is she? (to Omar)",
+            "rationale": "Naming the sister gives kīfha a clear referent."
+          },
+          {
+            "id": "b",
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlak?",
+            "meaning": "How’s your family? (to Omar)",
+            "rationale": "This repeats the general family question instead of following up about his sister."
+          },
+          {
+            "id": "c",
+            "arabic": "وكيف أمك؟",
+            "arabizi": "W-kīf immik?",
+            "meaning": "And how’s your mother? (to Lina)",
+            "rationale": "This asks Lina about her mother; both the listener and relative change."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Naming the sister gives kīfha a clear referent.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Name the sister before asking how she is."
+        }
+      },
+      {
+        "id": "e05-04",
+        "instruction": "The sister is well but has much work. Give that update.",
+        "prompt": {
+          "arabic": "وأختك، كيفها؟",
+          "arabizi": "W-ukhtak, kīfha?",
+          "meaning": "And your sister, how is she? (to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "منيحة. اليوم بالبيت.",
+            "arabizi": "Mnīḥa. Il-yōm bil-bēt.",
+            "meaning": "She’s well. Today she’s at home.",
+            "rationale": "Being home today is a different detail; it does not express the sister’s workload."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا عندي شغل كتير.",
+            "arabizi": "Ana ʿindi shughl ktīr.",
+            "meaning": "I have a lot of work.",
+            "rationale": "This changes the person from the sister to the speaker."
+          },
+          {
+            "id": "c",
+            "arabic": "منيحة، بس عندها شغل كتير.",
+            "arabizi": "Mnīḥa, bass ʿindha shughl ktīr.",
+            "meaning": "She’s well, but she has a lot of work.",
+            "rationale": "Both the positive condition and the work detail match the scenario."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Both the positive condition and the work detail match the scenario.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The work belongs to her: ʿindha."
+        }
+      },
+      {
+        "id": "e05-05",
+        "instruction": "Lina has just mentioned her mother. Ask a short follow-up about the mother.",
+        "prompt": {
+          "arabic": "اليوم زرت أمي.",
+          "arabizi": "Il-yōm zurt immi.",
+          "meaning": "Today I visited my mother.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وكيفك؟",
+            "arabizi": "W-kīfik?",
+            "meaning": "And how are you? (to Lina)",
+            "rationale": "This asks about Lina rather than her mother."
+          },
+          {
+            "id": "b",
+            "arabic": "وكيفها؟",
+            "arabizi": "W-kīfha?",
+            "meaning": "And how is she?",
+            "rationale": "Kīfha refers back to the mother Lina has just named."
+          },
+          {
+            "id": "c",
+            "arabic": "شو عملتي اليوم؟",
+            "arabizi": "Shū ʿmilti il-yōm?",
+            "meaning": "What did you do today? (to Lina)",
+            "rationale": "This asks broadly about Lina’s activities instead of following up on her mother."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Kīfha refers back to the mother Lina has just named.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The short ending should refer to “her.”"
+        }
+      },
+      {
+        "id": "e05-06",
+        "instruction": "Omar wants to ask Lina about her family. Choose the address to Lina.",
+        "prompt": {
+          "arabic": "وإنتِ؟",
+          "arabizi": "W-inti?",
+          "meaning": "And you? (to Lina)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlik?",
+            "meaning": "How’s your family? (to Lina)",
+            "rationale": "Ahlik is the selected feminine address; Arabic script alone may not show the short-vowel difference."
+          },
+          {
+            "id": "b",
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlak?",
+            "meaning": "How’s your family? (to Omar)",
+            "rationale": "Ahlak is addressed to Omar, not Lina."
+          },
+          {
+            "id": "c",
+            "arabic": "كيف أهلي؟",
+            "arabizi": "Kīf ahli?",
+            "meaning": "How is my family?",
+            "rationale": "This asks about the speaker’s own family."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Ahlik is the selected feminine address; Arabic script alone may not show the short-vowel difference.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Follow the transliteration: ahlik."
+        }
+      },
+      {
+        "id": "e05-07",
+        "instruction": "Closing exchange, part 1: today Lina’s mother is well and at home. Reply as Lina.",
+        "prompt": {
+          "arabic": "وكيف أمك؟",
+          "arabizi": "W-kīf immik?",
+          "meaning": "And how’s your mother? (to Lina)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "منيحة، بس عندها شغل كتير.",
+            "arabizi": "Mnīḥa, bass ʿindha shughl ktīr.",
+            "meaning": "She’s well, but she has a lot of work.",
+            "rationale": "This introduces a heavy workload, which the new scene does not give."
+          },
+          {
+            "id": "b",
+            "arabic": "منيحين، شكراً.",
+            "arabizi": "Mnīḥīn, shukran.",
+            "meaning": "They’re well, thank you.",
+            "rationale": "This answers about several people, not the mother."
+          },
+          {
+            "id": "c",
+            "arabic": "منيحة. اليوم بالبيت.",
+            "arabizi": "Mnīḥa. Il-yōm bil-bēt.",
+            "meaning": "She’s well. Today she’s at home.",
+            "rationale": "This gives the mother’s condition and today’s location without inventing extra detail."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This gives the mother’s condition and today’s location without inventing extra detail.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Keep the referent singular and the detail about home."
+        }
+      },
+      {
+        "id": "e05-08",
+        "instruction": "Closing exchange, part 2: agree to the proposed visit tomorrow.",
+        "prompt": {
+          "arabic": "بكرا نزورها؟",
+          "arabizi": "Bukra nzūrha?",
+          "meaning": "Shall we visit her tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "اليوم زرت أمي.",
+            "arabizi": "Il-yōm zurt immi.",
+            "meaning": "Today I visited my mother.",
+            "rationale": "This reports a past visit today; it does not agree to tomorrow’s visit."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، بكرا نزورها.",
+            "arabizi": "Āh, bukra nzūrha.",
+            "meaning": "Yes, let’s visit her tomorrow.",
+            "rationale": "This agrees to the future shared visit and keeps the same person and day."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "This declines rather than accepting the invitation."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This agrees to the future shared visit and keeps the same person and day.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Accept the invitation and preserve tomorrow."
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "authoring-draft-1",
+    "unitId": "levantine-everyday-01",
+    "unitTitle": "Everyday conversations with someone you love",
+    "courseOrder": 5,
+    "reviewStatus": "owner-review",
+    "introduction": {
+      "goal": "Ask about someone’s family, share a short update, and ask a relevant follow-up.",
+      "dialogue": [
+        {
+          "speaker": "Lina → Omar",
+          "line": {
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlak?",
+            "meaning": "How’s your family? (to Omar)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "منيحين، شكراً.",
+            "arabizi": "Mnīḥīn, shukran.",
+            "meaning": "They’re well, thank you.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina → Omar",
+          "line": {
+            "arabic": "وأختك، كيفها؟",
+            "arabizi": "W-ukhtak, kīfha?",
+            "meaning": "And your sister, how is she? (to Omar)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar → Lina",
+          "line": {
+            "arabic": "منيحة، بس عندها شغل كتير. وكيف أمك؟",
+            "arabizi": "Mnīḥa, bass ʿindha shughl ktīr. W-kīf immik?",
+            "meaning": "She’s well, but she has a lot of work. And how’s your mother?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina",
+          "line": {
+            "arabic": "منيحة. اليوم بالبيت.",
+            "arabizi": "Mnīḥa. Il-yōm bil-bēt.",
+            "meaning": "She’s well. Today she’s at home.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "منيح! بكرا نزورها؟",
+            "arabizi": "Mnīḥ! Bukra nzūrha?",
+            "meaning": "Good! Shall we visit her tomorrow?",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "كيف أهلك؟",
+          "arabizi": "Kīf ahlak?",
+          "meaning": "How’s your family? (to Omar)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "منيحين، شكراً.",
+          "arabizi": "Mnīḥīn, shukran.",
+          "meaning": "They’re well, thank you.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "وأختك، كيفها؟",
+          "arabizi": "W-ukhtak, kīfha?",
+          "meaning": "And your sister, how is she? (to Omar)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "منيحة، بس عندها شغل كتير.",
+          "arabizi": "Mnīḥa, bass ʿindha shughl ktīr.",
+          "meaning": "She’s well, but she has a lot of work.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Ahl means family/relatives here. Ahli means “my family”; ahlak addresses Omar about “your family,” and ahlik addresses Lina. In kīfha, -ha refers to “her”: the question is about a woman already mentioned. Match the reply: mnīḥīn for the family as people, mnīḥa for the sister or mother. ʿIndha shughl describes a woman having work; it does not say she is ill. A warm follow-up can stay simple: ask how someone is, then listen. Read the dialogue twice, and retell the sister’s update in your own voice or silently. You never need to disclose facts about your own family.",
+      "dialectNote": "Urban Palestinian teaching target. This dialogue names the people before using “her.” Ahlak/ukhtak address Omar; ahlik/ukhtik address Lina. Immi is “my mother”; immik here is “your mother” when speaking to Lina. These are contextual choices, not the only Palestinian vowel variants. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "https://resources.lingualism.com/levantine-arabic/family-3/"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 628 (family/relatives), 528 (mother), 151 (sister), 31227/31228 (good), 16449 (work), 2684 (home), 13362 (visit). Lingualism family entries parents, mother, sister; publisher sample p.109 pronouns and T104 person endings. Original suffixed forms and agreement are explicitly scoped to named people and require final owner review. The sources support language facts, not assumptions about anyone’s family."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 628 (family/relatives), 528 (mother), 151 (sister), 31227/31228 (good), 16449 (work), 2684 (home), 13362 (visit). Lingualism family entries parents, mother, sister; publisher sample p.109 pronouns and T104 person endings. Original suffixed forms and agreement are explicitly scoped to named people and require final owner review. The sources support language facts, not assumptions about anyone’s family."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 628 (family/relatives), 528 (mother), 151 (sister), 31227/31228 (good), 16449 (work), 2684 (home), 13362 (visit). Lingualism family entries parents, mother, sister; publisher sample p.109 pronouns and T104 person endings. Original suffixed forms and agreement are explicitly scoped to named people and require final owner review. The sources support language facts, not assumptions about anyone’s family."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Family in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Maknuune IDs 628 (family/relatives), 528 (mother), 151 (sister), 31227/31228 (good), 16449 (work), 2684 (home), 13362 (visit). Lingualism family entries parents, mother, sister; publisher sample p.109 pronouns and T104 person endings. Original suffixed forms and agreement are explicitly scoped to named people and require final owner review. The sources support language facts, not assumptions about anyone’s family."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi original dialogue and contextual answer design",
+      "locator": "internal:ismi/everyday-01/05/draft-1",
+      "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+      "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+    }
+  ]
+}

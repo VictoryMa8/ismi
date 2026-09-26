@@ -4,6 +4,8 @@ using Ismi.Api.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Ismi.Api.Services;
 
 namespace Ismi.Api.Tests;
 
@@ -170,6 +172,123 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         Assert.Equal(HttpStatusCode.BadRequest, approve.StatusCode);
         var body = await approve.Content.ReadAsStringAsync();
         Assert.Contains("only Levantine", body, StringComparison.OrdinalIgnoreCase);
+    }
+
+    [Fact]
+    public async Task ConversationPackagePreservesNotesAndRationalesBehindPublicationGate()
+    {
+        using var owner = CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        var fixture = new Ismi.Api.Services.SeedCurriculum().GetInitialLesson();
+        var step = fixture.Steps[0];
+        // Delivery fixture only: reuses existing demonstration language, not new curriculum.
+        var lesson = fixture with
+        {
+            Id = "conversation-test",
+            UnitId = "conversation-test-unit",
+            ReviewStatus = "owner-review",
+            Introduction = new LessonIntroduction(
+                "Test goal", Enumerable.Range(0, 4).Select(index =>
+                    new DialogueTurn($"Test speaker {index}", step.Prompt)).ToArray(),
+                [step.Prompt], "Test usage note", "Test address note", "Test recording script",
+                ["internal:test"]),
+            Steps = Enumerable.Range(0, 6).Select(index => step with
+            {
+                Id = $"test-{index}",
+                Answers = step.Answers.Select(answer => answer with
+                {
+                    Rationale = $"Contextual test rationale for {answer.Id}"
+                }).Reverse().ToArray()
+            }).ToArray()
+        };
+        var sources = new[] { new CurriculumSourceInput("test", "Test fixture", "internal:test", "Test only", "") };
+        var validator = new Ismi.Api.Services.CurriculumValidator();
+        Assert.True(validator.Validate(lesson, sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Introduction = null }, sources).IsValid);
+        Assert.False(validator.Validate(lesson, []).IsValid);
+        Assert.False(validator.Validate(lesson with { Steps = [step] }, sources).IsValid);
+        var created = await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/admin/curriculum/drafts",
+            new CurriculumDraftRequest(lesson, sources));
+        var draft = await created.Content.ReadFromJsonAsync<CurriculumVersionDetail>();
+        Assert.NotNull(draft);
+        using var guest = CreateClient();
+        Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync("/api/lessons/conversation-test")).StatusCode);
+        Assert.NotEqual(HttpStatusCode.OK,
+            (await guest.GetAsync($"/api/admin/curriculum/versions/{draft.Id}")).StatusCode);
+        var preview = await owner.GetFromJsonAsync<CurriculumVersionDetail>($"/api/admin/curriculum/versions/{draft.Id}");
+        Assert.Equal("Test usage note", preview!.Lesson.Introduction!.UsageNote);
+        Assert.Equal(CurriculumStatuses.Draft, preview.Status);
+        // Only this isolated test database receives synthetic approval/publication.
+        Assert.Equal(HttpStatusCode.OK, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+            $"/api/admin/curriculum/versions/{draft.Id}/approve", new { })).StatusCode);
+        Assert.Equal(HttpStatusCode.OK, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+            $"/api/admin/curriculum/versions/{draft.Id}/publish", new { })).StatusCode);
+        var published = await guest.GetFromJsonAsync<LessonResponse>("/api/lessons/conversation-test");
+        Assert.Equal(4, published!.Introduction!.Dialogue.Count);
+        Assert.Equal("c", published.Steps[0].Answers[0].Id);
+        var incorrect = new Ismi.Api.Services.LessonEvaluator().Evaluate(published.Steps[0], "b");
+        Assert.False(incorrect.IsCorrect);
+        Assert.Equal("Contextual test rationale for b", incorrect.Explanation);
+        Assert.True(new Ismi.Api.Services.LessonEvaluator().Evaluate(published.Steps[0], "a").IsCorrect);
+    }
+
+    [Fact]
+    public async Task SevenAuthoredPackagesImportIdempotentlyAndRequireApproval()
+    {
+        using var owner = CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        var directory = Path.Combine(AppContext.BaseDirectory, "everyday-01");
+        using (var scope = _factory.Services.CreateScope())
+        {
+            var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
+            var imported = await importer.ImportAsync(directory);
+            Assert.Equal(7, imported.Count);
+            Assert.All(imported, line => Assert.StartsWith("Imported:", line));
+            var repeated = await importer.ImportAsync(directory);
+            Assert.All(repeated, line => Assert.StartsWith("Unchanged:", line));
+        }
+        var versions = (await owner.GetFromJsonAsync<List<CurriculumVersionSummary>>("/api/admin/curriculum/versions"))!;
+        var authored = versions.Where(version => version.LessonId.StartsWith("levantine-everyday-")).ToList();
+        Assert.Equal(7, authored.Count);
+        Assert.All(authored, version => Assert.Equal(CurriculumStatuses.Draft, version.Status));
+        Assert.Equal(6, versions.Count(version => version.Status == CurriculumStatuses.Published));
+        using var guest = CreateClient();
+        foreach (var version in authored)
+        {
+            Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{version.LessonId}")).StatusCode);
+            var detail = (await owner.GetFromJsonAsync<CurriculumVersionDetail>($"/api/admin/curriculum/versions/{version.Id}"))!;
+            Assert.Equal(8, detail.Lesson.Steps.Count);
+            Assert.Equal(6, detail.Lesson.Introduction!.Dialogue.Count);
+            Assert.Equal(3, detail.Lesson.Steps.Select(step => step.Evaluation.CorrectAnswerId).Distinct().Count());
+            Assert.Null(detail.ApprovedBy);
+            Assert.Null(detail.PublishedBy);
+            Assert.Contains(detail.Audit, entry => entry.Action == "validated");
+            Assert.Equal(HttpStatusCode.Conflict, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{version.Id}/publish", new { })).StatusCode);
+            foreach (var step in detail.Lesson.Steps)
+            {
+                Assert.Equal(3, step.Answers.Select(answer => answer.Arabic + answer.Arabizi).Distinct().Count());
+                foreach (var answer in step.Answers)
+                {
+                    var result = new LessonEvaluator().Evaluate(step, answer.Id);
+                    Assert.Equal(answer.Id == step.Evaluation.CorrectAnswerId, result.IsCorrect);
+                    Assert.False(string.IsNullOrWhiteSpace(answer.Rationale));
+                    if (!result.IsCorrect) Assert.Equal(answer.Rationale, result.Explanation);
+                }
+            }
+        }
+        // Synthetic test approval/publication occurs only in this temporary test database.
+        foreach (var version in authored)
+        {
+            Assert.Equal(HttpStatusCode.OK, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{version.Id}/approve", new { })).StatusCode);
+            Assert.Equal(HttpStatusCode.OK, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{version.Id}/publish", new { })).StatusCode);
+        }
+        var dashboard = (await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
+        Assert.Equal(authored.Select(version => version.LessonId).Order(),
+            dashboard.DailyPlan.Lessons.Take(7).Select(lesson => lesson.Id));
+        Assert.Equal(13, dashboard.DailyPlan.Lessons.Count);
     }
 
     private HttpClient CreateClient() =>

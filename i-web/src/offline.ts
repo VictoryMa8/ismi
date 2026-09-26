@@ -52,7 +52,10 @@ async function useStore<T>(
 }
 
 export function cacheLesson(lesson: LessonResponse): Promise<IDBValidKey> {
-  return useStore(lessonStore, 'readwrite', store => store.put(lesson))
+  // Callers can pass Vue reactive objects. IndexedDB cannot clone Proxy objects;
+  // lesson packages are JSON contracts, so store a detached JSON snapshot.
+  const snapshot: LessonResponse = JSON.parse(JSON.stringify(lesson))
+  return useStore(lessonStore, 'readwrite', store => store.put(snapshot))
 }
 
 export function getCachedLesson(lessonId: string): Promise<LessonResponse | undefined> {
@@ -64,7 +67,7 @@ export function getCachedLessonCount(): Promise<number> {
 }
 
 export function cacheDashboard(dashboard: DashboardResponse): Promise<IDBValidKey> {
-  const snapshot: Snapshot<DashboardResponse> = { key: 'dashboard', value: dashboard }
+  const snapshot: Snapshot<DashboardResponse> = { key: 'dashboard', value: JSON.parse(JSON.stringify(dashboard)) }
   return useStore(snapshotStore, 'readwrite', store => store.put(snapshot))
 }
 

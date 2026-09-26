@@ -11,6 +11,12 @@ public sealed class CurriculumPublishingService(
 {
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
 
+    private static void RequireReadablePackage(CurriculumDraftRequest request)
+    {
+        if (!CurriculumValidator.HasReadableShape(request.Lesson, request.Sources))
+            throw new CurriculumWorkflowException("invalid_package", "The package has missing or null lesson, step, answer, dialogue, or source fields.");
+    }
+
     public async Task EnsureSeededAsync(
         IReadOnlyList<LessonResponse> initialLessons,
         CancellationToken cancellationToken = default)
@@ -107,7 +113,8 @@ public sealed class CurriculumPublishingService(
         return content
             .Select(Deserialize)
             .Where(lesson => string.Equals(lesson.TrackId, trackId, StringComparison.OrdinalIgnoreCase))
-            .OrderBy(lesson => lesson.CourseOrder)
+            .OrderBy(lesson => lesson.UnitId, StringComparer.OrdinalIgnoreCase)
+            .ThenBy(lesson => lesson.CourseOrder)
             .ThenBy(lesson => lesson.Id, StringComparer.OrdinalIgnoreCase)
             .Select(lesson => new LessonDefinition(lesson))
             .ToList();
@@ -154,6 +161,7 @@ public sealed class CurriculumPublishingService(
         string actor,
         CancellationToken cancellationToken = default)
     {
+        RequireReadablePackage(request);
         var lessonId = request.Lesson.Id.Trim();
         if (string.IsNullOrWhiteSpace(lessonId) || lessonId.Length > 100)
         {
@@ -206,6 +214,7 @@ public sealed class CurriculumPublishingService(
             .SingleOrDefaultAsync(version => version.Id == versionId, cancellationToken)
             ?? throw NotFound();
         RequireStatus(record, CurriculumStatuses.Draft, "Only a draft can be edited.");
+        RequireReadablePackage(request);
         if (!string.Equals(record.LessonId, request.Lesson.Id.Trim(), StringComparison.Ordinal))
         {
             throw new CurriculumWorkflowException("lesson_id_immutable", "A draft's lesson ID cannot be changed.");

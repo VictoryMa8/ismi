@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.RateLimiting;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -119,6 +120,7 @@ builder.Services.AddSingleton<LessonEvaluator>();
 builder.Services.AddSingleton<LearnerProgressService>();
 builder.Services.AddScoped<AccountProgressService>();
 builder.Services.AddScoped<CurriculumPublishingService>();
+builder.Services.AddScoped<CurriculumPackageImporter>();
 builder.Services.AddSingleton<CurriculumValidator>();
 builder.Services.AddSingleton<CurriculumAccessService>();
 
@@ -132,6 +134,22 @@ await using (var scope = app.Services.CreateAsyncScope())
     var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
     var seed = scope.ServiceProvider.GetRequiredService<SeedCurriculum>();
     await publishing.EnsureSeededAsync(seed.GetInitialLessons());
+    if (builder.Configuration["import-curriculum"] is { Length: > 0 } importPath)
+    {
+        try
+        {
+            var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
+            foreach (var line in await importer.ImportAsync(Path.GetFullPath(importPath),
+                         builder.Configuration.GetValue<bool>("update-import-drafts")))
+                Console.WriteLine(line);
+        }
+        catch (Exception exception) when (exception is IOException or JsonException or InvalidOperationException or CurriculumWorkflowException)
+        {
+            Console.Error.WriteLine($"Import failed: {exception.Message}");
+            Environment.ExitCode = 1;
+        }
+        return;
+    }
 }
 
 if (app.Environment.IsDevelopment())

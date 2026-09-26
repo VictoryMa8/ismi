@@ -31,7 +31,7 @@ import type {
   LessonResponse,
 } from './types'
 
-defineEmits<{ close: [] }>()
+const emit = defineEmits<{ close: []; preview: [lesson: LessonResponse, opener: HTMLElement] }>()
 
 const versions = ref<CurriculumVersionSummary[]>([])
 const selected = ref<CurriculumVersionDetail | null>(null)
@@ -133,6 +133,46 @@ function startNewLesson() {
   validation.value = null
   error.value = null
   notice.value = 'Complete the lesson JSON and provenance, then save the new draft.'
+}
+
+async function importPackage(event: Event) {
+  const input = event.target as HTMLInputElement
+  const file = input.files?.[0]
+  if (!file) return
+  busy.value = true
+  clearMessages()
+  try {
+    const payload = JSON.parse(await file.text())
+    if (!payload.lesson?.id || !Array.isArray(payload.sources)) {
+      throw new Error('Choose a lesson package with lesson and sources fields.')
+    }
+    const detail = await createCurriculumDraft(payload.lesson, payload.sources)
+    await loadVersions(detail.id)
+    notice.value = `Imported draft version ${detail.versionNumber}. Validate and preview before approval.`
+  } catch (caught) {
+    error.value = messageFor(caught)
+  } finally {
+    busy.value = false
+    input.value = ''
+  }
+}
+
+async function previewSavedVersion(event: MouseEvent) {
+  const opener = event.currentTarget as HTMLElement
+  if (!selected.value?.id) return
+  busy.value = true
+  clearMessages()
+  try {
+    const result = await validateCurriculumVersion(selected.value.id)
+    validation.value = result
+    if (!result.isValid) return
+    const detail = await getCurriculumVersion(selected.value.id)
+    emit('preview', detail.lesson, opener)
+  } catch (caught) {
+    error.value = messageFor(caught)
+  } finally {
+    busy.value = false
+  }
 }
 
 async function cloneDraft() {
@@ -294,6 +334,10 @@ function formatDate(value: string | null): string {
     <p v-if="error" class="console-message error" role="alert">{{ error }}</p>
     <p v-if="notice" class="console-message success" role="status">{{ notice }}</p>
 
+    <label class="package-import">Import a lesson package as a draft
+      <input type="file" accept=".json,application/json" :disabled="busy" @change="importPackage" />
+    </label>
+
     <div class="console-layout">
       <aside class="version-panel" aria-label="Curriculum versions">
         <div class="version-panel-heading">
@@ -340,6 +384,7 @@ function formatDate(value: string | null): string {
               <p v-else>New unpublished lesson</p>
             </div>
             <div class="workflow-actions">
+              <button v-if="selected.id" class="secondary-action" type="button" :disabled="busy" @click="previewSavedVersion">Preview saved version</button>
               <button v-if="canEdit" class="secondary-action" type="button" :disabled="busy" @click="saveDraft">
                 <Save :size="17" aria-hidden="true" /> Save draft
               </button>
