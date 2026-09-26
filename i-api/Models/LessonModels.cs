@@ -37,7 +37,15 @@ public sealed record LessonPrompt(
     string Arabic,
     string Arabizi,
     string Meaning,
-    string? AudioUrl);
+    string? AudioUrl,
+    LessonRecording? Recording = null);
+
+public sealed record LessonRecording(
+    string Transcript,
+    string Speaker,
+    string Dialect,
+    string SourceLocator,
+    string ReviewNotes);
 
 public sealed record LessonAnswer(
     string Id,

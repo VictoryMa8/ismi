@@ -1,3 +1,5 @@
+import { tmpdir } from 'node:os'
+import { join } from 'node:path'
 import { defineConfig, devices } from '@playwright/test'
 
 export default defineConfig({
@@ -25,7 +27,8 @@ export default defineConfig({
       env: {
         ...process.env,
         ASPNETCORE_ENVIRONMENT: 'Development',
-        Database__Path: `/private/tmp/ismi-playwright-${process.pid}.db`,
+        Database__Path: join(tmpdir(), `ismi-playwright-${process.pid}.db`),
+        Recordings__Path: join(tmpdir(), `ismi-playwright-recordings-${process.pid}`),
         Curriculum__ApproverEmail: 'preview-owner@example.test',
       },
     },

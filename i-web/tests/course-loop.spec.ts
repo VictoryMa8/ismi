@@ -3,7 +3,7 @@ import { expect, test, type Page } from '@playwright/test'
 async function waitForOfflinePackage(page: Page) {
   await expect.poll(async () => page.evaluate(async () => {
     const database = await new Promise<IDBDatabase>((resolve, reject) => {
-      const request = indexedDB.open('ismi-offline', 1)
+      const request = indexedDB.open('ismi-offline')
       request.onsuccess = () => resolve(request.result)
       request.onerror = () => reject(request.error)
     })

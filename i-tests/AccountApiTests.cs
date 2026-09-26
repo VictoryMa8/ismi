@@ -22,6 +22,7 @@ public sealed class AccountApiTests : IAsyncLifetime
     public Task DisposeAsync()
     {
         _factory.Dispose();
+        if (Directory.Exists(_databasePath + "-keys")) Directory.Delete(_databasePath + "-keys", true);
         DeleteDatabaseFile(_databasePath);
         DeleteDatabaseFile($"{_databasePath}-shm");
         DeleteDatabaseFile($"{_databasePath}-wal");
@@ -134,6 +135,32 @@ public sealed class AccountApiTests : IAsyncLifetime
         Assert.Equal(HttpStatusCode.BadRequest, duplicate.StatusCode);
     }
 
+    [Fact]
+    public async Task ExistingSessionSurvivesHostRestartWithPersistedKeys()
+    {
+        string cookie;
+        using (var client = CreateClient(_factory))
+        {
+            var registration = await PostWithCsrfAsync(client, "/api/auth/register", new
+            {
+                displayName = "Restart test",
+                email = "restart@example.test",
+                password = "long test password"
+            });
+            Assert.Equal(HttpStatusCode.OK, registration.StatusCode);
+            cookie = registration.Headers.GetValues("Set-Cookie")
+                .Single(value => value.StartsWith("Ismi.Auth=", StringComparison.Ordinal)).Split(';')[0];
+        }
+        Assert.NotEmpty(Directory.GetFiles(_databasePath + "-keys", "*.xml"));
+        _factory.Dispose();
+        _factory = CreateFactory();
+        using var restarted = CreateClient(_factory);
+        restarted.DefaultRequestHeaders.Add("Cookie", cookie);
+        var session = await restarted.GetFromJsonAsync<AuthSession>("/api/auth/me");
+        Assert.True(session?.IsAuthenticated);
+        Assert.Equal("Restart test", session?.DisplayName);
+    }
+
     private WebApplicationFactory<Program> CreateFactory() =>
         new WebApplicationFactory<Program>().WithWebHostBuilder(builder =>
         {
@@ -141,7 +168,8 @@ public sealed class AccountApiTests : IAsyncLifetime
             builder.ConfigureAppConfiguration((_, configuration) =>
                 configuration.AddInMemoryCollection(new Dictionary<string, string?>
                 {
-                    ["Database:Path"] = _databasePath
+                    ["Database:Path"] = _databasePath,
+                    ["DataProtection:KeysPath"] = _databasePath + "-keys"
                 }));
         });
 

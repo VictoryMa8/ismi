@@ -85,6 +85,15 @@ public sealed class CurriculumPublishingService(
         await database.SaveChangesAsync(cancellationToken);
     }
 
+    public async Task<bool> IsPublishedRecordingAsync(string url, CancellationToken cancellationToken)
+    {
+        var contents = await database.CurriculumVersions.AsNoTracking()
+            .Where(version => version.Status == CurriculumStatuses.Published)
+            .Select(version => version.ContentJson).ToListAsync(cancellationToken);
+        return contents.Select(Deserialize).Any(lesson =>
+            lesson.Steps.Any(step => step.Prompt.AudioUrl == url));
+    }
+
     public async Task<LessonDefinition?> FindPublishedLessonAsync(
         string lessonId,
         CancellationToken cancellationToken = default)

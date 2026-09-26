@@ -64,7 +64,7 @@ test('owner imports and completes a saved draft without exposing or caching it',
   expect(writes).toEqual([])
   expect(await page.evaluate(async () => {
     const db = await new Promise<IDBDatabase>((resolve, reject) => {
-      const request = indexedDB.open('ismi-offline', 1)
+      const request = indexedDB.open('ismi-offline')
       request.onsuccess = () => resolve(request.result)
       request.onerror = () => reject(request.error)
     })

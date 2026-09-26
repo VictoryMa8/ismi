@@ -150,6 +150,7 @@ Do not include billing, a social network, or a live-news content operation in th
 - ASP.NET backend and Vue frontend; the browser client must be PWA-capable.
 - Design the learner experience mobile-browser first while keeping it fully usable on desktop. Design the internal curriculum console primarily for desktop.
 - The beta account slice uses ASP.NET Core Identity, HttpOnly cookie sessions, and a local SQLite database; the production hosting/database and any external authentication providers remain unresolved.
+- A free development preview runs at `https://ismi-ruby.vercel.app` (Vercel Hobby) with the ASP.NET API at `https://ismi.alwaysdata.net` (alwaysdata Free, .NET 10). Persistent SQLite, recordings, and cookie keys live outside the uploaded application directory. This is not a commercial hosting commitment or a completed beta release; paid hosting requires explicit user approval.
 - Keep AI and speech-provider credentials server-side.
 - Offline behavior will require a PWA-capable client, local lesson/progress storage, and later synchronization.
 
@@ -159,7 +160,7 @@ Do not include billing, a social network, or a live-news content operation in th
 - The Vue PWA displays a mobile-first three-track dashboard and an ordered six-lesson demonstrative Levantine Week 1 path built only from the original four-step language set.
 - The next three lesson packages, the last dashboard snapshot, and pending completion events are stored in IndexedDB. The client can grade downloaded structured evaluation records offline, advance the path locally, and retry idempotent completion events after reconnection.
 - The API exposes dashboard, lesson, attempt, and completion endpoints. Authenticated progression is stored in SQLite and survives API restarts; guest server progress is isolated per browser and remains intentionally in memory, with the browser's offline queue handling reconnection.
-- Levantine prompts currently offer an explicitly labeled browser/device voice preview when no reviewed recording is available; voice availability and pronunciation vary by device.
+- Levantine prompts support owner-uploaded, immutable PCM WAV recordings with speaker/dialect labels, transcripts, source permissions, review notes, and publication-gated playback. Complete lesson/audio packages are atomically stored in IndexedDB after hash verification. No real speaker recordings ship yet; prompts without recordings retain the explicitly labeled browser/device voice preview.
 - Optional accounts support registration, login, logout, remembered browser sessions, and persistent per-user lesson progress while preserving guest study. Email confirmation, password reset, account deletion, and external identity providers remain unimplemented.
 - An owner-email-gated curriculum console now supports versioned Levantine drafts, provenance records, deterministic validation, human approval, publication, audit history, and rollback. Learner lesson endpoints serve only the currently published database version; the original demonstration lesson is migrated into that store on first startup.
 - The MSA and Quranic cards, reviewed lesson audio assets, navigation destinations, broader curriculum authoring experience, and production content workflow remain unimplemented. The bounded console explicitly rejects MSA and Quranic publication.
