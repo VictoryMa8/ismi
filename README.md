@@ -87,6 +87,8 @@ No real speaker recordings ship in this change. Seed lessons remain demonstrativ
 
 ## Vercel frontend deployment
 
+The Vercel project is connected to `VictoryMa8/ismi` on GitHub. Pushes to `main` automatically deploy the frontend to `https://ismi-ruby.vercel.app`; other branches create previews. The repository-root `vercel.mjs` supplies the build and API proxy configuration, using the existing production/preview `ISMI_API_ORIGIN` environment variable. Backend changes still require a separate alwaysdata deployment.
+
 Deploy from the repository root using `vercel.mjs`. Vercel builds `i-web` and proxies `/api/*` to `ISMI_API_ORIGIN`, which must be the HTTPS origin of a separately hosted ASP.NET API. Set that variable for each Vercel environment and in the local CLI environment when deploying. The configuration intentionally refuses deployment without an API origin, to avoid publishing a frontend with broken accounts and lessons. Keep preview deployments access-restricted for the invite-only beta.
 
 The development preview is deployed at https://ismi-ruby.vercel.app, with its API at https://ismi.alwaysdata.net. The Vercel project is `ismi` under `victorys-projects-c1cb4594`; both production and preview build environments have `ISMI_API_ORIGIN` configured. Vercel deployment does not migrate local accounts, progress, curriculum, or recordings; `.vercelignore` excludes backend files and local data. Configure the approver email on the backend host, not in the frontend.
