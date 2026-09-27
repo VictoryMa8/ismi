@@ -5,14 +5,11 @@ import {
   BookCheck,
   Check,
   ChevronRight,
-  Flame,
   Headphones,
   Home,
-  LibraryBig,
   MessageCircle,
   Newspaper,
   RotateCcw,
-  Sparkles,
   UserPlus,
   UserRound,
   Volume2,
@@ -66,7 +63,33 @@ const currentStepIndex = ref(0)
 const lessonFinished = ref(false)
 const completionWasQueued = ref(false)
 const pendingSyncCount = ref(0)
-const accountOpen = ref(false)
+type PageName = 'today' | 'courses' | 'practice' | 'account'
+const navigation = [
+  { id: 'today', label: 'Today', icon: Home },
+  { id: 'courses', label: 'Courses', icon: BookOpen },
+  { id: 'practice', label: 'Practice', icon: Headphones },
+  { id: 'account', label: 'Account', icon: UserRound },
+] as const
+function readPage(): PageName {
+  const path = window.location.hash.replace(/^#\/?/, '')
+  return navigation.find(item => item.id === path)?.id ?? 'today'
+}
+const page = ref<PageName>(readPage())
+function navigate(destination: PageName) {
+  window.location.hash = `/${destination}`
+}
+async function handlePageChange() {
+  const destination = readPage()
+  if (page.value === destination) return
+  stopPromptAudio()
+  lessonOpen.value = false
+  page.value = destination
+  accountPassword.value = ''
+  document.title = `${navigation.find(item => item.id === destination)?.label} · Ismi`
+  await nextTick()
+  window.scrollTo({ top: 0, behavior: 'instant' })
+  document.querySelector<HTMLElement>('#main-content')?.focus({ preventScroll: true })
+}
 const consoleOpen = ref(false)
 const accountMode = ref<'login' | 'register'>('login')
 const accountSubmitting = ref(false)
@@ -187,6 +210,8 @@ const syncStatus = computed(() => {
 
 onMounted(async () => {
   window.addEventListener('online', handleOnline)
+  window.addEventListener('hashchange', handlePageChange)
+  document.title = `${navigation.find(item => item.id === page.value)?.label} · Ismi`
   speechSupported.value = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window
   if (speechSupported.value) {
     loadSpeechVoices()
@@ -202,11 +227,16 @@ onMounted(async () => {
 
 onBeforeUnmount(() => {
   window.removeEventListener('online', handleOnline)
+  window.removeEventListener('hashchange', handlePageChange)
   if (speechSupported.value) {
     window.speechSynthesis.removeEventListener('voiceschanged', loadSpeechVoices)
   }
   stopPromptAudio()
 })
+
+function focusMain() {
+  document.querySelector<HTMLElement>('#main-content')?.focus()
+}
 
 function loadSpeechVoices() {
   speechVoices.value = window.speechSynthesis.getVoices()
@@ -230,15 +260,15 @@ function openAccount(mode: 'login' | 'register' = 'login') {
   accountMode.value = mode
   accountError.value = null
   accountPassword.value = ''
-  accountOpen.value = true
+  navigate('account')
 }
 
 function closeAccount() {
-  if (!accountSubmitting.value) accountOpen.value = false
+  if (!accountSubmitting.value) navigate('today')
 }
 
 function openCurriculumConsole() {
-  accountOpen.value = false
+  navigate('today')
   consoleOpen.value = true
 }
 
@@ -268,7 +298,7 @@ async function submitAccount() {
     await syncPendingCompletions()
     await loadDashboard()
     await cacheUpcomingLessons()
-    accountOpen.value = false
+    navigate('today')
   } catch (error) {
     accountError.value = error instanceof Error
       ? error.message
@@ -286,7 +316,7 @@ async function signOut() {
     await logoutAccount()
     await loadAuthSession()
     await loadDashboard()
-    accountOpen.value = false
+    navigate('today')
   } catch (error) {
     accountError.value = error instanceof Error
       ? error.message
@@ -530,10 +560,10 @@ async function previewLesson(draft: LessonResponse, opener: HTMLElement) {
   lessonCloseButton.value?.focus()
 }
 
-async function startLesson(requestedId?: string) {
+async function startLesson(requestedId?: string, practiceOnly = false) {
   lessonOpener = document.activeElement as HTMLElement | null
   previewMode.value = false
-  practiceMode.value = Boolean(dashboard.value.dailyPlan.lessons.find(item => item.id === (requestedId ?? dashboard.value.dailyPlan.nextLessonId))?.isCompleted)
+  practiceMode.value = practiceOnly || Boolean(dashboard.value.dailyPlan.lessons.find(item => item.id === (requestedId ?? dashboard.value.dailyPlan.nextLessonId))?.isCompleted)
   stopPromptAudio()
   lessonOpen.value = true
   selectedAnswer.value = null
@@ -726,32 +756,20 @@ async function finishLesson() {
 </script>
 
 <template>
-  <a class="skip-link" href="#main-content">Skip to today’s lesson</a>
+  <a class="skip-link" href="#main-content" @click.prevent="focusMain">Skip to main content</a>
 
-  <div class="app-shell" :inert="lessonOpen || accountOpen || consoleOpen">
+  <div class="app-shell" :inert="lessonOpen || consoleOpen">
     <aside class="side-nav" aria-label="Primary navigation">
-      <a class="brand" href="#" aria-label="Ismi home">
+      <a class="brand" href="#/today" aria-label="Ismi home">
         <span class="brand-mark" aria-hidden="true">ا</span>
         <span class="brand-word">ismi</span>
       </a>
 
       <nav class="nav-links">
-        <a class="nav-link active" href="#" aria-current="page">
-          <Home :size="21" aria-hidden="true" />
-          <span>Today</span>
+        <a v-for="item in navigation" :key="item.id" class="nav-link" :class="{ active: page === item.id }" :href="`#/${item.id}`" :aria-current="page === item.id ? 'page' : undefined">
+          <component :is="item.icon" :size="21" aria-hidden="true" />
+          <span>{{ item.label }}</span>
         </a>
-        <a class="nav-link" href="#practice">
-          <Headphones :size="21" aria-hidden="true" />
-          <span>Practice</span>
-        </a>
-        <a class="nav-link" href="#words">
-          <LibraryBig :size="21" aria-hidden="true" />
-          <span>My words</span>
-        </a>
-        <button class="nav-link account-nav-link" type="button" @click="openAccount()">
-          <UserRound :size="21" aria-hidden="true" />
-          <span>{{ authSession.isAuthenticated ? authSession.displayName : 'Account' }}</span>
-        </button>
         <button v-if="authSession.canManageCurriculum" class="nav-link account-nav-link" type="button" @click="openCurriculumConsole">
           <BookCheck :size="21" aria-hidden="true" />
           <span>Curriculum</span>
@@ -759,14 +777,13 @@ async function finishLesson() {
       </nav>
 
       <div class="side-note">
-        <Sparkles :size="18" aria-hidden="true" />
-        <p><strong>One language, three lenses.</strong> Your tracks connect when it helps.</p>
+        <p>Speak with the people you love.</p>
       </div>
     </aside>
 
     <main id="main-content" class="main-content" tabindex="-1">
       <header class="mobile-header">
-        <a class="brand" href="#" aria-label="Ismi home">
+        <a class="brand" href="#/today" aria-label="Ismi home">
           <span class="brand-mark" aria-hidden="true">ا</span>
           <span class="brand-word">ismi</span>
         </a>
@@ -777,6 +794,7 @@ async function finishLesson() {
 
       <p v-if="downloadError" role="status">{{ downloadError }}</p>
 
+      <template v-if="page === 'today'">
       <section class="welcome-row" aria-labelledby="today-heading">
         <div>
           <p class="eyebrow">{{ todayLabel }} · Your {{ dashboard.dailyPlan.goalMinutes }}-minute plan</p>
@@ -789,10 +807,6 @@ async function finishLesson() {
             <UserRound :size="18" aria-hidden="true" />
             <span>{{ authSession.isAuthenticated ? 'Account synced' : 'Studying as guest' }}</span>
           </button>
-          <div class="status-pill streak-pill">
-            <Flame :size="19" aria-hidden="true" />
-            <span>{{ courseProgressLabel }}</span>
-          </div>
           <div class="status-pill offline-pill" :class="{ 'sync-pending': pendingSyncCount > 0 }">
             <Check v-if="apiLive && pendingSyncCount === 0" :size="18" aria-hidden="true" />
             <WifiOff v-else :size="18" aria-hidden="true" />
@@ -822,12 +836,6 @@ async function finishLesson() {
         </div>
 
         <article class="primary-lesson-card">
-          <div class="lesson-visual" aria-hidden="true">
-            <span class="speech-bubble bubble-one">كيف كان يومك؟</span>
-            <span class="speech-bubble bubble-two">كان منيح!</span>
-            <span class="lesson-visual-caption">kīf kān yōmak?</span>
-          </div>
-
           <div class="lesson-details">
             <div class="track-label levantine-label">
               <MessageCircle :size="17" aria-hidden="true" />
@@ -849,9 +857,22 @@ async function finishLesson() {
           </div>
         </article>
 
-        <div id="practice">
+        <p class="review-status-note">{{ courseProgressLabel }}</p>
+        <a class="page-link" href="#/courses">View course path <ChevronRight :size="16" aria-hidden="true" /></a>
+      </section>
+      </template>
+
+      <template v-if="page === 'courses'">
+        <header class="page-heading">
+          <p class="eyebrow">Learn at your pace</p>
+          <h1>Courses</h1>
+          <p class="welcome-copy">Palestinian Levantine</p>
+          <p class="review-status-note">{{ courseProgressLabel }}</p>
+          <p class="review-status-note" role="status">{{ syncStatus }}</p>
+        </header>
+        <div class="course-units">
         <section v-for="unit in courseUnits" :key="unit.id" :aria-label="unit.title">
-        <h3>{{ unit.title }}</h3>
+        <h2>{{ unit.title }}</h2>
         <ol class="course-path" aria-label="Levantine course path">
           <li
             v-for="item in unit.lessons"
@@ -876,13 +897,11 @@ async function finishLesson() {
         </div>
         </section>
         </div>
-      </section>
-
       <section class="section-block" aria-labelledby="tracks-heading">
         <div class="section-heading compact-heading">
           <div>
-            <span class="section-kicker">Your other tracks</span>
-            <h2 id="tracks-heading">Keep every lens moving</h2>
+            <span class="section-kicker">Coming later</span>
+            <h2 id="tracks-heading">More ways to learn Arabic</h2>
           </div>
           <span class="review-status-note">Additional tracks are not available yet</span>
         </div>
@@ -893,7 +912,7 @@ async function finishLesson() {
             <div class="track-card-copy">
               <span class="track-name">MSA · coming later</span>
               <h3>MSA pilot not yet published</h3>
-              <p>This checkpoint is focused on proving the Levantine course loop.</p>
+              <p>Read and understand everyday formal Arabic.</p>
               <div class="mini-progress" aria-label="MSA unit progress: 0 percent"><span style="width: 0%"></span></div>
             </div>
             <button type="button" class="round-action" aria-label="MSA lessons are not yet available" disabled>
@@ -906,7 +925,7 @@ async function finishLesson() {
             <div class="track-card-copy">
               <span class="track-name">Quranic · coming later</span>
               <h3>Quranic pilot not yet published</h3>
-              <p>Canonical text and source permissions remain gated before publication.</p>
+              <p>Build vocabulary and understand direct textual meaning.</p>
               <div class="mini-progress" aria-label="Quranic unit progress: 0 percent"><span style="width: 0%"></span></div>
             </div>
             <button type="button" class="round-action" aria-label="Quranic Arabic lessons are not yet available" disabled>
@@ -916,34 +935,31 @@ async function finishLesson() {
         </div>
       </section>
 
-      <section id="words" class="connection-card" aria-labelledby="connection-heading">
-        <div class="connection-icon" aria-hidden="true"><Sparkles :size="21" /></div>
-        <div>
-          <span class="section-kicker">Connection of the day</span>
-          <h2 id="connection-heading">One idea, different registers</h2>
-          <p><span lang="ar" dir="rtl">{{ dashboard.connection.arabic }}</span> · <strong>{{ dashboard.connection.levantine }}</strong> in conversation · <strong>{{ dashboard.connection.formal }}</strong> in MSA and Quranic Arabic</p>
-        </div>
-      </section>
-    </main>
+      </template>
 
-    <nav class="bottom-nav" aria-label="Mobile navigation">
-      <a class="active" href="#" aria-current="page"><Home :size="21" aria-hidden="true" /><span>Today</span></a>
-      <a href="#practice"><Headphones :size="21" aria-hidden="true" /><span>Practice</span></a>
-      <a href="#words"><LibraryBig :size="21" aria-hidden="true" /><span>Words</span></a>
-      <button type="button" :aria-label="accountButtonLabel" @click="openAccount()"><UserRound :size="21" aria-hidden="true" /><span>Profile</span></button>
-    </nav>
-  </div>
-
-  <div v-if="accountOpen" class="lesson-overlay" role="presentation" @click.self="closeAccount">
-    <section class="account-sheet" role="dialog" aria-modal="true" aria-labelledby="account-title" @keydown.esc="closeAccount">
+      <template v-if="page === 'practice'">
+        <header class="page-heading">
+          <p class="eyebrow">Keep it familiar</p>
+          <h1>Practice</h1>
+          <p class="welcome-copy">Revisit a conversation. Take as many tries as you need.</p>
+        </header>
+        <section class="practice-list" aria-label="Practice lessons">
+          <button v-for="item in dashboard.dailyPlan.lessons" :key="item.id" class="practice-item" type="button" @click="startLesson(item.id, true)">
+            <RotateCcw :size="20" aria-hidden="true" />
+            <span><strong>{{ item.title }}</strong><small>{{ item.estimatedMinutes }} min · {{ item.isCompleted ? 'Completed lesson' : 'Try a lesson' }}</small></span>
+            <ChevronRight :size="18" aria-hidden="true" />
+          </button>
+          <p v-if="!dashboard.dailyPlan.lessons.length">Lessons will appear here when your course is available. Connect to download your first lessons.</p>
+        </section>
+      </template>
+    <section v-if="page === 'account'" class="account-sheet account-page" aria-labelledby="account-title">
       <header class="account-sheet-header">
         <div>
           <span class="section-kicker">Your Ismi account</span>
-          <h2 id="account-title">
+          <h1 id="account-title">
             {{ authSession.isAuthenticated ? 'Account and sync' : accountMode === 'login' ? 'Welcome back' : 'Create your account' }}
-          </h2>
+          </h1>
         </div>
-        <button class="close-button" type="button" aria-label="Close account" :disabled="accountSubmitting" @click="closeAccount">×</button>
       </header>
 
       <template v-if="authSession.isAuthenticated">
@@ -1002,6 +1018,11 @@ async function finishLesson() {
         <p class="account-privacy">An account is optional. It stores your progress for future sessions; core lessons remain available to guests.</p>
       </template>
     </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="Mobile navigation">
+      <a v-for="item in navigation" :key="item.id" :class="{ active: page === item.id }" :href="`#/${item.id}`" :aria-current="page === item.id ? 'page' : undefined"><component :is="item.icon" :size="21" aria-hidden="true" /><span>{{ item.label }}</span></a>
+    </nav>
   </div>
 
   <div v-if="lessonOpen" class="lesson-overlay" :class="{ 'preview-overlay': previewMode }" role="presentation" @click.self="closeLesson">
@@ -1038,7 +1059,7 @@ async function finishLesson() {
         <p v-if="completionWasQueued" class="queued-note">
           Saved on this device. Ismi will sync it when you reconnect.
         </p>
-        <button class="primary-action" type="button" @click="closeLesson">{{ previewMode ? 'Back to curriculum' : 'Back to today' }}</button>
+        <button class="primary-action" type="button" @click="closeLesson">{{ previewMode ? 'Back to curriculum' : page === 'courses' ? 'Back to courses' : page === 'practice' ? 'Back to practice' : 'Back to today' }}</button>
       </div>
 
       <template v-else-if="lesson && currentStep">

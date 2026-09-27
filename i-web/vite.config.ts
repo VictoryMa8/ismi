@@ -15,8 +15,8 @@ export default defineConfig({
         name: 'Ismi — Arabic for the conversations that matter',
         short_name: 'Ismi',
         description: 'Learn Palestinian Levantine, MSA, and Quranic Arabic in one focused daily plan.',
-        theme_color: '#27493e',
-        background_color: '#fbf4e7',
+        theme_color: '#fafbf9',
+        background_color: '#fafbf9',
         display: 'standalone',
         start_url: '/',
         icons: [

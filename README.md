@@ -4,7 +4,7 @@ Ismi is a mobile-first Arabic learning web app for Palestinian Levantine, Modern
 
 The current product slice includes:
 
-- A Vue 3 + TypeScript progressive web app.
+- A Vue 3 + TypeScript progressive web app with separate Today, Courses, Practice, and Account pages.
 - An ASP.NET Core 10 API.
 - A personalized three-track dashboard with a real ordered Levantine course path.
 - A six-lesson demonstrative Week 1 loop built from the original four-step conversation material.
@@ -45,7 +45,7 @@ npm install
 npm run dev -- --host 127.0.0.1
 ```
 
-Then open `http://127.0.0.1:5173/`.
+Then open `http://127.0.0.1:5173/`. Learner pages use `#/today`, `#/courses`, `#/practice`, and `#/account`, so bookmarked pages and browser history also work in the offline PWA. Today shows the next lesson; Courses holds the full path; Practice lets learners repeat lessons without advancing course progress.
 
 Learners can continue as guests or create an account from the Account control. Account credentials and synchronized progress are stored locally in `i-api/App_Data/ismi.db`; the directory is ignored by Git. Passwords are hashed by ASP.NET Core Identity and are never stored in plaintext. Authentication uses an HttpOnly cookie, and state-changing account/progress requests require an antiforgery token.
 

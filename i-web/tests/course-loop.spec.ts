@@ -19,9 +19,10 @@ async function waitForOfflinePackage(page: Page) {
 }
 
 test('download, offline completion, and exactly-once reconnection advance the course', async ({ page, context }) => {
-  await page.goto('/')
+  await page.goto('/#/courses')
   await expect(page.getByRole('list', { name: 'Levantine course path' }).getByRole('listitem')).toHaveCount(6)
   await expect(page.getByText('0 of 6 lessons complete')).toBeVisible()
+  await page.getByRole('link', { name: 'Today', exact: true }).click()
   await waitForOfflinePackage(page)
 
   await page.evaluate(async () => {
@@ -42,8 +43,10 @@ test('download, offline completion, and exactly-once reconnection advance the co
   await expect(page.getByText('Saved on this device. Ismi will sync it when you reconnect.')).toBeVisible()
   await page.getByRole('button', { name: 'Back to today' }).click()
   await expect(page.getByText('1 of 6 lessons complete')).toBeVisible()
+  await page.getByRole('link', { name: 'Courses', exact: true }).click()
   await expect(page.getByRole('listitem').filter({ hasText: 'Say what you did today' })).toContainText('Up next')
 
+  await page.getByRole('link', { name: 'Today', exact: true }).click()
   await context.setOffline(false)
   await page.evaluate(() => window.dispatchEvent(new Event('online')))
   await expect(page.getByText('Progress synced')).toBeVisible()
@@ -59,7 +62,7 @@ test('download, offline completion, and exactly-once reconnection advance the co
 test('core course controls expose names and remain keyboard reachable', async ({ page }) => {
   await page.goto('/')
   await page.keyboard.press('Tab')
-  await expect(page.getByRole('link', { name: 'Skip to today’s lesson' })).toBeFocused()
+  await expect(page.getByRole('link', { name: 'Skip to main content' })).toBeFocused()
   await page.keyboard.press('Enter')
   await expect(page.locator('#main-content')).toBeFocused()
 

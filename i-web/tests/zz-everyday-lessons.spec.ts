@@ -85,6 +85,7 @@ test('all authored lessons preview, then published test copies complete offline 
   await page.getByRole('button', { name: 'Back to learner app' }).click()
   await page.reload()
   await page.evaluate(async () => { await navigator.serviceWorker.ready })
+  await page.getByRole('link', { name: 'Courses', exact: true }).click()
   // Open each published package once so the entire unit, including notes, is cached.
   for (const { lesson } of packages) {
     await page.getByRole('button', { name: `Open ${lesson.title}`, exact: true }).click()
@@ -100,14 +101,14 @@ test('all authored lessons preview, then published test copies complete offline 
     await expect(dialog.getByRole('list', { name: 'Dialogue transcript' })).toBeVisible()
     await complete(page, dialog, lesson, true)
     await expect(dialog.getByText('Saved on this device. Ismi will sync it when you reconnect.')).toBeVisible()
-    await dialog.getByRole('button', { name: 'Back to today' }).click()
+    await dialog.getByRole('button', { name: 'Back to courses' }).click()
   }
   const unit = page.getByRole('region', { name: 'Everyday conversations with someone you love', exact: true })
   await expect(unit.getByRole('heading', { name: 'Unit complete' })).toBeVisible()
   await expect(page.getByText('7 completions waiting to sync', { exact: true })).toBeVisible()
   await unit.getByRole('button', { name: 'Review the unit' }).click()
   await complete(page, page.getByRole('dialog', { name: packages[0]!.lesson.title, exact: true }), packages[0]!.lesson)
-  await page.getByRole('button', { name: 'Back to today' }).click()
+  await page.getByRole('button', { name: 'Back to courses' }).click()
   await expect(page.getByText('7 completions waiting to sync', { exact: true })).toBeVisible()
   await context.setOffline(false)
   await page.evaluate(() => window.dispatchEvent(new Event('online')))
