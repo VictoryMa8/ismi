@@ -88,5 +88,14 @@
     "authorization": "Owner explicitly instructed: Approve for me, publish, and figure out whats next for ismi",
     "actor": "Owner via Codex",
     "publishedAtUtc": "2026-09-26T02:08:37Z"
+  },
+  "productionPublication": {
+    "verifiedOnUtc": "2026-09-27",
+    "frontend": "https://ismi-ruby.vercel.app",
+    "api": "https://ismi.alwaysdata.net",
+    "commit": "a5ef7dc619ae7eb775769fb05789fa195e1d5492",
+    "versions": "Seven v1 packages; live records 7–13",
+    "authorization": "Owner explicitly instructed: Approve for me, publish, and figure out whats next for ismi",
+    "verification": "All seven live lesson endpoints returned v1, eight exercises and six dialogue turns; dashboard placed them before six retained demonstration lessons."
   }
 }

@@ -1,24 +1,28 @@
 # Current agenda: validate the first usable Levantine unit
 
-Updated September 26, 2026 UTC.
+Updated September 27, 2026 UTC.
 
 ## Completed milestone
 
 Seven Everyday conversations lessons, records 7–13, are approved and published
-as v1 in the local SQLite store. The owner explicitly instructed: “Approve for
+as v1 in both the local and live SQLite stores. The owner explicitly instructed: “Approve for
 me, publish, and figure out whats next for ismi.” Codex checked every package
 against the review-manifest SHA-256, compared stored content and sources, and
 used CurriculumPublishingService validation, approval, and publication methods.
 The audit actor records the owner's authorization via Codex. All seven public
 learner lesson endpoints returned the expected published v1 and eight exercises.
 The six demonstration publications and existing progress were preserved.
-This is not a production deployment. Owner authorization does not establish
-native-expert language review or effectiveness evidence.
+The release is live at https://ismi-ruby.vercel.app with the API at
+https://ismi.alwaysdata.net. Vercel production deployment of a5ef7dc is READY;
+the restarted API and all seven published lesson payloads were verified. Existing
+hosting remains the limited development-preview infrastructure described in the
+root README; this deployment does not establish full beta readiness. Owner
+authorization does not establish native-expert review or effectiveness evidence.
 
 ## Recommended next milestone: a small observed learner pilot
 
 Prepare an owner-run pilot of this unit before expanding the content pipeline.
-Cohort size, selection, hosting, and pass criteria remain proposals for owner
+Cohort size, selection, invitation controls, and pass criteria remain proposals for owner
 agreement; do not silently treat them as settled product decisions.
 
 1. Prepare a session script and a minimal observation sheet. Measure completion
@@ -30,9 +34,8 @@ agreement; do not silently treat them as settled product decisions.
    English, and transliteration. Fix blocking issues before involving learners
    who depend on those accommodations. Existing browser tests are not a substitute.
 3. Have the owner run a small observed pilot with target false beginners, then
-   prioritize revisions from the observed problems. Local supervised sessions can
-   begin without settling production hosting; remote access needs an explicit
-   hosting and invitation plan first.
+   prioritize revisions from the observed problems. The current live app supports supervised
+   sessions; remote cohort access still needs an explicit invitation plan.
 4. Use those findings to choose the next bounded development slice. Likely candidate:
    guided production using reviewed structured accepted answers and contextual
    explanations. Current multiple-choice practice cannot demonstrate spontaneous

@@ -101,10 +101,23 @@ Publish the API locally with `dotnet publish i-api/Ismi.Api.csproj -c Release -o
 
 The startup script places SQLite, recordings, and Data Protection keys under `ISMI_DATA_DIR`, preserving sessions and progress across restarts and code uploads. Keep this SQLite slice on one instance. New hosting starts with demonstration curriculum and no existing accounts; migrating local user data requires a separate explicit request. Protect backups as account data.
 
-The configured alwaysdata account is `ismi`, site `1076252`, with application files in `/home/ismi/ismi/app` and persistent data in `/home/ismi/ismi/data`. The site runs .NET 10 with `sh start-alwaysdata.sh`, binds the provider's IPv6 address, and forces HTTPS. Replace only application files on redeployment. Local hosting credentials and URLs are saved in ignored `.env.hosting.local` with owner-only permissions; never upload that file to either provider or commit it.
+The configured alwaysdata account is `ismi`, site `1076252`, with application files in `/home/ismi/ismi/app` and persistent data in `/home/ismi/ismi/data`. The site runs .NET 10 with `sh start-alwaysdata.sh`, binds the provider's IPv6 address, and forces HTTPS. Replace only application files on redeployment. Keep any local hosting credentials in ignored owner-only files; never upload them to either provider or commit them. The temporary SSH key used for the September 27 release was removed after verification.
 
 Deployment verification (2026-09-13): Vercel build passed; direct and proxied HTTPS health/dashboard endpoints passed; secure CSRF cookies and registration input validation passed without creating an account; the live browser completed a guest lesson and showed synchronized progress with the next lesson selected. SQLite and key directories were confirmed on persistent storage. Full live account creation and recorded-audio publication were not exercised. The provider reported a 138 MB peak backend footprint and also displayed a resource-limit warning; this free preview can be slow and is not a load-tested beta host.
 
 After sign-in and backend provisioning, set `ISMI_API_ORIGIN` to its HTTPS origin, then deploy and verify the Vercel frontend. The frontend's Hobby plan also restricts use to personal, non-commercial projects. Public beta access still requires the project's release gates and an invitation mechanism.
 
 References: [alwaysdata free plan](https://help.alwaysdata.com/en/admin-billing/billing/public-cloud-prices/), [.NET configuration](https://help.alwaysdata.com/en/docs/web-hosting/languages/dotnet/configuration/), [Vercel Hobby terms](https://vercel.com/docs/plans/hobby).
+
+### September 27, 2026 release
+
+The Vercel production URL serves release `a5ef7dc`, and the alwaysdata API was
+updated and restarted. Seven owner-approved Everyday conversations v1 lessons
+were imported, validated, approved, and published through the curriculum service
+in the live database. All seven live endpoints returned eight exercises and six
+dialogue turns; the dashboard lists them before the six preserved demonstrations.
+Existing account/progress data was preserved. The previous application and an
+online SQLite backup remain on the backend host for rollback. Validation before
+deployment passed 20 API tests, seven browser tests, and the frontend build.
+Reviewed audio, real assistive-technology testing, pilot evidence, and the broader
+beta release gates remain outstanding.

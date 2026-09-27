@@ -1,10 +1,11 @@
 # Everyday conversations with someone you love
 
-Seven original Palestinian Levantine lessons are published as v1 in the local
-curriculum store. On September 26, 2026 UTC, the owner explicitly authorized
+Seven original Palestinian Levantine lessons are published as v1 in both the local
+curriculum store and the live app at https://ismi-ruby.vercel.app. Live publication
+and all seven API payloads were verified on September 27, 2026 UTC. On September 26, 2026 UTC, the owner explicitly authorized
 approval and publication; Codex executed the existing validation, approval, and
-publication service and recorded that authorization in the audit. This is local
-publication, not production deployment or native-expert review. The source foundation was approved by the owner in this
+publication service and recorded that authorization in the audit. Production deployment followed the owner’s explicit authorization. Publication
+does not establish native-expert review. The source foundation was approved by the owner in this
 task on September 22, 2026 (“i apporve”). That approval covers the curriculum
 foundation and source set, **not the finished content or publication**. The later explicit authorization
 approves the exact seven finished v1 packages identified by the manifest.
@@ -118,7 +119,7 @@ published, completion refers to the currently available lessons.
 ## Delivery counts
 
 - Original lesson packages: **7**, with **42 dialogue turns** and **56 interactions**.
-- Published local versions: **7** (v1; records 7–13).
+- Published local and live versions: **7** each (v1; records 7–13 in both stores).
 - Awaiting owner content/publication approval: **0**.
 - New approved/published lessons: **7 / 7**.
 - Reviewed recording assets: **0**.
