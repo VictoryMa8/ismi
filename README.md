@@ -87,13 +87,13 @@ No real speaker recordings ship in this change. Seed lessons remain demonstrativ
 
 ## Vercel frontend deployment
 
-The Vercel project is connected to `VictoryMa8/ismi` on GitHub. Pushes to `main` automatically deploy the frontend to `https://ismi-ruby.vercel.app`; other branches create previews. The repository-root `vercel.mjs` supplies the build and API proxy configuration, using the existing production/preview `ISMI_API_ORIGIN` environment variable. Backend changes still require a separate alwaysdata deployment.
+The Vercel project is connected to `VictoryMa8/ismi` on GitHub. Pushes to `main` automatically deploy the frontend to `https://ismi-ruby.vercel.app`; other branches create previews. The repository-root `vercel.json` supplies the build and API proxy configuration and points `/api/*` to the existing `https://ismi.alwaysdata.net` backend. Backend changes still require a separate alwaysdata deployment.
 
-Deploy from the repository root using `vercel.mjs`. Vercel builds `i-web` and proxies `/api/*` to `ISMI_API_ORIGIN`, which must be the HTTPS origin of a separately hosted ASP.NET API. Set that variable for each Vercel environment and in the local CLI environment when deploying. The configuration intentionally refuses deployment without an API origin, to avoid publishing a frontend with broken accounts and lessons. Keep preview deployments access-restricted for the invite-only beta.
+Deploy from the repository root using `vercel.json`. Vercel builds `i-web` and proxies `/api/*` to `https://ismi.alwaysdata.net`. If the backend host changes, update the rewrite destination in that file. Keep preview deployments access-restricted for the invite-only beta.
 
-The development preview is deployed at https://ismi-ruby.vercel.app, with its API at https://ismi.alwaysdata.net. The Vercel project is `ismi` under `victorys-projects-c1cb4594`; both production and preview build environments have `ISMI_API_ORIGIN` configured. Vercel deployment does not migrate local accounts, progress, curriculum, or recordings; `.vercelignore` excludes backend files and local data. Configure the approver email on the backend host, not in the frontend.
+The development preview is deployed at https://ismi-ruby.vercel.app, with its API at https://ismi.alwaysdata.net. The Vercel project is `ismi` under `victorys-projects-c1cb4594`; both production and preview deployments use the checked-in API rewrite. Vercel deployment does not migrate local accounts, progress, curriculum, or recordings; `.vercelignore` excludes backend files and local data. Configure the approver email on the backend host, not in the frontend.
 
-With the Vercel CLI signed in, use `ISMI_API_ORIGIN=https://ismi.alwaysdata.net vercel deploy --project ismi --scope victorys-projects-c1cb4594` from the repository root for a preview; add `--prod` to update the stable URL. Verify account cookies, lesson loading, recording upload/playback, and offline download/reconnection before a beta release.
+With the Vercel CLI signed in, use `vercel deploy --project ismi --scope victorys-projects-c1cb4594` from the repository root for a preview; add `--prod` to update the stable URL. Verify account cookies, lesson loading, recording upload/playback, and offline download/reconnection before a beta release.
 
 ### Free development backend
 
@@ -107,7 +107,7 @@ The configured alwaysdata account is `ismi`, site `1076252`, with application fi
 
 Deployment verification (2026-09-13): Vercel build passed; direct and proxied HTTPS health/dashboard endpoints passed; secure CSRF cookies and registration input validation passed without creating an account; the live browser completed a guest lesson and showed synchronized progress with the next lesson selected. SQLite and key directories were confirmed on persistent storage. Full live account creation and recorded-audio publication were not exercised. The provider reported a 138 MB peak backend footprint and also displayed a resource-limit warning; this free preview can be slow and is not a load-tested beta host.
 
-After sign-in and backend provisioning, set `ISMI_API_ORIGIN` to its HTTPS origin, then deploy and verify the Vercel frontend. The frontend's Hobby plan also restricts use to personal, non-commercial projects. Public beta access still requires the project's release gates and an invitation mechanism.
+If moving the backend, update the HTTPS origin in `vercel.json`, then deploy and verify the Vercel frontend. The frontend's Hobby plan also restricts use to personal, non-commercial projects. Public beta access still requires the project's release gates and an invitation mechanism.
 
 References: [alwaysdata free plan](https://help.alwaysdata.com/en/admin-billing/billing/public-cloud-prices/), [.NET configuration](https://help.alwaysdata.com/en/docs/web-hosting/languages/dotnet/configuration/), [Vercel Hobby terms](https://vercel.com/docs/plans/hobby).
 
