@@ -1,3 +1,4 @@
+import { finishTeaching, responseChoices } from './lesson-helpers'
 import { expect, test } from '@playwright/test'
 
 // Uses only existing demonstration language. This is not an authored lesson.
@@ -9,7 +10,7 @@ test('owner imports and completes a saved draft without exposing or caching it',
   await page.getByLabel('Email', { exact: true }).fill('preview-owner@example.test')
   await page.getByLabel('Password', { exact: true }).fill('test-only-long-password')
   await page.getByRole('button', { name: 'Create account', exact: true }).last().click()
-  await expect(page.getByText('Account synced', { exact: true })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Open account for Preview owner' }).first()).toBeVisible()
   await page.getByRole('button', { name: 'Open account for Preview owner' }).first().click()
   await page.getByRole('button', { name: 'Open curriculum console' }).click()
 
@@ -37,11 +38,13 @@ test('owner imports and completes a saved draft without exposing or caching it',
   await page.getByRole('button', { name: 'Preview saved version' }).click()
   const dialog = page.getByRole('dialog', { name: lesson.title })
   await expect(dialog.getByRole('list', { name: 'Dialogue transcript' }).getByRole('listitem')).toHaveCount(4)
-  await expect(dialog.getByText('Test usage note', { exact: true })).toBeVisible()
   await expect(dialog.getByRole('button', { name: 'Close lesson' })).toBeFocused()
   await page.keyboard.press('Shift+Tab')
-  await expect(dialog.getByRole('button', { name: 'Start practice' })).toBeFocused()
-  await page.keyboard.press('Enter')
+  await expect(dialog.getByRole('button', { name: 'Interface sounds' })).toBeFocused()
+  await page.keyboard.press('Shift+Tab')
+  await expect(dialog.getByRole('button', { name: 'Learn the phrases' })).toBeFocused()
+  await finishTeaching(page, dialog)
+  await responseChoices(dialog)
   const wrong = dialog.locator('.answer-option').first()
   await wrong.focus()
   await page.keyboard.press('Enter')
@@ -51,6 +54,7 @@ test('owner imports and completes a saved draft without exposing or caching it',
   await dialog.getByRole('button', { name: 'Try again' }).focus()
   await page.keyboard.press('Enter')
   for (let i = 0; i < 6; i++) {
+    await responseChoices(dialog, `test-${i}`)
     await dialog.locator('.answer-option').last().focus()
     await page.keyboard.press('Enter')
     await dialog.getByRole('button', { name: 'Check answer' }).focus()

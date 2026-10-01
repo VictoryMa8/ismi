@@ -56,7 +56,14 @@ export type LessonPrompt = {
   recording?: LessonRecording | null
 }
 
+export type LessonPhraseChunk = { arabic: string; arabizi: string; meaning: string }
+export type LessonTeachingCard = {
+  title: string; phrase: LessonPrompt; note: string; chunks: LessonPhraseChunk[]
+  recallCue?: string | null; sourceLocators?: string[] | null
+}
+
 export type LessonIntroduction = {
+  teachingCards?: LessonTeachingCard[] | null
   goal: string
   dialogue: Array<{ speaker: string; line: LessonPrompt }>
   expressions: LessonPrompt[]

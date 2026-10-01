@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="../content/levantine/everyday-01/revisions/guided-teaching/*-lesson.json" Link="guided-teaching/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <PackageReference Include="coverlet.collector" Version="6.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.9" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
@@ -20,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="../content/levantine/everyday-01/revisions/check-in-v2/*-lesson.json" Link="check-in-v2/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/*-lesson.json" Link="everyday-01/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 

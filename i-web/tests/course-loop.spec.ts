@@ -1,4 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
+import { finishTeaching, responseChoices } from './lesson-helpers'
 
 async function waitForOfflinePackage(page: Page) {
   await expect.poll(async () => page.evaluate(async () => {
@@ -19,6 +20,7 @@ async function waitForOfflinePackage(page: Page) {
 }
 
 test('download, offline completion, and exactly-once reconnection advance the course', async ({ page, context }) => {
+  test.setTimeout(60_000)
   await page.goto('/#/courses')
   await expect(page.getByRole('list', { name: 'Levantine course path' }).getByRole('listitem')).toHaveCount(6)
   await expect(page.getByText('0 of 6 lessons complete')).toBeVisible()
@@ -36,7 +38,9 @@ test('download, offline completion, and exactly-once reconnection advance the co
   await expect(page.getByText('Offline · progress stays on this device')).toBeVisible()
   await page.getByRole('button', { name: /Continue in Levantine/i }).click()
   const lessonDialog = page.getByRole('dialog', { name: 'Answer a friend’s check-in' })
-  await expect(lessonDialog.getByRole('heading', { name: 'Answer a friend’s check-in' })).toBeVisible()
+  await expect(lessonDialog.getByRole('heading', { name: 'Answer a friend’s check-in', level: 2 })).toBeVisible()
+  await finishTeaching(page, lessonDialog)
+  await responseChoices(lessonDialog)
   await page.locator('.answer-option').first().click()
   await page.getByRole('button', { name: 'Check answer' }).click()
   await page.getByRole('button', { name: 'Complete lesson' }).click()
@@ -49,7 +53,7 @@ test('download, offline completion, and exactly-once reconnection advance the co
   await page.getByRole('link', { name: 'Today', exact: true }).click()
   await context.setOffline(false)
   await page.evaluate(() => window.dispatchEvent(new Event('online')))
-  await expect(page.getByText('Progress synced')).toBeVisible()
+  await expect(page.locator('.status-cluster')).toHaveCount(0)
   await expect(page.getByRole('heading', { name: '5 of 15 minutes' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Say what you did today' })).toBeVisible()
 
@@ -72,5 +76,7 @@ test('core course controls expose names and remain keyboard reachable', async ({
   const dialog = page.getByRole('dialog', { name: 'Answer a friend’s check-in' })
   await expect(dialog).toBeVisible()
   await expect(dialog.getByRole('button', { name: 'Close lesson' })).toBeFocused()
+  await finishTeaching(page, dialog)
+  await responseChoices(dialog)
   await expect(page.locator('fieldset').getByRole('button')).toHaveCount(3)
 })

@@ -1,0 +1,271 @@
+{
+  "caseId": "LEV-2026-09-30-01",
+  "revision": 3,
+  "status": "draft-revision-prepared",
+  "reportedAt": "2026-09-30",
+  "reporter": "Owner relaying feedback from a Palestinian speaker; identity and region not supplied",
+  "reportVerbatim": "Feedback from a palestinian: kif kan yomik isnt really used ever. shu amil is more used.",
+  "category": "naturalness-and-register",
+  "dialect": "urban Palestinian teaching target; speaker region not yet known",
+  "learnerResponse": null,
+  "aiDecision": null,
+  "assessment": "The owner confirmed the speaker means شو عامل؟ as a casual check-in. Reframe the opening around that communicative function instead of mechanically replacing a question about the day while retaining its old answers. The report does not establish that the original phrase is never used across Palestinian speech.",
+  "publicationAction": "Four proposed v2 packages prepared. Original v1 packages and publication manifest preserved. New versions remain drafts pending owner publication approval; no further native-speaker feedback required to prepare them, per owner instruction.",
+  "affectedLessons": [
+    {
+      "lessonId": "levantine-everyday-01-01",
+      "publishedVersion": 1,
+      "package": "01-lesson.json",
+      "sha256": "b16f77b0c9b91ceee4885831a944b833edf11b92fc808622f4b67fadb705ba4e",
+      "occurrences": [
+        {
+          "path": "$.lesson.steps[0].prompt.arabic",
+          "value": "كيف كان يومك؟"
+        },
+        {
+          "path": "$.lesson.steps[0].prompt.arabizi",
+          "value": "Kīf kān yōmak?"
+        },
+        {
+          "path": "$.lesson.steps[6].prompt.arabic",
+          "value": "كيف كان يومك؟"
+        },
+        {
+          "path": "$.lesson.steps[6].prompt.arabizi",
+          "value": "Kīf kān yōmak?"
+        },
+        {
+          "path": "$.lesson.introduction.dialogue[0].line.arabic",
+          "value": "كيف كان يومك؟"
+        },
+        {
+          "path": "$.lesson.introduction.dialogue[0].line.arabizi",
+          "value": "Kīf kān yōmak?"
+        }
+      ],
+      "sourceRecords": [
+        {
+          "sourceType": "reference-lexicon",
+          "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+          "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune v1.0.1 IDs 28621 (how), 36281/36285 (day/today), 31227 (good), 19704 (long), 34207 (calm), 3007 (tired), 17238 (a little), 1439 (but), 34542 (now), 576/578 (you m/f). Lingualism verbs: entry “to be” (كان); publisher sample p.109 personal pronouns and p.105/T104 wanting. Original dialogue pragmatics and feminine adjective forms require owner wording review; these references are not approval of the composed sentences."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+          "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune v1.0.1 IDs 28621 (how), 36281/36285 (day/today), 31227 (good), 19704 (long), 34207 (calm), 3007 (tired), 17238 (a little), 1439 (but), 34542 (now), 576/578 (you m/f). Lingualism verbs: entry “to be” (كان); publisher sample p.109 personal pronouns and p.105/T104 wanting. Original dialogue pragmatics and feminine adjective forms require owner wording review; these references are not approval of the composed sentences."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Lingualism — Verbs in Palestinian Arabic",
+          "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune v1.0.1 IDs 28621 (how), 36281/36285 (day/today), 31227 (good), 19704 (long), 34207 (calm), 3007 (tired), 17238 (a little), 1439 (but), 34542 (now), 576/578 (you m/f). Lingualism verbs: entry “to be” (كان); publisher sample p.109 personal pronouns and p.105/T104 wanting. Original dialogue pragmatics and feminine adjective forms require owner wording review; these references are not approval of the composed sentences."
+        },
+        {
+          "sourceType": "original-authoring-record",
+          "title": "Ismi original dialogue and contextual answer design",
+          "locator": "internal:ismi/everyday-01/01/draft-1",
+          "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+          "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-everyday-01-02",
+      "publishedVersion": 1,
+      "package": "02-lesson.json",
+      "sha256": "9c16f77decf6b436a785bd9b5136d4b25d4f5709fee212656d6730429a0d0b34",
+      "occurrences": [
+        {
+          "path": "$.lesson.steps[1].answers[2].arabic",
+          "value": "كيف كان يومك؟"
+        },
+        {
+          "path": "$.lesson.steps[1].answers[2].arabizi",
+          "value": "Kīf kān yōmak?"
+        },
+        {
+          "path": "$.lesson.steps[3].answers[2].arabic",
+          "value": "كيف كان يومك؟"
+        },
+        {
+          "path": "$.lesson.steps[3].answers[2].arabizi",
+          "value": "Kīf kān yōmak?"
+        }
+      ],
+      "sourceRecords": [
+        {
+          "sourceType": "reference-lexicon",
+          "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+          "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 16471/16467 (work), 13367/13362 (visit), 12399/12390 (go), 12403/12393 (rest), 1801 (then), 36285 (today), 528 (mother), 15296 (together). Lingualism verbs entries “to do, make,” “to go”; family entries mother, my mother and father. Publisher sample tables 1/2 illustrate first-person versus second-person feminine past endings; the four selected first-person forms are original inflections for owner review, not copied conjugation tables."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+          "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 16471/16467 (work), 13367/13362 (visit), 12399/12390 (go), 12403/12393 (rest), 1801 (then), 36285 (today), 528 (mother), 15296 (together). Lingualism verbs entries “to do, make,” “to go”; family entries mother, my mother and father. Publisher sample tables 1/2 illustrate first-person versus second-person feminine past endings; the four selected first-person forms are original inflections for owner review, not copied conjugation tables."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Lingualism — Verbs in Palestinian Arabic",
+          "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 16471/16467 (work), 13367/13362 (visit), 12399/12390 (go), 12403/12393 (rest), 1801 (then), 36285 (today), 528 (mother), 15296 (together). Lingualism verbs entries “to do, make,” “to go”; family entries mother, my mother and father. Publisher sample tables 1/2 illustrate first-person versus second-person feminine past endings; the four selected first-person forms are original inflections for owner review, not copied conjugation tables."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Lingualism — Family in Palestinian Arabic",
+          "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Maknuune IDs 16471/16467 (work), 13367/13362 (visit), 12399/12390 (go), 12403/12393 (rest), 1801 (then), 36285 (today), 528 (mother), 15296 (together). Lingualism verbs entries “to do, make,” “to go”; family entries mother, my mother and father. Publisher sample tables 1/2 illustrate first-person versus second-person feminine past endings; the four selected first-person forms are original inflections for owner review, not copied conjugation tables."
+        },
+        {
+          "sourceType": "original-authoring-record",
+          "title": "Ismi original dialogue and contextual answer design",
+          "locator": "internal:ismi/everyday-01/02/draft-1",
+          "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+          "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-everyday-01-06",
+      "publishedVersion": 1,
+      "package": "06-lesson.json",
+      "sha256": "0f63704c9be0c5010bb3e1ec68277e885556b7267acc8c1736f656c7be35782c",
+      "occurrences": [
+        {
+          "path": "$.lesson.steps[0].answers[1].arabic",
+          "value": "كيف كان يومك؟"
+        },
+        {
+          "path": "$.lesson.steps[0].answers[1].arabizi",
+          "value": "Kīf kān yōmak?"
+        }
+      ],
+      "sourceRecords": [
+        {
+          "sourceType": "reference-lexicon",
+          "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+          "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+          "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Lingualism — Verbs in Palestinian Arabic",
+          "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Lingualism — Family in Palestinian Arabic",
+          "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues."
+        },
+        {
+          "sourceType": "original-authoring-record",
+          "title": "Ismi original dialogue and contextual answer design",
+          "locator": "internal:ismi/everyday-01/06/draft-1",
+          "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+          "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-everyday-01-07",
+      "publishedVersion": 1,
+      "package": "07-lesson.json",
+      "sha256": "b2ec4fa72ee3dc83c01a2fe4adb2aad8d122ad147dcc05f7e1610a7e3c06eb98",
+      "occurrences": [
+        {
+          "path": "$.lesson.steps[0].prompt.arabic",
+          "value": "كيف كان يومك؟"
+        },
+        {
+          "path": "$.lesson.steps[0].prompt.arabizi",
+          "value": "Kīf kān yōmik?"
+        },
+        {
+          "path": "$.lesson.introduction.dialogue[0].line.arabic",
+          "value": "كيف كان يومك؟"
+        },
+        {
+          "path": "$.lesson.introduction.dialogue[0].line.arabizi",
+          "value": "Kīf kān yōmik?"
+        },
+        {
+          "path": "$.lesson.introduction.usageNote",
+          "value": "Follow the changing reference point: kīf kān yōmik asks about Lina’s day; kīfha then refers to her mother, not Lina. The conversation moves from completed actions to a suggestion with bukra. A useful response must preserve who, when, and what happened. This lesson combines familiar pieces in a different situation. First read the Arabic and transliteration with the English covered. Explain the story to yourself, then check the English only where you need it. Complete the closing exchange without looking back if you can; hints and unlimited retries remain available. This is guided selection practice, not a test of spontaneous speaking or evidence of fluency."
+        }
+      ],
+      "sourceRecords": [
+        {
+          "sourceType": "reference-lexicon",
+          "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+          "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+          "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Lingualism — Verbs in Palestinian Arabic",
+          "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Lingualism — Food and Drink in Palestinian Arabic",
+          "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+        },
+        {
+          "sourceType": "publisher-reference",
+          "title": "Lingualism — Family in Palestinian Arabic",
+          "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+          "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+        },
+        {
+          "sourceType": "original-authoring-record",
+          "title": "Ismi original dialogue and contextual answer design",
+          "locator": "internal:ismi/everyday-01/07/draft-1",
+          "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+          "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+        }
+      ]
+    }
+  ],
+  "clarification": {
+    "ownerConfirmed": "شو عامل؟ — casual check-in",
+    "replacementAsReported": "شو عامل؟",
+    "intendedFunction": "casual check-in",
+    "remainingReview": "Confirm feminine-address form and a natural response exchange with the speaker before drafting replacements for Lina/Omar scenes."
+  },
+  "draftManifest": "../revisions/check-in-v2/review-manifest.json"
+}

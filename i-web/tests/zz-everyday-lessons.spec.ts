@@ -1,9 +1,10 @@
 import { readFileSync } from 'node:fs'
 import { expect, test, type Page, type Locator } from '@playwright/test'
+import { finishTeaching, responseChoices } from './lesson-helpers'
 import type { LessonResponse } from '../src/types'
 
 const packages = Array.from({ length: 7 }, (_, index) => JSON.parse(readFileSync(
-  new URL(`../../content/levantine/everyday-01/0${index + 1}-lesson.json`, import.meta.url), 'utf8',
+  new URL(`../../content/levantine/everyday-01/revisions/guided-teaching/0${index + 1}-lesson.json`, import.meta.url), 'utf8',
 ))) as Array<{ lesson: LessonResponse; sources: unknown[] }>
 
 async function post(page: Page, path: string, data: unknown = {}) {
@@ -18,9 +19,31 @@ async function tabTo(page: Page, target: Locator) {
   await expect(target).toBeFocused()
 }
 async function complete(page: Page, dialog: Locator, lesson: LessonResponse, wrongFirst = false) {
-  await tabTo(page, dialog.getByRole('button', { name: 'Start practice' }))
-  await page.keyboard.press('Enter')
+  await finishTeaching(page, dialog)
   for (const [index, step] of lesson.steps.entries()) {
+    await expect(dialog.locator(`.practice-page[data-step-id="${step.id}"]`)).toBeVisible()
+    await expect(dialog.locator('.lesson-card-enter-active, .lesson-card-leave-active')).toHaveCount(0)
+    // Exercise the actual builder online and offline, not only its choice fallback.
+    if (await dialog.locator('.phrase-builder').isVisible()) {
+      const model = step.answers.find(a => a.id === step.evaluation.correctAnswerId)!
+      for (const word of model.arabic.trim().split(/\s+/)) {
+        const tokens = dialog.locator('.word-bank .word-tile:not(:disabled)')
+        for (let tokenIndex = 0; tokenIndex < await tokens.count(); tokenIndex++) {
+          const token = tokens.nth(tokenIndex)
+          if (await token.locator('[lang="ar"]').textContent() === word) {
+            await token.focus(); await page.keyboard.press('Enter'); break
+          }
+        }
+      }
+      await expect(dialog.getByRole('button', { name: 'Check answer' })).toBeEnabled()
+      await tabTo(page, dialog.getByRole('button', { name: 'Check answer' }))
+      await page.keyboard.press('Enter')
+      await expect(dialog.getByText(step.evaluation.correctExplanation, { exact: true })).toBeVisible()
+      await tabTo(page, dialog.getByRole('button', { name: index === lesson.steps.length - 1 ? 'Complete lesson' : 'Next step' }))
+      await page.keyboard.press('Enter')
+      continue
+    }
+    await responseChoices(dialog, step.id)
     if (wrongFirst && index === 0) {
       const wrong = step.answers.find(answer => answer.id !== step.evaluation.correctAnswerId)!
       const wrongIndex = step.answers.indexOf(wrong)
@@ -44,7 +67,7 @@ async function complete(page: Page, dialog: Locator, lesson: LessonResponse, wro
 }
 
 test('all authored lessons preview, then published test copies complete offline and reopen for review', async ({ page, context }, testInfo) => {
-  test.setTimeout(120_000)
+  test.setTimeout(240_000)
   await page.goto('/')
   const registration = await post(page, '/api/auth/register', { displayName: 'Preview owner', email: 'preview-owner@example.test', password: 'test-only-long-password' })
   if (!registration.ok()) expect((await post(page, '/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password', rememberMe: false })).ok()).toBeTruthy()
@@ -65,10 +88,6 @@ test('all authored lessons preview, then published test copies complete offline 
     await expect(dialog.getByRole('list', { name: 'Dialogue transcript' }).getByRole('listitem')).toHaveCount(6)
     await expect(dialog.locator('[lang="ar"][dir="rtl"]').first()).toBeVisible()
     expect(await dialog.evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBeTruthy()
-    if (pack.lesson.englishHelpInitiallyHidden) {
-      await expect(dialog.getByRole('button', { name: 'Show English help' })).toBeVisible()
-      await dialog.getByRole('button', { name: 'Show English help' }).click()
-    }
     await expect(dialog.getByText(pack.lesson.introduction!.dialogue[0]!.line.meaning, { exact: true }).first()).toBeVisible()
     if (pack.lesson.courseOrder === 1) await page.screenshot({ path: testInfo.outputPath('lesson-01-dialogue.png') })
     await complete(page, dialog, pack.lesson, true)
@@ -112,7 +131,7 @@ test('all authored lessons preview, then published test copies complete offline 
   await expect(page.getByText('7 completions waiting to sync', { exact: true })).toBeVisible()
   await context.setOffline(false)
   await page.evaluate(() => window.dispatchEvent(new Event('online')))
-  await expect(page.getByText('Progress synced', { exact: true })).toBeVisible()
+  await expect(page.getByText('7 completions waiting to sync', { exact: true })).toHaveCount(0)
   await page.reload()
   await expect(unit.getByRole('heading', { name: 'Unit complete' })).toBeVisible()
   await expect(page.getByText('7 of 13 lessons complete', { exact: true })).toBeVisible()

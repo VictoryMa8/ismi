@@ -1,0 +1,493 @@
+{
+  "lesson": {
+    "id": "levantine-everyday-01-06",
+    "trackId": "levantine",
+    "title": "What are we doing tomorrow?",
+    "scenario": "Omar and Lina want to visit Omar’s family after work. They move from an idea to an agreed time.",
+    "steps": [
+      {
+        "id": "e06-01",
+        "instruction": "Ask about tomorrow’s shared plan, not yesterday’s actions.",
+        "prompt": {
+          "arabic": "بكرا",
+          "arabizi": "Bukra",
+          "meaning": "Tomorrow",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "شو عملت اليوم؟",
+            "arabizi": "Shū ʿmilt il-yōm?",
+            "meaning": "What did you do today? (to Omar)",
+            "rationale": "This asks Omar what he already did today."
+          },
+          {
+            "id": "b",
+            "arabic": "شو عامل؟",
+            "arabizi": "Shū ʿāmel?",
+            "meaning": "How are you doing? (casual check-in to Omar)",
+            "rationale": "This checks in with Omar instead of asking about tomorrow’s shared plan.",
+            "audioUrl": null
+          },
+          {
+            "id": "c",
+            "arabic": "شو رح نعمل بكرا؟",
+            "arabizi": "Shū raḥ niʿmal bukra?",
+            "meaning": "What will we do tomorrow?",
+            "rationale": "Raḥ plus the “we” form and bukra asks about a shared future plan."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Raḥ plus the “we” form and bukra asks about a shared future plan.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Keep both tomorrow and “we.”"
+        }
+      },
+      {
+        "id": "e06-02",
+        "instruction": "Omar suggests visiting his own family after work. Speak as Omar.",
+        "prompt": {
+          "arabic": "شو رح نعمل بكرا؟",
+          "arabizi": "Shū raḥ niʿmal bukra?",
+          "meaning": "What will we do tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "نزور أهلي بعد الشغل؟",
+            "arabizi": "Nzūr ahli baʿd ish-shughl?",
+            "meaning": "Shall we visit my family after work?",
+            "rationale": "Ahli identifies Omar’s family when Omar speaks; after work supplies the ordering."
+          },
+          {
+            "id": "b",
+            "arabic": "نزور أهلك بعد الشغل؟",
+            "arabizi": "Nzūr ahlik baʿd ish-shughl?",
+            "meaning": "Shall we visit your family after work? (to Lina)",
+            "rationale": "This would mean Lina’s family, changing whose family they visit."
+          },
+          {
+            "id": "c",
+            "arabic": "اشتغلت، وبعدين زرت أمي.",
+            "arabizi": "Ishtaghalt, w-baʿdēn zurt immi.",
+            "meaning": "I worked, then visited my mother.",
+            "rationale": "This recounts completed work and a visit rather than making tomorrow’s suggestion."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Ahli identifies Omar’s family when Omar speaks; after work supplies the ordering.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Omar is speaking, so use “my family.”"
+        }
+      },
+      {
+        "id": "e06-03",
+        "instruction": "You like the visit idea but still need the time. Ask for it.",
+        "prompt": {
+          "arabic": "نزور أهلي بعد الشغل؟",
+          "arabizi": "Nzūr ahli baʿd ish-shughl?",
+          "meaning": "Shall we visit my family after work?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlak?",
+            "meaning": "How’s your family? (to Omar)",
+            "rationale": "This asks how the family is rather than when to visit."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام. أي ساعة؟",
+            "arabizi": "Tamām. Ayy sāʿa?",
+            "meaning": "Okay. What time?",
+            "rationale": "Ayy sāʿa asks for a clock time after accepting the idea."
+          },
+          {
+            "id": "c",
+            "arabic": "بدك شاي ولا قهوة؟",
+            "arabizi": "Biddak shāy walla ʾahwe?",
+            "meaning": "Do you want tea or coffee? (to Omar)",
+            "rationale": "This offers drinks rather than settling the schedule."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Ayy sāʿa asks for a clock time after accepting the idea.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Ask for the missing clock time."
+        }
+      },
+      {
+        "id": "e06-04",
+        "instruction": "The agreed time is six. Give that time.",
+        "prompt": {
+          "arabic": "تمام. أي ساعة؟",
+          "arabizi": "Tamām. Ayy sāʿa?",
+          "meaning": "Okay. What time?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "الساعة ستة.",
+            "arabizi": "Is-sāʿa sitte.",
+            "meaning": "At six o’clock.",
+            "rationale": "Sitte sets six o’clock, matching the agreed time."
+          },
+          {
+            "id": "b",
+            "arabic": "الساعة سبعة.",
+            "arabizi": "Is-sāʿa sabʿa.",
+            "meaning": "At seven o’clock.",
+            "rationale": "Sabʿa sets seven, an hour later."
+          },
+          {
+            "id": "c",
+            "arabic": "بكرا",
+            "arabizi": "Bukra",
+            "meaning": "Tomorrow",
+            "rationale": "Tomorrow gives the day but not the clock time."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Sitte sets six o’clock, matching the agreed time.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Choose the time, not only the day."
+        }
+      },
+      {
+        "id": "e06-05",
+        "instruction": "Lina confirms: tomorrow, six, Omar’s family. Preserve all three details.",
+        "prompt": {
+          "arabic": "نزور أهلي بعد الشغل؟",
+          "arabizi": "Nzūr ahli baʿd ish-shughl?",
+          "meaning": "Shall we visit my family after work?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، اليوم الساعة ستة نزور أهلك.",
+            "arabizi": "Tamām, il-yōm is-sāʿa sitte nzūr ahlak.",
+            "meaning": "Okay, today at six we’ll visit your family. (to Omar)",
+            "rationale": "The family and time fit, but this changes tomorrow to today."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، بكرا الساعة سبعة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sabʿa nzūr ahlak.",
+            "meaning": "Okay, tomorrow at seven we’ll visit your family. (to Omar)",
+            "rationale": "The day and family fit, but this changes six to seven."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
+            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Omar)",
+            "rationale": "The confirmation carries forward day, time, and whose family."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "The confirmation carries forward day, time, and whose family.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Check each detail rather than matching only the family."
+        }
+      },
+      {
+        "id": "e06-06",
+        "instruction": "In this plan, the visit follows work. Choose “after work.”",
+        "prompt": {
+          "arabic": "نزور أهلي بعد الشغل؟",
+          "arabizi": "Nzūr ahli baʿd ish-shughl?",
+          "meaning": "Shall we visit my family after work?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "قبل الشغل",
+            "arabizi": "ʾAbel ish-shughl",
+            "meaning": "Before work",
+            "rationale": "This reverses the relationship to work."
+          },
+          {
+            "id": "b",
+            "arabic": "بعد الشغل",
+            "arabizi": "Baʿd ish-shughl",
+            "meaning": "After work",
+            "rationale": "This places the visit after work finishes."
+          },
+          {
+            "id": "c",
+            "arabic": "بالشغل",
+            "arabizi": "Bish-shughl",
+            "meaning": "At work",
+            "rationale": "This describes a location or work setting, not the requested sequence."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This places the visit after work finishes.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Baʿd supplies “after.”"
+        }
+      },
+      {
+        "id": "e06-07",
+        "instruction": "Closing exchange, part 1: a new plan uses seven instead of six. Give the new time.",
+        "prompt": {
+          "arabic": "تمام. أي ساعة؟",
+          "arabizi": "Tamām. Ayy sāʿa?",
+          "meaning": "Okay. What time?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "الساعة سبعة.",
+            "arabizi": "Is-sāʿa sabʿa.",
+            "meaning": "At seven o’clock.",
+            "rationale": "Use sabʿa to transfer the timing pattern to the revised plan."
+          },
+          {
+            "id": "b",
+            "arabic": "الساعة ستة.",
+            "arabizi": "Is-sāʿa sitte.",
+            "meaning": "At six o’clock.",
+            "rationale": "This keeps the earlier time despite the change."
+          },
+          {
+            "id": "c",
+            "arabic": "بكرا",
+            "arabizi": "Bukra",
+            "meaning": "Tomorrow",
+            "rationale": "This gives only the day."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Use sabʿa to transfer the timing pattern to the revised plan.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The revised time is seven."
+        }
+      },
+      {
+        "id": "e06-08",
+        "instruction": "Closing exchange, part 2: confirm tomorrow at seven with Lina. Say that you will drink tea together.",
+        "prompt": {
+          "arabic": "نشرب شاي سوا بكرا؟",
+          "arabizi": "Nishrab shāy sawa bukra?",
+          "meaning": "Shall we drink tea together tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، اليوم الساعة سبعة نشرب شاي سوا.",
+            "arabizi": "Āh, il-yōm is-sāʿa sabʿa nishrab shāy sawa.",
+            "meaning": "Yes, today at seven we’ll drink tea together.",
+            "rationale": "This changes tomorrow to today."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
+            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Omar)",
+            "rationale": "This repeats the previous visit plan at six instead of the revised tea plan at seven."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بكرا الساعة سبعة نشرب شاي سوا.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa nishrab shāy sawa.",
+            "meaning": "Yes, tomorrow at seven we’ll drink tea together.",
+            "rationale": "This confirms the new day, time, and shared activity."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This confirms the new day, time, and shared activity.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Keep all three details of the new arrangement."
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft-2",
+    "unitId": "levantine-everyday-01",
+    "unitTitle": "Everyday conversations with someone you love",
+    "courseOrder": 6,
+    "reviewStatus": "owner-review",
+    "introduction": {
+      "goal": "Suggest a shared visit, ask for a time, and confirm tomorrow’s plan.",
+      "dialogue": [
+        {
+          "speaker": "Lina",
+          "line": {
+            "arabic": "شو رح نعمل بكرا؟",
+            "arabizi": "Shū raḥ niʿmal bukra?",
+            "meaning": "What will we do tomorrow?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "نزور أهلي بعد الشغل؟",
+            "arabizi": "Nzūr ahli baʿd ish-shughl?",
+            "meaning": "Shall we visit my family after work?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina",
+          "line": {
+            "arabic": "تمام. أي ساعة؟",
+            "arabizi": "Tamām. Ayy sāʿa?",
+            "meaning": "Okay. What time?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "الساعة ستة.",
+            "arabizi": "Is-sāʿa sitte.",
+            "meaning": "At six o’clock.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina → Omar",
+          "line": {
+            "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
+            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Omar)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "وبعدين نشرب شاي سوا.",
+            "arabizi": "W-baʿdēn nishrab shāy sawa.",
+            "meaning": "And afterwards we’ll drink tea together.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "شو رح نعمل بكرا؟",
+          "arabizi": "Shū raḥ niʿmal bukra?",
+          "meaning": "What will we do tomorrow?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "نزور أهلي بعد الشغل؟",
+          "arabizi": "Nzūr ahli baʿd ish-shughl?",
+          "meaning": "Shall we visit my family after work?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام. أي ساعة؟",
+          "arabizi": "Tamām. Ayy sāʿa?",
+          "meaning": "Okay. What time?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
+          "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
+          "meaning": "Okay, tomorrow at six we’ll visit your family. (to Omar)",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Raḥ points forward to a future action; bukra supplies the day, tomorrow. In raḥ niʿmal, the n- form is “we,” so the question is about a shared plan. You do not need raḥ in every turn: a reply such as “tomorrow at six we visit your family” has a clear future setting from context. Baʿd ish-shughl means “after work”; baʿdēn means “then/afterwards.” A plan becomes clearer when you repeat the day, time, and who you will visit. Read the dialogue, then cover it and reconstruct those three details before practising. Clock times here use a shared evening context; a real arrangement may need you to clarify morning/evening.",
+      "dialectNote": "Urban Palestinian teaching target. Ahli is the speaker’s family. When Lina confirms Omar’s proposal, it becomes ahlak, his family as her listener. Niʿmal/nzūr/nishrab are shared actions in these phrases. Raḥ is a future marker here, distinct from past rāḥ, “he went.” Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "https://resources.lingualism.com/levantine-arabic/family-3/",
+        "internal:ismi/review-cases/LEV-2026-09-30-01",
+        "https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf"
+      ]
+    },
+    "englishHelpInitiallyHidden": true
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Family in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi original dialogue and contextual answer design",
+      "locator": "internal:ismi/everyday-01/06/draft-2",
+      "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+      "notes": "AI-assisted revision authored September 30, 2026 from previously approved lexical material and owner-relayed check-in correction. Complete revised package awaits owner approval; no native-expert review."
+    },
+    {
+      "sourceType": "speaker-feedback",
+      "title": "Owner-relayed Palestinian casual check-in feedback",
+      "locator": "internal:ismi/review-cases/LEV-2026-09-30-01",
+      "rights": "Owner-provided feedback used for original Ismi revision; no speaker recording or identity stored.",
+      "notes": "Owner confirmed شو عامل؟ as a casual check-in on September 30, 2026. Does not establish universal non-use of the original expression, review of feminine form, or approval of the complete revised dialogue. Drafting without waiting for further speaker feedback was explicitly requested."
+    },
+    {
+      "sourceType": "supplemental-reference",
+      "title": "Lingualism, Levantine Arabic Verbs, revised 2021 sample — address morphology comparison",
+      "locator": "https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Consulted for form comparison only; no publisher examples, tables, or audio copied.",
+      "notes": "The sample is explicitly Lebanese-based, not Palestinian-native review. The active-participle feminine عاملة / 3ámle is a supplemental form comparison; owner-relayed report supplies the Palestinian check-in function. This is new draft provenance, not a claim this source was in the September 22 approved foundation."
+    }
+  ]
+}

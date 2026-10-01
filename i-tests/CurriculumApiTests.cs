@@ -236,6 +236,92 @@ public sealed class CurriculumApiTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task CheckInRevisionsStayDraftsAndPreservePublishedContentAndTeachingCards()
+    {
+        using var scope = _factory.Services.CreateScope();
+        var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
+        var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
+        var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
+        await importer.ImportAsync(Path.Combine(AppContext.BaseDirectory, "everyday-01"));
+        var original = (await publishing.ListAsync()).Single(v => v.LessonId == "levantine-everyday-01-01");
+        foreach (var version in (await publishing.ListAsync()).Where(v => v.LessonId.StartsWith("levantine-everyday-01-")))
+        {
+            await publishing.ApproveAsync(version.Id, "test only");
+            await publishing.PublishAsync(version.Id, "test only");
+        }
+        var revised = await importer.ImportAsync(Path.Combine(AppContext.BaseDirectory, "check-in-v2"));
+        Assert.Equal(4, revised.Count);
+        Assert.All(revised, result => Assert.Contains("v2", result));
+        var detail = await publishing.GetAsync((await publishing.ListAsync())
+            .Single(v => v.LessonId == original.LessonId && v.VersionNumber == 2).Id);
+        Assert.Equal(CurriculumStatuses.Draft, detail!.Status);
+        Assert.Equal("شو عامل؟", detail.Lesson.Introduction!.Dialogue[0].Line.Arabic);
+        Assert.Equal(6, detail.Lesson.Introduction.TeachingCards!.Count);
+        Assert.Equal("what", detail.Lesson.Introduction.TeachingCards[0].Chunks[0].Meaning);
+        using var guest = CreateClient();
+        var published = await guest.GetFromJsonAsync<LessonResponse>("/api/lessons/levantine-everyday-01-01");
+        Assert.Equal("كيف كان يومك؟", published!.Introduction!.Dialogue[0].Line.Arabic);
+        var broken = detail.Lesson with { Introduction = detail.Lesson.Introduction with
+        {
+            TeachingCards = [detail.Lesson.Introduction.TeachingCards[0] with { Chunks = [] }]
+        }};
+        Assert.False(validator.Validate(broken, detail.Sources).IsValid);
+        var unreadable = detail.Lesson with { Introduction = detail.Lesson.Introduction with
+        {
+            TeachingCards = [detail.Lesson.Introduction.TeachingCards[0] with { Phrase = null! }]
+        }};
+        Assert.False(validator.Validate(unreadable, detail.Sources).IsValid);
+        // Teaching audio cannot bypass the existing prompt-recording publication gate.
+        var audio = detail.Lesson with { Introduction = detail.Lesson.Introduction with
+        {
+            TeachingCards = [detail.Lesson.Introduction.TeachingCards[0] with
+            { Phrase = detail.Lesson.Introduction.TeachingCards[0].Phrase with { AudioUrl = "/unreviewed.wav" } }]
+        }};
+        Assert.False(validator.Validate(audio, detail.Sources).IsValid);
+    }
+
+    [Fact]
+    public async Task GuidedTeachingRevisionsPreserveHistoryAndValidatePhraseProvenance()
+    {
+        using var scope = _factory.Services.CreateScope();
+        var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
+        var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
+        var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
+        await importer.ImportAsync(Path.Combine(AppContext.BaseDirectory, "everyday-01"));
+        foreach (var version in (await publishing.ListAsync()).Where(v => v.LessonId.StartsWith("levantine-everyday-")))
+        {
+            await publishing.ApproveAsync(version.Id, "test only");
+            await publishing.PublishAsync(version.Id, "test only");
+        }
+        var revised = await importer.ImportAsync(Path.Combine(AppContext.BaseDirectory, "guided-teaching"));
+        Assert.Equal(7, revised.Count);
+        Assert.All(await importer.ImportAsync(Path.Combine(AppContext.BaseDirectory, "guided-teaching")),
+            line => Assert.StartsWith("Unchanged:", line));
+        using var guest = CreateClient();
+        foreach (var version in (await publishing.ListAsync()).Where(v => v.LessonId.StartsWith("levantine-everyday-") && v.VersionNumber == 2))
+        {
+            var detail = (await publishing.GetAsync(version.Id))!;
+            Assert.Equal(CurriculumStatuses.Draft, detail.Status);
+            Assert.Null(detail.ApprovedBy);
+            Assert.All(detail.Lesson.Introduction!.TeachingCards!, card =>
+            {
+                Assert.False(string.IsNullOrWhiteSpace(card.RecallCue));
+                Assert.NotEmpty(card.Chunks);
+                Assert.NotEmpty(card.SourceLocators!);
+            });
+            var published = await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{version.LessonId}");
+            Assert.EndsWith("-v1", published!.Version);
+            var first = detail.Lesson.Introduction.TeachingCards![0];
+            var unknown = detail.Lesson with { Introduction = detail.Lesson.Introduction with
+            { TeachingCards = [first with { SourceLocators = ["internal:unknown"] }] } };
+            Assert.False(validator.Validate(unknown, detail.Sources).IsValid);
+            var empty = detail.Lesson with { Introduction = detail.Lesson.Introduction with
+            { TeachingCards = [first with { SourceLocators = [], RecallCue = " " }] } };
+            Assert.False(validator.Validate(empty, detail.Sources).IsValid);
+        }
+    }
+
+    [Fact]
     public async Task SevenAuthoredPackagesImportIdempotentlyAndRequireApproval()
     {
         using var owner = CreateClient();

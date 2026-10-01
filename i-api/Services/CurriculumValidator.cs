@@ -113,6 +113,35 @@ public sealed class CurriculumValidator(RecordingStore recordings)
                 Required(errors, line.Arabizi, "Dialogue and expressions need transliteration.");
                 Required(errors, line.Meaning, "Dialogue and expressions need English meaning.");
             }
+            if (introduction.TeachingCards is { } cards)
+            {
+                if (cards.Count is < 1 or > 12) errors.Add("Teaching cards must contain one to twelve focused phrases.");
+                foreach (var card in cards)
+                {
+                    Required(errors, card.Title, "Teaching cards need a title.");
+                    Required(errors, card.Note, "Teaching cards need a contextual teaching explanation.");
+                    Required(errors, card.Phrase.Arabic, "Teaching cards need an Arabic phrase.");
+                    Required(errors, card.Phrase.Arabizi, "Teaching cards need transliteration.");
+                    Required(errors, card.Phrase.Meaning, "Teaching cards need an English meaning.");
+                    if (card.RecallCue is not null) Required(errors, card.RecallCue, "Recall cues cannot be blank.");
+                    if (card.SourceLocators is { } cardSources)
+                    {
+                        if (cardSources.Count == 0) errors.Add("Teaching-card sources cannot be empty.");
+                        foreach (var locator in cardSources)
+                            if (string.IsNullOrWhiteSpace(locator) || !sources.Any(source => source.Locator == locator))
+                                errors.Add($"Teaching-card source '{locator}' is missing from provenance.");
+                    }
+                    if (card.Phrase.AudioUrl is not null || card.Phrase.Recording is not null)
+                        errors.Add("Teaching-card recordings are not supported; use publication-validated exercise prompt recordings.");
+                    if (card.Chunks.Count == 0) errors.Add("Teaching cards need phrase building blocks.");
+                    foreach (var chunk in card.Chunks)
+                    {
+                        Required(errors, chunk.Arabic, "Phrase blocks need Arabic.");
+                        Required(errors, chunk.Arabizi, "Phrase blocks need transliteration.");
+                        Required(errors, chunk.Meaning, "Phrase blocks need contextual meaning.");
+                    }
+                }
+            }
             if (introduction.SourceLocators.Count == 0) errors.Add("Teaching notes need source locators.");
             foreach (var locator in introduction.SourceLocators)
             {
@@ -147,7 +176,9 @@ public sealed class CurriculumValidator(RecordingStore recordings)
         && (lesson.Introduction is null || lesson.Introduction is
             { Dialogue: not null, Expressions: not null, SourceLocators: not null } introduction
             && introduction.Dialogue.All(turn => turn is { Line: not null })
-            && introduction.Expressions.All(line => line is not null));
+            && introduction.Expressions.All(line => line is not null)
+            && (introduction.TeachingCards is null || introduction.TeachingCards.All(card =>
+                card is { Phrase: not null, Chunks: not null } && card.Chunks.All(chunk => chunk is not null))));
 
     private static void Required(List<string> errors, string? value, string message)
     {

@@ -1,6 +1,121 @@
+# Latest UX continuation: sound, motion and color
+
+October 1 deployment request: the owner authorized pushing the working changes
+and a Vercel frontend preview from `codex/lesson-experience`. The preview uses the
+existing alwaysdata API rewrite. Backend deployment and curriculum publication
+remain separate; Vercel does not migrate local data. All 22 API tests pass in
+addition to the frontend/browser checks below (NU1900 vulnerability metadata
+refresh warning remains).
+
+Current lesson layout: fixed-height dialog (up to 860 px, bounded by the viewport),
+with stationary header, lesson stages and navigation. LessonStages.vue renders
+Meet → Learn & recall → Use it throughout teaching and practice. LessonScroll.vue
+contains the single internal scroll area with stable scrollbar space; its bottom
+fade and clickable “Scroll for more” down-arrow cue appear only when content
+remains below. Resize and content changes update the cue, including after card
+transitions and source disclosures. New cards start at the top without smooth
+automatic scrolling. Navigation remains outside the animated cards. Height
+animation was removed because the owner found it distracting. Reduced motion
+disables lesson animations and makes clicking the scroll cue immediate.
+Geometry checks pass at 1440×1000, 1024×720 and 390×740 through dialogue scroll,
+recall/reveal, practice and teaching review. The real owner preview was checked
+without progress changes and the browser returned to Today.
+
+Latest checks: production build and all **18 Playwright scenarios passed** in one
+run, including the three geometry/scroll-cue checks, all seven guided lessons
+online/offline, keyboard retry/review, exactly-once sync, draft isolation,
+responsive navigation, sound and recording integrity. Publication in these tests
+applies only to copies in the disposable test database. Device listening and real
+screen-reader testing remain release checks.
+
+The final visual refinement uses solid green and red surfaces on the next-lesson
+card, stronger conversation/teaching backgrounds and a green phrase spotlight.
+The sound toggle has no indicator dot. Learner pages use concise functional copy:
+Today shows greeting, daily progress, next lesson and course progress; review
+status is collapsed in “About this lesson.” Promotional subtitles and repeated
+labels are removed. Offline/pending messages appear only when needed, with
+normal sync status in Account. Preserve this direction in later work.
+
+The refinement build passed. All 15 browser scenarios passed across the full
+and focused runs. The desktop recording test was updated to use Account in the
+sidebar after the routine account badge was removed; its final rerun passed,
+along with all responsive navigation and sound checks. New hero text contrast is
+5.88:1 or better. The real owner’s Today tab was inspected after the changes.
+
+October 1, 2026. The owner requested friendly clicks and answer feedback, smooth
+lesson transitions and more color inspired by the Pan-Arab palette. Local Web
+Audio chimes now cover navigation, advances, reveal, correct answers, retries and
+completion. They start after interaction, work offline, and have a persistent
+mute switch in the learner header/sidebar, lesson header and Account. Prompt
+playback stays independently controlled, and interface sounds are suppressed
+while prompts play. Missing audio support never blocks learning.
+
+Lesson cards crossfade with a small slide inside a stable lesson frame. Outgoing
+cards become inert and hidden from assistive technology; incoming headings take
+focus. Reduced motion disables lesson animations. Phrase
+pieces animate when placed, removed or reordered. Green buttons and phrase areas,
+small red accents, charcoal text and white space carry the updated palette.
+
+The real owner console showed lesson 1 record 18 v3 already published by the
+owner; the other six guided packages remain drafts. The earlier all-draft status
+below is an import checkpoint. No approval, publication or deployment was
+performed in this UX continuation. The browser was returned to Today and the
+existing local API/frontend remain on ports 5062/5173.
+
+Checks: production Vue/TypeScript build and all **15 Playwright scenarios passed**
+in one run. This includes actual Web Audio output, no initial autoplay, persistent
+mute, offline sounds, missing audio support, reduced motion, keyboard focus,
+320–1280 px navigation layouts, recordings/integrity, draft isolation, all seven
+guided packages online/offline, and exactly-once reconnection. The main palette
+text combinations measured 5.01:1 or better. Manual inspection used the real
+owner preview for learning/recall/reveal. Device listening and real screen-reader
+testing remain useful release checks; reviewed Arabic recordings are still absent.
+
+---
+
+# Earlier continuation: explicit teaching across the unit
+
+September 30–October 1, 2026. [Seven guided teaching drafts](../content/levantine/everyday-01/revisions/guided-teaching/README.md)
+are imported locally with 43 phrase cards, conversational recall cues, per-card
+source links, concise explanations and eight contextual turns each. Lesson 1 was
+inspected through the saved owner preview against a local database copy. Its
+speaker note was corrected and the rest of the unit now teaches its phrase parts
+explicitly. Wrong-order reconstruction supports check/model/retry, and reviewing
+teaching preserves the in-progress turn and can return from every stage.
+
+The local database already had records 14–15 published v2 when this continuation
+started. New packages are unapproved drafts: lessons 1–2 records 18–19 v3;
+lessons 3–5 records 20–22 v2; lessons 6–7 updated importer-owned drafts 16–17 v2.
+The earlier packages, hashes, review cases, audit trail and all 15 previously
+published/superseded database snapshots are preserved. No approval, publication
+or deployment occurred in this work. Older sections below describe historical
+states and are superseded by this status where they conflict.
+
+Checks: **22 API tests passed**, **13 browser scenarios passed** across focused
+and remaining-regression runs, production build passed, and all seven package /
+predecessor hashes plus 43 Arabic/transliteration block reconstructions checked.
+Browser coverage completes all seven new packages online/offline, checks draft
+isolation, wrong-order keyboard retry, teaching return, reduced motion, mobile
+layout, exactly-once synchronization and recording package integrity. Browser
+publication occurs only for disposable test copies. The local API was restarted on port 5062 with its original database and owner
+configuration; the temporary test-owner servers were stopped. Existing accounts,
+progress, published provenance and audit records were also compared against the
+pre-import backup and remain unchanged.
+
+NuGet vulnerability metadata
+could not refresh (NU1900); tests used restored dependencies and compiled normally.
+
+Remaining: owner review/approval before publication; reviewed recordings (zero);
+real screen-reader testing; naturalness and learner-outcome evidence; observed
+timing of the longer teaching flow. Estimates and successful guided practice do
+not establish spontaneous conversation. Continue useful lesson improvements
+without waiting for outside speaker feedback or creating more pilot paperwork.
+
+---
+
 # Current agenda: validate the first usable Levantine unit
 
-Updated September 27, 2026 UTC.
+Updated September 30, 2026 UTC.
 
 ## Completed milestone
 
@@ -19,7 +134,35 @@ hosting remains the limited development-preview infrastructure described in the
 root README; this deployment does not establish full beta readiness. Owner
 authorization does not establish native-expert review or effectiveness evidence.
 
+## Lesson experience rebuilt — September 30
+
+The owner asked to build without waiting for further native feedback and identified
+English answer giveaways, missing teaching, and a static lesson experience. The
+Vue lesson renderer now follows conversation context → focused phrase teaching →
+recall before reveal → usage pattern → contextual practice. Teaching cards can carry
+explicit phrase blocks and explanations; existing expressions work with the new
+teaching/recall flow. Practice translations start hidden, with independent prompt
+and response help; feedback reveals meanings after the attempt. Some turns use
+bounded phrase reconstruction, with unrestricted choice fallback. Motion covers
+card changes, response selection, feedback, and completion; reduced motion is supported.
+
+Four [check-in revision packages](../content/levantine/everyday-01/revisions/check-in-v2/README.md)
+are imported into the **local** console as v2 drafts, records 14–17. Lesson 1 now
+teaches a casual **شو عامل؟** check-in with explicit phrase cards; lessons 2, 6,
+and 7 update dependent material. Original published v1 packages and hashes are
+preserved. No revision was approved or published, and this frontend change has
+not been deployed to the live preview. Preview the exact drafts in the console;
+publication remains the owner's final approval step. The report and snapshots are
+in [review case LEV-2026-09-30-01](../content/levantine/everyday-01/review-cases/LEV-2026-09-30-01.json).
+
 ## Recommended next milestone: a small observed learner pilot
+
+The [pilot kit](pilot/README.md) now contains a session script, seven fresh recall
+tasks, a private observation template, accessibility/offline preflight, and recording
+preparation checklist. The owner selected **one learner first** on September 30.
+Next: perform the real assistive-technology preflight and run that rehearsal.
+Participant selection, session arrangement, and decision criteria remain proposals.
+No pilot observations or new screen-reader verification have been collected.
 
 Prepare an owner-run pilot of this unit before expanding the content pipeline.
 Cohort size, selection, invitation controls, and pass criteria remain proposals for owner
