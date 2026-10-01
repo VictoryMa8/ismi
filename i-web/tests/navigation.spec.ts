@@ -1,10 +1,12 @@
 import { expect, test } from '@playwright/test'
+import { finishTeaching, responseChoices } from './lesson-helpers'
 
 for (const width of [320, 390, 768, 1280]) {
-  test(`focused pages and navigation fit at ${width}px`, async ({ page }) => {
+  test(`focused pages and navigation fit at ${width}px`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 844 })
     await page.goto('/')
     await expect(page.getByRole('button', { name: /Continue in Levantine/ })).toBeVisible()
+    if (width === 390) await page.screenshot({ path: testInfo.outputPath('today.png'), scale: 'css' })
     await expect(page.getByRole('list', { name: 'Levantine course path' })).toHaveCount(0)
     const nav = page.getByRole('navigation', { name: width > 900 ? 'Primary navigation' : 'Mobile navigation' })
     // Desktop uses an aside landmark containing its navigation.
@@ -35,6 +37,9 @@ for (const width of [320, 390, 768, 1280]) {
 test('practice is repeatable without completing an unstudied course lesson', async ({ page }) => {
   await page.goto('/#/practice')
   await page.getByRole('button', { name: /Answer a friend’s check-in/ }).click()
+  const dialog = page.getByRole('dialog')
+  await finishTeaching(page, dialog)
+  await responseChoices(dialog)
   await page.locator('.answer-option').first().click()
   await page.getByRole('button', { name: 'Check answer' }).click()
   await page.getByRole('button', { name: 'Complete lesson' }).click()

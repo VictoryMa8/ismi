@@ -1,0 +1,91 @@
+{
+  "asOf": "2026-09-30",
+  "published": false,
+  "contentApproved": false,
+  "lessons": [
+    {
+      "lessonId": "levantine-everyday-01-01",
+      "package": "01-lesson.json",
+      "sha256": "0cd600a313a1d5b62ff1c37eaa33cc5fcd032035a215bf43f51f52d312229e41",
+      "status": "draft",
+      "steps": 8,
+      "teachingCards": 7,
+      "basedOnPackage": "../check-in-v2/01-lesson.json",
+      "basedOnSha256": "3df8ee74822b7811aaf9fffabe23e8e9f47efb82bd8b1b104eb0193f3ad241c7",
+      "localRecordId": 18,
+      "localVersionNumber": 3
+    },
+    {
+      "lessonId": "levantine-everyday-01-02",
+      "package": "02-lesson.json",
+      "sha256": "71a8a4234fa4d8b898c5e74e6693f5e86f520dab7cc5498f963a05bd603d090c",
+      "status": "draft",
+      "steps": 8,
+      "teachingCards": 6,
+      "basedOnPackage": "../check-in-v2/02-lesson.json",
+      "basedOnSha256": "57455be3cb0dfd012ef695dafb0c7fe38dd8cfcfba32a16165e5f4e13b12c9d8",
+      "localRecordId": 19,
+      "localVersionNumber": 3
+    },
+    {
+      "lessonId": "levantine-everyday-01-03",
+      "package": "03-lesson.json",
+      "sha256": "b37e1367ec572bcfece4f252928337df13c961abd4d6fef251091a3e3c7bc31c",
+      "status": "draft",
+      "steps": 8,
+      "teachingCards": 6,
+      "basedOnPackage": "../../03-lesson.json",
+      "basedOnSha256": "3325265586e0f9adfbf8ee25452ab5dfe69bce741a0d65ba120fe0f2297b3ad8",
+      "localRecordId": 20,
+      "localVersionNumber": 2
+    },
+    {
+      "lessonId": "levantine-everyday-01-04",
+      "package": "04-lesson.json",
+      "sha256": "18dde82db646b7773b5a48935b6f2705ef5a1ecd379d00d92deccb539327880b",
+      "status": "draft",
+      "steps": 8,
+      "teachingCards": 6,
+      "basedOnPackage": "../../04-lesson.json",
+      "basedOnSha256": "3f0ac045064e76e4cf428915413bd418c8691641b08cab58d3a8a45e4fbd869b",
+      "localRecordId": 21,
+      "localVersionNumber": 2
+    },
+    {
+      "lessonId": "levantine-everyday-01-05",
+      "package": "05-lesson.json",
+      "sha256": "ec5edb13c9a49c9a43d1c2d684e838107d2a0110495ca21b9ff41b83210f6db7",
+      "status": "draft",
+      "steps": 8,
+      "teachingCards": 6,
+      "basedOnPackage": "../../05-lesson.json",
+      "basedOnSha256": "aa8782aa1d604d9948c33cf90f2a167fb1132efe07edfadcc596867c4ffb9241",
+      "localRecordId": 22,
+      "localVersionNumber": 2
+    },
+    {
+      "lessonId": "levantine-everyday-01-06",
+      "package": "06-lesson.json",
+      "sha256": "0348e54e144292c6f0d853d7c444a7b0822b777d1174c62703f4a568a946c13c",
+      "status": "draft",
+      "steps": 8,
+      "teachingCards": 6,
+      "basedOnPackage": "../check-in-v2/06-lesson.json",
+      "basedOnSha256": "65c819dcb6b006b77b3dfe84feb123f8cd71575fe6e33d6e80f4f55f231d459c",
+      "localRecordId": 16,
+      "localVersionNumber": 2
+    },
+    {
+      "lessonId": "levantine-everyday-01-07",
+      "package": "07-lesson.json",
+      "sha256": "f514b9caba7c4352e7c3a6f105afe3c8ab17a7b32ff23dbd94c3ec93c07076de",
+      "status": "draft",
+      "steps": 8,
+      "teachingCards": 6,
+      "basedOnPackage": "../check-in-v2/07-lesson.json",
+      "basedOnSha256": "a529f39b9a97967b76159622cb504272b2e016a330ec0c938485949d21a4403a",
+      "localRecordId": 17,
+      "localVersionNumber": 2
+    }
+  ]
+}

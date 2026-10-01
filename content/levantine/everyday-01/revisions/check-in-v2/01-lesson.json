@@ -1,0 +1,640 @@
+{
+  "lesson": {
+    "id": "levantine-everyday-01-01",
+    "trackId": "levantine",
+    "title": "Check in with someone you love",
+    "scenario": "Lina and Omar catch up at home. Learn a casual check-in, say how you feel, and ask the other person back.",
+    "steps": [
+      {
+        "id": "e01-01",
+        "instruction": "Lina checks in with Omar. Respond as Omar: you are well.",
+        "prompt": {
+          "arabic": "شو عامل؟",
+          "arabizi": "Shū ʿāmel?",
+          "meaning": "How are you doing? (casual check-in to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا منيحة.",
+            "arabizi": "Ana mnīḥa.",
+            "meaning": "I’m well. (Lina speaking)",
+            "rationale": "This describes a feminine speaker; you are taking Omar’s role."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا منيح.",
+            "arabizi": "Ana mnīḥ.",
+            "meaning": "I’m well. (Omar speaking)",
+            "rationale": "This answers the check-in about Omar himself."
+          },
+          {
+            "id": "c",
+            "arabic": "يومي كان هادي.",
+            "arabizi": "Yōmi kān hādi.",
+            "meaning": "My day was quiet.",
+            "rationale": "This describes the day; the task asks how Omar himself feels."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the conversation",
+          "correctExplanation": "Ana mnīḥ answers about Omar himself. The lesson’s question is a casual check-in.",
+          "incorrectTitle": "Try a different response",
+          "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
+          "retryHint": "Use ana and Omar’s form of “well.”"
+        }
+      },
+      {
+        "id": "e01-02",
+        "instruction": "You have answered Omar. Ask him the same question back.",
+        "prompt": {
+          "arabic": "أنا منيحة.",
+          "arabizi": "Ana mnīḥa.",
+          "meaning": "I’m well. (Lina speaking)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وإنتِ؟",
+            "arabizi": "W-inti?",
+            "meaning": "And you? (to Lina)",
+            "rationale": "This addresses Lina, but your listener is Omar."
+          },
+          {
+            "id": "b",
+            "arabic": "وكيفها؟",
+            "arabizi": "W-kīfha?",
+            "meaning": "And how is she?",
+            "rationale": "This asks about a third person instead of your listener."
+          },
+          {
+            "id": "c",
+            "arabic": "وإنتَ؟",
+            "arabizi": "W-inta?",
+            "meaning": "And you? (to Omar)",
+            "rationale": "Inta addresses Omar and returns the check-in."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the conversation",
+          "correctExplanation": "W-inta? invites Omar to answer without repeating the question.",
+          "incorrectTitle": "Try a different response",
+          "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
+          "retryHint": "Your listener is Omar: use inta."
+        }
+      },
+      {
+        "id": "e01-03",
+        "instruction": "You are checking in with Lina. Choose the question addressed to her.",
+        "prompt": {
+          "arabic": "لينا",
+          "arabizi": "Lina",
+          "meaning": "Lina",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "شو عاملة؟",
+            "arabizi": "Shū ʿāmle?",
+            "meaning": "How are you doing? (casual check-in to Lina)",
+            "rationale": "ʿĀmle marks the question to Lina."
+          },
+          {
+            "id": "b",
+            "arabic": "شو عامل؟",
+            "arabizi": "Shū ʿāmel?",
+            "meaning": "How are you doing? (casual check-in to Omar)",
+            "rationale": "ʿĀmel is the form addressed to Omar."
+          },
+          {
+            "id": "c",
+            "arabic": "شو عملت اليوم؟",
+            "arabizi": "Shū ʿmilt il-yōm?",
+            "meaning": "What did you do today? (to Omar)",
+            "rationale": "This asks for completed activities and uses masculine address."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the conversation",
+          "correctExplanation": "Shū ʿāmle? changes the address form for Lina.",
+          "incorrectTitle": "Try a different response",
+          "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
+          "retryHint": "Listen for the ending of ʿāmle."
+        }
+      },
+      {
+        "id": "e01-04",
+        "instruction": "Answer as Lina: you are a little tired.",
+        "prompt": {
+          "arabic": "شو عاملة؟",
+          "arabizi": "Shū ʿāmle?",
+          "meaning": "How are you doing? (casual check-in to Lina)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا تعبانة كتير.",
+            "arabizi": "Ana taʿbāne ktīr.",
+            "meaning": "I’m very tired. (Lina speaking)",
+            "rationale": "Ktīr makes the tiredness strong, changing “a little.”"
+          },
+          {
+            "id": "b",
+            "arabic": "أنا تعبان شوي.",
+            "arabizi": "Ana taʿbān shwayy.",
+            "meaning": "I’m a little tired. (Omar speaking)",
+            "rationale": "This describes Omar; Lina uses taʿbāne."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا تعبانة شوي.",
+            "arabizi": "Ana taʿbāne shwayy.",
+            "meaning": "I’m a little tired. (Lina speaking)",
+            "rationale": "The description matches Lina and keeps the degree mild."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the conversation",
+          "correctExplanation": "Ana taʿbāne shwayy preserves both Lina’s self-description and “a little.”",
+          "incorrectTitle": "Try a different response",
+          "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
+          "retryHint": "Use Lina’s description and shwayy."
+        }
+      },
+      {
+        "id": "e01-05",
+        "instruction": "Lina asks how you are doing. Respond as Omar: a little tired.",
+        "prompt": {
+          "arabic": "شو عامل؟",
+          "arabizi": "Shū ʿāmel?",
+          "meaning": "How are you doing? (casual check-in to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا تعبانة شوي.",
+            "arabizi": "Ana taʿbāne shwayy.",
+            "meaning": "I’m a little tired. (Lina speaking)",
+            "rationale": "This is the feminine self-description, while you are Omar."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا تعبان شوي.",
+            "arabizi": "Ana taʿbān shwayy.",
+            "meaning": "I’m a little tired. (Omar speaking)",
+            "rationale": "This describes Omar with mild tiredness."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا تعبان كتير.",
+            "arabizi": "Ana taʿbān ktīr.",
+            "meaning": "I’m very tired. (Omar speaking)",
+            "rationale": "This changes the requested degree to “very.”"
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the conversation",
+          "correctExplanation": "Ana taʿbān shwayy is Omar’s self-description; shwayy keeps it mild.",
+          "incorrectTitle": "Try a different response",
+          "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
+          "retryHint": "Match Omar and “a little.”"
+        }
+      },
+      {
+        "id": "e01-06",
+        "instruction": "Lina offers Omar a rest. Accept and say you want a little rest.",
+        "prompt": {
+          "arabic": "بدك ترتاح؟",
+          "arabizi": "Biddak tirtāḥ?",
+          "meaning": "Do you want to rest? (to Omar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، بدي أرتاح شوي.",
+            "arabizi": "Āh, biddi artāḥ shwayy.",
+            "meaning": "Yes, I want to rest a little.",
+            "rationale": "Āh accepts; biddi artāḥ expresses the speaker’s wish."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "This declines the offer; the task asks you to accept."
+          },
+          {
+            "id": "c",
+            "arabic": "اشتغلت وبعدين ارتحت.",
+            "arabizi": "Ishtaghalt w-baʿdēn irtaḥt.",
+            "meaning": "I worked and then rested.",
+            "rationale": "This reports completed activities instead of accepting the offer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the conversation",
+          "correctExplanation": "Āh, biddi artāḥ shwayy accepts and says what Omar wants now.",
+          "incorrectTitle": "Try a different response",
+          "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
+          "retryHint": "Accept first, then say what you want."
+        }
+      },
+      {
+        "id": "e01-07",
+        "instruction": "A new check-in: respond as Lina that you are well.",
+        "prompt": {
+          "arabic": "شو عاملة؟",
+          "arabizi": "Shū ʿāmle?",
+          "meaning": "How are you doing? (casual check-in to Lina)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا منيح.",
+            "arabizi": "Ana mnīḥ.",
+            "meaning": "I’m well. (Omar speaking)",
+            "rationale": "This is Omar’s self-description; you are Lina."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا تعبانة شوي.",
+            "arabizi": "Ana taʿbāne shwayy.",
+            "meaning": "I’m a little tired. (Lina speaking)",
+            "rationale": "This says you are tired, changing the requested meaning."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا منيحة.",
+            "arabizi": "Ana mnīḥa.",
+            "meaning": "I’m well. (Lina speaking)",
+            "rationale": "This describes Lina as well."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the conversation",
+          "correctExplanation": "Ana mnīḥa changes the self-description to fit Lina in this new exchange.",
+          "incorrectTitle": "Try a different response",
+          "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
+          "retryHint": "Describe Lina as well."
+        }
+      },
+      {
+        "id": "e01-08",
+        "instruction": "You are Omar. After answering, return the check-in to Lina.",
+        "prompt": {
+          "arabic": "أنا منيح.",
+          "arabizi": "Ana mnīḥ.",
+          "meaning": "I’m well. (Omar speaking)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وإنتَ؟",
+            "arabizi": "W-inta?",
+            "meaning": "And you? (to Omar)",
+            "rationale": "This addresses Omar, but Lina is your listener."
+          },
+          {
+            "id": "b",
+            "arabic": "وإنتِ؟",
+            "arabizi": "W-inti?",
+            "meaning": "And you? (to Lina)",
+            "rationale": "Inti addresses Lina and keeps the check-in going."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بدي أرتاح شوي.",
+            "arabizi": "Āh, biddi artāḥ shwayy.",
+            "meaning": "Yes, I want to rest a little.",
+            "rationale": "This asks for rest rather than returning the question."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the conversation",
+          "correctExplanation": "W-inti? completes the exchange by inviting Lina to answer.",
+          "incorrectTitle": "Try a different response",
+          "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
+          "retryHint": "Return the question to Lina."
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft-2",
+    "unitId": "levantine-everyday-01",
+    "unitTitle": "Everyday conversations with someone you love",
+    "courseOrder": 1,
+    "reviewStatus": "owner-review",
+    "introduction": {
+      "goal": "Check in, say how you feel, and keep a short exchange going.",
+      "dialogue": [
+        {
+          "speaker": "Lina → Omar",
+          "line": {
+            "arabic": "شو عامل؟",
+            "arabizi": "Shū ʿāmel?",
+            "meaning": "How are you doing? (casual check-in to Omar)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar → Lina",
+          "line": {
+            "arabic": "أنا منيح. وإنتِ؟",
+            "arabizi": "Ana mnīḥ. W-inti?",
+            "meaning": "I’m well. And you? (to Lina)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina",
+          "line": {
+            "arabic": "أنا تعبانة شوي.",
+            "arabizi": "Ana taʿbāne shwayy.",
+            "meaning": "I’m a little tired. (Lina speaking)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "أنا تعبان كمان.",
+            "arabizi": "Ana taʿbān kamān.",
+            "meaning": "I’m tired too. (Omar speaking)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Lina → Omar",
+          "line": {
+            "arabic": "بدك ترتاح؟",
+            "arabizi": "Biddak tirtāḥ?",
+            "meaning": "Do you want to rest? (to Omar)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Omar",
+          "line": {
+            "arabic": "آه، بدي أرتاح شوي.",
+            "arabizi": "Āh, biddi artāḥ shwayy.",
+            "meaning": "Yes, I want to rest a little.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "شو عامل؟",
+          "arabizi": "Shū ʿāmel?",
+          "meaning": "How are you doing? (casual check-in to Omar)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "شو عاملة؟",
+          "arabizi": "Shū ʿāmle?",
+          "meaning": "How are you doing? (casual check-in to Lina)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أنا منيح.",
+          "arabizi": "Ana mnīḥ.",
+          "meaning": "I’m well. (Omar speaking)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أنا منيحة.",
+          "arabizi": "Ana mnīḥa.",
+          "meaning": "I’m well. (Lina speaking)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أنا تعبانة شوي.",
+          "arabizi": "Ana taʿbāne shwayy.",
+          "meaning": "I’m a little tired. (Lina speaking)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "وإنتِ؟",
+          "arabizi": "W-inti?",
+          "meaning": "And you? (to Lina)",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Start with a casual check-in, answer about yourself, then invite the other person to answer. Shū ʿāmel? addresses Omar; shū ʿāmle? addresses Lina. In this scene it functions as “How are you doing?”; context can also make it a question about what someone is doing. Ana means “I”: Omar describes himself with mnīḥ or taʿbān; Lina uses mnīḥa or taʿbāne. Shwayy means “a little,” while ktīr means “very” in these descriptions. W-inta? returns the question to Omar; w-inti? returns it to Lina. Keep the listener and speaker separate when choosing a form.",
+      "dialectNote": "Urban Palestinian teaching target. The casual check-in choice follows Palestinian-speaker feedback relayed and clarified by the owner on September 30, 2026. No universal claim about every Palestinian greeting is made. Feminine address and composed exchange are AI-assisted drafts; no native-expert review. Keep transliteration available: ʿ = ع; ā/ī/ū are long vowels. Jordanian alternatives are not introduced here.",
+      "recordingNote": "No reviewed recordings yet. Six dialogue turns above are the revised script. Keep each speaker/address form and exact transcript; no native-speaker review is claimed. Browser/device speech remains an optional preview.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/review-cases/LEV-2026-09-30-01",
+        "https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf"
+      ],
+      "teachingCards": [
+        {
+          "title": "Start with a casual check-in",
+          "phrase": {
+            "arabic": "شو عامل؟",
+            "arabizi": "Shū ʿāmel?",
+            "meaning": "How are you doing? (casual check-in to Omar)",
+            "audioUrl": null
+          },
+          "note": "This scene uses the question as a greeting to Omar. The response tells him how you feel.",
+          "chunks": [
+            {
+              "arabic": "شو",
+              "arabizi": "shū",
+              "meaning": "what"
+            },
+            {
+              "arabic": "عامل",
+              "arabizi": "ʿāmel",
+              "meaning": "doing · to Omar"
+            }
+          ]
+        },
+        {
+          "title": "Answer about yourself",
+          "phrase": {
+            "arabic": "أنا منيح.",
+            "arabizi": "Ana mnīḥ.",
+            "meaning": "I’m well. (Omar speaking)",
+            "audioUrl": null
+          },
+          "note": "Ana identifies the speaker. This form describes Omar; Lina says mnīḥa.",
+          "chunks": [
+            {
+              "arabic": "أنا",
+              "arabizi": "ana",
+              "meaning": "I"
+            },
+            {
+              "arabic": "منيح",
+              "arabizi": "mnīḥ",
+              "meaning": "well · Omar’s description"
+            }
+          ]
+        },
+        {
+          "title": "Give a little detail",
+          "phrase": {
+            "arabic": "أنا تعبانة شوي.",
+            "arabizi": "Ana taʿbāne shwayy.",
+            "meaning": "I’m a little tired. (Lina speaking)",
+            "audioUrl": null
+          },
+          "note": "Lina is describing herself, so taʿbāne has a feminine ending. Shwayy keeps the tiredness mild.",
+          "chunks": [
+            {
+              "arabic": "أنا",
+              "arabizi": "ana",
+              "meaning": "I"
+            },
+            {
+              "arabic": "تعبانة",
+              "arabizi": "taʿbāne",
+              "meaning": "tired · Lina’s description"
+            },
+            {
+              "arabic": "شوي",
+              "arabizi": "shwayy",
+              "meaning": "a little"
+            }
+          ]
+        },
+        {
+          "title": "Keep the conversation going",
+          "phrase": {
+            "arabic": "وإنتِ؟",
+            "arabizi": "W-inti?",
+            "meaning": "And you? (to Lina)",
+            "audioUrl": null
+          },
+          "note": "You do not need to repeat the whole question. Inti addresses Lina; inta addresses Omar.",
+          "chunks": [
+            {
+              "arabic": "وإنتِ",
+              "arabizi": "w-inti",
+              "meaning": "and you · to Lina"
+            }
+          ]
+        },
+        {
+          "title": "Check in with Lina",
+          "phrase": {
+            "arabic": "شو عاملة؟",
+            "arabizi": "Shū ʿāmle?",
+            "meaning": "How are you doing? (casual check-in to Lina)",
+            "audioUrl": null
+          },
+          "note": "The person you address changes the ending: ʿāmel to Omar, ʿāmle to Lina.",
+          "chunks": [
+            {
+              "arabic": "شو",
+              "arabizi": "shū",
+              "meaning": "what"
+            },
+            {
+              "arabic": "عاملة",
+              "arabizi": "ʿāmle",
+              "meaning": "doing · to Lina"
+            }
+          ]
+        },
+        {
+          "title": "Say what you need",
+          "phrase": {
+            "arabic": "آه، بدي أرتاح شوي.",
+            "arabizi": "Āh, biddi artāḥ shwayy.",
+            "meaning": "Yes, I want to rest a little.",
+            "audioUrl": null
+          },
+          "note": "Biddi marks what the speaker wants. Reuse shwayy to ask for a little rest.",
+          "chunks": [
+            {
+              "arabic": "آه",
+              "arabizi": "āh",
+              "meaning": "yes"
+            },
+            {
+              "arabic": "بدي",
+              "arabizi": "biddi",
+              "meaning": "I want"
+            },
+            {
+              "arabic": "أرتاح",
+              "arabizi": "artāḥ",
+              "meaning": "to rest"
+            },
+            {
+              "arabic": "شوي",
+              "arabizi": "shwayy",
+              "meaning": "a little"
+            }
+          ]
+        }
+      ]
+    },
+    "englishHelpInitiallyHidden": true
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune v1.0.1 IDs 28621 (how), 36281/36285 (day/today), 31227 (good), 19704 (long), 34207 (calm), 3007 (tired), 17238 (a little), 1439 (but), 34542 (now), 576/578 (you m/f). Lingualism verbs: entry “to be” (كان); publisher sample p.109 personal pronouns and p.105/T104 wanting. Original dialogue pragmatics and feminine adjective forms require owner wording review; these references are not approval of the composed sentences."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune v1.0.1 IDs 28621 (how), 36281/36285 (day/today), 31227 (good), 19704 (long), 34207 (calm), 3007 (tired), 17238 (a little), 1439 (but), 34542 (now), 576/578 (you m/f). Lingualism verbs: entry “to be” (كان); publisher sample p.109 personal pronouns and p.105/T104 wanting. Original dialogue pragmatics and feminine adjective forms require owner wording review; these references are not approval of the composed sentences."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune v1.0.1 IDs 28621 (how), 36281/36285 (day/today), 31227 (good), 19704 (long), 34207 (calm), 3007 (tired), 17238 (a little), 1439 (but), 34542 (now), 576/578 (you m/f). Lingualism verbs: entry “to be” (كان); publisher sample p.109 personal pronouns and p.105/T104 wanting. Original dialogue pragmatics and feminine adjective forms require owner wording review; these references are not approval of the composed sentences."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi original dialogue and contextual answer design",
+      "locator": "internal:ismi/everyday-01/01/draft-2",
+      "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+      "notes": "AI-assisted revision authored September 30, 2026 from previously approved lexical material and owner-relayed check-in correction. Complete revised package awaits owner approval; no native-expert review."
+    },
+    {
+      "sourceType": "speaker-feedback",
+      "title": "Owner-relayed Palestinian casual check-in feedback",
+      "locator": "internal:ismi/review-cases/LEV-2026-09-30-01",
+      "rights": "Owner-provided feedback used for original Ismi revision; no speaker recording or identity stored.",
+      "notes": "Owner confirmed شو عامل؟ as a casual check-in on September 30, 2026. Does not establish universal non-use of the original expression, review of feminine form, or approval of the complete revised dialogue. Drafting without waiting for further speaker feedback was explicitly requested."
+    },
+    {
+      "sourceType": "supplemental-reference",
+      "title": "Lingualism, Levantine Arabic Verbs, revised 2021 sample — address morphology comparison",
+      "locator": "https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Consulted for form comparison only; no publisher examples, tables, or audio copied.",
+      "notes": "The sample is explicitly Lebanese-based, not Palestinian-native review. The active-participle feminine عاملة / 3ámle is a supplemental form comparison; owner-relayed report supplies the Palestinian check-in function. This is new draft provenance, not a claim this source was in the September 22 approved foundation."
+    }
+  ]
+}

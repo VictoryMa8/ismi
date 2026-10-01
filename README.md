@@ -7,7 +7,9 @@ The current product slice includes:
 - A Vue 3 + TypeScript progressive web app with separate Today, Courses, Practice, and Account pages.
 - An ASP.NET Core 10 API.
 - A personalized three-track dashboard with a real ordered Levantine course path.
-- A six-lesson demonstrative Week 1 loop built from the original four-step conversation material.
+- Seven owner-approved Everyday conversations lessons, alongside six demonstration fixtures.
+- A conversation → phrase teaching → recall → practice flow, with optional translation help, phrase reconstruction, and reduced-motion-aware transitions. The lesson frame keeps stages and navigation visible, with a clickable scroll cue for longer content.
+- Gentle local interface chimes with a persistent mute switch, animated lesson cards and phrase pieces, and green/red surfaces inspired by Pan-Arab colors. Learner pages keep functional copy concise, with review details in a disclosure. Sounds start after interaction and work offline; Arabic playback has its own control.
 - Source-linked prompt recordings with owner-only WAV uploads, publication-gated playback, transcripts, and verified offline downloads.
 - Credential-free Arabic prompt previews using the browser's available device voice when a recording is absent.
 - Optional email/password accounts with secure cookie sessions and persistent per-user progress.
@@ -19,7 +21,7 @@ The current product slice includes:
 
 Product constraints and research live in `AGENTS.md` and `docs/research/`.
 
-The next implementation stage, its acceptance criteria, and owner decisions are documented in [the next-agent handoff](docs/next-stage-handoff.md).
+The latest implementation status and remaining checks are documented in [the next-agent handoff](docs/next-stage-handoff.md). The [seven guided teaching packages](content/levantine/everyday-01/revisions/guided-teaching/README.md) extend the explicit teaching pattern across the unit. Use the owner console to preview saved versions; publication and deployment still require separate authorization.
 
 ## Project structure
 

@@ -1,3 +1,4 @@
+import { finishTeaching } from './lesson-helpers'
 import { expect, test } from '@playwright/test'
 
 function silentWave() {
@@ -29,7 +30,7 @@ test('console recording publication downloads audio and plays after offline relo
   try {
     await page.setViewportSize({ width: 1440, height: 1000 })
     await page.goto('/')
-    await page.getByRole('button', { name: 'Account synced' }).click()
+    await page.getByRole('complementary', { name: 'Primary navigation' }).getByRole('link', { name: 'Account', exact: true }).click()
     await page.getByRole('button', { name: 'Open curriculum console' }).click()
     await page.getByRole('complementary', { name: 'Curriculum versions' }).getByRole('button', { name: /Answer a friend’s check-in/ }).click()
     await page.getByRole('button', { name: 'New draft from selected' }).click()
@@ -74,6 +75,7 @@ test('console recording publication downloads audio and plays after offline relo
     await context.setOffline(true)
     await page.reload()
     await page.getByRole('button', { name: /Continue in Levantine/i }).click()
+    await finishTeaching(page, page.getByRole('dialog'))
     await expect(page.getByText('Recorded · Transport test fixture · Urban Palestinian')).toBeVisible()
     await page.getByText('Recording transcript and source').click()
     await expect(page.locator('details p[lang="ar"]')).toBeVisible()

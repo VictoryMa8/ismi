@@ -22,7 +22,12 @@ public sealed record LessonIntroduction(
     string UsageNote,
     string DialectNote,
     string RecordingNote,
-    IReadOnlyList<string> SourceLocators);
+    IReadOnlyList<string> SourceLocators,
+    IReadOnlyList<LessonTeachingCard>? TeachingCards = null);
+
+public sealed record LessonTeachingCard(string Title, LessonPrompt Phrase, string Note, IReadOnlyList<LessonPhraseChunk> Chunks,
+    string? RecallCue = null, IReadOnlyList<string>? SourceLocators = null);
+public sealed record LessonPhraseChunk(string Arabic, string Arabizi, string Meaning);
 
 public sealed record DialogueTurn(string Speaker, LessonPrompt Line);
 
