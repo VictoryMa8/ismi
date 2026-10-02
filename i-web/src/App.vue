@@ -22,6 +22,10 @@ import LessonTransition from './LessonTransition.vue'
 import LessonStages from './LessonStages.vue'
 import LessonScroll from './LessonScroll.vue'
 import SoundToggle from './SoundToggle.vue'
+import ReviewPractice from './ReviewPractice.vue'
+import CharacterCast from './CharacterCast.vue'
+import CharacterCue from './CharacterCue.vue'
+import { evaluateOffline } from './evaluation'
 import { installUiSounds, playUiSound } from './uiSounds'
 import {
   getAuthSession,
@@ -43,19 +47,27 @@ import {
   getPendingCompletions,
   queueCompletion,
   removePendingCompletion,
+  getDeviceSnapshot,
+  saveDeviceSnapshot,
+  saveReviewAttempt,
 } from './offline'
 import type {
   AuthSession,
   DashboardResponse,
   LessonAttemptResponse,
   LessonResponse,
-  LessonStep,
   PendingCompletion,
 } from './types'
 
 const lessonOpen = ref(false)
 const previewMode = ref(false)
 const practiceMode = ref(false)
+const reviewOpen = ref(false)
+const reviewAudioPlaying = ref(false)
+const reviewScope = ref('guest')
+const reviewHistoryError = ref('')
+const reviewHistoryRevision = ref(0)
+let stepAttemptCount = 0
 const introductionOpen = ref(false)
 const teachingWasCompleted = ref(false)
 const buildComplete = ref(false)
@@ -150,6 +162,7 @@ const buildSuggested = computed(() => Boolean(lesson.value && currentStep.value 
   && (currentStepIndex.value % 3 === 1 || currentStepIndex.value >= lesson.value.steps.length - 2)
   && currentStep.value.answers.find(a => a.id.toLowerCase() === currentStep.value?.evaluation.correctAnswerId.toLowerCase())?.arabic.trim().includes(' ')))
 function resetPracticeSupport() {
+  stepAttemptCount = 0
   buildComplete.value = false
   showEnglishHelp.value = false
   showAnswerMeanings.value = false
@@ -231,7 +244,7 @@ const syncStatus = computed(() => {
 })
 
 onMounted(async () => {
-  removeUiSounds = installUiSounds(() => speakingPromptId.value !== null)
+  removeUiSounds = installUiSounds(() => speakingPromptId.value !== null || reviewAudioPlaying.value)
   window.addEventListener('online', handleOnline)
   window.addEventListener('hashchange', handlePageChange)
   document.title = `${navigation.find(item => item.id === page.value)?.label} · Ismi`
@@ -269,7 +282,10 @@ function loadSpeechVoices() {
 async function loadAuthSession() {
   try {
     authSession.value = await getAuthSession()
+    reviewScope.value = authSession.value.userId ? `user:${authSession.value.userId}` : 'guest'
+    try { await saveDeviceSnapshot('review-scope', reviewScope.value) } catch { /* Review can run in memory. */ }
   } catch {
+    try { reviewScope.value = await getDeviceSnapshot<string>('review-scope') ?? 'guest' } catch { reviewScope.value = 'guest' }
     authSession.value = {
       isAuthenticated: false,
       userId: null,
@@ -319,6 +335,8 @@ async function submitAccount() {
           rememberAccount.value,
         )
     accountPassword.value = ''
+    reviewScope.value = authSession.value.userId ? `user:${authSession.value.userId}` : 'guest'
+    try { await saveDeviceSnapshot('review-scope', reviewScope.value) } catch { /* Learning remains available. */ }
     await syncPendingCompletions()
     await loadDashboard()
     await cacheUpcomingLessons()
@@ -643,6 +661,7 @@ function closeLesson() {
   lessonSession++; checkingAnswer.value = false
   stopPromptAudio()
   lessonOpen.value = false
+  if (!previewMode.value) reviewHistoryRevision.value++
   nextTick(() => lessonOpener?.focus())
 }
 
@@ -696,6 +715,7 @@ async function checkAnswer() {
       retryHint: 'Choose Try again to rebuild the phrase. Response choices are available for help on the retry.',
     }
     playUiSound('retry')
+    await rememberAttempt(attemptFeedback.value)
     await nextTick()
     feedbackPanel.value?.focus()
     return
@@ -719,6 +739,7 @@ async function checkAnswer() {
   }
   if (session !== lessonSession || !lessonOpen.value) return
   attemptFeedback.value = feedback
+  await rememberAttempt(feedback)
   playUiSound(feedback.isCorrect ? 'correct' : 'retry')
   await nextTick()
   feedbackPanel.value?.focus()
@@ -733,19 +754,15 @@ async function retryAnswer() {
   focusPractice()
 }
 
-function evaluateOffline(step: LessonStep, answerId: string): LessonAttemptResponse {
-  const isAnswerCorrect = step.evaluation.correctAnswerId.toLowerCase() === answerId.toLowerCase()
-  return {
-    stepId: step.id,
-    isCorrect: isAnswerCorrect,
-    correctAnswerId: step.evaluation.correctAnswerId,
-    feedbackTitle: isAnswerCorrect
-      ? step.evaluation.correctTitle
-      : step.evaluation.incorrectTitle,
-    explanation: isAnswerCorrect
-      ? step.evaluation.correctExplanation
-      : step.answers.find(answer => answer.id === answerId)?.rationale ?? step.evaluation.incorrectExplanation,
-    retryHint: isAnswerCorrect ? null : step.evaluation.retryHint,
+async function rememberAttempt(feedback: LessonAttemptResponse) {
+  if (previewMode.value || !lesson.value || !currentStep.value) return
+  const first = stepAttemptCount++ === 0
+  try {
+    await saveReviewAttempt(reviewScope.value, lesson.value, currentStep.value.id,
+      selectedAnswer.value, feedback.isCorrect, feedback.explanation, first)
+    reviewHistoryError.value = ''
+  } catch {
+    reviewHistoryError.value = 'Review history could not be saved on this device. Practice and retries remain available.'
   }
 }
 
@@ -826,9 +843,9 @@ async function finishLesson() {
 </script>
 
 <template>
-  <a class="skip-link" href="#main-content" @click.prevent="focusMain">Skip to main content</a>
+  <a class="skip-link" href="#main-content" :inert="reviewOpen" @click.prevent="focusMain">Skip to main content</a>
 
-  <div class="app-shell" :inert="lessonOpen || consoleOpen">
+  <div class="app-shell" :inert="lessonOpen || consoleOpen || reviewOpen">
     <aside class="side-nav" aria-label="Primary navigation">
       <a class="brand" href="#/today" aria-label="Ismi home">
         <img class="brand-mark" src="/ismi-mark.svg" width="38" height="38" alt="" aria-hidden="true" />
@@ -902,6 +919,7 @@ async function finishLesson() {
             <span>{{ primaryTrack?.name ?? 'Palestinian Levantine' }}</span>
           </div>
           <div class="lesson-details">
+            <CharacterCast :cast="dashboard.dailyPlan.lessons.find(item => item.isCurrent)?.characters" compact />
             <h3>{{ primaryTrack?.currentLessonTitle ?? 'Tell them about your day' }}</h3>
             <button class="primary-action" type="button" data-ui-sound="advance" :aria-label="`Continue in ${primaryTrack?.name?.includes('Levantine') ? 'Levantine' : (primaryTrack?.name ?? 'your track')}`" @click="startLesson()">
               Continue
@@ -938,12 +956,13 @@ async function finishLesson() {
               <strong>{{ item.title }}</strong>
               <span>{{ item.estimatedMinutes }} min · {{ item.isCompleted ? 'Complete' : item.isCurrent ? 'Up next' : 'Later' }}</span>
             </span>
+            <CharacterCast :cast="item.characters" compact />
             <button class="text-button" type="button" :aria-label="`${item.isCompleted ? 'Review' : 'Open'} ${item.title}`" @click="startLesson(item.id)">{{ item.isCompleted ? 'Review' : 'Open' }}<span class="sr-only"> {{ item.title }}</span></button>
           </li>
         </ol>
         <div v-if="unit.lessons.every(item => item.isCompleted)" class="unit-complete" role="status">
           <h3>Unit complete</h3>
-          <button class="secondary-action" type="button" @click="startLesson(unit.lessons[0]?.id)">Review the unit</button>
+          <button class="secondary-action" type="button" @click="navigate('practice')">Review and checkpoint</button>
         </div>
         </section>
         </div>
@@ -983,6 +1002,9 @@ async function finishLesson() {
         <header class="page-heading">
           <h1>Practice</h1>
         </header>
+        <ReviewPractice :scope="reviewScope" :history-revision="reviewHistoryRevision" :lessons="dashboard.dailyPlan.lessons" @open-change="reviewOpen = $event" @prompt-playback="reviewAudioPlaying = $event" />
+        <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
+        <h2 class="practice-lessons-title">Lesson practice</h2>
         <section class="practice-list" aria-label="Practice lessons">
           <button v-for="item in dashboard.dailyPlan.lessons" :key="item.id" class="practice-item" type="button" @click="startLesson(item.id, true)">
             <RotateCcw :size="20" aria-hidden="true" />
@@ -1119,6 +1141,7 @@ async function finishLesson() {
         <LessonScroll>
         <LessonTransition @after-enter="activatePractice">
         <div :key="currentStep.id" :data-step-id="currentStep.id" class="practice-page">
+        <CharacterCue :roles="currentStep.characters" :registry-version="lesson.characters?.registryVersion" />
         <div class="scenario-panel">
           <button
             type="button"
@@ -1190,6 +1213,7 @@ async function finishLesson() {
 
         <button v-if="responseMode === 'choose' && !attemptFeedback" class="text-button response-help" type="button" :aria-expanded="showAnswerMeanings" @click="showAnswerMeanings = !showAnswerMeanings">{{ showAnswerMeanings ? 'Hide response translations' : 'Translate response choices' }}</button>
         <div v-if="attemptFeedback" ref="feedbackPanel" tabindex="-1" class="feedback-panel" :class="isCorrect ? 'positive' : 'try-again'" aria-live="polite">
+          <CharacterCue :roles="currentStep.characters" :registry-version="lesson.characters?.registryVersion" feedback />
           <strong><Check v-if="isCorrect" :size="18" aria-hidden="true" /> {{ attemptFeedback.feedbackTitle }}</strong>
           <div class="feedback-model" v-if="responseMode === 'build'"><p lang="ar" dir="rtl">{{ currentStep.answers.find(a => a.id === attemptFeedback?.correctAnswerId)?.arabic }}</p><p>{{ currentStep.answers.find(a => a.id === attemptFeedback?.correctAnswerId)?.arabizi }}</p></div>
           <p>{{ attemptFeedback.explanation }}</p>

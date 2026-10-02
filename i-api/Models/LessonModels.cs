@@ -13,7 +13,12 @@ public sealed record LessonResponse(
     int CourseOrder,
     string ReviewStatus,
     LessonIntroduction? Introduction = null,
-    bool EnglishHelpInitiallyHidden = false);
+    bool EnglishHelpInitiallyHidden = false,
+    LessonCast? Characters = null);
+
+public sealed record LessonCast(string RegistryVersion, IReadOnlyList<string> CharacterIds);
+public sealed record CharacterRoles(string? SpeakerId = null, string? AddresseeId = null,
+    string? ResponseSpeakerId = null, string? ResponseAddresseeId = null);
 
 public sealed record LessonIntroduction(
     string Goal,
@@ -26,17 +31,19 @@ public sealed record LessonIntroduction(
     IReadOnlyList<LessonTeachingCard>? TeachingCards = null);
 
 public sealed record LessonTeachingCard(string Title, LessonPrompt Phrase, string Note, IReadOnlyList<LessonPhraseChunk> Chunks,
-    string? RecallCue = null, IReadOnlyList<string>? SourceLocators = null);
+    string? RecallCue = null, IReadOnlyList<string>? SourceLocators = null,
+    string? SpeakerId = null, string? AddresseeId = null);
 public sealed record LessonPhraseChunk(string Arabic, string Arabizi, string Meaning);
 
-public sealed record DialogueTurn(string Speaker, LessonPrompt Line);
+public sealed record DialogueTurn(string Speaker, LessonPrompt Line, string? SpeakerId = null, string? AddresseeId = null);
 
 public sealed record LessonStep(
     string Id,
     string Instruction,
     LessonPrompt Prompt,
     IReadOnlyList<LessonAnswer> Answers,
-    LessonEvaluation Evaluation);
+    LessonEvaluation Evaluation,
+    CharacterRoles? Characters = null);
 
 public sealed record LessonPrompt(
     string Arabic,

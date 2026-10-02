@@ -9,6 +9,7 @@ The current product slice includes:
 - A personalized three-track dashboard with a real ordered Levantine course path.
 - Seven owner-approved Everyday conversations lessons, alongside six demonstration fixtures.
 - A conversation → phrase teaching → recall → practice flow, with optional translation help, phrase reconstruction, and reduced-motion-aware transitions. The lesson frame keeps stages and navigation visible, with a clickable scroll cue for longer content.
+- Mixed review, mistake explanations and free retries, plus unit checkpoints with less initial help. Review history and checkpoint results work offline and stay on the device; scheduling remains manual. See [review and checkpoints](docs/review-and-checkpoints.md).
 - Gentle local interface chimes with a persistent mute switch, animated lesson cards and phrase pieces, and green/red surfaces inspired by Pan-Arab colors. Learner pages keep functional copy concise, with review details in a disclosure. Sounds start after interaction and work offline; Arabic playback has its own control.
 - Source-linked prompt recordings with owner-only WAV uploads, publication-gated playback, transcripts, and verified offline downloads.
 - Credential-free Arabic prompt previews using the browser's available device voice when a recording is absent.
@@ -32,6 +33,16 @@ i-tests/  API domain tests
 ```
 
 ## Run locally
+
+Character proposals are implemented and saved as seven local owner drafts. Lina
+and Omar use the owner's requested corporate cartoon direction, with explicit
+speaker/response roles and offline portraits. See the
+[character guide](docs/characters/character-guide.md) and
+[draft preview instructions](content/levantine/everyday-01/revisions/characters/README.md).
+Final art selection, curriculum publication and the API rollout remain pending.
+The owner authorized pushing the tested changes and deploying a Vercel frontend
+preview. The frontend uses the existing live API; local character drafts are
+not migrated or published by this deployment.
 
 Start the API:
 

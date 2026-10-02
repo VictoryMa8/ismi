@@ -59,6 +59,16 @@ a:focus-visible {
 
 .skip-link:focus { transform: translateY(0); }
 .app-shell { min-height: 100vh; }
+.review-hub { margin-bottom: 2rem; }
+.review-hub h2, .practice-lessons-title { font-size: 1.25rem; margin-bottom: .65rem; }
+.review-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1rem 0; }
+.checkpoint-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem; margin: 1rem 0; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.checkpoint-card h3 { margin: 0 0 .5rem; font-size: 1rem; }
+.checkpoint-card p { margin: .4rem 0; }
+.checkpoint-history, .review-origin { font-size: .85rem; }
+.review-journey { flex: 1; min-height: 0; }
+.review-stage { padding: .75rem 1.5rem; margin: 0; border-bottom: 1px solid var(--line); font-weight: 600; }
+.review-previous { margin-top: 1rem; }
 
 .side-nav {
   position: fixed;
@@ -1859,3 +1869,29 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
   .primary-action:hover:not(:disabled), .primary-action:active:not(:disabled), .sound-toggle:hover { transform: none; }
   .lesson-success { animation: none; }
 }
+
+/* Cast portraits reserve space and remain decorative; textual roles carry meaning. */
+.character-portrait { --portrait-size: 44px; position: relative; display: inline-block; width: var(--portrait-size); height: var(--portrait-size); flex: 0 0 var(--portrait-size); overflow: hidden; border-radius: 50%; background: #eee9dc; }
+.character-portrait img { position: absolute; width: 400%; height: 200%; max-width: none; display: block; }
+.character-placeholder { display: grid; place-items: center; width: 100%; height: 100%; color: #303934; font-weight: 700; }
+.character-label { display: flex; align-items: center; gap: 10px; min-width: 0; margin-bottom: 10px; }
+.character-label strong { color: #273c32; font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.character-cue { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 8px 0; }
+.character-cue .character-label { flex: 1 1 180px; }
+.character-cast { display: flex; flex-wrap: wrap; gap: 16px; margin: 12px 0; }
+.character-cast > span { display: flex; align-items: center; gap: 8px; }
+.character-cast strong { font-size: 14px; }
+.character-cast.compact { gap: 0; flex-wrap: nowrap; margin: 0; }
+.character-cast.compact .character-portrait { --portrait-size: 28px; border: 2px solid white; }
+.character-cast.compact > span + span { margin-left: -7px; }
+.primary-lesson-card .character-cast { margin-bottom: 10px; }
+.dialogue-bubbles .character-label strong { font-size: 12px; }
+.review-scene { font-size: 14px; line-height: 1.6; margin: 0 0 10px; }
+.feedback-panel .character-cue { margin: 0; }
+.feedback-panel .character-label { margin-bottom: 8px; }
+.character-design-review { margin-top: 18px; }
+.character-design-review img { max-width: 100%; height: auto; display: block; margin-top: 12px; }
+.character-mapping dl > div { padding: 8px 0; border-bottom: 1px solid #dce6e1; }
+.character-mapping dt { font-weight: 600; }
+.character-mapping dd { margin: 4px 0; }
+@media (max-width: 380px) { .course-path .character-cast.compact { display: none; } }

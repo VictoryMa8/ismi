@@ -1,4 +1,75 @@
-# Latest UX continuation: sound, motion and color
+# Character introduction implementation — October 1, 2026
+
+Latest deployment request: the owner authorized pushing the tested working tree
+to `codex/lesson-experience` and deploying a Vercel frontend preview through the
+existing Git integration. The alwaysdata API rollout, local draft migration and
+curriculum publication remain separate. The checks below cover this commit;
+confirm the exact pushed revision's Vercel deployment status before reporting it
+ready. Historical no-deployment statements describe their implementation checkpoints.
+
+The owner requested implementation of `docs/character-introduction-plan.md`, then
+clarified the art direction as cartoonish corporate illustration. The new
+[character guide](characters/character-guide.md), exact generation prompt and
+asset provenance document the proposed Lina/Omar designs. The eight-view sheet
+is bundled as a 42 KB WebP with static neutral, attentive and encouraging portraits.
+Final design selection remains with the owner.
+
+Optional character IDs, scene cast/version and explicit dialogue/teaching/practice
+roles are implemented in ASP.NET/Vue, with shared decorative portrait/role
+components, named fallbacks, console mapping inspection and PWA precaching.
+Dialogue placement follows participant IDs. Recall keeps roles visible without
+revealing phrases; both outcomes use gentle encouragement. Mixed review and
+checkpoints retain each originating scene and its step roles. Recording credits
+remain separate and unchanged.
+
+All seven metadata proposals are saved and validated locally: lesson 1 record
+23 v4; lesson 2 record 19 v3; lessons 3–5 records 20–22 v2; lessons 6–7 records
+16–17 v2. Existing importer-owned drafts received metadata through normal audited
+updates. All portable guided packages, all 16 published/superseded snapshots,
+accounts, progress and prior audit rows were preserved and compared. An ignored
+pre-import backup is `i-api/App_Data/ismi-before-characters.db`. No real lesson
+was approved/published and no deployment occurred. See the
+[proposal manifest and roles](../content/levantine/everyday-01/revisions/characters/README.md).
+
+Local API/frontend remain at 5062/5173. The API runs in the documented localhost
+Development profile, with its existing published human approver restored to the
+owner gate. The real signed-in owner's lesson 1 v4 preview is open in the app.
+
+Verification: production TypeScript/Vue build passed; **23 API tests passed**;
+**26 browser scenarios passed** in the full regression run. Character-specific
+checks cover loaded/failed portraits, unknown registry fallback, hidden recall,
+keyboard mistakes/retry, 320/1280 px layouts, all seven lessons online/offline,
+checkpoint roles and exactly-once reconnection. A final focused check also makes
+missing-portrait completion run offline. Real screen-reader and learner
+observations remain release work.
+
+---
+
+# Latest feature: review and checkpoints
+
+October 1: the owner authorized implementing the next roadmap feature. Practice
+now offers mixed published-context review, versioned mistake explanations and
+free retries, and checkpoints for completed units. Offline history and results
+are local to each guest/account scope; review does not add course completions or
+minutes. Scheduling remains manual pending the owner’s interval preference.
+See [review-and-checkpoints.md](review-and-checkpoints.md) for behavior, version
+isolation and limits. No curriculum publication, deployment or provider choice
+was performed. Preserve the uncommitted roadmap and earlier handoff edits.
+
+Validation: production frontend build and 22 API tests pass; all 23 browser
+scenarios passed across the regression and corrected focused runs, including
+five new review scenarios, the updated full-unit offline checkpoint, and actual
+downloaded-audio playback in review. Initial test-locator failures were fixed
+and rerun successfully. Real screen-reader/device testing remains a release
+gate. The local-server tests used a temporary `--no-restore` configuration and
+disposable database; no live deployment or real publication was exercised.
+
+# Previous UX continuation: sound, motion and color
+
+For the next planned features and recommended implementation order, read
+[the feature roadmap](feature-roadmap.md). Its review/checkpoint recommendation
+supersedes the older pilot-first recommendation preserved below; the owner has
+not approved a schedule or all future implementation work.
 
 October 1 deployment request: the owner authorized pushing the working changes
 and a Vercel frontend preview from `codex/lesson-experience`. The preview uses the

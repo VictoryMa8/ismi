@@ -438,6 +438,76 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         Assert.Equal(HttpStatusCode.NotFound, (await learner.GetAsync(url)).StatusCode);
     }
 
+    [Fact]
+    public async Task CharacterMetadataValidatesRoundTripsAndRollsBackWithoutChangingLanguage()
+    {
+        using var owner = CreateClient();
+        using var guest = CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        var options = new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web);
+        var baseline = System.Text.Json.JsonSerializer.Deserialize<CurriculumDraftRequest>(
+            await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "guided-teaching", "01-lesson.json")), options)!;
+        var originalResponse = await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/admin/curriculum/drafts", baseline);
+        var original = (await originalResponse.Content.ReadFromJsonAsync<CurriculumVersionDetail>())!;
+        await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{original.Id}/approve", new { });
+        await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{original.Id}/publish", new { });
+        using var scope = _factory.Services.CreateScope();
+        var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
+        var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
+        var path = Path.Combine(AppContext.BaseDirectory, "characters");
+        Assert.Equal(7, (await importer.ImportAsync(path)).Count);
+        Assert.All(await importer.ImportAsync(path), line => Assert.StartsWith("Unchanged:", line));
+        var versions = (await owner.GetFromJsonAsync<List<CurriculumVersionSummary>>("/api/admin/curriculum/versions"))!;
+        var proposals = versions.Where(v => v.Status == CurriculumStatuses.Draft && v.LessonId.StartsWith("levantine-everyday-")).ToList();
+        Assert.Equal(7, proposals.Count);
+        foreach (var version in proposals)
+        {
+            var detail = (await owner.GetFromJsonAsync<CurriculumVersionDetail>($"/api/admin/curriculum/versions/{version.Id}"))!;
+            Assert.Equal(CharacterRegistry.Version, detail.Lesson.Characters!.RegistryVersion);
+            Assert.True(validator.Validate(detail.Lesson, detail.Sources).IsValid);
+            var sourcePackage = System.Text.Json.JsonSerializer.Deserialize<CurriculumDraftRequest>(
+                await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "guided-teaching", $"{detail.Lesson.CourseOrder:00}-lesson.json")), options)!;
+            var stripped = detail.Lesson with
+            {
+                Characters = null, Version = sourcePackage.Lesson.Version,
+                Steps = detail.Lesson.Steps.Select(step => step with { Characters = null }).ToList(),
+                Introduction = detail.Lesson.Introduction! with
+                {
+                    Dialogue = detail.Lesson.Introduction!.Dialogue.Select(turn => turn with { SpeakerId = null, AddresseeId = null }).ToList(),
+                    TeachingCards = detail.Lesson.Introduction.TeachingCards!.Select(card => card with { SpeakerId = null, AddresseeId = null }).ToList()
+                }
+            };
+            Assert.Equal(System.Text.Json.JsonSerializer.Serialize(sourcePackage.Lesson, options), System.Text.Json.JsonSerializer.Serialize(stripped, options));
+            Assert.Equal(System.Text.Json.JsonSerializer.Serialize(sourcePackage.Sources, options), System.Text.Json.JsonSerializer.Serialize(detail.Sources, options));
+            if (detail.Lesson.CourseOrder > 1) Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{detail.Lesson.Id}")).StatusCode);
+        }
+        var proposal = proposals.Single(v => v.LessonId == baseline.Lesson.Id);
+        var revised = (await owner.GetFromJsonAsync<CurriculumVersionDetail>($"/api/admin/curriculum/versions/{proposal.Id}"))!;
+        var lesson = revised.Lesson;
+        Assert.Null((await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{lesson.Id}"))!.Characters);
+        Assert.False(validator.Validate(lesson with { Characters = lesson.Characters! with { RegistryVersion = "unknown" } }, revised.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Characters = lesson.Characters! with { CharacterIds = ["lina", "unknown"] } }, revised.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Characters = lesson.Characters! with { CharacterIds = ["lina", "lina"] } }, revised.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Characters = null }, revised.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Introduction = lesson.Introduction! with { Dialogue = [lesson.Introduction!.Dialogue[0] with { SpeakerId = "omar", AddresseeId = "lina" }] } }, revised.Sources).IsValid);
+        var step = lesson.Steps[0];
+        Assert.False(validator.Validate(lesson with { Steps = [step with { Characters = step.Characters! with { ResponseSpeakerId = null } }] }, revised.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Steps = [step with { Characters = step.Characters! with { ResponseAddresseeId = "omar" } }] }, revised.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Steps = [step with { Characters = step.Characters! with { SpeakerId = "unknown" } }] }, revised.Sources).IsValid);
+        // Only disposable test copies are approved and published here.
+        Assert.Equal(HttpStatusCode.OK, (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{proposal.Id}/approve", new { })).StatusCode);
+        Assert.Equal(HttpStatusCode.OK, (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{proposal.Id}/publish", new { })).StatusCode);
+        var live = (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{lesson.Id}"))!;
+        Assert.Equal("lina", live.Steps[0].Characters!.SpeakerId);
+        var dashboard = (await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
+        Assert.NotNull(dashboard.DailyPlan.Lessons.Single(l => l.Id == lesson.Id).Characters);
+        await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/lessons/{lesson.Id}/rollback", new CurriculumRollbackRequest(original.Id));
+        var rollback = (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{lesson.Id}"))!;
+        Assert.Null(rollback.Characters);
+        Assert.Null(rollback.Steps[0].Characters);
+        Assert.Null(rollback.Introduction!.Dialogue[0].SpeakerId);
+    }
+
     private sealed record RecordingUpload(string AudioUrl);
 
     private HttpClient CreateClient() =>

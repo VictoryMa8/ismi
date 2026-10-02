@@ -1,7 +1,8 @@
 import type { DashboardResponse, LessonResponse, PendingCompletion } from './types'
 
 const databaseName = 'ismi-offline'
-const databaseVersion = 2
+const databaseVersion = 3
+const reviewStore = 'review-history'
 const recordingStore = 'recordings'
 const lessonStore = 'lessons'
 const completionStore = 'pending-completions'
@@ -18,6 +19,9 @@ function openDatabase(): Promise<IDBDatabase> {
 
     request.onupgradeneeded = event => {
       const database = request.result
+      if (!database.objectStoreNames.contains(reviewStore)) {
+        database.createObjectStore(reviewStore, { keyPath: 'key' })
+      }
       if (!database.objectStoreNames.contains(recordingStore)) {
         database.createObjectStore(recordingStore, { keyPath: 'url' })
       }
@@ -113,6 +117,10 @@ export function getCachedLesson(lessonId: string): Promise<LessonResponse | unde
   return useStore(lessonStore, 'readonly', store => store.get(lessonId))
 }
 
+export function removeCachedLesson(lessonId: string): Promise<undefined> {
+  return useStore(lessonStore, 'readwrite', store => store.delete(lessonId))
+}
+
 export function getCachedLessonCount(): Promise<number> {
   return useStore(lessonStore, 'readonly', store => store.count())
 }
@@ -141,4 +149,57 @@ export function getPendingCompletions(): Promise<PendingCompletion[]> {
 
 export function removePendingCompletion(completionId: string): Promise<undefined> {
   return useStore(completionStore, 'readwrite', store => store.delete(completionId))
+}
+
+export function saveDeviceSnapshot<T>(key: string, value: T): Promise<IDBValidKey> {
+  return useStore(snapshotStore, 'readwrite', store => store.put({ key, value: JSON.parse(JSON.stringify(value)) }))
+}
+
+export async function getDeviceSnapshot<T>(key: string): Promise<T | undefined> {
+  return (await useStore<Snapshot<T> | undefined>(snapshotStore, 'readonly', store => store.get(key)))?.value
+}
+
+export type ReviewHistory = {
+  key: string
+  scope: string
+  lessonId: string
+  version: string
+  stepId: string
+  practicedAt: string
+  needsReview: boolean
+  answerId: string | null
+  explanation: string
+}
+
+export async function getReviewHistory(scope: string): Promise<ReviewHistory[]> {
+  return (await useStore<ReviewHistory[]>(reviewStore, 'readonly', store => store.getAll()))
+    .filter(item => item.scope === scope)
+}
+
+export async function saveReviewAttempt(
+  scope: string, lesson: LessonResponse, stepId: string, answerId: string | null,
+  isCorrect: boolean, explanation: string, firstAttempt: boolean,
+): Promise<void> {
+  const key = JSON.stringify([scope, lesson.id, lesson.version, stepId])
+  const database = await openDatabase()
+  await new Promise<void>((resolve, reject) => {
+    const transaction = database.transaction(reviewStore, 'readwrite')
+    const store = transaction.objectStore(reviewStore)
+    const request = store.get(key)
+    request.onsuccess = () => {
+      const previous = request.result as ReviewHistory | undefined
+      // A retry after seeing the model does not erase a mistake. A fresh first
+      // answer can resolve it; this is practice history, not a mastery estimate.
+      store.put({
+        key, scope, lessonId: lesson.id, version: lesson.version, stepId,
+        practicedAt: new Date().toISOString(),
+        needsReview: !isCorrect || (!firstAttempt && Boolean(previous?.needsReview)),
+        answerId: isCorrect && !firstAttempt && previous?.needsReview ? previous.answerId : answerId,
+        explanation: isCorrect && !firstAttempt && previous?.needsReview ? previous.explanation : explanation,
+      } satisfies ReviewHistory)
+    }
+    transaction.oncomplete = () => { database.close(); resolve() }
+    transaction.onabort = () => { database.close(); reject(transaction.error) }
+    transaction.onerror = () => reject(transaction.error)
+  })
 }

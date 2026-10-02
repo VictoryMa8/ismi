@@ -1,0 +1,50 @@
+{
+  "status": "proposed; owner final design selection pending",
+  "createdFor": "Ismi Lina and Omar character introduction",
+  "createdOn": "2026-10-01",
+  "authorship": "AI-generated with the built-in OpenAI image_gen tool under Codex art direction; no human illustrator credit claimed",
+  "generationHistory": [
+    {
+      "step": 1,
+      "description": "Initial restrained cartoon/editorial comparison rejected as too realistic; superseded and not bundled."
+    },
+    {
+      "step": 2,
+      "description": "Regenerated after owner requested cartoonish corporate art. Prompt saved in generation-prompt.txt."
+    }
+  ],
+  "rights": "Generated for this project; no third-party artwork, likeness or licensed character was requested. No separate third-party asset license applies or is asserted. Owner final selection remains pending. This is an authorship record, not a legal clearance opinion.",
+  "source": "corporate-cartoon-concept-v1.png",
+  "delivery": "../../i-web/public/characters/v1/cast.webp",
+  "deliveryProcessing": "Format conversion and downsampling to 1024 by 512 WebP, quality 88. No creative edits.",
+  "registryVersion": "ismi-cast-v1",
+  "layout": {
+    "columns": [
+      "neutral",
+      "attentive",
+      "encouraging",
+      "profile"
+    ],
+    "rows": [
+      "lina",
+      "omar"
+    ]
+  },
+  "files": [
+    {
+      "path": "docs/characters/corporate-cartoon-concept-v1.png",
+      "sha256": "5d12db953e63dda5c7319c4d858ea339d9cd83bc6fbfe5bd47b6436f5eb80dc7",
+      "bytes": 1262310
+    },
+    {
+      "path": "i-web/public/characters/v1/cast.webp",
+      "sha256": "f8fe3c69f4af3621a117be1ee1439d3d885af2e115d3a740f2c8d5b4cd286759",
+      "bytes": 42714
+    },
+    {
+      "path": "docs/characters/generation-prompt.txt",
+      "sha256": "701f79410dcfda86ac066c6dc884a3f0b32f46251ee4d55dcd115e297eb58ca2",
+      "bytes": 1921
+    }
+  ]
+}

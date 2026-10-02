@@ -1,4 +1,4 @@
-import { finishTeaching } from './lesson-helpers'
+import { finishTeaching, responseChoices } from './lesson-helpers'
 import { expect, test } from '@playwright/test'
 
 function silentWave() {
@@ -96,7 +96,23 @@ test('console recording publication downloads audio and plays after offline relo
       const audio = (window as unknown as { testAudio: HTMLAudioElement }).testAudio
       return audio?.src.startsWith('blob:') && audio.currentTime > 0
     })).toBe(true)
+    await responseChoices(page.getByRole('dialog'))
+    await page.getByRole('dialog').locator('.answer-option').first().click()
+    await page.getByRole('button', { name: 'Check answer' }).click()
+    await expect(page.getByRole('dialog').locator('.feedback-panel')).toBeFocused()
     await page.getByRole('button', { name: 'Close lesson' }).click()
+    expect(await page.evaluate(() => (window as unknown as { testAudio: HTMLAudioElement }).testAudio.paused)).toBe(true)
+    await page.getByRole('link', { name: 'Practice', exact: true }).click()
+    await page.getByRole('button', { name: 'Mixed review' }).click()
+    const review = page.getByRole('dialog', { name: 'Mixed review' })
+    await review.getByText('Recording transcript and source', { exact: true }).click()
+    await expect(review.getByText('Recorded · Transport test fixture · Urban Palestinian')).toBeVisible()
+    await review.getByRole('button', { name: 'Play recorded prompt' }).click()
+    await expect.poll(() => page.evaluate(() => {
+      const audio = (window as unknown as { testAudio: HTMLAudioElement }).testAudio
+      return audio?.src.startsWith('blob:') && audio.currentTime > 0
+    })).toBe(true)
+    await review.getByRole('button', { name: 'Close review' }).click()
     expect(await page.evaluate(() => (window as unknown as { testAudio: HTMLAudioElement }).testAudio.paused)).toBe(true)
   } finally {
     await context.setOffline(false)
