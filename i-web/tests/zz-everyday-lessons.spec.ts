@@ -4,7 +4,7 @@ import { finishTeaching, responseChoices } from './lesson-helpers'
 import type { LessonResponse } from '../src/types'
 
 const packages = Array.from({ length: 7 }, (_, index) => JSON.parse(readFileSync(
-  new URL(`../../content/levantine/everyday-01/revisions/guided-teaching/0${index + 1}-lesson.json`, import.meta.url), 'utf8',
+  new URL(`../../content/levantine/everyday-01/revisions/characters/0${index + 1}-lesson.json`, import.meta.url), 'utf8',
 ))) as Array<{ lesson: LessonResponse; sources: unknown[] }>
 
 async function post(page: Page, path: string, data: unknown = {}) {
@@ -23,6 +23,10 @@ async function complete(page: Page, dialog: Locator, lesson: LessonResponse, wro
   for (const [index, step] of lesson.steps.entries()) {
     await expect(dialog.locator(`.practice-page[data-step-id="${step.id}"]`)).toBeVisible()
     await expect(dialog.locator('.lesson-card-enter-active, .lesson-card-leave-active')).toHaveCount(0)
+    if (step.characters?.responseSpeakerId) {
+      const name = step.characters.responseSpeakerId === 'lina' ? 'Lina' : 'Omar'
+      await expect(dialog.locator('.practice-page > .character-cue')).toContainText(`Reply as ${name}`)
+    }
     // Exercise the actual builder online and offline, not only its choice fallback.
     if (await dialog.locator('.phrase-builder').isVisible()) {
       const model = step.answers.find(a => a.id === step.evaluation.correctAnswerId)!
@@ -86,6 +90,8 @@ test('all authored lessons preview, then published test copies complete offline 
     await page.getByRole('button', { name: 'Preview saved version' }).click()
     const dialog = page.getByRole('dialog', { name: pack.lesson.title, exact: true })
     await expect(dialog.getByRole('list', { name: 'Dialogue transcript' }).getByRole('listitem')).toHaveCount(6)
+    await expect(dialog.locator('.dialogue-transcript .character-label')).toHaveCount(6)
+    expect(await dialog.locator('.character-portrait img').first().evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBeTruthy()
     await expect(dialog.locator('[lang="ar"][dir="rtl"]').first()).toBeVisible()
     expect(await dialog.evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBeTruthy()
     await expect(dialog.getByText(pack.lesson.introduction!.dialogue[0]!.line.meaning, { exact: true }).first()).toBeVisible()
@@ -125,9 +131,31 @@ test('all authored lessons preview, then published test copies complete offline 
   const unit = page.getByRole('region', { name: 'Everyday conversations with someone you love', exact: true })
   await expect(unit.getByRole('heading', { name: 'Unit complete' })).toBeVisible()
   await expect(page.getByText('7 completions waiting to sync', { exact: true })).toBeVisible()
-  await unit.getByRole('button', { name: 'Review the unit' }).click()
-  await complete(page, page.getByRole('dialog', { name: packages[0]!.lesson.title, exact: true }), packages[0]!.lesson)
-  await page.getByRole('button', { name: 'Back to courses' }).click()
+  await unit.getByRole('button', { name: 'Review and checkpoint' }).click()
+  await page.getByRole('button', { name: `Start ${packages[0]!.lesson.unitTitle} checkpoint`, exact: true }).click()
+  const checkpoint = page.getByRole('dialog', { name: 'Unit checkpoint' })
+  for (let index = 0; index < 6; index++) {
+    await expect(checkpoint.locator('.lesson-card-enter-active, .lesson-card-leave-active')).toHaveCount(0)
+    const card = checkpoint.locator('[data-review-step]')
+    const lessonId = await card.getAttribute('data-review-lesson')
+    const stepId = await card.getAttribute('data-review-step')
+    const source = packages.find(pack => pack.lesson.id === lessonId)!.lesson
+    const step = source.steps.find(step => step.id === stepId)!
+    if (step.characters?.responseSpeakerId) {
+      await expect(checkpoint.locator('.practice-page > .character-cue')).toContainText(`Reply as ${step.characters.responseSpeakerId === 'lina' ? 'Lina' : 'Omar'}`)
+      await expect(checkpoint.locator('.review-scene')).toHaveText(source.scenario)
+    }
+    await expect(checkpoint.locator('.prompt-meaning')).toHaveCount(0)
+    await checkpoint.getByRole('button', { name: 'Show response choices', exact: true }).click()
+    await checkpoint.locator('.answer-option').nth(step.answers.findIndex(answer => answer.id === step.evaluation.correctAnswerId)).click()
+    await checkpoint.getByRole('button', { name: 'Check answer' }).click()
+    await expect(checkpoint.locator('.feedback-panel')).toContainText(step.evaluation.correctExplanation)
+    await checkpoint.getByRole('button', { name: index === 5 ? 'Finish review' : 'Next exchange' }).click()
+    await expect(checkpoint.locator(`[data-review-lesson="${lessonId}"][data-review-step="${stepId}"]`)).toHaveCount(0)
+  }
+  await expect(checkpoint.getByText('Checkpoint complete', { exact: true })).toBeVisible()
+  await checkpoint.getByRole('button', { name: 'Back to practice' }).click()
+  await page.getByRole('link', { name: 'Courses', exact: true }).click()
   await expect(page.getByText('7 completions waiting to sync', { exact: true })).toBeVisible()
   await context.setOffline(false)
   await page.evaluate(() => window.dispatchEvent(new Event('online')))

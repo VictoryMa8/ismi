@@ -5,6 +5,8 @@ import type { LessonResponse, LessonTeachingCard } from './types'
 import LessonTransition from './LessonTransition.vue'
 import LessonStages from './LessonStages.vue'
 import LessonScroll from './LessonScroll.vue'
+import CharacterCast from './CharacterCast.vue'
+import CharacterLabel from './CharacterLabel.vue'
 
 const props = defineProps<{ lesson: LessonResponse; review: boolean }>()
 const emit = defineEmits<{ done: [] }>()
@@ -67,9 +69,11 @@ async function back() {
           <p class="section-kicker">A conversation worth having</p>
           <h3 ref="heading" tabindex="-1">{{ lesson.introduction?.goal ?? lesson.title }}</h3>
           <p class="coach-context">{{ lesson.scenario }}</p>
+          <CharacterCast :cast="lesson.characters" />
           <ol v-if="lesson.introduction" class="dialogue-transcript dialogue-bubbles" aria-label="Dialogue transcript">
-            <li v-for="(turn, i) in lesson.introduction.dialogue" :key="i" :class="{ reply: i % 2 === 1 }">
-              <strong>{{ turn.speaker }}</strong>
+            <li v-for="(turn, i) in lesson.introduction.dialogue" :key="i" :class="{ reply: Boolean(turn.speakerId && lesson.characters?.characterIds.indexOf(turn.speakerId) === 1) }">
+              <CharacterLabel v-if="turn.speakerId" :speaker-id="turn.speakerId" :addressee-id="turn.addresseeId" :label="turn.speaker" :registry-version="lesson.characters?.registryVersion" expression="attentive" />
+              <strong v-else>{{ turn.speaker }}</strong>
               <p lang="ar" dir="rtl">{{ turn.line.arabic }}</p>
               <p class="phrase-transliteration" dir="ltr">{{ turn.line.arabizi }}</p>
               <p class="phrase-meaning">{{ turn.line.meaning }}</p>
@@ -79,6 +83,7 @@ async function back() {
         <template v-else-if="stage === 'learn' || stage === 'recall'">
           <p class="section-kicker">{{ stage === 'learn' ? 'Learn a piece' : 'Bring it back' }} · {{ index + 1 }} of {{ cards.length }}</p>
           <h3 ref="heading" tabindex="-1">{{ stage === 'learn' ? card.title : 'How would you say this?' }}</h3>
+          <CharacterLabel v-if="card.speakerId" :speaker-id="card.speakerId" :addressee-id="card.addresseeId" :registry-version="lesson.characters?.registryVersion" />
           <p v-if="stage === 'recall'" class="recall-cue">{{ card.recallCue || card.phrase.meaning }}</p>
           <p v-if="stage === 'recall' && !revealed" class="coach-caption">Try saying it or thinking it through. Take as long as you need, then compare.</p>
           <div v-if="stage === 'learn' || revealed" class="phrase-spotlight">

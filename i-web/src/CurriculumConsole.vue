@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import RecordingEditor from './RecordingEditor.vue'
+import CharacterMapping from './CharacterMapping.vue'
 import {
   ArrowLeft,
   CheckCircle2,
@@ -427,6 +428,7 @@ function formatDate(value: string | null): string {
           </section>
 
           <p v-if="dirty && canEdit" role="status">Save your changes before validation or approval.</p>
+          <CharacterMapping :lesson-json="lessonJson" />
           <RecordingEditor v-model="lessonJson" :editable="canEdit && !busy" @busy="uploading = $event" @source="sources.push($event)" />
 
           <section class="editor-section" aria-labelledby="provenance-heading">

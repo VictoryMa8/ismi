@@ -12,6 +12,8 @@ public sealed class CurriculumValidator(RecordingStore recordings)
         if (!HasReadableShape(lesson, sources))
             return new(false, ["The package has missing or null lesson, step, answer, dialogue, or source fields."]);
 
+        CharacterRegistry.Validate(lesson, errors);
+
         Required(errors, lesson.Id, "Lesson ID is required.");
         if (lesson.Id.Length > 100) errors.Add("Lesson ID cannot exceed 100 characters.");
         if (!string.Equals(lesson.TrackId, "levantine", StringComparison.OrdinalIgnoreCase))

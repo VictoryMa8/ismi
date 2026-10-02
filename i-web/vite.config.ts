@@ -10,7 +10,7 @@ export default defineConfig({
     vue(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['ismi-mark.svg'],
+      includeAssets: ['ismi-mark.svg', 'characters/v1/*.webp'],
       manifest: {
         name: 'Ismi — Arabic for the conversations that matter',
         short_name: 'Ismi',

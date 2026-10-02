@@ -125,7 +125,8 @@ public sealed class SeedCurriculum
             lesson.Response.EstimatedMinutes,
             lesson.Response.ReviewStatus,
             completedLessonIds.Contains(lesson.Response.Id),
-            string.Equals(lesson.Response.Id, next.Response.Id, StringComparison.OrdinalIgnoreCase)))
+            string.Equals(lesson.Response.Id, next.Response.Id, StringComparison.OrdinalIgnoreCase),
+            lesson.Response.Characters))
             .ToList();
 
         return new DashboardResponse(

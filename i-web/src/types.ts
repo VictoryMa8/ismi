@@ -29,6 +29,7 @@ export type DashboardResponse = {
 }
 
 export type CourseLessonSummary = {
+  characters?: LessonCast | null
   id: string
   title: string
   unitId: string
@@ -57,7 +58,13 @@ export type LessonPrompt = {
 }
 
 export type LessonPhraseChunk = { arabic: string; arabizi: string; meaning: string }
+export type LessonCast = { registryVersion: string; characterIds: string[] }
+export type CharacterRoles = {
+  speakerId?: string | null; addresseeId?: string | null
+  responseSpeakerId?: string | null; responseAddresseeId?: string | null
+}
 export type LessonTeachingCard = {
+  speakerId?: string | null; addresseeId?: string | null
   title: string; phrase: LessonPrompt; note: string; chunks: LessonPhraseChunk[]
   recallCue?: string | null; sourceLocators?: string[] | null
 }
@@ -65,7 +72,7 @@ export type LessonTeachingCard = {
 export type LessonIntroduction = {
   teachingCards?: LessonTeachingCard[] | null
   goal: string
-  dialogue: Array<{ speaker: string; line: LessonPrompt }>
+  dialogue: Array<{ speaker: string; line: LessonPrompt; speakerId?: string | null; addresseeId?: string | null }>
   expressions: LessonPrompt[]
   usageNote: string
   dialectNote: string
@@ -91,6 +98,7 @@ export type LessonEvaluation = {
 }
 
 export type LessonStep = {
+  characters?: CharacterRoles | null
   id: string
   instruction: string
   prompt: LessonPrompt
@@ -99,6 +107,7 @@ export type LessonStep = {
 }
 
 export type LessonResponse = {
+  characters?: LessonCast | null
   englishHelpInitiallyHidden?: boolean
   introduction?: LessonIntroduction | null
   id: string

@@ -27,7 +27,8 @@ public sealed record CourseLessonSummary(
     int EstimatedMinutes,
     string ReviewStatus,
     bool IsCompleted,
-    bool IsCurrent);
+    bool IsCurrent,
+    LessonCast? Characters = null);
 
 public sealed record TrackProgress(
     string Id,
