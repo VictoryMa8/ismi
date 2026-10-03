@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-03",
+  "target": "https://ismi.alwaysdata.net",
+  "note": "Console-visible audit text; account identifier replaced with owner-approver. Times are browser-displayed, not converted to Chicago time.",
+  "lessons": [
+    {
+      "lessonId": "levantine-everyday-01-01",
+      "audit": "IMMUTABLE HISTORY\nAudit trail\nPublished\n\nPublished to the learner API and offline package feed.\n\nowner-approver · Oct 3, 2026, 9:38 PM\nApproved\n\nApproved after deterministic validation passed.\n\nowner-approver · Oct 3, 2026, 9:38 PM\nValidated\n\nValidation passed.\n\nowner-approver · Oct 3, 2026, 9:37 PM\nCreated\n\nCreated draft version 2.\n\nowner-approver · Oct 3, 2026, 4:44 PM"
+    },
+    {
+      "lessonId": "levantine-everyday-01-02",
+      "audit": "IMMUTABLE HISTORY\nAudit trail\nPublished\n\nPublished to the learner API and offline package feed.\n\nowner-approver · Oct 3, 2026, 9:39 PM\nApproved\n\nApproved after deterministic validation passed.\n\nowner-approver · Oct 3, 2026, 9:39 PM\nValidated\n\nValidation passed.\n\nowner-approver · Oct 3, 2026, 9:39 PM\nCreated\n\nCreated draft version 2.\n\nowner-approver · Oct 3, 2026, 9:39 PM"
+    },
+    {
+      "lessonId": "levantine-everyday-01-03",
+      "audit": "IMMUTABLE HISTORY\nAudit trail\nPublished\n\nPublished to the learner API and offline package feed.\n\nowner-approver · Oct 3, 2026, 9:40 PM\nApproved\n\nApproved after deterministic validation passed.\n\nowner-approver · Oct 3, 2026, 9:40 PM\nValidated\n\nValidation passed.\n\nowner-approver · Oct 3, 2026, 9:40 PM\nCreated\n\nCreated draft version 2.\n\nowner-approver · Oct 3, 2026, 9:40 PM"
+    },
+    {
+      "lessonId": "levantine-everyday-01-04",
+      "audit": "IMMUTABLE HISTORY\nAudit trail\nPublished\n\nPublished to the learner API and offline package feed.\n\nowner-approver · Oct 3, 2026, 9:40 PM\nApproved\n\nApproved after deterministic validation passed.\n\nowner-approver · Oct 3, 2026, 9:40 PM\nValidated\n\nValidation passed.\n\nowner-approver · Oct 3, 2026, 9:40 PM\nCreated\n\nCreated draft version 2.\n\nowner-approver · Oct 3, 2026, 9:40 PM"
+    },
+    {
+      "lessonId": "levantine-everyday-01-05",
+      "audit": "IMMUTABLE HISTORY\nAudit trail\nPublished\n\nPublished to the learner API and offline package feed.\n\nowner-approver · Oct 3, 2026, 9:40 PM\nApproved\n\nApproved after deterministic validation passed.\n\nowner-approver · Oct 3, 2026, 9:40 PM\nValidated\n\nValidation passed.\n\nowner-approver · Oct 3, 2026, 9:40 PM\nCreated\n\nCreated draft version 2.\n\nowner-approver · Oct 3, 2026, 9:40 PM"
+    },
+    {
+      "lessonId": "levantine-everyday-01-06",
+      "audit": "IMMUTABLE HISTORY\nAudit trail\nPublished\n\nPublished to the learner API and offline package feed.\n\nowner-approver · Oct 3, 2026, 9:41 PM\nApproved\n\nApproved after deterministic validation passed.\n\nowner-approver · Oct 3, 2026, 9:41 PM\nValidated\n\nValidation passed.\n\nowner-approver · Oct 3, 2026, 9:41 PM\nCreated\n\nCreated draft version 2.\n\nowner-approver · Oct 3, 2026, 9:41 PM"
+    },
+    {
+      "lessonId": "levantine-everyday-01-07",
+      "audit": "IMMUTABLE HISTORY\nAudit trail\nPublished\n\nPublished to the learner API and offline package feed.\n\nowner-approver · Oct 3, 2026, 9:41 PM\nApproved\n\nApproved after deterministic validation passed.\n\nowner-approver · Oct 3, 2026, 9:41 PM\nValidated\n\nValidation passed.\n\nowner-approver · Oct 3, 2026, 9:41 PM\nCreated\n\nCreated draft version 2.\n\nowner-approver · Oct 3, 2026, 9:41 PM"
+    }
+  ]
+}

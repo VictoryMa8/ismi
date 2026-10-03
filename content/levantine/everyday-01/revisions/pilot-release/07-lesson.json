@@ -1,0 +1,775 @@
+{
+  "lesson": {
+    "id": "levantine-everyday-01-07",
+    "trackId": "levantine",
+    "title": "Put it together",
+    "scenario": "A fresh Friday check-in: Fattoush has already visited her mother. She and Knafeh plan a quiet meal for tomorrow at seven. Use the new details rather than memorized answers.",
+    "steps": [
+      {
+        "id": "e07-01",
+        "instruction": "Fattoush is well. She visited her mother and then rested. Respond with her account.",
+        "prompt": {
+          "arabic": "شو عاملة؟",
+          "arabizi": "Shū ʿāmle?",
+          "meaning": "How are you doing? (casual check-in to Fattoush)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "اشتغلت، وبعدين زرت أمي.",
+            "arabizi": "Ishtaghalt, w-baʿdēn zurt immi.",
+            "meaning": "I worked, then visited my mother.",
+            "rationale": "This adds work and omits rest; it recalls an earlier lesson rather than this new scene."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا منيحة. زرت أمي وبعدين ارتحت.",
+            "arabizi": "Ana mnīḥa. Zurt immi w-baʿdēn irtaḥt.",
+            "meaning": "I’m well. I visited my mother and then rested.",
+            "rationale": "This preserves Fattoush’s self-description and the visit-before-rest order."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا منيحة. ارتحت وبعدين زرت أمي.",
+            "arabizi": "Ana mnīḥa. Irtaḥt w-baʿdēn zurt immi.",
+            "meaning": "I’m well. I rested and then visited my mother.",
+            "rationale": "This reverses the completed activities."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Fattoush describes herself as mnīḥa, then preserves visiting before resting.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Keep Fattoush’s self-description and visit-before-rest order."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e07-02",
+        "instruction": "Knafeh’s follow-up refers to Fattoush’s mother. Answer about her, not yourself.",
+        "prompt": {
+          "arabic": "وكيفها؟",
+          "arabizi": "W-kīfha?",
+          "meaning": "And how is she?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا منيحة.",
+            "arabizi": "Ana mnīḥa.",
+            "meaning": "I’m well. (Fattoush speaking)",
+            "rationale": "Ana changes the answer to Fattoush’s own condition."
+          },
+          {
+            "id": "b",
+            "arabic": "منيحين، شكراً.",
+            "arabizi": "Mnīḥīn, shukran.",
+            "meaning": "They’re well, thank you.",
+            "rationale": "The plural answer is about several people, not one mother."
+          },
+          {
+            "id": "c",
+            "arabic": "منيحة.",
+            "arabizi": "Mnīḥa.",
+            "meaning": "She’s well.",
+            "rationale": "The mother is the most recently named woman. The answer stays about her."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "The mother is the most recently named woman. The answer stays about her.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Keep the person referred to by -ha."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e07-03",
+        "instruction": "Move from the completed day to an invitation for tomorrow. Address Knafeh.",
+        "prompt": {
+          "arabic": "منيحة.",
+          "arabizi": "Mnīḥa.",
+          "meaning": "She’s well.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "شو رأيك ناكل سوا بكرا؟",
+            "arabizi": "Shū raʾyak nākol sawa bukra?",
+            "meaning": "What do you think about eating together tomorrow? (to Knafeh)",
+            "rationale": "This changes to a shared future meal and keeps Knafeh as the listener."
+          },
+          {
+            "id": "b",
+            "arabic": "شو عملت اليوم؟",
+            "arabizi": "Shū ʿmilt il-yōm?",
+            "meaning": "What did you do today? (to Knafeh)",
+            "rationale": "This asks for another past activity report rather than inviting him."
+          },
+          {
+            "id": "c",
+            "arabic": "شو رأيك ناكل سوا اليوم؟",
+            "arabizi": "Shū raʾyak nākol sawa il-yōm?",
+            "meaning": "What do you think about eating together today? (to Knafeh)",
+            "rationale": "This invites him for today, changing the agreed day."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This changes to a shared future meal and keeps Knafeh as the listener.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The invitation needs tomorrow."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e07-04",
+        "instruction": "Confirm the meal from the fresh dialogue: rice and salad at seven.",
+        "prompt": {
+          "arabic": "شو نعمل بكرا؟",
+          "arabizi": "Shū niʿmal bukra?",
+          "meaning": "What shall we make tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "نعمل رز وسلطة الساعة ستة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sitte.",
+            "meaning": "We’ll make rice and salad at six.",
+            "rationale": "This keeps the dishes but imports six from the previous lesson."
+          },
+          {
+            "id": "b",
+            "arabic": "نعمل شاي الساعة سبعة.",
+            "arabizi": "Niʿmal shāy is-sāʿa sabʿa.",
+            "meaning": "We’ll make tea at seven.",
+            "rationale": "Tea comes afterwards; it is not the meal being confirmed."
+          },
+          {
+            "id": "c",
+            "arabic": "نعمل رز وسلطة الساعة سبعة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sabʿa.",
+            "meaning": "We’ll make rice and salad at seven.",
+            "rationale": "Both dishes and the new time match the dialogue."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Both dishes and the new time match the dialogue.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Keep both the foods and the new clock time."
+        }
+      },
+      {
+        "id": "e07-05",
+        "instruction": "Fattoush asks for the drink mentioned after the meal. Ask Knafeh politely for that drink.",
+        "prompt": {
+          "arabic": "بدك شاي ولا قهوة؟",
+          "arabizi": "Biddik shāy walla ʾahwe?",
+          "meaning": "Do you want tea or coffee? (to Fattoush)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "قهوة، لو سمحتي.",
+            "arabizi": "ʾAhwe, law samaḥti.",
+            "meaning": "Coffee, please. (to Fattoush)",
+            "rationale": "This selects coffee and directs the request to Fattoush."
+          },
+          {
+            "id": "b",
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Knafeh)",
+            "rationale": "Tea matches the new dialogue, and law samaḥt addresses Knafeh."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "This refuses the drink rather than requesting the one in the plan."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Tea matches the new dialogue, and law samaḥt addresses Knafeh.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Recall the last turn of the dialogue."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e07-06",
+        "instruction": "You are Knafeh. After answering about yourself, return the check-in to Fattoush.",
+        "prompt": {
+          "arabic": "أنا منيح.",
+          "arabizi": "Ana mnīḥ.",
+          "meaning": "I’m well. (Knafeh speaking)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وإنتِ؟",
+            "arabizi": "W-inti?",
+            "meaning": "And you? (to Fattoush)",
+            "rationale": "W-inti returns the check-in to Fattoush without introducing a different topic."
+          },
+          {
+            "id": "b",
+            "arabic": "وإنتَ؟",
+            "arabizi": "W-inta?",
+            "meaning": "And you? (to Knafeh)",
+            "rationale": "This addresses a man; Fattoush is the listener."
+          },
+          {
+            "id": "c",
+            "arabic": "وكيفها؟",
+            "arabizi": "W-kīfha?",
+            "meaning": "And how is she?",
+            "rationale": "This asks about a woman already mentioned rather than directly returning the check-in."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "W-inti returns the check-in to Fattoush without introducing a different topic.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Address Fattoush directly."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "e07-07",
+        "instruction": "Closing exchange, part 1: in a new conversation, you worked and then rested. Tell that story without changing the order.",
+        "prompt": {
+          "arabic": "شو عملت اليوم؟",
+          "arabizi": "Shū ʿmilt il-yōm?",
+          "meaning": "What did you do today? (to Knafeh)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "ارتحت وبعدين اشتغلت.",
+            "arabizi": "Irtaḥt w-baʿdēn ishtaghalt.",
+            "meaning": "I rested and then worked.",
+            "rationale": "This reverses the requested order."
+          },
+          {
+            "id": "b",
+            "arabic": "زرت أمي وبعدين ارتحت.",
+            "arabizi": "Zurt immi w-baʿdēn irtaḥt.",
+            "meaning": "I visited my mother and then rested.",
+            "rationale": "This repeats Fattoush’s earlier story instead of the new work scenario."
+          },
+          {
+            "id": "c",
+            "arabic": "اشتغلت وبعدين ارتحت.",
+            "arabizi": "Ishtaghalt w-baʿdēn irtaḥt.",
+            "meaning": "I worked and then rested.",
+            "rationale": "You reuse the sequence pattern for work followed by rest, rather than copying Fattoush’s visit story."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "You reuse the sequence pattern for work followed by rest, rather than copying Fattoush’s visit story.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Check the activity before baʿdēn."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "e07-08",
+        "instruction": "Closing exchange, part 2: confirm the whole new arrangement: tomorrow at seven, a shared meal, then tea.",
+        "prompt": {
+          "arabic": "ناكل سوا بكرا الساعة سبعة؟",
+          "arabizi": "Nākol sawa bukra is-sāʿa sabʿa?",
+          "meaning": "Shall we eat together tomorrow at seven?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، اليوم الساعة سبعة. وبعدين نشرب شاي.",
+            "arabizi": "Tamām, il-yōm is-sāʿa sabʿa. W-baʿdēn nishrab shāy.",
+            "meaning": "Okay, today at seven. And afterwards we’ll drink tea.",
+            "rationale": "Only the day changes, but that would create a different arrangement."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، بكرا الساعة سبعة. وبعدين نشرب شاي.",
+            "arabizi": "Tamām, bukra is-sāʿa sabʿa. W-baʿdēn nishrab shāy.",
+            "meaning": "Okay, tomorrow at seven. And afterwards we’ll drink tea.",
+            "rationale": "The confirmation preserves the day and time and adds the requested follow-on activity."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، بكرا الساعة ستة. وبعدين نشرب قهوة.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte. W-baʿdēn nishrab ʾahwe.",
+            "meaning": "Okay, tomorrow at six. And afterwards we’ll drink coffee.",
+            "rationale": "This changes both the time and the drink."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "The confirmation preserves the day and time and adds the requested follow-on activity.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Check day, time, and the activity afterwards."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "guided-teaching-draft",
+    "unitId": "levantine-everyday-01",
+    "unitTitle": "Everyday conversations with someone you love",
+    "courseOrder": 7,
+    "reviewStatus": "owner-review",
+    "introduction": {
+      "goal": "Follow a new exchange about the day and family, then agree on food, a drink, and a time.",
+      "dialogue": [
+        {
+          "speaker": "Knafeh → Fattoush",
+          "line": {
+            "arabic": "شو عاملة؟",
+            "arabizi": "Shū ʿāmle?",
+            "meaning": "How are you doing? (casual check-in to Fattoush)",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "أنا منيحة. زرت أمي وبعدين ارتحت.",
+            "arabizi": "Ana mnīḥa. Zurt immi w-baʿdēn irtaḥt.",
+            "meaning": "I’m well. I visited my mother and then rested.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "وكيفها؟",
+            "arabizi": "W-kīfha?",
+            "meaning": "And how is she?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush → Knafeh",
+          "line": {
+            "arabic": "منيحة. شو رأيك ناكل سوا بكرا؟",
+            "arabizi": "Mnīḥa. Shū raʾyak nākol sawa bukra?",
+            "meaning": "She’s well. What do you think about eating together tomorrow?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "تمام. نعمل رز وسلطة الساعة سبعة؟",
+            "arabizi": "Tamām. Niʿmal ruzz w-salaṭa is-sāʿa sabʿa?",
+            "meaning": "Okay. Shall we make rice and salad at seven?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "آه، وبعدين نشرب شاي.",
+            "arabizi": "Āh, w-baʿdēn nishrab shāy.",
+            "meaning": "Yes, and then we’ll drink tea.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "زرت أمي وبعدين ارتحت.",
+          "arabizi": "Zurt immi w-baʿdēn irtaḥt.",
+          "meaning": "I visited my mother and then rested.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "وكيفها؟",
+          "arabizi": "W-kīfha?",
+          "meaning": "And how is she?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "ناكل سوا بكرا؟",
+          "arabizi": "Nākol sawa bukra?",
+          "meaning": "Shall we eat together tomorrow?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "الساعة سبعة.",
+          "arabizi": "Is-sāʿa sabʿa.",
+          "meaning": "At seven o’clock.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Follow who, when, and the order of events as the exchange changes. Answer the check-in before telling the completed day, then move to tomorrow’s plan. Reuse the pieces with the new details rather than repeating the earlier story.",
+      "dialectNote": "Urban Palestinian teaching target. ʿĀmle addresses Fattoush; her self-description is mnīḥa. Raʾyak addresses Knafeh in Fattoush’s invitation. First-person past forms do not change with the speaker’s gender. The casual check-in follows owner-relayed Palestinian feedback; no native-expert review is claimed. Transliteration stays available; Jordanian alternatives are not introduced.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Fattoush uses feminine self-description; Knafeh uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "https://resources.lingualism.com/levantine-arabic/family-3/",
+        "internal:ismi/review-cases/LEV-2026-09-30-01",
+        "https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf",
+        "internal:ismi/everyday-01/07/guided-teaching"
+      ],
+      "teachingCards": [
+        {
+          "title": "Connect your condition and your story",
+          "phrase": {
+            "arabic": "أنا منيحة. زرت أمي وبعدين ارتحت.",
+            "arabizi": "Ana mnīḥa. Zurt immi w-baʿdēn irtaḥt.",
+            "meaning": "I’m well. I visited my mother and then rested.",
+            "audioUrl": null
+          },
+          "note": "Fattoush answers about herself first, then gives two completed activities. W-baʿdēn preserves visit first, rest second.",
+          "recallCue": "You are Fattoush. Say you’re well, then report visiting your mother and resting, in that order.",
+          "chunks": [
+            {
+              "arabic": "أنا منيحة",
+              "arabizi": "ana mnīḥa",
+              "meaning": "I’m well · Fattoush"
+            },
+            {
+              "arabic": "زرت أمي",
+              "arabizi": "zurt immi",
+              "meaning": "I visited my mother"
+            },
+            {
+              "arabic": "وبعدين ارتحت",
+              "arabizi": "w-baʿdēn irtaḥt",
+              "meaning": "and then I rested"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "internal:ismi/review-cases/LEV-2026-09-30-01",
+            "https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf",
+            "internal:ismi/everyday-01/07/guided-teaching"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Track who the question is about",
+          "phrase": {
+            "arabic": "وكيفها؟",
+            "arabizi": "W-kīfha?",
+            "meaning": "And how is she?",
+            "audioUrl": null
+          },
+          "note": "After the mother is mentioned, -ha points to her. The reply mnīḥa now describes the mother, rather than Fattoush.",
+          "recallCue": "Fattoush tells you she visited her mother. Ask how her mother is.",
+          "chunks": [
+            {
+              "arabic": "وكيفها",
+              "arabizi": "w-kīfha",
+              "meaning": "and how is she · mother"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/everyday-01/07/guided-teaching"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Move the conversation to tomorrow",
+          "phrase": {
+            "arabic": "شو رأيك ناكل سوا بكرا؟",
+            "arabizi": "Shū raʾyak nākol sawa bukra?",
+            "meaning": "What do you think about eating together tomorrow? (to Knafeh)",
+            "audioUrl": null
+          },
+          "note": "Reuse the shared-meal invitation and add bukra. The address raʾyak is to Knafeh.",
+          "recallCue": "You are Fattoush. Ask Knafeh about eating together tomorrow.",
+          "chunks": [
+            {
+              "arabic": "شو رأيك",
+              "arabizi": "shū raʾyak",
+              "meaning": "what do you think · to Knafeh"
+            },
+            {
+              "arabic": "ناكل سوا",
+              "arabizi": "nākol sawa",
+              "meaning": "we eat together"
+            },
+            {
+              "arabic": "بكرا",
+              "arabizi": "bukra",
+              "meaning": "tomorrow"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "internal:ismi/everyday-01/07/guided-teaching"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Attach a time to the meal",
+          "phrase": {
+            "arabic": "نعمل رز وسلطة الساعة سبعة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sabʿa.",
+            "meaning": "We’ll make rice and salad at seven.",
+            "audioUrl": null
+          },
+          "note": "Keep both foods and the new time. You are confirming rice and salad at seven, rather than changing the meal.",
+          "recallCue": "Confirm rice and salad at seven.",
+          "chunks": [
+            {
+              "arabic": "نعمل",
+              "arabizi": "niʿmal",
+              "meaning": "we make"
+            },
+            {
+              "arabic": "رز وسلطة",
+              "arabizi": "ruzz w-salaṭa",
+              "meaning": "rice and salad"
+            },
+            {
+              "arabic": "الساعة سبعة",
+              "arabizi": "is-sāʿa sabʿa",
+              "meaning": "at seven"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "internal:ismi/everyday-01/07/guided-teaching"
+          ]
+        },
+        {
+          "title": "Retell a different day",
+          "phrase": {
+            "arabic": "اشتغلت وبعدين ارتحت.",
+            "arabizi": "Ishtaghalt w-baʿdēn irtaḥt.",
+            "meaning": "I worked and then rested.",
+            "audioUrl": null
+          },
+          "note": "Use familiar pieces with a changed activity. Start with work, then rest; do not carry the earlier mother-visit story into this exchange.",
+          "recallCue": "In a new conversation, say you worked and then rested.",
+          "chunks": [
+            {
+              "arabic": "اشتغلت",
+              "arabizi": "ishtaghalt",
+              "meaning": "I worked"
+            },
+            {
+              "arabic": "وبعدين",
+              "arabizi": "w-baʿdēn",
+              "meaning": "and then"
+            },
+            {
+              "arabic": "ارتحت",
+              "arabizi": "irtaḥt",
+              "meaning": "I rested"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "internal:ismi/everyday-01/07/guided-teaching"
+          ]
+        },
+        {
+          "title": "Close with a connected plan",
+          "phrase": {
+            "arabic": "تمام، بكرا الساعة سبعة. وبعدين نشرب شاي.",
+            "arabizi": "Tamām, bukra is-sāʿa sabʿa. W-baʿdēn nishrab shāy.",
+            "meaning": "Okay, tomorrow at seven. And afterwards we’ll drink tea.",
+            "audioUrl": null
+          },
+          "note": "Confirm the day and time, then add what follows. The prompt has already established the meal, so the reply can leave that shared detail understood.",
+          "recallCue": "Accept tomorrow at seven, then add drinking tea afterwards.",
+          "chunks": [
+            {
+              "arabic": "تمام",
+              "arabizi": "tamām",
+              "meaning": "okay"
+            },
+            {
+              "arabic": "بكرا الساعة سبعة",
+              "arabizi": "bukra is-sāʿa sabʿa",
+              "meaning": "tomorrow at seven"
+            },
+            {
+              "arabic": "وبعدين",
+              "arabizi": "w-baʿdēn",
+              "meaning": "and then"
+            },
+            {
+              "arabic": "نشرب شاي",
+              "arabizi": "nishrab shāy",
+              "meaning": "we drink tea"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "internal:ismi/everyday-01/07/guided-teaching"
+          ]
+        }
+      ]
+    },
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    }
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Food and Drink in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Family in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi original dialogue and contextual answer design",
+      "locator": "internal:ismi/everyday-01/07/draft-2",
+      "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+      "notes": "AI-assisted revision authored September 30, 2026 from previously approved lexical material and owner-relayed check-in correction. Complete revised package awaits owner approval; no native-expert review."
+    },
+    {
+      "sourceType": "speaker-feedback",
+      "title": "Owner-relayed Palestinian casual check-in feedback",
+      "locator": "internal:ismi/review-cases/LEV-2026-09-30-01",
+      "rights": "Owner-provided feedback used for original Ismi revision; no speaker recording or identity stored.",
+      "notes": "Owner confirmed شو عامل؟ as a casual check-in on September 30, 2026. Does not establish universal non-use of the original expression, review of feminine form, or approval of the complete revised dialogue. Drafting without waiting for further speaker feedback was explicitly requested."
+    },
+    {
+      "sourceType": "supplemental-reference",
+      "title": "Lingualism, Levantine Arabic Verbs, revised 2021 sample — address morphology comparison",
+      "locator": "https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Consulted for form comparison only; no publisher examples, tables, or audio copied.",
+      "notes": "The sample is explicitly Lebanese-based, not Palestinian-native review. The active-participle feminine عاملة / 3ámle is a supplemental form comparison; owner-relayed report supplies the Palestinian check-in function. This is new draft provenance, not a claim this source was in the September 22 approved foundation."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi guided teaching and contextual recall revision",
+      "locator": "internal:ismi/everyday-01/07/guided-teaching",
+      "rights": "Original Ismi explanations, recall cues and phrase grouping. No publisher examples, tables or audio reproduced.",
+      "notes": "Authored September 30, 2026. 6 phrase cards reuse the existing source-linked unit language and address distinctions. Per-card sources identify lexical/morphology support; the contextual exchanges and chunk glosses are AI-assisted compositions for owner approval. Existing foundation records retain exact Maknuune IDs and publisher locators. No native-expert review, publication authorization, new speaker evidence, or learning-outcome validation claimed. Prior portable package: ../check-in-v2/07-lesson.json; SHA-256 a529f39b9a97967b76159622cb504272b2e016a330ec0c938485949d21a4403a. Original package is preserved unchanged."
+    }
+  ]
+}

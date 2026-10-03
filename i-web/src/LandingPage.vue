@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { ArrowRight, ArrowDown, Check, Menu, X, MessageCircle, CalendarDays, Coffee } from '@lucide/vue';
+import {
+  ArrowRight,
+  ArrowDown,
+  Check,
+  Menu,
+  X,
+  MessageCircle,
+  CalendarDays,
+  Coffee,
+} from '@lucide/vue';
 import CharacterPortrait from './CharacterPortrait.vue';
 import { benefits, faqs } from './landing/content';
 import './landing/landing.css';
@@ -51,7 +60,11 @@ onMounted(() => {
             class="landing-signin"
             >{{ returning ? 'Continue learning' : 'Sign in' }}</a
           >
-          <a class="landing-button compact" href="#/today" @click="menuOpen = false">
+          <a
+            class="landing-button compact"
+            href="#/today"
+            @click="menuOpen = false"
+          >
             Try out the app <ArrowRight :size="17" />
           </a>
         </nav>
@@ -69,8 +82,13 @@ onMounted(() => {
               and get help whenever you need it.
             </p>
             <div class="landing-actions">
-              <a class="landing-button" href="#/today" @click="menuOpen = false">
-                Try out the app <ArrowRight :size="19" /></a><a class="landing-text-link" href="#how-it-works"
+              <a
+                class="landing-button"
+                href="#/today"
+                @click="menuOpen = false"
+              >
+                Try out the app <ArrowRight :size="19" /></a
+              ><a class="landing-text-link" href="#how-it-works"
                 >See how it works <ArrowDown :size="17"
               /></a>
             </div>
@@ -107,7 +125,11 @@ onMounted(() => {
                   <p class="hero-translation">How are you doing?</p>
                 </div>
               </div>
-              <a class="hero-card-action" href="#/today" @click="menuOpen = false">
+              <a
+                class="hero-card-action"
+                href="#/today"
+                @click="menuOpen = false"
+              >
                 Your turn to respond <ArrowRight :size="18" />
               </a>
             </div>
@@ -201,7 +223,11 @@ onMounted(() => {
                 <div class="method-example method-recall">
                   <span>Your turn as Knafeh</span>
                   <p>Fattoush checks in.<br />How would you say you’re well?</p>
-                  <a class="landing-outline-button" href="#/today" @click="menuOpen = false">
+                  <a
+                    class="landing-outline-button"
+                    href="#/today"
+                    @click="menuOpen = false"
+                  >
                     Give it a try <ArrowRight :size="17" />
                   </a>
                 </div>
@@ -344,7 +370,8 @@ onMounted(() => {
             <h2 id="final-title">Start with one conversation.</h2>
             <p>A small step toward the people you love.</p>
             <a class="landing-button" href="#/today" @click="menuOpen = false">
-              Try out the app <ArrowRight :size="19" /></a><a class="landing-text-link" href="#beta"
+              Try out the app <ArrowRight :size="19" /></a
+            ><a class="landing-text-link" href="#beta"
               >About the planned beta <ArrowRight :size="17"
             /></a>
           </div>

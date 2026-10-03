@@ -1,13 +1,17 @@
 # Accessibility and offline preflight
 
-Status on September 30, 2026: **not run as part of pilot preparation**. The historical
+October 3, 2026: target is **iPhone/Safari**. Real-device and VoiceOver checks remain **not run**;
+The expected content versions are `curriculum-levantine-everyday-01-01-v2` through
+`curriculum-levantine-everyday-01-07-v2`, verified on the public API October 3. Confirm
+the intended device has these versions before testing.
+See [current technical evidence](release-2026-10-03/README.md) for separately reported automated results. The historical
 [walkthrough](../../content/levantine/everyday-01/walkthrough.md) reports automated
 keyboard/offline checks; those are not current real screen-reader evidence.
 
 Record tester/date, app revision, content version, browser/OS, screen reader and
 version, voice/language configuration, and device. Run on the intended pilot setup.
-For an initial desktop check, use macOS VoiceOver with Safari if available; add the
-participant's actual setup if different. Browser/assistive-technology support is
+Run this on the intended iPhone with Safari and iOS VoiceOver. A macOS Safari or
+Playwright WebKit check is supplemental and cannot establish iPhone/VoiceOver support. Browser/assistive-technology support is
 not established by listing a suggested pairing here.
 
 For every row record pass/fail/not tested, exact behavior, and issue/retest link.
@@ -55,3 +59,24 @@ Record failures, browser console/network details without tokens or cookies, and
 reproduction steps. Restore connectivity even after failure. Do not clear offline
 storage while events are pending. An API outage can defer sync; log it separately
 from loss of the locally saved completion.
+
+## iPhone rehearsal handoff
+
+- Owner/tester: record iPhone model, iOS version, Safari version if available,
+  text-size/zoom settings, VoiceOver language/voice setup, and the seven target
+  lesson versions. Do not enter the owner account during the learner run.
+- In a dedicated test setup, use a normal Safari tab, not Private Browsing. Open
+  each intended lesson online before testing it offline. Opening a saved console
+  draft is not a published offline download.
+- Check the full teaching → recall → exercise → feedback → finish flow by touch.
+  Repeat with VoiceOver enabled; record actual announcements, reading order,
+  focus, Arabic voice behavior, labels and ability to finish. Mark any unused
+  assistive-technology row “not tested.”
+- Increase text size/zoom and test portrait/landscape. Check that lesson navigation
+  remains reachable and Arabic marks and answer text are not clipped.
+- For the separate new-completion check above, ensure both Wi-Fi and cellular
+  connectivity are off, reload the cached lesson, finish, reload again, then
+  reconnect. Record persistent progress and no duplicate completion credit.
+- Restore connectivity afterward. Keep the same learner setup for session 2;
+  do not clear storage with pending progress. Automated timings are not learner
+  lesson-duration measurements.

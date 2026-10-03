@@ -4,7 +4,7 @@ import { finishTeaching, responseChoices } from './lesson-helpers'
 import type { LessonResponse } from '../src/types'
 
 const packages = Array.from({ length: 7 }, (_, index) => JSON.parse(readFileSync(
-  new URL(`../../content/levantine/everyday-01/revisions/characters/0${index + 1}-lesson.json`, import.meta.url), 'utf8',
+  new URL(`../../content/levantine/everyday-01/revisions/pilot-release/0${index + 1}-lesson.json`, import.meta.url), 'utf8',
 ))) as Array<{ lesson: LessonResponse; sources: unknown[] }>
 
 async function post(page: Page, path: string, data: unknown = {}) {

@@ -4,15 +4,20 @@ Use with the [pilot scope](README.md) and [observation sheet](observation-sheet.
 All tasks below are proposed facilitator prompts, not new published exercises or
 automatically graded answer records. Do not load them into the curriculum store.
 
-## Open wording concern
+## October 3 published release and session gate
 
-Palestinian-speaker feedback challenges the day-check-in wording; see
-[the review case](../../content/levantine/everyday-01/review-cases/LEV-2026-09-30-01.json).
-Four revised drafts are now available in the console. Hold recall task 1 and the
-delayed day-check-in task until the revised versions are approved/published and
-these facilitator tasks are updated to the new exchange. Lessons 1, 2, 6, and 7 contain the affected phrase; any walkthrough of
-those versions must identify it as under review, not reinforce it as the preferred
-natural check-in.
+Owner-selected setup: one adult false beginner on **iPhone/Safari**. Use the
+[October 3 candidate](../../content/levantine/everyday-01/revisions/pilot-release/README.md)
+and its manifest as the baseline: all seven are now published as hosted v2. The tasks below have been aligned
+to that wording; they are not authorization to run against the old hosted v1 unit.
+Before a learner session, record the target's seven published versions and verify
+they match the owner-approved candidate. If the versions differ, reconcile first.
+See [release/preflight evidence](release-2026-10-03/README.md).
+
+The check-in revision follows the owner's confirmed casual-greeting intent in
+LEV-2026-09-30-01. This is not a finding that the original day question is never
+used. The revised task 1 and delayed task replace the old day-description tasks.
+No new native-speaker review or pronunciation assessment is claimed.
 
 ## Before the participant arrives
 
@@ -20,7 +25,7 @@ Complete the [preflight](preflight.md). Use a separate normal browser profile pe
 participant, with the same profile for both sessions; private browsing may not
 preserve offline data. Keep the owner's account and console out of the session.
 Open the Courses page on the development preview and locate **Everyday conversations
-with someone you love**. Confirm all seven lesson titles against the unit README.
+with someone you love**. Confirm all seven lesson titles against the candidate manifest and release record.
 Use the Open control for each lesson, bypassing the demonstration unit.
 Record the deployed app revision if known (otherwise “unknown”), lesson IDs/versions,
 browser/OS, and input or assistive technology. Do not clear the participant's cache
@@ -62,14 +67,14 @@ do not ask for identifying relationship or family details.
 ## Fresh recall tasks — learner sees only the task column
 
 All IDs begin `levantine-everyday-01-`. The facilitator references point into the
-existing owner-approved v1 packages. They constrain the intended meaning; they are
+October 3 candidate packages, pending final owner approval/publication. They constrain the intended meaning; they are
 not an exhaustive list of acceptable Arabic. The owner should mark uncertain
 language judgments “review needed,” preserving a short non-identifying response
 only with agreement. Do not score accent or require one transliteration spelling.
 
 | Lesson / suffix | Task to show the learner | Facilitator meaning check and reference |
 | --- | --- | --- |
-| How was your day? / 01 | You are Fattoush talking to Knafeh. Your day was long but good. Describe it and ask him the same question back. | Day description includes long + positive contrast; returns question to Knafeh. See 01-review practice 5 and teaching note. This recombines the role and contrast. |
+| Check in with someone you love / 01 | You are Knafeh. Fattoush asks how you are doing. Say you are a little tired, then ask her how she is doing. | First-person tired + a little; asks Fattoush back with feminine address. Candidate steps e01-05 and e01-08, teaching cards “Answer about yourself” / “Keep the conversation going.” Do not require one exact wording. |
 | What did you do today? / 02 | Today you rested, then visited your mother. Tell someone those two events in that order. | Rest precedes visiting own mother. See 02-review dialogue and teaching note for the first-person forms and sequence. |
 | Want tea or coffee? / 03 | You are Fattoush asking Knafeh for coffee, politely, with no sugar. | Coffee, polite request to Knafeh, no sugar. See 03-review dialogue for request/address and no sugar; closing exchange for coffee. |
 | Let's eat together / 04 | You are Fattoush. Say you are hungry, then suggest making rice and salad together. | Feminine self-description, shared suggestion, both dishes. See 04-review dialogue and teaching note. |
@@ -86,8 +91,8 @@ from missing. Compare supported and unaided attempts without turning them into X
 
 After lesson 3, ask what felt useful, what felt confusing, and which expression
 they would use with someone they know. Do not request a personal story.
-At the start of session 2, before opening lessons, ask: “Tell Knafeh that your day
-was quiet, then ask him about his day.” Log this separately as delayed recall of
+At the start of session 2, before opening lessons, ask: “You are Fattoush. Greet Knafeh with a casual check-in,
+then ask whether he wants to rest.” Log this separately as delayed recall of
 lesson 1. Record elapsed days and any intervening practice; it is not a controlled
 retention experiment. Then proceed through lessons 4–7 with breaks as needed.
 

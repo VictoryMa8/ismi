@@ -1,7 +1,7 @@
 {
   "caseId": "LEV-2026-09-30-01",
-  "revision": 3,
-  "status": "draft-revision-prepared",
+  "revision": 5,
+  "status": "owner-approved-revision-published",
   "reportedAt": "2026-09-30",
   "reporter": "Owner relaying feedback from a Palestinian speaker; identity and region not supplied",
   "reportVerbatim": "Feedback from a palestinian: kif kan yomik isnt really used ever. shu amil is more used.",
@@ -10,7 +10,7 @@
   "learnerResponse": null,
   "aiDecision": null,
   "assessment": "The owner confirmed the speaker means شو عامل؟ as a casual check-in. Reframe the opening around that communicative function instead of mechanically replacing a question about the day while retaining its old answers. The report does not establish that the original phrase is never used across Palestinian speech.",
-  "publicationAction": "Four proposed v2 packages prepared. Original v1 packages and publication manifest preserved. New versions remain drafts pending owner publication approval; no further native-speaker feedback required to prepare them, per owner instruction.",
+  "publicationAction": "Owner approved exact pilot-release packages and existing art on October 3, 2026. All seven Everyday lessons published as hosted v2 through console validation/approval/publication. Public payloads and sources verified; prior v1 records retained as superseded.",
   "affectedLessons": [
     {
       "lessonId": "levantine-everyday-01-01",
@@ -265,7 +265,13 @@
     "ownerConfirmed": "شو عامل؟ — casual check-in",
     "replacementAsReported": "شو عامل؟",
     "intendedFunction": "casual check-in",
-    "remainingReview": "Confirm feminine-address form and a natural response exchange with the speaker before drafting replacements for Fattoush/Knafeh scenes."
+    "remainingReview": "Owner publication review is complete. No new native-speaker review is claimed; learner observation and further linguistic review remain separate evidence."
   },
-  "draftManifest": "../revisions/check-in-v2/review-manifest.json"
+  "draftManifest": "../revisions/check-in-v2/review-manifest.json",
+  "releaseCandidate": {
+    "date": "2026-10-03",
+    "manifest": "../revisions/pilot-release/review-manifest.json",
+    "disposition": "Owner-confirmed casual-check-in intent is incorporated in the seven-lesson release, published as hosted v2 and verified October 3. Learner observation remains pending. No additional speaker review was performed.",
+    "pilotTasks": "../../../../docs/pilot/session-script.md"
+  }
 }

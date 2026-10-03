@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-import RecordingEditor from './RecordingEditor.vue'
-import CharacterMapping from './CharacterMapping.vue'
+import { computed, onMounted, ref } from 'vue';
+import RecordingEditor from './RecordingEditor.vue';
+import CharacterMapping from './CharacterMapping.vue';
 import {
   ArrowLeft,
   CheckCircle2,
@@ -14,7 +14,7 @@ import {
   Save,
   ShieldCheck,
   Trash2,
-} from '@lucide/vue'
+} from '@lucide/vue';
 import {
   approveCurriculumVersion,
   createCurriculumDraft,
@@ -24,68 +24,76 @@ import {
   rollbackCurriculumVersion,
   updateCurriculumDraft,
   validateCurriculumVersion,
-} from './api'
+} from './api';
 import type {
   CurriculumSource,
   CurriculumValidationResult,
   CurriculumVersionDetail,
   CurriculumVersionSummary,
   LessonResponse,
-} from './types'
+} from './types';
 
-const emit = defineEmits<{ close: []; preview: [lesson: LessonResponse, opener: HTMLElement] }>()
+const emit = defineEmits<{
+  close: [];
+  preview: [lesson: LessonResponse, opener: HTMLElement];
+}>();
 
-const versions = ref<CurriculumVersionSummary[]>([])
-const selected = ref<CurriculumVersionDetail | null>(null)
-const lessonJson = ref('')
-const sources = ref<CurriculumSource[]>([])
-const busy = ref(false)
-const uploading = ref(false)
-const savedSnapshot = ref('')
-const dirty = computed(() => savedSnapshot.value !== JSON.stringify([lessonJson.value, sources.value]))
-const loading = ref(true)
-const error = ref<string | null>(null)
-const notice = ref<string | null>(null)
-const validation = ref<CurriculumValidationResult | null>(null)
+const versions = ref<CurriculumVersionSummary[]>([]);
+const selected = ref<CurriculumVersionDetail | null>(null);
+const lessonJson = ref('');
+const sources = ref<CurriculumSource[]>([]);
+const busy = ref(false);
+const uploading = ref(false);
+const savedSnapshot = ref('');
+const dirty = computed(
+  () =>
+    savedSnapshot.value !== JSON.stringify([lessonJson.value, sources.value]),
+);
+const loading = ref(true);
+const error = ref<string | null>(null);
+const notice = ref<string | null>(null);
+const validation = ref<CurriculumValidationResult | null>(null);
 
-const canEdit = computed(() => selected.value?.status === 'draft' || selected.value?.status === 'new')
-const selectedStatus = computed(() => selected.value?.status ?? 'new')
+const canEdit = computed(
+  () => selected.value?.status === 'draft' || selected.value?.status === 'new',
+);
+const selectedStatus = computed(() => selected.value?.status ?? 'new');
 
-onMounted(loadVersions)
+onMounted(loadVersions);
 
 async function loadVersions(preferredId?: number) {
-  loading.value = true
-  error.value = null
+  loading.value = true;
+  error.value = null;
   try {
-    versions.value = await getCurriculumVersions()
-    const id = preferredId ?? selected.value?.id ?? versions.value[0]?.id
-    if (id) await selectVersion(id)
+    versions.value = await getCurriculumVersions();
+    const id = preferredId ?? selected.value?.id ?? versions.value[0]?.id;
+    if (id) await selectVersion(id);
   } catch (caught) {
-    error.value = messageFor(caught)
+    error.value = messageFor(caught);
   } finally {
-    loading.value = false
+    loading.value = false;
   }
 }
 
 async function selectVersion(versionId: number) {
-  busy.value = true
-  error.value = null
-  notice.value = null
-  validation.value = null
+  busy.value = true;
+  error.value = null;
+  notice.value = null;
+  validation.value = null;
   try {
-    setSelected(await getCurriculumVersion(versionId))
+    setSelected(await getCurriculumVersion(versionId));
   } catch (caught) {
-    error.value = messageFor(caught)
+    error.value = messageFor(caught);
   } finally {
-    busy.value = false
+    busy.value = false;
   }
 }
 
 function setSelected(detail: CurriculumVersionDetail) {
-  selected.value = detail
-  lessonJson.value = JSON.stringify(detail.lesson, null, 2)
-  sources.value = detail.sources.map(source => ({ ...source }))
-  savedSnapshot.value = JSON.stringify([lessonJson.value, sources.value])
+  selected.value = detail;
+  lessonJson.value = JSON.stringify(detail.lesson, null, 2);
+  sources.value = detail.sources.map((source) => ({ ...source }));
+  savedSnapshot.value = JSON.stringify([lessonJson.value, sources.value]);
 }
 
 function startNewLesson() {
@@ -98,7 +106,10 @@ function startNewLesson() {
     version: 'draft',
     unitId: 'levantine-week-01',
     unitTitle: 'Week 1 · Talk about your day',
-    courseOrder: versions.value.filter(version => version.lessonId.startsWith('levantine-')).length + 1,
+    courseOrder:
+      versions.value.filter((version) =>
+        version.lessonId.startsWith('levantine-'),
+      ).length + 1,
     reviewStatus: 'demonstrative',
     steps: [
       {
@@ -119,7 +130,7 @@ function startNewLesson() {
         },
       },
     ],
-  }
+  };
   selected.value = {
     id: 0,
     versionNumber: 0,
@@ -133,189 +144,214 @@ function startNewLesson() {
     approvedBy: null,
     publishedAtUtc: null,
     publishedBy: null,
-  }
-  lessonJson.value = JSON.stringify(lesson, null, 2)
-  sources.value = [emptySource()]
-  validation.value = null
-  error.value = null
-  notice.value = 'Complete the lesson JSON and provenance, then save the new draft.'
+  };
+  lessonJson.value = JSON.stringify(lesson, null, 2);
+  sources.value = [emptySource()];
+  validation.value = null;
+  error.value = null;
+  notice.value =
+    'Complete the lesson JSON and provenance, then save the new draft.';
 }
 
 async function importPackage(event: Event) {
-  const input = event.target as HTMLInputElement
-  const file = input.files?.[0]
-  if (!file) return
-  busy.value = true
-  clearMessages()
+  const input = event.target as HTMLInputElement;
+  const file = input.files?.[0];
+  if (!file) return;
+  busy.value = true;
+  clearMessages();
   try {
-    const payload = JSON.parse(await file.text())
+    const payload = JSON.parse(await file.text());
     if (!payload.lesson?.id || !Array.isArray(payload.sources)) {
-      throw new Error('Choose a lesson package with lesson and sources fields.')
+      throw new Error(
+        'Choose a lesson package with lesson and sources fields.',
+      );
     }
-    const detail = await createCurriculumDraft(payload.lesson, payload.sources)
-    await loadVersions(detail.id)
-    notice.value = `Imported draft version ${detail.versionNumber}. Validate and preview before approval.`
+    const detail = await createCurriculumDraft(payload.lesson, payload.sources);
+    await loadVersions(detail.id);
+    notice.value = `Imported draft version ${detail.versionNumber}. Validate and preview before approval.`;
   } catch (caught) {
-    error.value = messageFor(caught)
+    error.value = messageFor(caught);
   } finally {
-    busy.value = false
-    input.value = ''
+    busy.value = false;
+    input.value = '';
   }
 }
 
 async function previewSavedVersion(event: MouseEvent) {
-  const opener = event.currentTarget as HTMLElement
-  if (!selected.value?.id) return
-  busy.value = true
-  clearMessages()
+  const opener = event.currentTarget as HTMLElement;
+  if (!selected.value?.id) return;
+  busy.value = true;
+  clearMessages();
   try {
-    const result = await validateCurriculumVersion(selected.value.id)
-    validation.value = result
-    if (!result.isValid) return
-    const detail = await getCurriculumVersion(selected.value.id)
-    emit('preview', detail.lesson, opener)
+    const result = await validateCurriculumVersion(selected.value.id);
+    validation.value = result;
+    if (!result.isValid) return;
+    const detail = await getCurriculumVersion(selected.value.id);
+    emit('preview', detail.lesson, opener);
   } catch (caught) {
-    error.value = messageFor(caught)
+    error.value = messageFor(caught);
   } finally {
-    busy.value = false
+    busy.value = false;
   }
 }
 
 async function cloneDraft() {
-  if (!selected.value) return
-  busy.value = true
-  clearMessages()
+  if (!selected.value) return;
+  busy.value = true;
+  clearMessages();
   try {
-    const detail = await createCurriculumDraft(selected.value.lesson, selected.value.sources)
-    await loadVersions(detail.id)
-    notice.value = `Draft version ${detail.versionNumber} created.`
+    const detail = await createCurriculumDraft(
+      selected.value.lesson,
+      selected.value.sources,
+    );
+    await loadVersions(detail.id);
+    notice.value = `Draft version ${detail.versionNumber} created.`;
   } catch (caught) {
-    error.value = messageFor(caught)
+    error.value = messageFor(caught);
   } finally {
-    busy.value = false
+    busy.value = false;
   }
 }
 
 async function saveDraft() {
-  if (!selected.value) return
-  clearMessages()
-  let lesson: LessonResponse
+  if (!selected.value) return;
+  clearMessages();
+  let lesson: LessonResponse;
   try {
-    lesson = JSON.parse(lessonJson.value) as LessonResponse
+    lesson = JSON.parse(lessonJson.value) as LessonResponse;
   } catch {
-    error.value = 'Lesson JSON is not valid. Check commas, quotes, and brackets.'
-    return
+    error.value =
+      'Lesson JSON is not valid. Check commas, quotes, and brackets.';
+    return;
   }
 
-  busy.value = true
+  busy.value = true;
   try {
-    const detail = selected.value.id === 0
-      ? await createCurriculumDraft(lesson, sources.value)
-      : await updateCurriculumDraft(selected.value.id, lesson, sources.value)
-    await loadVersions(detail.id)
-    notice.value = `Draft version ${detail.versionNumber} saved.`
+    const detail =
+      selected.value.id === 0
+        ? await createCurriculumDraft(lesson, sources.value)
+        : await updateCurriculumDraft(selected.value.id, lesson, sources.value);
+    await loadVersions(detail.id);
+    notice.value = `Draft version ${detail.versionNumber} saved.`;
   } catch (caught) {
-    error.value = messageFor(caught)
+    error.value = messageFor(caught);
   } finally {
-    busy.value = false
+    busy.value = false;
   }
 }
 
 async function runValidation() {
-  if (!selected.value?.id) return
-  busy.value = true
-  clearMessages()
+  if (!selected.value?.id) return;
+  busy.value = true;
+  clearMessages();
   try {
-    validation.value = await validateCurriculumVersion(selected.value.id)
-    notice.value = validation.value.isValid ? 'Deterministic validation passed.' : null
-    await refreshSelected()
+    validation.value = await validateCurriculumVersion(selected.value.id);
+    notice.value = validation.value.isValid
+      ? 'Deterministic validation passed.'
+      : null;
+    await refreshSelected();
   } catch (caught) {
-    error.value = messageFor(caught)
+    error.value = messageFor(caught);
   } finally {
-    busy.value = false
+    busy.value = false;
   }
 }
 
 async function approve() {
-  if (!selected.value) return
-  busy.value = true
-  clearMessages()
+  if (!selected.value) return;
+  busy.value = true;
+  clearMessages();
   try {
-    const detail = await approveCurriculumVersion(selected.value.id)
-    await loadVersions(detail.id)
-    notice.value = 'Version approved. It is still hidden from learners until publication.'
+    const detail = await approveCurriculumVersion(selected.value.id);
+    await loadVersions(detail.id);
+    notice.value =
+      'Version approved. It is still hidden from learners until publication.';
   } catch (caught) {
-    error.value = messageFor(caught)
+    error.value = messageFor(caught);
   } finally {
-    busy.value = false
+    busy.value = false;
   }
 }
 
 async function publish() {
-  if (!selected.value) return
-  busy.value = true
-  clearMessages()
+  if (!selected.value) return;
+  busy.value = true;
+  clearMessages();
   try {
-    const detail = await publishCurriculumVersion(selected.value.id)
-    await loadVersions(detail.id)
-    notice.value = 'Published. Learners now receive this version from the API.'
+    const detail = await publishCurriculumVersion(selected.value.id);
+    await loadVersions(detail.id);
+    notice.value = 'Published. Learners now receive this version from the API.';
   } catch (caught) {
-    error.value = messageFor(caught)
+    error.value = messageFor(caught);
   } finally {
-    busy.value = false
+    busy.value = false;
   }
 }
 
 async function rollback() {
-  if (!selected.value) return
+  if (!selected.value) return;
   const confirmed = window.confirm(
     `Restore version ${selected.value.versionNumber} as the learner-facing version? The current version will remain in history.`,
-  )
-  if (!confirmed) return
+  );
+  if (!confirmed) return;
 
-  busy.value = true
-  clearMessages()
+  busy.value = true;
+  clearMessages();
   try {
-    const detail = await rollbackCurriculumVersion(selected.value.lesson.id, selected.value.id)
-    await loadVersions(detail.id)
-    notice.value = `Version ${detail.versionNumber} restored.`
+    const detail = await rollbackCurriculumVersion(
+      selected.value.lesson.id,
+      selected.value.id,
+    );
+    await loadVersions(detail.id);
+    notice.value = `Version ${detail.versionNumber} restored.`;
   } catch (caught) {
-    error.value = messageFor(caught)
+    error.value = messageFor(caught);
   } finally {
-    busy.value = false
+    busy.value = false;
   }
 }
 
 async function refreshSelected() {
-  if (!selected.value?.id) return
-  setSelected(await getCurriculumVersion(selected.value.id))
+  if (!selected.value?.id) return;
+  setSelected(await getCurriculumVersion(selected.value.id));
 }
 
 function addSource() {
-  sources.value.push(emptySource())
+  sources.value.push(emptySource());
 }
 
 function removeSource(index: number) {
-  sources.value.splice(index, 1)
+  sources.value.splice(index, 1);
 }
 
 function emptySource(): CurriculumSource {
-  return { sourceType: 'review-record', title: '', locator: '', rights: '', notes: '' }
+  return {
+    sourceType: 'review-record',
+    title: '',
+    locator: '',
+    rights: '',
+    notes: '',
+  };
 }
 
 function clearMessages() {
-  error.value = null
-  notice.value = null
-  validation.value = null
+  error.value = null;
+  notice.value = null;
+  validation.value = null;
 }
 
 function messageFor(caught: unknown): string {
-  return caught instanceof Error ? caught.message : 'The curriculum request could not be completed.'
+  return caught instanceof Error
+    ? caught.message
+    : 'The curriculum request could not be completed.';
 }
 
 function formatDate(value: string | null): string {
-  if (!value) return 'Not yet'
-  return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(value))
+  if (!value) return 'Not yet';
+  return new Intl.DateTimeFormat('en-US', {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  }).format(new Date(value));
 }
 </script>
 
@@ -325,7 +361,9 @@ function formatDate(value: string | null): string {
       <div>
         <span class="section-kicker">Internal · publication control</span>
         <h1>Curriculum console</h1>
-        <p>Draft, validate, approve, and publish source-linked Levantine lessons.</p>
+        <p>
+          Draft, validate, approve, and publish source-linked Levantine lessons.
+        </p>
       </div>
       <button class="secondary-action" type="button" @click="$emit('close')">
         <ArrowLeft :size="18" aria-hidden="true" /> Back to learner app
@@ -334,14 +372,26 @@ function formatDate(value: string | null): string {
 
     <div class="console-safety-note">
       <ShieldCheck :size="22" aria-hidden="true" />
-      <p><strong>Human publish gate is active.</strong> Drafts and approved versions remain invisible to learners. Quranic and MSA publishing are blocked in this bounded slice.</p>
+      <p>
+        <strong>Human publish gate is active.</strong> Drafts and approved
+        versions remain invisible to learners. Quranic and MSA publishing are
+        blocked in this bounded slice.
+      </p>
     </div>
 
     <p v-if="error" class="console-message error" role="alert">{{ error }}</p>
-    <p v-if="notice" class="console-message success" role="status">{{ notice }}</p>
+    <p v-if="notice" class="console-message success" role="status">
+      {{ notice }}
+    </p>
 
-    <label class="package-import">Import a lesson package as a draft
-      <input type="file" accept=".json,application/json" :disabled="busy" @change="importPackage" />
+    <label class="package-import"
+      >Import a lesson package as a draft
+      <input
+        type="file"
+        accept=".json,application/json"
+        :disabled="busy"
+        @change="importPackage"
+      />
     </label>
 
     <div class="console-layout">
@@ -351,12 +401,21 @@ function formatDate(value: string | null): string {
             <span class="section-kicker">Version history</span>
             <h2>Lessons</h2>
           </div>
-          <button class="icon-action" type="button" aria-label="Create a new lesson" title="Create a new lesson" :disabled="uploading" @click="startNewLesson">
+          <button
+            class="icon-action"
+            type="button"
+            aria-label="Create a new lesson"
+            title="Create a new lesson"
+            :disabled="uploading"
+            @click="startNewLesson"
+          >
             <Plus :size="20" aria-hidden="true" />
           </button>
         </div>
 
-        <div v-if="loading" class="console-empty" role="status">Loading versions…</div>
+        <div v-if="loading" class="console-empty" role="status">
+          Loading versions…
+        </div>
         <div v-else class="version-list">
           <button
             v-for="version in versions"
@@ -364,53 +423,117 @@ function formatDate(value: string | null): string {
             type="button"
             class="version-item"
             :class="{ selected: selected?.id === version.id }"
-            :disabled="uploading" @click="selectVersion(version.id)"
+            :disabled="uploading"
+            @click="selectVersion(version.id)"
           >
             <span class="version-item-top">
               <strong>{{ version.title }}</strong>
-              <span class="status-badge" :class="version.status">{{ version.status }}</span>
+              <span class="status-badge" :class="version.status">{{
+                version.status
+              }}</span>
             </span>
             <span>{{ version.lessonId }} · v{{ version.versionNumber }}</span>
           </button>
         </div>
 
-        <button v-if="selected?.id" class="secondary-action clone-action" type="button" :disabled="busy || uploading" @click="cloneDraft">
+        <button
+          v-if="selected?.id"
+          class="secondary-action clone-action"
+          type="button"
+          :disabled="busy || uploading"
+          @click="cloneDraft"
+        >
           <FilePlus2 :size="17" aria-hidden="true" /> New draft from selected
         </button>
       </aside>
 
       <main class="editor-panel">
-        <div v-if="!selected" class="console-empty">Select a version or create a lesson.</div>
+        <div v-if="!selected" class="console-empty">
+          Select a version or create a lesson.
+        </div>
         <template v-else>
           <div class="editor-heading">
             <div>
-              <span class="status-badge" :class="selectedStatus">{{ selectedStatus }}</span>
+              <span class="status-badge" :class="selectedStatus">{{
+                selectedStatus
+              }}</span>
               <h2>{{ selected.lesson.title }}</h2>
-              <p v-if="selected.id">Version {{ selected.versionNumber }} · created by {{ selected.createdBy }} on {{ formatDate(selected.createdAtUtc) }}</p>
+              <p v-if="selected.id">
+                Version {{ selected.versionNumber }} · created by
+                {{ selected.createdBy }} on
+                {{ formatDate(selected.createdAtUtc) }}
+              </p>
               <p v-else>New unpublished lesson</p>
             </div>
             <div class="workflow-actions">
-              <button v-if="selected.id" class="secondary-action" type="button" :disabled="busy" @click="previewSavedVersion">Preview saved version</button>
-              <button v-if="canEdit" class="secondary-action" type="button" :disabled="busy || uploading" @click="saveDraft">
+              <button
+                v-if="selected.id"
+                class="secondary-action"
+                type="button"
+                :disabled="busy"
+                @click="previewSavedVersion"
+              >
+                Preview saved version
+              </button>
+              <button
+                v-if="canEdit"
+                class="secondary-action"
+                type="button"
+                :disabled="busy || uploading"
+                @click="saveDraft"
+              >
                 <Save :size="17" aria-hidden="true" /> Save draft
               </button>
-              <button v-if="selected.status === 'draft'" class="secondary-action" type="button" :disabled="busy || uploading || dirty" @click="runValidation">
+              <button
+                v-if="selected.status === 'draft'"
+                class="secondary-action"
+                type="button"
+                :disabled="busy || uploading || dirty"
+                @click="runValidation"
+              >
                 <ClipboardCheck :size="17" aria-hidden="true" /> Validate
               </button>
-              <button v-if="selected.status === 'draft'" class="primary-action" type="button" :disabled="busy || uploading || dirty" @click="approve">
+              <button
+                v-if="selected.status === 'draft'"
+                class="primary-action"
+                type="button"
+                :disabled="busy || uploading || dirty"
+                @click="approve"
+              >
                 <CheckCircle2 :size="17" aria-hidden="true" /> Approve
               </button>
-              <button v-if="selected.status === 'approved'" class="primary-action" type="button" :disabled="busy || uploading" @click="publish">
+              <button
+                v-if="selected.status === 'approved'"
+                class="primary-action"
+                type="button"
+                :disabled="busy || uploading"
+                @click="publish"
+              >
                 <Rocket :size="17" aria-hidden="true" /> Publish
               </button>
-              <button v-if="selected.status === 'superseded'" class="secondary-action" type="button" :disabled="busy || uploading" @click="rollback">
+              <button
+                v-if="selected.status === 'superseded'"
+                class="secondary-action"
+                type="button"
+                :disabled="busy || uploading"
+                @click="rollback"
+              >
                 <RotateCcw :size="17" aria-hidden="true" /> Restore this version
               </button>
             </div>
           </div>
 
-          <div v-if="validation" class="validation-card" :class="{ valid: validation.isValid }" role="status">
-            <strong>{{ validation.isValid ? 'Ready for approval' : `${validation.errors.length} validation issue(s)` }}</strong>
+          <div
+            v-if="validation"
+            class="validation-card"
+            :class="{ valid: validation.isValid }"
+            role="status"
+          >
+            <strong>{{
+              validation.isValid
+                ? 'Ready for approval'
+                : `${validation.errors.length} validation issue(s)`
+            }}</strong>
             <ul v-if="validation.errors.length">
               <li v-for="item in validation.errors" :key="item">{{ item }}</li>
             </ul>
@@ -422,14 +545,29 @@ function formatDate(value: string | null): string {
                 <span class="section-kicker">Structured lesson</span>
                 <h3 id="lesson-json-heading">Lesson JSON</h3>
               </div>
-              <span>{{ canEdit ? 'Editable draft' : 'Immutable snapshot' }}</span>
+              <span>{{
+                canEdit ? 'Editable draft' : 'Immutable snapshot'
+              }}</span>
             </div>
-            <textarea v-model="lessonJson" class="json-editor" :readonly="!canEdit || uploading" spellcheck="false" aria-label="Structured lesson JSON"></textarea>
+            <textarea
+              v-model="lessonJson"
+              class="json-editor"
+              :readonly="!canEdit || uploading"
+              spellcheck="false"
+              aria-label="Structured lesson JSON"
+            ></textarea>
           </section>
 
-          <p v-if="dirty && canEdit" role="status">Save your changes before validation or approval.</p>
+          <p v-if="dirty && canEdit" role="status">
+            Save your changes before validation or approval.
+          </p>
           <CharacterMapping :lesson-json="lessonJson" />
-          <RecordingEditor v-model="lessonJson" :editable="canEdit && !busy" @busy="uploading = $event" @source="sources.push($event)" />
+          <RecordingEditor
+            v-model="lessonJson"
+            :editable="canEdit && !busy"
+            @busy="uploading = $event"
+            @source="sources.push($event)"
+          />
 
           <section class="editor-section" aria-labelledby="provenance-heading">
             <div class="editor-section-heading">
@@ -437,34 +575,77 @@ function formatDate(value: string | null): string {
                 <span class="section-kicker">Required for approval</span>
                 <h3 id="provenance-heading">Provenance</h3>
               </div>
-              <button v-if="canEdit" class="text-button" type="button" @click="addSource"><Plus :size="16" aria-hidden="true" /> Add source</button>
+              <button
+                v-if="canEdit"
+                class="text-button"
+                type="button"
+                @click="addSource"
+              >
+                <Plus :size="16" aria-hidden="true" /> Add source
+              </button>
             </div>
 
-            <div v-if="sources.length === 0" class="console-empty">No source records attached.</div>
-            <fieldset v-for="(source, index) in sources" :key="index" class="source-card" :disabled="!canEdit">
+            <div v-if="sources.length === 0" class="console-empty">
+              No source records attached.
+            </div>
+            <fieldset
+              v-for="(source, index) in sources"
+              :key="index"
+              class="source-card"
+              :disabled="!canEdit"
+            >
               <legend>Source {{ index + 1 }}</legend>
-              <label>Type<input v-model="source.sourceType" type="text" /></label>
+              <label
+                >Type<input v-model="source.sourceType" type="text"
+              /></label>
               <label>Title<input v-model="source.title" type="text" /></label>
-              <label class="wide">URL or stable locator<input v-model="source.locator" type="text" /></label>
-              <label class="wide">Rights / permission<input v-model="source.rights" type="text" /></label>
-              <label class="wide">Notes<textarea v-model="source.notes" rows="2"></textarea></label>
-              <button v-if="canEdit" class="remove-source" type="button" :aria-label="`Remove source ${index + 1}`" @click="removeSource(index)">
+              <label class="wide"
+                >URL or stable locator<input
+                  v-model="source.locator"
+                  type="text"
+              /></label>
+              <label class="wide"
+                >Rights / permission<input v-model="source.rights" type="text"
+              /></label>
+              <label class="wide"
+                >Notes<textarea v-model="source.notes" rows="2"></textarea>
+              </label>
+              <button
+                v-if="canEdit"
+                class="remove-source"
+                type="button"
+                :aria-label="`Remove source ${index + 1}`"
+                @click="removeSource(index)"
+              >
                 <Trash2 :size="16" aria-hidden="true" /> Remove
               </button>
             </fieldset>
           </section>
 
-          <section v-if="selected.id" class="editor-section" aria-labelledby="audit-heading">
+          <section
+            v-if="selected.id"
+            class="editor-section"
+            aria-labelledby="audit-heading"
+          >
             <div class="editor-section-heading">
               <div>
                 <span class="section-kicker">Immutable history</span>
-                <h3 id="audit-heading"><History :size="18" aria-hidden="true" /> Audit trail</h3>
+                <h3 id="audit-heading">
+                  <History :size="18" aria-hidden="true" /> Audit trail
+                </h3>
               </div>
             </div>
             <ol class="audit-list">
               <li v-for="entry in selected.audit" :key="entry.id">
                 <span class="audit-mark" aria-hidden="true"></span>
-                <div><strong>{{ entry.action }}</strong><p>{{ entry.details }}</p><span>{{ entry.actor }} · {{ formatDate(entry.occurredAtUtc) }}</span></div>
+                <div>
+                  <strong>{{ entry.action }}</strong>
+                  <p>{{ entry.details }}</p>
+                  <span
+                    >{{ entry.actor }} ·
+                    {{ formatDate(entry.occurredAtUtc) }}</span
+                  >
+                </div>
               </li>
             </ol>
           </section>

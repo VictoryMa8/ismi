@@ -1,18 +1,18 @@
 # Everyday conversations: observed pilot kit
 
-Prepared September 30, 2026. **Preparation complete; no learner sessions or real
+Prepared September 30; aligned to the October 3 release candidate on October 3, 2026. **Preparation complete; no learner sessions or real
 assistive-technology walkthrough have been conducted as part of this kit.**
 
 Use this kit to discover whether false beginners can navigate, understand feedback,
-and retrieve expressions from the seven published Everyday conversations lessons.
+and retrieve expressions from the seven Everyday conversations lessons using the approved v2 release published October 3.
 It does not establish fluency, pronunciation quality, or the thirty-day outcome.
-The [historical handoff](../next-stage-handoff.md) records publication checkpoints; exact packages and
-sources are in the [unit directory](../../content/levantine/everyday-01/README.md).
+The [release record](release-2026-10-03/README.md) tracks current preparation and gates; exact candidate packages and
+sources are in the [release directory](../../content/levantine/everyday-01/revisions/pilot-release/README.md).
 The six demonstration lessons are outside this pilot.
 
 ## Scope and remaining owner decisions
 
-The owner selected **one learner first** on September 30, 2026. Recommend an
+The owner selected **one learner first** on September 30 and **an adult false beginner on iPhone/Safari** on October 3. Use an
 English-speaking adult who can already ask basic Arabic questions and has a
 Levantine partner or friend, in two owner-observed sessions.
 Use session 1 for lessons 1–3 and session 2 for lessons 4–7, ideally on another day.
@@ -22,11 +22,11 @@ Record prior Arabic exposure so strong prior knowledge is not mistaken for impac
 
 Use individually arranged, supervised sessions on the existing development preview.
 This proposal neither implements invitation controls nor authorizes recruitment,
-contacting people, or opening a remote cohort. Before recruiting, the owner must
-agree the participant selection, session arrangement, and decision criteria below.
+contacting people, or opening a remote cohort. The owner will arrange the participant and session dates. The October 3 go-ahead
+authorizes this preparation; obtain the participant’s agreement to notes before the session.
 Treat this one-learner run as a rehearsal, then decide whether to expand.
 
-Proposed decision criteria, to agree before seeing results:
+Decision criteria for the authorized rehearsal, set before observing results:
 
 - Any loss of completed progress or inability to complete core study independently
   is a blocker to wider testing. Fix and retest on the affected browser/setup.
@@ -40,7 +40,7 @@ Proposed decision criteria, to agree before seeing results:
 
 ## Run order
 
-1. Complete the [accessibility and offline preflight](preflight.md) on each intended
+1. Confirm all seven Everyday lessons load as v2 on the intended iPhone (the hosted release is verified), then complete the [accessibility and offline preflight](preflight.md) on each intended
    setup. Existing automated checks are useful but do not satisfy screen-reader testing.
 2. Copy the [observation sheet](observation-sheet.md) to private owner-controlled
    storage, outside Git. Assign P01; do not put names or contact details here.
@@ -59,5 +59,5 @@ or stop. No account is needed, and speaking is optional: Arabic script or
 transliteration can capture retrieval without testing pronunciation.
 
 Reviewed audio is still absent. Browser speech is a device preview, and the owner
-approval of v1 does not constitute native-expert review. Use the existing exact
+approval of v2 does not constitute native-expert review. Use the existing exact
 [recording scripts and preparation checklist](recordings.md) for the separate audio dependency.

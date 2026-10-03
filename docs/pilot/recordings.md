@@ -3,7 +3,12 @@
 Status: scripts available; no speakers contacted, budget committed, recordings
 collected, or asset approvals granted. This work is separate from the text pilot.
 
-The authoritative wording is the exact v1 package in the
+For the authorized first batch use the [October 3 lesson-1 prompt pack](release-2026-10-03/recording-batch-01.md),
+pinned to the release candidate and awaiting final wording approval. It supplies
+eight exact prompt clips, coverage and missing permission/review fields.
+
+The table below is **historical v1 dialogue context**, not the recording instruction
+for revised lessons. Its wording comes from the exact v1 package in the
 [review manifest](../../content/levantine/everyday-01/review-manifest.json).
 Each readable review includes six dialogue turns:
 

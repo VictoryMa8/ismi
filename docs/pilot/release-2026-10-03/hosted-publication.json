@@ -1,0 +1,88 @@
+{
+  "date": "2026-10-03",
+  "api": "https://ismi.alwaysdata.net",
+  "frontend": "https://ismi-arabic.vercel.app",
+  "codeRelease": "26f8242 (previous deployment; no code redeployment in this curriculum release)",
+  "comparison": "Exact parsed JSON equality after expected server version, omitted-null normalization and the model default englishHelpInitiallyHidden=false; source records exactly match imported packages.",
+  "auditEvidence": "hosted-audit.json",
+  "rollback": "All seven v1 records remain superseded in console. Restore this version control observed on lesson 1 v1; no rollback executed. No fresh full hosted database backup obtained.",
+  "lessons": [
+    {
+      "lessonId": "levantine-everyday-01-01",
+      "publishedVersion": "curriculum-levantine-everyday-01-01-v2",
+      "publicPayloadSha256": "d5c582a8657dcc6048ea5e05018dbb00e28ce337b217342e519ae7da0e482b3d",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "contentMatch": true,
+      "sourceRecordsMatch": true,
+      "sourceCount": 7,
+      "priorVersion": 1,
+      "priorVersionStatus": "superseded"
+    },
+    {
+      "lessonId": "levantine-everyday-01-02",
+      "publishedVersion": "curriculum-levantine-everyday-01-02-v2",
+      "publicPayloadSha256": "24708abc90f542ffb27193dc6e81df29f757bb11bc536f73d2431c4ae84d0f15",
+      "packageSha256": "fb0861235c902ce1d1f90a661c54c3e14b73c2a8dab184557051a504b1210e72",
+      "contentMatch": true,
+      "sourceRecordsMatch": true,
+      "sourceCount": 8,
+      "priorVersion": 1,
+      "priorVersionStatus": "superseded"
+    },
+    {
+      "lessonId": "levantine-everyday-01-03",
+      "publishedVersion": "curriculum-levantine-everyday-01-03-v2",
+      "publicPayloadSha256": "1dbb0bd9a79a63b7edc5a76f865b4c6c13ee2ef1a1869fecedf15ff7b34ef0e4",
+      "packageSha256": "54823a42b60830ead78a2bc665655b3350e8d6be4d26bb5513a3dcc1495615fc",
+      "contentMatch": true,
+      "sourceRecordsMatch": true,
+      "sourceCount": 6,
+      "priorVersion": 1,
+      "priorVersionStatus": "superseded"
+    },
+    {
+      "lessonId": "levantine-everyday-01-04",
+      "publishedVersion": "curriculum-levantine-everyday-01-04-v2",
+      "publicPayloadSha256": "bc71b25cb3936dce0df12ebe2afe7a11e784c3fb2391edc55339531f6ae411d4",
+      "packageSha256": "44528e782c1590902f866e6796cb2844ed9b7ab61ba5ff1cb450b9e2e363d4c9",
+      "contentMatch": true,
+      "sourceRecordsMatch": true,
+      "sourceCount": 7,
+      "priorVersion": 1,
+      "priorVersionStatus": "superseded"
+    },
+    {
+      "lessonId": "levantine-everyday-01-05",
+      "publishedVersion": "curriculum-levantine-everyday-01-05-v2",
+      "publicPayloadSha256": "444897c628b006303ec66c45d60ee8cb230ea1121602e84a1de02a78786dc721",
+      "packageSha256": "d56f294d0a78017a14af5039fc0d6bf386b843e0d075708aec4ef39dfe4e78fa",
+      "contentMatch": true,
+      "sourceRecordsMatch": true,
+      "sourceCount": 7,
+      "priorVersion": 1,
+      "priorVersionStatus": "superseded"
+    },
+    {
+      "lessonId": "levantine-everyday-01-06",
+      "publishedVersion": "curriculum-levantine-everyday-01-06-v2",
+      "publicPayloadSha256": "01d7ff4dde5aed151fa09741348f6aa5e1307dcd45039f1dbddf75a6b3049214",
+      "packageSha256": "621fb4e5fc0df800656234874716378711ca62a5062c90e6c3a25b2fea4e2ee4",
+      "contentMatch": true,
+      "sourceRecordsMatch": true,
+      "sourceCount": 8,
+      "priorVersion": 1,
+      "priorVersionStatus": "superseded"
+    },
+    {
+      "lessonId": "levantine-everyday-01-07",
+      "publishedVersion": "curriculum-levantine-everyday-01-07-v2",
+      "publicPayloadSha256": "6d61a0a0220846da1ba384d52041b9f79b316801ba7b3caf687257e8d246592b",
+      "packageSha256": "392e49dc764aa1e996654098cccaf3c90b4544b32e02d31c25526b85ed8c3c0a",
+      "contentMatch": true,
+      "sourceRecordsMatch": true,
+      "sourceCount": 9,
+      "priorVersion": 1,
+      "priorVersionStatus": "superseded"
+    }
+  ]
+}

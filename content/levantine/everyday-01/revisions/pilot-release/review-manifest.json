@@ -1,0 +1,147 @@
+{
+  "asOf": "2026-10-03",
+  "status": "published-and-verified",
+  "published": true,
+  "contentApproved": true,
+  "artRegistry": "ismi-cast-v1",
+  "artStatus": "Owner approved existing ismi-cast-v1 art on October 3, 2026",
+  "lessons": [
+    {
+      "lessonId": "levantine-everyday-01-01",
+      "package": "01-lesson.json",
+      "sha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "basedOnPackage": "../characters/01-lesson.json",
+      "basedOnSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "changes": [],
+      "status": "published",
+      "publishedTargetVersion": "curriculum-levantine-everyday-01-01-v2"
+    },
+    {
+      "lessonId": "levantine-everyday-01-02",
+      "package": "02-lesson.json",
+      "sha256": "fb0861235c902ce1d1f90a661c54c3e14b73c2a8dab184557051a504b1210e72",
+      "basedOnPackage": "../characters/02-lesson.json",
+      "basedOnSha256": "fb0861235c902ce1d1f90a661c54c3e14b73c2a8dab184557051a504b1210e72",
+      "changes": [],
+      "status": "published",
+      "publishedTargetVersion": "curriculum-levantine-everyday-01-02-v2"
+    },
+    {
+      "lessonId": "levantine-everyday-01-03",
+      "package": "03-lesson.json",
+      "sha256": "54823a42b60830ead78a2bc665655b3350e8d6be4d26bb5513a3dcc1495615fc",
+      "basedOnPackage": "../characters/03-lesson.json",
+      "basedOnSha256": "54823a42b60830ead78a2bc665655b3350e8d6be4d26bb5513a3dcc1495615fc",
+      "changes": [],
+      "status": "published",
+      "publishedTargetVersion": "curriculum-levantine-everyday-01-03-v2"
+    },
+    {
+      "lessonId": "levantine-everyday-01-04",
+      "package": "04-lesson.json",
+      "sha256": "44528e782c1590902f866e6796cb2844ed9b7ab61ba5ff1cb450b9e2e363d4c9",
+      "basedOnPackage": "../characters/04-lesson.json",
+      "basedOnSha256": "c6c0f8a58a7f3682a8cc103afc190a76e574c4ad1e3c4fd254c055fd495b4001",
+      "changes": [
+        "e04-07 instruction and roles aligned to existing masculine-address prompt"
+      ],
+      "status": "published",
+      "publishedTargetVersion": "curriculum-levantine-everyday-01-04-v2"
+    },
+    {
+      "lessonId": "levantine-everyday-01-05",
+      "package": "05-lesson.json",
+      "sha256": "d56f294d0a78017a14af5039fc0d6bf386b843e0d075708aec4ef39dfe4e78fa",
+      "basedOnPackage": "../characters/05-lesson.json",
+      "basedOnSha256": "72e293d8efd244d3c25f3e1d76cfae6dc5a0c4ddfa3d1f51e147036f4e4c72e1",
+      "changes": [
+        "e05-01 prompt roles aligned to existing address; speaker continues into question"
+      ],
+      "status": "published",
+      "publishedTargetVersion": "curriculum-levantine-everyday-01-05-v2"
+    },
+    {
+      "lessonId": "levantine-everyday-01-06",
+      "package": "06-lesson.json",
+      "sha256": "621fb4e5fc0df800656234874716378711ca62a5062c90e6c3a25b2fea4e2ee4",
+      "basedOnPackage": "../characters/06-lesson.json",
+      "basedOnSha256": "621fb4e5fc0df800656234874716378711ca62a5062c90e6c3a25b2fea4e2ee4",
+      "changes": [],
+      "status": "published",
+      "publishedTargetVersion": "curriculum-levantine-everyday-01-06-v2"
+    },
+    {
+      "lessonId": "levantine-everyday-01-07",
+      "package": "07-lesson.json",
+      "sha256": "392e49dc764aa1e996654098cccaf3c90b4544b32e02d31c25526b85ed8c3c0a",
+      "basedOnPackage": "../characters/07-lesson.json",
+      "basedOnSha256": "392e49dc764aa1e996654098cccaf3c90b4544b32e02d31c25526b85ed8c3c0a",
+      "changes": [],
+      "status": "published",
+      "publishedTargetVersion": "curriculum-levantine-everyday-01-07-v2"
+    }
+  ],
+  "localPreparation": {
+    "date": "2026-10-03",
+    "database": "i-api/App_Data/ismi.db",
+    "note": "Existing name compatibility makes unchanged prior stored packages equivalent on read. Only lesson 4 and 5 drafts updated. No publication performed.",
+    "records": [
+      {
+        "lessonSuffix": "01",
+        "recordId": 23,
+        "version": 4,
+        "status": "already-published"
+      },
+      {
+        "lessonSuffix": "02",
+        "recordId": 19,
+        "version": 3,
+        "status": "draft"
+      },
+      {
+        "lessonSuffix": "03",
+        "recordId": 20,
+        "version": 2,
+        "status": "draft"
+      },
+      {
+        "lessonSuffix": "04",
+        "recordId": 21,
+        "version": 2,
+        "status": "draft"
+      },
+      {
+        "lessonSuffix": "05",
+        "recordId": 22,
+        "version": 2,
+        "status": "draft"
+      },
+      {
+        "lessonSuffix": "06",
+        "recordId": 16,
+        "version": 2,
+        "status": "draft"
+      },
+      {
+        "lessonSuffix": "07",
+        "recordId": 17,
+        "version": 2,
+        "status": "draft"
+      }
+    ]
+  },
+  "ownerApproval": {
+    "date": "2026-10-03",
+    "evidence": "Owner replied “I approve” to the final seven-package/existing-art publication request in this chat.",
+    "target": "https://ismi.alwaysdata.net",
+    "scope": "Exact package SHA-256 values in this manifest and existing ismi-cast-v1 art; development-preview publication."
+  },
+  "hostedPublication": {
+    "date": "2026-10-03",
+    "target": "https://ismi.alwaysdata.net",
+    "version": 2,
+    "evidence": "../../../../../docs/pilot/release-2026-10-03/hosted-publication.json",
+    "auditEvidence": "../../../../../docs/pilot/release-2026-10-03/hosted-audit.json",
+    "verification": "All seven public lesson payloads and 52 source records match approved packages; all previous v1 records retained as superseded."
+  }
+}
