@@ -3,15 +3,15 @@
     "id": "levantine-everyday-01-07",
     "trackId": "levantine",
     "title": "Put it together",
-    "scenario": "A fresh Friday check-in: Lina has already visited her mother. She and Omar plan a quiet meal for tomorrow at seven. Use the new details rather than memorized answers.",
+    "scenario": "A fresh Friday check-in: Fattoush has already visited her mother. She and Knafeh plan a quiet meal for tomorrow at seven. Use the new details rather than memorized answers.",
     "steps": [
       {
         "id": "e07-01",
-        "instruction": "Lina is well. She visited her mother and then rested. Respond with her account.",
+        "instruction": "Fattoush is well. She visited her mother and then rested. Respond with her account.",
         "prompt": {
           "arabic": "شو عاملة؟",
           "arabizi": "Shū ʿāmle?",
-          "meaning": "How are you doing? (casual check-in to Lina)",
+          "meaning": "How are you doing? (casual check-in to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -27,7 +27,7 @@
             "arabic": "أنا منيحة. زرت أمي وبعدين ارتحت.",
             "arabizi": "Ana mnīḥa. Zurt immi w-baʿdēn irtaḥt.",
             "meaning": "I’m well. I visited my mother and then rested.",
-            "rationale": "This preserves Lina’s self-description and the visit-before-rest order."
+            "rationale": "This preserves Fattoush’s self-description and the visit-before-rest order."
           },
           {
             "id": "c",
@@ -40,15 +40,15 @@
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Lina describes herself as mnīḥa, then preserves visiting before resting.",
+          "correctExplanation": "Fattoush describes herself as mnīḥa, then preserves visiting before resting.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
-          "retryHint": "Keep Lina’s self-description and visit-before-rest order."
+          "retryHint": "Keep Fattoush’s self-description and visit-before-rest order."
         }
       },
       {
         "id": "e07-02",
-        "instruction": "Omar’s follow-up refers to Lina’s mother. Answer about her, not yourself.",
+        "instruction": "Knafeh’s follow-up refers to Fattoush’s mother. Answer about her, not yourself.",
         "prompt": {
           "arabic": "وكيفها؟",
           "arabizi": "W-kīfha?",
@@ -60,8 +60,8 @@
             "id": "a",
             "arabic": "أنا منيحة.",
             "arabizi": "Ana mnīḥa.",
-            "meaning": "I’m well. (Lina speaking)",
-            "rationale": "Ana changes the answer to Lina’s own condition."
+            "meaning": "I’m well. (Fattoush speaking)",
+            "rationale": "Ana changes the answer to Fattoush’s own condition."
           },
           {
             "id": "b",
@@ -89,7 +89,7 @@
       },
       {
         "id": "e07-03",
-        "instruction": "Move from the completed day to an invitation for tomorrow. Address Omar.",
+        "instruction": "Move from the completed day to an invitation for tomorrow. Address Knafeh.",
         "prompt": {
           "arabic": "منيحة.",
           "arabizi": "Mnīḥa.",
@@ -101,28 +101,28 @@
             "id": "a",
             "arabic": "شو رأيك ناكل سوا بكرا؟",
             "arabizi": "Shū raʾyak nākol sawa bukra?",
-            "meaning": "What do you think about eating together tomorrow? (to Omar)",
-            "rationale": "This changes to a shared future meal and keeps Omar as the listener."
+            "meaning": "What do you think about eating together tomorrow? (to Knafeh)",
+            "rationale": "This changes to a shared future meal and keeps Knafeh as the listener."
           },
           {
             "id": "b",
             "arabic": "شو عملت اليوم؟",
             "arabizi": "Shū ʿmilt il-yōm?",
-            "meaning": "What did you do today? (to Omar)",
+            "meaning": "What did you do today? (to Knafeh)",
             "rationale": "This asks for another past activity report rather than inviting him."
           },
           {
             "id": "c",
             "arabic": "شو رأيك ناكل سوا اليوم؟",
             "arabizi": "Shū raʾyak nākol sawa il-yōm?",
-            "meaning": "What do you think about eating together today? (to Omar)",
+            "meaning": "What do you think about eating together today? (to Knafeh)",
             "rationale": "This invites him for today, changing the agreed day."
           }
         ],
         "evaluation": {
           "correctAnswerId": "a",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "This changes to a shared future meal and keeps Omar as the listener.",
+          "correctExplanation": "This changes to a shared future meal and keeps Knafeh as the listener.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "The invitation needs tomorrow."
@@ -171,11 +171,11 @@
       },
       {
         "id": "e07-05",
-        "instruction": "Lina asks for the drink mentioned after the meal. Ask Omar politely for that drink.",
+        "instruction": "Fattoush asks for the drink mentioned after the meal. Ask Knafeh politely for that drink.",
         "prompt": {
           "arabic": "بدك شاي ولا قهوة؟",
           "arabizi": "Biddik shāy walla ʾahwe?",
-          "meaning": "Do you want tea or coffee? (to Lina)",
+          "meaning": "Do you want tea or coffee? (to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -183,15 +183,15 @@
             "id": "a",
             "arabic": "قهوة، لو سمحتي.",
             "arabizi": "ʾAhwe, law samaḥti.",
-            "meaning": "Coffee, please. (to Lina)",
-            "rationale": "This selects coffee and directs the request to Lina."
+            "meaning": "Coffee, please. (to Fattoush)",
+            "rationale": "This selects coffee and directs the request to Fattoush."
           },
           {
             "id": "b",
             "arabic": "شاي، لو سمحت.",
             "arabizi": "Shāy, law samaḥt.",
-            "meaning": "Tea, please. (to Omar)",
-            "rationale": "Tea matches the new dialogue, and law samaḥt addresses Omar."
+            "meaning": "Tea, please. (to Knafeh)",
+            "rationale": "Tea matches the new dialogue, and law samaḥt addresses Knafeh."
           },
           {
             "id": "c",
@@ -204,7 +204,7 @@
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Tea matches the new dialogue, and law samaḥt addresses Omar.",
+          "correctExplanation": "Tea matches the new dialogue, and law samaḥt addresses Knafeh.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "Recall the last turn of the dialogue."
@@ -212,11 +212,11 @@
       },
       {
         "id": "e07-06",
-        "instruction": "You are Omar. After answering about yourself, return the check-in to Lina.",
+        "instruction": "You are Knafeh. After answering about yourself, return the check-in to Fattoush.",
         "prompt": {
           "arabic": "أنا منيح.",
           "arabizi": "Ana mnīḥ.",
-          "meaning": "I’m well. (Omar speaking)",
+          "meaning": "I’m well. (Knafeh speaking)",
           "audioUrl": null
         },
         "answers": [
@@ -224,15 +224,15 @@
             "id": "a",
             "arabic": "وإنتِ؟",
             "arabizi": "W-inti?",
-            "meaning": "And you? (to Lina)",
-            "rationale": "W-inti returns the check-in to Lina without introducing a different topic."
+            "meaning": "And you? (to Fattoush)",
+            "rationale": "W-inti returns the check-in to Fattoush without introducing a different topic."
           },
           {
             "id": "b",
             "arabic": "وإنتَ؟",
             "arabizi": "W-inta?",
-            "meaning": "And you? (to Omar)",
-            "rationale": "This addresses a man; Lina is the listener."
+            "meaning": "And you? (to Knafeh)",
+            "rationale": "This addresses a man; Fattoush is the listener."
           },
           {
             "id": "c",
@@ -245,10 +245,10 @@
         "evaluation": {
           "correctAnswerId": "a",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "W-inti returns the check-in to Lina without introducing a different topic.",
+          "correctExplanation": "W-inti returns the check-in to Fattoush without introducing a different topic.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
-          "retryHint": "Address Lina directly."
+          "retryHint": "Address Fattoush directly."
         }
       },
       {
@@ -257,7 +257,7 @@
         "prompt": {
           "arabic": "شو عملت اليوم؟",
           "arabizi": "Shū ʿmilt il-yōm?",
-          "meaning": "What did you do today? (to Omar)",
+          "meaning": "What did you do today? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -273,20 +273,20 @@
             "arabic": "زرت أمي وبعدين ارتحت.",
             "arabizi": "Zurt immi w-baʿdēn irtaḥt.",
             "meaning": "I visited my mother and then rested.",
-            "rationale": "This repeats Lina’s earlier story instead of the new work scenario."
+            "rationale": "This repeats Fattoush’s earlier story instead of the new work scenario."
           },
           {
             "id": "c",
             "arabic": "اشتغلت وبعدين ارتحت.",
             "arabizi": "Ishtaghalt w-baʿdēn irtaḥt.",
             "meaning": "I worked and then rested.",
-            "rationale": "You reuse the sequence pattern for work followed by rest, rather than copying Lina’s visit story."
+            "rationale": "You reuse the sequence pattern for work followed by rest, rather than copying Fattoush’s visit story."
           }
         ],
         "evaluation": {
           "correctAnswerId": "c",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "You reuse the sequence pattern for work followed by rest, rather than copying Lina’s visit story.",
+          "correctExplanation": "You reuse the sequence pattern for work followed by rest, rather than copying Fattoush’s visit story.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "Check the activity before baʿdēn."
@@ -344,16 +344,16 @@
       "goal": "Follow a new exchange about the day and family, then agree on food, a drink, and a time.",
       "dialogue": [
         {
-          "speaker": "Omar → Lina",
+          "speaker": "Knafeh → Fattoush",
           "line": {
             "arabic": "شو عاملة؟",
             "arabizi": "Shū ʿāmle?",
-            "meaning": "How are you doing? (casual check-in to Lina)",
+            "meaning": "How are you doing? (casual check-in to Fattoush)",
             "audioUrl": null
           }
         },
         {
-          "speaker": "Lina",
+          "speaker": "Fattoush",
           "line": {
             "arabic": "أنا منيحة. زرت أمي وبعدين ارتحت.",
             "arabizi": "Ana mnīḥa. Zurt immi w-baʿdēn irtaḥt.",
@@ -362,7 +362,7 @@
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "وكيفها؟",
             "arabizi": "W-kīfha?",
@@ -371,7 +371,7 @@
           }
         },
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "منيحة. شو رأيك ناكل سوا بكرا؟",
             "arabizi": "Mnīḥa. Shū raʾyak nākol sawa bukra?",
@@ -380,7 +380,7 @@
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "تمام. نعمل رز وسلطة الساعة سبعة؟",
             "arabizi": "Tamām. Niʿmal ruzz w-salaṭa is-sāʿa sabʿa?",
@@ -389,7 +389,7 @@
           }
         },
         {
-          "speaker": "Lina",
+          "speaker": "Fattoush",
           "line": {
             "arabic": "آه، وبعدين نشرب شاي.",
             "arabizi": "Āh, w-baʿdēn nishrab shāy.",
@@ -425,8 +425,8 @@
         }
       ],
       "usageNote": "Follow who, when, and the order of events as the exchange changes. Answer the check-in before telling the completed day, then move to tomorrow’s plan. Reuse the pieces with the new details rather than repeating the earlier story.",
-      "dialectNote": "Urban Palestinian teaching target. ʿĀmle addresses Lina; her self-description is mnīḥa. Raʾyak addresses Omar in Lina’s invitation. First-person past forms do not change with the speaker’s gender. The casual check-in follows owner-relayed Palestinian feedback; no native-expert review is claimed. Transliteration stays available; Jordanian alternatives are not introduced.",
-      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "dialectNote": "Urban Palestinian teaching target. ʿĀmle addresses Fattoush; her self-description is mnīḥa. Raʾyak addresses Knafeh in Fattoush’s invitation. First-person past forms do not change with the speaker’s gender. The casual check-in follows owner-relayed Palestinian feedback; no native-expert review is claimed. Transliteration stays available; Jordanian alternatives are not introduced.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Fattoush uses feminine self-description; Knafeh uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
       "sourceLocators": [
         "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
         "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
@@ -446,13 +446,13 @@
             "meaning": "I’m well. I visited my mother and then rested.",
             "audioUrl": null
           },
-          "note": "Lina answers about herself first, then gives two completed activities. W-baʿdēn preserves visit first, rest second.",
-          "recallCue": "You are Lina. Say you’re well, then report visiting your mother and resting, in that order.",
+          "note": "Fattoush answers about herself first, then gives two completed activities. W-baʿdēn preserves visit first, rest second.",
+          "recallCue": "You are Fattoush. Say you’re well, then report visiting your mother and resting, in that order.",
           "chunks": [
             {
               "arabic": "أنا منيحة",
               "arabizi": "ana mnīḥa",
-              "meaning": "I’m well · Lina"
+              "meaning": "I’m well · Fattoush"
             },
             {
               "arabic": "زرت أمي",
@@ -481,8 +481,8 @@
             "meaning": "And how is she?",
             "audioUrl": null
           },
-          "note": "After the mother is mentioned, -ha points to her. The reply mnīḥa now describes the mother, rather than Lina.",
-          "recallCue": "Lina tells you she visited her mother. Ask how her mother is.",
+          "note": "After the mother is mentioned, -ha points to her. The reply mnīḥa now describes the mother, rather than Fattoush.",
+          "recallCue": "Fattoush tells you she visited her mother. Ask how her mother is.",
           "chunks": [
             {
               "arabic": "وكيفها",
@@ -502,16 +502,16 @@
           "phrase": {
             "arabic": "شو رأيك ناكل سوا بكرا؟",
             "arabizi": "Shū raʾyak nākol sawa bukra?",
-            "meaning": "What do you think about eating together tomorrow? (to Omar)",
+            "meaning": "What do you think about eating together tomorrow? (to Knafeh)",
             "audioUrl": null
           },
-          "note": "Reuse the shared-meal invitation and add bukra. The address raʾyak is to Omar.",
-          "recallCue": "You are Lina. Ask Omar about eating together tomorrow.",
+          "note": "Reuse the shared-meal invitation and add bukra. The address raʾyak is to Knafeh.",
+          "recallCue": "You are Fattoush. Ask Knafeh about eating together tomorrow.",
           "chunks": [
             {
               "arabic": "شو رأيك",
               "arabizi": "shū raʾyak",
-              "meaning": "what do you think · to Omar"
+              "meaning": "what do you think · to Knafeh"
             },
             {
               "arabic": "ناكل سوا",

@@ -212,7 +212,7 @@
         },
         {
           "path": "$.lesson.introduction.usageNote",
-          "value": "Follow the changing reference point: kīf kān yōmik asks about Lina’s day; kīfha then refers to her mother, not Lina. The conversation moves from completed actions to a suggestion with bukra. A useful response must preserve who, when, and what happened. This lesson combines familiar pieces in a different situation. First read the Arabic and transliteration with the English covered. Explain the story to yourself, then check the English only where you need it. Complete the closing exchange without looking back if you can; hints and unlimited retries remain available. This is guided selection practice, not a test of spontaneous speaking or evidence of fluency."
+          "value": "Follow the changing reference point: kīf kān yōmik asks about Fattoush’s day; kīfha then refers to her mother, not Fattoush. The conversation moves from completed actions to a suggestion with bukra. A useful response must preserve who, when, and what happened. This lesson combines familiar pieces in a different situation. First read the Arabic and transliteration with the English covered. Explain the story to yourself, then check the English only where you need it. Complete the closing exchange without looking back if you can; hints and unlimited retries remain available. This is guided selection practice, not a test of spontaneous speaking or evidence of fluency."
         }
       ],
       "sourceRecords": [
@@ -265,7 +265,7 @@
     "ownerConfirmed": "شو عامل؟ — casual check-in",
     "replacementAsReported": "شو عامل؟",
     "intendedFunction": "casual check-in",
-    "remainingReview": "Confirm feminine-address form and a natural response exchange with the speaker before drafting replacements for Lina/Omar scenes."
+    "remainingReview": "Confirm feminine-address form and a natural response exchange with the speaker before drafting replacements for Fattoush/Knafeh scenes."
   },
   "draftManifest": "../revisions/check-in-v2/review-manifest.json"
 }

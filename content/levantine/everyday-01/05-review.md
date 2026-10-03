@@ -4,19 +4,19 @@
 
 Goal: Ask about someone’s family, share a short update, and ask a relevant follow-up.
 
-Lina asks Omar about his family. Omar returns the interest by asking about Lina’s mother. Share only the detail the scene gives you.
+Fattoush asks Knafeh about his family. Knafeh returns the interest by asking about Fattoush’s mother. Share only the detail the scene gives you.
 
 ## Dialogue / recording script
 
-**Lina → Omar**
+**Fattoush → Knafeh**
 
 كيف أهلك؟
 
 Kīf ahlak?
 
-How’s your family? (to Omar)
+How’s your family? (to Knafeh)
 
-**Omar**
+**Knafeh**
 
 منيحين، شكراً.
 
@@ -24,15 +24,15 @@ Mnīḥīn, shukran.
 
 They’re well, thank you.
 
-**Lina → Omar**
+**Fattoush → Knafeh**
 
 وأختك، كيفها؟
 
 W-ukhtak, kīfha?
 
-And your sister, how is she? (to Omar)
+And your sister, how is she? (to Knafeh)
 
-**Omar → Lina**
+**Knafeh → Fattoush**
 
 منيحة، بس عندها شغل كتير. وكيف أمك؟
 
@@ -40,7 +40,7 @@ Mnīḥa, bass ʿindha shughl ktīr. W-kīf immik?
 
 She’s well, but she has a lot of work. And how’s your mother?
 
-**Lina**
+**Fattoush**
 
 منيحة. اليوم بالبيت.
 
@@ -48,7 +48,7 @@ Mnīḥa. Il-yōm bil-bēt.
 
 She’s well. Today she’s at home.
 
-**Omar**
+**Knafeh**
 
 منيح! بكرا نزورها؟
 
@@ -58,47 +58,47 @@ Good! Shall we visit her tomorrow?
 
 ## Teaching note
 
-Ahl means family/relatives here. Ahli means “my family”; ahlak addresses Omar about “your family,” and ahlik addresses Lina. In kīfha, -ha refers to “her”: the question is about a woman already mentioned. Match the reply: mnīḥīn for the family as people, mnīḥa for the sister or mother. ʿIndha shughl describes a woman having work; it does not say she is ill. A warm follow-up can stay simple: ask how someone is, then listen. Read the dialogue twice, and retell the sister’s update in your own voice or silently. You never need to disclose facts about your own family.
+Ahl means family/relatives here. Ahli means “my family”; ahlak addresses Knafeh about “your family,” and ahlik addresses Fattoush. In kīfha, -ha refers to “her”: the question is about a woman already mentioned. Match the reply: mnīḥīn for the family as people, mnīḥa for the sister or mother. ʿIndha shughl describes a woman having work; it does not say she is ill. A warm follow-up can stay simple: ask how someone is, then listen. Read the dialogue twice, and retell the sister’s update in your own voice or silently. You never need to disclose facts about your own family.
 
-Urban Palestinian teaching target. This dialogue names the people before using “her.” Ahlak/ukhtak address Omar; ahlik/ukhtik address Lina. Immi is “my mother”; immik here is “your mother” when speaking to Lina. These are contextual choices, not the only Palestinian vowel variants. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.
+Urban Palestinian teaching target. This dialogue names the people before using “her.” Ahlak/ukhtak address Knafeh; ahlik/ukhtik address Fattoush. Immi is “my mother”; immik here is “your mother” when speaking to Fattoush. These are contextual choices, not the only Palestinian vowel variants. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.
 
 ## Practice and closing exchange
 
-### 1. Ask Omar about his family, rather than about your own.
+### 1. Ask Knafeh about his family, rather than about your own.
 
 وإنتَ؟
 
 W-inta?
 
-And you? (to Omar)
+And you? (to Knafeh)
 
 - **A** كيف أهلي؟ — Kīf ahli? — How is my family?
-  Rationale: Ahli refers to the speaker’s family instead of Omar’s.
-- **B (accepted)** كيف أهلك؟ — Kīf ahlak? — How’s your family? (to Omar)
-  Rationale: Ahlak means Omar’s family when he is the listener.
-- **C** كيفك؟ — Kīfak? — How are you? (to Omar)
-  Rationale: This asks about Omar himself, not his family.
+  Rationale: Ahli refers to the speaker’s family instead of Knafeh’s.
+- **B (accepted)** كيف أهلك؟ — Kīf ahlak? — How’s your family? (to Knafeh)
+  Rationale: Ahlak means Knafeh’s family when he is the listener.
+- **C** كيفك؟ — Kīfak? — How are you? (to Knafeh)
+  Rationale: This asks about Knafeh himself, not his family.
 
-Retry hint: The ending should mean “your” to Omar.
+Retry hint: The ending should mean “your” to Knafeh.
 
-### 2. Omar says the family members are well. Respond as Omar.
+### 2. Knafeh says the family members are well. Respond as Knafeh.
 
 كيف أهلك؟
 
 Kīf ahlak?
 
-How’s your family? (to Omar)
+How’s your family? (to Knafeh)
 
 - **A** منيحة. — Mnīḥa. — She’s well.
   Rationale: This refers to one woman, not the family group.
-- **B** أنا منيح. — Ana mnīḥ. — I’m well. (Omar speaking)
-  Rationale: This updates only Omar’s condition.
+- **B** أنا منيح. — Ana mnīḥ. — I’m well. (Knafeh speaking)
+  Rationale: This updates only Knafeh’s condition.
 - **C (accepted)** منيحين، شكراً. — Mnīḥīn, shukran. — They’re well, thank you.
   Rationale: Mnīḥīn refers to the family members as a group.
 
 Retry hint: Answer about the group of people.
 
-### 3. Follow up specifically about Omar’s sister.
+### 3. Follow up specifically about Knafeh’s sister.
 
 منيحين، شكراً.
 
@@ -106,12 +106,12 @@ Mnīḥīn, shukran.
 
 They’re well, thank you.
 
-- **A (accepted)** وأختك، كيفها؟ — W-ukhtak, kīfha? — And your sister, how is she? (to Omar)
+- **A (accepted)** وأختك، كيفها؟ — W-ukhtak, kīfha? — And your sister, how is she? (to Knafeh)
   Rationale: Naming the sister gives kīfha a clear referent.
-- **B** كيف أهلك؟ — Kīf ahlak? — How’s your family? (to Omar)
+- **B** كيف أهلك؟ — Kīf ahlak? — How’s your family? (to Knafeh)
   Rationale: This repeats the general family question instead of following up about his sister.
-- **C** وكيف أمك؟ — W-kīf immik? — And how’s your mother? (to Lina)
-  Rationale: This asks Lina about her mother; both the listener and relative change.
+- **C** وكيف أمك؟ — W-kīf immik? — And how’s your mother? (to Fattoush)
+  Rationale: This asks Fattoush about her mother; both the listener and relative change.
 
 Retry hint: Name the sister before asking how she is.
 
@@ -121,7 +121,7 @@ Retry hint: Name the sister before asking how she is.
 
 W-ukhtak, kīfha?
 
-And your sister, how is she? (to Omar)
+And your sister, how is she? (to Knafeh)
 
 - **A** منيحة. اليوم بالبيت. — Mnīḥa. Il-yōm bil-bēt. — She’s well. Today she’s at home.
   Rationale: Being home today is a different detail; it does not express the sister’s workload.
@@ -132,7 +132,7 @@ And your sister, how is she? (to Omar)
 
 Retry hint: The work belongs to her: ʿindha.
 
-### 5. Lina has just mentioned her mother. Ask a short follow-up about the mother.
+### 5. Fattoush has just mentioned her mother. Ask a short follow-up about the mother.
 
 اليوم زرت أمي.
 
@@ -140,39 +140,39 @@ Il-yōm zurt immi.
 
 Today I visited my mother.
 
-- **A** وكيفك؟ — W-kīfik? — And how are you? (to Lina)
-  Rationale: This asks about Lina rather than her mother.
+- **A** وكيفك؟ — W-kīfik? — And how are you? (to Fattoush)
+  Rationale: This asks about Fattoush rather than her mother.
 - **B (accepted)** وكيفها؟ — W-kīfha? — And how is she?
-  Rationale: Kīfha refers back to the mother Lina has just named.
-- **C** شو عملتي اليوم؟ — Shū ʿmilti il-yōm? — What did you do today? (to Lina)
-  Rationale: This asks broadly about Lina’s activities instead of following up on her mother.
+  Rationale: Kīfha refers back to the mother Fattoush has just named.
+- **C** شو عملتي اليوم؟ — Shū ʿmilti il-yōm? — What did you do today? (to Fattoush)
+  Rationale: This asks broadly about Fattoush’s activities instead of following up on her mother.
 
 Retry hint: The short ending should refer to “her.”
 
-### 6. Omar wants to ask Lina about her family. Choose the address to Lina.
+### 6. Knafeh wants to ask Fattoush about her family. Choose the address to Fattoush.
 
 وإنتِ؟
 
 W-inti?
 
-And you? (to Lina)
+And you? (to Fattoush)
 
-- **A (accepted)** كيف أهلك؟ — Kīf ahlik? — How’s your family? (to Lina)
+- **A (accepted)** كيف أهلك؟ — Kīf ahlik? — How’s your family? (to Fattoush)
   Rationale: Ahlik is the selected feminine address; Arabic script alone may not show the short-vowel difference.
-- **B** كيف أهلك؟ — Kīf ahlak? — How’s your family? (to Omar)
-  Rationale: Ahlak is addressed to Omar, not Lina.
+- **B** كيف أهلك؟ — Kīf ahlak? — How’s your family? (to Knafeh)
+  Rationale: Ahlak is addressed to Knafeh, not Fattoush.
 - **C** كيف أهلي؟ — Kīf ahli? — How is my family?
   Rationale: This asks about the speaker’s own family.
 
 Retry hint: Follow the transliteration: ahlik.
 
-### 7. Closing exchange, part 1: today Lina’s mother is well and at home. Reply as Lina.
+### 7. Closing exchange, part 1: today Fattoush’s mother is well and at home. Reply as Fattoush.
 
 وكيف أمك؟
 
 W-kīf immik?
 
-And how’s your mother? (to Lina)
+And how’s your mother? (to Fattoush)
 
 - **A** منيحة، بس عندها شغل كتير. — Mnīḥa, bass ʿindha shughl ktīr. — She’s well, but she has a lot of work.
   Rationale: This introduces a heavy workload, which the new scene does not give.

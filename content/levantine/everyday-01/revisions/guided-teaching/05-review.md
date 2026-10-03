@@ -8,13 +8,13 @@ Goal: Ask about someone’s family, share a short update, and ask a relevant fol
 
 كيف أهلك؟ · Kīf ahlak?
 
-How’s your family? (to Omar)
+How’s your family? (to Knafeh)
 
-Ahlak means your family when speaking to Omar; ahli means my family. Listen to the ending and keep transliteration handy.
+Ahlak means your family when speaking to Knafeh; ahli means my family. Listen to the ending and keep transliteration handy.
 
-Recall: You are Lina. Ask Omar how his family is.
+Recall: You are Fattoush. Ask Knafeh how his family is.
 
-كيف (kīf) = how | أهلك (ahlak) = your family · to Omar
+كيف (kīf) = how | أهلك (ahlak) = your family · to Knafeh
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, https://resources.lingualism.com/levantine-arabic/family-3/, internal:ismi/everyday-01/05/guided-teaching
 
@@ -26,7 +26,7 @@ They’re well, thank you.
 
 Mnīḥīn describes the family members as people. It differs from mnīḥa for the mother or sister.
 
-Recall: You are Omar. Tell Lina your family members are well and thank her.
+Recall: You are Knafeh. Tell Fattoush your family members are well and thank her.
 
 منيحين (mnīḥīn) = they are well · family members | شكراً (shukran) = thank you
 
@@ -36,13 +36,13 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://med
 
 وأختك، كيفها؟ · W-ukhtak, kīfha?
 
-And your sister, how is she? (to Omar)
+And your sister, how is she? (to Knafeh)
 
-Ukhtak is your sister when addressing Omar. Kīfha then refers to that sister, not to Omar.
+Ukhtak is your sister when addressing Knafeh. Kīfha then refers to that sister, not to Knafeh.
 
-Recall: You are Lina. Follow up specifically about Omar’s sister.
+Recall: You are Fattoush. Follow up specifically about Knafeh’s sister.
 
-وأختك (w-ukhtak) = and your sister · to Omar | كيفها (kīfha) = how is she · sister
+وأختك (w-ukhtak) = and your sister · to Knafeh | كيفها (kīfha) = how is she · sister
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, https://resources.lingualism.com/levantine-arabic/family-3/, internal:ismi/everyday-01/05/guided-teaching
 
@@ -54,7 +54,7 @@ She’s well, but she has a lot of work.
 
 Start with the sister’s condition. Bass introduces a contrast; ʿindha shughl says she has work, and ktīr gives the amount.
 
-Recall: Omar’s sister is well but has a lot of work. Give her update.
+Recall: Knafeh’s sister is well but has a lot of work. Give her update.
 
 منيحة (mnīḥa) = she is well | بس (bass) = but | عندها (ʿindha) = she has | شغل كتير (shughl ktīr) = a lot of work
 
@@ -64,13 +64,13 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://med
 
 كيف أهلك؟ · Kīf ahlik?
 
-How’s your family? (to Lina)
+How’s your family? (to Fattoush)
 
-Ahlik addresses Lina. It looks the same as ahlak in this unvowelled spelling, so the transliteration shows the spoken difference.
+Ahlik addresses Fattoush. It looks the same as ahlak in this unvowelled spelling, so the transliteration shows the spoken difference.
 
-Recall: You are Omar. Ask Lina how her family is.
+Recall: You are Knafeh. Ask Fattoush how her family is.
 
-كيف (kīf) = how | أهلك (ahlik) = your family · to Lina
+كيف (kīf) = how | أهلك (ahlik) = your family · to Fattoush
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, https://resources.lingualism.com/levantine-arabic/family-3/, internal:ismi/everyday-01/05/guided-teaching
 
@@ -80,9 +80,9 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://med
 
 Yes, let’s visit her tomorrow.
 
-Bukra sets the plan in tomorrow. In nzūrha, the ending -ha points back to Lina’s mother; you are agreeing to visit her together.
+Bukra sets the plan in tomorrow. In nzūrha, the ending -ha points back to Fattoush’s mother; you are agreeing to visit her together.
 
-Recall: Lina’s mother is at home. Agree to visit her together tomorrow.
+Recall: Fattoush’s mother is at home. Agree to visit her together tomorrow.
 
 آه (āh) = yes | بكرا (bukra) = tomorrow | نزورها (nzūrha) = we visit her · mother
 

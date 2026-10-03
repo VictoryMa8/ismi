@@ -24,7 +24,7 @@ async function complete(page: Page, dialog: Locator, lesson: LessonResponse, wro
     await expect(dialog.locator(`.practice-page[data-step-id="${step.id}"]`)).toBeVisible()
     await expect(dialog.locator('.lesson-card-enter-active, .lesson-card-leave-active')).toHaveCount(0)
     if (step.characters?.responseSpeakerId) {
-      const name = step.characters.responseSpeakerId === 'lina' ? 'Lina' : 'Omar'
+      const name = step.characters.responseSpeakerId === 'fattoush' ? 'Fattoush' : 'Knafeh'
       await expect(dialog.locator('.practice-page > .character-cue')).toContainText(`Reply as ${name}`)
     }
     // Exercise the actual builder online and offline, not only its choice fallback.
@@ -72,7 +72,7 @@ async function complete(page: Page, dialog: Locator, lesson: LessonResponse, wro
 
 test('all authored lessons preview, then published test copies complete offline and reopen for review', async ({ page, context }, testInfo) => {
   test.setTimeout(240_000)
-  await page.goto('/')
+  await page.goto('/#/today')
   const registration = await post(page, '/api/auth/register', { displayName: 'Preview owner', email: 'preview-owner@example.test', password: 'test-only-long-password' })
   if (!registration.ok()) expect((await post(page, '/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password', rememberMe: false })).ok()).toBeTruthy()
   await page.reload()
@@ -142,7 +142,7 @@ test('all authored lessons preview, then published test copies complete offline 
     const source = packages.find(pack => pack.lesson.id === lessonId)!.lesson
     const step = source.steps.find(step => step.id === stepId)!
     if (step.characters?.responseSpeakerId) {
-      await expect(checkpoint.locator('.practice-page > .character-cue')).toContainText(`Reply as ${step.characters.responseSpeakerId === 'lina' ? 'Lina' : 'Omar'}`)
+      await expect(checkpoint.locator('.practice-page > .character-cue')).toContainText(`Reply as ${step.characters.responseSpeakerId === 'fattoush' ? 'Fattoush' : 'Knafeh'}`)
       await expect(checkpoint.locator('.review-scene')).toHaveText(source.scenario)
     }
     await expect(checkpoint.locator('.prompt-meaning')).toHaveCount(0)

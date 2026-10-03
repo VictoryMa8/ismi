@@ -6,86 +6,105 @@
     {
       "lessonId": "levantine-everyday-01-01",
       "package": "01-lesson.json",
-      "sha256": "0cd600a313a1d5b62ff1c37eaa33cc5fcd032035a215bf43f51f52d312229e41",
+      "sha256": "a2b79b32381ab22116af90ed25e4de47a45b78c65dcce2ae10769689217d00c4",
       "status": "draft",
       "steps": 8,
       "teachingCards": 7,
       "basedOnPackage": "../check-in-v2/01-lesson.json",
-      "basedOnSha256": "3df8ee74822b7811aaf9fffabe23e8e9f47efb82bd8b1b104eb0193f3ad241c7",
+      "basedOnSha256": "da0f1efc00023f63edce166115116a215a2810e4fa72e5b5f8c75ca5a743212f",
       "localRecordId": 18,
-      "localVersionNumber": 3
+      "localVersionNumber": 3,
+      "preRenameSha256": "0cd600a313a1d5b62ff1c37eaa33cc5fcd032035a215bf43f51f52d312229e41",
+      "preRenameBasedOnSha256": "3df8ee74822b7811aaf9fffabe23e8e9f47efb82bd8b1b104eb0193f3ad241c7"
     },
     {
       "lessonId": "levantine-everyday-01-02",
       "package": "02-lesson.json",
-      "sha256": "71a8a4234fa4d8b898c5e74e6693f5e86f520dab7cc5498f963a05bd603d090c",
+      "sha256": "dd98ad2882c9c0fe7f799df9942f524f75517bd26c55cfad89a0f80a7b3da994",
       "status": "draft",
       "steps": 8,
       "teachingCards": 6,
       "basedOnPackage": "../check-in-v2/02-lesson.json",
-      "basedOnSha256": "57455be3cb0dfd012ef695dafb0c7fe38dd8cfcfba32a16165e5f4e13b12c9d8",
+      "basedOnSha256": "2a16a443bd99725343aa0caa24f49cd3af96063fda857c932ec76066ce6a962c",
       "localRecordId": 19,
-      "localVersionNumber": 3
+      "localVersionNumber": 3,
+      "preRenameSha256": "71a8a4234fa4d8b898c5e74e6693f5e86f520dab7cc5498f963a05bd603d090c",
+      "preRenameBasedOnSha256": "57455be3cb0dfd012ef695dafb0c7fe38dd8cfcfba32a16165e5f4e13b12c9d8"
     },
     {
       "lessonId": "levantine-everyday-01-03",
       "package": "03-lesson.json",
-      "sha256": "b37e1367ec572bcfece4f252928337df13c961abd4d6fef251091a3e3c7bc31c",
+      "sha256": "d8330c7799e332f015597d5781ea4d5b5504432ab1f3c49b66d030e8ed821b80",
       "status": "draft",
       "steps": 8,
       "teachingCards": 6,
       "basedOnPackage": "../../03-lesson.json",
-      "basedOnSha256": "3325265586e0f9adfbf8ee25452ab5dfe69bce741a0d65ba120fe0f2297b3ad8",
+      "basedOnSha256": "fb671613684b3f260ab0acdd1328c68ae95bbfd8dde444902f2c56c97fd7d5ac",
       "localRecordId": 20,
-      "localVersionNumber": 2
+      "localVersionNumber": 2,
+      "preRenameSha256": "b37e1367ec572bcfece4f252928337df13c961abd4d6fef251091a3e3c7bc31c",
+      "preRenameBasedOnSha256": "3325265586e0f9adfbf8ee25452ab5dfe69bce741a0d65ba120fe0f2297b3ad8"
     },
     {
       "lessonId": "levantine-everyday-01-04",
       "package": "04-lesson.json",
-      "sha256": "18dde82db646b7773b5a48935b6f2705ef5a1ecd379d00d92deccb539327880b",
+      "sha256": "473fecb931d4de17881f4add11444c4690188aa7ba7d8b2c435c896eb5521aa0",
       "status": "draft",
       "steps": 8,
       "teachingCards": 6,
       "basedOnPackage": "../../04-lesson.json",
-      "basedOnSha256": "3f0ac045064e76e4cf428915413bd418c8691641b08cab58d3a8a45e4fbd869b",
+      "basedOnSha256": "390916b1cb475ad9c36bccae7a8a4d822d97a667f3d4ac2cb3fdac5198e57c6d",
       "localRecordId": 21,
-      "localVersionNumber": 2
+      "localVersionNumber": 2,
+      "preRenameSha256": "18dde82db646b7773b5a48935b6f2705ef5a1ecd379d00d92deccb539327880b",
+      "preRenameBasedOnSha256": "3f0ac045064e76e4cf428915413bd418c8691641b08cab58d3a8a45e4fbd869b"
     },
     {
       "lessonId": "levantine-everyday-01-05",
       "package": "05-lesson.json",
-      "sha256": "ec5edb13c9a49c9a43d1c2d684e838107d2a0110495ca21b9ff41b83210f6db7",
+      "sha256": "5fe054dc9d927ac93efe3171362f74588a4e2738386a7d2deff25442472edabb",
       "status": "draft",
       "steps": 8,
       "teachingCards": 6,
       "basedOnPackage": "../../05-lesson.json",
-      "basedOnSha256": "aa8782aa1d604d9948c33cf90f2a167fb1132efe07edfadcc596867c4ffb9241",
+      "basedOnSha256": "9f99f561e43ec6fe48385e59534c97ab391b496cb8e67a928dcbba9e6d2c1c2b",
       "localRecordId": 22,
-      "localVersionNumber": 2
+      "localVersionNumber": 2,
+      "preRenameSha256": "ec5edb13c9a49c9a43d1c2d684e838107d2a0110495ca21b9ff41b83210f6db7",
+      "preRenameBasedOnSha256": "aa8782aa1d604d9948c33cf90f2a167fb1132efe07edfadcc596867c4ffb9241"
     },
     {
       "lessonId": "levantine-everyday-01-06",
       "package": "06-lesson.json",
-      "sha256": "0348e54e144292c6f0d853d7c444a7b0822b777d1174c62703f4a568a946c13c",
+      "sha256": "d0e0d2b8a9580b415410730b2fea5a7f3bfb66f46c0d0381c6f17e4a9a24bd2d",
       "status": "draft",
       "steps": 8,
       "teachingCards": 6,
       "basedOnPackage": "../check-in-v2/06-lesson.json",
-      "basedOnSha256": "65c819dcb6b006b77b3dfe84feb123f8cd71575fe6e33d6e80f4f55f231d459c",
+      "basedOnSha256": "8c3e9c5940d9e09ffe93616274d4896e5d86d54e09ea8110fa5b9868228bec63",
       "localRecordId": 16,
-      "localVersionNumber": 2
+      "localVersionNumber": 2,
+      "preRenameSha256": "0348e54e144292c6f0d853d7c444a7b0822b777d1174c62703f4a568a946c13c",
+      "preRenameBasedOnSha256": "65c819dcb6b006b77b3dfe84feb123f8cd71575fe6e33d6e80f4f55f231d459c"
     },
     {
       "lessonId": "levantine-everyday-01-07",
       "package": "07-lesson.json",
-      "sha256": "f514b9caba7c4352e7c3a6f105afe3c8ab17a7b32ff23dbd94c3ec93c07076de",
+      "sha256": "edc4456b665f25b619e597da51ccb49f03cf213c8c6496994e139b627f086325",
       "status": "draft",
       "steps": 8,
       "teachingCards": 6,
       "basedOnPackage": "../check-in-v2/07-lesson.json",
-      "basedOnSha256": "a529f39b9a97967b76159622cb504272b2e016a330ec0c938485949d21a4403a",
+      "basedOnSha256": "d9a30489e12fb9ec706ecb69a0c67ac77295e1bcd53dc2dd7d38092b1d4fafdf",
       "localRecordId": 17,
-      "localVersionNumber": 2
+      "localVersionNumber": 2,
+      "preRenameSha256": "f514b9caba7c4352e7c3a6f105afe3c8ab17a7b32ff23dbd94c3ec93c07076de",
+      "preRenameBasedOnSha256": "a529f39b9a97967b76159622cb504272b2e016a330ec0c938485949d21a4403a"
     }
-  ]
+  ],
+  "characterRename": {
+    "date": "2026-10-02",
+    "status": "owner-requested repository rename; no publication performed",
+    "note": "Publication/version references describe predecessor database snapshots. Hashes describe renamed repository packages. No publication or reapproval occurred."
+  }
 }

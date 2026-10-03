@@ -4,27 +4,27 @@
 
 Goal: Offer a drink, express a preference, and politely accept or decline.
 
-Omar offers Lina a drink while they settle in. Preferences can be personal; choose the response requested by this particular scene.
+Knafeh offers Fattoush a drink while they settle in. Preferences can be personal; choose the response requested by this particular scene.
 
 ## Dialogue / recording script
 
-**Omar → Lina**
+**Knafeh → Fattoush**
 
 بدك شاي ولا قهوة؟
 
 Biddik shāy walla ʾahwe?
 
-Do you want tea or coffee? (to Lina)
+Do you want tea or coffee? (to Fattoush)
 
-**Lina → Omar**
+**Fattoush → Knafeh**
 
 شاي، لو سمحت.
 
 Shāy, law samaḥt.
 
-Tea, please. (to Omar)
+Tea, please. (to Knafeh)
 
-**Omar → Lina**
+**Knafeh → Fattoush**
 
 بدك سكر؟
 
@@ -32,7 +32,7 @@ Biddik sukkar?
 
 Do you want sugar?
 
-**Lina**
+**Fattoush**
 
 لا، بدون سكر، شكراً.
 
@@ -40,7 +40,7 @@ Laʾ, bidūn sukkar, shukran.
 
 No, without sugar, thank you.
 
-**Omar**
+**Knafeh**
 
 أنا بدي قهوة.
 
@@ -48,7 +48,7 @@ Ana biddi ʾahwe.
 
 I want coffee.
 
-**Lina**
+**Fattoush**
 
 بحب الشاي أكتر.
 
@@ -58,13 +58,13 @@ I like tea more.
 
 ## Teaching note
 
-Biddi means “I want”; biddak addresses a man and biddik a woman. The ending follows the person who wants something, not the drink. In a choice question, walla means “or.” Baḥibb says what you like; adding aktar makes the comparison “more.” Law samaḥt is “please” when speaking to Omar; law samaḥti is the form addressed to Lina. Shukran is “thank you.” A short laʾ, shukran can politely decline; politeness also depends on tone and relationship. Practise both roles, then give your own preference aloud or silently. You may always use the transcript instead of audio.
+Biddi means “I want”; biddak addresses a man and biddik a woman. The ending follows the person who wants something, not the drink. In a choice question, walla means “or.” Baḥibb says what you like; adding aktar makes the comparison “more.” Law samaḥt is “please” when speaking to Knafeh; law samaḥti is the form addressed to Fattoush. Shukran is “thank you.” A short laʾ, shukran can politely decline; politeness also depends on tone and relationship. Practise both roles, then give your own preference aloud or silently. You may always use the transcript instead of audio.
 
 Urban Palestinian teaching target. This unit uses urban ʾahwe for قهوة. The approved publisher vocabulary reference gives a Gaza pronunciation with g; Maknuune encodes variation with Q. Neither spelling requires every Palestinian speaker to use the same sound. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.
 
 ## Practice and closing exchange
 
-### 1. Offer a choice of drinks to Lina.
+### 1. Offer a choice of drinks to Fattoush.
 
 شاي ولا قهوة؟
 
@@ -72,44 +72,44 @@ Shāy walla ʾahwe?
 
 Tea or coffee?
 
-- **A** بدك شاي ولا قهوة؟ — Biddak shāy walla ʾahwe? — Do you want tea or coffee? (to Omar)
-  Rationale: Biddak addresses Omar, but Lina is the listener here.
-- **B (accepted)** بدك شاي ولا قهوة؟ — Biddik shāy walla ʾahwe? — Do you want tea or coffee? (to Lina)
-  Rationale: Biddik addresses Lina, and walla presents the two drinks as alternatives.
-- **C** بدك شاي وقهوة؟ — Biddik shāy w-ʾahwe? — Do you want tea and coffee? (to Lina)
+- **A** بدك شاي ولا قهوة؟ — Biddak shāy walla ʾahwe? — Do you want tea or coffee? (to Knafeh)
+  Rationale: Biddak addresses Knafeh, but Fattoush is the listener here.
+- **B (accepted)** بدك شاي ولا قهوة؟ — Biddik shāy walla ʾahwe? — Do you want tea or coffee? (to Fattoush)
+  Rationale: Biddik addresses Fattoush, and walla presents the two drinks as alternatives.
+- **C** بدك شاي وقهوة؟ — Biddik shāy w-ʾahwe? — Do you want tea and coffee? (to Fattoush)
   Rationale: W means “and”; this offers both together instead of a choice.
 
 Retry hint: Choose the feminine address and the word for “or.”
 
-### 2. Lina wants tea. Reply politely to Omar’s offer.
+### 2. Fattoush wants tea. Reply politely to Knafeh’s offer.
 
 بدك شاي ولا قهوة؟
 
 Biddik shāy walla ʾahwe?
 
-Do you want tea or coffee? (to Lina)
+Do you want tea or coffee? (to Fattoush)
 
-- **A** قهوة، لو سمحتي. — ʾAhwe, law samaḥti. — Coffee, please. (to Lina)
-  Rationale: This selects coffee and addresses Lina, so both the preference and listener differ.
+- **A** قهوة، لو سمحتي. — ʾAhwe, law samaḥti. — Coffee, please. (to Fattoush)
+  Rationale: This selects coffee and addresses Fattoush, so both the preference and listener differ.
 - **B** لا، شكراً. — Laʾ, shukran. — No, thank you.
   Rationale: This politely declines both drinks rather than accepting tea.
-- **C (accepted)** شاي، لو سمحت. — Shāy, law samaḥt. — Tea, please. (to Omar)
-  Rationale: This selects tea and uses law samaḥt for the male listener Omar.
+- **C (accepted)** شاي، لو سمحت. — Shāy, law samaḥt. — Tea, please. (to Knafeh)
+  Rationale: This selects tea and uses law samaḥt for the male listener Knafeh.
 
-Retry hint: Choose tea and a request addressed to Omar.
+Retry hint: Choose tea and a request addressed to Knafeh.
 
-### 3. Lina does not want sugar. Respond to Omar.
+### 3. Fattoush does not want sugar. Respond to Knafeh.
 
 بدك سكر؟
 
 Biddik sukkar?
 
-Do you want sugar? (to Lina)
+Do you want sugar? (to Fattoush)
 
 - **A (accepted)** لا، بدون سكر، شكراً. — Laʾ, bidūn sukkar, shukran. — No, without sugar, thank you.
   Rationale: This explicitly declines sugar while retaining the drink request.
 - **B** آه، مع سكر. — Āh, maʿ sukkar. — Yes, with sugar.
-  Rationale: This asks for sugar, the opposite of Lina’s preference.
+  Rationale: This asks for sugar, the opposite of Fattoush’s preference.
 - **C** بحب الشاي أكتر. — Baḥibb ish-shāy aktar. — I like tea more.
   Rationale: This expresses a drink preference but leaves the sugar question unanswered.
 
@@ -132,69 +132,69 @@ Why tea?
 
 Retry hint: The preferred drink comes after baḥibb.
 
-### 5. Omar offers Lina coffee later. She wants no drink now. Decline politely.
+### 5. Knafeh offers Fattoush coffee later. She wants no drink now. Decline politely.
 
 بدك قهوة هلّق؟
 
 Biddik ʾahwe hallaʾ?
 
-Do you want coffee now? (to Lina)
+Do you want coffee now? (to Fattoush)
 
-- **A** آه، لو سمحت. — Āh, law samaḥt. — Yes, please. (to Omar)
+- **A** آه، لو سمحت. — Āh, law samaḥt. — Yes, please. (to Knafeh)
   Rationale: This accepts the coffee.
 - **B (accepted)** لا، شكراً. — Laʾ, shukran. — No, thank you.
   Rationale: A short no plus thanks fits the requested refusal.
-- **C** شاي، لو سمحت. — Shāy, law samaḥt. — Tea, please. (to Omar)
-  Rationale: This asks for a different drink; Lina wants no drink in this situation.
+- **C** شاي، لو سمحت. — Shāy, law samaḥt. — Tea, please. (to Knafeh)
+  Rationale: This asks for a different drink; Fattoush wants no drink in this situation.
 
 Retry hint: You can decline without giving another order.
 
-### 6. You are Lina. Say what you yourself want, rather than asking Omar.
+### 6. You are Fattoush. Say what you yourself want, rather than asking Knafeh.
 
 بدك شاي ولا قهوة؟
 
 Biddik shāy walla ʾahwe?
 
-Do you want tea or coffee? (to Lina)
+Do you want tea or coffee? (to Fattoush)
 
 - **A (accepted)** بدي شاي. — Biddi shāy. — I want tea.
-  Rationale: Biddi is the first-person form; the sentence states Lina’s own request.
-- **B** بدك شاي؟ — Biddak shāy? — Do you want tea? (to Omar)
+  Rationale: Biddi is the first-person form; the sentence states Fattoush’s own request.
+- **B** بدك شاي؟ — Biddak shāy? — Do you want tea? (to Knafeh)
   Rationale: This asks the listener instead of answering about yourself.
 - **C** بدها شاي. — Biddha shāy. — She wants tea.
   Rationale: This reports another woman’s wish, not your own.
 
 Retry hint: Use the ending for “I.”
 
-### 7. Closing exchange, part 1: Lina now hosts Omar. He chooses coffee. Respond as Omar to Lina.
+### 7. Closing exchange, part 1: Fattoush now hosts Knafeh. He chooses coffee. Respond as Knafeh to Fattoush.
 
 بدك شاي ولا قهوة؟
 
 Biddak shāy walla ʾahwe?
 
-Do you want tea or coffee? (to Omar)
+Do you want tea or coffee? (to Knafeh)
 
-- **A** شاي، لو سمحت. — Shāy, law samaḥt. — Tea, please. (to Omar)
+- **A** شاي، لو سمحت. — Shāy, law samaḥt. — Tea, please. (to Knafeh)
   Rationale: This chooses tea and directs “please” to a man.
 - **B** لا، شكراً. — Laʾ, shukran. — No, thank you.
   Rationale: This declines the offer instead of accepting coffee.
-- **C (accepted)** قهوة، لو سمحتي. — ʾAhwe, law samaḥti. — Coffee, please. (to Lina)
-  Rationale: Coffee matches Omar’s choice, and law samaḥti addresses Lina.
+- **C (accepted)** قهوة، لو سمحتي. — ʾAhwe, law samaḥti. — Coffee, please. (to Fattoush)
+  Rationale: Coffee matches Knafeh’s choice, and law samaḥti addresses Fattoush.
 
-Retry hint: The person receiving “please” is Lina.
+Retry hint: The person receiving “please” is Fattoush.
 
-### 8. Closing exchange, part 2: Omar wants his coffee without sugar. Answer Lina.
+### 8. Closing exchange, part 2: Knafeh wants his coffee without sugar. Answer Fattoush.
 
 بدك سكر؟
 
 Biddak sukkar?
 
-Do you want sugar? (to Omar)
+Do you want sugar? (to Knafeh)
 
 - **A** آه، مع سكر. — Āh, maʿ sukkar. — Yes, with sugar.
   Rationale: This changes the order to coffee with sugar.
 - **B (accepted)** لا، بدون سكر، شكراً. — Laʾ, bidūn sukkar, shukran. — No, without sugar, thank you.
-  Rationale: This completes the order by stating without sugar and thanking Lina.
+  Rationale: This completes the order by stating without sugar and thanking Fattoush.
 - **C** بحب القهوة أكتر. — Baḥibb il-ʾahwe aktar. — I like coffee more.
   Rationale: This says he prefers coffee, but does not settle the sugar choice.
 

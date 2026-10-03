@@ -29,7 +29,7 @@ test('console recording publication downloads audio and plays after offline relo
 
   try {
     await page.setViewportSize({ width: 1440, height: 1000 })
-    await page.goto('/')
+    await page.goto('/#/today')
     await page.getByRole('complementary', { name: 'Primary navigation' }).getByRole('link', { name: 'Account', exact: true }).click()
     await page.getByRole('button', { name: 'Open curriculum console' }).click()
     await page.getByRole('complementary', { name: 'Curriculum versions' }).getByRole('button', { name: /Answer a friend’s check-in/ }).click()
@@ -125,7 +125,7 @@ test('console recording publication downloads audio and plays after offline relo
 
 for (const failure of ['missing', 'corrupt'] as const) {
   test(`a ${failure} recording preserves the previous offline lesson package`, async ({ page }) => {
-    await page.goto('/')
+    await page.goto('/#/today')
     await expect.poll(() => page.evaluate(async () => {
       const database = await new Promise<IDBDatabase>((resolve, reject) => {
         const request = indexedDB.open('ismi-offline')

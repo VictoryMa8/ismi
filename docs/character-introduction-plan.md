@@ -1,8 +1,11 @@
 # Recurring characters for Ismi lessons
 
+Current feature status and next actions live in [the roadmap](../ROADMAP.md#f06-recurring-character-support).
+This file supplies design/implementation evidence; historical checks are dated checkpoints.
+
 Proposed October 1, 2026. The owner subsequently requested implementation and
 specified cartoonish corporate illustration. Optional role support, a bundled
-Lina/Omar design proposal and seven metadata packages are now implemented; see
+Fattoush/Knafeh design proposal and seven metadata packages are now implemented; see
 [the character guide](characters/character-guide.md) and
 [metadata proposals](../content/levantine/everyday-01/revisions/characters/README.md).
 Final design selection, narrative changes, publication and deployment remain
@@ -10,7 +13,7 @@ separate owner decisions.
 
 ## Recommendation
 
-Make Lina and Omar the first two recurring illustrated adults in Ismi. Both
+Make Fattoush and Knafeh the first two recurring illustrated adults in Ismi. Both
 already appear throughout the seven guided Everyday conversations packages.
 Give them recognizable faces, consistent personalities and a small continuing
 story, then carry that identity from dialogue into recall, practice and review.
@@ -36,8 +39,8 @@ establish.
 
 | Character | Proposed personality | Useful narrative behavior | Design goal |
 | --- | --- | --- | --- |
-| Lina | Warm, observant, direct; enjoys a clear plan | Notices how someone feels, asks follow-ups, helps clarify an arrangement | Distinct adult face, silhouette and everyday outfit; expressive without exaggeration |
-| Omar | Thoughtful, easygoing, lightly humorous | Adds a detail, checks a preference, offers an alternative | Equally recognizable adult design; different silhouette and gestures |
+| Fattoush | Warm, observant, direct; enjoys a clear plan | Notices how someone feels, asks follow-ups, helps clarify an arrangement | Distinct adult face, silhouette and everyday outfit; expressive without exaggeration |
+| Knafeh | Thoughtful, easygoing, lightly humorous | Adds a detail, checks a preference, offers an alternative | Equally recognizable adult design; different silhouette and gestures |
 
 Both characters ask questions, make decisions, work, share food and talk about
 family. Give each warmth and agency. Personality should appear through small
@@ -69,7 +72,7 @@ available offline.
 | Surface | Proposed behavior |
 | --- | --- |
 | Meet the conversation | Small portrait pair, existing scenario text and named dialogue bubbles. One-line introduction; no mandatory character onboarding. |
-| Dialogue turns | Portrait plus speaker name. Preserve “Lina → Omar” and equivalent recipient information where it matters. Align by authored participant role, not line-number parity. |
+| Dialogue turns | Portrait plus speaker name. Preserve “Fattoush → Knafeh” and equivalent recipient information where it matters. Align by authored participant role, not line-number parity. |
 | Phrase teaching | A small named portrait where the phrase has an explicit speaker. General grammar explanations remain neutral. |
 | Recall | Keep the person and situation visible while the phrase stays hidden. The character’s expression must not reveal the expected answer. |
 | Practice | Identify who asks and who the learner is answering as. Keep Arabic, transliteration and optional help prominent. |
@@ -77,8 +80,8 @@ available offline.
 | Review/checkpoint | Preserve the originating scene’s people and roles when mixing exercises. Do not randomly attach a portrait to a prompt. |
 | Courses/Today | A small cast thumbnail can preview a conversation. Keep the current concise lesson titles and controls. |
 
-Example flow for lesson 1: show Lina asking Omar how he is; retain their names
-beside the dialogue; later show “Reply as Omar” while the learner recalls his
+Example flow for lesson 1: show Fattoush asking Knafeh how he is; retain their names
+beside the dialogue; later show “Reply as Knafeh” while the learner recalls his
 response. This identity cue should explain the speaker/listener relationship
 without adding a translation or showing the answer. Character appearance must
 never be the only way to identify the required grammatical person or address
@@ -96,9 +99,9 @@ continuity without requiring new Arabic to launch the visual layer.
 
 | Lesson | Existing story beat | Visual/person connection |
 | --- | --- | --- |
-| Check in | Lina and Omar catch up at home | Introduce the pair and make speaker/listener roles explicit |
+| Check in | Fattoush and Knafeh catch up at home | Introduce the pair and make speaker/listener roles explicit |
 | Today’s activities | They compare their day the next evening | Reuse the same identities as actions and time change |
-| Drinks | Omar offers Lina tea or coffee | Show the host/guest situation; preferences come from the current scene |
+| Drinks | Knafeh offers Fattoush tea or coffee | Show the host/guest situation; preferences come from the current scene |
 | Shared meal | They decide what to eat together | Let both people express a feeling and make a suggestion |
 | Family | They ask about each other’s family | Make whose family is being discussed clear; mentioned relatives need no new portraits yet |
 | Tomorrow | They agree on a family visit and time | Connect planning expressions to a concrete shared arrangement |
@@ -133,7 +136,7 @@ and authored speaker/addressee/response-role metadata. Preserve the existing
 speaker text and text-only fallback. Each referenced character resolves through
 a small versioned registry with local asset paths and display names.
 
-Use explicit IDs rather than parsing “Lina → Omar” in the renderer. Audit the
+Use explicit IDs rather than parsing “Fattoush → Knafeh” in the renderer. Audit the
 mapping for every dialogue, teaching card and practice step; infer nothing from
 the correct answer’s location or the exercise index. Generic teaching cards can
 remain unassigned. Distinguish named character roles from the learner’s account
@@ -228,7 +231,7 @@ or recording retention is needed for this first evaluation.
 
 ## Recommended next task
 
-Create the Lina/Omar concept sheet and lesson 1 visual prototype. Keep the Arabic
+Create the Fattoush/Knafeh concept sheet and lesson 1 visual prototype. Keep the Arabic
 and grading unchanged, use static portraits, and prepare it for owner review.
 This provides the first concrete decision about the cast before building out
 the full unit.

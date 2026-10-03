@@ -4,19 +4,19 @@
 
 Goal: Follow a new exchange about the day and family, then agree on food, a drink, and a time.
 
-A fresh Friday check-in: Lina has already visited her mother. She and Omar plan a quiet meal for tomorrow at seven. Use the new details rather than memorized answers.
+A fresh Friday check-in: Fattoush has already visited her mother. She and Knafeh plan a quiet meal for tomorrow at seven. Use the new details rather than memorized answers.
 
 ## Dialogue / recording script
 
-**Omar → Lina**
+**Knafeh → Fattoush**
 
 شو عاملة؟
 
 Shū ʿāmle?
 
-How are you doing? (casual check-in to Lina)
+How are you doing? (casual check-in to Fattoush)
 
-**Lina**
+**Fattoush**
 
 أنا منيحة. زرت أمي وبعدين ارتحت.
 
@@ -24,7 +24,7 @@ Ana mnīḥa. Zurt immi w-baʿdēn irtaḥt.
 
 I’m well. I visited my mother and then rested.
 
-**Omar**
+**Knafeh**
 
 وكيفها؟
 
@@ -32,7 +32,7 @@ W-kīfha?
 
 And how is she?
 
-**Lina → Omar**
+**Fattoush → Knafeh**
 
 منيحة. شو رأيك ناكل سوا بكرا؟
 
@@ -40,7 +40,7 @@ Mnīḥa. Shū raʾyak nākol sawa bukra?
 
 She’s well. What do you think about eating together tomorrow?
 
-**Omar**
+**Knafeh**
 
 تمام. نعمل رز وسلطة الساعة سبعة؟
 
@@ -48,7 +48,7 @@ Tamām. Niʿmal ruzz w-salaṭa is-sāʿa sabʿa?
 
 Okay. Shall we make rice and salad at seven?
 
-**Lina**
+**Fattoush**
 
 آه، وبعدين نشرب شاي.
 
@@ -58,32 +58,32 @@ Yes, and then we’ll drink tea.
 
 ## Usage and address
 
-Follow the changing reference point: shū ʿāmle? checks in with Lina; kīfha then refers to her mother. Lina first answers about herself, then tells two completed activities. The conversation moves to tomorrow’s meal plan with bukra. Preserve who, when, and the activity order rather than copying an earlier story. Use hints whenever needed; the final exchange asks you to reuse familiar pieces in a changed situation.
+Follow the changing reference point: shū ʿāmle? checks in with Fattoush; kīfha then refers to her mother. Fattoush first answers about herself, then tells two completed activities. The conversation moves to tomorrow’s meal plan with bukra. Preserve who, when, and the activity order rather than copying an earlier story. Use hints whenever needed; the final exchange asks you to reuse familiar pieces in a changed situation.
 
-Urban Palestinian teaching target. ʿĀmle addresses Lina; her self-description is mnīḥa. Raʾyak addresses Omar in Lina’s invitation. First-person past forms do not change with the speaker’s gender. The casual check-in follows owner-relayed Palestinian feedback; no native-expert review is claimed. Transliteration stays available; Jordanian alternatives are not introduced.
+Urban Palestinian teaching target. ʿĀmle addresses Fattoush; her self-description is mnīḥa. Raʾyak addresses Knafeh in Fattoush’s invitation. First-person past forms do not change with the speaker’s gender. The casual check-in follows owner-relayed Palestinian feedback; no native-expert review is claimed. Transliteration stays available; Jordanian alternatives are not introduced.
 
 ## Practice and closing exchange
 
-### e07-01: Lina is well. She visited her mother and then rested. Respond with her account.
+### e07-01: Fattoush is well. She visited her mother and then rested. Respond with her account.
 
 شو عاملة؟
 
 Shū ʿāmle?
 
-How are you doing? (casual check-in to Lina)
+How are you doing? (casual check-in to Fattoush)
 
 - **A** اشتغلت، وبعدين زرت أمي. · Ishtaghalt, w-baʿdēn zurt immi. · I worked, then visited my mother.
   Rationale: This adds work and omits rest; it recalls an earlier lesson rather than this new scene.
 - **B (accepted)** أنا منيحة. زرت أمي وبعدين ارتحت. · Ana mnīḥa. Zurt immi w-baʿdēn irtaḥt. · I’m well. I visited my mother and then rested.
-  Rationale: This preserves Lina’s self-description and the visit-before-rest order.
+  Rationale: This preserves Fattoush’s self-description and the visit-before-rest order.
 - **C** أنا منيحة. ارتحت وبعدين زرت أمي. · Ana mnīḥa. Irtaḥt w-baʿdēn zurt immi. · I’m well. I rested and then visited my mother.
   Rationale: This reverses the completed activities.
 
-Lina describes herself as mnīḥa, then preserves visiting before resting.
+Fattoush describes herself as mnīḥa, then preserves visiting before resting.
 
-Retry hint: Keep Lina’s self-description and visit-before-rest order.
+Retry hint: Keep Fattoush’s self-description and visit-before-rest order.
 
-### e07-02: Omar’s follow-up refers to Lina’s mother. Answer about her, not yourself.
+### e07-02: Knafeh’s follow-up refers to Fattoush’s mother. Answer about her, not yourself.
 
 وكيفها؟
 
@@ -91,8 +91,8 @@ W-kīfha?
 
 And how is she?
 
-- **A** أنا منيحة. · Ana mnīḥa. · I’m well. (Lina speaking)
-  Rationale: Ana changes the answer to Lina’s own condition.
+- **A** أنا منيحة. · Ana mnīḥa. · I’m well. (Fattoush speaking)
+  Rationale: Ana changes the answer to Fattoush’s own condition.
 - **B** منيحين، شكراً. · Mnīḥīn, shukran. · They’re well, thank you.
   Rationale: The plural answer is about several people, not one mother.
 - **C (accepted)** منيحة. · Mnīḥa. · She’s well.
@@ -102,7 +102,7 @@ The mother is the most recently named woman. The answer stays about her.
 
 Retry hint: Keep the person referred to by -ha.
 
-### e07-03: Move from the completed day to an invitation for tomorrow. Address Omar.
+### e07-03: Move from the completed day to an invitation for tomorrow. Address Knafeh.
 
 منيحة.
 
@@ -110,14 +110,14 @@ Mnīḥa.
 
 She’s well.
 
-- **A (accepted)** شو رأيك ناكل سوا بكرا؟ · Shū raʾyak nākol sawa bukra? · What do you think about eating together tomorrow? (to Omar)
-  Rationale: This changes to a shared future meal and keeps Omar as the listener.
-- **B** شو عملت اليوم؟ · Shū ʿmilt il-yōm? · What did you do today? (to Omar)
+- **A (accepted)** شو رأيك ناكل سوا بكرا؟ · Shū raʾyak nākol sawa bukra? · What do you think about eating together tomorrow? (to Knafeh)
+  Rationale: This changes to a shared future meal and keeps Knafeh as the listener.
+- **B** شو عملت اليوم؟ · Shū ʿmilt il-yōm? · What did you do today? (to Knafeh)
   Rationale: This asks for another past activity report rather than inviting him.
-- **C** شو رأيك ناكل سوا اليوم؟ · Shū raʾyak nākol sawa il-yōm? · What do you think about eating together today? (to Omar)
+- **C** شو رأيك ناكل سوا اليوم؟ · Shū raʾyak nākol sawa il-yōm? · What do you think about eating together today? (to Knafeh)
   Rationale: This invites him for today, changing the agreed day.
 
-This changes to a shared future meal and keeps Omar as the listener.
+This changes to a shared future meal and keeps Knafeh as the listener.
 
 Retry hint: The invitation needs tomorrow.
 
@@ -140,43 +140,43 @@ Both dishes and the new time match the dialogue.
 
 Retry hint: Keep both the foods and the new clock time.
 
-### e07-05: Lina asks for the drink mentioned after the meal. Ask Omar politely for that drink.
+### e07-05: Fattoush asks for the drink mentioned after the meal. Ask Knafeh politely for that drink.
 
 بدك شاي ولا قهوة؟
 
 Biddik shāy walla ʾahwe?
 
-Do you want tea or coffee? (to Lina)
+Do you want tea or coffee? (to Fattoush)
 
-- **A** قهوة، لو سمحتي. · ʾAhwe, law samaḥti. · Coffee, please. (to Lina)
-  Rationale: This selects coffee and directs the request to Lina.
-- **B (accepted)** شاي، لو سمحت. · Shāy, law samaḥt. · Tea, please. (to Omar)
-  Rationale: Tea matches the new dialogue, and law samaḥt addresses Omar.
+- **A** قهوة، لو سمحتي. · ʾAhwe, law samaḥti. · Coffee, please. (to Fattoush)
+  Rationale: This selects coffee and directs the request to Fattoush.
+- **B (accepted)** شاي، لو سمحت. · Shāy, law samaḥt. · Tea, please. (to Knafeh)
+  Rationale: Tea matches the new dialogue, and law samaḥt addresses Knafeh.
 - **C** لا، شكراً. · Laʾ, shukran. · No, thank you.
   Rationale: This refuses the drink rather than requesting the one in the plan.
 
-Tea matches the new dialogue, and law samaḥt addresses Omar.
+Tea matches the new dialogue, and law samaḥt addresses Knafeh.
 
 Retry hint: Recall the last turn of the dialogue.
 
-### e07-06: You are Omar. After answering about yourself, return the check-in to Lina.
+### e07-06: You are Knafeh. After answering about yourself, return the check-in to Fattoush.
 
 أنا منيح.
 
 Ana mnīḥ.
 
-I’m well. (Omar speaking)
+I’m well. (Knafeh speaking)
 
-- **A (accepted)** وإنتِ؟ · W-inti? · And you? (to Lina)
-  Rationale: W-inti returns the check-in to Lina without introducing a different topic.
-- **B** وإنتَ؟ · W-inta? · And you? (to Omar)
-  Rationale: This addresses a man; Lina is the listener.
+- **A (accepted)** وإنتِ؟ · W-inti? · And you? (to Fattoush)
+  Rationale: W-inti returns the check-in to Fattoush without introducing a different topic.
+- **B** وإنتَ؟ · W-inta? · And you? (to Knafeh)
+  Rationale: This addresses a man; Fattoush is the listener.
 - **C** وكيفها؟ · W-kīfha? · And how is she?
   Rationale: This asks about a woman already mentioned rather than directly returning the check-in.
 
-W-inti returns the check-in to Lina without introducing a different topic.
+W-inti returns the check-in to Fattoush without introducing a different topic.
 
-Retry hint: Address Lina directly.
+Retry hint: Address Fattoush directly.
 
 ### e07-07: Closing exchange, part 1: in a new conversation, you worked and then rested. Tell that story without changing the order.
 
@@ -184,16 +184,16 @@ Retry hint: Address Lina directly.
 
 Shū ʿmilt il-yōm?
 
-What did you do today? (to Omar)
+What did you do today? (to Knafeh)
 
 - **A** ارتحت وبعدين اشتغلت. · Irtaḥt w-baʿdēn ishtaghalt. · I rested and then worked.
   Rationale: This reverses the requested order.
 - **B** زرت أمي وبعدين ارتحت. · Zurt immi w-baʿdēn irtaḥt. · I visited my mother and then rested.
-  Rationale: This repeats Lina’s earlier story instead of the new work scenario.
+  Rationale: This repeats Fattoush’s earlier story instead of the new work scenario.
 - **C (accepted)** اشتغلت وبعدين ارتحت. · Ishtaghalt w-baʿdēn irtaḥt. · I worked and then rested.
-  Rationale: You reuse the sequence pattern for work followed by rest, rather than copying Lina’s visit story.
+  Rationale: You reuse the sequence pattern for work followed by rest, rather than copying Fattoush’s visit story.
 
-You reuse the sequence pattern for work followed by rest, rather than copying Lina’s visit story.
+You reuse the sequence pattern for work followed by rest, rather than copying Fattoush’s visit story.
 
 Retry hint: Check the activity before baʿdēn.
 

@@ -1,5 +1,13 @@
 # Ismi Project Context
 
+## Planning loop — read this at task entry
+
+- Read [ROADMAP.md](ROADMAP.md) and [docs/planning-workflow.md](docs/planning-workflow.md) before planning or implementing a feature. The root roadmap is the single current feature-status and priority document; this file holds durable product constraints and working rules.
+- Match the owner's request to a roadmap feature by name or ID. Inspect its scope, completion evidence and the actual checkout before proposing implementation. If it already satisfies its criteria, say so and reconcile the roadmap instead of rebuilding it.
+- Keep ROADMAP.md current within the same task: status, bounded completion criteria, next action/decision, evidence and local/published/deployed distinctions. Mark authorized implementation Active; finish with Done only when its stated criteria are met, or record exact remaining work. Broad feature targets use child tasks; completed children do not complete their parent.
+- Treat docs/next-stage-handoff.md as frozen historical evidence and older feature plans as design context. Do not follow their stale branch/startup commands or “next” recommendations over current instructions and roadmap state. Put new verification detail in the relevant feature note and link it from the roadmap; do not append another status handoff.
+- Roadmap edits, status audits and “what's next” requests do not authorize unrequested product implementation. Existing owner authorization carries forward without repeated permission requests. A recommended priority does not itself authorize publication, deployment, spending, contacting people or unresolved provider/policy choices.
+
 ## Purpose
 
 Ismi is a web-first Arabic learning product inspired by Duolingo, focused exclusively on:
@@ -154,23 +162,13 @@ Do not include billing, a social network, or a live-news content operation in th
 - Keep AI and speech-provider credentials server-side.
 - Offline behavior will require a PWA-capable client, local lesson/progress storage, and later synchronization.
 
-## Current implementation
+## Implementation entry points and durable UX rules
 
-- The active repository uses the root-level directories `i-api`, `i-web`, and `i-tests`.
-- The Vue PWA has Today, Courses, Practice, and Account pages, seven published owner-approved Everyday conversations lessons, and six preserved demonstration fixtures. Lessons now teach phrases, invite recall before reveal, and mix contextual choices with bounded phrase reconstruction. Practice translations start hidden with optional help; animations honor reduced motion.
+- The active repository uses root-level `i-api`, `i-web`, and `i-tests`. See README.md for current development and hosting commands.
+- See ROADMAP.md for implemented scopes, remaining work, verification evidence and delivery state. Historical database/version checkpoints live in linked implementation notes; inspect the target database before making a current publication claim.
+- The bounded curriculum console permits Levantine publication and rejects MSA/Quranic publication until the required track-specific controls exist. Demo fixtures are delivery examples, not pedagogically complete launch curriculum or evidence of expert review.
 - Learner interactions have gentle local Web Audio chimes with a persistent mute switch; sounds begin after interaction, work offline, and stay quiet during Arabic prompt playback. Lesson cards fade/slide within a fixed-height dialog. Header, lesson stages and navigation stay outside the single internal scroll area and remain visible during teaching and practice. A clickable “Scroll for more” cue with a down arrow and bottom fade appears when content remains below, disappearing at the bottom. Do not animate the dialog/card height: the owner found resizing and shifting scroll behavior distracting. Outgoing cards are hidden/inert and reduced motion disables lesson animations. The learner palette uses green/red accents with charcoal and white space inspired by Pan-Arab colors.
 - The owner prefers concise functional interface copy, without promotional subtitles or repeated labels. The next-lesson card uses solid green/red surfaces; the sound button has no dot. Today keeps review details inside “About this lesson,” with sync notices shown only for offline/pending work; normal sync status lives in Account.
-- At the start of the guided teaching continuation, local check-in records 14–15 (lessons 1–2 v2) were already published; that local state supersedes the older handoff. Seven guided teaching packages now have 43 explicit source-linked phrase cards and contextual recall cues, all unapproved drafts: records 18–19 v3, 20–22 v2, and updated importer-owned records 16–17 v2. Earlier portable packages and published snapshots are preserved. See `content/levantine/everyday-01/revisions/guided-teaching/README.md`. No publication/deployment permission is inferred from the existing local state.
-- At the later October 1 UX inspection, the real owner console showed lesson 1 record 18 v3 already owner-approved/published; the other six guided packages remain drafts. The all-draft statement above describes the import checkpoint. No agent approval, publication or deployment occurred during this UX work.
-- On October 1, the owner requested the character introduction implementation and specified cartoonish corporate art. Lina/Omar portrait proposals, optional explicit roles, console mapping inspection and precached local assets now cover teaching, recall, practice, feedback, review/checkpoints and published-summary thumbnails. Seven metadata proposals are saved locally: lesson 1 record 23 v4; lesson 2 record 19 v3; lessons 3–5 records 20–22 v2; lessons 6–7 records 16–17 v2. Existing published snapshots and language/provenance are unchanged. Final design selection and publication/deployment remain pending; see `docs/characters/character-guide.md` and `content/levantine/everyday-01/revisions/characters/README.md`.
-- The next three lesson packages, the last dashboard snapshot, and pending completion events are stored in IndexedDB. The client can grade downloaded structured evaluation records offline, advance the path locally, and retry idempotent completion events after reconnection.
-- The API exposes dashboard, lesson, attempt, and completion endpoints. Authenticated progression is stored in SQLite and survives API restarts; guest server progress is isolated per browser and remains intentionally in memory, with the browser's offline queue handling reconnection.
-- Levantine prompts support owner-uploaded, immutable PCM WAV recordings with speaker/dialect labels, transcripts, source permissions, review notes, and publication-gated playback. Complete lesson/audio packages are atomically stored in IndexedDB after hash verification. No real speaker recordings ship yet; prompts without recordings retain the explicitly labeled browser/device voice preview.
-- Optional accounts support registration, login, logout, remembered browser sessions, and persistent per-user lesson progress while preserving guest study. Email confirmation, password reset, account deletion, and external identity providers remain unimplemented.
-- An owner-email-gated curriculum console now supports versioned Levantine drafts, provenance records, deterministic validation, human approval, publication, audit history, and rollback. Learner lesson endpoints serve only the currently published database version; the original demonstration lesson is migrated into that store on first startup.
-- The MSA and Quranic lessons, reviewed lesson audio assets, broader curriculum authoring experience, and production content workflow remain unimplemented. The bounded console explicitly rejects MSA and Quranic publication.
-- Playwright covers the mobile online-download, offline-reload, offline-completion, reconnection, exactly-once sync, and core keyboard-access path.
-- All six seeded lessons are demonstrative delivery fixtures, reuse the same small language set, and must not be described as a reviewed or pedagogically complete week of launch curriculum.
 
 ## Content and AI guardrails
 
@@ -205,5 +203,13 @@ Do not include billing, a social network, or a live-news content operation in th
 - Visual identity, mascot, tone, and notification strategy.
 
 ## Working rule for future agents
+
+Work directly on `main`. Do not create Codex branches, other feature branches, or additional worktrees unless the owner explicitly requests one. Preserve existing local changes when switching branches. Commits and pushes still follow the owner's authorization; pushing `main` triggers a frontend deployment.
+
+Use `npm run api` and `npm run web` from the repository root in two separate terminals for local development. The API uses `dotnet watch`; the frontend uses Vite. Ctrl+C stops only that terminal's server. `dotnet watch` is the default when starting the API directly as well. Do not restore a combined launcher unless the owner asks for one.
+
+Preserve the owner's edited landing page wording. Do not rewrite or add promotional copy unless explicitly requested. Landing entry now opens the real app with a skippable three-card welcome, shown once per browser after completion or dismissal; the old isolated sample is retired. Keep an explicit landing-page return link available on mobile and desktop, and size character portraits through `--portrait-size` so flex layout cannot distort their square sprite cells.
+
+The owner prefers richer green, red and gold surfaces over pastel fills. Frame the complete hero image with an outline; do not add decorative bubbles behind it. Reload starts at the top, clearing landing section hashes on reload while preserving learner routes. Explicit section navigation and shared section links still scroll to their targets.
 
 Treat the settled decisions above as constraints. Investigate facts instead of asking the user for information available in the repository or reliable primary sources. Put unresolved product decisions to the user with a recommended answer. Do not silently broaden scope or treat an aspiration such as "fluency" as a measurable release criterion.

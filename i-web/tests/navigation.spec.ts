@@ -4,7 +4,7 @@ import { finishTeaching, responseChoices } from './lesson-helpers'
 for (const width of [320, 390, 768, 1280]) {
   test(`focused pages and navigation fit at ${width}px`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 844 })
-    await page.goto('/')
+    await page.goto('/#/today')
     await expect(page.getByRole('button', { name: /Continue in Levantine/ })).toBeVisible()
     if (width === 390) await page.screenshot({ path: testInfo.outputPath('today.png'), scale: 'css' })
     await expect(page.getByRole('list', { name: 'Levantine course path' })).toHaveCount(0)

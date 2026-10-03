@@ -11,7 +11,7 @@ The pilot, language, recording, and accessibility limitations still apply.
 | --- | --- | --- | --- |
 | 1 | Day check-in and response | Day versus personal description; contrast; degree; named addressee | A different quiet day, then return the question |
 | 2 | Compare completed activities | First/second event; speaker; pronoun reference; past address | Rest before work, then confirm the day |
-| 3 | Offer and customize drinks | Choice versus combination; personal preference; polite acceptance/refusal | Roles reverse; order coffee from Lina without sugar |
+| 3 | Offer and customize drinks | Choice versus combination; personal preference; polite acceptance/refusal | Roles reverse; order coffee from Fattoush without sugar |
 | 4 | Agree on a meal | Hunger and negation; shared suggestion; two dishes | Suggest the meal and reuse the drink preference |
 | 5 | Family check-in | Possession; singular/plural reference; relevant follow-up | Mother’s location and an invitation to visit |
 | 6 | Arrange tomorrow | Shared action; day/time; whose family; after work | Change the time to seven and the activity to tea |

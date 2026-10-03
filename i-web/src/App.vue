@@ -25,6 +25,7 @@ import SoundToggle from './SoundToggle.vue'
 import ReviewPractice from './ReviewPractice.vue'
 import CharacterCast from './CharacterCast.vue'
 import CharacterCue from './CharacterCue.vue'
+import { isLearnerRoute } from './routes'
 import { evaluateOffline } from './evaluation'
 import { installUiSounds, playUiSound } from './uiSounds'
 import {
@@ -105,6 +106,7 @@ function navigate(destination: PageName) {
   window.location.hash = `/${destination}`
 }
 async function handlePageChange() {
+  if (!isLearnerRoute(window.location.hash)) return
   const destination = readPage()
   if (page.value === destination) return
   stopPromptAudio()
@@ -244,6 +246,7 @@ const syncStatus = computed(() => {
 })
 
 onMounted(async () => {
+  try { localStorage.setItem('ismi-learner-visited', 'yes') } catch { /* Study works without localStorage. */ }
   removeUiSounds = installUiSounds(() => speakingPromptId.value !== null || reviewAudioPlaying.value)
   window.addEventListener('online', handleOnline)
   window.addEventListener('hashchange', handlePageChange)
@@ -847,7 +850,7 @@ async function finishLesson() {
 
   <div class="app-shell" :inert="lessonOpen || consoleOpen || reviewOpen">
     <aside class="side-nav" aria-label="Primary navigation">
-      <a class="brand" href="#/today" aria-label="Ismi home">
+      <a class="brand" href="#" aria-label="Ismi landing page">
         <img class="brand-mark" src="/ismi-mark.svg" width="38" height="38" alt="" aria-hidden="true" />
         <span class="brand-word">ismi</span>
       </a>
@@ -864,13 +867,14 @@ async function finishLesson() {
       </nav>
 
       <div class="side-note">
+        <a class="landing-return" href="#">Back to landing page</a>
         <div class="sound-preference"><SoundToggle /><span>Interface sounds</span></div>
       </div>
     </aside>
 
     <main id="main-content" class="main-content" tabindex="-1">
       <header class="mobile-header">
-        <a class="brand" href="#/today" aria-label="Ismi home">
+        <a class="brand" href="#" aria-label="Ismi landing page">
           <img class="brand-mark" src="/ismi-mark.svg" width="38" height="38" alt="" aria-hidden="true" />
           <span class="brand-word">ismi</span>
         </a>
@@ -878,6 +882,8 @@ async function finishLesson() {
           <UserRound :size="23" aria-hidden="true" />
         </button></div>
       </header>
+
+      <a class="landing-return mobile-landing-return" href="#">Back to landing page</a>
 
       <p v-if="downloadError" role="status">{{ downloadError }}</p>
 

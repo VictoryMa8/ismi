@@ -1,7 +1,14 @@
 # Character metadata proposals
 
+October 2 update: repository packages now use Fattoush and Knafeh at the owner’s
+request, including the standalone Arabic character-name prompt. Historical
+publication statements below refer to predecessor database snapshots. Manifests
+preserve predecessor hashes and pin the renamed files; no database import,
+reapproval or publication was performed.
+
+
 October 1, 2026. Seven metadata-only proposals based on the preserved guided
-teaching packages. They attach Lina and Omar to 42 dialogue turns, 38 of the 43
+teaching packages. They attach Fattoush and Knafeh to 42 dialogue turns, 38 of the 43
 phrase cards, and 50 of the 56 practice steps. Five generic phrase cues and six
 topic/sequence/detail practice steps remain neutral. The original Arabic,
 transliteration, scenario, instructional text, answers, grading, explanations,

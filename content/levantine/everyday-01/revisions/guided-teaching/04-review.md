@@ -8,13 +8,13 @@ Goal: Say you are hungry, suggest eating together, and agree on a meal.
 
 أنا جوعان. · Ana jūʿān.
 
-I’m hungry. (Omar speaking)
+I’m hungry. (Knafeh speaking)
 
-Reuse ana from the check-in. Jūʿān describes Omar; jūʿāne describes Lina.
+Reuse ana from the check-in. Jūʿān describes Knafeh; jūʿāne describes Fattoush.
 
-Recall: You are Omar. Tell Lina you are hungry.
+Recall: You are Knafeh. Tell Fattoush you are hungry.
 
-أنا (ana) = I | جوعان (jūʿān) = hungry · Omar’s description
+أنا (ana) = I | جوعان (jūʿān) = hungry · Knafeh’s description
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://resources.lingualism.com/levantine-arabic/food-and-drink-3/, internal:ismi/everyday-01/04/guided-teaching
 
@@ -22,13 +22,13 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://res
 
 أنا جوعانة كمان. · Ana jūʿāne kamān.
 
-I’m hungry too. (Lina speaking)
+I’m hungry too. (Fattoush speaking)
 
-Lina uses jūʿāne for herself. Kamān adds too, connecting her feeling to Omar’s.
+Fattoush uses jūʿāne for herself. Kamān adds too, connecting her feeling to Knafeh’s.
 
-Recall: You are Lina. Omar is hungry, and so are you. Tell him.
+Recall: You are Fattoush. Knafeh is hungry, and so are you. Tell him.
 
-أنا (ana) = I | جوعانة (jūʿāne) = hungry · Lina’s description | كمان (kamān) = too
+أنا (ana) = I | جوعانة (jūʿāne) = hungry · Fattoush’s description | كمان (kamān) = too
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://resources.lingualism.com/levantine-arabic/food-and-drink-3/, internal:ismi/everyday-01/04/guided-teaching
 
@@ -36,13 +36,13 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://res
 
 شو رأيك ناكل سوا؟ · Shū raʾyak nākol sawa?
 
-What do you think about eating together? (to Omar)
+What do you think about eating together? (to Knafeh)
 
-Shū raʾyak asks Omar’s opinion. Nākol sawa supplies the idea: eating together. To Lina, the address is raʾyik.
+Shū raʾyak asks Knafeh’s opinion. Nākol sawa supplies the idea: eating together. To Fattoush, the address is raʾyik.
 
-Recall: You are Lina. Ask Omar what he thinks about eating together.
+Recall: You are Fattoush. Ask Knafeh what he thinks about eating together.
 
-شو رأيك (shū raʾyak) = what do you think · to Omar | ناكل (nākol) = we eat | سوا (sawa) = together
+شو رأيك (shū raʾyak) = what do you think · to Knafeh | ناكل (nākol) = we eat | سوا (sawa) = together
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, https://resources.lingualism.com/levantine-arabic/food-and-drink-3/, internal:ismi/everyday-01/04/guided-teaching
 
@@ -78,13 +78,13 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://res
 
 أنا مش جوعان هلّق. · Ana mish jūʿān hallaʾ.
 
-I’m not hungry now. (Omar speaking)
+I’m not hungry now. (Knafeh speaking)
 
-Mish negates this description of Omar. Hallaʾ limits it to now. This is a description pattern, not a rule for every verb.
+Mish negates this description of Knafeh. Hallaʾ limits it to now. This is a description pattern, not a rule for every verb.
 
-Recall: You are Omar on another evening. Say you are not hungry now.
+Recall: You are Knafeh on another evening. Say you are not hungry now.
 
-أنا (ana) = I | مش (mish) = not | جوعان (jūʿān) = hungry · Omar’s description | هلّق (hallaʾ) = now
+أنا (ana) = I | مش (mish) = not | جوعان (jūʿān) = hungry · Knafeh’s description | هلّق (hallaʾ) = now
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, internal:ismi/everyday-01/04/guided-teaching
 

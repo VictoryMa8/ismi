@@ -6,7 +6,7 @@ const revision = JSON.parse(readFileSync(new URL('../../content/levantine/everyd
 
 test('teaching supports recall, bounded phrase assembly, optional translations and keyboard retry', async ({ page }, testInfo) => {
   test.setTimeout(90_000)
-  await page.goto('/')
+  await page.goto('/#/today')
   const csrf = await (await page.request.get('/api/auth/csrf')).json()
   const credentials = { displayName: 'Preview owner', email: 'preview-owner@example.test', password: 'test-only-long-password' }
   const register = await page.request.post('/api/auth/register', { data: credentials, headers: { 'X-CSRF-TOKEN': csrf.token } })

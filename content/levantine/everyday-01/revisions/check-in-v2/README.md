@@ -1,4 +1,11 @@
 > Historical package set: at the start of the guided teaching continuation,
+
+October 2 update: repository packages now use Fattoush and Knafeh at the owner’s
+request, including the standalone Arabic character-name prompt. Historical
+publication statements below refer to predecessor database snapshots. Manifests
+preserve predecessor hashes and pin the renamed files; no database import,
+reapproval or publication was performed.
+
 > local records 14–15 were already published v2; records 16–17 were still drafts.
 > These portable packages and their hashes remain unchanged. The current seven
 > proposals and local records are in [guided teaching](../guided-teaching/README.md).
@@ -13,14 +20,14 @@ The original v1 packages and manifest remain intact for provenance and rollback.
 ## What changed
 
 Lesson 1 becomes **Check in with someone you love**. Its six-turn exchange teaches
-`شو عامل؟` as a casual check-in to Omar, an answer about the speaker's current
+`شو عامل؟` as a casual check-in to Knafeh, an answer about the speaker's current
 condition, and a question back. It explicitly teaches feminine address and
 self-description, mild tiredness, and accepting a rest. Six teaching cards carry
 phrase blocks and short explanations. Eight contextual exercises keep varied
 answer positions and reviewed-answer rationales ready for owner review.
 
 Lessons 2 and 6 replace the old check-in distractor with the casual question and
-update the rationale. Lesson 7 checks in with Lina, answers about her condition,
+update the rationale. Lesson 7 checks in with Fattoush, answers about her condition,
 then reports activities; its dialogue, practice, expressions and notes agree.
 Lesson IDs, step IDs, unit order and completion identity are preserved.
 

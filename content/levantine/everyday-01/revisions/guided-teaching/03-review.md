@@ -8,13 +8,13 @@ Goal: Offer a drink, express a preference, and politely accept or decline.
 
 بدك شاي ولا قهوة؟ · Biddik shāy walla ʾahwe?
 
-Do you want tea or coffee? (to Lina)
+Do you want tea or coffee? (to Fattoush)
 
-Biddik addresses Lina. Walla offers alternatives: tea or coffee. Biddak is the form for Omar.
+Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.
 
-Recall: You are Omar. Offer Lina tea or coffee.
+Recall: You are Knafeh. Offer Fattoush tea or coffee.
 
-بدك (biddik) = do you want · to Lina | شاي (shāy) = tea | ولا (walla) = or | قهوة (ʾahwe) = coffee
+بدك (biddik) = do you want · to Fattoush | شاي (shāy) = tea | ولا (walla) = or | قهوة (ʾahwe) = coffee
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, https://resources.lingualism.com/levantine-arabic/food-and-drink-3/, internal:ismi/everyday-01/03/guided-teaching
 
@@ -22,13 +22,13 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://med
 
 شاي، لو سمحت. · Shāy, law samaḥt.
 
-Tea, please. (to Omar)
+Tea, please. (to Knafeh)
 
-Name the drink, then add law samaḥt when asking Omar. The polite ending follows your listener.
+Name the drink, then add law samaḥt when asking Knafeh. The polite ending follows your listener.
 
-Recall: You are Lina. Ask Omar for tea politely.
+Recall: You are Fattoush. Ask Knafeh for tea politely.
 
-شاي (shāy) = tea | لو سمحت (law samaḥt) = please · to Omar
+شاي (shāy) = tea | لو سمحت (law samaḥt) = please · to Knafeh
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, https://resources.lingualism.com/levantine-arabic/food-and-drink-3/, internal:ismi/everyday-01/03/guided-teaching
 
@@ -40,7 +40,7 @@ No, without sugar, thank you.
 
 Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.
 
-Recall: Omar asks about sugar. Say no sugar and thank him.
+Recall: Knafeh asks about sugar. Say no sugar and thank him.
 
 لا (laʾ) = no | بدون (bidūn) = without | سكر (sukkar) = sugar | شكراً (shukran) = thank you
 
@@ -54,7 +54,7 @@ I like tea more.
 
 Baḥibb says what you like. Aktar adds more, comparing tea with the coffee in this scene.
 
-Recall: Omar asks why you chose tea. Say you like it more.
+Recall: Knafeh asks why you chose tea. Say you like it more.
 
 بحب (baḥibb) = I like | الشاي (ish-shāy) = tea · the tea | أكتر (aktar) = more
 
@@ -66,9 +66,9 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://res
 
 I want tea.
 
-Biddi means I want. Changing biddik to biddi changes a question about Lina into your own request.
+Biddi means I want. Changing biddik to biddi changes a question about Fattoush into your own request.
 
-Recall: You are Lina. Say that you yourself want tea.
+Recall: You are Fattoush. Say that you yourself want tea.
 
 بدي (biddi) = I want | شاي (shāy) = tea
 
@@ -78,13 +78,13 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://med
 
 قهوة، لو سمحتي. · ʾAhwe, law samaḥti.
 
-Coffee, please. (to Lina)
+Coffee, please. (to Fattoush)
 
-Now Lina is serving Omar. Law samaḥti addresses Lina; the drink does not decide that ending.
+Now Fattoush is serving Knafeh. Law samaḥti addresses Fattoush; the drink does not decide that ending.
 
-Recall: You are Omar. Lina is hosting. Ask her for coffee politely.
+Recall: You are Knafeh. Fattoush is hosting. Ask her for coffee politely.
 
-قهوة (ʾahwe) = coffee | لو سمحتي (law samaḥti) = please · to Lina
+قهوة (ʾahwe) = coffee | لو سمحتي (law samaḥti) = please · to Fattoush
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, https://resources.lingualism.com/levantine-arabic/food-and-drink-3/, internal:ismi/everyday-01/03/guided-teaching
 

@@ -8,13 +8,13 @@ Goal: Describe two completed activities in order and answer a relevant follow-up
 
 شو عملتي اليوم؟ · Shū ʿmilti il-yōm?
 
-What did you do today? (to Lina)
+What did you do today? (to Fattoush)
 
-ʿMilti addresses Lina; ʿmilt addresses Omar. Il-yōm keeps the question about today.
+ʿMilti addresses Fattoush; ʿmilt addresses Knafeh. Il-yōm keeps the question about today.
 
-Recall: You are Omar. Ask Lina what she did today.
+Recall: You are Knafeh. Ask Fattoush what she did today.
 
-شو (shū) = what | عملتي (ʿmilti) = did you do · to Lina | اليوم (il-yōm) = today
+شو (shū) = what | عملتي (ʿmilti) = did you do · to Fattoush | اليوم (il-yōm) = today
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, https://resources.lingualism.com/levantine-arabic/verbs-3/, internal:ismi/everyday-01/02/guided-teaching
 
@@ -40,7 +40,7 @@ I went home and then rested.
 
 Ruḥt and irtaḥt are completed actions. These I-forms work for either speaker; the story order carries the meaning.
 
-Recall: You went home, then rested. Tell Omar both events.
+Recall: You went home, then rested. Tell Knafeh both events.
 
 رحت (ruḥt) = I went | عالبيت (ʿa-l-bēt) = home · to the house | وبعدين (w-baʿdēn) = and then | ارتحت (irtaḥt) = I rested
 
@@ -54,7 +54,7 @@ And then?
 
 Reuse the same linking piece as a short follow-up. You are asking what happened next.
 
-Recall: Omar says he went home. Ask what happened next.
+Recall: Knafeh says he went home. Ask what happened next.
 
 وبعدين (w-baʿdēn) = and then?
 
@@ -68,7 +68,7 @@ And how is she?
 
 The ending -ha refers back to the mother just mentioned. It asks about her, rather than the person you are speaking to.
 
-Recall: Lina says she visited her mother. Ask how her mother is.
+Recall: Fattoush says she visited her mother. Ask how her mother is.
 
 وكيفها (w-kīfha) = and how is she? · mother
 
@@ -82,7 +82,7 @@ Yes, today.
 
 A short answer is enough when the question supplies the activity. Āh confirms; il-yōm keeps the day clear.
 
-Recall: Lina asks whether your activities were today. Confirm they were.
+Recall: Fattoush asks whether your activities were today. Confirm they were.
 
 آه (āh) = yes | اليوم (il-yōm) = today
 

@@ -1,3 +1,4 @@
+import { renameCharacterContent } from './characters'
 import type { DashboardResponse, LessonResponse, PendingCompletion } from './types'
 
 const databaseName = 'ismi-offline'
@@ -114,7 +115,7 @@ export async function recordingPlaybackUrl(url: string): Promise<string> {
 }
 
 export function getCachedLesson(lessonId: string): Promise<LessonResponse | undefined> {
-  return useStore(lessonStore, 'readonly', store => store.get(lessonId))
+  return useStore<LessonResponse | undefined>(lessonStore, 'readonly', store => store.get(lessonId)).then(renameCharacterContent)
 }
 
 export function removeCachedLesson(lessonId: string): Promise<undefined> {
@@ -173,7 +174,7 @@ export type ReviewHistory = {
 
 export async function getReviewHistory(scope: string): Promise<ReviewHistory[]> {
   return (await useStore<ReviewHistory[]>(reviewStore, 'readonly', store => store.getAll()))
-    .filter(item => item.scope === scope)
+    .filter(item => item.scope === scope).map(renameCharacterContent)
 }
 
 export async function saveReviewAttempt(

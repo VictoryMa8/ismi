@@ -1,3 +1,16 @@
+# Historical implementation checkpoints — frozen October 2, 2026
+
+**Current planning moved to [ROADMAP.md](../ROADMAP.md).** Follow
+[the planning workflow](planning-workflow.md) and current AGENTS.md/README.md.
+The original checkpoint text below is preserved as evidence and authorization
+history. Its “current,” “next,” open-preview descriptions, test counts, branch
+instructions and startup commands apply to their recorded checkpoints. They are
+not current instructions or fresh publication/deployment verification.
+
+Do not append new status here. Update the roadmap and the relevant feature note.
+
+---
+
 # Character introduction implementation — October 1, 2026
 
 Latest deployment request: the owner authorized pushing the tested working tree
@@ -10,7 +23,7 @@ ready. Historical no-deployment statements describe their implementation checkpo
 The owner requested implementation of `docs/character-introduction-plan.md`, then
 clarified the art direction as cartoonish corporate illustration. The new
 [character guide](characters/character-guide.md), exact generation prompt and
-asset provenance document the proposed Lina/Omar designs. The eight-view sheet
+asset provenance document the proposed Fattoush/Knafeh designs. The eight-view sheet
 is bundled as a 42 KB WebP with static neutral, attentive and encouraging portraits.
 Final design selection remains with the owner.
 

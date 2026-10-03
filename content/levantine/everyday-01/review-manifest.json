@@ -1,86 +1,100 @@
 {
   "asOf": "2026-09-26",
   "foundationApproved": true,
-  "contentApproved": true,
-  "published": true,
+  "contentApproved": false,
+  "published": false,
   "localDatabase": "i-api/App_Data/ismi.db",
   "lessons": [
     {
       "id": "levantine-everyday-01-01",
       "version": 1,
       "localRecordId": 7,
-      "status": "published",
+      "status": "renamed-repository-package",
       "package": "01-lesson.json",
-      "sha256": "b16f77b0c9b91ceee4885831a944b833edf11b92fc808622f4b67fadb705ba4e",
+      "sha256": "496fe8eaa26fe744fa68dae3734935146d5d1ea829aca7064941a11bb2f97ddf",
       "interactions": 8,
       "dialogueTurns": 6,
-      "estimatedMinutes": 7
+      "estimatedMinutes": 7,
+      "preRenameSha256": "b16f77b0c9b91ceee4885831a944b833edf11b92fc808622f4b67fadb705ba4e",
+      "historicalStoredStatus": "published"
     },
     {
       "id": "levantine-everyday-01-02",
       "version": 1,
       "localRecordId": 8,
-      "status": "published",
+      "status": "renamed-repository-package",
       "package": "02-lesson.json",
-      "sha256": "9c16f77decf6b436a785bd9b5136d4b25d4f5709fee212656d6730429a0d0b34",
+      "sha256": "e933a9a152134c59a1ff0c25cd4e9f26be9495c142f2ccd292b10a02b273d68a",
       "interactions": 8,
       "dialogueTurns": 6,
-      "estimatedMinutes": 6
+      "estimatedMinutes": 6,
+      "preRenameSha256": "9c16f77decf6b436a785bd9b5136d4b25d4f5709fee212656d6730429a0d0b34",
+      "historicalStoredStatus": "published"
     },
     {
       "id": "levantine-everyday-01-03",
       "version": 1,
       "localRecordId": 9,
-      "status": "published",
+      "status": "renamed-repository-package",
       "package": "03-lesson.json",
-      "sha256": "3325265586e0f9adfbf8ee25452ab5dfe69bce741a0d65ba120fe0f2297b3ad8",
+      "sha256": "fb671613684b3f260ab0acdd1328c68ae95bbfd8dde444902f2c56c97fd7d5ac",
       "interactions": 8,
       "dialogueTurns": 6,
-      "estimatedMinutes": 6
+      "estimatedMinutes": 6,
+      "preRenameSha256": "3325265586e0f9adfbf8ee25452ab5dfe69bce741a0d65ba120fe0f2297b3ad8",
+      "historicalStoredStatus": "published"
     },
     {
       "id": "levantine-everyday-01-04",
       "version": 1,
       "localRecordId": 10,
-      "status": "published",
+      "status": "renamed-repository-package",
       "package": "04-lesson.json",
-      "sha256": "3f0ac045064e76e4cf428915413bd418c8691641b08cab58d3a8a45e4fbd869b",
+      "sha256": "390916b1cb475ad9c36bccae7a8a4d822d97a667f3d4ac2cb3fdac5198e57c6d",
       "interactions": 8,
       "dialogueTurns": 6,
-      "estimatedMinutes": 7
+      "estimatedMinutes": 7,
+      "preRenameSha256": "3f0ac045064e76e4cf428915413bd418c8691641b08cab58d3a8a45e4fbd869b",
+      "historicalStoredStatus": "published"
     },
     {
       "id": "levantine-everyday-01-05",
       "version": 1,
       "localRecordId": 11,
-      "status": "published",
+      "status": "renamed-repository-package",
       "package": "05-lesson.json",
-      "sha256": "aa8782aa1d604d9948c33cf90f2a167fb1132efe07edfadcc596867c4ffb9241",
+      "sha256": "9f99f561e43ec6fe48385e59534c97ab391b496cb8e67a928dcbba9e6d2c1c2b",
       "interactions": 8,
       "dialogueTurns": 6,
-      "estimatedMinutes": 7
+      "estimatedMinutes": 7,
+      "preRenameSha256": "aa8782aa1d604d9948c33cf90f2a167fb1132efe07edfadcc596867c4ffb9241",
+      "historicalStoredStatus": "published"
     },
     {
       "id": "levantine-everyday-01-06",
       "version": 1,
       "localRecordId": 12,
-      "status": "published",
+      "status": "renamed-repository-package",
       "package": "06-lesson.json",
-      "sha256": "0f63704c9be0c5010bb3e1ec68277e885556b7267acc8c1736f656c7be35782c",
+      "sha256": "de882cdeea46860682c640f1e3e4ab5cd379448eb181d774e48f31241bf73589",
       "interactions": 8,
       "dialogueTurns": 6,
-      "estimatedMinutes": 7
+      "estimatedMinutes": 7,
+      "preRenameSha256": "0f63704c9be0c5010bb3e1ec68277e885556b7267acc8c1736f656c7be35782c",
+      "historicalStoredStatus": "published"
     },
     {
       "id": "levantine-everyday-01-07",
       "version": 1,
       "localRecordId": 13,
-      "status": "published",
+      "status": "renamed-repository-package",
       "package": "07-lesson.json",
-      "sha256": "b2ec4fa72ee3dc83c01a2fe4adb2aad8d122ad147dcc05f7e1610a7e3c06eb98",
+      "sha256": "7b5b1f7233fe65faf5bf3827f7b6beed93a3e3125094792047cd55198c980c08",
       "interactions": 8,
       "dialogueTurns": 6,
-      "estimatedMinutes": 7
+      "estimatedMinutes": 7,
+      "preRenameSha256": "b2ec4fa72ee3dc83c01a2fe4adb2aad8d122ad147dcc05f7e1610a7e3c06eb98",
+      "historicalStoredStatus": "published"
     }
   ],
   "publication": {
@@ -94,8 +108,18 @@
     "frontend": "https://ismi-ruby.vercel.app",
     "api": "https://ismi.alwaysdata.net",
     "commit": "a5ef7dc619ae7eb775769fb05789fa195e1d5492",
-    "versions": "Seven v1 packages; live records 7–13",
+    "versions": "Seven v1 packages; live records 7\u201313",
     "authorization": "Owner explicitly instructed: Approve for me, publish, and figure out whats next for ismi",
     "verification": "All seven live lesson endpoints returned v1, eight exercises and six dialogue turns; dashboard placed them before six retained demonstration lessons."
+  },
+  "characterRename": {
+    "date": "2026-10-02",
+    "status": "owner-requested repository rename; no publication performed",
+    "note": "Publication/version references describe predecessor database snapshots. Hashes describe renamed repository packages. No publication or reapproval occurred."
+  },
+  "historicalPublication": {
+    "asOf": "2026-09-26",
+    "published": true,
+    "contentApproved": true
   }
 }

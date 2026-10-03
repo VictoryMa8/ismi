@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Ismi.Api.Models;
 
 namespace Ismi.Api.Services;
@@ -8,8 +9,20 @@ public static class CharacterRegistry
     public const string Version = "ismi-cast-v1";
     private static readonly IReadOnlyDictionary<string, string> Names = new Dictionary<string, string>
     {
-        ["lina"] = "Lina", ["omar"] = "Omar"
+        ["fattoush"] = "Fattoush", ["knafeh"] = "Knafeh",
+        // Legacy IDs remain readable in immutable published content.
+        ["lina"] = "Fattoush", ["omar"] = "Knafeh"
     };
+
+    // Display rename only: the persisted publication and its audit history stay intact.
+    public static string CurrentNames(string text) => Regex.Replace(text,
+        @"\b(Lina|Omar|lina|omar)\b|لينا|\\u0644\\u064[Aa]\\u0646\\u0627",
+        match => match.Value switch
+        {
+            "Lina" => "Fattoush", "Omar" => "Knafeh",
+            "lina" => "fattoush", "omar" => "knafeh", "لينا" => "فتوش",
+            _ => "فتوش"
+        });
 
     public static void Validate(LessonResponse lesson, List<string> errors)
     {
@@ -21,7 +34,7 @@ public static class CharacterRegistry
                 errors.Add("Character cast needs one or two bundled character IDs.");
             else
             {
-                if (cast.CharacterIds.Distinct(StringComparer.Ordinal).Count() != cast.CharacterIds.Count)
+                if (cast.CharacterIds.Select(id => id is null ? null : CurrentNames(id)).Distinct(StringComparer.Ordinal).Count() != cast.CharacterIds.Count)
                     errors.Add("Character cast has duplicate IDs.");
                 foreach (var id in cast.CharacterIds)
                     if (id is null || !Names.ContainsKey(id)) errors.Add($"Unknown character ID '{id}'.");
@@ -36,10 +49,10 @@ public static class CharacterRegistry
             foreach (var id in new[] { speaker, addressee }.Where(id => id is not null))
             {
                 if (!Known(id)) errors.Add($"{label}: unknown character ID '{id}'.");
-                if (cast?.CharacterIds?.Contains(id!) != true)
+                if (cast?.CharacterIds?.Any(castId => castId is not null && CurrentNames(castId) == CurrentNames(id!)) != true)
                     errors.Add($"{label}: character '{id}' must be in this lesson's cast.");
             }
-            if (speaker is not null && speaker == addressee) errors.Add($"{label}: speaker and addressee must differ.");
+            if (speaker is not null && addressee is not null && CurrentNames(speaker) == CurrentNames(addressee)) errors.Add($"{label}: speaker and addressee must differ.");
         }
 
         foreach (var turn in lesson.Introduction?.Dialogue ?? [])
@@ -47,8 +60,8 @@ public static class CharacterRegistry
             Pair(turn.SpeakerId, turn.AddresseeId, "Dialogue");
             // Display strings remain intact; explicit identities must agree with authored labels.
             if (Known(turn.SpeakerId) && Known(turn.AddresseeId) &&
-                turn.Speaker != Names[turn.SpeakerId!] &&
-                turn.Speaker != $"{Names[turn.SpeakerId!]} → {Names[turn.AddresseeId!]}")
+                CurrentNames(turn.Speaker) != Names[turn.SpeakerId!] &&
+                CurrentNames(turn.Speaker) != $"{Names[turn.SpeakerId!]} → {Names[turn.AddresseeId!]}")
                 errors.Add("Dialogue character roles conflict with the speaker label.");
             if (cast is not null && turn.SpeakerId is null) errors.Add("A character scene needs explicit dialogue speaker/addressee IDs.");
         }

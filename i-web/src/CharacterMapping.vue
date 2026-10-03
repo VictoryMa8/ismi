@@ -56,9 +56,9 @@ const preview = computed(() => {
         <dl><div v-for="row in preview.rows" :key="row.label"><dt>{{ row.label }}</dt><dd>{{ row.text }}</dd></div></dl>
       </details>
     </template>
-    <details class="character-design-review"><summary>Lina and Omar · proposed character designs</summary>
-      <p>Flat corporate cartoon treatment. Lina above, Omar below: neutral, attentive, encouraging, profile. Final designs await owner selection.</p>
-      <img src="/characters/v1/cast.webp" alt="Two rows of adult cartoon portraits: Lina with wavy hair and a green shirt; Omar with curly hair, a beard and a terracotta shirt. Each row shows neutral, attentive, encouraging and profile views." width="1536" height="1024" />
+    <details class="character-design-review"><summary>Fattoush and Knafeh · proposed character designs</summary>
+      <p>Flat corporate cartoon treatment. Fattoush above, Knafeh below: neutral, attentive, encouraging, profile. Final designs await owner selection.</p>
+      <img src="/characters/v1/cast.webp" alt="Two rows of adult cartoon portraits: Fattoush with wavy hair and a green shirt; Knafeh with curly hair, a beard and a terracotta shirt. Each row shows neutral, attentive, encouraging and profile views." width="1536" height="1024" />
     </details>
   </section>
 </template>

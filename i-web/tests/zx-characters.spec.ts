@@ -4,7 +4,7 @@ import { finishTeaching, responseChoices } from './lesson-helpers'
 import type { LessonResponse } from '../src/types'
 
 const proposal = JSON.parse(readFileSync(new URL('../../content/levantine/everyday-01/revisions/characters/01-lesson.json', import.meta.url), 'utf8'))
-const names: Record<string, string> = { lina: 'Lina', omar: 'Omar' }
+const names: Record<string, string> = { fattoush: 'Fattoush', knafeh: 'Knafeh' }
 test.use({ serviceWorkers: 'block' })
 
 for (const imagesFail of [false, true]) {
@@ -12,7 +12,7 @@ for (const imagesFail of [false, true]) {
     test.setTimeout(90_000)
     if (imagesFail) await page.route('**/characters/v1/cast.webp', route => route.abort())
     await page.emulateMedia({ reducedMotion: 'reduce' })
-    await page.goto('/')
+    await page.goto('/#/today')
     const errors: string[] = []
     page.on('pageerror', error => errors.push(error.message))
     async function post(path: string, data: unknown) {
@@ -35,8 +35,8 @@ for (const imagesFail of [false, true]) {
     const dialog = page.getByRole('dialog', { name: pack.lesson.title, exact: true })
     const labels = dialog.locator('.dialogue-transcript .character-label')
     await expect(labels).toHaveCount(6)
-    await expect(labels.nth(0).locator('strong')).toHaveText('Lina → Omar')
-    await expect(labels.nth(2).locator('strong')).toHaveText('Lina → Omar')
+    await expect(labels.nth(0).locator('strong')).toHaveText('Fattoush → Knafeh')
+    await expect(labels.nth(2).locator('strong')).toHaveText('Fattoush → Knafeh')
     // Portraits never create duplicate accessible names.
     await expect(dialog.getByRole('img')).toHaveCount(0)
     if (imagesFail) {
@@ -52,9 +52,9 @@ for (const imagesFail of [false, true]) {
       await page.screenshot({ path: testInfo.outputPath(`scene-${width}.png`) })
     }
     await dialog.getByRole('button', { name: 'Learn the phrases' }).click()
-    await expect(dialog.locator('.teaching-page > .character-label strong')).toHaveText('Lina → Omar')
+    await expect(dialog.locator('.teaching-page > .character-label strong')).toHaveText('Fattoush → Knafeh')
     await dialog.getByRole('button', { name: 'Try from memory' }).click()
-    await expect(dialog.locator('.teaching-page > .character-label strong')).toHaveText('Lina → Omar')
+    await expect(dialog.locator('.teaching-page > .character-label strong')).toHaveText('Fattoush → Knafeh')
     await expect(dialog.locator('.phrase-spotlight')).toHaveCount(0)
     await page.screenshot({ path: testInfo.outputPath('recall.png') })
     await dialog.getByRole('button', { name: 'Reveal phrase' }).click()
@@ -93,11 +93,56 @@ test('unknown character references retain authored text and usable teaching', as
   lesson.characters!.registryVersion = 'future-registry'
   lesson.introduction!.dialogue[0]!.speakerId = 'future-character'
   await page.route('**/api/lessons/levantine-day-01', route => route.fulfill({ json: lesson }))
-  await page.goto('/')
+  await page.goto('/#/today')
   await page.getByRole('button', { name: /Continue in Levantine/ }).click()
   const dialog = page.getByRole('dialog')
-  await expect(dialog.locator('.dialogue-transcript .character-label strong').first()).toHaveText('Lina → Omar')
+  await expect(dialog.locator('.dialogue-transcript .character-label strong').first()).toHaveText('Fattoush → Knafeh')
   await expect(dialog.locator('.character-portrait img')).toHaveCount(0)
   await dialog.getByRole('button', { name: 'Learn the phrases' }).click()
   await expect(dialog.getByRole('button', { name: 'Try from memory' })).toBeEnabled()
+})
+
+test.describe('legacy offline compatibility', () => {
+  test.use({ serviceWorkers: 'allow' })
+
+test('legacy downloaded character packages use current names after offline reload', async ({ page, context }) => {
+  const legacy = JSON.parse(JSON.stringify(proposal.lesson)
+    .replaceAll('Fattoush', 'Lina').replaceAll('Knafeh', 'Omar')
+    .replaceAll('fattoush', 'lina').replaceAll('knafeh', 'omar').replaceAll('فتوش', 'لينا'))
+  legacy.id = 'levantine-day-01'
+  await page.route('**/api/lessons/levantine-day-01', route => route.fulfill({ json: legacy }))
+  await page.goto('/#/today')
+  await expect.poll(() => page.evaluate(async () => {
+    // Observe initialization without accidentally creating an empty v3 database.
+    if (!(await indexedDB.databases()).some(db => db.name === 'ismi-offline')) return 0
+    const db = await new Promise<IDBDatabase>(resolve => { const r = indexedDB.open('ismi-offline'); r.onsuccess = () => resolve(r.result) })
+    if (!db.objectStoreNames.contains('lessons')) { db.close(); return 0 }
+    const count = await new Promise<number>(resolve => { const r = db.transaction('lessons').objectStore('lessons').count(); r.onsuccess = () => resolve(r.result) })
+    db.close(); return count
+  })).toBeGreaterThanOrEqual(3)
+  await page.evaluate(async () => { await navigator.serviceWorker.ready; if (!navigator.serviceWorker.controller) location.reload() })
+  await page.waitForLoadState('domcontentloaded')
+  // Simulate an immutable package downloaded before the rename.
+  await page.evaluate(async lesson => {
+    const db = await new Promise<IDBDatabase>((resolve, reject) => {
+      const request = indexedDB.open('ismi-offline', 3)
+      request.onsuccess = () => resolve(request.result)
+      request.onerror = () => reject(request.error)
+    })
+    await new Promise<void>((resolve, reject) => {
+      const transaction = db.transaction('lessons', 'readwrite')
+      transaction.objectStore('lessons').put(lesson)
+      transaction.oncomplete = () => resolve()
+      transaction.onerror = () => reject(transaction.error)
+    })
+    db.close()
+  }, legacy)
+  await context.setOffline(true)
+  await page.reload()
+  await page.getByRole('button', { name: /Continue in Levantine/ }).click()
+  const dialog = page.getByRole('dialog')
+  await expect(dialog.locator('.character-label strong').first()).toHaveText('Fattoush → Knafeh')
+  await expect(dialog).not.toContainText(/Lina|Omar/)
+  await expect(dialog.locator('.character-portrait img').first()).toBeVisible()
+})
 })

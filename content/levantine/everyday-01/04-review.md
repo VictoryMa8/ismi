@@ -4,19 +4,19 @@
 
 Goal: Say you are hungry, suggest eating together, and agree on a meal.
 
-Lina and Omar decide on a simple meal at home. Neither has to guess what the other person wants.
+Fattoush and Knafeh decide on a simple meal at home. Neither has to guess what the other person wants.
 
 ## Dialogue / recording script
 
-**Omar**
+**Knafeh**
 
 أنا جوعان.
 
 Ana jūʿān.
 
-I’m hungry. (Omar speaking)
+I’m hungry. (Knafeh speaking)
 
-**Lina → Omar**
+**Fattoush → Knafeh**
 
 أنا جوعانة كمان. شو رأيك ناكل سوا؟
 
@@ -24,7 +24,7 @@ Ana jūʿāne kamān. Shū raʾyak nākol sawa?
 
 I’m hungry too. What do you think about eating together?
 
-**Omar**
+**Knafeh**
 
 نعمل رز وسلطة؟
 
@@ -32,7 +32,7 @@ Niʿmal ruzz w-salaṭa?
 
 Shall we make rice and salad?
 
-**Lina**
+**Fattoush**
 
 آه، خلّينا نعمل رز وسلطة.
 
@@ -40,7 +40,7 @@ Shall we make rice and salad?
 
 Yes, let’s make rice and salad.
 
-**Omar**
+**Knafeh**
 
 بدك شاي مع الأكل؟
 
@@ -48,7 +48,7 @@ Biddik shāy maʿ il-akel?
 
 Do you want tea with the food?
 
-**Lina**
+**Fattoush**
 
 آه، بدون سكر.
 
@@ -58,59 +58,59 @@ Yes, without sugar.
 
 ## Teaching note
 
-Jūʿān describes Omar; jūʿāne describes Lina. Kamān adds “too.” To negate this description, put mish before it: ana mish jūʿān. This is a pattern for a description; do not treat it as a universal recipe for negating every Arabic verb. Shū raʾyak…? asks Omar’s opinion; shū raʾyik…? addresses Lina. Learn khallīna niʿmal… as a useful “let’s make…” chunk. Sawa means together, while w links the two foods. Read each role, then choose a meal you could suggest using these expressions. No recording or timed response is required.
+Jūʿān describes Knafeh; jūʿāne describes Fattoush. Kamān adds “too.” To negate this description, put mish before it: ana mish jūʿān. This is a pattern for a description; do not treat it as a universal recipe for negating every Arabic verb. Shū raʾyak…? asks Knafeh’s opinion; shū raʾyik…? addresses Fattoush. Learn khallīna niʿmal… as a useful “let’s make…” chunk. Sawa means together, while w links the two foods. Read each role, then choose a meal you could suggest using these expressions. No recording or timed response is required.
 
 Urban Palestinian teaching target. Jūʿān is the selected form; jaʿān is also documented in Palestinian references, but is not a distractor treated as wrong. Feminine descriptions use jūʿāne here. Raʾyak and raʾyik mark the addressee. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.
 
 ## Practice and closing exchange
 
-### 1. Omar is hungry. Say that directly in Omar’s role.
+### 1. Knafeh is hungry. Say that directly in Knafeh’s role.
 
 شو بدك تاكل؟
 
 Shū biddak tākol?
 
-What do you want to eat? (to Omar)
+What do you want to eat? (to Knafeh)
 
-- **A** أنا جوعانة كمان. — Ana jūʿāne kamān. — I’m hungry too. (Lina speaking)
-  Rationale: This is Lina’s feminine description and adds “too.”
-- **B** أنا مش جوعان هلّق. — Ana mish jūʿān hallaʾ. — I’m not hungry now. (Omar speaking)
-  Rationale: Mish reverses the meaning and says Omar is not hungry.
-- **C (accepted)** أنا جوعان. — Ana jūʿān. — I’m hungry. (Omar speaking)
-  Rationale: Jūʿān is the masculine description Omar uses here.
+- **A** أنا جوعانة كمان. — Ana jūʿāne kamān. — I’m hungry too. (Fattoush speaking)
+  Rationale: This is Fattoush’s feminine description and adds “too.”
+- **B** أنا مش جوعان هلّق. — Ana mish jūʿān hallaʾ. — I’m not hungry now. (Knafeh speaking)
+  Rationale: Mish reverses the meaning and says Knafeh is not hungry.
+- **C (accepted)** أنا جوعان. — Ana jūʿān. — I’m hungry. (Knafeh speaking)
+  Rationale: Jūʿān is the masculine description Knafeh uses here.
 
-Retry hint: The speaker is Omar, and the meaning is positive.
+Retry hint: The speaker is Knafeh, and the meaning is positive.
 
-### 2. Lina is also hungry. Agree with Omar about your own feeling.
+### 2. Fattoush is also hungry. Agree with Knafeh about your own feeling.
 
 أنا جوعان.
 
 Ana jūʿān.
 
-I’m hungry. (Omar speaking)
+I’m hungry. (Knafeh speaking)
 
-- **A (accepted)** أنا جوعانة كمان. — Ana jūʿāne kamān. — I’m hungry too. (Lina speaking)
-  Rationale: Jūʿāne describes Lina and kamān connects her feeling to Omar’s.
-- **B** أنا جوعان. — Ana jūʿān. — I’m hungry. (Omar speaking)
-  Rationale: This uses the masculine description, while Lina is the speaker.
-- **C** أنا مش جوعانة. — Ana mish jūʿāne. — I’m not hungry. (Lina speaking)
+- **A (accepted)** أنا جوعانة كمان. — Ana jūʿāne kamān. — I’m hungry too. (Fattoush speaking)
+  Rationale: Jūʿāne describes Fattoush and kamān connects her feeling to Knafeh’s.
+- **B** أنا جوعان. — Ana jūʿān. — I’m hungry. (Knafeh speaking)
+  Rationale: This uses the masculine description, while Fattoush is the speaker.
+- **C** أنا مش جوعانة. — Ana mish jūʿāne. — I’m not hungry. (Fattoush speaking)
   Rationale: This denies hunger rather than sharing it.
 
 Retry hint: Use the feminine description plus “too.”
 
-### 3. Invite Omar to eat together by asking his opinion.
+### 3. Invite Knafeh to eat together by asking his opinion.
 
 أنا جوعان.
 
 Ana jūʿān.
 
-I’m hungry. (Omar speaking)
+I’m hungry. (Knafeh speaking)
 
-- **A** شو رأيك تاكل لحالك؟ — Shū raʾyak tākol laḥālak? — What do you think about eating on your own? (to Omar)
-  Rationale: This suggests that Omar eat alone, changing the shared plan.
-- **B (accepted)** شو رأيك ناكل سوا؟ — Shū raʾyak nākol sawa? — What do you think about eating together? (to Omar)
-  Rationale: This proposes a shared action and addresses Omar with raʾyak.
-- **C** شو عملت اليوم؟ — Shū ʿmilt il-yōm? — What did you do today? (to Omar)
+- **A** شو رأيك تاكل لحالك؟ — Shū raʾyak tākol laḥālak? — What do you think about eating on your own? (to Knafeh)
+  Rationale: This suggests that Knafeh eat alone, changing the shared plan.
+- **B (accepted)** شو رأيك ناكل سوا؟ — Shū raʾyak nākol sawa? — What do you think about eating together? (to Knafeh)
+  Rationale: This proposes a shared action and addresses Knafeh with raʾyak.
+- **C** شو عملت اليوم؟ — Shū ʿmilt il-yōm? — What did you do today? (to Knafeh)
   Rationale: This asks about completed activities, not a meal suggestion.
 
 Retry hint: The invitation needs sawa, “together.”
@@ -142,41 +142,41 @@ Shall we make rice and salad?
 
 - **A** لا، بدي رز بس. — Laʾ, biddi ruzz bass. — No, I want only rice.
   Rationale: This removes the salad and changes the plan.
-- **B** أنا مش جوعان هلّق. — Ana mish jūʿān hallaʾ. — I’m not hungry now. (Omar speaking)
+- **B** أنا مش جوعان هلّق. — Ana mish jūʿān hallaʾ. — I’m not hungry now. (Knafeh speaking)
   Rationale: This expresses lack of hunger without accepting the meal.
 - **C (accepted)** آه، خلّينا نعمل رز وسلطة. — Āh, khallīna niʿmal ruzz w-salaṭa. — Yes, let’s make rice and salad.
   Rationale: This accepts and repeats the proposed meal clearly.
 
 Retry hint: Agree and keep both dishes in the plan.
 
-### 6. On another evening Omar is not hungry now. Choose that meaning.
+### 6. On another evening Knafeh is not hungry now. Choose that meaning.
 
 جوعان هلّق؟
 
 Jūʿān hallaʾ?
 
-Hungry now? (to Omar)
+Hungry now? (to Knafeh)
 
-- **A** أنا جوعان. — Ana jūʿān. — I’m hungry. (Omar speaking)
+- **A** أنا جوعان. — Ana jūʿān. — I’m hungry. (Knafeh speaking)
   Rationale: This says he is hungry, reversing the meaning.
-- **B (accepted)** أنا مش جوعان هلّق. — Ana mish jūʿān hallaʾ. — I’m not hungry now. (Omar speaking)
+- **B (accepted)** أنا مش جوعان هلّق. — Ana mish jūʿān hallaʾ. — I’m not hungry now. (Knafeh speaking)
   Rationale: Mish negates the description jūʿān; hallaʾ limits it to now.
-- **C** أنا تعبان شوي. — Ana taʿbān shwayy. — I’m a little tired. (Omar speaking)
+- **C** أنا تعبان شوي. — Ana taʿbān shwayy. — I’m a little tired. (Knafeh speaking)
   Rationale: Tiredness is a different feeling; it does not answer whether he is hungry.
 
 Retry hint: Use the negative description, not a different feeling.
 
-### 7. Closing exchange, part 1: take Lina’s role and suggest rice and salad for a new shared meal.
+### 7. Closing exchange, part 1: take Fattoush’s role and suggest rice and salad for a new shared meal.
 
 شو رأيك ناكل سوا؟
 
 Shū raʾyak nākol sawa?
 
-What do you think about eating together? (to Omar)
+What do you think about eating together? (to Knafeh)
 
 - **A (accepted)** نعمل رز وسلطة؟ — Niʿmal ruzz w-salaṭa? — Shall we make rice and salad?
   Rationale: This turns the invitation into a concrete two-dish suggestion.
-- **B** بدك شاي ولا قهوة؟ — Biddak shāy walla ʾahwe? — Do you want tea or coffee? (to Omar)
+- **B** بدك شاي ولا قهوة؟ — Biddak shāy walla ʾahwe? — Do you want tea or coffee? (to Knafeh)
   Rationale: This offers drinks without deciding the meal.
 - **C** اشتغلت وبعدين ارتحت. — Ishtaghalt w-baʿdēn irtaḥt. — I worked and then rested.
   Rationale: This recounts past activities instead of suggesting food.
@@ -189,7 +189,7 @@ Retry hint: Move from eating together to what you will make.
 
 Biddik shāy maʿ il-akel?
 
-Do you want tea with the food? (to Lina)
+Do you want tea with the food? (to Fattoush)
 
 - **A** لا، شكراً. — Laʾ, shukran. — No, thank you.
   Rationale: This refuses the tea rather than accepting it.

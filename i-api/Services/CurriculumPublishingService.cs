@@ -435,7 +435,7 @@ public sealed class CurriculumPublishingService(
         JsonSerializer.Serialize(lesson, JsonOptions);
 
     private static LessonResponse Deserialize(string json) =>
-        JsonSerializer.Deserialize<LessonResponse>(json, JsonOptions)
+        JsonSerializer.Deserialize<LessonResponse>(CharacterRegistry.CurrentNames(json), JsonOptions)
         ?? throw new InvalidOperationException("Stored curriculum content could not be read.");
 
     private static void RequireStatus(

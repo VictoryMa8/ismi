@@ -3,11 +3,11 @@
     "id": "levantine-everyday-01-03",
     "trackId": "levantine",
     "title": "Want tea or coffee?",
-    "scenario": "Omar offers Lina a drink while they settle in. Preferences can be personal; choose the response requested by this particular scene.",
+    "scenario": "Knafeh offers Fattoush a drink while they settle in. Preferences can be personal; choose the response requested by this particular scene.",
     "steps": [
       {
         "id": "e03-01",
-        "instruction": "Offer a choice of drinks to Lina.",
+        "instruction": "Offer a choice of drinks to Fattoush.",
         "prompt": {
           "arabic": "شاي ولا قهوة؟",
           "arabizi": "Shāy walla ʾahwe?",
@@ -19,28 +19,28 @@
             "id": "a",
             "arabic": "بدك شاي ولا قهوة؟",
             "arabizi": "Biddak shāy walla ʾahwe?",
-            "meaning": "Do you want tea or coffee? (to Omar)",
-            "rationale": "Biddak addresses Omar, but Lina is the listener here."
+            "meaning": "Do you want tea or coffee? (to Knafeh)",
+            "rationale": "Biddak addresses Knafeh, but Fattoush is the listener here."
           },
           {
             "id": "b",
             "arabic": "بدك شاي ولا قهوة؟",
             "arabizi": "Biddik shāy walla ʾahwe?",
-            "meaning": "Do you want tea or coffee? (to Lina)",
-            "rationale": "Biddik addresses Lina, and walla presents the two drinks as alternatives."
+            "meaning": "Do you want tea or coffee? (to Fattoush)",
+            "rationale": "Biddik addresses Fattoush, and walla presents the two drinks as alternatives."
           },
           {
             "id": "c",
             "arabic": "بدك شاي وقهوة؟",
             "arabizi": "Biddik shāy w-ʾahwe?",
-            "meaning": "Do you want tea and coffee? (to Lina)",
+            "meaning": "Do you want tea and coffee? (to Fattoush)",
             "rationale": "W means “and”; this offers both together instead of a choice."
           }
         ],
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Biddik addresses Lina, and walla presents the two drinks as alternatives.",
+          "correctExplanation": "Biddik addresses Fattoush, and walla presents the two drinks as alternatives.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "Choose the feminine address and the word for “or.”"
@@ -48,11 +48,11 @@
       },
       {
         "id": "e03-02",
-        "instruction": "Lina wants tea. Reply politely to Omar’s offer.",
+        "instruction": "Fattoush wants tea. Reply politely to Knafeh’s offer.",
         "prompt": {
           "arabic": "بدك شاي ولا قهوة؟",
           "arabizi": "Biddik shāy walla ʾahwe?",
-          "meaning": "Do you want tea or coffee? (to Lina)",
+          "meaning": "Do you want tea or coffee? (to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -60,8 +60,8 @@
             "id": "a",
             "arabic": "قهوة، لو سمحتي.",
             "arabizi": "ʾAhwe, law samaḥti.",
-            "meaning": "Coffee, please. (to Lina)",
-            "rationale": "This selects coffee and addresses Lina, so both the preference and listener differ."
+            "meaning": "Coffee, please. (to Fattoush)",
+            "rationale": "This selects coffee and addresses Fattoush, so both the preference and listener differ."
           },
           {
             "id": "b",
@@ -74,26 +74,26 @@
             "id": "c",
             "arabic": "شاي، لو سمحت.",
             "arabizi": "Shāy, law samaḥt.",
-            "meaning": "Tea, please. (to Omar)",
-            "rationale": "This selects tea and uses law samaḥt for the male listener Omar."
+            "meaning": "Tea, please. (to Knafeh)",
+            "rationale": "This selects tea and uses law samaḥt for the male listener Knafeh."
           }
         ],
         "evaluation": {
           "correctAnswerId": "c",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "This selects tea and uses law samaḥt for the male listener Omar.",
+          "correctExplanation": "This selects tea and uses law samaḥt for the male listener Knafeh.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
-          "retryHint": "Choose tea and a request addressed to Omar."
+          "retryHint": "Choose tea and a request addressed to Knafeh."
         }
       },
       {
         "id": "e03-03",
-        "instruction": "Lina does not want sugar. Respond to Omar.",
+        "instruction": "Fattoush does not want sugar. Respond to Knafeh.",
         "prompt": {
           "arabic": "بدك سكر؟",
           "arabizi": "Biddik sukkar?",
-          "meaning": "Do you want sugar? (to Lina)",
+          "meaning": "Do you want sugar? (to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -109,7 +109,7 @@
             "arabic": "آه، مع سكر.",
             "arabizi": "Āh, maʿ sukkar.",
             "meaning": "Yes, with sugar.",
-            "rationale": "This asks for sugar, the opposite of Lina’s preference."
+            "rationale": "This asks for sugar, the opposite of Fattoush’s preference."
           },
           {
             "id": "c",
@@ -171,11 +171,11 @@
       },
       {
         "id": "e03-05",
-        "instruction": "Omar offers Lina coffee later. She wants no drink now. Decline politely.",
+        "instruction": "Knafeh offers Fattoush coffee later. She wants no drink now. Decline politely.",
         "prompt": {
           "arabic": "بدك قهوة هلّق؟",
           "arabizi": "Biddik ʾahwe hallaʾ?",
-          "meaning": "Do you want coffee now? (to Lina)",
+          "meaning": "Do you want coffee now? (to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -183,7 +183,7 @@
             "id": "a",
             "arabic": "آه، لو سمحت.",
             "arabizi": "Āh, law samaḥt.",
-            "meaning": "Yes, please. (to Omar)",
+            "meaning": "Yes, please. (to Knafeh)",
             "rationale": "This accepts the coffee."
           },
           {
@@ -197,8 +197,8 @@
             "id": "c",
             "arabic": "شاي، لو سمحت.",
             "arabizi": "Shāy, law samaḥt.",
-            "meaning": "Tea, please. (to Omar)",
-            "rationale": "This asks for a different drink; Lina wants no drink in this situation."
+            "meaning": "Tea, please. (to Knafeh)",
+            "rationale": "This asks for a different drink; Fattoush wants no drink in this situation."
           }
         ],
         "evaluation": {
@@ -212,11 +212,11 @@
       },
       {
         "id": "e03-06",
-        "instruction": "You are Lina. Say what you yourself want, rather than asking Omar.",
+        "instruction": "You are Fattoush. Say what you yourself want, rather than asking Knafeh.",
         "prompt": {
           "arabic": "بدك شاي ولا قهوة؟",
           "arabizi": "Biddik shāy walla ʾahwe?",
-          "meaning": "Do you want tea or coffee? (to Lina)",
+          "meaning": "Do you want tea or coffee? (to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -225,13 +225,13 @@
             "arabic": "بدي شاي.",
             "arabizi": "Biddi shāy.",
             "meaning": "I want tea.",
-            "rationale": "Biddi is the first-person form; the sentence states Lina’s own request."
+            "rationale": "Biddi is the first-person form; the sentence states Fattoush’s own request."
           },
           {
             "id": "b",
             "arabic": "بدك شاي؟",
             "arabizi": "Biddak shāy?",
-            "meaning": "Do you want tea? (to Omar)",
+            "meaning": "Do you want tea? (to Knafeh)",
             "rationale": "This asks the listener instead of answering about yourself."
           },
           {
@@ -245,7 +245,7 @@
         "evaluation": {
           "correctAnswerId": "a",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Biddi is the first-person form; the sentence states Lina’s own request.",
+          "correctExplanation": "Biddi is the first-person form; the sentence states Fattoush’s own request.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "Use the ending for “I.”"
@@ -253,11 +253,11 @@
       },
       {
         "id": "e03-07",
-        "instruction": "Closing exchange, part 1: Lina now hosts Omar. He chooses coffee. Respond as Omar to Lina.",
+        "instruction": "Closing exchange, part 1: Fattoush now hosts Knafeh. He chooses coffee. Respond as Knafeh to Fattoush.",
         "prompt": {
           "arabic": "بدك شاي ولا قهوة؟",
           "arabizi": "Biddak shāy walla ʾahwe?",
-          "meaning": "Do you want tea or coffee? (to Omar)",
+          "meaning": "Do you want tea or coffee? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -265,7 +265,7 @@
             "id": "a",
             "arabic": "شاي، لو سمحت.",
             "arabizi": "Shāy, law samaḥt.",
-            "meaning": "Tea, please. (to Omar)",
+            "meaning": "Tea, please. (to Knafeh)",
             "rationale": "This chooses tea and directs “please” to a man."
           },
           {
@@ -279,26 +279,26 @@
             "id": "c",
             "arabic": "قهوة، لو سمحتي.",
             "arabizi": "ʾAhwe, law samaḥti.",
-            "meaning": "Coffee, please. (to Lina)",
-            "rationale": "Coffee matches Omar’s choice, and law samaḥti addresses Lina."
+            "meaning": "Coffee, please. (to Fattoush)",
+            "rationale": "Coffee matches Knafeh’s choice, and law samaḥti addresses Fattoush."
           }
         ],
         "evaluation": {
           "correctAnswerId": "c",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Coffee matches Omar’s choice, and law samaḥti addresses Lina.",
+          "correctExplanation": "Coffee matches Knafeh’s choice, and law samaḥti addresses Fattoush.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
-          "retryHint": "The person receiving “please” is Lina."
+          "retryHint": "The person receiving “please” is Fattoush."
         }
       },
       {
         "id": "e03-08",
-        "instruction": "Closing exchange, part 2: Omar wants his coffee without sugar. Answer Lina.",
+        "instruction": "Closing exchange, part 2: Knafeh wants his coffee without sugar. Answer Fattoush.",
         "prompt": {
           "arabic": "بدك سكر؟",
           "arabizi": "Biddak sukkar?",
-          "meaning": "Do you want sugar? (to Omar)",
+          "meaning": "Do you want sugar? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -314,7 +314,7 @@
             "arabic": "لا، بدون سكر، شكراً.",
             "arabizi": "Laʾ, bidūn sukkar, shukran.",
             "meaning": "No, without sugar, thank you.",
-            "rationale": "This completes the order by stating without sugar and thanking Lina."
+            "rationale": "This completes the order by stating without sugar and thanking Fattoush."
           },
           {
             "id": "c",
@@ -327,7 +327,7 @@
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "This completes the order by stating without sugar and thanking Lina.",
+          "correctExplanation": "This completes the order by stating without sugar and thanking Fattoush.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "Answer the specific follow-up, not the earlier drink choice."
@@ -344,25 +344,25 @@
       "goal": "Offer a drink, express a preference, and politely accept or decline.",
       "dialogue": [
         {
-          "speaker": "Omar → Lina",
+          "speaker": "Knafeh → Fattoush",
           "line": {
             "arabic": "بدك شاي ولا قهوة؟",
             "arabizi": "Biddik shāy walla ʾahwe?",
-            "meaning": "Do you want tea or coffee? (to Lina)",
+            "meaning": "Do you want tea or coffee? (to Fattoush)",
             "audioUrl": null
           }
         },
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "شاي، لو سمحت.",
             "arabizi": "Shāy, law samaḥt.",
-            "meaning": "Tea, please. (to Omar)",
+            "meaning": "Tea, please. (to Knafeh)",
             "audioUrl": null
           }
         },
         {
-          "speaker": "Omar → Lina",
+          "speaker": "Knafeh → Fattoush",
           "line": {
             "arabic": "بدك سكر؟",
             "arabizi": "Biddik sukkar?",
@@ -371,7 +371,7 @@
           }
         },
         {
-          "speaker": "Lina",
+          "speaker": "Fattoush",
           "line": {
             "arabic": "لا، بدون سكر، شكراً.",
             "arabizi": "Laʾ, bidūn sukkar, shukran.",
@@ -380,7 +380,7 @@
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "أنا بدي قهوة.",
             "arabizi": "Ana biddi ʾahwe.",
@@ -389,7 +389,7 @@
           }
         },
         {
-          "speaker": "Lina",
+          "speaker": "Fattoush",
           "line": {
             "arabic": "بحب الشاي أكتر.",
             "arabizi": "Baḥibb ish-shāy aktar.",
@@ -402,13 +402,13 @@
         {
           "arabic": "بدك شاي ولا قهوة؟",
           "arabizi": "Biddik shāy walla ʾahwe?",
-          "meaning": "Do you want tea or coffee? (to Lina)",
+          "meaning": "Do you want tea or coffee? (to Fattoush)",
           "audioUrl": null
         },
         {
           "arabic": "شاي، لو سمحت.",
           "arabizi": "Shāy, law samaḥt.",
-          "meaning": "Tea, please. (to Omar)",
+          "meaning": "Tea, please. (to Knafeh)",
           "audioUrl": null
         },
         {
@@ -424,9 +424,9 @@
           "audioUrl": null
         }
       ],
-      "usageNote": "Biddi means “I want”; biddak addresses a man and biddik a woman. The ending follows the person who wants something, not the drink. In a choice question, walla means “or.” Baḥibb says what you like; adding aktar makes the comparison “more.” Law samaḥt is “please” when speaking to Omar; law samaḥti is the form addressed to Lina. Shukran is “thank you.” A short laʾ, shukran can politely decline; politeness also depends on tone and relationship. Practise both roles, then give your own preference aloud or silently. You may always use the transcript instead of audio.",
+      "usageNote": "Biddi means “I want”; biddak addresses a man and biddik a woman. The ending follows the person who wants something, not the drink. In a choice question, walla means “or.” Baḥibb says what you like; adding aktar makes the comparison “more.” Law samaḥt is “please” when speaking to Knafeh; law samaḥti is the form addressed to Fattoush. Shukran is “thank you.” A short laʾ, shukran can politely decline; politeness also depends on tone and relationship. Practise both roles, then give your own preference aloud or silently. You may always use the transcript instead of audio.",
       "dialectNote": "Urban Palestinian teaching target. This unit uses urban ʾahwe for قهوة. The approved publisher vocabulary reference gives a Gaza pronunciation with g; Maknuune encodes variation with Q. Neither spelling requires every Palestinian speaker to use the same sound. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
-      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Fattoush uses feminine self-description; Knafeh uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
       "sourceLocators": [
         "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
         "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",

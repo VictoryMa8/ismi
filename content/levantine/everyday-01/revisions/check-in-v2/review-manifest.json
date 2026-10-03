@@ -6,39 +6,48 @@
     {
       "lessonId": "levantine-everyday-01-01",
       "package": "01-lesson.json",
-      "sha256": "3df8ee74822b7811aaf9fffabe23e8e9f47efb82bd8b1b104eb0193f3ad241c7",
+      "sha256": "da0f1efc00023f63edce166115116a215a2810e4fa72e5b5f8c75ca5a743212f",
       "revisesPublishedVersion": 1,
       "status": "draft",
       "steps": 8,
-      "localRecordId": 14
+      "localRecordId": 14,
+      "preRenameSha256": "3df8ee74822b7811aaf9fffabe23e8e9f47efb82bd8b1b104eb0193f3ad241c7"
     },
     {
       "lessonId": "levantine-everyday-01-02",
       "package": "02-lesson.json",
-      "sha256": "57455be3cb0dfd012ef695dafb0c7fe38dd8cfcfba32a16165e5f4e13b12c9d8",
+      "sha256": "2a16a443bd99725343aa0caa24f49cd3af96063fda857c932ec76066ce6a962c",
       "revisesPublishedVersion": 1,
       "status": "draft",
       "steps": 8,
-      "localRecordId": 15
+      "localRecordId": 15,
+      "preRenameSha256": "57455be3cb0dfd012ef695dafb0c7fe38dd8cfcfba32a16165e5f4e13b12c9d8"
     },
     {
       "lessonId": "levantine-everyday-01-06",
       "package": "06-lesson.json",
-      "sha256": "65c819dcb6b006b77b3dfe84feb123f8cd71575fe6e33d6e80f4f55f231d459c",
+      "sha256": "8c3e9c5940d9e09ffe93616274d4896e5d86d54e09ea8110fa5b9868228bec63",
       "revisesPublishedVersion": 1,
       "status": "draft",
       "steps": 8,
-      "localRecordId": 16
+      "localRecordId": 16,
+      "preRenameSha256": "65c819dcb6b006b77b3dfe84feb123f8cd71575fe6e33d6e80f4f55f231d459c"
     },
     {
       "lessonId": "levantine-everyday-01-07",
       "package": "07-lesson.json",
-      "sha256": "a529f39b9a97967b76159622cb504272b2e016a330ec0c938485949d21a4403a",
+      "sha256": "d9a30489e12fb9ec706ecb69a0c67ac77295e1bcd53dc2dd7d38092b1d4fafdf",
       "revisesPublishedVersion": 1,
       "status": "draft",
       "steps": 8,
-      "localRecordId": 17
+      "localRecordId": 17,
+      "preRenameSha256": "a529f39b9a97967b76159622cb504272b2e016a330ec0c938485949d21a4403a"
     }
   ],
-  "localDatabase": "i-api/App_Data/ismi.db"
+  "localDatabase": "i-api/App_Data/ismi.db",
+  "characterRename": {
+    "date": "2026-10-02",
+    "status": "owner-requested repository rename; no publication performed",
+    "note": "Publication/version references describe predecessor database snapshots. Hashes describe renamed repository packages. No publication or reapproval occurred."
+  }
 }

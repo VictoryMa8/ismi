@@ -1,5 +1,8 @@
 # Review and checkpoints
 
+Current feature status and next actions live in [the roadmap](../ROADMAP.md#f05-manual-review-and-checkpoints).
+This file supplies design/implementation evidence; historical checks are dated checkpoints.
+
 Implemented October 1, 2026 as a bounded Levantine frontend slice.
 
 Practice now offers mixed review, mistake review, and a checkpoint for each

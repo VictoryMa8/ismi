@@ -1,0 +1,128 @@
+{
+  "status": "local-preview-awaiting-owner-publication-approval",
+  "lessonId": "levantine-everyday-01-01",
+  "sourcePackage": "content/levantine/everyday-01/revisions/characters/01-lesson.json",
+  "dialogue": [
+    {
+      "speaker": "Fattoush → Knafeh",
+      "line": {
+        "arabic": "شو عامل؟",
+        "arabizi": "Shū ʿāmel?",
+        "meaning": "How are you doing? (casual check-in to Knafeh)",
+        "audioUrl": null
+      },
+      "speakerId": "fattoush",
+      "addresseeId": "knafeh"
+    },
+    {
+      "speaker": "Knafeh → Fattoush",
+      "line": {
+        "arabic": "أنا منيح. وإنتِ؟",
+        "arabizi": "Ana mnīḥ. W-inti?",
+        "meaning": "I’m well. And you? (to Fattoush)",
+        "audioUrl": null
+      },
+      "speakerId": "knafeh",
+      "addresseeId": "fattoush"
+    }
+  ],
+  "step": {
+    "id": "e01-01",
+    "instruction": "Fattoush checks in with Knafeh. Respond as Knafeh: you are well.",
+    "prompt": {
+      "arabic": "شو عامل؟",
+      "arabizi": "Shū ʿāmel?",
+      "meaning": "How are you doing? (casual check-in to Knafeh)",
+      "audioUrl": null
+    },
+    "answers": [
+      {
+        "id": "a",
+        "arabic": "أنا منيحة.",
+        "arabizi": "Ana mnīḥa.",
+        "meaning": "I’m well. (Fattoush speaking)",
+        "rationale": "This describes a feminine speaker; you are taking Knafeh’s role."
+      },
+      {
+        "id": "b",
+        "arabic": "أنا منيح.",
+        "arabizi": "Ana mnīḥ.",
+        "meaning": "I’m well. (Knafeh speaking)",
+        "rationale": "This answers the check-in about Knafeh himself."
+      },
+      {
+        "id": "c",
+        "arabic": "يومي كان هادي.",
+        "arabizi": "Yōmi kān hādi.",
+        "meaning": "My day was quiet.",
+        "rationale": "This describes the day; the task asks how Knafeh himself feels."
+      }
+    ],
+    "evaluation": {
+      "correctAnswerId": "b",
+      "correctTitle": "That fits the conversation",
+      "correctExplanation": "Ana mnīḥ answers about Knafeh himself. The lesson’s question is a casual check-in.",
+      "incorrectTitle": "Try a different response",
+      "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
+      "retryHint": "Use ana and Knafeh’s form of “well.”"
+    },
+    "characters": {
+      "speakerId": "fattoush",
+      "addresseeId": "knafeh",
+      "responseSpeakerId": "knafeh",
+      "responseAddresseeId": "fattoush"
+    }
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune v1.0.1 IDs 28621 (how), 36281/36285 (day/today), 31227 (good), 19704 (long), 34207 (calm), 3007 (tired), 17238 (a little), 1439 (but), 34542 (now), 576/578 (you m/f). Lingualism verbs: entry “to be” (كان); publisher sample p.109 personal pronouns and p.105/T104 wanting. Original dialogue pragmatics and feminine adjective forms require owner wording review; these references are not approval of the composed sentences."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune v1.0.1 IDs 28621 (how), 36281/36285 (day/today), 31227 (good), 19704 (long), 34207 (calm), 3007 (tired), 17238 (a little), 1439 (but), 34542 (now), 576/578 (you m/f). Lingualism verbs: entry “to be” (كان); publisher sample p.109 personal pronouns and p.105/T104 wanting. Original dialogue pragmatics and feminine adjective forms require owner wording review; these references are not approval of the composed sentences."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune v1.0.1 IDs 28621 (how), 36281/36285 (day/today), 31227 (good), 19704 (long), 34207 (calm), 3007 (tired), 17238 (a little), 1439 (but), 34542 (now), 576/578 (you m/f). Lingualism verbs: entry “to be” (كان); publisher sample p.109 personal pronouns and p.105/T104 wanting. Original dialogue pragmatics and feminine adjective forms require owner wording review; these references are not approval of the composed sentences."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi original dialogue and contextual answer design",
+      "locator": "internal:ismi/everyday-01/01/draft-2",
+      "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+      "notes": "AI-assisted revision authored September 30, 2026 from previously approved lexical material and owner-relayed check-in correction. Complete revised package awaits owner approval; no native-expert review."
+    },
+    {
+      "sourceType": "speaker-feedback",
+      "title": "Owner-relayed Palestinian casual check-in feedback",
+      "locator": "internal:ismi/review-cases/LEV-2026-09-30-01",
+      "rights": "Owner-provided feedback used for original Ismi revision; no speaker recording or identity stored.",
+      "notes": "Owner confirmed شو عامل؟ as a casual check-in on September 30, 2026. Does not establish universal non-use of the original expression, review of feminine form, or approval of the complete revised dialogue. Drafting without waiting for further speaker feedback was explicitly requested."
+    },
+    {
+      "sourceType": "supplemental-reference",
+      "title": "Lingualism, Levantine Arabic Verbs, revised 2021 sample — address morphology comparison",
+      "locator": "https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Consulted for form comparison only; no publisher examples, tables, or audio copied.",
+      "notes": "The sample is explicitly Lebanese-based, not Palestinian-native review. The active-participle feminine عاملة / 3ámle is a supplemental form comparison; owner-relayed report supplies the Palestinian check-in function. This is new draft provenance, not a claim this source was in the September 22 approved foundation."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi guided teaching and contextual recall revision",
+      "locator": "internal:ismi/everyday-01/01/guided-teaching",
+      "rights": "Original Ismi explanations, recall cues and phrase grouping. No publisher examples, tables or audio reproduced.",
+      "notes": "Authored September 30, 2026. 7 phrase cards reuse the existing source-linked unit language and address distinctions. Per-card sources identify lexical/morphology support; the contextual exchanges and chunk glosses are AI-assisted compositions for owner approval. Existing foundation records retain exact Maknuune IDs and publisher locators. No native-expert review, publication authorization, new speaker evidence, or learning-outcome validation claimed. Prior portable package: ../check-in-v2/01-lesson.json; SHA-256 3df8ee74822b7811aaf9fffabe23e8e9f47efb82bd8b1b104eb0193f3ad241c7. Original package is preserved unchanged."
+    }
+  ],
+  "sourcePackageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1"
+}

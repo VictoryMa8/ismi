@@ -9,7 +9,7 @@ for (const viewport of [{ width: 1440, height: 1000 }, { width: 1024, height: 72
   test(`lesson frame and navigation stay visible through long and short cards at ${viewport.width}px`, async ({ page }, testInfo) => {
     await page.setViewportSize(viewport)
     await page.route('**/api/lessons/levantine-day-01', route => route.fulfill({ json: { ...pack.lesson, id: 'levantine-day-01' } }))
-    await page.goto('/')
+    await page.goto('/#/today')
     await page.getByRole('button', { name: /Continue in Levantine/ }).click()
     const dialog = page.getByRole('dialog')
     await dialog.evaluate(async element => {

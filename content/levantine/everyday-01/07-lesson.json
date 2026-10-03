@@ -3,15 +3,15 @@
     "id": "levantine-everyday-01-07",
     "trackId": "levantine",
     "title": "Put it together",
-    "scenario": "A fresh Friday check-in: Lina has already visited her mother. She and Omar plan a quiet meal for tomorrow at seven. Use the new details rather than memorized answers.",
+    "scenario": "A fresh Friday check-in: Fattoush has already visited her mother. She and Knafeh plan a quiet meal for tomorrow at seven. Use the new details rather than memorized answers.",
     "steps": [
       {
         "id": "e07-01",
-        "instruction": "Lina says her day was good, then names a visit followed by rest. Choose her account.",
+        "instruction": "Fattoush says her day was good, then names a visit followed by rest. Choose her account.",
         "prompt": {
           "arabic": "كيف كان يومك؟",
           "arabizi": "Kīf kān yōmik?",
-          "meaning": "How was your day? (to Lina)",
+          "meaning": "How was your day? (to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -48,7 +48,7 @@
       },
       {
         "id": "e07-02",
-        "instruction": "Omar’s follow-up refers to Lina’s mother. Answer about her, not yourself.",
+        "instruction": "Knafeh’s follow-up refers to Fattoush’s mother. Answer about her, not yourself.",
         "prompt": {
           "arabic": "وكيفها؟",
           "arabizi": "W-kīfha?",
@@ -60,8 +60,8 @@
             "id": "a",
             "arabic": "أنا منيحة.",
             "arabizi": "Ana mnīḥa.",
-            "meaning": "I’m well. (Lina speaking)",
-            "rationale": "Ana changes the answer to Lina’s own condition."
+            "meaning": "I’m well. (Fattoush speaking)",
+            "rationale": "Ana changes the answer to Fattoush’s own condition."
           },
           {
             "id": "b",
@@ -89,7 +89,7 @@
       },
       {
         "id": "e07-03",
-        "instruction": "Move from the completed day to an invitation for tomorrow. Address Omar.",
+        "instruction": "Move from the completed day to an invitation for tomorrow. Address Knafeh.",
         "prompt": {
           "arabic": "منيحة.",
           "arabizi": "Mnīḥa.",
@@ -101,28 +101,28 @@
             "id": "a",
             "arabic": "شو رأيك ناكل سوا بكرا؟",
             "arabizi": "Shū raʾyak nākol sawa bukra?",
-            "meaning": "What do you think about eating together tomorrow? (to Omar)",
-            "rationale": "This changes to a shared future meal and keeps Omar as the listener."
+            "meaning": "What do you think about eating together tomorrow? (to Knafeh)",
+            "rationale": "This changes to a shared future meal and keeps Knafeh as the listener."
           },
           {
             "id": "b",
             "arabic": "شو عملت اليوم؟",
             "arabizi": "Shū ʿmilt il-yōm?",
-            "meaning": "What did you do today? (to Omar)",
+            "meaning": "What did you do today? (to Knafeh)",
             "rationale": "This asks for another past activity report rather than inviting him."
           },
           {
             "id": "c",
             "arabic": "شو رأيك ناكل سوا اليوم؟",
             "arabizi": "Shū raʾyak nākol sawa il-yōm?",
-            "meaning": "What do you think about eating together today? (to Omar)",
+            "meaning": "What do you think about eating together today? (to Knafeh)",
             "rationale": "This invites him for today, changing the agreed day."
           }
         ],
         "evaluation": {
           "correctAnswerId": "a",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "This changes to a shared future meal and keeps Omar as the listener.",
+          "correctExplanation": "This changes to a shared future meal and keeps Knafeh as the listener.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "The invitation needs tomorrow."
@@ -171,11 +171,11 @@
       },
       {
         "id": "e07-05",
-        "instruction": "Lina asks for the drink mentioned after the meal. Ask Omar politely for that drink.",
+        "instruction": "Fattoush asks for the drink mentioned after the meal. Ask Knafeh politely for that drink.",
         "prompt": {
           "arabic": "بدك شاي ولا قهوة؟",
           "arabizi": "Biddik shāy walla ʾahwe?",
-          "meaning": "Do you want tea or coffee? (to Lina)",
+          "meaning": "Do you want tea or coffee? (to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -183,15 +183,15 @@
             "id": "a",
             "arabic": "قهوة، لو سمحتي.",
             "arabizi": "ʾAhwe, law samaḥti.",
-            "meaning": "Coffee, please. (to Lina)",
-            "rationale": "This selects coffee and directs the request to Lina."
+            "meaning": "Coffee, please. (to Fattoush)",
+            "rationale": "This selects coffee and directs the request to Fattoush."
           },
           {
             "id": "b",
             "arabic": "شاي، لو سمحت.",
             "arabizi": "Shāy, law samaḥt.",
-            "meaning": "Tea, please. (to Omar)",
-            "rationale": "Tea matches the new dialogue, and law samaḥt addresses Omar."
+            "meaning": "Tea, please. (to Knafeh)",
+            "rationale": "Tea matches the new dialogue, and law samaḥt addresses Knafeh."
           },
           {
             "id": "c",
@@ -204,7 +204,7 @@
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Tea matches the new dialogue, and law samaḥt addresses Omar.",
+          "correctExplanation": "Tea matches the new dialogue, and law samaḥt addresses Knafeh.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "Recall the last turn of the dialogue."
@@ -212,7 +212,7 @@
       },
       {
         "id": "e07-06",
-        "instruction": "Omar wants to know how Lina’s day went too. Return the check-in to Lina after answering.",
+        "instruction": "Knafeh wants to know how Fattoush’s day went too. Return the check-in to Fattoush after answering.",
         "prompt": {
           "arabic": "يومي كان هادي.",
           "arabizi": "Yōmi kān hādi.",
@@ -224,15 +224,15 @@
             "id": "a",
             "arabic": "وإنتِ؟",
             "arabizi": "W-inti?",
-            "meaning": "And you? (to Lina)",
-            "rationale": "W-inti returns the check-in to Lina without introducing a different topic."
+            "meaning": "And you? (to Fattoush)",
+            "rationale": "W-inti returns the check-in to Fattoush without introducing a different topic."
           },
           {
             "id": "b",
             "arabic": "وإنتَ؟",
             "arabizi": "W-inta?",
-            "meaning": "And you? (to Omar)",
-            "rationale": "This addresses a man; Lina is the listener."
+            "meaning": "And you? (to Knafeh)",
+            "rationale": "This addresses a man; Fattoush is the listener."
           },
           {
             "id": "c",
@@ -245,10 +245,10 @@
         "evaluation": {
           "correctAnswerId": "a",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "W-inti returns the check-in to Lina without introducing a different topic.",
+          "correctExplanation": "W-inti returns the check-in to Fattoush without introducing a different topic.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
-          "retryHint": "Address Lina directly."
+          "retryHint": "Address Fattoush directly."
         }
       },
       {
@@ -257,7 +257,7 @@
         "prompt": {
           "arabic": "شو عملت اليوم؟",
           "arabizi": "Shū ʿmilt il-yōm?",
-          "meaning": "What did you do today? (to Omar)",
+          "meaning": "What did you do today? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -273,20 +273,20 @@
             "arabic": "زرت أمي وبعدين ارتحت.",
             "arabizi": "Zurt immi w-baʿdēn irtaḥt.",
             "meaning": "I visited my mother and then rested.",
-            "rationale": "This repeats Lina’s earlier story instead of the new work scenario."
+            "rationale": "This repeats Fattoush’s earlier story instead of the new work scenario."
           },
           {
             "id": "c",
             "arabic": "اشتغلت وبعدين ارتحت.",
             "arabizi": "Ishtaghalt w-baʿdēn irtaḥt.",
             "meaning": "I worked and then rested.",
-            "rationale": "You reuse the sequence pattern for work followed by rest, rather than copying Lina’s visit story."
+            "rationale": "You reuse the sequence pattern for work followed by rest, rather than copying Fattoush’s visit story."
           }
         ],
         "evaluation": {
           "correctAnswerId": "c",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "You reuse the sequence pattern for work followed by rest, rather than copying Lina’s visit story.",
+          "correctExplanation": "You reuse the sequence pattern for work followed by rest, rather than copying Fattoush’s visit story.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "Check the activity before baʿdēn."
@@ -344,7 +344,7 @@
       "goal": "Follow a new exchange about the day and family, then agree on food, a drink, and a time.",
       "dialogue": [
         {
-          "speaker": "Omar → Lina",
+          "speaker": "Knafeh → Fattoush",
           "line": {
             "arabic": "كيف كان يومك؟",
             "arabizi": "Kīf kān yōmik?",
@@ -353,7 +353,7 @@
           }
         },
         {
-          "speaker": "Lina",
+          "speaker": "Fattoush",
           "line": {
             "arabic": "كان منيح. زرت أمي وبعدين ارتحت.",
             "arabizi": "Kān mnīḥ. Zurt immi w-baʿdēn irtaḥt.",
@@ -362,7 +362,7 @@
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "وكيفها؟",
             "arabizi": "W-kīfha?",
@@ -371,7 +371,7 @@
           }
         },
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "منيحة. شو رأيك ناكل سوا بكرا؟",
             "arabizi": "Mnīḥa. Shū raʾyak nākol sawa bukra?",
@@ -380,7 +380,7 @@
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "تمام. نعمل رز وسلطة الساعة سبعة؟",
             "arabizi": "Tamām. Niʿmal ruzz w-salaṭa is-sāʿa sabʿa?",
@@ -389,7 +389,7 @@
           }
         },
         {
-          "speaker": "Lina",
+          "speaker": "Fattoush",
           "line": {
             "arabic": "آه، وبعدين نشرب شاي.",
             "arabizi": "Āh, w-baʿdēn nishrab shāy.",
@@ -424,9 +424,9 @@
           "audioUrl": null
         }
       ],
-      "usageNote": "Follow the changing reference point: kīf kān yōmik asks about Lina’s day; kīfha then refers to her mother, not Lina. The conversation moves from completed actions to a suggestion with bukra. A useful response must preserve who, when, and what happened. This lesson combines familiar pieces in a different situation. First read the Arabic and transliteration with the English covered. Explain the story to yourself, then check the English only where you need it. Complete the closing exchange without looking back if you can; hints and unlimited retries remain available. This is guided selection practice, not a test of spontaneous speaking or evidence of fluency.",
-      "dialectNote": "Urban Palestinian teaching target. Yōmik addresses Lina, while raʾyak addresses Omar in Lina’s invitation. Describing yōm with mnīḥ stays masculine even though Lina is speaking. The past first-person forms do not change with the speaker’s gender. The shared future plan is clear from bukra. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
-      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "usageNote": "Follow the changing reference point: kīf kān yōmik asks about Fattoush’s day; kīfha then refers to her mother, not Fattoush. The conversation moves from completed actions to a suggestion with bukra. A useful response must preserve who, when, and what happened. This lesson combines familiar pieces in a different situation. First read the Arabic and transliteration with the English covered. Explain the story to yourself, then check the English only where you need it. Complete the closing exchange without looking back if you can; hints and unlimited retries remain available. This is guided selection practice, not a test of spontaneous speaking or evidence of fluency.",
+      "dialectNote": "Urban Palestinian teaching target. Yōmik addresses Fattoush, while raʾyak addresses Knafeh in Fattoush’s invitation. Describing yōm with mnīḥ stays masculine even though Fattoush is speaking. The past first-person forms do not change with the speaker’s gender. The shared future plan is clear from bukra. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Fattoush uses feminine self-description; Knafeh uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
       "sourceLocators": [
         "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
         "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",

@@ -3,7 +3,7 @@
     "id": "levantine-everyday-01-06",
     "trackId": "levantine",
     "title": "What are we doing tomorrow?",
-    "scenario": "Omar and Lina want to visit Omar’s family after work. They move from an idea to an agreed time.",
+    "scenario": "Knafeh and Fattoush want to visit Knafeh’s family after work. They move from an idea to an agreed time.",
     "steps": [
       {
         "id": "e06-01",
@@ -19,14 +19,14 @@
             "id": "a",
             "arabic": "شو عملت اليوم؟",
             "arabizi": "Shū ʿmilt il-yōm?",
-            "meaning": "What did you do today? (to Omar)",
-            "rationale": "This asks Omar what he already did today."
+            "meaning": "What did you do today? (to Knafeh)",
+            "rationale": "This asks Knafeh what he already did today."
           },
           {
             "id": "b",
             "arabic": "كيف كان يومك؟",
             "arabizi": "Kīf kān yōmak?",
-            "meaning": "How was your day? (to Omar)",
+            "meaning": "How was your day? (to Knafeh)",
             "rationale": "This asks how a day went instead of planning tomorrow."
           },
           {
@@ -48,7 +48,7 @@
       },
       {
         "id": "e06-02",
-        "instruction": "Omar suggests visiting his own family after work. Speak as Omar.",
+        "instruction": "Knafeh suggests visiting his own family after work. Speak as Knafeh.",
         "prompt": {
           "arabic": "شو رح نعمل بكرا؟",
           "arabizi": "Shū raḥ niʿmal bukra?",
@@ -61,14 +61,14 @@
             "arabic": "نزور أهلي بعد الشغل؟",
             "arabizi": "Nzūr ahli baʿd ish-shughl?",
             "meaning": "Shall we visit my family after work?",
-            "rationale": "Ahli identifies Omar’s family when Omar speaks; after work supplies the ordering."
+            "rationale": "Ahli identifies Knafeh’s family when Knafeh speaks; after work supplies the ordering."
           },
           {
             "id": "b",
             "arabic": "نزور أهلك بعد الشغل؟",
             "arabizi": "Nzūr ahlik baʿd ish-shughl?",
-            "meaning": "Shall we visit your family after work? (to Lina)",
-            "rationale": "This would mean Lina’s family, changing whose family they visit."
+            "meaning": "Shall we visit your family after work? (to Fattoush)",
+            "rationale": "This would mean Fattoush’s family, changing whose family they visit."
           },
           {
             "id": "c",
@@ -81,10 +81,10 @@
         "evaluation": {
           "correctAnswerId": "a",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Ahli identifies Omar’s family when Omar speaks; after work supplies the ordering.",
+          "correctExplanation": "Ahli identifies Knafeh’s family when Knafeh speaks; after work supplies the ordering.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
-          "retryHint": "Omar is speaking, so use “my family.”"
+          "retryHint": "Knafeh is speaking, so use “my family.”"
         }
       },
       {
@@ -101,7 +101,7 @@
             "id": "a",
             "arabic": "كيف أهلك؟",
             "arabizi": "Kīf ahlak?",
-            "meaning": "How’s your family? (to Omar)",
+            "meaning": "How’s your family? (to Knafeh)",
             "rationale": "This asks how the family is rather than when to visit."
           },
           {
@@ -115,7 +115,7 @@
             "id": "c",
             "arabic": "بدك شاي ولا قهوة؟",
             "arabizi": "Biddak shāy walla ʾahwe?",
-            "meaning": "Do you want tea or coffee? (to Omar)",
+            "meaning": "Do you want tea or coffee? (to Knafeh)",
             "rationale": "This offers drinks rather than settling the schedule."
           }
         ],
@@ -171,7 +171,7 @@
       },
       {
         "id": "e06-05",
-        "instruction": "Lina confirms: tomorrow, six, Omar’s family. Preserve all three details.",
+        "instruction": "Fattoush confirms: tomorrow, six, Knafeh’s family. Preserve all three details.",
         "prompt": {
           "arabic": "نزور أهلي بعد الشغل؟",
           "arabizi": "Nzūr ahli baʿd ish-shughl?",
@@ -183,21 +183,21 @@
             "id": "a",
             "arabic": "تمام، اليوم الساعة ستة نزور أهلك.",
             "arabizi": "Tamām, il-yōm is-sāʿa sitte nzūr ahlak.",
-            "meaning": "Okay, today at six we’ll visit your family. (to Omar)",
+            "meaning": "Okay, today at six we’ll visit your family. (to Knafeh)",
             "rationale": "The family and time fit, but this changes tomorrow to today."
           },
           {
             "id": "b",
             "arabic": "تمام، بكرا الساعة سبعة نزور أهلك.",
             "arabizi": "Tamām, bukra is-sāʿa sabʿa nzūr ahlak.",
-            "meaning": "Okay, tomorrow at seven we’ll visit your family. (to Omar)",
+            "meaning": "Okay, tomorrow at seven we’ll visit your family. (to Knafeh)",
             "rationale": "The day and family fit, but this changes six to seven."
           },
           {
             "id": "c",
             "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
             "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
-            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Omar)",
+            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Knafeh)",
             "rationale": "The confirmation carries forward day, time, and whose family."
           }
         ],
@@ -294,7 +294,7 @@
       },
       {
         "id": "e06-08",
-        "instruction": "Closing exchange, part 2: confirm tomorrow at seven with Lina. Say that you will drink tea together.",
+        "instruction": "Closing exchange, part 2: confirm tomorrow at seven with Fattoush. Say that you will drink tea together.",
         "prompt": {
           "arabic": "نشرب شاي سوا بكرا؟",
           "arabizi": "Nishrab shāy sawa bukra?",
@@ -313,7 +313,7 @@
             "id": "b",
             "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
             "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
-            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Omar)",
+            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Knafeh)",
             "rationale": "This repeats the previous visit plan at six instead of the revised tea plan at seven."
           },
           {
@@ -344,7 +344,7 @@
       "goal": "Suggest a shared visit, ask for a time, and confirm tomorrow’s plan.",
       "dialogue": [
         {
-          "speaker": "Lina",
+          "speaker": "Fattoush",
           "line": {
             "arabic": "شو رح نعمل بكرا؟",
             "arabizi": "Shū raḥ niʿmal bukra?",
@@ -353,7 +353,7 @@
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "نزور أهلي بعد الشغل؟",
             "arabizi": "Nzūr ahli baʿd ish-shughl?",
@@ -362,7 +362,7 @@
           }
         },
         {
-          "speaker": "Lina",
+          "speaker": "Fattoush",
           "line": {
             "arabic": "تمام. أي ساعة؟",
             "arabizi": "Tamām. Ayy sāʿa?",
@@ -371,7 +371,7 @@
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "الساعة ستة.",
             "arabizi": "Is-sāʿa sitte.",
@@ -380,16 +380,16 @@
           }
         },
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
             "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
-            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Omar)",
+            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Knafeh)",
             "audioUrl": null
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "وبعدين نشرب شاي سوا.",
             "arabizi": "W-baʿdēn nishrab shāy sawa.",
@@ -420,13 +420,13 @@
         {
           "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
           "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
-          "meaning": "Okay, tomorrow at six we’ll visit your family. (to Omar)",
+          "meaning": "Okay, tomorrow at six we’ll visit your family. (to Knafeh)",
           "audioUrl": null
         }
       ],
       "usageNote": "Raḥ points forward to a future action; bukra supplies the day, tomorrow. In raḥ niʿmal, the n- form is “we,” so the question is about a shared plan. You do not need raḥ in every turn: a reply such as “tomorrow at six we visit your family” has a clear future setting from context. Baʿd ish-shughl means “after work”; baʿdēn means “then/afterwards.” A plan becomes clearer when you repeat the day, time, and who you will visit. Read the dialogue, then cover it and reconstruct those three details before practising. Clock times here use a shared evening context; a real arrangement may need you to clarify morning/evening.",
-      "dialectNote": "Urban Palestinian teaching target. Ahli is the speaker’s family. When Lina confirms Omar’s proposal, it becomes ahlak, his family as her listener. Niʿmal/nzūr/nishrab are shared actions in these phrases. Raḥ is a future marker here, distinct from past rāḥ, “he went.” Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
-      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "dialectNote": "Urban Palestinian teaching target. Ahli is the speaker’s family. When Fattoush confirms Knafeh’s proposal, it becomes ahlak, his family as her listener. Niʿmal/nzūr/nishrab are shared actions in these phrases. Raḥ is a future marker here, distinct from past rāḥ, “he went.” Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Fattoush uses feminine self-description; Knafeh uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
       "sourceLocators": [
         "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
         "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",

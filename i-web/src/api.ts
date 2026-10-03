@@ -1,3 +1,4 @@
+import { renameCharacterContent } from './characters'
 import type {
   AuthSession,
   CurriculumSource,
@@ -121,7 +122,7 @@ export function getDashboard(): Promise<DashboardResponse> {
 }
 
 export function getLesson(lessonId: string): Promise<LessonResponse> {
-  return request<LessonResponse>(`/api/lessons/${lessonId}`)
+  return request<LessonResponse>(`/api/lessons/${lessonId}`).then(renameCharacterContent)
 }
 
 export function submitLessonAttempt(
@@ -132,7 +133,7 @@ export function submitLessonAttempt(
   return request<LessonAttemptResponse>(`/api/lessons/${lessonId}/attempts`, {
     method: 'POST',
     body: JSON.stringify({ stepId, answerId }),
-  })
+  }).then(renameCharacterContent)
 }
 
 export function submitLessonCompletion(
@@ -151,7 +152,7 @@ export function getCurriculumVersions(): Promise<CurriculumVersionSummary[]> {
 }
 
 export function getCurriculumVersion(versionId: number): Promise<CurriculumVersionDetail> {
-  return request<CurriculumVersionDetail>(`/api/admin/curriculum/versions/${versionId}`)
+  return request<CurriculumVersionDetail>(`/api/admin/curriculum/versions/${versionId}`).then(detail => ({ ...detail, lesson: renameCharacterContent(detail.lesson), sources: renameCharacterContent(detail.sources) }))
 }
 
 export function createCurriculumDraft(

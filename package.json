@@ -1,0 +1,13 @@
+{
+  "name": "ismi",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "setup": "npm ci --prefix i-web && dotnet restore Ismi.slnx",
+    "api": "node scripts/dev.mjs api",
+    "web": "node scripts/dev.mjs web"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}

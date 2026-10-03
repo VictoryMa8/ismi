@@ -18,7 +18,7 @@ attributes. Do not call the accessibility release gate passed on this checklist 
 | --- | --- | --- |
 | Keyboard entry | Skip link reaches main content; Today, Courses, Practice, Account are reachable and identify the current page. Focus remains visible. | Not tested |
 | Open lesson | Open Everyday lesson 1 with keyboard. Dialog title is announced; focus enters it; Tab and Shift+Tab stay inside. | Not tested |
-| Read mixed-language dialogue | Navigate Lina/Omar turns with the screen reader. Speaker, Arabic, transliteration and English remain in meaningful order. Arabic language switching works with configured voices; record actual pronunciation/voice limitations. | Not tested |
+| Read mixed-language dialogue | Navigate Fattoush/Knafeh turns with the screen reader. Speaker, Arabic, transliteration and English remain in meaningful order. Arabic language switching works with configured voices; record actual pronunciation/voice limitations. | Not tested |
 | Help and notes | Toggle English help and dialogue/notes; their state and content are understandable without sight. Transliteration remains available. | Not tested |
 | Select and submit | Instruction, each complete answer and selected state are announced. Submit is reachable without pointer input. | Not tested |
 | Wrong answer / retry | Choose a documented distractor. Explanation is reachable/announced; failure is conveyed with words, not only color. Retry gives a clear location and permits another answer. | Not tested |

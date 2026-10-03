@@ -8,13 +8,13 @@ Goal: Check in, say how you feel, and keep a short exchange going.
 
 شو عامل؟ · Shū ʿāmel?
 
-How are you doing? (casual check-in to Omar)
+How are you doing? (casual check-in to Knafeh)
 
-Lina asks Omar how he is doing. In this greeting, answer about how you feel. When addressing Lina, use shū ʿāmle.
+Fattoush asks Knafeh how he is doing. In this greeting, answer about how you feel. When addressing Fattoush, use shū ʿāmle.
 
-Recall: You are Lina. Greet Omar with a casual check-in.
+Recall: You are Fattoush. Greet Knafeh with a casual check-in.
 
-شو (shū) = what | عامل (ʿāmel) = doing · to Omar
+شو (shū) = what | عامل (ʿāmel) = doing · to Knafeh
 
 Sources: internal:ismi/review-cases/LEV-2026-09-30-01, https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf, internal:ismi/everyday-01/01/guided-teaching
 
@@ -22,13 +22,13 @@ Sources: internal:ismi/review-cases/LEV-2026-09-30-01, https://files.lingualism.
 
 أنا منيح. · Ana mnīḥ.
 
-I’m well. (Omar speaking)
+I’m well. (Knafeh speaking)
 
-Ana identifies the speaker. This form describes Omar; Lina says mnīḥa.
+Ana identifies the speaker. This form describes Knafeh; Fattoush says mnīḥa.
 
-Recall: You are Omar. Lina checks in. Tell her you’re well.
+Recall: You are Knafeh. Fattoush checks in. Tell her you’re well.
 
-أنا (ana) = I | منيح (mnīḥ) = well · Omar’s description
+أنا (ana) = I | منيح (mnīḥ) = well · Knafeh’s description
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, internal:ismi/everyday-01/01/guided-teaching
 
@@ -36,13 +36,13 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://med
 
 أنا تعبانة شوي. · Ana taʿbāne shwayy.
 
-I’m a little tired. (Lina speaking)
+I’m a little tired. (Fattoush speaking)
 
-Lina is describing herself, so taʿbāne has a feminine ending. Shwayy keeps the tiredness mild.
+Fattoush is describing herself, so taʿbāne has a feminine ending. Shwayy keeps the tiredness mild.
 
-Recall: You are Lina. Tell Omar you’re a little tired.
+Recall: You are Fattoush. Tell Knafeh you’re a little tired.
 
-أنا (ana) = I | تعبانة (taʿbāne) = tired · Lina’s description | شوي (shwayy) = a little
+أنا (ana) = I | تعبانة (taʿbāne) = tired · Fattoush’s description | شوي (shwayy) = a little
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, internal:ismi/everyday-01/01/guided-teaching
 
@@ -50,27 +50,27 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://med
 
 وإنتِ؟ · W-inti?
 
-And you? (to Lina)
+And you? (to Fattoush)
 
-You do not need to repeat the whole question. Inti addresses Lina; inta addresses Omar.
+You do not need to repeat the whole question. Inti addresses Fattoush; inta addresses Knafeh.
 
-Recall: You are Omar. After answering, ask Lina the same question back.
+Recall: You are Knafeh. After answering, ask Fattoush the same question back.
 
-وإنتِ (w-inti) = and you · to Lina
+وإنتِ (w-inti) = and you · to Fattoush
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, internal:ismi/everyday-01/01/guided-teaching
 
-## Check in with Lina
+## Check in with Fattoush
 
 شو عاملة؟ · Shū ʿāmle?
 
-How are you doing? (casual check-in to Lina)
+How are you doing? (casual check-in to Fattoush)
 
-The person you address changes the ending: ʿāmel to Omar, ʿāmle to Lina.
+The person you address changes the ending: ʿāmel to Knafeh, ʿāmle to Fattoush.
 
-Recall: You are Omar. Start a casual check-in with Lina.
+Recall: You are Knafeh. Start a casual check-in with Fattoush.
 
-شو (shū) = what | عاملة (ʿāmle) = doing · to Lina
+شو (shū) = what | عاملة (ʿāmle) = doing · to Fattoush
 
 Sources: internal:ismi/review-cases/LEV-2026-09-30-01, https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf, internal:ismi/everyday-01/01/guided-teaching
 
@@ -78,13 +78,13 @@ Sources: internal:ismi/review-cases/LEV-2026-09-30-01, https://files.lingualism.
 
 بدك ترتاح؟ · Biddak tirtāḥ?
 
-Do you want to rest? (to Omar)
+Do you want to rest? (to Knafeh)
 
-Biddak asks what Omar wants; biddi says what you yourself want. Keep tirtāḥ with the question and artāḥ with your reply.
+Biddak asks what Knafeh wants; biddi says what you yourself want. Keep tirtāḥ with the question and artāḥ with your reply.
 
-Recall: You are Lina. Omar is tired. Ask if he wants to rest.
+Recall: You are Fattoush. Knafeh is tired. Ask if he wants to rest.
 
-بدك (biddak) = do you want · to Omar | ترتاح (tirtāḥ) = to rest · Omar
+بدك (biddak) = do you want · to Knafeh | ترتاح (tirtāḥ) = to rest · Knafeh
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, internal:ismi/everyday-01/01/guided-teaching
 
@@ -96,7 +96,7 @@ Yes, I want to rest a little.
 
 Biddi marks what the speaker wants. Reuse shwayy to ask for a little rest.
 
-Recall: You are Omar. Accept Lina’s offer and say you want to rest a little.
+Recall: You are Knafeh. Accept Fattoush’s offer and say you want to rest a little.
 
 آه (āh) = yes | بدي (biddi) = I want | أرتاح (artāḥ) = to rest | شوي (shwayy) = a little
 

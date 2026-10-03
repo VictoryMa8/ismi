@@ -10,11 +10,11 @@ Goal: Follow a new exchange about the day and family, then agree on food, a drin
 
 I’m well. I visited my mother and then rested.
 
-Lina answers about herself first, then gives two completed activities. W-baʿdēn preserves visit first, rest second.
+Fattoush answers about herself first, then gives two completed activities. W-baʿdēn preserves visit first, rest second.
 
-Recall: You are Lina. Say you’re well, then report visiting your mother and resting, in that order.
+Recall: You are Fattoush. Say you’re well, then report visiting your mother and resting, in that order.
 
-أنا منيحة (ana mnīḥa) = I’m well · Lina | زرت أمي (zurt immi) = I visited my mother | وبعدين ارتحت (w-baʿdēn irtaḥt) = and then I rested
+أنا منيحة (ana mnīḥa) = I’m well · Fattoush | زرت أمي (zurt immi) = I visited my mother | وبعدين ارتحت (w-baʿdēn irtaḥt) = and then I rested
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, internal:ismi/review-cases/LEV-2026-09-30-01, https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf, internal:ismi/everyday-01/07/guided-teaching
 
@@ -24,9 +24,9 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://med
 
 And how is she?
 
-After the mother is mentioned, -ha points to her. The reply mnīḥa now describes the mother, rather than Lina.
+After the mother is mentioned, -ha points to her. The reply mnīḥa now describes the mother, rather than Fattoush.
 
-Recall: Lina tells you she visited her mother. Ask how her mother is.
+Recall: Fattoush tells you she visited her mother. Ask how her mother is.
 
 وكيفها (w-kīfha) = and how is she · mother
 
@@ -36,13 +36,13 @@ Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://med
 
 شو رأيك ناكل سوا بكرا؟ · Shū raʾyak nākol sawa bukra?
 
-What do you think about eating together tomorrow? (to Omar)
+What do you think about eating together tomorrow? (to Knafeh)
 
-Reuse the shared-meal invitation and add bukra. The address raʾyak is to Omar.
+Reuse the shared-meal invitation and add bukra. The address raʾyak is to Knafeh.
 
-Recall: You are Lina. Ask Omar about eating together tomorrow.
+Recall: You are Fattoush. Ask Knafeh about eating together tomorrow.
 
-شو رأيك (shū raʾyak) = what do you think · to Omar | ناكل سوا (nākol sawa) = we eat together | بكرا (bukra) = tomorrow
+شو رأيك (shū raʾyak) = what do you think · to Knafeh | ناكل سوا (nākol sawa) = we eat together | بكرا (bukra) = tomorrow
 
 Sources: https://sites.google.com/nyu.edu/palestine-lexicon/lexicon, https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf, https://resources.lingualism.com/levantine-arabic/food-and-drink-3/, internal:ismi/everyday-01/07/guided-teaching
 

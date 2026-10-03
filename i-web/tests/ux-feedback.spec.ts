@@ -27,7 +27,7 @@ test('friendly sounds start after interaction, stay quiet, mute persistently, an
       return Reflect.apply(connect, this, args)
     } as AudioNode['connect']
   })
-  await page.goto('/')
+  await page.goto('/#/today')
   await expect(page.getByRole('button', { name: /Continue in Levantine/ })).toBeVisible()
   expect(await page.evaluate(() => (window as SoundProbe).toneCount)).toBe(0)
   const sound = page.locator('.mobile-header').getByRole('button', { name: 'Interface sounds', exact: true })

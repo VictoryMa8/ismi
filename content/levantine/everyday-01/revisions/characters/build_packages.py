@@ -4,8 +4,8 @@ import json
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-# L = Lina speaks to Omar; O = Omar speaks to Lina; None = neutral cue.
-PAIR = {'L': ('lina', 'omar'), 'O': ('omar', 'lina')}
+# L = Fattoush speaks to Knafeh; O = Knafeh speaks to Fattoush; None = neutral cue.
+PAIR = {'L': ('fattoush', 'knafeh'), 'O': ('knafeh', 'fattoush')}
 DIALOGUE = {
     1: ['L', 'O', 'L', 'O', 'L', 'O'],
     2: ['O', 'L', 'O', 'L', 'O', 'L'],
@@ -45,7 +45,7 @@ for number in range(1, 8):
     source = HERE.parent / 'guided-teaching' / f'{number:02}-lesson.json'
     package = json.loads(source.read_text())
     lesson = package['lesson']
-    lesson['characters'] = {'registryVersion': 'ismi-cast-v1', 'characterIds': ['lina', 'omar']}
+    lesson['characters'] = {'registryVersion': 'ismi-cast-v1', 'characterIds': ['fattoush', 'knafeh']}
     for turn, role in zip(lesson['introduction']['dialogue'], DIALOGUE[number], strict=True):
         turn.update(pair(role))
     for card, role in zip(lesson['introduction']['teachingCards'], CARDS[number], strict=True):

@@ -1,5 +1,12 @@
 # Guided teaching across Everyday conversations
 
+October 2 update: repository packages now use Fattoush and Knafeh at the owner’s
+request, including the standalone Arabic character-name prompt. Historical
+publication statements below refer to predecessor database snapshots. Manifests
+preserve predecessor hashes and pin the renamed files; no database import,
+reapproval or publication was performed.
+
+
 September 30, 2026. **Seven unpublished, unapproved lesson packages**, imported
 into the local owner console. These extend the revised check-in pattern to the
 whole unit: conversation → phrase with building blocks → contextual recall before

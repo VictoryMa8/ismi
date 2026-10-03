@@ -64,7 +64,7 @@ test('download, offline completion, and exactly-once reconnection advance the co
 })
 
 test('core course controls expose names and remain keyboard reachable', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/#/today')
   await page.keyboard.press('Tab')
   await expect(page.getByRole('link', { name: 'Skip to main content' })).toBeFocused()
   await page.keyboard.press('Enter')

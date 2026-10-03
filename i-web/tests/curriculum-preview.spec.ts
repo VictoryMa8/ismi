@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 
 // Uses only existing demonstration language. This is not an authored lesson.
 test('owner imports and completes a saved draft without exposing or caching it', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/#/today')
   await page.getByRole('button', { name: 'Sign in or create an account', exact: true }).first().click()
   await page.getByRole('button', { name: 'Create account', exact: true }).click()
   await page.getByLabel('Display name', { exact: true }).fill('Preview owner')

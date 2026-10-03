@@ -6,7 +6,7 @@ assistive-technology walkthrough have been conducted as part of this kit.**
 Use this kit to discover whether false beginners can navigate, understand feedback,
 and retrieve expressions from the seven published Everyday conversations lessons.
 It does not establish fluency, pronunciation quality, or the thirty-day outcome.
-The [handoff](../next-stage-handoff.md) records publication; exact packages and
+The [historical handoff](../next-stage-handoff.md) records publication checkpoints; exact packages and
 sources are in the [unit directory](../../content/levantine/everyday-01/README.md).
 The six demonstration lessons are outside this pilot.
 
@@ -48,7 +48,7 @@ Proposed decision criteria, to agree before seeing results:
    every lesson and a short delayed check at the next session.
 4. Summarize counts with denominators, unresolved language judgments, and the top
    three changes. Record links to reproducible issues; prioritize blockers first.
-5. Update the handoff with actual results and choose the next implementation slice.
+5. Add anonymous results to the relevant feature note, update [F18 in the roadmap](../../ROADMAP.md#f18-invite-only-beta-readiness) with evidence, and recommend the next bounded task.
 
 Do not collect audio/video, credentials, private family stories, or third-party
 analytics. Ask for agreement to anonymous written observations at the start.

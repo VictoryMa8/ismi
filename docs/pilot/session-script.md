@@ -69,11 +69,11 @@ only with agreement. Do not score accent or require one transliteration spelling
 
 | Lesson / suffix | Task to show the learner | Facilitator meaning check and reference |
 | --- | --- | --- |
-| How was your day? / 01 | You are Lina talking to Omar. Your day was long but good. Describe it and ask him the same question back. | Day description includes long + positive contrast; returns question to Omar. See 01-review practice 5 and teaching note. This recombines the role and contrast. |
+| How was your day? / 01 | You are Fattoush talking to Knafeh. Your day was long but good. Describe it and ask him the same question back. | Day description includes long + positive contrast; returns question to Knafeh. See 01-review practice 5 and teaching note. This recombines the role and contrast. |
 | What did you do today? / 02 | Today you rested, then visited your mother. Tell someone those two events in that order. | Rest precedes visiting own mother. See 02-review dialogue and teaching note for the first-person forms and sequence. |
-| Want tea or coffee? / 03 | You are Lina asking Omar for coffee, politely, with no sugar. | Coffee, polite request to Omar, no sugar. See 03-review dialogue for request/address and no sugar; closing exchange for coffee. |
-| Let's eat together / 04 | You are Lina. Say you are hungry, then suggest making rice and salad together. | Feminine self-description, shared suggestion, both dishes. See 04-review dialogue and teaching note. |
-| How's your family? / 05 | You are talking to Omar. Ask how his family is, then ask how his sister is. | Listener's family; follow-up specifically about his sister. See 05-review dialogue turns 1 and 3. |
+| Want tea or coffee? / 03 | You are Fattoush asking Knafeh for coffee, politely, with no sugar. | Coffee, polite request to Knafeh, no sugar. See 03-review dialogue for request/address and no sugar; closing exchange for coffee. |
+| Let's eat together / 04 | You are Fattoush. Say you are hungry, then suggest making rice and salad together. | Feminine self-description, shared suggestion, both dishes. See 04-review dialogue and teaching note. |
+| How's your family? / 05 | You are talking to Knafeh. Ask how his family is, then ask how his sister is. | Listener's family; follow-up specifically about his sister. See 05-review dialogue turns 1 and 3. |
 | What are we doing tomorrow? / 06 | Suggest drinking tea together tomorrow at six. | Shared tea activity, tomorrow, six. See 06-review dialogue/teaching note and closing exchange; recombines its time and activity. |
 | Put it together / 07 | Say that today you rested and then worked. Confirm a shared meal tomorrow at seven, followed by tea. | Rest before work; tomorrow; seven; meal then tea. See 07-review practice 7–8; reverses the activity order. |
 
@@ -86,7 +86,7 @@ from missing. Compare supported and unaided attempts without turning them into X
 
 After lesson 3, ask what felt useful, what felt confusing, and which expression
 they would use with someone they know. Do not request a personal story.
-At the start of session 2, before opening lessons, ask: “Tell Omar that your day
+At the start of session 2, before opening lessons, ask: “Tell Knafeh that your day
 was quiet, then ask him about his day.” Log this separately as delayed recall of
 lesson 1. Record elapsed days and any intervening practice; it is not a controlled
 retention experiment. Then proceed through lessons 4–7 with breaks as needed.

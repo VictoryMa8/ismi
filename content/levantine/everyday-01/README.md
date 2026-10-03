@@ -1,5 +1,12 @@
 # Everyday conversations with someone you love
 
+October 2 update: repository packages now use Fattoush and Knafeh at the owner’s
+request, including the standalone Arabic character-name prompt. Historical
+publication statements below refer to predecessor database snapshots. Manifests
+preserve predecessor hashes and pin the renamed files; no database import,
+reapproval or publication was performed.
+
+
 The seven original Palestinian Levantine v1 packages were published locally and
 to https://ismi-ruby.vercel.app. The local store has since advanced lessons 1 and
 2 to v2; the latest seven guided teaching drafts are described below. Live state

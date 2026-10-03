@@ -102,8 +102,8 @@ public sealed class AccountApiTests : IAsyncLifetime
 
         var response = await client.PostAsJsonAsync("/api/auth/register", new
         {
-            displayName = "Omar",
-            email = "omar@example.test",
+            displayName = "Knafeh",
+            email = "knafeh@example.test",
             password = "long test password"
         });
 

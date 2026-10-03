@@ -3,15 +3,15 @@
     "id": "levantine-everyday-01-01",
     "trackId": "levantine",
     "title": "Check in with someone you love",
-    "scenario": "Lina and Omar catch up at home. Learn a casual check-in, say how you feel, and ask the other person back.",
+    "scenario": "Fattoush and Knafeh catch up at home. Learn a casual check-in, say how you feel, and ask the other person back.",
     "steps": [
       {
         "id": "e01-01",
-        "instruction": "Lina checks in with Omar. Respond as Omar: you are well.",
+        "instruction": "Fattoush checks in with Knafeh. Respond as Knafeh: you are well.",
         "prompt": {
           "arabic": "شو عامل؟",
           "arabizi": "Shū ʿāmel?",
-          "meaning": "How are you doing? (casual check-in to Omar)",
+          "meaning": "How are you doing? (casual check-in to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -19,46 +19,46 @@
             "id": "a",
             "arabic": "أنا منيحة.",
             "arabizi": "Ana mnīḥa.",
-            "meaning": "I’m well. (Lina speaking)",
-            "rationale": "This describes a feminine speaker; you are taking Omar’s role."
+            "meaning": "I’m well. (Fattoush speaking)",
+            "rationale": "This describes a feminine speaker; you are taking Knafeh’s role."
           },
           {
             "id": "b",
             "arabic": "أنا منيح.",
             "arabizi": "Ana mnīḥ.",
-            "meaning": "I’m well. (Omar speaking)",
-            "rationale": "This answers the check-in about Omar himself."
+            "meaning": "I’m well. (Knafeh speaking)",
+            "rationale": "This answers the check-in about Knafeh himself."
           },
           {
             "id": "c",
             "arabic": "يومي كان هادي.",
             "arabizi": "Yōmi kān hādi.",
             "meaning": "My day was quiet.",
-            "rationale": "This describes the day; the task asks how Omar himself feels."
+            "rationale": "This describes the day; the task asks how Knafeh himself feels."
           }
         ],
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits the conversation",
-          "correctExplanation": "Ana mnīḥ answers about Omar himself. The lesson’s question is a casual check-in.",
+          "correctExplanation": "Ana mnīḥ answers about Knafeh himself. The lesson’s question is a casual check-in.",
           "incorrectTitle": "Try a different response",
           "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
-          "retryHint": "Use ana and Omar’s form of “well.”"
+          "retryHint": "Use ana and Knafeh’s form of “well.”"
         },
         "characters": {
-          "speakerId": "lina",
-          "addresseeId": "omar",
-          "responseSpeakerId": "omar",
-          "responseAddresseeId": "lina"
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
         }
       },
       {
         "id": "e01-02",
-        "instruction": "You are Lina. After saying you are well, ask Omar the same question back.",
+        "instruction": "You are Fattoush. After saying you are well, ask Knafeh the same question back.",
         "prompt": {
           "arabic": "أنا منيحة.",
           "arabizi": "Ana mnīḥa.",
-          "meaning": "I’m well. (Lina speaking)",
+          "meaning": "I’m well. (Fattoush speaking)",
           "audioUrl": null
         },
         "answers": [
@@ -66,8 +66,8 @@
             "id": "a",
             "arabic": "وإنتِ؟",
             "arabizi": "W-inti?",
-            "meaning": "And you? (to Lina)",
-            "rationale": "This addresses Lina, but your listener is Omar."
+            "meaning": "And you? (to Fattoush)",
+            "rationale": "This addresses Fattoush, but your listener is Knafeh."
           },
           {
             "id": "b",
@@ -80,32 +80,32 @@
             "id": "c",
             "arabic": "وإنتَ؟",
             "arabizi": "W-inta?",
-            "meaning": "And you? (to Omar)",
-            "rationale": "Inta addresses Omar and returns the check-in."
+            "meaning": "And you? (to Knafeh)",
+            "rationale": "Inta addresses Knafeh and returns the check-in."
           }
         ],
         "evaluation": {
           "correctAnswerId": "c",
           "correctTitle": "That fits the conversation",
-          "correctExplanation": "W-inta? invites Omar to answer without repeating the question.",
+          "correctExplanation": "W-inta? invites Knafeh to answer without repeating the question.",
           "incorrectTitle": "Try a different response",
           "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
-          "retryHint": "Your listener is Omar: use inta."
+          "retryHint": "Your listener is Knafeh: use inta."
         },
         "characters": {
-          "speakerId": "lina",
-          "addresseeId": "omar",
-          "responseSpeakerId": "lina",
-          "responseAddresseeId": "omar"
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
         }
       },
       {
         "id": "e01-03",
-        "instruction": "You are checking in with Lina. Choose the question addressed to her.",
+        "instruction": "You are checking in with Fattoush. Choose the question addressed to her.",
         "prompt": {
-          "arabic": "لينا",
-          "arabizi": "Lina",
-          "meaning": "Lina",
+          "arabic": "فتوش",
+          "arabizi": "Fattoush",
+          "meaning": "Fattoush",
           "audioUrl": null
         },
         "answers": [
@@ -113,44 +113,44 @@
             "id": "a",
             "arabic": "شو عاملة؟",
             "arabizi": "Shū ʿāmle?",
-            "meaning": "How are you doing? (casual check-in to Lina)",
-            "rationale": "ʿĀmle marks the question to Lina."
+            "meaning": "How are you doing? (casual check-in to Fattoush)",
+            "rationale": "ʿĀmle marks the question to Fattoush."
           },
           {
             "id": "b",
             "arabic": "شو عامل؟",
             "arabizi": "Shū ʿāmel?",
-            "meaning": "How are you doing? (casual check-in to Omar)",
-            "rationale": "ʿĀmel is the form addressed to Omar."
+            "meaning": "How are you doing? (casual check-in to Knafeh)",
+            "rationale": "ʿĀmel is the form addressed to Knafeh."
           },
           {
             "id": "c",
             "arabic": "شو عملت اليوم؟",
             "arabizi": "Shū ʿmilt il-yōm?",
-            "meaning": "What did you do today? (to Omar)",
+            "meaning": "What did you do today? (to Knafeh)",
             "rationale": "This asks for completed activities and uses masculine address."
           }
         ],
         "evaluation": {
           "correctAnswerId": "a",
           "correctTitle": "That fits the conversation",
-          "correctExplanation": "Shū ʿāmle? changes the address form for Lina.",
+          "correctExplanation": "Shū ʿāmle? changes the address form for Fattoush.",
           "incorrectTitle": "Try a different response",
           "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
           "retryHint": "Listen for the ending of ʿāmle."
         },
         "characters": {
-          "responseSpeakerId": "omar",
-          "responseAddresseeId": "lina"
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
         }
       },
       {
         "id": "e01-04",
-        "instruction": "Answer as Lina: you are a little tired.",
+        "instruction": "Answer as Fattoush: you are a little tired.",
         "prompt": {
           "arabic": "شو عاملة؟",
           "arabizi": "Shū ʿāmle?",
-          "meaning": "How are you doing? (casual check-in to Lina)",
+          "meaning": "How are you doing? (casual check-in to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -158,46 +158,46 @@
             "id": "a",
             "arabic": "أنا تعبانة كتير.",
             "arabizi": "Ana taʿbāne ktīr.",
-            "meaning": "I’m very tired. (Lina speaking)",
+            "meaning": "I’m very tired. (Fattoush speaking)",
             "rationale": "Ktīr makes the tiredness strong, changing “a little.”"
           },
           {
             "id": "b",
             "arabic": "أنا تعبان شوي.",
             "arabizi": "Ana taʿbān shwayy.",
-            "meaning": "I’m a little tired. (Omar speaking)",
-            "rationale": "This describes Omar; Lina uses taʿbāne."
+            "meaning": "I’m a little tired. (Knafeh speaking)",
+            "rationale": "This describes Knafeh; Fattoush uses taʿbāne."
           },
           {
             "id": "c",
             "arabic": "أنا تعبانة شوي.",
             "arabizi": "Ana taʿbāne shwayy.",
-            "meaning": "I’m a little tired. (Lina speaking)",
-            "rationale": "The description matches Lina and keeps the degree mild."
+            "meaning": "I’m a little tired. (Fattoush speaking)",
+            "rationale": "The description matches Fattoush and keeps the degree mild."
           }
         ],
         "evaluation": {
           "correctAnswerId": "c",
           "correctTitle": "That fits the conversation",
-          "correctExplanation": "Ana taʿbāne shwayy preserves both Lina’s self-description and “a little.”",
+          "correctExplanation": "Ana taʿbāne shwayy preserves both Fattoush’s self-description and “a little.”",
           "incorrectTitle": "Try a different response",
           "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
-          "retryHint": "Use Lina’s description and shwayy."
+          "retryHint": "Use Fattoush’s description and shwayy."
         },
         "characters": {
-          "speakerId": "omar",
-          "addresseeId": "lina",
-          "responseSpeakerId": "lina",
-          "responseAddresseeId": "omar"
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
         }
       },
       {
         "id": "e01-05",
-        "instruction": "Lina asks how you are doing. Respond as Omar: a little tired.",
+        "instruction": "Fattoush asks how you are doing. Respond as Knafeh: a little tired.",
         "prompt": {
           "arabic": "شو عامل؟",
           "arabizi": "Shū ʿāmel?",
-          "meaning": "How are you doing? (casual check-in to Omar)",
+          "meaning": "How are you doing? (casual check-in to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -205,46 +205,46 @@
             "id": "a",
             "arabic": "أنا تعبانة شوي.",
             "arabizi": "Ana taʿbāne shwayy.",
-            "meaning": "I’m a little tired. (Lina speaking)",
-            "rationale": "This is the feminine self-description, while you are Omar."
+            "meaning": "I’m a little tired. (Fattoush speaking)",
+            "rationale": "This is the feminine self-description, while you are Knafeh."
           },
           {
             "id": "b",
             "arabic": "أنا تعبان شوي.",
             "arabizi": "Ana taʿbān shwayy.",
-            "meaning": "I’m a little tired. (Omar speaking)",
-            "rationale": "This describes Omar with mild tiredness."
+            "meaning": "I’m a little tired. (Knafeh speaking)",
+            "rationale": "This describes Knafeh with mild tiredness."
           },
           {
             "id": "c",
             "arabic": "أنا تعبان كتير.",
             "arabizi": "Ana taʿbān ktīr.",
-            "meaning": "I’m very tired. (Omar speaking)",
+            "meaning": "I’m very tired. (Knafeh speaking)",
             "rationale": "This changes the requested degree to “very.”"
           }
         ],
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits the conversation",
-          "correctExplanation": "Ana taʿbān shwayy is Omar’s self-description; shwayy keeps it mild.",
+          "correctExplanation": "Ana taʿbān shwayy is Knafeh’s self-description; shwayy keeps it mild.",
           "incorrectTitle": "Try a different response",
           "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
-          "retryHint": "Match Omar and “a little.”"
+          "retryHint": "Match Knafeh and “a little.”"
         },
         "characters": {
-          "speakerId": "lina",
-          "addresseeId": "omar",
-          "responseSpeakerId": "omar",
-          "responseAddresseeId": "lina"
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
         }
       },
       {
         "id": "e01-06",
-        "instruction": "Lina offers Omar a rest. Accept and say you want a little rest.",
+        "instruction": "Fattoush offers Knafeh a rest. Accept and say you want a little rest.",
         "prompt": {
           "arabic": "بدك ترتاح؟",
           "arabizi": "Biddak tirtāḥ?",
-          "meaning": "Do you want to rest? (to Omar)",
+          "meaning": "Do you want to rest? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -273,25 +273,25 @@
         "evaluation": {
           "correctAnswerId": "a",
           "correctTitle": "That fits the conversation",
-          "correctExplanation": "Āh, biddi artāḥ shwayy accepts and says what Omar wants now.",
+          "correctExplanation": "Āh, biddi artāḥ shwayy accepts and says what Knafeh wants now.",
           "incorrectTitle": "Try a different response",
           "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
           "retryHint": "Accept first, then say what you want."
         },
         "characters": {
-          "speakerId": "lina",
-          "addresseeId": "omar",
-          "responseSpeakerId": "omar",
-          "responseAddresseeId": "lina"
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
         }
       },
       {
         "id": "e01-07",
-        "instruction": "A new check-in: respond as Lina that you are well.",
+        "instruction": "A new check-in: respond as Fattoush that you are well.",
         "prompt": {
           "arabic": "شو عاملة؟",
           "arabizi": "Shū ʿāmle?",
-          "meaning": "How are you doing? (casual check-in to Lina)",
+          "meaning": "How are you doing? (casual check-in to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -299,46 +299,46 @@
             "id": "a",
             "arabic": "أنا منيح.",
             "arabizi": "Ana mnīḥ.",
-            "meaning": "I’m well. (Omar speaking)",
-            "rationale": "This is Omar’s self-description; you are Lina."
+            "meaning": "I’m well. (Knafeh speaking)",
+            "rationale": "This is Knafeh’s self-description; you are Fattoush."
           },
           {
             "id": "b",
             "arabic": "أنا تعبانة شوي.",
             "arabizi": "Ana taʿbāne shwayy.",
-            "meaning": "I’m a little tired. (Lina speaking)",
+            "meaning": "I’m a little tired. (Fattoush speaking)",
             "rationale": "This says you are tired, changing the requested meaning."
           },
           {
             "id": "c",
             "arabic": "أنا منيحة.",
             "arabizi": "Ana mnīḥa.",
-            "meaning": "I’m well. (Lina speaking)",
-            "rationale": "This describes Lina as well."
+            "meaning": "I’m well. (Fattoush speaking)",
+            "rationale": "This describes Fattoush as well."
           }
         ],
         "evaluation": {
           "correctAnswerId": "c",
           "correctTitle": "That fits the conversation",
-          "correctExplanation": "Ana mnīḥa changes the self-description to fit Lina in this new exchange.",
+          "correctExplanation": "Ana mnīḥa changes the self-description to fit Fattoush in this new exchange.",
           "incorrectTitle": "Try a different response",
           "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
-          "retryHint": "Describe Lina as well."
+          "retryHint": "Describe Fattoush as well."
         },
         "characters": {
-          "speakerId": "omar",
-          "addresseeId": "lina",
-          "responseSpeakerId": "lina",
-          "responseAddresseeId": "omar"
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
         }
       },
       {
         "id": "e01-08",
-        "instruction": "You are Omar. After answering, return the check-in to Lina.",
+        "instruction": "You are Knafeh. After answering, return the check-in to Fattoush.",
         "prompt": {
           "arabic": "أنا منيح.",
           "arabizi": "Ana mnīḥ.",
-          "meaning": "I’m well. (Omar speaking)",
+          "meaning": "I’m well. (Knafeh speaking)",
           "audioUrl": null
         },
         "answers": [
@@ -346,15 +346,15 @@
             "id": "a",
             "arabic": "وإنتَ؟",
             "arabizi": "W-inta?",
-            "meaning": "And you? (to Omar)",
-            "rationale": "This addresses Omar, but Lina is your listener."
+            "meaning": "And you? (to Knafeh)",
+            "rationale": "This addresses Knafeh, but Fattoush is your listener."
           },
           {
             "id": "b",
             "arabic": "وإنتِ؟",
             "arabizi": "W-inti?",
-            "meaning": "And you? (to Lina)",
-            "rationale": "Inti addresses Lina and keeps the check-in going."
+            "meaning": "And you? (to Fattoush)",
+            "rationale": "Inti addresses Fattoush and keeps the check-in going."
           },
           {
             "id": "c",
@@ -367,16 +367,16 @@
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits the conversation",
-          "correctExplanation": "W-inti? completes the exchange by inviting Lina to answer.",
+          "correctExplanation": "W-inti? completes the exchange by inviting Fattoush to answer.",
           "incorrectTitle": "Try a different response",
           "incorrectExplanation": "Compare the speaker, listener, and intended meaning.",
-          "retryHint": "Return the question to Lina."
+          "retryHint": "Return the question to Fattoush."
         },
         "characters": {
-          "speakerId": "omar",
-          "addresseeId": "lina",
-          "responseSpeakerId": "omar",
-          "responseAddresseeId": "lina"
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
         }
       }
     ],
@@ -390,107 +390,107 @@
       "goal": "Check in, say how you feel, and keep a short exchange going.",
       "dialogue": [
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "شو عامل؟",
             "arabizi": "Shū ʿāmel?",
-            "meaning": "How are you doing? (casual check-in to Omar)",
+            "meaning": "How are you doing? (casual check-in to Knafeh)",
             "audioUrl": null
           },
-          "speakerId": "lina",
-          "addresseeId": "omar"
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
         },
         {
-          "speaker": "Omar → Lina",
+          "speaker": "Knafeh → Fattoush",
           "line": {
             "arabic": "أنا منيح. وإنتِ؟",
             "arabizi": "Ana mnīḥ. W-inti?",
-            "meaning": "I’m well. And you? (to Lina)",
+            "meaning": "I’m well. And you? (to Fattoush)",
             "audioUrl": null
           },
-          "speakerId": "omar",
-          "addresseeId": "lina"
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
         },
         {
-          "speaker": "Lina",
+          "speaker": "Fattoush",
           "line": {
             "arabic": "أنا تعبانة شوي.",
             "arabizi": "Ana taʿbāne shwayy.",
-            "meaning": "I’m a little tired. (Lina speaking)",
+            "meaning": "I’m a little tired. (Fattoush speaking)",
             "audioUrl": null
           },
-          "speakerId": "lina",
-          "addresseeId": "omar"
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "أنا تعبان كمان.",
             "arabizi": "Ana taʿbān kamān.",
-            "meaning": "I’m tired too. (Omar speaking)",
+            "meaning": "I’m tired too. (Knafeh speaking)",
             "audioUrl": null
           },
-          "speakerId": "omar",
-          "addresseeId": "lina"
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
         },
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "بدك ترتاح؟",
             "arabizi": "Biddak tirtāḥ?",
-            "meaning": "Do you want to rest? (to Omar)",
+            "meaning": "Do you want to rest? (to Knafeh)",
             "audioUrl": null
           },
-          "speakerId": "lina",
-          "addresseeId": "omar"
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "آه، بدي أرتاح شوي.",
             "arabizi": "Āh, biddi artāḥ shwayy.",
             "meaning": "Yes, I want to rest a little.",
             "audioUrl": null
           },
-          "speakerId": "omar",
-          "addresseeId": "lina"
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
         }
       ],
       "expressions": [
         {
           "arabic": "شو عامل؟",
           "arabizi": "Shū ʿāmel?",
-          "meaning": "How are you doing? (casual check-in to Omar)",
+          "meaning": "How are you doing? (casual check-in to Knafeh)",
           "audioUrl": null
         },
         {
           "arabic": "شو عاملة؟",
           "arabizi": "Shū ʿāmle?",
-          "meaning": "How are you doing? (casual check-in to Lina)",
+          "meaning": "How are you doing? (casual check-in to Fattoush)",
           "audioUrl": null
         },
         {
           "arabic": "أنا منيح.",
           "arabizi": "Ana mnīḥ.",
-          "meaning": "I’m well. (Omar speaking)",
+          "meaning": "I’m well. (Knafeh speaking)",
           "audioUrl": null
         },
         {
           "arabic": "أنا منيحة.",
           "arabizi": "Ana mnīḥa.",
-          "meaning": "I’m well. (Lina speaking)",
+          "meaning": "I’m well. (Fattoush speaking)",
           "audioUrl": null
         },
         {
           "arabic": "أنا تعبانة شوي.",
           "arabizi": "Ana taʿbāne shwayy.",
-          "meaning": "I’m a little tired. (Lina speaking)",
+          "meaning": "I’m a little tired. (Fattoush speaking)",
           "audioUrl": null
         },
         {
           "arabic": "وإنتِ؟",
           "arabizi": "W-inti?",
-          "meaning": "And you? (to Lina)",
+          "meaning": "And you? (to Fattoush)",
           "audioUrl": null
         }
       ],
@@ -511,10 +511,10 @@
           "phrase": {
             "arabic": "شو عامل؟",
             "arabizi": "Shū ʿāmel?",
-            "meaning": "How are you doing? (casual check-in to Omar)",
+            "meaning": "How are you doing? (casual check-in to Knafeh)",
             "audioUrl": null
           },
-          "note": "Lina asks Omar how he is doing. In this greeting, answer about how you feel. When addressing Lina, use shū ʿāmle.",
+          "note": "Fattoush asks Knafeh how he is doing. In this greeting, answer about how you feel. When addressing Fattoush, use shū ʿāmle.",
           "chunks": [
             {
               "arabic": "شو",
@@ -524,27 +524,27 @@
             {
               "arabic": "عامل",
               "arabizi": "ʿāmel",
-              "meaning": "doing · to Omar"
+              "meaning": "doing · to Knafeh"
             }
           ],
-          "recallCue": "You are Lina. Greet Omar with a casual check-in.",
+          "recallCue": "You are Fattoush. Greet Knafeh with a casual check-in.",
           "sourceLocators": [
             "internal:ismi/review-cases/LEV-2026-09-30-01",
             "https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf",
             "internal:ismi/everyday-01/01/guided-teaching"
           ],
-          "speakerId": "lina",
-          "addresseeId": "omar"
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
         },
         {
           "title": "Answer about yourself",
           "phrase": {
             "arabic": "أنا منيح.",
             "arabizi": "Ana mnīḥ.",
-            "meaning": "I’m well. (Omar speaking)",
+            "meaning": "I’m well. (Knafeh speaking)",
             "audioUrl": null
           },
-          "note": "Ana identifies the speaker. This form describes Omar; Lina says mnīḥa.",
+          "note": "Ana identifies the speaker. This form describes Knafeh; Fattoush says mnīḥa.",
           "chunks": [
             {
               "arabic": "أنا",
@@ -554,27 +554,27 @@
             {
               "arabic": "منيح",
               "arabizi": "mnīḥ",
-              "meaning": "well · Omar’s description"
+              "meaning": "well · Knafeh’s description"
             }
           ],
-          "recallCue": "You are Omar. Lina checks in. Tell her you’re well.",
+          "recallCue": "You are Knafeh. Fattoush checks in. Tell her you’re well.",
           "sourceLocators": [
             "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
             "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
             "internal:ismi/everyday-01/01/guided-teaching"
           ],
-          "speakerId": "omar",
-          "addresseeId": "lina"
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
         },
         {
           "title": "Give a little detail",
           "phrase": {
             "arabic": "أنا تعبانة شوي.",
             "arabizi": "Ana taʿbāne shwayy.",
-            "meaning": "I’m a little tired. (Lina speaking)",
+            "meaning": "I’m a little tired. (Fattoush speaking)",
             "audioUrl": null
           },
-          "note": "Lina is describing herself, so taʿbāne has a feminine ending. Shwayy keeps the tiredness mild.",
+          "note": "Fattoush is describing herself, so taʿbāne has a feminine ending. Shwayy keeps the tiredness mild.",
           "chunks": [
             {
               "arabic": "أنا",
@@ -584,7 +584,7 @@
             {
               "arabic": "تعبانة",
               "arabizi": "taʿbāne",
-              "meaning": "tired · Lina’s description"
+              "meaning": "tired · Fattoush’s description"
             },
             {
               "arabic": "شوي",
@@ -592,49 +592,49 @@
               "meaning": "a little"
             }
           ],
-          "recallCue": "You are Lina. Tell Omar you’re a little tired.",
+          "recallCue": "You are Fattoush. Tell Knafeh you’re a little tired.",
           "sourceLocators": [
             "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
             "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
             "internal:ismi/everyday-01/01/guided-teaching"
           ],
-          "speakerId": "lina",
-          "addresseeId": "omar"
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
         },
         {
           "title": "Keep the conversation going",
           "phrase": {
             "arabic": "وإنتِ؟",
             "arabizi": "W-inti?",
-            "meaning": "And you? (to Lina)",
+            "meaning": "And you? (to Fattoush)",
             "audioUrl": null
           },
-          "note": "You do not need to repeat the whole question. Inti addresses Lina; inta addresses Omar.",
+          "note": "You do not need to repeat the whole question. Inti addresses Fattoush; inta addresses Knafeh.",
           "chunks": [
             {
               "arabic": "وإنتِ",
               "arabizi": "w-inti",
-              "meaning": "and you · to Lina"
+              "meaning": "and you · to Fattoush"
             }
           ],
-          "recallCue": "You are Omar. After answering, ask Lina the same question back.",
+          "recallCue": "You are Knafeh. After answering, ask Fattoush the same question back.",
           "sourceLocators": [
             "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
             "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
             "internal:ismi/everyday-01/01/guided-teaching"
           ],
-          "speakerId": "omar",
-          "addresseeId": "lina"
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
         },
         {
-          "title": "Check in with Lina",
+          "title": "Check in with Fattoush",
           "phrase": {
             "arabic": "شو عاملة؟",
             "arabizi": "Shū ʿāmle?",
-            "meaning": "How are you doing? (casual check-in to Lina)",
+            "meaning": "How are you doing? (casual check-in to Fattoush)",
             "audioUrl": null
           },
-          "note": "The person you address changes the ending: ʿāmel to Omar, ʿāmle to Lina.",
+          "note": "The person you address changes the ending: ʿāmel to Knafeh, ʿāmle to Fattoush.",
           "chunks": [
             {
               "arabic": "شو",
@@ -644,38 +644,38 @@
             {
               "arabic": "عاملة",
               "arabizi": "ʿāmle",
-              "meaning": "doing · to Lina"
+              "meaning": "doing · to Fattoush"
             }
           ],
-          "recallCue": "You are Omar. Start a casual check-in with Lina.",
+          "recallCue": "You are Knafeh. Start a casual check-in with Fattoush.",
           "sourceLocators": [
             "internal:ismi/review-cases/LEV-2026-09-30-01",
             "https://files.lingualism.com/wp-content/uploads/SAMPLE-Levantine-Arabic-Verbs-Lingualism.pdf",
             "internal:ismi/everyday-01/01/guided-teaching"
           ],
-          "speakerId": "omar",
-          "addresseeId": "lina"
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
         },
         {
           "title": "Offer a little rest",
           "phrase": {
             "arabic": "بدك ترتاح؟",
             "arabizi": "Biddak tirtāḥ?",
-            "meaning": "Do you want to rest? (to Omar)",
+            "meaning": "Do you want to rest? (to Knafeh)",
             "audioUrl": null
           },
-          "note": "Biddak asks what Omar wants; biddi says what you yourself want. Keep tirtāḥ with the question and artāḥ with your reply.",
-          "recallCue": "You are Lina. Omar is tired. Ask if he wants to rest.",
+          "note": "Biddak asks what Knafeh wants; biddi says what you yourself want. Keep tirtāḥ with the question and artāḥ with your reply.",
+          "recallCue": "You are Fattoush. Knafeh is tired. Ask if he wants to rest.",
           "chunks": [
             {
               "arabic": "بدك",
               "arabizi": "biddak",
-              "meaning": "do you want · to Omar"
+              "meaning": "do you want · to Knafeh"
             },
             {
               "arabic": "ترتاح",
               "arabizi": "tirtāḥ",
-              "meaning": "to rest · Omar"
+              "meaning": "to rest · Knafeh"
             }
           ],
           "sourceLocators": [
@@ -683,8 +683,8 @@
             "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
             "internal:ismi/everyday-01/01/guided-teaching"
           ],
-          "speakerId": "lina",
-          "addresseeId": "omar"
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
         },
         {
           "title": "Say what you need",
@@ -717,14 +717,14 @@
               "meaning": "a little"
             }
           ],
-          "recallCue": "You are Omar. Accept Lina’s offer and say you want to rest a little.",
+          "recallCue": "You are Knafeh. Accept Fattoush’s offer and say you want to rest a little.",
           "sourceLocators": [
             "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
             "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
             "internal:ismi/everyday-01/01/guided-teaching"
           ],
-          "speakerId": "omar",
-          "addresseeId": "lina"
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
         }
       ]
     },
@@ -732,8 +732,8 @@
     "characters": {
       "registryVersion": "ismi-cast-v1",
       "characterIds": [
-        "lina",
-        "omar"
+        "fattoush",
+        "knafeh"
       ]
     }
   },

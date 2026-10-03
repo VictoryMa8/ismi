@@ -4,51 +4,51 @@
 
 Goal: Check in, say how you feel, and keep a short exchange going.
 
-Lina and Omar catch up at home. Learn a casual check-in, say how you feel, and ask the other person back.
+Fattoush and Knafeh catch up at home. Learn a casual check-in, say how you feel, and ask the other person back.
 
 ## Dialogue / recording script
 
-**Lina → Omar**
+**Fattoush → Knafeh**
 
 شو عامل؟
 
 Shū ʿāmel?
 
-How are you doing? (casual check-in to Omar)
+How are you doing? (casual check-in to Knafeh)
 
-**Omar → Lina**
+**Knafeh → Fattoush**
 
 أنا منيح. وإنتِ؟
 
 Ana mnīḥ. W-inti?
 
-I’m well. And you? (to Lina)
+I’m well. And you? (to Fattoush)
 
-**Lina**
+**Fattoush**
 
 أنا تعبانة شوي.
 
 Ana taʿbāne shwayy.
 
-I’m a little tired. (Lina speaking)
+I’m a little tired. (Fattoush speaking)
 
-**Omar**
+**Knafeh**
 
 أنا تعبان كمان.
 
 Ana taʿbān kamān.
 
-I’m tired too. (Omar speaking)
+I’m tired too. (Knafeh speaking)
 
-**Lina → Omar**
+**Fattoush → Knafeh**
 
 بدك ترتاح؟
 
 Biddak tirtāḥ?
 
-Do you want to rest? (to Omar)
+Do you want to rest? (to Knafeh)
 
-**Omar**
+**Knafeh**
 
 آه، بدي أرتاح شوي.
 
@@ -64,12 +64,12 @@ Yes, I want to rest a little.
 
 Shū ʿāmel?
 
-How are you doing? (casual check-in to Omar)
+How are you doing? (casual check-in to Knafeh)
 
-This scene uses the question as a greeting to Omar. The response tells him how you feel.
+This scene uses the question as a greeting to Knafeh. The response tells him how you feel.
 
 - شو · shū · what
-- عامل · ʿāmel · doing · to Omar
+- عامل · ʿāmel · doing · to Knafeh
 
 ### Answer about yourself
 
@@ -77,12 +77,12 @@ This scene uses the question as a greeting to Omar. The response tells him how y
 
 Ana mnīḥ.
 
-I’m well. (Omar speaking)
+I’m well. (Knafeh speaking)
 
-Ana identifies the speaker. This form describes Omar; Lina says mnīḥa.
+Ana identifies the speaker. This form describes Knafeh; Fattoush says mnīḥa.
 
 - أنا · ana · I
-- منيح · mnīḥ · well · Omar’s description
+- منيح · mnīḥ · well · Knafeh’s description
 
 ### Give a little detail
 
@@ -90,12 +90,12 @@ Ana identifies the speaker. This form describes Omar; Lina says mnīḥa.
 
 Ana taʿbāne shwayy.
 
-I’m a little tired. (Lina speaking)
+I’m a little tired. (Fattoush speaking)
 
-Lina is describing herself, so taʿbāne has a feminine ending. Shwayy keeps the tiredness mild.
+Fattoush is describing herself, so taʿbāne has a feminine ending. Shwayy keeps the tiredness mild.
 
 - أنا · ana · I
-- تعبانة · taʿbāne · tired · Lina’s description
+- تعبانة · taʿbāne · tired · Fattoush’s description
 - شوي · shwayy · a little
 
 ### Keep the conversation going
@@ -104,24 +104,24 @@ Lina is describing herself, so taʿbāne has a feminine ending. Shwayy keeps the
 
 W-inti?
 
-And you? (to Lina)
+And you? (to Fattoush)
 
-You do not need to repeat the whole question. Inti addresses Lina; inta addresses Omar.
+You do not need to repeat the whole question. Inti addresses Fattoush; inta addresses Knafeh.
 
-- وإنتِ · w-inti · and you · to Lina
+- وإنتِ · w-inti · and you · to Fattoush
 
-### Check in with Lina
+### Check in with Fattoush
 
 شو عاملة؟
 
 Shū ʿāmle?
 
-How are you doing? (casual check-in to Lina)
+How are you doing? (casual check-in to Fattoush)
 
-The person you address changes the ending: ʿāmel to Omar, ʿāmle to Lina.
+The person you address changes the ending: ʿāmel to Knafeh, ʿāmle to Fattoush.
 
 - شو · shū · what
-- عاملة · ʿāmle · doing · to Lina
+- عاملة · ʿāmle · doing · to Fattoush
 
 ### Say what you need
 
@@ -140,114 +140,114 @@ Biddi marks what the speaker wants. Reuse shwayy to ask for a little rest.
 
 ## Usage and address
 
-Start with a casual check-in, answer about yourself, then invite the other person to answer. Shū ʿāmel? addresses Omar; shū ʿāmle? addresses Lina. In this scene it functions as “How are you doing?”; context can also make it a question about what someone is doing. Ana means “I”: Omar describes himself with mnīḥ or taʿbān; Lina uses mnīḥa or taʿbāne. Shwayy means “a little,” while ktīr means “very” in these descriptions. W-inta? returns the question to Omar; w-inti? returns it to Lina. Keep the listener and speaker separate when choosing a form.
+Start with a casual check-in, answer about yourself, then invite the other person to answer. Shū ʿāmel? addresses Knafeh; shū ʿāmle? addresses Fattoush. In this scene it functions as “How are you doing?”; context can also make it a question about what someone is doing. Ana means “I”: Knafeh describes himself with mnīḥ or taʿbān; Fattoush uses mnīḥa or taʿbāne. Shwayy means “a little,” while ktīr means “very” in these descriptions. W-inta? returns the question to Knafeh; w-inti? returns it to Fattoush. Keep the listener and speaker separate when choosing a form.
 
 Urban Palestinian teaching target. The casual check-in choice follows Palestinian-speaker feedback relayed and clarified by the owner on September 30, 2026. No universal claim about every Palestinian greeting is made. Feminine address and composed exchange are AI-assisted drafts; no native-expert review. Keep transliteration available: ʿ = ع; ā/ī/ū are long vowels. Jordanian alternatives are not introduced here.
 
 ## Practice and closing exchange
 
-### e01-01: Lina checks in with Omar. Respond as Omar: you are well.
+### e01-01: Fattoush checks in with Knafeh. Respond as Knafeh: you are well.
 
 شو عامل؟
 
 Shū ʿāmel?
 
-How are you doing? (casual check-in to Omar)
+How are you doing? (casual check-in to Knafeh)
 
-- **A** أنا منيحة. · Ana mnīḥa. · I’m well. (Lina speaking)
-  Rationale: This describes a feminine speaker; you are taking Omar’s role.
-- **B (accepted)** أنا منيح. · Ana mnīḥ. · I’m well. (Omar speaking)
-  Rationale: This answers the check-in about Omar himself.
+- **A** أنا منيحة. · Ana mnīḥa. · I’m well. (Fattoush speaking)
+  Rationale: This describes a feminine speaker; you are taking Knafeh’s role.
+- **B (accepted)** أنا منيح. · Ana mnīḥ. · I’m well. (Knafeh speaking)
+  Rationale: This answers the check-in about Knafeh himself.
 - **C** يومي كان هادي. · Yōmi kān hādi. · My day was quiet.
-  Rationale: This describes the day; the task asks how Omar himself feels.
+  Rationale: This describes the day; the task asks how Knafeh himself feels.
 
-Ana mnīḥ answers about Omar himself. The lesson’s question is a casual check-in.
+Ana mnīḥ answers about Knafeh himself. The lesson’s question is a casual check-in.
 
-Retry hint: Use ana and Omar’s form of “well.”
+Retry hint: Use ana and Knafeh’s form of “well.”
 
-### e01-02: You have answered Omar. Ask him the same question back.
+### e01-02: You have answered Knafeh. Ask him the same question back.
 
 أنا منيحة.
 
 Ana mnīḥa.
 
-I’m well. (Lina speaking)
+I’m well. (Fattoush speaking)
 
-- **A** وإنتِ؟ · W-inti? · And you? (to Lina)
-  Rationale: This addresses Lina, but your listener is Omar.
+- **A** وإنتِ؟ · W-inti? · And you? (to Fattoush)
+  Rationale: This addresses Fattoush, but your listener is Knafeh.
 - **B** وكيفها؟ · W-kīfha? · And how is she?
   Rationale: This asks about a third person instead of your listener.
-- **C (accepted)** وإنتَ؟ · W-inta? · And you? (to Omar)
-  Rationale: Inta addresses Omar and returns the check-in.
+- **C (accepted)** وإنتَ؟ · W-inta? · And you? (to Knafeh)
+  Rationale: Inta addresses Knafeh and returns the check-in.
 
-W-inta? invites Omar to answer without repeating the question.
+W-inta? invites Knafeh to answer without repeating the question.
 
-Retry hint: Your listener is Omar: use inta.
+Retry hint: Your listener is Knafeh: use inta.
 
-### e01-03: You are checking in with Lina. Choose the question addressed to her.
+### e01-03: You are checking in with Fattoush. Choose the question addressed to her.
 
-لينا
+فتوش
 
-Lina
+Fattoush
 
-Lina
+Fattoush
 
-- **A (accepted)** شو عاملة؟ · Shū ʿāmle? · How are you doing? (casual check-in to Lina)
-  Rationale: ʿĀmle marks the question to Lina.
-- **B** شو عامل؟ · Shū ʿāmel? · How are you doing? (casual check-in to Omar)
-  Rationale: ʿĀmel is the form addressed to Omar.
-- **C** شو عملت اليوم؟ · Shū ʿmilt il-yōm? · What did you do today? (to Omar)
+- **A (accepted)** شو عاملة؟ · Shū ʿāmle? · How are you doing? (casual check-in to Fattoush)
+  Rationale: ʿĀmle marks the question to Fattoush.
+- **B** شو عامل؟ · Shū ʿāmel? · How are you doing? (casual check-in to Knafeh)
+  Rationale: ʿĀmel is the form addressed to Knafeh.
+- **C** شو عملت اليوم؟ · Shū ʿmilt il-yōm? · What did you do today? (to Knafeh)
   Rationale: This asks for completed activities and uses masculine address.
 
-Shū ʿāmle? changes the address form for Lina.
+Shū ʿāmle? changes the address form for Fattoush.
 
 Retry hint: Listen for the ending of ʿāmle.
 
-### e01-04: Answer as Lina: you are a little tired.
+### e01-04: Answer as Fattoush: you are a little tired.
 
 شو عاملة؟
 
 Shū ʿāmle?
 
-How are you doing? (casual check-in to Lina)
+How are you doing? (casual check-in to Fattoush)
 
-- **A** أنا تعبانة كتير. · Ana taʿbāne ktīr. · I’m very tired. (Lina speaking)
+- **A** أنا تعبانة كتير. · Ana taʿbāne ktīr. · I’m very tired. (Fattoush speaking)
   Rationale: Ktīr makes the tiredness strong, changing “a little.”
-- **B** أنا تعبان شوي. · Ana taʿbān shwayy. · I’m a little tired. (Omar speaking)
-  Rationale: This describes Omar; Lina uses taʿbāne.
-- **C (accepted)** أنا تعبانة شوي. · Ana taʿbāne shwayy. · I’m a little tired. (Lina speaking)
-  Rationale: The description matches Lina and keeps the degree mild.
+- **B** أنا تعبان شوي. · Ana taʿbān shwayy. · I’m a little tired. (Knafeh speaking)
+  Rationale: This describes Knafeh; Fattoush uses taʿbāne.
+- **C (accepted)** أنا تعبانة شوي. · Ana taʿbāne shwayy. · I’m a little tired. (Fattoush speaking)
+  Rationale: The description matches Fattoush and keeps the degree mild.
 
-Ana taʿbāne shwayy preserves both Lina’s self-description and “a little.”
+Ana taʿbāne shwayy preserves both Fattoush’s self-description and “a little.”
 
-Retry hint: Use Lina’s description and shwayy.
+Retry hint: Use Fattoush’s description and shwayy.
 
-### e01-05: Lina asks how you are doing. Respond as Omar: a little tired.
+### e01-05: Fattoush asks how you are doing. Respond as Knafeh: a little tired.
 
 شو عامل؟
 
 Shū ʿāmel?
 
-How are you doing? (casual check-in to Omar)
+How are you doing? (casual check-in to Knafeh)
 
-- **A** أنا تعبانة شوي. · Ana taʿbāne shwayy. · I’m a little tired. (Lina speaking)
-  Rationale: This is the feminine self-description, while you are Omar.
-- **B (accepted)** أنا تعبان شوي. · Ana taʿbān shwayy. · I’m a little tired. (Omar speaking)
-  Rationale: This describes Omar with mild tiredness.
-- **C** أنا تعبان كتير. · Ana taʿbān ktīr. · I’m very tired. (Omar speaking)
+- **A** أنا تعبانة شوي. · Ana taʿbāne shwayy. · I’m a little tired. (Fattoush speaking)
+  Rationale: This is the feminine self-description, while you are Knafeh.
+- **B (accepted)** أنا تعبان شوي. · Ana taʿbān shwayy. · I’m a little tired. (Knafeh speaking)
+  Rationale: This describes Knafeh with mild tiredness.
+- **C** أنا تعبان كتير. · Ana taʿbān ktīr. · I’m very tired. (Knafeh speaking)
   Rationale: This changes the requested degree to “very.”
 
-Ana taʿbān shwayy is Omar’s self-description; shwayy keeps it mild.
+Ana taʿbān shwayy is Knafeh’s self-description; shwayy keeps it mild.
 
-Retry hint: Match Omar and “a little.”
+Retry hint: Match Knafeh and “a little.”
 
-### e01-06: Lina offers Omar a rest. Accept and say you want a little rest.
+### e01-06: Fattoush offers Knafeh a rest. Accept and say you want a little rest.
 
 بدك ترتاح؟
 
 Biddak tirtāḥ?
 
-Do you want to rest? (to Omar)
+Do you want to rest? (to Knafeh)
 
 - **A (accepted)** آه، بدي أرتاح شوي. · Āh, biddi artāḥ shwayy. · Yes, I want to rest a little.
   Rationale: Āh accepts; biddi artāḥ expresses the speaker’s wish.
@@ -256,47 +256,47 @@ Do you want to rest? (to Omar)
 - **C** اشتغلت وبعدين ارتحت. · Ishtaghalt w-baʿdēn irtaḥt. · I worked and then rested.
   Rationale: This reports completed activities instead of accepting the offer.
 
-Āh, biddi artāḥ shwayy accepts and says what Omar wants now.
+Āh, biddi artāḥ shwayy accepts and says what Knafeh wants now.
 
 Retry hint: Accept first, then say what you want.
 
-### e01-07: A new check-in: respond as Lina that you are well.
+### e01-07: A new check-in: respond as Fattoush that you are well.
 
 شو عاملة؟
 
 Shū ʿāmle?
 
-How are you doing? (casual check-in to Lina)
+How are you doing? (casual check-in to Fattoush)
 
-- **A** أنا منيح. · Ana mnīḥ. · I’m well. (Omar speaking)
-  Rationale: This is Omar’s self-description; you are Lina.
-- **B** أنا تعبانة شوي. · Ana taʿbāne shwayy. · I’m a little tired. (Lina speaking)
+- **A** أنا منيح. · Ana mnīḥ. · I’m well. (Knafeh speaking)
+  Rationale: This is Knafeh’s self-description; you are Fattoush.
+- **B** أنا تعبانة شوي. · Ana taʿbāne shwayy. · I’m a little tired. (Fattoush speaking)
   Rationale: This says you are tired, changing the requested meaning.
-- **C (accepted)** أنا منيحة. · Ana mnīḥa. · I’m well. (Lina speaking)
-  Rationale: This describes Lina as well.
+- **C (accepted)** أنا منيحة. · Ana mnīḥa. · I’m well. (Fattoush speaking)
+  Rationale: This describes Fattoush as well.
 
-Ana mnīḥa changes the self-description to fit Lina in this new exchange.
+Ana mnīḥa changes the self-description to fit Fattoush in this new exchange.
 
-Retry hint: Describe Lina as well.
+Retry hint: Describe Fattoush as well.
 
-### e01-08: You are Omar. After answering, return the check-in to Lina.
+### e01-08: You are Knafeh. After answering, return the check-in to Fattoush.
 
 أنا منيح.
 
 Ana mnīḥ.
 
-I’m well. (Omar speaking)
+I’m well. (Knafeh speaking)
 
-- **A** وإنتَ؟ · W-inta? · And you? (to Omar)
-  Rationale: This addresses Omar, but Lina is your listener.
-- **B (accepted)** وإنتِ؟ · W-inti? · And you? (to Lina)
-  Rationale: Inti addresses Lina and keeps the check-in going.
+- **A** وإنتَ؟ · W-inta? · And you? (to Knafeh)
+  Rationale: This addresses Knafeh, but Fattoush is your listener.
+- **B (accepted)** وإنتِ؟ · W-inti? · And you? (to Fattoush)
+  Rationale: Inti addresses Fattoush and keeps the check-in going.
 - **C** آه، بدي أرتاح شوي. · Āh, biddi artāḥ shwayy. · Yes, I want to rest a little.
   Rationale: This asks for rest rather than returning the question.
 
-W-inti? completes the exchange by inviting Lina to answer.
+W-inti? completes the exchange by inviting Fattoush to answer.
 
-Retry hint: Return the question to Lina.
+Retry hint: Return the question to Fattoush.
 
 ## Provenance
 

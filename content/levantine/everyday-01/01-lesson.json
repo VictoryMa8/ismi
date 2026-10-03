@@ -3,15 +3,15 @@
     "id": "levantine-everyday-01-01",
     "trackId": "levantine",
     "title": "How was your day?",
-    "scenario": "Lina and Omar catch up at home after a long day. Read both parts, then take Omar’s role.",
+    "scenario": "Fattoush and Knafeh catch up at home after a long day. Read both parts, then take Knafeh’s role.",
     "steps": [
       {
         "id": "e01-01",
-        "instruction": "In the dialogue, Omar’s day was good but long. Choose that description.",
+        "instruction": "In the dialogue, Knafeh’s day was good but long. Choose that description.",
         "prompt": {
           "arabic": "كيف كان يومك؟",
           "arabizi": "Kīf kān yōmak?",
-          "meaning": "How was your day? (to Omar)",
+          "meaning": "How was your day? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -20,7 +20,7 @@
             "arabic": "يومي كان هادي.",
             "arabizi": "Yōmi kān hādi.",
             "meaning": "My day was quiet.",
-            "rationale": "A quiet day describes Lina’s experience, not Omar’s long day."
+            "rationale": "A quiet day describes Fattoush’s experience, not Knafeh’s long day."
           },
           {
             "id": "b",
@@ -33,8 +33,8 @@
             "id": "c",
             "arabic": "أنا تعبان شوي.",
             "arabizi": "Ana taʿbān shwayy.",
-            "meaning": "I’m a little tired. (Omar speaking)",
-            "rationale": "This describes Omar’s current feeling, not how his day went."
+            "meaning": "I’m a little tired. (Knafeh speaking)",
+            "rationale": "This describes Knafeh’s current feeling, not how his day went."
           }
         ],
         "evaluation": {
@@ -48,7 +48,7 @@
       },
       {
         "id": "e01-02",
-        "instruction": "Lina has just answered Omar. Return the same question to Lina.",
+        "instruction": "Fattoush has just answered Knafeh. Return the same question to Fattoush.",
         "prompt": {
           "arabic": "يومي كان هادي.",
           "arabizi": "Yōmi kān hādi.",
@@ -60,40 +60,40 @@
             "id": "a",
             "arabic": "وإنتَ؟",
             "arabizi": "W-inta?",
-            "meaning": "And you? (to Omar)",
-            "rationale": "Inta addresses a man; in this scene the listener is Lina."
+            "meaning": "And you? (to Knafeh)",
+            "rationale": "Inta addresses a man; in this scene the listener is Fattoush."
           },
           {
             "id": "b",
             "arabic": "شو عملتي اليوم؟",
             "arabizi": "Shū ʿmilti il-yōm?",
-            "meaning": "What did you do today? (to Lina)",
-            "rationale": "This asks Lina for activities. It moves to a new question instead of simply returning the check-in."
+            "meaning": "What did you do today? (to Fattoush)",
+            "rationale": "This asks Fattoush for activities. It moves to a new question instead of simply returning the check-in."
           },
           {
             "id": "c",
             "arabic": "وإنتِ؟",
             "arabizi": "W-inti?",
-            "meaning": "And you? (to Lina)",
-            "rationale": "Inti addresses Lina. A short “and you?” returns the question already being discussed."
+            "meaning": "And you? (to Fattoush)",
+            "rationale": "Inti addresses Fattoush. A short “and you?” returns the question already being discussed."
           }
         ],
         "evaluation": {
           "correctAnswerId": "c",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Inti addresses Lina. A short “and you?” returns the question already being discussed.",
+          "correctExplanation": "Inti addresses Fattoush. A short “and you?” returns the question already being discussed.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
-          "retryHint": "The listener is Lina: use inti."
+          "retryHint": "The listener is Fattoush: use inti."
         }
       },
       {
         "id": "e01-03",
-        "instruction": "Speak as Lina about how she feels now: she is well.",
+        "instruction": "Speak as Fattoush about how she feels now: she is well.",
         "prompt": {
           "arabic": "كيفك هلّق؟",
           "arabizi": "Kīfik hallaʾ?",
-          "meaning": "How are you now? (to Lina)",
+          "meaning": "How are you now? (to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -101,15 +101,15 @@
             "id": "a",
             "arabic": "أنا منيحة.",
             "arabizi": "Ana mnīḥa.",
-            "meaning": "I’m well. (Lina speaking)",
-            "rationale": "Mnīḥa agrees with Lina when she describes herself."
+            "meaning": "I’m well. (Fattoush speaking)",
+            "rationale": "Mnīḥa agrees with Fattoush when she describes herself."
           },
           {
             "id": "b",
             "arabic": "أنا منيح.",
             "arabizi": "Ana mnīḥ.",
             "meaning": "I’m well. (masculine self-description)",
-            "rationale": "This is a masculine description of the speaker; Lina uses mnīḥa."
+            "rationale": "This is a masculine description of the speaker; Fattoush uses mnīḥa."
           },
           {
             "id": "c",
@@ -122,19 +122,19 @@
         "evaluation": {
           "correctAnswerId": "a",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Mnīḥa agrees with Lina when she describes herself.",
+          "correctExplanation": "Mnīḥa agrees with Fattoush when she describes herself.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
-          "retryHint": "Match the description to Lina, not to the noun “day.”"
+          "retryHint": "Match the description to Fattoush, not to the noun “day.”"
         }
       },
       {
         "id": "e01-04",
-        "instruction": "Omar is tired, but only a little. Respond as Omar.",
+        "instruction": "Knafeh is tired, but only a little. Respond as Knafeh.",
         "prompt": {
           "arabic": "كيفك هلّق؟",
           "arabizi": "Kīfak hallaʾ?",
-          "meaning": "How are you now? (to Omar)",
+          "meaning": "How are you now? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -150,20 +150,20 @@
             "arabic": "أنا تعبانة شوي.",
             "arabizi": "Ana taʿbāne shwayy.",
             "meaning": "I’m a little tired. (feminine self-description)",
-            "rationale": "This is a feminine self-description, while you are taking Omar’s role."
+            "rationale": "This is a feminine self-description, while you are taking Knafeh’s role."
           },
           {
             "id": "c",
             "arabic": "أنا تعبان شوي.",
             "arabizi": "Ana taʿbān shwayy.",
-            "meaning": "I’m a little tired. (Omar speaking)",
-            "rationale": "Taʿbān describes Omar, and shwayy keeps the degree mild."
+            "meaning": "I’m a little tired. (Knafeh speaking)",
+            "rationale": "Taʿbān describes Knafeh, and shwayy keeps the degree mild."
           }
         ],
         "evaluation": {
           "correctAnswerId": "c",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Taʿbān describes Omar, and shwayy keeps the degree mild.",
+          "correctExplanation": "Taʿbān describes Knafeh, and shwayy keeps the degree mild.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "Keep both the speaker and “a little.”"
@@ -197,7 +197,7 @@
             "id": "c",
             "arabic": "أنا تعبان شوي.",
             "arabizi": "Ana taʿbān shwayy.",
-            "meaning": "I’m a little tired. (Omar speaking)",
+            "meaning": "I’m a little tired. (Knafeh speaking)",
             "rationale": "This changes from the day to your current tiredness without saying the day was good."
           }
         ],
@@ -212,11 +212,11 @@
       },
       {
         "id": "e01-06",
-        "instruction": "Lina offers Omar a rest. Accept and say that you want a little rest.",
+        "instruction": "Fattoush offers Knafeh a rest. Accept and say that you want a little rest.",
         "prompt": {
           "arabic": "بدك ترتاح؟",
           "arabizi": "Biddak tirtāḥ?",
-          "meaning": "Do you want to rest? (to Omar)",
+          "meaning": "Do you want to rest? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -225,7 +225,7 @@
             "arabic": "آه، بدي أرتاح شوي.",
             "arabizi": "Āh, biddi artāḥ shwayy.",
             "meaning": "Yes, I want to rest a little.",
-            "rationale": "Āh accepts; biddi artāḥ says what Omar wants, with shwayy keeping it brief."
+            "rationale": "Āh accepts; biddi artāḥ says what Knafeh wants, with shwayy keeping it brief."
           },
           {
             "id": "b",
@@ -245,7 +245,7 @@
         "evaluation": {
           "correctAnswerId": "a",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Āh accepts; biddi artāḥ says what Omar wants, with shwayy keeping it brief.",
+          "correctExplanation": "Āh accepts; biddi artāḥ says what Knafeh wants, with shwayy keeping it brief.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "Start by accepting, then say what you want."
@@ -253,11 +253,11 @@
       },
       {
         "id": "e01-07",
-        "instruction": "Closing exchange, part 1: Omar’s new day was quiet. Answer Lina about that day.",
+        "instruction": "Closing exchange, part 1: Knafeh’s new day was quiet. Answer Fattoush about that day.",
         "prompt": {
           "arabic": "كيف كان يومك؟",
           "arabizi": "Kīf kān yōmak?",
-          "meaning": "How was your day? (to Omar)",
+          "meaning": "How was your day? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -272,8 +272,8 @@
             "id": "b",
             "arabic": "أنا منيحة.",
             "arabizi": "Ana mnīḥa.",
-            "meaning": "I’m well. (Lina speaking)",
-            "rationale": "This is Lina’s feminine self-description, not Omar’s description of a day."
+            "meaning": "I’m well. (Fattoush speaking)",
+            "rationale": "This is Fattoush’s feminine self-description, not Knafeh’s description of a day."
           },
           {
             "id": "c",
@@ -294,7 +294,7 @@
       },
       {
         "id": "e01-08",
-        "instruction": "Closing exchange, part 2: now ask Lina the same question back.",
+        "instruction": "Closing exchange, part 2: now ask Fattoush the same question back.",
         "prompt": {
           "arabic": "يومي كان هادي.",
           "arabizi": "Yōmi kān hādi.",
@@ -306,15 +306,15 @@
             "id": "a",
             "arabic": "وإنتَ؟",
             "arabizi": "W-inta?",
-            "meaning": "And you? (to Omar)",
-            "rationale": "This addresses a man, but you are speaking to Lina."
+            "meaning": "And you? (to Knafeh)",
+            "rationale": "This addresses a man, but you are speaking to Fattoush."
           },
           {
             "id": "b",
             "arabic": "وإنتِ؟",
             "arabizi": "W-inti?",
-            "meaning": "And you? (to Lina)",
-            "rationale": "This completes the check-in: answer first, then invite Lina to share."
+            "meaning": "And you? (to Fattoush)",
+            "rationale": "This completes the check-in: answer first, then invite Fattoush to share."
           },
           {
             "id": "c",
@@ -327,10 +327,10 @@
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "This completes the check-in: answer first, then invite Lina to share.",
+          "correctExplanation": "This completes the check-in: answer first, then invite Fattoush to share.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
-          "retryHint": "Use the short question for Lina."
+          "retryHint": "Use the short question for Fattoush."
         }
       }
     ],
@@ -344,16 +344,16 @@
       "goal": "Answer a check-in, describe your day, and ask the other person back.",
       "dialogue": [
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "كيف كان يومك؟",
             "arabizi": "Kīf kān yōmak?",
-            "meaning": "How was your day? (to Omar)",
+            "meaning": "How was your day? (to Knafeh)",
             "audioUrl": null
           }
         },
         {
-          "speaker": "Omar → Lina",
+          "speaker": "Knafeh → Fattoush",
           "line": {
             "arabic": "كان منيح، بس طويل شوي. وإنتِ؟",
             "arabizi": "Kān mnīḥ, bass ṭawīl shwayy. W-inti?",
@@ -362,7 +362,7 @@
           }
         },
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "يومي كان هادي. كيفك هلّق؟",
             "arabizi": "Yōmi kān hādi. Kīfak hallaʾ?",
@@ -371,16 +371,16 @@
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "أنا تعبان شوي.",
             "arabizi": "Ana taʿbān shwayy.",
-            "meaning": "I’m a little tired. (Omar speaking)",
+            "meaning": "I’m a little tired. (Knafeh speaking)",
             "audioUrl": null
           }
         },
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "بدك ترتاح؟",
             "arabizi": "Biddak tirtāḥ?",
@@ -389,7 +389,7 @@
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "آه، بدي أرتاح شوي.",
             "arabizi": "Āh, biddi artāḥ shwayy.",
@@ -414,19 +414,19 @@
         {
           "arabic": "وإنتِ؟",
           "arabizi": "W-inti?",
-          "meaning": "And you? (to Lina)",
+          "meaning": "And you? (to Fattoush)",
           "audioUrl": null
         },
         {
           "arabic": "أنا تعبان شوي.",
           "arabizi": "Ana taʿbān shwayy.",
-          "meaning": "I’m a little tired. (Omar speaking)",
+          "meaning": "I’m a little tired. (Knafeh speaking)",
           "audioUrl": null
         }
       ],
-      "usageNote": "Kān means “was” here. In kān mnīḥ, the understood subject is yōm (day), a masculine noun: either Lina or Omar can use this same description of a day. When describing a person, match the person: Omar says taʿbān; Lina says taʿbāne (تعبانة). Bass adds a contrast (“but”), while shwayy softens a description (“a little”). W-inta? returns the question to a man; w-inti? returns it to a woman. Read the dialogue aloud or silently twice. Then cover the English and build your own three-part check-in: description, one detail, question back.",
-      "dialectNote": "Urban Palestinian teaching target. Kīfak/yōmak address Omar; kīfik/yōmik address Lina. The Arabic spelling often omits these short vowels, so keep the transliteration in view. The dialogue’s mnīḥ describes the day; it is not a universal form for describing a person. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
-      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "usageNote": "Kān means “was” here. In kān mnīḥ, the understood subject is yōm (day), a masculine noun: either Fattoush or Knafeh can use this same description of a day. When describing a person, match the person: Knafeh says taʿbān; Fattoush says taʿbāne (تعبانة). Bass adds a contrast (“but”), while shwayy softens a description (“a little”). W-inta? returns the question to a man; w-inti? returns it to a woman. Read the dialogue aloud or silently twice. Then cover the English and build your own three-part check-in: description, one detail, question back.",
+      "dialectNote": "Urban Palestinian teaching target. Kīfak/yōmak address Knafeh; kīfik/yōmik address Fattoush. The Arabic spelling often omits these short vowels, so keep the transliteration in view. The dialogue’s mnīḥ describes the day; it is not a universal form for describing a person. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Fattoush uses feminine self-description; Knafeh uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
       "sourceLocators": [
         "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
         "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",

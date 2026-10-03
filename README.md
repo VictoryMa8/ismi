@@ -2,27 +2,15 @@
 
 Ismi is a mobile-first Arabic learning web app for Palestinian Levantine, Modern Standard Arabic, and Quranic Arabic. Learners can study one track or combine all three in one daily plan.
 
-The current product slice includes:
+**[Open the roadmap](ROADMAP.md)** for current status, what is done, what needs
+input, and the next recommended work. Agents follow [the planning workflow](docs/planning-workflow.md).
+You can simply ask “Update the roadmap,” “Is this feature already done?” or
+“Implement F10”; feature IDs are optional.
 
-- A Vue 3 + TypeScript progressive web app with separate Today, Courses, Practice, and Account pages.
-- An ASP.NET Core 10 API.
-- A personalized three-track dashboard with a real ordered Levantine course path.
-- Seven owner-approved Everyday conversations lessons, alongside six demonstration fixtures.
-- A conversation → phrase teaching → recall → practice flow, with optional translation help, phrase reconstruction, and reduced-motion-aware transitions. The lesson frame keeps stages and navigation visible, with a clickable scroll cue for longer content.
-- Mixed review, mistake explanations and free retries, plus unit checkpoints with less initial help. Review history and checkpoint results work offline and stay on the device; scheduling remains manual. See [review and checkpoints](docs/review-and-checkpoints.md).
-- Gentle local interface chimes with a persistent mute switch, animated lesson cards and phrase pieces, and green/red surfaces inspired by Pan-Arab colors. Learner pages keep functional copy concise, with review details in a disclosure. Sounds start after interaction and work offline; Arabic playback has its own control.
-- Source-linked prompt recordings with owner-only WAV uploads, publication-gated playback, transcripts, and verified offline downloads.
-- Credential-free Arabic prompt previews using the browser's available device voice when a recording is absent.
-- Optional email/password accounts with secure cookie sessions and persistent per-user progress.
-- An offline-ready application shell, three-lesson look-ahead cache, and queued completion sync.
-- Idempotent lesson completion updates, per-browser guest isolation, and persistent account progress.
-- Unit tests for lesson evaluation, lesson structure, and completion behavior.
-- An owner-only curriculum console with versioned drafts, provenance, deterministic validation, approval, publication, audit history, and rollback.
-- Playwright coverage for mobile offline completion, reconnection, exactly-once sync, and keyboard access.
-
-Product constraints and research live in `AGENTS.md` and `docs/research/`.
-
-The latest implementation status and remaining checks are documented in [the next-agent handoff](docs/next-stage-handoff.md). The [seven guided teaching packages](content/levantine/everyday-01/revisions/guided-teaching/README.md) extend the explicit teaching pattern across the unit. Use the owner console to preview saved versions; publication and deployment still require separate authorization.
+The app uses a Vue 3 + TypeScript PWA, an ASP.NET Core 10 API and SQLite for the
+bounded account/content slice. Product constraints live in [AGENTS.md](AGENTS.md),
+and source research in `docs/research/`. Current implementation and publication
+status are maintained in the roadmap, with links to feature evidence.
 
 ## Project structure
 
@@ -34,38 +22,38 @@ i-tests/  API domain tests
 
 ## Run locally
 
-Character proposals are implemented and saved as seven local owner drafts. Lina
-and Omar use the owner's requested corporate cartoon direction, with explicit
-speaker/response roles and offline portraits. See the
-[character guide](docs/characters/character-guide.md) and
-[draft preview instructions](content/levantine/everyday-01/revisions/characters/README.md).
-Final art selection, curriculum publication and the API rollout remain pending.
-The owner authorized pushing the tested changes and deploying a Vercel frontend
-preview. The frontend uses the existing live API; local character drafts are
-not migrated or published by this deployment.
-
-Start the API:
+Install Node.js 20.19+ (or 22.12+) and the .NET 10 SDK matching `global.json`. From the repository root, install dependencies once:
 
 ```bash
-dotnet run --project i-api --urls http://127.0.0.1:5062
+npm run setup
 ```
 
-In a second terminal, start the web client:
+From the repository root, start the API in one terminal:
 
 ```bash
-cd i-web
-npm install
-npm run dev -- --host 127.0.0.1
+npm run api
 ```
 
-Then open `http://127.0.0.1:5173/`. Learner pages use `#/today`, `#/courses`, `#/practice`, and `#/account`, so bookmarked pages and browser history also work in the offline PWA. Today shows the next lesson; Courses holds the full path; Practice lets learners repeat lessons without advancing course progress.
+Start the frontend in a second terminal, also from the repository root:
+
+```bash
+npm run web
+```
+
+Open `http://127.0.0.1:5173/` for the landing page, or `http://127.0.0.1:5173/#/today` for the learner app once the API reports it is listening. The API uses `dotnet watch` for hot reload/restarts; the frontend uses Vite for live reload. Logs stay in their respective terminals. Ctrl+C stops only the server in that terminal, including its child processes. Both commands load local `.env` and `.env.local` settings, with shell environment variables taking precedence.
+
+If a port is already occupied, stop the previous server in its terminal. On macOS, `lsof -nP -iTCP:5062 -sTCP:LISTEN` identifies the API listener. For deliberate alternate ports, set `ISMI_API_PORT=5064` and `ISMI_WEB_PORT=5174` in `.env.local` before starting both commands; the frontend proxy automatically follows the API port. The launchers leave unrelated listeners alone.
+
+The underlying commands are `dotnet watch --project i-api run --urls http://127.0.0.1:5062` and `npm --prefix i-web run dev -- --host 127.0.0.1`. Using them directly does not load the repository-root `.env` files automatically.
+
+Learner pages use `#/today`, `#/courses`, `#/practice`, and `#/account`, so bookmarked pages and browser history also work in the offline PWA. Today shows the next lesson; Courses holds the full path; Practice lets learners repeat lessons without advancing course progress.
 
 Learners can continue as guests or create an account from the Account control. Account credentials and synchronized progress are stored locally in `i-api/App_Data/ismi.db`; the directory is ignored by Git. Passwords are hashed by ASP.NET Core Identity and are never stored in plaintext. Authentication uses an HttpOnly cookie, and state-changing account/progress requests require an antiforgery token.
 
 To enable the internal curriculum console for its final approver, set the approver email before starting the API, then register or sign in with that exact email:
 
 ```bash
-Curriculum__ApproverEmail=you@example.com dotnet run --project i-api --urls http://127.0.0.1:5062
+Curriculum__ApproverEmail=you@example.com npm run api
 ```
 
 The console appears in the signed-in account's desktop navigation. A draft must include provenance and pass deterministic structural checks before it can be approved; only an approved version can be published. Learner endpoints read only the published database version. This bounded slice permits Levantine publication and deliberately blocks MSA and Quranic material until their additional content and review gates are implemented.
@@ -118,7 +106,7 @@ The startup script places SQLite, recordings, and Data Protection keys under `IS
 
 The configured alwaysdata account is `ismi`, site `1076252`, with application files in `/home/ismi/ismi/app` and persistent data in `/home/ismi/ismi/data`. The site runs .NET 10 with `sh start-alwaysdata.sh`, binds the provider's IPv6 address, and forces HTTPS. Replace only application files on redeployment. Keep any local hosting credentials in ignored owner-only files; never upload them to either provider or commit them. The temporary SSH key used for the September 27 release was removed after verification.
 
-Deployment verification (2026-09-13): Vercel build passed; direct and proxied HTTPS health/dashboard endpoints passed; secure CSRF cookies and registration input validation passed without creating an account; the live browser completed a guest lesson and showed synchronized progress with the next lesson selected. SQLite and key directories were confirmed on persistent storage. Full live account creation and recorded-audio publication were not exercised. The provider reported a 138 MB peak backend footprint and also displayed a resource-limit warning; this free preview can be slow and is not a load-tested beta host.
+Historical deployment verification (2026-09-13; not a current rollout check): Vercel build passed; direct and proxied HTTPS health/dashboard endpoints passed; secure CSRF cookies and registration input validation passed without creating an account; the live browser completed a guest lesson and showed synchronized progress with the next lesson selected. SQLite and key directories were confirmed on persistent storage. Full live account creation and recorded-audio publication were not exercised. The provider reported a 138 MB peak backend footprint and also displayed a resource-limit warning; this free preview can be slow and is not a load-tested beta host.
 
 If moving the backend, update the HTTPS origin in `vercel.json`, then deploy and verify the Vercel frontend. The frontend's Hobby plan also restricts use to personal, non-commercial projects. Public beta access still requires the project's release gates and an invitation mechanism.
 

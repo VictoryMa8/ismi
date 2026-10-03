@@ -1,6 +1,6 @@
 {
   "status": "proposed; owner final design selection pending",
-  "createdFor": "Ismi Lina and Omar character introduction",
+  "createdFor": "Ismi Fattoush and Knafeh character introduction",
   "createdOn": "2026-10-01",
   "authorship": "AI-generated with the built-in OpenAI image_gen tool under Codex art direction; no human illustrator credit claimed",
   "generationHistory": [
@@ -26,8 +26,8 @@
       "profile"
     ],
     "rows": [
-      "lina",
-      "omar"
+      "fattoush",
+      "knafeh"
     ]
   },
   "files": [
@@ -43,8 +43,9 @@
     },
     {
       "path": "docs/characters/generation-prompt.txt",
-      "sha256": "701f79410dcfda86ac066c6dc884a3f0b32f46251ee4d55dcd115e297eb58ca2",
-      "bytes": 1921
+      "sha256": "1c29bc757fbbb6edd014316ed0d65a4e7aecde4ba4e4ae58b1a3bb9c470ade67",
+      "bytes": 1927
     }
-  ]
+  ],
+  "renameNote": "Names updated at owner request on 2026-10-02. Portrait bytes and identities unchanged. Prompt record now uses current names."
 }

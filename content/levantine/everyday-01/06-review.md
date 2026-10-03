@@ -4,11 +4,11 @@
 
 Goal: Suggest a shared visit, ask for a time, and confirm tomorrow’s plan.
 
-Omar and Lina want to visit Omar’s family after work. They move from an idea to an agreed time.
+Knafeh and Fattoush want to visit Knafeh’s family after work. They move from an idea to an agreed time.
 
 ## Dialogue / recording script
 
-**Lina**
+**Fattoush**
 
 شو رح نعمل بكرا؟
 
@@ -16,7 +16,7 @@ Shū raḥ niʿmal bukra?
 
 What will we do tomorrow?
 
-**Omar**
+**Knafeh**
 
 نزور أهلي بعد الشغل؟
 
@@ -24,7 +24,7 @@ Nzūr ahli baʿd ish-shughl?
 
 Shall we visit my family after work?
 
-**Lina**
+**Fattoush**
 
 تمام. أي ساعة؟
 
@@ -32,7 +32,7 @@ Tamām. Ayy sāʿa?
 
 Okay. What time?
 
-**Omar**
+**Knafeh**
 
 الساعة ستة.
 
@@ -40,15 +40,15 @@ Is-sāʿa sitte.
 
 At six o’clock.
 
-**Lina → Omar**
+**Fattoush → Knafeh**
 
 تمام، بكرا الساعة ستة نزور أهلك.
 
 Tamām, bukra is-sāʿa sitte nzūr ahlak.
 
-Okay, tomorrow at six we’ll visit your family. (to Omar)
+Okay, tomorrow at six we’ll visit your family. (to Knafeh)
 
-**Omar**
+**Knafeh**
 
 وبعدين نشرب شاي سوا.
 
@@ -60,7 +60,7 @@ And afterwards we’ll drink tea together.
 
 Raḥ points forward to a future action; bukra supplies the day, tomorrow. In raḥ niʿmal, the n- form is “we,” so the question is about a shared plan. You do not need raḥ in every turn: a reply such as “tomorrow at six we visit your family” has a clear future setting from context. Baʿd ish-shughl means “after work”; baʿdēn means “then/afterwards.” A plan becomes clearer when you repeat the day, time, and who you will visit. Read the dialogue, then cover it and reconstruct those three details before practising. Clock times here use a shared evening context; a real arrangement may need you to clarify morning/evening.
 
-Urban Palestinian teaching target. Ahli is the speaker’s family. When Lina confirms Omar’s proposal, it becomes ahlak, his family as her listener. Niʿmal/nzūr/nishrab are shared actions in these phrases. Raḥ is a future marker here, distinct from past rāḥ, “he went.” Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.
+Urban Palestinian teaching target. Ahli is the speaker’s family. When Fattoush confirms Knafeh’s proposal, it becomes ahlak, his family as her listener. Niʿmal/nzūr/nishrab are shared actions in these phrases. Raḥ is a future marker here, distinct from past rāḥ, “he went.” Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.
 
 ## Practice and closing exchange
 
@@ -72,16 +72,16 @@ Bukra
 
 Tomorrow
 
-- **A** شو عملت اليوم؟ — Shū ʿmilt il-yōm? — What did you do today? (to Omar)
-  Rationale: This asks Omar what he already did today.
-- **B** كيف كان يومك؟ — Kīf kān yōmak? — How was your day? (to Omar)
+- **A** شو عملت اليوم؟ — Shū ʿmilt il-yōm? — What did you do today? (to Knafeh)
+  Rationale: This asks Knafeh what he already did today.
+- **B** كيف كان يومك؟ — Kīf kān yōmak? — How was your day? (to Knafeh)
   Rationale: This asks how a day went instead of planning tomorrow.
 - **C (accepted)** شو رح نعمل بكرا؟ — Shū raḥ niʿmal bukra? — What will we do tomorrow?
   Rationale: Raḥ plus the “we” form and bukra asks about a shared future plan.
 
 Retry hint: Keep both tomorrow and “we.”
 
-### 2. Omar suggests visiting his own family after work. Speak as Omar.
+### 2. Knafeh suggests visiting his own family after work. Speak as Knafeh.
 
 شو رح نعمل بكرا؟
 
@@ -90,13 +90,13 @@ Shū raḥ niʿmal bukra?
 What will we do tomorrow?
 
 - **A (accepted)** نزور أهلي بعد الشغل؟ — Nzūr ahli baʿd ish-shughl? — Shall we visit my family after work?
-  Rationale: Ahli identifies Omar’s family when Omar speaks; after work supplies the ordering.
-- **B** نزور أهلك بعد الشغل؟ — Nzūr ahlik baʿd ish-shughl? — Shall we visit your family after work? (to Lina)
-  Rationale: This would mean Lina’s family, changing whose family they visit.
+  Rationale: Ahli identifies Knafeh’s family when Knafeh speaks; after work supplies the ordering.
+- **B** نزور أهلك بعد الشغل؟ — Nzūr ahlik baʿd ish-shughl? — Shall we visit your family after work? (to Fattoush)
+  Rationale: This would mean Fattoush’s family, changing whose family they visit.
 - **C** اشتغلت، وبعدين زرت أمي. — Ishtaghalt, w-baʿdēn zurt immi. — I worked, then visited my mother.
   Rationale: This recounts completed work and a visit rather than making tomorrow’s suggestion.
 
-Retry hint: Omar is speaking, so use “my family.”
+Retry hint: Knafeh is speaking, so use “my family.”
 
 ### 3. You like the visit idea but still need the time. Ask for it.
 
@@ -106,11 +106,11 @@ Nzūr ahli baʿd ish-shughl?
 
 Shall we visit my family after work?
 
-- **A** كيف أهلك؟ — Kīf ahlak? — How’s your family? (to Omar)
+- **A** كيف أهلك؟ — Kīf ahlak? — How’s your family? (to Knafeh)
   Rationale: This asks how the family is rather than when to visit.
 - **B (accepted)** تمام. أي ساعة؟ — Tamām. Ayy sāʿa? — Okay. What time?
   Rationale: Ayy sāʿa asks for a clock time after accepting the idea.
-- **C** بدك شاي ولا قهوة؟ — Biddak shāy walla ʾahwe? — Do you want tea or coffee? (to Omar)
+- **C** بدك شاي ولا قهوة؟ — Biddak shāy walla ʾahwe? — Do you want tea or coffee? (to Knafeh)
   Rationale: This offers drinks rather than settling the schedule.
 
 Retry hint: Ask for the missing clock time.
@@ -132,7 +132,7 @@ Okay. What time?
 
 Retry hint: Choose the time, not only the day.
 
-### 5. Lina confirms: tomorrow, six, Omar’s family. Preserve all three details.
+### 5. Fattoush confirms: tomorrow, six, Knafeh’s family. Preserve all three details.
 
 نزور أهلي بعد الشغل؟
 
@@ -140,11 +140,11 @@ Nzūr ahli baʿd ish-shughl?
 
 Shall we visit my family after work?
 
-- **A** تمام، اليوم الساعة ستة نزور أهلك. — Tamām, il-yōm is-sāʿa sitte nzūr ahlak. — Okay, today at six we’ll visit your family. (to Omar)
+- **A** تمام، اليوم الساعة ستة نزور أهلك. — Tamām, il-yōm is-sāʿa sitte nzūr ahlak. — Okay, today at six we’ll visit your family. (to Knafeh)
   Rationale: The family and time fit, but this changes tomorrow to today.
-- **B** تمام، بكرا الساعة سبعة نزور أهلك. — Tamām, bukra is-sāʿa sabʿa nzūr ahlak. — Okay, tomorrow at seven we’ll visit your family. (to Omar)
+- **B** تمام، بكرا الساعة سبعة نزور أهلك. — Tamām, bukra is-sāʿa sabʿa nzūr ahlak. — Okay, tomorrow at seven we’ll visit your family. (to Knafeh)
   Rationale: The day and family fit, but this changes six to seven.
-- **C (accepted)** تمام، بكرا الساعة ستة نزور أهلك. — Tamām, bukra is-sāʿa sitte nzūr ahlak. — Okay, tomorrow at six we’ll visit your family. (to Omar)
+- **C (accepted)** تمام، بكرا الساعة ستة نزور أهلك. — Tamām, bukra is-sāʿa sitte nzūr ahlak. — Okay, tomorrow at six we’ll visit your family. (to Knafeh)
   Rationale: The confirmation carries forward day, time, and whose family.
 
 Retry hint: Check each detail rather than matching only the family.
@@ -183,7 +183,7 @@ Okay. What time?
 
 Retry hint: The revised time is seven.
 
-### 8. Closing exchange, part 2: confirm tomorrow at seven with Lina. Say that you will drink tea together.
+### 8. Closing exchange, part 2: confirm tomorrow at seven with Fattoush. Say that you will drink tea together.
 
 نشرب شاي سوا بكرا؟
 
@@ -193,7 +193,7 @@ Shall we drink tea together tomorrow?
 
 - **A** آه، اليوم الساعة سبعة نشرب شاي سوا. — Āh, il-yōm is-sāʿa sabʿa nishrab shāy sawa. — Yes, today at seven we’ll drink tea together.
   Rationale: This changes tomorrow to today.
-- **B** تمام، بكرا الساعة ستة نزور أهلك. — Tamām, bukra is-sāʿa sitte nzūr ahlak. — Okay, tomorrow at six we’ll visit your family. (to Omar)
+- **B** تمام، بكرا الساعة ستة نزور أهلك. — Tamām, bukra is-sāʿa sitte nzūr ahlak. — Okay, tomorrow at six we’ll visit your family. (to Knafeh)
   Rationale: This repeats the previous visit plan at six instead of the revised tea plan at seven.
 - **C (accepted)** آه، بكرا الساعة سبعة نشرب شاي سوا. — Āh, bukra is-sāʿa sabʿa nishrab shāy sawa. — Yes, tomorrow at seven we’ll drink tea together.
   Rationale: This confirms the new day, time, and shared activity.

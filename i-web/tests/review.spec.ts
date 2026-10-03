@@ -28,7 +28,7 @@ async function choose(dialog: Locator, lessons: LessonResponse[], wrong = false)
 }
 
 test('review queue mixes published contexts without padding repeated fixture turns', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/#/today')
   const lessons = await published(page)
   const turns = reviewTurns(lessons, [])
   const queue = makeReviewQueue(turns, 'mixed')
@@ -40,7 +40,7 @@ test('review queue mixes published contexts without padding repeated fixture tur
 
 test('lesson mistakes persist through retry and offline reload; fresh review resolves them', async ({ page, context }) => {
   test.setTimeout(60_000)
-  await page.goto('/')
+  await page.goto('/#/today')
   const lessons = await published(page)
   const lesson = lessons[0]!
   await page.getByRole('button', { name: /Continue in Levantine/i }).click()
@@ -134,7 +134,7 @@ test('offline unit checkpoint records first answers and help without completing 
 })
 
 test('review excludes withdrawn content and history from a previous version', async ({ page }) => {
-  await page.goto('/')
+  await page.goto('/#/today')
   const lessons = await published(page)
   await page.evaluate(async lesson => {
     const db = await new Promise<IDBDatabase>(resolve => { const request = indexedDB.open('ismi-offline'); request.onsuccess = () => resolve(request.result) })
@@ -158,7 +158,7 @@ test('review history stays separate for guest and account, with fixed desktop co
   await page.emulateMedia({ reducedMotion: 'reduce' })
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
-  await page.goto('/')
+  await page.goto('/#/today')
   const lessons = await published(page)
   const lesson = lessons[0]!
   await expect.poll(async () => page.evaluate(() => indexedDB.databases().then(databases => databases.some(database => database.name === 'ismi-offline')))).toBe(true)

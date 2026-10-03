@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-02",
+  "status": "local implementation; owner final art/sample publication review pending",
+  "authorship": "AI-generated with the built-in OpenAI image_gen tool under Codex direction. No human illustrator or third-party character credit claimed.",
+  "references": [
+    "docs/characters/corporate-cartoon-concept-v1.png",
+    "docs/landing/hero-original.png"
+  ],
+  "processing": "Originals preserved. Pillow thumbnail resizing only, with WebP conversion. Hero 1200/640 wide, quality 85; social 1200 wide, quality 88. No creative processing edits.",
+  "files": [
+    {
+      "path": "docs/landing/hero-original.png",
+      "bytes": 1361933,
+      "sha256": "dc32f76e0668ee58bb50986853cbf8726e91d520f81da09341d1d0926d2cc193"
+    },
+    {
+      "path": "docs/landing/social-original.png",
+      "bytes": 1332721,
+      "sha256": "ac044fa2e7cd43477df341883deb8a3c95179a2e6ca44aa9295219e973a74cdb"
+    },
+    {
+      "path": "docs/landing/generation-prompts.txt",
+      "bytes": 1927,
+      "sha256": "f72bbf9be5a5f14969f3119d237523cbb9a0090e6bf59c44c33461a7a54ebe92"
+    },
+    {
+      "path": "i-web/public/landing/hero.webp",
+      "bytes": 44212,
+      "sha256": "0f7434e0758c636f339bbdeb5c4f6ea5017cce93dadb7ff0c9339be8337a75a7"
+    },
+    {
+      "path": "i-web/public/landing/hero-mobile.webp",
+      "bytes": 21488,
+      "sha256": "ab422dce525ba151d34a0fdd06e04ec66941238b81317440839ceb76a3da7c73"
+    },
+    {
+      "path": "i-web/public/landing/social.webp",
+      "bytes": 55892,
+      "sha256": "bb86bc32211eb1f4a4e0fba546b963ab248e1319499a33e79214f823821dc168"
+    }
+  ]
+}

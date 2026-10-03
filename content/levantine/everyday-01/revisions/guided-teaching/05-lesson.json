@@ -3,15 +3,15 @@
     "id": "levantine-everyday-01-05",
     "trackId": "levantine",
     "title": "How's your family?",
-    "scenario": "Lina asks Omar about his family. Omar returns the interest by asking about Lina’s mother. Share only the detail the scene gives you.",
+    "scenario": "Fattoush asks Knafeh about his family. Knafeh returns the interest by asking about Fattoush’s mother. Share only the detail the scene gives you.",
     "steps": [
       {
         "id": "e05-01",
-        "instruction": "Ask Omar about his family, rather than about your own.",
+        "instruction": "Ask Knafeh about his family, rather than about your own.",
         "prompt": {
           "arabic": "وإنتَ؟",
           "arabizi": "W-inta?",
-          "meaning": "And you? (to Omar)",
+          "meaning": "And you? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -20,39 +20,39 @@
             "arabic": "كيف أهلي؟",
             "arabizi": "Kīf ahli?",
             "meaning": "How is my family?",
-            "rationale": "Ahli refers to the speaker’s family instead of Omar’s."
+            "rationale": "Ahli refers to the speaker’s family instead of Knafeh’s."
           },
           {
             "id": "b",
             "arabic": "كيف أهلك؟",
             "arabizi": "Kīf ahlak?",
-            "meaning": "How’s your family? (to Omar)",
-            "rationale": "Ahlak means Omar’s family when he is the listener."
+            "meaning": "How’s your family? (to Knafeh)",
+            "rationale": "Ahlak means Knafeh’s family when he is the listener."
           },
           {
             "id": "c",
             "arabic": "كيفك؟",
             "arabizi": "Kīfak?",
-            "meaning": "How are you? (to Omar)",
-            "rationale": "This asks about Omar himself, not his family."
+            "meaning": "How are you? (to Knafeh)",
+            "rationale": "This asks about Knafeh himself, not his family."
           }
         ],
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Ahlak means Omar’s family when he is the listener.",
+          "correctExplanation": "Ahlak means Knafeh’s family when he is the listener.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
-          "retryHint": "The ending should mean “your” to Omar."
+          "retryHint": "The ending should mean “your” to Knafeh."
         }
       },
       {
         "id": "e05-02",
-        "instruction": "Omar says the family members are well. Respond as Omar.",
+        "instruction": "Knafeh says the family members are well. Respond as Knafeh.",
         "prompt": {
           "arabic": "كيف أهلك؟",
           "arabizi": "Kīf ahlak?",
-          "meaning": "How’s your family? (to Omar)",
+          "meaning": "How’s your family? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -67,8 +67,8 @@
             "id": "b",
             "arabic": "أنا منيح.",
             "arabizi": "Ana mnīḥ.",
-            "meaning": "I’m well. (Omar speaking)",
-            "rationale": "This updates only Omar’s condition."
+            "meaning": "I’m well. (Knafeh speaking)",
+            "rationale": "This updates only Knafeh’s condition."
           },
           {
             "id": "c",
@@ -89,7 +89,7 @@
       },
       {
         "id": "e05-03",
-        "instruction": "Follow up specifically about Omar’s sister.",
+        "instruction": "Follow up specifically about Knafeh’s sister.",
         "prompt": {
           "arabic": "منيحين، شكراً.",
           "arabizi": "Mnīḥīn, shukran.",
@@ -101,22 +101,22 @@
             "id": "a",
             "arabic": "وأختك، كيفها؟",
             "arabizi": "W-ukhtak, kīfha?",
-            "meaning": "And your sister, how is she? (to Omar)",
+            "meaning": "And your sister, how is she? (to Knafeh)",
             "rationale": "Naming the sister gives kīfha a clear referent."
           },
           {
             "id": "b",
             "arabic": "كيف أهلك؟",
             "arabizi": "Kīf ahlak?",
-            "meaning": "How’s your family? (to Omar)",
+            "meaning": "How’s your family? (to Knafeh)",
             "rationale": "This repeats the general family question instead of following up about his sister."
           },
           {
             "id": "c",
             "arabic": "وكيف أمك؟",
             "arabizi": "W-kīf immik?",
-            "meaning": "And how’s your mother? (to Lina)",
-            "rationale": "This asks Lina about her mother; both the listener and relative change."
+            "meaning": "And how’s your mother? (to Fattoush)",
+            "rationale": "This asks Fattoush about her mother; both the listener and relative change."
           }
         ],
         "evaluation": {
@@ -134,7 +134,7 @@
         "prompt": {
           "arabic": "وأختك، كيفها؟",
           "arabizi": "W-ukhtak, kīfha?",
-          "meaning": "And your sister, how is she? (to Omar)",
+          "meaning": "And your sister, how is she? (to Knafeh)",
           "audioUrl": null
         },
         "answers": [
@@ -171,7 +171,7 @@
       },
       {
         "id": "e05-05",
-        "instruction": "Lina has just mentioned her mother. Ask a short follow-up about the mother.",
+        "instruction": "Fattoush has just mentioned her mother. Ask a short follow-up about the mother.",
         "prompt": {
           "arabic": "اليوم زرت أمي.",
           "arabizi": "Il-yōm zurt immi.",
@@ -183,28 +183,28 @@
             "id": "a",
             "arabic": "وكيفك؟",
             "arabizi": "W-kīfik?",
-            "meaning": "And how are you? (to Lina)",
-            "rationale": "This asks about Lina rather than her mother."
+            "meaning": "And how are you? (to Fattoush)",
+            "rationale": "This asks about Fattoush rather than her mother."
           },
           {
             "id": "b",
             "arabic": "وكيفها؟",
             "arabizi": "W-kīfha?",
             "meaning": "And how is she?",
-            "rationale": "Kīfha refers back to the mother Lina has just named."
+            "rationale": "Kīfha refers back to the mother Fattoush has just named."
           },
           {
             "id": "c",
             "arabic": "شو عملتي اليوم؟",
             "arabizi": "Shū ʿmilti il-yōm?",
-            "meaning": "What did you do today? (to Lina)",
-            "rationale": "This asks broadly about Lina’s activities instead of following up on her mother."
+            "meaning": "What did you do today? (to Fattoush)",
+            "rationale": "This asks broadly about Fattoush’s activities instead of following up on her mother."
           }
         ],
         "evaluation": {
           "correctAnswerId": "b",
           "correctTitle": "That fits this exchange.",
-          "correctExplanation": "Kīfha refers back to the mother Lina has just named.",
+          "correctExplanation": "Kīfha refers back to the mother Fattoush has just named.",
           "incorrectTitle": "Check the situation.",
           "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
           "retryHint": "The short ending should refer to “her.”"
@@ -212,11 +212,11 @@
       },
       {
         "id": "e05-06",
-        "instruction": "Omar wants to ask Lina about her family. Choose the address to Lina.",
+        "instruction": "Knafeh wants to ask Fattoush about her family. Choose the address to Fattoush.",
         "prompt": {
           "arabic": "وإنتِ؟",
           "arabizi": "W-inti?",
-          "meaning": "And you? (to Lina)",
+          "meaning": "And you? (to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -224,15 +224,15 @@
             "id": "a",
             "arabic": "كيف أهلك؟",
             "arabizi": "Kīf ahlik?",
-            "meaning": "How’s your family? (to Lina)",
+            "meaning": "How’s your family? (to Fattoush)",
             "rationale": "Ahlik is the selected feminine address; Arabic script alone may not show the short-vowel difference."
           },
           {
             "id": "b",
             "arabic": "كيف أهلك؟",
             "arabizi": "Kīf ahlak?",
-            "meaning": "How’s your family? (to Omar)",
-            "rationale": "Ahlak is addressed to Omar, not Lina."
+            "meaning": "How’s your family? (to Knafeh)",
+            "rationale": "Ahlak is addressed to Knafeh, not Fattoush."
           },
           {
             "id": "c",
@@ -253,11 +253,11 @@
       },
       {
         "id": "e05-07",
-        "instruction": "Closing exchange, part 1: today Lina’s mother is well and at home. Reply as Lina.",
+        "instruction": "Closing exchange, part 1: today Fattoush’s mother is well and at home. Reply as Fattoush.",
         "prompt": {
           "arabic": "وكيف أمك؟",
           "arabizi": "W-kīf immik?",
-          "meaning": "And how’s your mother? (to Lina)",
+          "meaning": "And how’s your mother? (to Fattoush)",
           "audioUrl": null
         },
         "answers": [
@@ -344,16 +344,16 @@
       "goal": "Ask about someone’s family, share a short update, and ask a relevant follow-up.",
       "dialogue": [
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "كيف أهلك؟",
             "arabizi": "Kīf ahlak?",
-            "meaning": "How’s your family? (to Omar)",
+            "meaning": "How’s your family? (to Knafeh)",
             "audioUrl": null
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "منيحين، شكراً.",
             "arabizi": "Mnīḥīn, shukran.",
@@ -362,16 +362,16 @@
           }
         },
         {
-          "speaker": "Lina → Omar",
+          "speaker": "Fattoush → Knafeh",
           "line": {
             "arabic": "وأختك، كيفها؟",
             "arabizi": "W-ukhtak, kīfha?",
-            "meaning": "And your sister, how is she? (to Omar)",
+            "meaning": "And your sister, how is she? (to Knafeh)",
             "audioUrl": null
           }
         },
         {
-          "speaker": "Omar → Lina",
+          "speaker": "Knafeh → Fattoush",
           "line": {
             "arabic": "منيحة، بس عندها شغل كتير. وكيف أمك؟",
             "arabizi": "Mnīḥa, bass ʿindha shughl ktīr. W-kīf immik?",
@@ -380,7 +380,7 @@
           }
         },
         {
-          "speaker": "Lina",
+          "speaker": "Fattoush",
           "line": {
             "arabic": "منيحة. اليوم بالبيت.",
             "arabizi": "Mnīḥa. Il-yōm bil-bēt.",
@@ -389,7 +389,7 @@
           }
         },
         {
-          "speaker": "Omar",
+          "speaker": "Knafeh",
           "line": {
             "arabic": "منيح! بكرا نزورها؟",
             "arabizi": "Mnīḥ! Bukra nzūrha?",
@@ -402,7 +402,7 @@
         {
           "arabic": "كيف أهلك؟",
           "arabizi": "Kīf ahlak?",
-          "meaning": "How’s your family? (to Omar)",
+          "meaning": "How’s your family? (to Knafeh)",
           "audioUrl": null
         },
         {
@@ -414,7 +414,7 @@
         {
           "arabic": "وأختك، كيفها؟",
           "arabizi": "W-ukhtak, kīfha?",
-          "meaning": "And your sister, how is she? (to Omar)",
+          "meaning": "And your sister, how is she? (to Knafeh)",
           "audioUrl": null
         },
         {
@@ -425,8 +425,8 @@
         }
       ],
       "usageNote": "Keep track of the person you address and the person you describe. Ahlak or ahlik asks about your listener’s family; ahli means my family. After the mother or sister is mentioned, kīfha asks about her.",
-      "dialectNote": "Urban Palestinian teaching target. This dialogue names the people before using “her.” Ahlak/ukhtak address Omar; ahlik/ukhtik address Lina. Immi is “my mother”; immik here is “your mother” when speaking to Lina. These are contextual choices, not the only Palestinian vowel variants. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
-      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Lina uses feminine self-description; Omar uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "dialectNote": "Urban Palestinian teaching target. This dialogue names the people before using “her.” Ahlak/ukhtak address Knafeh; ahlik/ukhtik address Fattoush. Immi is “my mother”; immik here is “your mother” when speaking to Fattoush. These are contextual choices, not the only Palestinian vowel variants. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Fattoush uses feminine self-description; Knafeh uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
       "sourceLocators": [
         "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
         "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
@@ -440,11 +440,11 @@
           "phrase": {
             "arabic": "كيف أهلك؟",
             "arabizi": "Kīf ahlak?",
-            "meaning": "How’s your family? (to Omar)",
+            "meaning": "How’s your family? (to Knafeh)",
             "audioUrl": null
           },
-          "note": "Ahlak means your family when speaking to Omar; ahli means my family. Listen to the ending and keep transliteration handy.",
-          "recallCue": "You are Lina. Ask Omar how his family is.",
+          "note": "Ahlak means your family when speaking to Knafeh; ahli means my family. Listen to the ending and keep transliteration handy.",
+          "recallCue": "You are Fattoush. Ask Knafeh how his family is.",
           "chunks": [
             {
               "arabic": "كيف",
@@ -454,7 +454,7 @@
             {
               "arabic": "أهلك",
               "arabizi": "ahlak",
-              "meaning": "your family · to Omar"
+              "meaning": "your family · to Knafeh"
             }
           ],
           "sourceLocators": [
@@ -473,7 +473,7 @@
             "audioUrl": null
           },
           "note": "Mnīḥīn describes the family members as people. It differs from mnīḥa for the mother or sister.",
-          "recallCue": "You are Omar. Tell Lina your family members are well and thank her.",
+          "recallCue": "You are Knafeh. Tell Fattoush your family members are well and thank her.",
           "chunks": [
             {
               "arabic": "منيحين",
@@ -497,16 +497,16 @@
           "phrase": {
             "arabic": "وأختك، كيفها؟",
             "arabizi": "W-ukhtak, kīfha?",
-            "meaning": "And your sister, how is she? (to Omar)",
+            "meaning": "And your sister, how is she? (to Knafeh)",
             "audioUrl": null
           },
-          "note": "Ukhtak is your sister when addressing Omar. Kīfha then refers to that sister, not to Omar.",
-          "recallCue": "You are Lina. Follow up specifically about Omar’s sister.",
+          "note": "Ukhtak is your sister when addressing Knafeh. Kīfha then refers to that sister, not to Knafeh.",
+          "recallCue": "You are Fattoush. Follow up specifically about Knafeh’s sister.",
           "chunks": [
             {
               "arabic": "وأختك",
               "arabizi": "w-ukhtak",
-              "meaning": "and your sister · to Omar"
+              "meaning": "and your sister · to Knafeh"
             },
             {
               "arabic": "كيفها",
@@ -530,7 +530,7 @@
             "audioUrl": null
           },
           "note": "Start with the sister’s condition. Bass introduces a contrast; ʿindha shughl says she has work, and ktīr gives the amount.",
-          "recallCue": "Omar’s sister is well but has a lot of work. Give her update.",
+          "recallCue": "Knafeh’s sister is well but has a lot of work. Give her update.",
           "chunks": [
             {
               "arabic": "منيحة",
@@ -564,11 +564,11 @@
           "phrase": {
             "arabic": "كيف أهلك؟",
             "arabizi": "Kīf ahlik?",
-            "meaning": "How’s your family? (to Lina)",
+            "meaning": "How’s your family? (to Fattoush)",
             "audioUrl": null
           },
-          "note": "Ahlik addresses Lina. It looks the same as ahlak in this unvowelled spelling, so the transliteration shows the spoken difference.",
-          "recallCue": "You are Omar. Ask Lina how her family is.",
+          "note": "Ahlik addresses Fattoush. It looks the same as ahlak in this unvowelled spelling, so the transliteration shows the spoken difference.",
+          "recallCue": "You are Knafeh. Ask Fattoush how her family is.",
           "chunks": [
             {
               "arabic": "كيف",
@@ -578,7 +578,7 @@
             {
               "arabic": "أهلك",
               "arabizi": "ahlik",
-              "meaning": "your family · to Lina"
+              "meaning": "your family · to Fattoush"
             }
           ],
           "sourceLocators": [
@@ -596,8 +596,8 @@
             "meaning": "Yes, let’s visit her tomorrow.",
             "audioUrl": null
           },
-          "note": "Bukra sets the plan in tomorrow. In nzūrha, the ending -ha points back to Lina’s mother; you are agreeing to visit her together.",
-          "recallCue": "Lina’s mother is at home. Agree to visit her together tomorrow.",
+          "note": "Bukra sets the plan in tomorrow. In nzūrha, the ending -ha points back to Fattoush’s mother; you are agreeing to visit her together.",
+          "recallCue": "Fattoush’s mother is at home. Agree to visit her together tomorrow.",
           "chunks": [
             {
               "arabic": "آه",

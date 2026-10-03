@@ -486,19 +486,19 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         var lesson = revised.Lesson;
         Assert.Null((await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{lesson.Id}"))!.Characters);
         Assert.False(validator.Validate(lesson with { Characters = lesson.Characters! with { RegistryVersion = "unknown" } }, revised.Sources).IsValid);
-        Assert.False(validator.Validate(lesson with { Characters = lesson.Characters! with { CharacterIds = ["lina", "unknown"] } }, revised.Sources).IsValid);
-        Assert.False(validator.Validate(lesson with { Characters = lesson.Characters! with { CharacterIds = ["lina", "lina"] } }, revised.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Characters = lesson.Characters! with { CharacterIds = ["fattoush", "unknown"] } }, revised.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Characters = lesson.Characters! with { CharacterIds = ["fattoush", "fattoush"] } }, revised.Sources).IsValid);
         Assert.False(validator.Validate(lesson with { Characters = null }, revised.Sources).IsValid);
-        Assert.False(validator.Validate(lesson with { Introduction = lesson.Introduction! with { Dialogue = [lesson.Introduction!.Dialogue[0] with { SpeakerId = "omar", AddresseeId = "lina" }] } }, revised.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Introduction = lesson.Introduction! with { Dialogue = [lesson.Introduction!.Dialogue[0] with { SpeakerId = "knafeh", AddresseeId = "fattoush" }] } }, revised.Sources).IsValid);
         var step = lesson.Steps[0];
         Assert.False(validator.Validate(lesson with { Steps = [step with { Characters = step.Characters! with { ResponseSpeakerId = null } }] }, revised.Sources).IsValid);
-        Assert.False(validator.Validate(lesson with { Steps = [step with { Characters = step.Characters! with { ResponseAddresseeId = "omar" } }] }, revised.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Steps = [step with { Characters = step.Characters! with { ResponseAddresseeId = "knafeh" } }] }, revised.Sources).IsValid);
         Assert.False(validator.Validate(lesson with { Steps = [step with { Characters = step.Characters! with { SpeakerId = "unknown" } }] }, revised.Sources).IsValid);
         // Only disposable test copies are approved and published here.
         Assert.Equal(HttpStatusCode.OK, (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{proposal.Id}/approve", new { })).StatusCode);
         Assert.Equal(HttpStatusCode.OK, (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{proposal.Id}/publish", new { })).StatusCode);
         var live = (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{lesson.Id}"))!;
-        Assert.Equal("lina", live.Steps[0].Characters!.SpeakerId);
+        Assert.Equal("fattoush", live.Steps[0].Characters!.SpeakerId);
         var dashboard = (await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
         Assert.NotNull(dashboard.DailyPlan.Lessons.Single(l => l.Id == lesson.Id).Characters);
         await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/lessons/{lesson.Id}/rollback", new CurriculumRollbackRequest(original.Id));

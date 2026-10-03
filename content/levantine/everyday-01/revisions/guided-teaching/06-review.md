@@ -12,7 +12,7 @@ What will we do tomorrow?
 
 Raḥ points forward; niʿmal is we do or make. Bukra supplies tomorrow, so this is a shared future plan.
 
-Recall: Ask Lina what the two of you will do tomorrow.
+Recall: Ask Fattoush what the two of you will do tomorrow.
 
 شو (shū) = what | رح (raḥ) = future action | نعمل (niʿmal) = we do / make | بكرا (bukra) = tomorrow
 
@@ -26,7 +26,7 @@ Shall we visit my family after work?
 
 Ahli names your own family. Baʿd ish-shughl puts the visit after work; baʿdēn by itself means then.
 
-Recall: You are Omar. Suggest visiting your family after work.
+Recall: You are Knafeh. Suggest visiting your family after work.
 
 نزور (nzūr) = we visit | أهلي (ahli) = my family | بعد الشغل (baʿd ish-shughl) = after work
 
@@ -54,7 +54,7 @@ At six o’clock.
 
 Is-sāʿa introduces the clock time. The dialogue shares an evening context; in a real plan, clarify morning or evening if needed.
 
-Recall: Omar asks what time. Say six o’clock.
+Recall: Knafeh asks what time. Say six o’clock.
 
 الساعة (is-sāʿa) = at / the hour | ستة (sitte) = six
 
