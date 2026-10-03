@@ -11,7 +11,7 @@ this file. Older plans provide design context, not current priority or permissio
 **Now:** the learner/offline foundation, guided teaching, manual review/checkpoints,
 characters, and landing/welcome are implemented in this checkout. Latest curriculum
 revisions still need owner publication. The owner authorized pushing/deploying web
-and API; rollout is in progress (API access pending). See [release evidence](docs/releases/2026-10-02.md).
+and API; both are live and verified. See [release evidence](docs/releases/2026-10-02.md).
 
 **Recommended next:** refine any owner-selected first-unit issues and prepare its
 revision release (F08). The next proposed engineering slice is scheduled review
@@ -29,7 +29,7 @@ speech/AI choices, Quran resource permissions, and beta release evidence.
 | [F04](#f04-first-unit-guided-teaching-packages) | First-unit guided teaching packages | Done | Authored packages; publication belongs to F08 |
 | [F05](#f05-manual-review-and-checkpoints) | Manual review and checkpoints | Done | Scheduling belongs to F10; history stays on device |
 | [F06](#f06-recurring-character-support) | Recurring character support | Done | Final art/package approval belongs to F08 |
-| [F07](#f07-landing-page-and-app-welcome) | Landing page and app welcome | Done | Local implementation; invitation gate belongs to F18 |
+| [F07](#f07-landing-page-and-app-welcome) | Landing page and app welcome | Done | Deployed; invitation gate belongs to F18 |
 | [F08](#f08-first-unit-revision-release) | First-unit revision release | Needs input | Owner selects/approves final packages and art |
 | [F09](#f09-reviewed-levantine-recordings) | Reviewed Levantine recordings | Needs input | Actual recordings, permissions and review |
 | [F10](#f10-scheduled-review) | Scheduled review | Needs decision | Agree intervals/selection behavior |
@@ -52,8 +52,8 @@ Order is recommended, not a schedule or blanket authorization.
 
 ## Delivery and evidence
 
-- **Local implementation:** Done rows describe this checkout, including uncommitted
-  work until the authorized release is committed. Delivery progress is in the
+- **Implementation:** Done rows describe the bounded scopes in this checkout.
+  Code release `26f8242` is committed, pushed and deployed. Delivery evidence is in the
   [October 2 rollout record](docs/releases/2026-10-02.md).
 - **Curriculum:** seven owner-approved original Everyday lessons and six demo
   fixtures are documented as published. The last local inspection found guided
@@ -61,8 +61,9 @@ Order is recommended, not a schedule or blanket authorization.
   proposals were subsequently saved. October 2 package renames were not imported
   or published. Inspect the target database before claiming exact current versions.
 - **Hosting:** the development preview uses Vercel plus alwaysdata. The October 2
-  rollout is authorized; hosted verification and exact revisions will be recorded
-  separately for frontend/API. Local curriculum is not migrated by a code rollout.
+  code release is live on both hosts; health, dashboard and published lesson checks
+  passed. The host retains seven original Everyday v1 lessons plus six fixtures;
+  local curriculum was not migrated by this code rollout.
 - **Verification basis:** October 2 release checks passed the production frontend
   build, 24 API tests, all 40 standard browser tests and Release API publish. Earlier
   feature notes preserve historical checks. Real screen-reader, learner-outcome
@@ -147,7 +148,8 @@ The isolated sample is retired. No invitation form or enforced beta gate exists.
 [landing checks](i-web/tests/landing.spec.ts), [navigation checks](i-web/tests/navigation.spec.ts).
 The implementation notes record a production build, 24 backend tests and 36 distinct
 browser checks across full/focused runs; later owner refinements have targeted coverage.
-Latest landing/welcome changes are local; rollout is not claimed.
+The October 2 code release is deployed; live landing, welcome, dashboard and lesson
+loading passed. See the [rollout record](docs/releases/2026-10-02.md).
 
 ## Remaining work
 
@@ -266,6 +268,9 @@ Development-preview deployment and automated keyboard tests alone cannot complet
 
 ## Recent planning changes
 
+- **October 2, 2026 rollout:** pushed/deployed code release `26f8242` to web/API,
+  verified hosted behavior and persistent data, and recorded rollback evidence.
+  No curriculum revisions were imported or published.
 - **October 2, 2026:** consolidated current planning here; recognized seven completed
   implementation scopes and separated remaining content release, assets, decisions
   and beta gates. Added agent workflow and retired historical handoffs as task queues.

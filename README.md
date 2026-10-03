@@ -88,11 +88,11 @@ No real speaker recordings ship in this change. Seed lessons remain demonstrativ
 
 ## Vercel frontend deployment
 
-The Vercel project is connected to `VictoryMa8/ismi` on GitHub. Pushes to `main` automatically deploy the frontend to `https://ismi-ruby.vercel.app`; other branches create previews. The repository-root `vercel.json` supplies the build and API proxy configuration and points `/api/*` to the existing `https://ismi.alwaysdata.net` backend. Backend changes still require a separate alwaysdata deployment.
+The Vercel project is connected to `VictoryMa8/ismi` on GitHub. Pushes to `main` automatically deploy the frontend to `https://ismi-arabic.vercel.app`; `https://ismi-ruby.vercel.app` redirects there. Other branches create previews. The repository-root `vercel.json` supplies the build and API proxy configuration and points `/api/*` to the existing `https://ismi.alwaysdata.net` backend. Backend changes still require a separate alwaysdata deployment.
 
 Deploy from the repository root using `vercel.json`. Vercel builds `i-web` and proxies `/api/*` to `https://ismi.alwaysdata.net`. If the backend host changes, update the rewrite destination in that file. Keep preview deployments access-restricted for the invite-only beta.
 
-The development preview is deployed at https://ismi-ruby.vercel.app, with its API at https://ismi.alwaysdata.net. The Vercel project is `ismi` under `victorys-projects-c1cb4594`; both production and preview deployments use the checked-in API rewrite. Vercel deployment does not migrate local accounts, progress, curriculum, or recordings; `.vercelignore` excludes backend files and local data. Configure the approver email on the backend host, not in the frontend.
+The development preview is deployed at https://ismi-arabic.vercel.app, with its API at https://ismi.alwaysdata.net. The Vercel project is `ismi` under `victorys-projects-c1cb4594`; both production and preview deployments use the checked-in API rewrite. Vercel deployment does not migrate local accounts, progress, curriculum, or recordings; `.vercelignore` excludes backend files and local data. Configure the approver email on the backend host, not in the frontend.
 
 With the Vercel CLI signed in, use `vercel deploy --project ismi --scope victorys-projects-c1cb4594` from the repository root for a preview; add `--prod` to update the stable URL. Verify account cookies, lesson loading, recording upload/playback, and offline download/reconnection before a beta release.
 
@@ -112,9 +112,16 @@ If moving the backend, update the HTTPS origin in `vercel.json`, then deploy and
 
 References: [alwaysdata free plan](https://help.alwaysdata.com/en/admin-billing/billing/public-cloud-prices/), [.NET configuration](https://help.alwaysdata.com/en/docs/web-hosting/languages/dotnet/configuration/), [Vercel Hobby terms](https://vercel.com/docs/plans/hobby).
 
-### September 27, 2026 release
+### Latest release
 
-The Vercel production URL serves release `a5ef7dc`, and the alwaysdata API was
+The October 2 code release `26f8242` is deployed to both hosts. Health, dashboard,
+published lesson and live frontend checks passed; hosted account/content data and
+cookie keys were preserved. No new curriculum revisions were published. See the
+[rollout record](docs/releases/2026-10-02.md) for tests, hashes and rollback locations.
+
+### September 27, 2026 release (historical)
+
+The Vercel production URL served release `a5ef7dc`, and the alwaysdata API was
 updated and restarted. Seven owner-approved Everyday conversations v1 lessons
 were imported, validated, approved, and published through the curriculum service
 in the live database. All seven live endpoints returned eight exercises and six
