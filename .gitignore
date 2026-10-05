@@ -59,3 +59,14 @@ secrets.json
 *.log
 logs/
 .vercel
+
+# Local Chatterbox runtime, weights and audition assets
+/tools/chatterbox/.venv/
+/tools/chatterbox/.runtime/
+/tools/chatterbox/.cache/
+/tools/chatterbox/outputs/
+**/__pycache__/
+
+# Local Azure audition audio and private configuration
+/tools/azure-speech/outputs/
+/tools/azure-speech/.cache/

@@ -1,0 +1,82 @@
+{
+  "status": "prepared-not-generated",
+  "lessonId": "levantine-everyday-01-01",
+  "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+  "provider": "Microsoft Azure Speech",
+  "requiredTier": "F0",
+  "outputFormat": "riff-24khz-16bit-mono-pcm",
+  "totalRequests": 6,
+  "requests": [
+    {
+      "stepId": "e01-01",
+      "transcript": "شو عامل؟",
+      "speakerRole": "fattoush",
+      "addresseeRole": "knafeh",
+      "voice": "ar-JO-SanaNeural",
+      "locale": "ar-JO",
+      "rate": "-20%",
+      "requestFile": "ar-JO-SanaNeural-e01-01.ssml",
+      "ssmlSha256": "57837a11d96ee703765edddac393963bca18e47cc6d807ec0e64a84b399c274e"
+    },
+    {
+      "stepId": "e01-04",
+      "transcript": "شو عاملة؟",
+      "speakerRole": "knafeh",
+      "addresseeRole": "fattoush",
+      "voice": "ar-JO-SanaNeural",
+      "locale": "ar-JO",
+      "rate": "-20%",
+      "requestFile": "ar-JO-SanaNeural-e01-04.ssml",
+      "ssmlSha256": "8f8cd1b0828f0a2e24920427ec5427435d4eb1bbb27aebe63b85dc1bc60ed0d3"
+    },
+    {
+      "stepId": "e01-06",
+      "transcript": "بدك ترتاح؟",
+      "speakerRole": "fattoush",
+      "addresseeRole": "knafeh",
+      "voice": "ar-JO-SanaNeural",
+      "locale": "ar-JO",
+      "rate": "-20%",
+      "requestFile": "ar-JO-SanaNeural-e01-06.ssml",
+      "ssmlSha256": "a2c80099ce594eb7d0631006a7efc89ec51a7ff38713aaa009bd69628cd284e8"
+    },
+    {
+      "stepId": "e01-01",
+      "transcript": "شو عامل؟",
+      "speakerRole": "fattoush",
+      "addresseeRole": "knafeh",
+      "voice": "ar-JO-TaimNeural",
+      "locale": "ar-JO",
+      "rate": "-20%",
+      "requestFile": "ar-JO-TaimNeural-e01-01.ssml",
+      "ssmlSha256": "4c4698f3caf6bc501921cff9c62122d477fd0642680ccc020dba5f3bc03ac4d6"
+    },
+    {
+      "stepId": "e01-04",
+      "transcript": "شو عاملة؟",
+      "speakerRole": "knafeh",
+      "addresseeRole": "fattoush",
+      "voice": "ar-JO-TaimNeural",
+      "locale": "ar-JO",
+      "rate": "-20%",
+      "requestFile": "ar-JO-TaimNeural-e01-04.ssml",
+      "ssmlSha256": "84a55df3a9266070721e3cf8c53e4d9ebaa447e9ad0b568fd3d65753b61bdb63"
+    },
+    {
+      "stepId": "e01-06",
+      "transcript": "بدك ترتاح؟",
+      "speakerRole": "fattoush",
+      "addresseeRole": "knafeh",
+      "voice": "ar-JO-TaimNeural",
+      "locale": "ar-JO",
+      "rate": "-20%",
+      "requestFile": "ar-JO-TaimNeural-e01-06.ssml",
+      "ssmlSha256": "ddf7415f3cf41eb671365bbbc040dba337321b09b27f6348b77705e8ed23b973"
+    }
+  ],
+  "review": {
+    "ownerListening": "pending",
+    "palestinianPronunciation": "unverified"
+  },
+  "boundaries": "Audition only. No S0, paid upgrades, publication or deployment authorized."
+}

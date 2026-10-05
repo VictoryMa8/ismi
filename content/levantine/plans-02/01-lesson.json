@@ -1,0 +1,650 @@
+{
+  "lesson": {
+    "id": "levantine-plans-02-01",
+    "trackId": "levantine",
+    "title": "Choose a plan",
+    "scenario": "Fattoush and Knafeh are planning tomorrow evening. They choose a meal at seven, with tea afterwards. Later practice asks you to adapt when the requested activity changes.",
+    "steps": [
+      {
+        "id": "p01-01",
+        "instruction": "As Knafeh, suggest making rice and salad for tomorrow.",
+        "prompt": {
+          "arabic": "شو رح نعمل بكرا؟",
+          "arabizi": "Shū raḥ niʿmal bukra?",
+          "meaning": "What will we do tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "نعمل رز وسلطة؟",
+            "arabizi": "Niʿmal ruzz w-salaṭa?",
+            "meaning": "Shall we make rice and salad?",
+            "rationale": "This proposes the requested meal."
+          },
+          {
+            "id": "b",
+            "arabic": "نزور أهلي بعد الشغل؟",
+            "arabizi": "Nzūr ahli baʿd ish-shughl?",
+            "meaning": "Shall we visit my family after work?",
+            "rationale": "A family visit is possible, but the requested plan is a meal."
+          },
+          {
+            "id": "c",
+            "arabic": "بكرا الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Bukra is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Tomorrow at six we’ll drink tea together.",
+            "rationale": "This proposes tea rather than the requested meal."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This proposes the requested meal.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Name both foods."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "p01-02",
+        "instruction": "The meal sounds good, but Knafeh has not given a time. Accept and ask when.",
+        "prompt": {
+          "arabic": "نعمل رز وسلطة؟",
+          "arabizi": "Niʿmal ruzz w-salaṭa?",
+          "meaning": "Shall we make rice and salad?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وبعدين نشرب شاي سوا.",
+            "arabizi": "W-baʿdēn nishrab shāy sawa.",
+            "meaning": "And afterwards we’ll drink tea together.",
+            "rationale": "This adds an activity but leaves the time unanswered."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام. أي ساعة؟",
+            "arabizi": "Tamām. Ayy sāʿa?",
+            "meaning": "Okay. What time?",
+            "rationale": "This accepts the meal and asks for the missing time."
+          },
+          {
+            "id": "c",
+            "arabic": "الساعة سبعة.",
+            "arabizi": "Is-sāʿa sabʿa.",
+            "meaning": "At seven o’clock.",
+            "rationale": "This supplies a time rather than asking for one."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This accepts the meal and asks for the missing time.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Ask rather than guess."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "p01-03",
+        "instruction": "Knafeh says seven. Confirm the rice-and-salad plan at that time.",
+        "prompt": {
+          "arabic": "الساعة سبعة.",
+          "arabizi": "Is-sāʿa sabʿa.",
+          "meaning": "At seven o’clock.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "نعمل رز وسلطة الساعة ستة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sitte.",
+            "meaning": "We’ll make rice and salad at six.",
+            "rationale": "The meal fits, but six changes the agreed time."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، بكرا الساعة سبعة نشرب شاي سوا.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa nishrab shāy sawa.",
+            "meaning": "Yes, tomorrow at seven we’ll drink tea together.",
+            "rationale": "Seven fits, but tea replaces the meal."
+          },
+          {
+            "id": "c",
+            "arabic": "نعمل رز وسلطة الساعة سبعة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sabʿa.",
+            "meaning": "We’ll make rice and salad at seven.",
+            "rationale": "Both the meal and seven match the arrangement."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "Both the meal and seven match the arrangement.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Preserve both activity and time."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "p01-04",
+        "instruction": "The meal at seven is agreed. As Knafeh, suggest drinking tea together afterwards.",
+        "prompt": {
+          "arabic": "نعمل رز وسلطة الساعة سبعة.",
+          "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sabʿa.",
+          "meaning": "We’ll make rice and salad at seven.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وبعدين نشرب شاي سوا.",
+            "arabizi": "W-baʿdēn nishrab shāy sawa.",
+            "meaning": "And afterwards we’ll drink tea together.",
+            "rationale": "This adds shared tea after the agreed meal."
+          },
+          {
+            "id": "b",
+            "arabic": "وبعدين نعمل رز وسلطة.",
+            "arabizi": "W-baʿdēn niʿmal ruzz w-salaṭa.",
+            "meaning": "And afterwards we’ll make rice and salad.",
+            "rationale": "This proposes another meal instead of tea."
+          },
+          {
+            "id": "c",
+            "arabic": "بكرا الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Bukra is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Tomorrow at six we’ll drink tea together.",
+            "rationale": "This moves tea to six rather than adding it afterwards."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This adds shared tea after the agreed meal.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Use the next-event link."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "p01-05",
+        "instruction": "New arrangement: Fattoush asks what you will do tomorrow. Propose only tea together at six.",
+        "prompt": {
+          "arabic": "شو رح نعمل بكرا؟",
+          "arabizi": "Shū raḥ niʿmal bukra?",
+          "meaning": "What will we do tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "نعمل رز وسلطة الساعة ستة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sitte.",
+            "meaning": "We’ll make rice and salad at six.",
+            "rationale": "The day can be understood, but this changes tea into a meal."
+          },
+          {
+            "id": "b",
+            "arabic": "بكرا الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Bukra is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Tomorrow at six we’ll drink tea together.",
+            "rationale": "This gives the requested day, time and shared drink."
+          },
+          {
+            "id": "c",
+            "arabic": "اليوم الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Il-yōm is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Today at six we’ll drink tea together.",
+            "rationale": "The activity and time fit, but this changes tomorrow to today."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This gives the requested day, time and shared drink.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Keep tomorrow, six and tea."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "p01-06",
+        "instruction": "New arrangement: agree to tea together tomorrow at seven.",
+        "prompt": {
+          "arabic": "شو رح نعمل بكرا؟",
+          "arabizi": "Shū raḥ niʿmal bukra?",
+          "meaning": "What will we do tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بكرا الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Bukra is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Tomorrow at six we’ll drink tea together.",
+            "rationale": "This changes seven to six."
+          },
+          {
+            "id": "b",
+            "arabic": "نعمل رز وسلطة الساعة سبعة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sabʿa.",
+            "meaning": "We’ll make rice and salad at seven.",
+            "rationale": "This changes tea into rice and salad."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بكرا الساعة سبعة نشرب شاي سوا.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa nishrab shāy sawa.",
+            "meaning": "Yes, tomorrow at seven we’ll drink tea together.",
+            "rationale": "This agrees to the requested tea plan at seven tomorrow."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This agrees to the requested tea plan at seven tomorrow.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Keep the new details, not the earlier six-o’clock plan."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 6,
+    "version": "plans-draft-1",
+    "unitId": "levantine-plans-02",
+    "unitTitle": "Make a plan together",
+    "courseOrder": 8,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "introduction": {
+      "goal": "Propose a meal, ask for a time, and distinguish a meal plan from a tea plan.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "شو رح نعمل بكرا؟",
+            "arabizi": "Shū raḥ niʿmal bukra?",
+            "meaning": "What will we do tomorrow?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "نعمل رز وسلطة؟",
+            "arabizi": "Niʿmal ruzz w-salaṭa?",
+            "meaning": "Shall we make rice and salad?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "تمام. أي ساعة؟",
+            "arabizi": "Tamām. Ayy sāʿa?",
+            "meaning": "Okay. What time?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "الساعة سبعة.",
+            "arabizi": "Is-sāʿa sabʿa.",
+            "meaning": "At seven o’clock.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "نعمل رز وسلطة الساعة سبعة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sabʿa.",
+            "meaning": "We’ll make rice and salad at seven.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "وبعدين نشرب شاي سوا.",
+            "arabizi": "W-baʿdēn nishrab shāy sawa.",
+            "meaning": "And afterwards we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "نعمل رز وسلطة؟",
+          "arabizi": "Niʿmal ruzz w-salaṭa?",
+          "meaning": "Shall we make rice and salad?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام. أي ساعة؟",
+          "arabizi": "Tamām. Ayy sāʿa?",
+          "meaning": "Okay. What time?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "نعمل رز وسلطة الساعة سبعة.",
+          "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sabʿa.",
+          "meaning": "We’ll make rice and salad at seven.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "وبعدين نشرب شاي سوا.",
+          "arabizi": "W-baʿdēn nishrab shāy sawa.",
+          "meaning": "And afterwards we’ll drink tea together.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Build the arrangement in turns: suggest an activity, ask for the time, then confirm. Read each practice situation: a later request can change the plan.",
+      "dialectNote": "Urban Palestinian teaching target; transliteration remains available. Urban coffee pronunciation and address forms follow the first-unit model. Ahlak addresses Knafeh; ahli refers to the speaker’s own family. The scenes share an evening setting; these phrases do not teach how to distinguish morning from evening. No Jordanian variants or native-expert review claimed. ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop.",
+      "recordingNote": "No reviewed recordings. Dialogue and prompt text are draft recording scripts. Speaker roles are explicit; do not label browser speech as reviewed Palestinian audio. All audio URLs remain null.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "https://resources.lingualism.com/levantine-arabic/family-3/",
+        "internal:ismi/plans-02/01/draft-1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Propose a meal",
+          "phrase": {
+            "arabic": "نعمل رز وسلطة؟",
+            "arabizi": "Niʿmal ruzz w-salaṭa?",
+            "meaning": "Shall we make rice and salad?",
+            "audioUrl": null
+          },
+          "note": "Niʿmal can propose a shared activity in a question. W- joins both foods.",
+          "recallCue": "Suggest making rice and salad.",
+          "chunks": [
+            {
+              "arabic": "نعمل",
+              "arabizi": "niʿmal",
+              "meaning": "shall we make"
+            },
+            {
+              "arabic": "رز",
+              "arabizi": "ruzz",
+              "meaning": "rice"
+            },
+            {
+              "arabic": "وسلطة",
+              "arabizi": "w-salaṭa",
+              "meaning": "and salad"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/plans-02/01/draft-1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Ask for the missing detail",
+          "phrase": {
+            "arabic": "تمام. أي ساعة؟",
+            "arabizi": "Tamām. Ayy sāʿa?",
+            "meaning": "Okay. What time?",
+            "audioUrl": null
+          },
+          "note": "Accept the activity with tamām, then ask ayy sāʿa when the time is missing.",
+          "recallCue": "The meal is agreed, but no time is set. Ask for it.",
+          "chunks": [
+            {
+              "arabic": "تمام",
+              "arabizi": "tamām",
+              "meaning": "okay"
+            },
+            {
+              "arabic": "أي ساعة",
+              "arabizi": "ayy sāʿa",
+              "meaning": "what time"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/plans-02/01/draft-1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Confirm the meal and time",
+          "phrase": {
+            "arabic": "نعمل رز وسلطة الساعة سبعة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sabʿa.",
+            "meaning": "We’ll make rice and salad at seven.",
+            "audioUrl": null
+          },
+          "note": "Combine the familiar meal with is-sāʿa sabʿa. Tomorrow is already established.",
+          "recallCue": "Confirm rice and salad at seven.",
+          "chunks": [
+            {
+              "arabic": "نعمل",
+              "arabizi": "niʿmal",
+              "meaning": "we make"
+            },
+            {
+              "arabic": "رز وسلطة",
+              "arabizi": "ruzz w-salaṭa",
+              "meaning": "rice and salad"
+            },
+            {
+              "arabic": "الساعة سبعة",
+              "arabizi": "is-sāʿa sabʿa",
+              "meaning": "at seven"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/plans-02/01/draft-1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Add what happens next",
+          "phrase": {
+            "arabic": "وبعدين نشرب شاي سوا.",
+            "arabizi": "W-baʿdēn nishrab shāy sawa.",
+            "meaning": "And afterwards we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "note": "Baʿdēn links tea to the meal already discussed; it does not give a clock time.",
+          "recallCue": "Add tea together after the meal.",
+          "chunks": [
+            {
+              "arabic": "وبعدين",
+              "arabizi": "w-baʿdēn",
+              "meaning": "and then"
+            },
+            {
+              "arabic": "نشرب شاي",
+              "arabizi": "nishrab shāy",
+              "meaning": "we drink tea"
+            },
+            {
+              "arabic": "سوا",
+              "arabizi": "sawa",
+              "meaning": "together"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/plans-02/01/draft-1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Adapt the activity and time",
+          "phrase": {
+            "arabic": "بكرا الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Bukra is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Tomorrow at six we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "note": "Reuse the day/time frame with nishrab shāy sawa. This new arrangement is tea at six.",
+          "recallCue": "Make a different plan: tea together tomorrow at six.",
+          "chunks": [
+            {
+              "arabic": "بكرا",
+              "arabizi": "bukra",
+              "meaning": "tomorrow"
+            },
+            {
+              "arabic": "الساعة ستة",
+              "arabizi": "is-sāʿa sitte",
+              "meaning": "at six"
+            },
+            {
+              "arabic": "نشرب شاي",
+              "arabizi": "nishrab shāy",
+              "meaning": "we drink tea"
+            },
+            {
+              "arabic": "سوا",
+              "arabizi": "sawa",
+              "meaning": "together"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/plans-02/01/draft-1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Inherited reference evidence from published first-unit packages; not newly retrieved or independently reverified. Original approval covered the first-unit foundation, not this finished unit. \nFirst-unit lesson 4: Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 4909/4910 (hungry variants), 30759 (not), 15296 (together), 11472 (rice), 14642 (salad), 3185 (agreement). Food/drink entries hungry, rice, salad. Lingualism verbs entry “to do, make”; publisher sample p.109 plural pronouns and T104 wanting. Suggestion chunks are original compositions and need owner review for naturalness; no claim that every negative construction follows mish.\nFirst-unit lesson 6: Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues.\nFirst-unit lesson 7: Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Inherited reference evidence from published first-unit packages; not newly retrieved or independently reverified. Original approval covered the first-unit foundation, not this finished unit. \nFirst-unit lesson 4: Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 4909/4910 (hungry variants), 30759 (not), 15296 (together), 11472 (rice), 14642 (salad), 3185 (agreement). Food/drink entries hungry, rice, salad. Lingualism verbs entry “to do, make”; publisher sample p.109 plural pronouns and T104 wanting. Suggestion chunks are original compositions and need owner review for naturalness; no claim that every negative construction follows mish.\nFirst-unit lesson 6: Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues.\nFirst-unit lesson 7: Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Inherited reference evidence from published first-unit packages; not newly retrieved or independently reverified. Original approval covered the first-unit foundation, not this finished unit. \nFirst-unit lesson 4: Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 4909/4910 (hungry variants), 30759 (not), 15296 (together), 11472 (rice), 14642 (salad), 3185 (agreement). Food/drink entries hungry, rice, salad. Lingualism verbs entry “to do, make”; publisher sample p.109 plural pronouns and T104 wanting. Suggestion chunks are original compositions and need owner review for naturalness; no claim that every negative construction follows mish.\nFirst-unit lesson 6: Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues.\nFirst-unit lesson 7: Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Food and Drink in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Inherited reference evidence from published first-unit packages; not newly retrieved or independently reverified. Original approval covered the first-unit foundation, not this finished unit. \nFirst-unit lesson 4: Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Maknuune IDs 4909/4910 (hungry variants), 30759 (not), 15296 (together), 11472 (rice), 14642 (salad), 3185 (agreement). Food/drink entries hungry, rice, salad. Lingualism verbs entry “to do, make”; publisher sample p.109 plural pronouns and T104 wanting. Suggestion chunks are original compositions and need owner review for naturalness; no claim that every negative construction follows mish.\nFirst-unit lesson 7: Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Family in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Inherited reference evidence from published first-unit packages; not newly retrieved or independently reverified. Original approval covered the first-unit foundation, not this finished unit. \nFirst-unit lesson 6: Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues.\nFirst-unit lesson 7: Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi planning and clarification unit — original draft",
+      "locator": "internal:ismi/plans-02/01/draft-1",
+      "rights": "Original AI-assisted Ismi dialogue, explanations and contextual practice; no publisher dialogue, examples or audio copied.",
+      "notes": "Authored October 4, 2026 from source-linked first-unit language. Recombined phrases and context-specific meanings require owner review; no native-expert review or publication approval claimed. Predecessor package hashes and phrase origins are in review-manifest.json."
+    }
+  ]
+}

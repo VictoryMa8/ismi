@@ -100,7 +100,9 @@ public sealed class SeedCurriculum
         string displayName,
         IReadOnlyList<LessonDefinition> publishedLessons,
         IReadOnlySet<string> completedLessonIds,
-        int completedMinutesToday)
+        int completedMinutesToday,
+        int goalMinutes = DefaultDailyGoalMinutes,
+        IReadOnlySet<string>? completedTodayIds = null)
     {
         var ordered = publishedLessons
             .Where(lesson => string.Equals(lesson.Response.TrackId, "levantine", StringComparison.OrdinalIgnoreCase))
@@ -126,17 +128,21 @@ public sealed class SeedCurriculum
             lesson.Response.ReviewStatus,
             completedLessonIds.Contains(lesson.Response.Id),
             string.Equals(lesson.Response.Id, next.Response.Id, StringComparison.OrdinalIgnoreCase),
-            lesson.Response.Characters))
+            lesson.Response.Characters,
+            lesson.Response.TrackId,
+            completedTodayIds?.Contains(lesson.Response.Id) ?? false))
             .ToList();
 
         return new DashboardResponse(
             new LearnerSummary(displayName, 0, ordered.Count),
             new DailyPlanSummary(
-                DefaultDailyGoalMinutes,
-                Math.Min(DefaultDailyGoalMinutes, completedMinutesToday),
+                goalMinutes,
+                Math.Min(goalMinutes, completedMinutesToday),
                 "levantine",
                 next.Response.Id,
-                courseLessons),
+                courseLessons,
+                completedMinutesToday,
+                DateTime.UtcNow.ToString("yyyy-MM-dd")),
             [
                 new TrackProgress(
                     "levantine",

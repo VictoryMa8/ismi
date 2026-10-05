@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 3, 2026 · **Start here for current feature status.**
+Updated October 4, 2026 · **Start here for current feature status.**
 
 This is the single current plan. [AGENTS.md](AGENTS.md) holds product constraints;
 [the planning workflow](docs/planning-workflow.md) explains how agents maintain
@@ -8,18 +8,32 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
+**October 4 rollout active:** owner authorized push/deploy of the current checkout.
+Release API package is built; frontend and API delivery will be recorded in
+[the rollout note](docs/releases/2026-10-04.md). Curriculum publication is separate.
+
+**F15.1 — Complete locally October 4:** personal study settings now drive a daily
+queue, with guest persistence, durable account preferences and offline conflict
+handling. [Implementation and verification](docs/personal-study-settings.md).
+Placement and bootcamp content remain open under F15; no rollout performed.
+
+**F12.1 — Draft unit complete October 4:** three source-linked lessons for
+“Make a plan together” are validated and imported locally as draft records 24–26.
+Owner wording review/publication is next; the twelve-week F12 target stays open.
+See [packages and verification](content/levantine/plans-02/README.md).
+
 **Now:** the learner/offline foundation, guided teaching, manual review/checkpoints,
 characters, and landing/welcome are implemented. Code release `26f8242` is live on
 web/API. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
-**First implementation priority: F19 — Chatterbox phrase audio.** The owner selected
-this on October 3 after reporting robotic and incorrectly pronounced device speech.
-Start with local feasibility and a three-phrase audition, then a reproducible generator
-and explicitly labeled synthetic audio for lesson 1's eight prompts. Follow the
-[implementation plan](docs/chatterbox-audio-plan.md). This is planned for the next
-agent; no model installation, generation or application implementation has started.
-F10 scheduled review follows this work and still needs a scheduling decision.
+**F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
+retained pronunciation errors and remain unaccepted. The owner selected a free-tier
+Azure audition on October 3: the same three phrases in Jordanian Sana/Taim voices.
+Six exact-text SSML requests are [prepared](tools/azure-speech/README.md); the signed-in
+account has no subscription. Owner free-account enrollment and F0 resource
+verification are needed before generation. No Azure audio
+or quality improvement is claimed yet. F10 still needs a scheduling decision.
 
 The owner deferred real-device preflight and the learner rehearsal (F18.1) until after
 more implementation. F19 is an interim synthetic-audio slice; F09's real-speaker
@@ -27,14 +41,14 @@ recordings and all beta evidence requirements remain open. The existing eight-pr
 batch provides the initial text; [v2 release evidence](docs/pilot/release-2026-10-03/README.md)
 remains the published baseline.
 
-**Waiting on:** local Chatterbox feasibility and sample quality evidence, then owner
-listening review. Reference-voice rights must be established if reference audio is
-needed. Real recordings, later review scheduling, live speech-provider choices,
-Quran permissions and beta evidence remain separate dependencies.
+**Waiting on:** owner Azure free-account enrollment (signed in, but no subscription),
+verified F0 access and then owner listening review. No paid services authorized.
+Real recordings, review scheduling, live speech-provider choices, Quran permissions
+and beta evidence remain separate dependencies.
 
 | ID | Feature / bounded scope | Status | Next action or limit |
 | --- | --- | --- | --- |
-| [F19](#f19-chatterbox-phrase-audio) | Chatterbox phrase audio | Planned · first priority | Local feasibility → three-phrase audition → eight-prompt draft integration |
+| [F19](#f19-chatterbox-phrase-audio) | Chatterbox phrase audio | Active · Azure audition | Six requests prepared; activate free account, then verify F0 |
 | [F01](#f01-core-study-and-offline-progress) | Core study and offline progress | Done | Broader browser/accessibility checks belong to F18 |
 | [F02](#f02-guest-and-account-baseline) | Guest and account baseline | Done | Recovery/deletion belong to F16 |
 | [F03](#f03-levantine-curriculum-console) | Levantine curriculum console | Done | Broader content operations remain in F13/F14/F18 |
@@ -47,10 +61,12 @@ Quran permissions and beta evidence remain separate dependencies.
 | [F09.1](#f091-first-recording-batch-preparation) | First recording batch preparation | Done | Eight exact prompts prepared; no real recordings yet |
 | [F10](#f10-scheduled-review) | Scheduled review | Needs decision | Agree intervals/selection behavior |
 | [F11](#f11-guided-speaking) | Guided speaking | Needs decision | Choose a first scenario and provider/privacy setup |
-| [F12](#f12-levantine-course-expansion) | Levantine course expansion | Planned | Define the next unit; target twelve weeks |
+| [F12](#f12-levantine-course-expansion) | Levantine course expansion | Active · drafts ready | Review F12.1; remaining twelve-week curriculum stays open |
+| [F12.1](#f121-make-a-plan-together) | Make a plan together | Done · local drafts | Three lessons validated/imported; owner review/publication pending |
 | [F13](#f13-msa-course) | MSA course | Planned | Define first unit and extend publication support |
 | [F14](#f14-quranic-course) | Quranic course | Needs input | Approved source IDs/rights and integrity controls |
-| [F15](#f15-personal-study-plan-and-placement) | Personal study plan and placement | Planned | Define a bounded settings/placement slice |
+| [F15](#f15-personal-study-plan-and-placement) | Personal study plan and placement | Active · settings done | Scope per-track placement and bootcamp content next |
+| [F15.1](#f151-personal-study-settings) | Personal study settings | Done · local | Goals/tracks drive queue; guest/account offline persistence verified |
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
@@ -62,7 +78,7 @@ assets, approval or evidence are missing; Done = the stated scope is implemented
 and has completion evidence. Use On hold for an explicit owner deferral and
 Cancelled for explicitly removed scope (retain its ID and reason). IDs identify
 features, not priority; recommendations can change without renumbering.
-F19 is explicitly first priority; remaining rows retain ID order, not execution order.
+F19 now proceeds with the owner-authorized Azure F0 audition; remaining rows retain ID order, not execution order.
 Priority is not a schedule or blanket publication/deployment authorization.
 
 ## Delivery and evidence
@@ -243,11 +259,34 @@ and provider failure paths are verified. Baseline practice stays free.
 ### F12 Levantine course expansion
 
 **Outcome:** twelve weeks of substantive urban Palestinian content, with useful
-Jordanian variants labeled. **Next:** define the next unit and its communicative
-outcome; deliver it as a child task before repeating the pattern.
+Jordanian variants labeled. **Status:** Active; F12.1 authoring/integration is complete.
+**Next:** owner review of the three F12.1 drafts, followed by separately authorized
+publication and the next bounded content scope. A three-lesson transfer unit is not
+evidence of twelve weeks of curriculum or measured learning outcomes.
 **Done when:** the full target is source-linked, validated, owner-approved/published,
 downloadable and backed by observed timing/recall evidence. Fixtures do not count
 as curriculum depth; guided choices do not prove the thirty-day speaking outcome.
+
+### F12.1 Make a plan together
+
+**Status:** Done — October 4, 2026, for draft authoring and local integration.
+**Scope delivered:** three follow-on lessons, course positions 8–10, using established
+first-unit language in new planning/clarification contexts. Eighteen dialogue turns,
+fifteen teaching cards and eighteen contextual practice steps have transliteration,
+optional help, explicit roles, explanations, retry hints and source records.
+**Outcome targeted:** propose a shared activity, ask for missing time, and correct/
+confirm day, time and activity in a guided exchange. This is not observed learner evidence.
+**Completion evidence:** [packages, readable reviews and checks](content/levantine/plans-02/README.md),
+[exact hashes and phrase origins](content/levantine/plans-02/review-manifest.json),
+[local import verification](content/levantine/plans-02/local-import.json).
+Twenty-five API tests pass; the focused mobile Chromium walkthrough, combined
+first-unit/new-unit browser run (2 tests) and production frontend build pass. Validation, draft privacy, publication gate, course ordering,
+offline completion and reconnect persistence are covered. Real-device/accessibility,
+reviewed audio, owner wording review and measured lesson timing remain open.
+**Delivery:** local records 24–26 are unapproved draft v1 and match the authored
+packages. Files/tests are uncommitted. No hosted publication or deployment performed.
+**Next:** owner previews and reviews the three drafts; publication is a separate
+content decision. F12's twelve-week scope and beta gates remain incomplete.
 
 ### F13 MSA course
 
@@ -271,10 +310,32 @@ Never generate or silently normalize canonical text, or invent qualified reviewe
 
 **Outcome:** selectable tracks/primary track, 5/10/15/30-minute goals, separate progress,
 and short skippable track-specific placement with bootcamp recommendations.
-**Next:** scope learner settings first; existing dashboard allocations are a baseline,
-not completed personalization. Placement/bootcamp content can be separate child tasks.
+**Status:** Active — settings and the deterministic daily queue are complete in F15.1.
+**Next:** define bounded per-track placement and reading/sound bootcamp content.
+No placement results or bootcamp recommendations are implemented by F15.1.
 **Done when:** selected goals/tracks drive the queue and persist as agreed; per-track
 placement and applicable reading/sound modules work without a combined Arabic score.
+
+### F15.1 Personal study settings
+
+**Status:** Done locally — October 4, 2026.
+**Scope delivered:** guest-accessible Account controls for 5/10/15/30-minute goals,
+selected tracks and a primary track. Guest preferences persist on device; account
+preferences persist in SQLite with revision-checked offline synchronization and
+explicit conflict resolution. Settings/dashboard caches are identity-scoped.
+Today derives a deterministic queue of whole published lessons from the selections;
+unavailable tracks remain labeled and do not receive substitute lessons.
+**Allocation:** initial recommended assumption is 60% primary, rounded up, with the
+remainder split equally in stable track order; no separate owner policy confirmation
+is claimed. One selected track receives the entire goal. Goals never block study.
+**Evidence:** [behavior, persistence and verification](docs/personal-study-settings.md),
+[settings controls](i-web/src/StudySettings.vue), [planner](i-web/src/studyPlan.ts),
+[account service](i-api/Services/StudySettingsService.cs),
+[browser checks](i-web/tests/study-settings.spec.ts). Twenty-seven API tests,
+ten focused browser checks and the production frontend build passed.
+**Delivery:** uncommitted local implementation; no deployment or publication.
+**Next:** F15 placement/bootcamp work remains open; adaptive scheduled review is F10.
+Real-device assistive-technology evidence remains part of F18.
 
 ### F16 Account recovery and deletion
 
@@ -342,14 +403,19 @@ F18 and the thirty-day outcomes remain open after this child is complete.
 
 ### F19 Chatterbox phrase audio
 
-**Status:** Planned — first implementation priority, selected by the owner October 3.
-**Outcome:** improve robotic/incorrect device speech with locally generated,
+**Status:** Active — owner authorized an Azure F0 alternative audition October 3.
+Chatterbox's unsuccessful samples remain preserved. See [Azure preparation](tools/azure-speech/README.md).
+**Outcome:** improve robotic/incorrect device speech with saved,
 reviewable synthetic clips, initially eight exercise prompts in lesson 1.
-**Next:** the next implementing agent starts with hardware/runtime/license inspection
-and three exact-phrase auditions, then follows the
-[Chatterbox implementation plan](docs/chatterbox-audio-plan.md). Generate locally;
-reuse stored WAV playback/offline infrastructure. No inference on production hosts.
-**Done when:** a pinned local batch generator, complete synthesis provenance,
+**Next:** owner completes free-account enrollment; portal inspection found no
+subscription. Verify an F0 Speech resource, then audition the
+six prepared requests (three phrases, two Jordanian voices, rate -20%). No paid
+resource, full batch, publication or deployment authorized. Zero accepted clips.
+This extends the audition stage to Azure; the local-only Chatterbox plan remains
+historical implementation context. Provider terms and accepted provenance must be
+resolved before any Azure batch integration or publication.
+**Done when:** a reproducible batch workflow (provider/model identified, saved output
+hashes retained), complete synthesis provenance,
 explicit synthetic labeling, eight accepted draft prompt mappings and focused
 playback/offline/validation checks are complete, with actual owner listening review
 recorded. Report unresolved pronunciation verification honestly. Unacceptable or
@@ -357,40 +423,43 @@ unavailable samples leave the scope incomplete; do not equate generation with qu
 **Depends on:** F08 approved text; F09.1 prompt IDs; usable local runtime and model;
 permissioned reference material if required. F18.1 remains deferred. No paid service
 or hiring is included, and F09's eventual human-audio requirement is unchanged.
-**Evidence:** plan based on inspected recording store, validator, editor, playback,
-offline code and official Chatterbox documentation; no generated samples or tests yet.
-**Delivery:** planning only, uncommitted. New audio publication and any code rollout
-are separate from the already-approved v2 text/art release.
+**Evidence:** [local feasibility and audition](docs/chatterbox-audition-2026-10-03.md),
+[measurements/hashes/review](docs/chatterbox-audition-2026-10-03.json),
+[generator/setup](tools/chatterbox/README.md). Six real MPS outputs (three phrases,
+two variants), five passing
+generator checks and offline resume verification. Owner confirms the revision
+retains pronunciation errors; no clips accepted or native review established. Full-batch/provenance integration remains.
+**Delivery:** local tooling and ignored samples, uncommitted; no application/database changes.
+New audio publication and any code rollout are separate from the already-approved v2 text/art release.
 
 ## Recent planning changes
 
-- **October 3, 2026 audio priority:** owner selected a Chatterbox implementation plan
-  for the next agent. Added F19 as first priority, ahead of scheduled review, with
-  local audition, generation, synthetic provenance and offline integration scope.
-  Planning only; no dependencies installed, samples generated or product code changed.
+- **October 4, 2026 F15.1:** implemented personal study settings and the daily queue,
+  with guest/account persistence and offline conflict resolution. 27 API tests and
+  10 focused browser checks pass. Done locally; F15 placement remains open.
+
+- **October 4, 2026 F12.1:** owner selected course expansion. Authored and validated
+  “Make a plan together”; three lessons imported locally as unapproved drafts 24–26.
+  API/publication-gate and offline browser checks pass. F12.1 Done for draft scope;
+  F12 remains open, with owner content review/publication next.
+
+- **October 3, 2026 Azure audition:** owner authorized the free F0 alternative.
+  Prepared six exact-text SSML requests for Sana/Taim. Sign-in is complete but subscription inventory is empty; owner free-account
+  enrollment and F0 verification are pending. No paid services, resources,
+  generation or publication. F19 Active.
+
+- **October 3, 2026 F19 listening outcome:** owner confirms V2 retains V1's
+  pronunciation errors and questions continuing. Recorded unsuccessful audition;
+  F19 Needs decision on audio direction. No full batch or further tuning started.
+
+- **October 3, 2026 F19 implementation:** pinned source/dependencies/weights, verified
+  MPS inference and generated the three exact audition prompts. Owner requested
+  pronunciation/delivery revisions; F19 remains Active with zero accepted clips.
+  Five generator checks and offline resume pass. Local only; no integration or rollout.
 
 
-- **October 3, 2026 reprioritization:** owner deferred testing and requested more
-  feature implementation. F18.1 On hold; F10 recommended pending feature/policy
-  choice. No beta gates waived and no new feature implemented by this update.
 
 
-- **October 3, 2026 publication:** completed owner-approved F08 release through the
-  hosted console. All seven public v2 payloads and 52 source records verified against
-  approved packages; prior v1 versions retained. F08 Done; F18.1 real-device sessions
-  and F09 recordings remain open. No code redeployment or real learner results.
-
-
-- **October 3, 2026 execution:** prepared/validated seven release candidates, fixed
-  two role inconsistencies, reconciled actual local publication state and updated
-  the check-in case. Aligned the iPhone/Safari pilot and prepared eight recording
-  prompts; checks and exact remaining human/publication gates are linked above.
-  No hosted changes, real learner sessions or real recordings occurred.
-- **October 3, 2026 assessment:** inspected the clean `main` checkout at `38cdd33`,
-  release evidence, lesson manifests, evaluation/review code and pilot kit. Prioritized
-  F08 → F18.1 → evidence-led fixes; exposed script/version alignment and first audio
-  batch dependencies. No new learner evidence, database/host inspection, test rerun,
-  implementation, publication or deployment is claimed by this planning-only update.
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

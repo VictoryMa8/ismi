@@ -1,0 +1,556 @@
+{
+  "status": "draft-awaiting-owner-review",
+  "authoredOn": "2026-10-04",
+  "unitId": "levantine-plans-02",
+  "packages": [
+    {
+      "path": "01-lesson.json",
+      "lessonId": "levantine-plans-02-01",
+      "sha256": "da92715926d9a4f443017cc09228c57e0f7780334e59e0fba1f21e3e97a224fa",
+      "courseOrder": 8,
+      "dialogueTurns": 6,
+      "teachingCards": 5,
+      "practiceSteps": 6,
+      "phraseOrigins": {
+        "aftermeal": {
+          "phrase": {
+            "arabic": "وبعدين نعمل رز وسلطة.",
+            "arabizi": "W-baʿdēn niʿmal ruzz w-salaṭa.",
+            "meaning": "And afterwards we’ll make rice and salad.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            4,
+            6
+          ]
+        },
+        "aftertea": {
+          "phrase": {
+            "arabic": "وبعدين نشرب شاي سوا.",
+            "arabizi": "W-baʿdēn nishrab shāy sawa.",
+            "meaning": "And afterwards we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "meal6": {
+          "phrase": {
+            "arabic": "نعمل رز وسلطة الساعة ستة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sitte.",
+            "meaning": "We’ll make rice and salad at six.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            4,
+            6,
+            7
+          ]
+        },
+        "meal7": {
+          "phrase": {
+            "arabic": "نعمل رز وسلطة الساعة سبعة.",
+            "arabizi": "Niʿmal ruzz w-salaṭa is-sāʿa sabʿa.",
+            "meaning": "We’ll make rice and salad at seven.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            7
+          ]
+        },
+        "rice": {
+          "phrase": {
+            "arabic": "نعمل رز وسلطة؟",
+            "arabizi": "Niʿmal ruzz w-salaṭa?",
+            "meaning": "Shall we make rice and salad?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            4
+          ]
+        },
+        "seven": {
+          "phrase": {
+            "arabic": "الساعة سبعة.",
+            "arabizi": "Is-sāʿa sabʿa.",
+            "meaning": "At seven o’clock.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "tea6": {
+          "phrase": {
+            "arabic": "بكرا الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Bukra is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Tomorrow at six we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "tea7": {
+          "phrase": {
+            "arabic": "آه، بكرا الساعة سبعة نشرب شاي سوا.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa nishrab shāy sawa.",
+            "meaning": "Yes, tomorrow at seven we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "today6": {
+          "phrase": {
+            "arabic": "اليوم الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Il-yōm is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Today at six we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6,
+            7
+          ]
+        },
+        "tomorrow": {
+          "phrase": {
+            "arabic": "شو رح نعمل بكرا؟",
+            "arabizi": "Shū raḥ niʿmal bukra?",
+            "meaning": "What will we do tomorrow?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "visit": {
+          "phrase": {
+            "arabic": "نزور أهلي بعد الشغل؟",
+            "arabizi": "Nzūr ahli baʿd ish-shughl?",
+            "meaning": "Shall we visit my family after work?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "when": {
+          "phrase": {
+            "arabic": "تمام. أي ساعة؟",
+            "arabizi": "Tamām. Ayy sāʿa?",
+            "meaning": "Okay. What time?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        }
+      }
+    },
+    {
+      "path": "02-lesson.json",
+      "lessonId": "levantine-plans-02-02",
+      "sha256": "e25f4e4b4830539d692337252a760ab94f82cee43cbb55448abacfbf5394be10",
+      "courseOrder": 9,
+      "dialogueTurns": 6,
+      "teachingCards": 5,
+      "practiceSteps": 6,
+      "phraseOrigins": {
+        "acceptmeal": {
+          "phrase": {
+            "arabic": "آه، خلّينا نعمل رز وسلطة.",
+            "arabizi": "Āh, khallīna niʿmal ruzz w-salaṭa.",
+            "meaning": "Yes, let’s make rice and salad.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            4
+          ]
+        },
+        "aftermeal": {
+          "phrase": {
+            "arabic": "وبعدين نعمل رز وسلطة.",
+            "arabizi": "W-baʿdēn niʿmal ruzz w-salaṭa.",
+            "meaning": "And afterwards we’ll make rice and salad.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            4,
+            6
+          ]
+        },
+        "aftertea": {
+          "phrase": {
+            "arabic": "وبعدين نشرب شاي سوا.",
+            "arabizi": "W-baʿdēn nishrab shāy sawa.",
+            "meaning": "And afterwards we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "mealthentea": {
+          "phrase": {
+            "arabic": "نعمل رز وسلطة وبعدين نشرب شاي.",
+            "arabizi": "Niʿmal ruzz w-salaṭa w-baʿdēn nishrab shāy.",
+            "meaning": "We’ll make rice and salad and then drink tea.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            4,
+            6,
+            7
+          ]
+        },
+        "myvisit7": {
+          "phrase": {
+            "arabic": "بكرا الساعة سبعة نزور أهلي.",
+            "arabizi": "Bukra is-sāʿa sabʿa nzūr ahli.",
+            "meaning": "Tomorrow at seven we’ll visit my family.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "rice": {
+          "phrase": {
+            "arabic": "نعمل رز وسلطة؟",
+            "arabizi": "Niʿmal ruzz w-salaṭa?",
+            "meaning": "Shall we make rice and salad?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            4
+          ]
+        },
+        "six": {
+          "phrase": {
+            "arabic": "الساعة ستة.",
+            "arabizi": "Is-sāʿa sitte.",
+            "meaning": "At six o’clock.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "tea6": {
+          "phrase": {
+            "arabic": "بكرا الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Bukra is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Tomorrow at six we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "tea7": {
+          "phrase": {
+            "arabic": "آه، بكرا الساعة سبعة نشرب شاي سوا.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa nishrab shāy sawa.",
+            "meaning": "Yes, tomorrow at seven we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "teathenmeal": {
+          "phrase": {
+            "arabic": "نشرب شاي وبعدين نعمل رز وسلطة.",
+            "arabizi": "Nishrab shāy w-baʿdēn niʿmal ruzz w-salaṭa.",
+            "meaning": "We’ll drink tea and then make rice and salad.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            4,
+            6,
+            7
+          ]
+        },
+        "teathenvisit": {
+          "phrase": {
+            "arabic": "نشرب شاي وبعدين نزور أهلك.",
+            "arabizi": "Nishrab shāy w-baʿdēn nzūr ahlak.",
+            "meaning": "We’ll drink tea and then visit your family. (to Knafeh)",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "today6": {
+          "phrase": {
+            "arabic": "اليوم الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Il-yōm is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Today at six we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6,
+            7
+          ]
+        },
+        "tomorrow": {
+          "phrase": {
+            "arabic": "شو رح نعمل بكرا؟",
+            "arabizi": "Shū raḥ niʿmal bukra?",
+            "meaning": "What will we do tomorrow?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "visit": {
+          "phrase": {
+            "arabic": "نزور أهلي بعد الشغل؟",
+            "arabizi": "Nzūr ahli baʿd ish-shughl?",
+            "meaning": "Shall we visit my family after work?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "visitthen": {
+          "phrase": {
+            "arabic": "نزور أهلك وبعدين نشرب شاي.",
+            "arabizi": "Nzūr ahlak w-baʿdēn nishrab shāy.",
+            "meaning": "We’ll visit your family and then drink tea. (to Knafeh)",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "when": {
+          "phrase": {
+            "arabic": "تمام. أي ساعة؟",
+            "arabizi": "Tamām. Ayy sāʿa?",
+            "meaning": "Okay. What time?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        }
+      }
+    },
+    {
+      "path": "03-lesson.json",
+      "lessonId": "levantine-plans-02-03",
+      "sha256": "89f121d16f5afe1295bc25ac099ea5b7bc95064d61c0de348cc6a79d0a909e3b",
+      "courseOrder": 10,
+      "dialogueTurns": 6,
+      "teachingCards": 5,
+      "practiceSteps": 6,
+      "phraseOrigins": {
+        "aftertea": {
+          "phrase": {
+            "arabic": "وبعدين نشرب شاي سوا.",
+            "arabizi": "W-baʿdēn nishrab shāy sawa.",
+            "meaning": "And afterwards we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "checksix": {
+          "phrase": {
+            "arabic": "الساعة ستة؟",
+            "arabizi": "Is-sāʿa sitte?",
+            "meaning": "At six o’clock?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "checktoday": {
+          "phrase": {
+            "arabic": "اليوم؟",
+            "arabizi": "Il-yōm?",
+            "meaning": "Today?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            7
+          ]
+        },
+        "correctday": {
+          "phrase": {
+            "arabic": "لا، بكرا.",
+            "arabizi": "Laʾ, bukra.",
+            "meaning": "No, tomorrow.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            3,
+            6
+          ]
+        },
+        "correctsix": {
+          "phrase": {
+            "arabic": "لا، الساعة ستة.",
+            "arabizi": "Laʾ, is-sāʿa sitte.",
+            "meaning": "No, at six o’clock.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            3,
+            6
+          ]
+        },
+        "correcttime": {
+          "phrase": {
+            "arabic": "لا، الساعة سبعة.",
+            "arabizi": "Laʾ, is-sāʿa sabʿa.",
+            "meaning": "No, at seven o’clock.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            3,
+            6
+          ]
+        },
+        "myvisit7": {
+          "phrase": {
+            "arabic": "بكرا الساعة سبعة نزور أهلي.",
+            "arabizi": "Bukra is-sāʿa sabʿa nzūr ahli.",
+            "meaning": "Tomorrow at seven we’ll visit my family.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "seven": {
+          "phrase": {
+            "arabic": "الساعة سبعة.",
+            "arabizi": "Is-sāʿa sabʿa.",
+            "meaning": "At seven o’clock.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "tea6": {
+          "phrase": {
+            "arabic": "بكرا الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Bukra is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Tomorrow at six we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "tea7": {
+          "phrase": {
+            "arabic": "آه، بكرا الساعة سبعة نشرب شاي سوا.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa nishrab shāy sawa.",
+            "meaning": "Yes, tomorrow at seven we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "today6": {
+          "phrase": {
+            "arabic": "اليوم الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Il-yōm is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Today at six we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6,
+            7
+          ]
+        },
+        "tomorrow": {
+          "phrase": {
+            "arabic": "شو رح نعمل بكرا؟",
+            "arabizi": "Shū raḥ niʿmal bukra?",
+            "meaning": "What will we do tomorrow?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "visit": {
+          "phrase": {
+            "arabic": "نزور أهلي بعد الشغل؟",
+            "arabizi": "Nzūr ahli baʿd ish-shughl?",
+            "meaning": "Shall we visit my family after work?",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "visit6": {
+          "phrase": {
+            "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
+            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Knafeh)",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "visit7": {
+          "phrase": {
+            "arabic": "تمام، بكرا الساعة سبعة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sabʿa nzūr ahlak.",
+            "meaning": "Okay, tomorrow at seven we’ll visit your family. (to Knafeh)",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            6
+          ]
+        },
+        "wanttea": {
+          "phrase": {
+            "arabic": "بدي شاي.",
+            "arabizi": "Biddi shāy.",
+            "meaning": "I want tea.",
+            "audioUrl": null
+          },
+          "firstUnitLessons": [
+            3
+          ]
+        }
+      }
+    }
+  ],
+  "predecessors": [
+    {
+      "path": "levantine/everyday-01/revisions/pilot-release/03-lesson.json",
+      "sha256": "54823a42b60830ead78a2bc665655b3350e8d6be4d26bb5513a3dcc1495615fc"
+    },
+    {
+      "path": "levantine/everyday-01/revisions/pilot-release/04-lesson.json",
+      "sha256": "44528e782c1590902f866e6796cb2844ed9b7ab61ba5ff1cb450b9e2e363d4c9"
+    },
+    {
+      "path": "levantine/everyday-01/revisions/pilot-release/06-lesson.json",
+      "sha256": "621fb4e5fc0df800656234874716378711ca62a5062c90e6c3a25b2fea4e2ee4"
+    },
+    {
+      "path": "levantine/everyday-01/revisions/pilot-release/07-lesson.json",
+      "sha256": "392e49dc764aa1e996654098cccaf3c90b4544b32e02d31c25526b85ed8c3c0a"
+    }
+  ]
+}

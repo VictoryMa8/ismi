@@ -1,0 +1,624 @@
+{
+  "lesson": {
+    "id": "levantine-plans-02-03",
+    "trackId": "levantine",
+    "title": "Clear up the plan",
+    "scenario": "Knafeh and Fattoush arrange a visit to Knafeh’s family tomorrow at seven in the evening. Fattoush initially hears six. Use brief corrections and a final confirmation; later practice changes the details.",
+    "steps": [
+      {
+        "id": "p03-01",
+        "instruction": "Fattoush heard six. As Knafeh, correct her: the visit is at seven.",
+        "prompt": {
+          "arabic": "الساعة ستة؟",
+          "arabizi": "Is-sāʿa sitte?",
+          "meaning": "At six o’clock?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، الساعة سبعة.",
+            "arabizi": "Laʾ, is-sāʿa sabʿa.",
+            "meaning": "No, at seven o’clock.",
+            "rationale": "This directly corrects six to seven."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، الساعة ستة.",
+            "arabizi": "Laʾ, is-sāʿa sitte.",
+            "meaning": "No, at six o’clock.",
+            "rationale": "This repeats the mistaken six instead of correcting it."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، بكرا.",
+            "arabizi": "Laʾ, bukra.",
+            "meaning": "No, tomorrow.",
+            "rationale": "Tomorrow may fit, but it does not resolve the mistaken time."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This directly corrects six to seven.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Correct the hour."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "p03-02",
+        "instruction": "Knafeh corrected the time. Confirm tomorrow at seven and visiting HIS family.",
+        "prompt": {
+          "arabic": "لا، الساعة سبعة.",
+          "arabizi": "Laʾ, is-sāʿa sabʿa.",
+          "meaning": "No, at seven o’clock.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بكرا الساعة سبعة نزور أهلي.",
+            "arabizi": "Bukra is-sāʿa sabʿa nzūr ahli.",
+            "meaning": "Tomorrow at seven we’ll visit my family.",
+            "rationale": "As Fattoush, ahli would change the visit to her own family."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، بكرا الساعة سبعة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sabʿa nzūr ahlak.",
+            "meaning": "Okay, tomorrow at seven we’ll visit your family. (to Knafeh)",
+            "rationale": "This preserves tomorrow and seven; ahlak refers to Knafeh’s family."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
+            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Knafeh)",
+            "rationale": "This restores the mistaken time of six."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This preserves tomorrow and seven; ahlak refers to Knafeh’s family.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Keep seven and your listener’s family."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "p03-03",
+        "instruction": "New misunderstanding: Fattoush checks “today?” You mean tomorrow. Correct only the day.",
+        "prompt": {
+          "arabic": "اليوم؟",
+          "arabizi": "Il-yōm?",
+          "meaning": "Today?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، الساعة سبعة.",
+            "arabizi": "Laʾ, is-sāʿa sabʿa.",
+            "meaning": "No, at seven o’clock.",
+            "rationale": "This supplies seven but leaves the day unclear."
+          },
+          {
+            "id": "b",
+            "arabic": "اليوم الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Il-yōm is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Today at six we’ll drink tea together.",
+            "rationale": "This confirms the mistaken today and invents a time."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، بكرا.",
+            "arabizi": "Laʾ, bukra.",
+            "meaning": "No, tomorrow.",
+            "rationale": "This replaces today with tomorrow."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This replaces today with tomorrow.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Give the right day."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "p03-04",
+        "instruction": "Transfer: the agreed visit is now at SIX tomorrow. As Fattoush, correct Knafeh when he says seven.",
+        "prompt": {
+          "arabic": "الساعة سبعة.",
+          "arabizi": "Is-sāʿa sabʿa.",
+          "meaning": "At seven o’clock.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، الساعة ستة.",
+            "arabizi": "Laʾ, is-sāʿa sitte.",
+            "meaning": "No, at six o’clock.",
+            "rationale": "This corrects the time to the new intended six."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، الساعة سبعة.",
+            "arabizi": "Laʾ, is-sāʿa sabʿa.",
+            "meaning": "No, at seven o’clock.",
+            "rationale": "This keeps seven, which is wrong for this new arrangement."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، بكرا.",
+            "arabizi": "Laʾ, bukra.",
+            "meaning": "No, tomorrow.",
+            "rationale": "Tomorrow is already agreed; the mistake is the time."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This corrects the time to the new intended six.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "The new plan is six."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "p03-05",
+        "instruction": "Continue the new six-o’clock arrangement. Knafeh says “my family.” Confirm tomorrow at six and HIS family.",
+        "prompt": {
+          "arabic": "نزور أهلي بعد الشغل؟",
+          "arabizi": "Nzūr ahli baʿd ish-shughl?",
+          "meaning": "Shall we visit my family after work?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بكرا الساعة سبعة نزور أهلي.",
+            "arabizi": "Bukra is-sāʿa sabʿa nzūr ahli.",
+            "meaning": "Tomorrow at seven we’ll visit my family.",
+            "rationale": "This changes both the time and whose family will be visited."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
+            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Knafeh)",
+            "rationale": "This preserves the new six-o’clock time and refers to Knafeh’s family."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، بكرا الساعة سبعة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sabʿa nzūr ahlak.",
+            "meaning": "Okay, tomorrow at seven we’ll visit your family. (to Knafeh)",
+            "rationale": "This carries over seven from the old plan."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This preserves the new six-o’clock time and refers to Knafeh’s family.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Confirm six and ahlak."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "p03-06",
+        "instruction": "New activity: Fattoush asks about tomorrow. Agree to tea together at seven, with no family visit in this plan.",
+        "prompt": {
+          "arabic": "شو رح نعمل بكرا؟",
+          "arabizi": "Shū raḥ niʿmal bukra?",
+          "meaning": "What will we do tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بكرا الساعة سبعة نزور أهلي.",
+            "arabizi": "Bukra is-sāʿa sabʿa nzūr ahli.",
+            "meaning": "Tomorrow at seven we’ll visit my family.",
+            "rationale": "Seven fits, but the family visit is not part of this arrangement."
+          },
+          {
+            "id": "b",
+            "arabic": "بكرا الساعة ستة نشرب شاي سوا.",
+            "arabizi": "Bukra is-sāʿa sitte nishrab shāy sawa.",
+            "meaning": "Tomorrow at six we’ll drink tea together.",
+            "rationale": "Tea fits, but six changes the requested time."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بكرا الساعة سبعة نشرب شاي سوا.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa nishrab shāy sawa.",
+            "meaning": "Yes, tomorrow at seven we’ll drink tea together.",
+            "rationale": "This confirms exactly the new day, time and activity."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the plan.",
+          "correctExplanation": "This confirms exactly the new day, time and activity.",
+          "incorrectTitle": "Check the arrangement.",
+          "incorrectExplanation": "This expression changes or omits a detail requested in this exchange.",
+          "retryHint": "Check all three: day, time, activity."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 6,
+    "version": "plans-draft-1",
+    "unitId": "levantine-plans-02",
+    "unitTitle": "Make a plan together",
+    "courseOrder": 10,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "introduction": {
+      "goal": "Correct a misunderstood time or day and confirm whose family you will visit.",
+      "dialogue": [
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "بكرا الساعة سبعة نزور أهلي.",
+            "arabizi": "Bukra is-sāʿa sabʿa nzūr ahli.",
+            "meaning": "Tomorrow at seven we’ll visit my family.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "الساعة ستة؟",
+            "arabizi": "Is-sāʿa sitte?",
+            "meaning": "At six o’clock?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "لا، الساعة سبعة.",
+            "arabizi": "Laʾ, is-sāʿa sabʿa.",
+            "meaning": "No, at seven o’clock.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "تمام، بكرا الساعة سبعة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sabʿa nzūr ahlak.",
+            "meaning": "Okay, tomorrow at seven we’ll visit your family. (to Knafeh)",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "وبعدين نشرب شاي سوا.",
+            "arabizi": "W-baʿdēn nishrab shāy sawa.",
+            "meaning": "And afterwards we’ll drink tea together.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "بدي شاي.",
+            "arabizi": "Biddi shāy.",
+            "meaning": "I want tea.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "الساعة ستة؟",
+          "arabizi": "Is-sāʿa sitte?",
+          "meaning": "At six o’clock?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "لا، الساعة سبعة.",
+          "arabizi": "Laʾ, is-sāʿa sabʿa.",
+          "meaning": "No, at seven o’clock.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام، بكرا الساعة سبعة نزور أهلك.",
+          "arabizi": "Tamām, bukra is-sāʿa sabʿa nzūr ahlak.",
+          "meaning": "Okay, tomorrow at seven we’ll visit your family. (to Knafeh)",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "A short laʾ plus the corrected detail can repair a misunderstanding. Keep the correction about the mistaken detail, then confirm the full plan. These are bounded exchanges, not a universal politeness rule.",
+      "dialectNote": "Urban Palestinian teaching target; transliteration remains available. Urban coffee pronunciation and address forms follow the first-unit model. Ahlak addresses Knafeh; ahli refers to the speaker’s own family. The scenes share an evening setting; these phrases do not teach how to distinguish morning from evening. No Jordanian variants or native-expert review claimed. ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop.",
+      "recordingNote": "No reviewed recordings. Dialogue and prompt text are draft recording scripts. Speaker roles are explicit; do not label browser speech as reviewed Palestinian audio. All audio URLs remain null.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "https://resources.lingualism.com/levantine-arabic/family-3/",
+        "internal:ismi/plans-02/03/draft-1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Check what you heard",
+          "phrase": {
+            "arabic": "الساعة ستة؟",
+            "arabizi": "Is-sāʿa sitte?",
+            "meaning": "At six o’clock?",
+            "audioUrl": null
+          },
+          "note": "The question repeats the time to check it. Its intonation differs from a statement; no reviewed audio is available yet.",
+          "recallCue": "You think you heard six. Check that time.",
+          "chunks": [
+            {
+              "arabic": "الساعة ستة",
+              "arabizi": "is-sāʿa sitte",
+              "meaning": "at six"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/plans-02/03/draft-1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Repair the time",
+          "phrase": {
+            "arabic": "لا، الساعة سبعة.",
+            "arabizi": "Laʾ, is-sāʿa sabʿa.",
+            "meaning": "No, at seven o’clock.",
+            "audioUrl": null
+          },
+          "note": "Laʾ rejects the repeated six; is-sāʿa sabʿa gives the intended time.",
+          "recallCue": "Fattoush heard six, but you meant seven. Correct the time.",
+          "chunks": [
+            {
+              "arabic": "لا",
+              "arabizi": "laʾ",
+              "meaning": "no"
+            },
+            {
+              "arabic": "الساعة سبعة",
+              "arabizi": "is-sāʿa sabʿa",
+              "meaning": "at seven"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/plans-02/03/draft-1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Repair the day",
+          "phrase": {
+            "arabic": "لا، بكرا.",
+            "arabizi": "Laʾ, bukra.",
+            "meaning": "No, tomorrow.",
+            "audioUrl": null
+          },
+          "note": "When the question is about today, laʾ, bukra corrects only the day.",
+          "recallCue": "Someone checks “today?” You mean tomorrow. Correct them.",
+          "chunks": [
+            {
+              "arabic": "لا",
+              "arabizi": "laʾ",
+              "meaning": "no"
+            },
+            {
+              "arabic": "بكرا",
+              "arabizi": "bukra",
+              "meaning": "tomorrow"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/plans-02/03/draft-1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Confirm from the listener’s perspective",
+          "phrase": {
+            "arabic": "تمام، بكرا الساعة سبعة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sabʿa nzūr ahlak.",
+            "meaning": "Okay, tomorrow at seven we’ll visit your family. (to Knafeh)",
+            "audioUrl": null
+          },
+          "note": "Knafeh says ahli, my family. Fattoush says ahlak, your family, to refer to those same people.",
+          "recallCue": "Confirm to Knafeh: tomorrow at seven, visit his family.",
+          "chunks": [
+            {
+              "arabic": "تمام",
+              "arabizi": "tamām",
+              "meaning": "okay"
+            },
+            {
+              "arabic": "بكرا",
+              "arabizi": "bukra",
+              "meaning": "tomorrow"
+            },
+            {
+              "arabic": "الساعة سبعة",
+              "arabizi": "is-sāʿa sabʿa",
+              "meaning": "at seven"
+            },
+            {
+              "arabic": "نزور أهلك",
+              "arabizi": "nzūr ahlak",
+              "meaning": "we visit your family · to Knafeh"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/plans-02/03/draft-1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Use the actual new time",
+          "phrase": {
+            "arabic": "لا، الساعة ستة.",
+            "arabizi": "Laʾ, is-sāʿa sitte.",
+            "meaning": "No, at six o’clock.",
+            "audioUrl": null
+          },
+          "note": "Do not memorize seven as the right answer. A different arrangement can require six.",
+          "recallCue": "New plan: the intended time is six, not seven. Correct the time.",
+          "chunks": [
+            {
+              "arabic": "لا",
+              "arabizi": "laʾ",
+              "meaning": "no"
+            },
+            {
+              "arabic": "الساعة ستة",
+              "arabizi": "is-sāʿa sitte",
+              "meaning": "at six"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/plans-02/03/draft-1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Inherited reference evidence from published first-unit packages; not newly retrieved or independently reverified. Original approval covered the first-unit foundation, not this finished unit. \nFirst-unit lesson 3: Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused.\nFirst-unit lesson 6: Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues.\nFirst-unit lesson 7: Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Inherited reference evidence from published first-unit packages; not newly retrieved or independently reverified. Original approval covered the first-unit foundation, not this finished unit. \nFirst-unit lesson 3: Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused.\nFirst-unit lesson 6: Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues.\nFirst-unit lesson 7: Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Inherited reference evidence from published first-unit packages; not newly retrieved or independently reverified. Original approval covered the first-unit foundation, not this finished unit. \nFirst-unit lesson 3: Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused.\nFirst-unit lesson 6: Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues.\nFirst-unit lesson 7: Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Food and Drink in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Inherited reference evidence from published first-unit packages; not newly retrieved or independently reverified. Original approval covered the first-unit foundation, not this finished unit. \nFirst-unit lesson 3: Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused.\nFirst-unit lesson 7: Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Family in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Inherited reference evidence from published first-unit packages; not newly retrieved or independently reverified. Original approval covered the first-unit foundation, not this finished unit. \nFirst-unit lesson 6: Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Maknuune IDs 12343 (future raḥ), 2016 (tomorrow), 15247 (hour), 13641 (six), 13572 (seven), 13362 (visit), 1801 (then), 1786 (after), 628 (family), 3185 (okay). Lingualism verbs entries to do/make, to go; publisher sample p.109 “we” and table 1 distinguishes tense forms. Original future proposal and confirmation sentences require owner review; references are not permission to copy source dialogues.\nFirst-unit lesson 7: Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Transfer of the same checked facts: Maknuune IDs 36281 (day), 13367 (visit), 12403 (rest), 1801 (then), 528 (mother), 31227 (good), 2016 (tomorrow), 13572 (seven), 11472 (rice), 14642 (salad), 15460 (tea). Publisher sample p.109 pronouns/T104 wanting; Lingualism family and food entries as in lessons 3–6. Fresh original composition; all contextual answer rationales are authored for this exchange, not source quotations."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi planning and clarification unit — original draft",
+      "locator": "internal:ismi/plans-02/03/draft-1",
+      "rights": "Original AI-assisted Ismi dialogue, explanations and contextual practice; no publisher dialogue, examples or audio copied.",
+      "notes": "Authored October 4, 2026 from source-linked first-unit language. Recombined phrases and context-specific meanings require owner review; no native-expert review or publication approval claimed. Predecessor package hashes and phrase origins are in review-manifest.json."
+    }
+  ]
+}

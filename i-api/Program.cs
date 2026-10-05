@@ -135,6 +135,7 @@ builder.Services.AddSingleton<SeedCurriculum>();
 builder.Services.AddSingleton<LessonEvaluator>();
 builder.Services.AddSingleton<LearnerProgressService>();
 builder.Services.AddScoped<AccountProgressService>();
+builder.Services.AddScoped<StudySettingsService>();
 builder.Services.AddScoped<CurriculumPublishingService>();
 builder.Services.AddScoped<CurriculumPackageImporter>();
 builder.Services.AddSingleton<RecordingStore>();
@@ -148,6 +149,7 @@ await using (var scope = app.Services.CreateAsyncScope())
     var database = scope.ServiceProvider.GetRequiredService<IsmiDbContext>();
     await database.Database.EnsureCreatedAsync();
     await CurriculumSchemaInitializer.EnsureCurriculumSchemaAsync(database);
+    await StudySettingsService.EnsureSchemaAsync(database);
     var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
     var seed = scope.ServiceProvider.GetRequiredService<SeedCurriculum>();
     await publishing.EnsureSeededAsync(seed.GetInitialLessons());
@@ -289,6 +291,28 @@ auth.MapPost("/logout", async Task<IResult> (
     return Results.NoContent();
 })
 .RequireAuthorization();
+
+app.MapGet("/api/study-settings", async (
+    HttpContext context, UserManager<ApplicationUser> users, StudySettingsService settings,
+    CancellationToken cancellationToken) =>
+{
+    var user = await users.GetUserAsync(context.User);
+    return Results.Ok(await settings.GetAsync(user!.Id, cancellationToken));
+}).RequireAuthorization();
+
+app.MapPost("/api/study-settings", async Task<IResult> (
+    SaveStudySettingsRequest request, HttpContext context, IAntiforgery antiforgery,
+    UserManager<ApplicationUser> users, StudySettingsService settings, CancellationToken cancellationToken) =>
+{
+    var csrfError = await ValidateAntiforgeryAsync(context, antiforgery);
+    if (csrfError is not null) return csrfError;
+    if (request.Preferences is null || !request.Preferences.IsValid() || request.Revision < 0)
+        return Results.BadRequest(new ApiError("invalid_study_settings", "Choose a valid daily goal, at least one track, and a primary track from your selection."));
+    var user = await users.GetUserAsync(context.User);
+    if (!await settings.SaveAsync(user!.Id, request, cancellationToken))
+        return Results.Conflict(new ApiError("study_settings_conflict", "Your study settings changed on another device. Choose which settings to keep."));
+    return Results.Ok(await settings.GetAsync(user.Id, cancellationToken));
+}).RequireAuthorization();
 
 app.MapGet("/api/dashboard", async (
     HttpContext context,

@@ -16,9 +16,17 @@ public sealed class IsmiDbContext(DbContextOptions<IsmiDbContext> options)
 
     public DbSet<CurriculumAuditRecord> CurriculumAuditEvents => Set<CurriculumAuditRecord>();
 
+    public DbSet<StudySettingsRecord> StudySettings => Set<StudySettingsRecord>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<StudySettingsRecord>(entity =>
+        {
+            entity.HasKey(s => s.UserId);
+            entity.HasOne(s => s.User).WithOne().HasForeignKey<StudySettingsRecord>(s => s.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
 
         builder.Entity<LearnerProgressRecord>(entity =>
         {

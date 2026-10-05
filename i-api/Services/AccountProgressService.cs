@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ismi.Api.Services;
 
-public sealed class AccountProgressService(IsmiDbContext database)
+public sealed class AccountProgressService(IsmiDbContext database, StudySettingsService settings)
 {
     public async Task<DashboardResponse> GetDashboardAsync(
         SeedCurriculum curriculum,
@@ -33,7 +33,10 @@ public sealed class AccountProgressService(IsmiDbContext database)
             user.DisplayName,
             publishedLessons,
             completedIds,
-            completedMinutesToday);
+            completedMinutesToday,
+            (await settings.GetAsync(user.Id, cancellationToken)).Preferences.GoalMinutes,
+            completions.Where(c => DateOnly.FromDateTime(c.CompletedAtUtc) == today)
+                .Select(c => c.LessonId).ToHashSet(StringComparer.OrdinalIgnoreCase));
     }
 
     public async Task<LessonCompletionResponse> CompleteAsync(

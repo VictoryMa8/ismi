@@ -1,8 +1,10 @@
 # Chatterbox phrase audio implementation plan
 
 Planning date: October 3, 2026. Roadmap ID: **F19**, first implementation priority.
-The owner requested this plan for another agent to start; this task has not installed
-Chatterbox, generated audio, changed application code or authorized publication.
+The owner requested this plan before implementation. Local feasibility and two
+three-phrase variants have since been completed; see the
+[audition record](chatterbox-audition-2026-10-03.md). Owner confirmed the revised samples retain pronunciation errors;
+F19 now needs an audio-direction decision and no clips are accepted and no application integration or publication has occurred.
 [ROADMAP.md](../ROADMAP.md) remains the current status/priority source.
 
 ## Problem and bounded outcome
@@ -87,8 +89,8 @@ a generic example without running the selected multilingual model.
 
 ### 2. Produce a small, reviewable audition
 
-Start with `e01-01`, `e01-04` and `e01-06`: a casual check-in, a feminine self-description
-and a rest offer. Use the exact approved Arabic and explicit Arabic language selection.
+Start with `e01-01`, `e01-04` and `e01-06`: a masculine-address check-in, a feminine-address check-in
+and a rest offer. (The feminine self-description is `e01-02`, not `e01-04`.) Use the exact approved Arabic and explicit Arabic language selection.
 Do not feed English role labels or transliteration as spoken text. Keep text generation
 out of this process: Chatterbox voices existing curriculum; it does not author it.
 
@@ -184,8 +186,9 @@ labeled synthetic preview; that does not turn it into native-reviewed teaching a
 If samples are not acceptable or hardware/reference rights block real generation,
 record exact results and remaining work; do not mark the complete F19 scope Done.
 
-The next agent should begin with step 1 and the three-phrase audition, marking F19
-Active when implementation begins. Preserve all existing uncommitted work and work
+F19 is now Needs decision after unsuccessful listening review. Resolve audio direction
+before resuming this plan;
+do not repeat completed installation or regenerate existing variants unnecessarily. Preserve all existing uncommitted work and work
 on `main`. Use root `npm run api` and `npm run web` in separate terminals if needed.
 Do not create a branch/worktree, push, publish, buy services or contact anyone merely
 because this plan is first priority.

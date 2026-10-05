@@ -126,16 +126,16 @@ export function getCachedLessonCount(): Promise<number> {
   return useStore(lessonStore, 'readonly', store => store.count())
 }
 
-export function cacheDashboard(dashboard: DashboardResponse): Promise<IDBValidKey> {
-  const snapshot: Snapshot<DashboardResponse> = { key: 'dashboard', value: JSON.parse(JSON.stringify(dashboard)) }
+export function cacheDashboard(dashboard: DashboardResponse, scope = 'guest'): Promise<IDBValidKey> {
+  const snapshot: Snapshot<DashboardResponse> = { key: `dashboard:${scope}`, value: JSON.parse(JSON.stringify(dashboard)) }
   return useStore(snapshotStore, 'readwrite', store => store.put(snapshot))
 }
 
-export async function getCachedDashboard(): Promise<DashboardResponse | undefined> {
+export async function getCachedDashboard(scope = 'guest'): Promise<DashboardResponse | undefined> {
   const snapshot = await useStore<Snapshot<DashboardResponse> | undefined>(
     snapshotStore,
     'readonly',
-    store => store.get('dashboard'),
+    store => store.get(`dashboard:${scope}`),
   )
   return snapshot?.value
 }
@@ -203,4 +203,16 @@ export async function saveReviewAttempt(
     transaction.onabort = () => { database.close(); reject(transaction.error) }
     transaction.onerror = () => reject(transaction.error)
   })
+}
+
+// Preserve downloads from the previous unscoped dashboard format under its last
+// recorded identity before auth refresh can switch the current account.
+export async function migrateLegacyDashboard(): Promise<void> {
+  const legacy = await useStore<Snapshot<DashboardResponse> | undefined>(snapshotStore, 'readonly', store => store.get('dashboard'))
+  if (!legacy) return
+  const previousScope = await getDeviceSnapshot<string>('review-scope')
+  const scope = previousScope ?? (legacy.value.learner.displayName === 'Guest' ? 'guest' : undefined)
+  if (!scope) return
+  if (!await getCachedDashboard(scope)) await cacheDashboard(legacy.value, scope)
+  await useStore(snapshotStore, 'readwrite', store => store.delete('dashboard'))
 }

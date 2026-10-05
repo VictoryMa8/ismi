@@ -1899,3 +1899,9 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 .landing-return { display: inline-flex; align-items: center; min-height: 44px; color: var(--teal-dark); font-size: 13px; font-weight: 600; text-underline-offset: 4px; margin-bottom: 12px; }
 .mobile-landing-return { display: none; }
 @media (max-width: 900px) { .mobile-landing-return { display: inline-flex; margin: 0 0 14px; } }
+
+.study-allocations { padding-left: 1.25rem; line-height: 1.8; }
+.study-queue { padding-left: 1.5rem; }
+.study-queue .guest-action { text-align: left; min-height: 44px; padding: .5rem 0; }
+.study-plan .section-heading { flex-wrap: wrap; gap: .75rem; }
+.study-plan a { color: var(--green-dark, #176344); text-underline-offset: .2em; }

@@ -1,0 +1,154 @@
+{
+  "date": "2026-10-03",
+  "status": "audition-unsuccessful-needs-audio-direction-decision",
+  "machine": {
+    "architecture": "arm64",
+    "chip": "Apple M4",
+    "memoryBytes": 25769803776,
+    "diskAvailableGiBAtStart": 89
+  },
+  "model": {
+    "package": "chatterbox-tts",
+    "version": "0.1.7",
+    "modelId": "ResembleAI/chatterbox",
+    "revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+    "checkpoint": "t3_mtl23ls_v3.safetensors",
+    "files": [
+      "ve.pt",
+      "t3_mtl23ls_v3.safetensors",
+      "s3gen.pt",
+      "grapheme_mtl_merged_expanded_v1.json",
+      "conds.pt",
+      "Cangjie5_TC.json"
+    ],
+    "codeInspectionCommit": "5de7a54aa4e5e2baadb0182dde554908b48b85c2",
+    "codeLicense": "https://github.com/resemble-ai/chatterbox/blob/5de7a54aa4e5e2baadb0182dde554908b48b85c2/LICENSE",
+    "weightsLicense": "https://huggingface.co/ResembleAI/chatterbox/blob/5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18/README.md",
+    "license": "MIT",
+    "conditioning": "Publisher-supplied conds.pt in the MIT-declared model repository; no external reference audio. Speaker identity, source language and Palestinian dialect are unverified.",
+    "sourceArchive": "https://github.com/resemble-ai/chatterbox/archive/5de7a54aa4e5e2baadb0182dde554908b48b85c2.tar.gz",
+    "sourceArchiveSha256": "003f8c85dcfeb2d91b3a6f97f43b74703d15131e987dfabb7f3d9aee7c0da2cf",
+    "loaderSha256": "936759044e54cffe8c68b91b32e01da0bc032a1e084f769f0403080d86ad153c"
+  },
+  "settings": {
+    "language_id": "ar",
+    "exaggeration": 0.5,
+    "cfg_weight": 0.0,
+    "temperature": 0.8,
+    "repetition_penalty": 1.2,
+    "min_p": 0.05,
+    "top_p": 1.0
+  },
+  "modelLoadSeconds": 17.71612341699074,
+  "processPeakRssBytes": 5306712064,
+  "clips": [
+    {
+      "stepId": "e01-01",
+      "transcript": "شو عامل؟",
+      "modelNormalizedInput": "شو عامل؟.",
+      "generationSeconds": 21.664354125008686,
+      "peakAmplitude": 0.9190788269042969,
+      "output": {
+        "sha256": "44ff7859553b8e8ce0a3882188e442734c64bd1b8da16cc68d72bd67e18375b4",
+        "durationSeconds": 1.08,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "stepId": "e01-04",
+      "transcript": "شو عاملة؟",
+      "modelNormalizedInput": "شو عاملة؟.",
+      "generationSeconds": 4.425317790999543,
+      "peakAmplitude": 0.9738066792488098,
+      "output": {
+        "sha256": "9be6cf09aeb4212c60ef14dcac36c525e02ed5080b0a884618b6300949baa2ad",
+        "durationSeconds": 1.2,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "stepId": "e01-06",
+      "transcript": "بدك ترتاح؟",
+      "modelNormalizedInput": "بدك ترتاح؟.",
+      "generationSeconds": 3.374429957999382,
+      "peakAmplitude": 0.9934024810791016,
+      "output": {
+        "sha256": "0356b1f8debcdbbf78299b50dac4fc6a6b19b06cccc0984f6743d81b63e0f27c",
+        "durationSeconds": 1.2,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    }
+  ],
+  "ownerAssessment": {
+    "decision": "Revise pronunciation or delivery",
+    "specificNotes": {
+      "e01-01": "Owner hears “shu amin”: missing ayn and wrong ending.",
+      "e01-04": "Owner hears “shu aela”: missing ayn and wrong ending.",
+      "e01-06": "Owner says phrase is okay but very, very fast."
+    },
+    "pronunciation": "unverified"
+  },
+  "coverage": {
+    "generatedAuditionPrompts": 3,
+    "acceptedPrompts": 0,
+    "lessonPromptTarget": 8,
+    "unitPrompts": 56
+  },
+  "delivery": "Local ignored WAVs and sidecars only; no curriculum draft, publication, commit or deployment",
+  "revisedAudition": {
+    "variant": "audition-v2",
+    "change": "exaggeration 0 instead of 0.5; all other inputs/settings unchanged",
+    "ownerAssessment": "Owner confirms V2 retains the same pronunciation errors and expresses concern about continuing this approach. No clips accepted.",
+    "modelLoadSeconds": 7.928919833997497,
+    "processPeakRssBytes": 4805918720,
+    "clips": [
+      {
+        "stepId": "e01-01",
+        "generationSeconds": 8.758069875009824,
+        "output": {
+          "sha256": "ad2fb72ea66f86a49699485d50f555f7e60b95854186f1185b8e26c635a6e8f1",
+          "durationSeconds": 2.12,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        },
+        "peakAmplitude": 0.96280437707901
+      },
+      {
+        "stepId": "e01-04",
+        "generationSeconds": 4.2655268330127,
+        "output": {
+          "sha256": "17be4e864044e3f26cae5b670a296d1b02f02788c8c79d71e26e624fb6d9a079",
+          "durationSeconds": 1.32,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        },
+        "peakAmplitude": 0.5988820791244507
+      },
+      {
+        "stepId": "e01-06",
+        "generationSeconds": 5.299345040984917,
+        "output": {
+          "sha256": "773805c774be2c0b13c2875aa4e7aaadbd007203724da7ea334ca27204860888",
+          "durationSeconds": 1.44,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        },
+        "peakAmplitude": 0.6347203254699707
+      }
+    ]
+  },
+  "browserVerification": {
+    "surface": "Codex in-app browser",
+    "result": "All six audio elements readyState 4, no media errors; durations match sidecars. Transcript and review labels visible.",
+    "scope": "Media load only; no expert listening or accessibility certification"
+  }
+}

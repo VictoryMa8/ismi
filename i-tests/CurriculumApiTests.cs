@@ -381,6 +381,63 @@ public sealed class CurriculumApiTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task PlanningUnitImportsPrivatelyAndPublishesAfterTheFirstUnit()
+    {
+        using var owner = CreateClient();
+        using var guest = CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        using var scope = _factory.Services.CreateScope();
+        var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
+        await importer.ImportAsync(Path.Combine(AppContext.BaseDirectory, "everyday-01"));
+        var directory = Path.Combine(AppContext.BaseDirectory, "plans-02");
+        Assert.Equal(3, (await importer.ImportAsync(directory)).Count);
+        Assert.All(await importer.ImportAsync(directory), line => Assert.StartsWith("Unchanged:", line));
+        var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
+        var authored = (await publishing.ListAsync())
+            .Where(v => v.LessonId.StartsWith("levantine-plans-02-")).ToList();
+        Assert.Equal(3, authored.Count);
+        foreach (var version in authored)
+        {
+            Assert.Equal(CurriculumStatuses.Draft, version.Status);
+            Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{version.LessonId}")).StatusCode);
+            Assert.Equal(HttpStatusCode.Conflict, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{version.Id}/publish", new { })).StatusCode);
+            var detail = (await owner.GetFromJsonAsync<CurriculumVersionDetail>($"/api/admin/curriculum/versions/{version.Id}"))!;
+            Assert.Null(detail.ApprovedBy);
+            Assert.Equal("owner-review", detail.Lesson.ReviewStatus);
+            Assert.Equal(6, detail.Lesson.Introduction!.Dialogue.Count);
+            Assert.Equal(5, detail.Lesson.Introduction.TeachingCards!.Count);
+            Assert.Equal(6, detail.Lesson.Steps.Count);
+            Assert.Contains(detail.Audit, entry => entry.Action == "validated");
+            foreach (var step in detail.Lesson.Steps)
+            {
+                Assert.Null(step.Prompt.AudioUrl);
+                Assert.Equal(3, step.Answers.Select(a => a.Arabic + a.Arabizi).Distinct().Count());
+                foreach (var answer in step.Answers)
+                {
+                    var result = new LessonEvaluator().Evaluate(step, answer.Id);
+                    Assert.Equal(answer.Id == step.Evaluation.CorrectAnswerId, result.IsCorrect);
+                    Assert.False(string.IsNullOrWhiteSpace(answer.Rationale));
+                    if (!result.IsCorrect) Assert.Equal(answer.Rationale, result.Explanation);
+                }
+            }
+        }
+        // Approval is synthetic and limited to this disposable test database.
+        foreach (var version in (await publishing.ListAsync()).Where(v =>
+            v.LessonId.StartsWith("levantine-everyday-01-") || v.LessonId.StartsWith("levantine-plans-02-")))
+        {
+            Assert.Equal(HttpStatusCode.OK, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{version.Id}/approve", new { })).StatusCode);
+            Assert.Equal(HttpStatusCode.OK, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{version.Id}/publish", new { })).StatusCode);
+        }
+        var dashboard = (await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
+        Assert.Equal(Enumerable.Range(1, 7).Select(i => $"levantine-everyday-01-{i:00}")
+            .Concat(Enumerable.Range(1, 3).Select(i => $"levantine-plans-02-{i:00}")),
+            dashboard.DailyPlan.Lessons.Take(10).Select(l => l.Id));
+    }
+
+    [Fact]
     public async Task RecordingsRequireOwnerCsrfProvenanceAndPublication()
     {
         using var owner = CreateClient();

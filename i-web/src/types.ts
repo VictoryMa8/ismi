@@ -5,6 +5,8 @@ export type DashboardResponse = {
     offlineLessonCount: number
   }
   dailyPlan: {
+    studyDate?: string
+    studyMinutesToday?: number
     goalMinutes: number
     completedMinutes: number
     primaryTrack: string
@@ -29,6 +31,8 @@ export type DashboardResponse = {
 }
 
 export type CourseLessonSummary = {
+  trackId?: string
+  completedToday?: boolean
   characters?: LessonCast | null
   id: string
   title: string

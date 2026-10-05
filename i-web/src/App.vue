@@ -16,6 +16,9 @@ import {
   WifiOff,
 } from '@lucide/vue';
 import CurriculumConsole from './CurriculumConsole.vue';
+import StudySettings from './StudySettings.vue';
+import { buildStudyPlan } from './studyPlan';
+import { useStudySettings } from './useStudySettings';
 import LessonTeaching from './LessonTeaching.vue';
 import PhraseBuilder from './PhraseBuilder.vue';
 import LessonTransition from './LessonTransition.vue';
@@ -41,6 +44,7 @@ import {
 import {
   recordingPlaybackUrl,
   cacheDashboard,
+  migrateLegacyDashboard,
   cacheLesson,
   getCachedDashboard,
   getCachedLesson,
@@ -60,6 +64,7 @@ import type {
   PendingCompletion,
 } from './types';
 
+const studySettings = useStudySettings();
 const lessonOpen = ref(false);
 const previewMode = ref(false);
 const practiceMode = ref(false);
@@ -201,11 +206,16 @@ async function showChoices() {
 const currentStep = computed(
   () => lesson.value?.steps[currentStepIndex.value] ?? null,
 );
-const primaryTrack = computed(() =>
-  dashboard.value.tracks.find(
-    (track) => track.id === dashboard.value.dailyPlan.primaryTrack,
-  ),
-);
+const studyPlan = computed(() => buildStudyPlan(studySettings.preferences.value, dashboard.value.dailyPlan.lessons));
+const dailyGoal = computed(() => studySettings.preferences.value.goalMinutes);
+const dailyCompleted = computed(() => Math.min(dailyGoal.value,
+  dashboard.value.dailyPlan.studyMinutesToday ?? dashboard.value.dailyPlan.completedMinutes));
+const nextStudyLesson = computed(() => studyPlan.value.queue[0] ?? dashboard.value.dailyPlan.lessons.find(
+  item => studySettings.preferences.value.selectedTrackIds.includes((item.trackId ?? 'levantine') as 'levantine' | 'msa' | 'quranic') && !item.isCompleted,
+) ?? dashboard.value.dailyPlan.lessons.filter(
+  item => studySettings.preferences.value.selectedTrackIds.includes((item.trackId ?? 'levantine') as 'levantine' | 'msa' | 'quranic'),
+).at(-1));
+const nextStudyTrack = computed(() => dashboard.value.tracks.find(track => track.id === (nextStudyLesson.value?.trackId ?? 'levantine')));
 const isCorrect = computed(() => attemptFeedback.value?.isCorrect ?? false);
 const selectedArabicVoice = computed(() => {
   const exactLocalePreferences = ['ar-PS', 'ar-JO', 'ar-LB', 'ar-IL'];
@@ -260,8 +270,7 @@ const progressPercent = computed(() =>
   Math.min(
     100,
     Math.round(
-      (dashboard.value.dailyPlan.completedMinutes /
-        dashboard.value.dailyPlan.goalMinutes) *
+      (dailyCompleted.value / dailyGoal.value) *
         100,
     ),
   ),
@@ -322,6 +331,7 @@ onMounted(async () => {
     window.speechSynthesis.addEventListener('voiceschanged', loadSpeechVoices);
   }
 
+  try { await migrateLegacyDashboard(); } catch { /* Existing online study remains available. */ }
   await loadAuthSession();
   await syncPendingCompletions();
   await loadDashboard();
@@ -401,6 +411,7 @@ function selectAccountMode(mode: 'login' | 'register') {
 }
 
 async function submitAccount() {
+  if (studySettings.busy.value) return;
   accountSubmitting.value = true;
   accountError.value = null;
 
@@ -441,6 +452,7 @@ async function submitAccount() {
 }
 
 async function signOut() {
+  if (studySettings.busy.value) return;
   accountSubmitting.value = true;
   accountError.value = null;
 
@@ -530,20 +542,21 @@ async function playPromptAudio() {
 }
 
 async function loadDashboard() {
+  await studySettings.load(reviewScope.value, authSession.value.isAuthenticated);
   let loadedDashboard: DashboardResponse | undefined;
 
   try {
     loadedDashboard = await getDashboard();
     apiLive.value = true;
     try {
-      await cacheDashboard(loadedDashboard);
+      await cacheDashboard(loadedDashboard, reviewScope.value);
     } catch {
       // The live dashboard is still usable when device storage is unavailable.
     }
   } catch {
     apiLive.value = false;
     try {
-      loadedDashboard = await getCachedDashboard();
+      loadedDashboard = await getCachedDashboard(reviewScope.value);
     } catch {
       loadedDashboard = undefined;
     }
@@ -551,6 +564,13 @@ async function loadDashboard() {
 
   if (loadedDashboard) {
     loadedDashboard.dailyPlan.lessons ??= [];
+    const today = new Date().toISOString().slice(0, 10);
+    if (loadedDashboard.dailyPlan.studyDate && loadedDashboard.dailyPlan.studyDate !== today) {
+      loadedDashboard.dailyPlan.studyMinutesToday = 0;
+      loadedDashboard.dailyPlan.completedMinutes = 0;
+      loadedDashboard.dailyPlan.lessons.forEach(item => { item.completedToday = false; });
+    }
+    loadedDashboard.dailyPlan.studyDate = today;
     dashboard.value = loadedDashboard;
   }
 
@@ -563,14 +583,13 @@ async function loadDashboard() {
         .map((item) => item.id),
     );
     const pendingMinutes = pending
-      .filter((item) => !completedIds.has(item.lessonId))
+      .filter((item) => !completedIds.has(item.lessonId) && item.completedAt.slice(0, 10) === new Date().toISOString().slice(0, 10))
       .reduce((total, item) => total + item.estimatedMinutes, 0);
-    dashboard.value.dailyPlan.completedMinutes = Math.min(
-      dashboard.value.dailyPlan.goalMinutes,
-      dashboard.value.dailyPlan.completedMinutes + pendingMinutes,
-    );
+    dashboard.value.dailyPlan.studyMinutesToday =
+      (dashboard.value.dailyPlan.studyMinutesToday ?? dashboard.value.dailyPlan.completedMinutes) + pendingMinutes;
+    dashboard.value.dailyPlan.completedMinutes = dailyCompleted.value;
     for (const completion of pending) {
-      await markLessonCompletedLocally(completion.lessonId);
+      await markLessonCompletedLocally(completion.lessonId, completion.completedAt.slice(0, 10) === new Date().toISOString().slice(0, 10));
     }
   } catch {
     pendingSyncCount.value = 0;
@@ -581,9 +600,7 @@ async function cacheUpcomingLessons() {
   if (!apiLive.value) return;
 
   downloadError.value = null;
-  const upcoming = dashboard.value.dailyPlan.lessons
-    .filter((item) => !item.isCompleted)
-    .slice(0, 3);
+  const upcoming = studyPlan.value.queue;
   for (const item of upcoming) {
     try {
       await cacheLesson(await getLesson(item.id));
@@ -596,18 +613,19 @@ async function cacheUpcomingLessons() {
 
   try {
     dashboard.value.learner.offlineLessonCount = await getCachedLessonCount();
-    await cacheDashboard(dashboard.value);
+    await cacheDashboard(dashboard.value, reviewScope.value);
   } catch {
     // Learning remains available when storage reporting is unavailable.
   }
 }
 
-async function markLessonCompletedLocally(lessonId: string) {
+async function markLessonCompletedLocally(lessonId: string, completedToday = true) {
   const completed = dashboard.value.dailyPlan.lessons.find(
     (item) => item.id === lessonId,
   );
   if (completed) {
     completed.isCompleted = true;
+    completed.completedToday = completedToday;
     completed.isCurrent = false;
   }
   const next =
@@ -630,13 +648,15 @@ async function markLessonCompletedLocally(lessonId: string) {
     }
   }
   try {
-    await cacheDashboard(dashboard.value);
+    await cacheDashboard(dashboard.value, reviewScope.value);
   } catch {
     // The completion event remains the durable offline source of truth.
   }
 }
 
 async function handleOnline() {
+  if (studySettings.busy.value || accountSubmitting.value) return;
+  await loadAuthSession();
   await syncPendingCompletions();
   await loadDashboard();
   await cacheUpcomingLessons();
@@ -715,7 +735,7 @@ async function startLesson(requestedId?: string, practiceOnly = false) {
     Boolean(
       dashboard.value.dailyPlan.lessons.find(
         (item) =>
-          item.id === (requestedId ?? dashboard.value.dailyPlan.nextLessonId),
+          item.id === (requestedId ?? nextStudyLesson.value?.id ?? ''),
       )?.isCompleted,
     );
   stopPromptAudio();
@@ -728,7 +748,7 @@ async function startLesson(requestedId?: string, practiceOnly = false) {
   lessonError.value = null;
   lessonLoading.value = true;
 
-  const lessonId = requestedId ?? dashboard.value.dailyPlan.nextLessonId;
+  const lessonId = requestedId ?? nextStudyLesson.value?.id ?? '';
   try {
     const fetched = await getLesson(lessonId);
     if (session !== lessonSession) return;
@@ -947,19 +967,17 @@ async function finishLesson() {
     // Online submission can still succeed when device storage is unavailable.
   }
 
-  dashboard.value.dailyPlan.completedMinutes = Math.min(
-    dashboard.value.dailyPlan.goalMinutes,
-    dashboard.value.dailyPlan.completedMinutes + lesson.value.estimatedMinutes,
-  );
+  dashboard.value.dailyPlan.studyMinutesToday =
+    (dashboard.value.dailyPlan.studyMinutesToday ?? dashboard.value.dailyPlan.completedMinutes) + lesson.value.estimatedMinutes;
+  dashboard.value.dailyPlan.completedMinutes = dailyCompleted.value;
   await markLessonCompletedLocally(lesson.value.id);
 
   try {
-    const result = await submitLessonCompletion(
+    await submitLessonCompletion(
       completion.lessonId,
       completion.completionId,
       completion.completedAt,
     );
-    dashboard.value.dailyPlan.completedMinutes = result.completedMinutes;
     apiLive.value = true;
     try {
       await removePendingCompletion(completion.completionId);
@@ -1091,17 +1109,17 @@ async function finishLesson() {
           <div class="progress-copy">
             <span class="section-kicker">Daily goal</span>
             <h2 id="progress-heading">
-              {{ dashboard.dailyPlan.completedMinutes }} of
-              {{ dashboard.dailyPlan.goalMinutes }} minutes
+              {{ dailyCompleted }} of
+              {{ dailyGoal }} minutes
             </h2>
           </div>
           <div
             class="progress-track"
             role="progressbar"
             aria-valuemin="0"
-            :aria-valuemax="dashboard.dailyPlan.goalMinutes"
-            :aria-valuenow="dashboard.dailyPlan.completedMinutes"
-            :aria-label="`${dashboard.dailyPlan.completedMinutes} of ${dashboard.dailyPlan.goalMinutes} daily minutes complete`"
+            :aria-valuemax="dailyGoal"
+            :aria-valuenow="dailyCompleted"
+            :aria-label="`${dailyCompleted} of ${dailyGoal} daily minutes complete`"
           >
             <span
               class="progress-fill"
@@ -1110,39 +1128,52 @@ async function finishLesson() {
           </div>
         </section>
 
-        <section class="section-block" aria-labelledby="next-heading">
+        <section class="study-plan section-block" aria-labelledby="study-plan-heading">
+          <div class="section-heading"><h2 id="study-plan-heading">Your plan</h2><a href="#/account">Edit study settings</a></div>
+          <ul class="study-allocations">
+            <li v-for="allocation in studyPlan.allocations" :key="allocation.id">
+              <strong>{{ allocation.name }}</strong> · {{ allocation.minutes }} min
+              <span v-if="!allocation.available"> · Lessons not yet available</span>
+            </li>
+          </ul>
+          <ol v-if="studyPlan.queue.length" class="study-queue" aria-label="Today’s lesson queue">
+            <li v-for="item in studyPlan.queue" :key="item.id"><button type="button" class="guest-action" @click="startLesson(item.id)">{{ item.title }} · {{ item.estimatedMinutes }} min</button></li>
+          </ol>
+          <p v-else>{{ dailyCompleted >= dailyGoal ? 'Daily goal complete. Practice is always available.' : 'No new lessons are available for this plan. You can still explore courses and practice.' }}</p>
+        </section>
+
+        <section v-if="nextStudyLesson" class="section-block" aria-labelledby="next-heading">
           <div class="section-heading">
             <div>
               <h2 id="next-heading">Next lesson</h2>
             </div>
             <span class="time-chip"
-              >{{ primaryTrack?.plannedMinutes ?? 6 }} min</span
+              >{{ nextStudyLesson?.estimatedMinutes ?? 0 }} min</span
             >
           </div>
 
           <article class="primary-lesson-card">
             <div class="track-label levantine-label hero-track-label">
               <MessageCircle :size="17" aria-hidden="true" />
-              <span>{{ primaryTrack?.name ?? 'Palestinian Levantine' }}</span>
+              <span>{{ nextStudyTrack?.name ?? 'Palestinian Levantine' }}</span>
             </div>
             <div class="lesson-details">
               <CharacterCast
                 :cast="
-                  dashboard.dailyPlan.lessons.find((item) => item.isCurrent)
-                    ?.characters
+                  nextStudyLesson?.characters
                 "
                 compact
               />
               <h3>
                 {{
-                  primaryTrack?.currentLessonTitle ?? 'Tell them about your day'
+                  nextStudyLesson?.title
                 }}
               </h3>
               <button
                 class="primary-action"
                 type="button"
                 data-ui-sound="advance"
-                :aria-label="`Continue in ${primaryTrack?.name?.includes('Levantine') ? 'Levantine' : (primaryTrack?.name ?? 'your track')}`"
+                :aria-label="`Continue in ${nextStudyTrack?.name?.includes('Levantine') ? 'Levantine' : (nextStudyTrack?.name ?? 'your track')}`"
                 @click="startLesson()"
               >
                 Continue
@@ -1152,8 +1183,7 @@ async function finishLesson() {
                 <summary>About this lesson</summary>
                 <p>
                   {{
-                    dashboard.dailyPlan.lessons.find((item) => item.isCurrent)
-                      ?.reviewStatus === 'demonstrative'
+                    nextStudyLesson?.reviewStatus === 'demonstrative'
                       ? 'Demonstration · not reviewed launch curriculum.'
                       : 'Owner-approved · no native-expert review.'
                   }}
@@ -1340,6 +1370,13 @@ async function finishLesson() {
           </div>
         </header>
 
+        <StudySettings
+          :preferences="studySettings.preferences.value" :busy="studySettings.busy.value"
+          :message="studySettings.message.value" :conflict="Boolean(studySettings.conflict.value)"
+          :account-scoped="reviewScope !== 'guest'"
+          @save="async value => { await studySettings.save(value); await cacheUpcomingLessons(); }"
+          @resolve="studySettings.resolve"
+        />
         <template v-if="authSession.isAuthenticated">
           <div class="account-profile">
             <span class="account-avatar" aria-hidden="true">{{
@@ -1358,7 +1395,7 @@ async function finishLesson() {
             <button
               class="secondary-action"
               type="button"
-              :disabled="accountSubmitting"
+              :disabled="accountSubmitting || studySettings.busy.value"
               @click="signOut"
             >
               {{ accountSubmitting ? 'Signing out…' : 'Sign out' }}
@@ -1445,7 +1482,7 @@ async function finishLesson() {
             <button
               class="primary-action auth-submit"
               type="submit"
-              :disabled="accountSubmitting"
+              :disabled="accountSubmitting || studySettings.busy.value"
             >
               <UserPlus
                 v-if="accountMode === 'register'"
@@ -1465,7 +1502,7 @@ async function finishLesson() {
           <button
             class="guest-action"
             type="button"
-            :disabled="accountSubmitting"
+            :disabled="accountSubmitting || studySettings.busy.value"
             @click="closeAccount"
           >
             Continue as guest

@@ -22,7 +22,10 @@ public sealed class LearnerProgressService
                 "Guest",
                 publishedLessons,
                 completedIds,
-                completedMinutesToday);
+                completedMinutesToday,
+                completedTodayIds: guest.CompletionsByLesson.Values
+                    .Where(c => DateOnly.FromDateTime(c.CompletedAt.UtcDateTime) == DateOnly.FromDateTime(DateTime.UtcNow))
+                    .Select(c => c.LessonId).ToHashSet(StringComparer.OrdinalIgnoreCase));
         }
     }
 

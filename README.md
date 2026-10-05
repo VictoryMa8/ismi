@@ -72,7 +72,7 @@ npm run test:e2e
 
 The initially migrated lesson is intentionally demonstrative. It is tagged as such in its provenance and is not reviewed launch curriculum. All subsequent learner-facing changes must pass through the publication workflow, and Quranic content must follow the provenance and publication rules in `AGENTS.md`.
 
-The browser keeps the next three lesson packages, the last dashboard snapshot, and unsynchronized completion events in IndexedDB. Authenticated progress is durable in the local SQLite database. Guest server progress is isolated by an HttpOnly browser identifier and remains in memory; the browser queue is the source for reconnection. SQLite is the beta implementation, not a commitment to the eventual production database.
+The browser downloads the current daily lesson queue and keeps identity-scoped dashboard/settings snapshots and unsynchronized completion events in IndexedDB. Study settings offer 5/10/15/30-minute goals, selected tracks and a primary track; account preferences synchronize with revision-checked conflict handling. Authenticated progress is durable in the local SQLite database. Guest server progress is isolated by an HttpOnly browser identifier and remains in memory; the browser queue is the source for reconnection. SQLite is the beta implementation, not a commitment to the eventual production database.
 
 ## Recorded lesson audio
 

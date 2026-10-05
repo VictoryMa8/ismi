@@ -16,7 +16,9 @@ public sealed record DailyPlanSummary(
     int CompletedMinutes,
     string PrimaryTrack,
     string NextLessonId,
-    IReadOnlyList<CourseLessonSummary> Lessons);
+    IReadOnlyList<CourseLessonSummary> Lessons,
+    int StudyMinutesToday = 0,
+    string StudyDate = "");
 
 public sealed record CourseLessonSummary(
     string Id,
@@ -28,7 +30,9 @@ public sealed record CourseLessonSummary(
     string ReviewStatus,
     bool IsCompleted,
     bool IsCurrent,
-    LessonCast? Characters = null);
+    LessonCast? Characters = null,
+    string TrackId = "levantine",
+    bool CompletedToday = false);
 
 public sealed record TrackProgress(
     string Id,

@@ -1,4 +1,5 @@
 using System.Net;
+using Ismi.Api.Models;
 using System.Net.Http.Json;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -159,6 +160,56 @@ public sealed class AccountApiTests : IAsyncLifetime
         var session = await restarted.GetFromJsonAsync<AuthSession>("/api/auth/me");
         Assert.True(session?.IsAuthenticated);
         Assert.Equal("Restart test", session?.DisplayName);
+    }
+
+    [Fact]
+    public async Task StudySettingsPersistAndRejectConflictingEditsWithoutCrossingAccounts()
+    {
+        using var owner = CreateClient(_factory);
+        using var other = CreateClient(_factory);
+        Assert.Equal(HttpStatusCode.Unauthorized, (await other.GetAsync("/api/study-settings")).StatusCode);
+        await PostWithCsrfAsync(owner, "/api/auth/register", new { displayName = "Plan", email = "plan@example.test", password = "long test password" });
+        var initial = (await owner.GetFromJsonAsync<StudySettingsResponse>("/api/study-settings"))!;
+        Assert.Equal(0, initial.Revision);
+        Assert.Equal(15, initial.Preferences.GoalMinutes);
+        var preferences = new StudyPreferences(30, ["quranic", "levantine"], "quranic");
+        Assert.Equal(HttpStatusCode.BadRequest, (await owner.PostAsJsonAsync("/api/study-settings", new SaveStudySettingsRequest(preferences, 0))).StatusCode);
+        var saved = await PostWithCsrfAsync(owner, "/api/study-settings", new SaveStudySettingsRequest(preferences, 0));
+        Assert.Equal(HttpStatusCode.OK, saved.StatusCode);
+        var first = (await saved.Content.ReadFromJsonAsync<StudySettingsResponse>())!;
+        Assert.Equal(1, first.Revision);
+        Assert.Equal(new[] { "levantine", "quranic" }, first.Preferences.SelectedTrackIds);
+        Assert.Equal(HttpStatusCode.OK, (await PostWithCsrfAsync(owner, "/api/study-settings", new SaveStudySettingsRequest(preferences, 0))).StatusCode);
+        Assert.Equal(HttpStatusCode.Conflict, (await PostWithCsrfAsync(owner, "/api/study-settings", new SaveStudySettingsRequest(StudyPreferences.Default, 0))).StatusCode);
+        await PostWithCsrfAsync(other, "/api/auth/register", new { displayName = "Other", email = "other-plan@example.test", password = "long test password" });
+        Assert.Equal(15, (await other.GetFromJsonAsync<StudySettingsResponse>("/api/study-settings"))!.Preferences.GoalMinutes);
+        var dashboard = (await owner.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
+        Assert.Equal(30, dashboard.DailyPlan.GoalMinutes);
+        _factory.Dispose();
+        _factory = CreateFactory();
+        using var restarted = CreateClient(_factory);
+        await PostWithCsrfAsync(restarted, "/api/auth/login", new { email = "plan@example.test", password = "long test password", rememberMe = false });
+        var restored = (await restarted.GetFromJsonAsync<StudySettingsResponse>("/api/study-settings"))!;
+        Assert.Equal(30, restored.Preferences.GoalMinutes);
+        Assert.Equal("quranic", restored.Preferences.PrimaryTrack);
+        Assert.Equal(1, restored.Revision);
+    }
+
+    [Fact]
+    public async Task InvalidStudySettingsNeverReplaceSavedPreferences()
+    {
+        using var client = CreateClient(_factory);
+        await PostWithCsrfAsync(client, "/api/auth/register", new { displayName = "Validation", email = "validate-plan@example.test", password = "long test password" });
+        foreach (var preferences in new[] {
+            new StudyPreferences(7, ["levantine"], "levantine"),
+            new StudyPreferences(15, [], "levantine"),
+            new StudyPreferences(15, ["unknown"], "unknown"),
+            new StudyPreferences(15, ["levantine", "levantine"], "levantine"),
+            new StudyPreferences(15, ["msa"], "levantine"),
+            new StudyPreferences(15, null!, "levantine")
+        })
+            Assert.Equal(HttpStatusCode.BadRequest, (await PostWithCsrfAsync(client, "/api/study-settings", new SaveStudySettingsRequest(preferences, 0))).StatusCode);
+        Assert.Equal(0, (await client.GetFromJsonAsync<StudySettingsResponse>("/api/study-settings"))!.Revision);
     }
 
     private WebApplicationFactory<Program> CreateFactory() =>

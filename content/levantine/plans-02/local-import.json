@@ -1,0 +1,33 @@
+{
+  "verifiedOn": "2026-10-04",
+  "database": "i-api/App_Data/ismi.db",
+  "records": [
+    {
+      "Id": 24,
+      "LessonId": "levantine-plans-02-01",
+      "VersionNumber": 1,
+      "Status": "draft",
+      "ApprovedBy": null,
+      "PublishedBy": null,
+      "packageMatches": true
+    },
+    {
+      "Id": 25,
+      "LessonId": "levantine-plans-02-02",
+      "VersionNumber": 1,
+      "Status": "draft",
+      "ApprovedBy": null,
+      "PublishedBy": null,
+      "packageMatches": true
+    },
+    {
+      "Id": 26,
+      "LessonId": "levantine-plans-02-03",
+      "VersionNumber": 1,
+      "Status": "draft",
+      "ApprovedBy": null,
+      "PublishedBy": null,
+      "packageMatches": true
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "package": "chatterbox-tts",
+  "version": "0.1.7",
+  "modelId": "ResembleAI/chatterbox",
+  "revision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+  "checkpoint": "t3_mtl23ls_v3.safetensors",
+  "files": [
+    "ve.pt",
+    "t3_mtl23ls_v3.safetensors",
+    "s3gen.pt",
+    "grapheme_mtl_merged_expanded_v1.json",
+    "conds.pt",
+    "Cangjie5_TC.json"
+  ],
+  "codeInspectionCommit": "5de7a54aa4e5e2baadb0182dde554908b48b85c2",
+  "codeLicense": "https://github.com/resemble-ai/chatterbox/blob/5de7a54aa4e5e2baadb0182dde554908b48b85c2/LICENSE",
+  "weightsLicense": "https://huggingface.co/ResembleAI/chatterbox/blob/5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18/README.md",
+  "license": "MIT",
+  "conditioning": "Publisher-supplied conds.pt in the MIT-declared model repository; no external reference audio. Speaker identity, source language and Palestinian dialect are unverified.",
+  "sourceArchive": "https://github.com/resemble-ai/chatterbox/archive/5de7a54aa4e5e2baadb0182dde554908b48b85c2.tar.gz",
+  "sourceArchiveSha256": "003f8c85dcfeb2d91b3a6f97f43b74703d15131e987dfabb7f3d9aee7c0da2cf",
+  "loaderSha256": "936759044e54cffe8c68b91b32e01da0bc032a1e084f769f0403080d86ad153c"
+}

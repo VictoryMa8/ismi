@@ -1,3 +1,4 @@
+import type { StudySettings } from './studyPlan'
 import { renameCharacterContent } from './characters'
 import type {
   AuthSession,
@@ -213,4 +214,11 @@ export function uploadRecording(file: File): Promise<{ audioUrl: string }> {
     headers: { 'Content-Type': 'audio/wav' },
     body: file,
   })
+}
+
+export function getStudySettings(): Promise<StudySettings> {
+  return request('/api/study-settings')
+}
+export function saveStudySettings(settings: StudySettings): Promise<StudySettings> {
+  return request('/api/study-settings', { method: 'POST', body: JSON.stringify(settings) })
 }
