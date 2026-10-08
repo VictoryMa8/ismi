@@ -25,7 +25,7 @@ See [packages and verification](content/levantine/plans-02/README.md).
 
 **F10 — Complete October 7 locally:** owner-approved scheduled review now appears
 in Today and Practice, with deterministic offline intervals and version handling.
-[Policy and verification](docs/scheduled-review.md). Owner authorized push/deployment; rollout verification is in progress.
+[Policy and verification](docs/scheduled-review.md). Code release `89a6537` is pushed and deployed to Vercel; live review opening verified.
 
 **Now:** the learner/offline foundation, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. API release `5fead73` is verified; frontend confirmation remains open. The seven owner-approved first-unit revisions are now published as hosted
@@ -37,7 +37,7 @@ Azure audition on October 3: the same three phrases in Jordanian Sana/Taim voice
 Six exact-text SSML requests are [prepared](tools/azure-speech/README.md); the signed-in
 account has no subscription. Owner free-account enrollment and F0 resource
 verification are needed before generation. No Azure audio
-or quality improvement is claimed yet. F10 scheduled review is now complete locally.
+or quality improvement is claimed yet. F10 scheduled review is complete and deployed.
 
 The owner deferred real-device preflight and the learner rehearsal (F18.1) until after
 more implementation. F19 is an interim synthetic-audio slice; F09's real-speaker
@@ -63,7 +63,7 @@ and beta evidence remain separate dependencies.
 | [F08](#f08-first-unit-revision-release) | First-unit revision release | Done | All seven hosted v2 lessons and 52 source records verified |
 | [F09](#f09-reviewed-levantine-recordings) | Reviewed Levantine recordings | Needs input | Actual recordings, permissions and review |
 | [F09.1](#f091-first-recording-batch-preparation) | First recording batch preparation | Done | Eight exact prompts prepared; no real recordings yet |
-| [F10](#f10-scheduled-review) | Scheduled review | Done · local | Approved 1/3/7/14-day policy; history stays on device |
+| [F10](#f10-scheduled-review) | Scheduled review | Done · deployed | Approved 1/3/7/14-day policy; history stays on device |
 | [F11](#f11-guided-speaking) | Guided speaking | Needs decision | Choose a first scenario and provider/privacy setup |
 | [F12](#f12-levantine-course-expansion) | Levantine course expansion | Active · drafts ready | Review F12.1; remaining twelve-week curriculum stays open |
 | [F12.1](#f121-make-a-plan-together) | Make a plan together | Done · local drafts | Three lessons validated/imported; owner review/publication pending |
@@ -88,7 +88,7 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  F10 frontend rollout is authorized and in progress; see the
+  F10 frontend release `89a6537` is pushed and verified deployed; see the
   [October 7 release record](docs/releases/2026-10-07.md).
   Code release `5fead73` is committed and pushed; the API is verified deployed.
   [October 4 rollout record](docs/releases/2026-10-04.md) records the frontend verification limit.
@@ -242,7 +242,7 @@ the permitted clips; a package change requires reconciling the batch hash first.
 
 ### F10 Scheduled review
 
-**Status:** Done — October 7, 2026, for local implementation.
+**Status:** Done — October 7, 2026; implemented, pushed and deployed.
 **Scope delivered:** due review in Today (selected tracks) and Practice, using
 published contexts and existing device-local guest/account history. Up to six
 unique exchanges per session; recall before optional help; manual practice and
@@ -257,12 +257,13 @@ Production frontend build, 27 API tests and all 49 standard browser tests pass;
 11 final focused checks pass after the date-label/context selection refinement.
 Offline reload, due boundaries, help/mistakes, duplicate contexts, version changes,
 withdrawals and identity isolation are covered.
-**Delivery:** owner authorized push/deployment; Git-triggered frontend rollout
-is in progress. [Release evidence](docs/releases/2026-10-07.md).
+**Delivery:** code release `89a6537` pushed to `main`; Vercel reports Ready
+and the stable URL serves the new UI. Live published-lesson loading and scheduled
+review opening passed. [Release evidence](docs/releases/2026-10-07.md).
 The API and published curriculum are unchanged.
 **Limits / next:** review history remains on this device, with no notification
-service or cross-device synchronization. Rollout is now authorized;
-real-device/accessibility release evidence remains F18.
+service or cross-device synchronization. Real-device/accessibility
+release evidence remains F18.
 
 ### F11 Guided speaking
 
@@ -353,7 +354,7 @@ is claimed. One selected track receives the entire goal. Goals never block study
 ten focused browser checks and the production frontend build passed.
 **Delivery:** committed/pushed in `5fead73`; API deployed and verified October 4.
 Frontend deployment triggered; final hosted browser verification remains open.
-**Next:** F15 placement/bootcamp work remains open; F10 scheduled review is complete locally.
+**Next:** F15 placement/bootcamp work remains open; F10 scheduled review is complete and deployed.
 Real-device assistive-technology evidence remains part of F18.
 
 ### F16 Account recovery and deletion
@@ -456,8 +457,8 @@ New audio publication and any code rollout are separate from the already-approve
 
 - **October 7, 2026 F10:** owner selected the 1/3/7/14-day policy. Implemented
   due review in Today/Practice with offline, versioned device history. Build,
-  27 API tests, all 49 browser tests and 11 final focused checks pass. Done locally;
-  no commit, push, deployment or curriculum publication.
+  27 API tests, all 49 browser tests and 11 final focused checks pass. Release `89a6537` pushed/deployed; live review
+  opening verified. API/curriculum unchanged.
 
 - **October 7, 2026 delivery reconciliation:** recorded the October 4 push/API rollout,
   preserved data and removed temporary SSH access. Frontend final verification was
