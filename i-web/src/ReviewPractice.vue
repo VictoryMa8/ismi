@@ -19,11 +19,13 @@ import {
   saveDeviceSnapshot,
   saveReviewAttempt,
 } from './offline';
+import { reviewDueAt } from './reviewSchedule';
 import { evaluateOffline } from './evaluation';
 import {
   checkpointKey,
   makeReviewQueue,
   reviewTurns,
+  scheduledReviewContexts,
   type CheckpointResult,
   type ReviewKind,
   type ReviewTurn,
@@ -41,6 +43,7 @@ import CharacterCue from './CharacterCue.vue';
 import { playUiSound } from './uiSounds';
 
 const props = defineProps<{
+  compact?: boolean;
   scope: string;
   lessons: CourseLessonSummary[];
   historyRevision: number;
@@ -52,6 +55,9 @@ const emit = defineEmits<{
 const packages = ref<LessonResponse[]>([]);
 const history = ref<Awaited<ReturnType<typeof getReviewHistory>>>([]);
 const loading = ref(true);
+const now = ref(Date.now());
+let clock: ReturnType<typeof setInterval> | undefined;
+function updateClock() { now.value = Date.now(); }
 const notice = ref('');
 const storageError = ref('');
 const open = ref(false);
@@ -73,6 +79,7 @@ const helpedTurns = ref(0);
 const saving = ref(false);
 const resultKey = ref('');
 const results = ref<Record<string, CheckpointResult>>({});
+const hub = ref<HTMLElement | null>(null);
 const closeButton = ref<HTMLButtonElement | null>(null);
 const heading = ref<HTMLElement | null>(null);
 const feedbackPanel = ref<HTMLElement | null>(null);
@@ -92,6 +99,15 @@ const model = computed(() =>
   ),
 );
 const turns = computed(() => reviewTurns(packages.value, history.value));
+const scheduledTurns = computed(() => turns.value.filter(turn =>
+  turn.history || props.lessons.some(lesson => lesson.id === turn.lesson.id && lesson.isCompleted)
+  || history.value.some(entry => entry.lessonId === turn.lesson.id && entry.version !== turn.lesson.version),
+));
+const dueCount = computed(() => makeReviewQueue(scheduledTurns.value, 'due', Number.MAX_SAFE_INTEGER, now.value).length);
+const nextDue = computed(() => {
+  const dates = scheduledReviewContexts(scheduledTurns.value).map(turn => reviewDueAt(turn.history)).filter(date => date > now.value);
+  return dates.length ? new Date(Math.min(...dates)).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) : '';
+});
 const mistakeCount = computed(
   () => turns.value.filter((item) => item.history?.needsReview).length,
 );
@@ -121,6 +137,7 @@ const units = computed(() => {
 async function refresh() {
   if (open.value) return;
   const token = ++generation;
+  updateClock();
   loading.value = true;
   notice.value = '';
   storageError.value = '';
@@ -241,7 +258,7 @@ function resetTurn() {
   stopAudio();
   audioError.value = '';
   mode.value =
-    kind.value === 'checkpoint'
+    (kind.value === 'checkpoint' || kind.value === 'due')
       ? 'recall'
       : index.value % 2 === 0 && model.value?.arabic.trim().includes(' ')
         ? 'build'
@@ -261,8 +278,9 @@ async function start(nextKind: ReviewKind, unitId?: string) {
   if (nextKind === 'checkpoint' && (!unit?.complete || !unit.available)) return;
   const candidates = unitId
     ? turns.value.filter((turn) => turn.lesson.unitId === unitId)
-    : turns.value;
-  const selected = makeReviewQueue(candidates, nextKind);
+    : nextKind === 'due' ? scheduledTurns.value : turns.value;
+  updateClock();
+  const selected = makeReviewQueue(candidates, nextKind, 6, now.value);
   if (!selected.length) return;
   opener = document.activeElement as HTMLElement;
   kind.value = nextKind;
@@ -284,17 +302,26 @@ async function start(nextKind: ReviewKind, unitId?: string) {
   await nextTick();
   closeButton.value?.focus();
 }
-function close() {
+async function close() {
   if (saving.value) return;
   stopAudio();
   open.value = false;
   document.body.style.overflow = '';
+  const scope = props.scope;
+  try {
+    const saved = await getReviewHistory(scope);
+    if (scope !== props.scope) return;
+    history.value = saved;
+  } catch {
+    storageError.value = 'Review history could not be loaded on this device. Practice remains available.';
+  }
+  updateClock();
+  await nextTick();
+  if (open.value) return;
   nextTick(() => {
     if (opener?.isConnected && !opener.matches(':disabled')) opener.focus();
     else
-      document
-        .querySelector<HTMLElement>('.review-actions .primary-action')
-        ?.focus();
+      (hub.value?.querySelector<HTMLElement>('.review-actions .primary-action:not(:disabled)') ?? hub.value)?.focus();
   });
 }
 function trapFocus(event: KeyboardEvent) {
@@ -359,6 +386,7 @@ async function check() {
       outcome.isCorrect,
       outcome.explanation,
       first,
+      helped.value,
     );
   } catch {
     storageError.value =
@@ -416,6 +444,9 @@ async function advance() {
 }
 
 onMounted(() => {
+  updateClock();
+  clock = setInterval(updateClock, 30_000);
+  window.addEventListener('focus', updateClock);
   void refresh();
   window.addEventListener('online', refresh);
 });
@@ -437,6 +468,8 @@ watch(
 );
 onBeforeUnmount(() => {
   generation++;
+  clearInterval(clock);
+  window.removeEventListener('focus', updateClock);
   stopAudio();
   emit('open-change', false);
   document.body.style.overflow = '';
@@ -445,17 +478,24 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <section class="review-hub" aria-label="Review and checkpoints">
-    <h2>Review</h2>
-    <p class="review-status-note">History stays on this device.</p>
+  <section ref="hub" tabindex="-1" class="review-hub" :aria-label="compact ? 'Scheduled review' : 'Review and checkpoints'">
+    <h2 v-if="!compact">Review</h2>
+    <p v-if="!compact" class="review-status-note">History stays on this device.</p>
+    <p v-if="!loading && turns.length" role="status">
+      {{ dueCount ? `${dueCount} review exchange${dueCount === 1 ? '' : 's'} due` : nextDue ? `Next review: ${nextDue}` : 'No reviews due' }}
+    </p>
     <p v-if="loading" role="status">Preparing review…</p>
     <p v-if="notice" role="status">{{ notice }}</p>
     <p v-if="storageError" role="alert">{{ storageError }}</p>
     <div class="review-actions">
+      <button type="button" class="primary-action" :disabled="loading || !dueCount" @click="start('due')">
+        Review due ({{ dueCount }})
+      </button>
       <button
         type="button"
         class="primary-action"
         :disabled="loading || !turns.length"
+        v-if="!compact"
         @click="start('mixed')"
       >
         Mixed review
@@ -464,6 +504,7 @@ onBeforeUnmount(() => {
         type="button"
         class="secondary-action"
         :disabled="loading || !mistakeCount"
+        v-if="!compact"
         @click="start('mistakes')"
       >
         Review mistakes ({{ mistakeCount }})
@@ -472,7 +513,7 @@ onBeforeUnmount(() => {
     <p v-if="!loading && !turns.length">
       Complete a lesson or try an exercise to begin review.
     </p>
-    <article v-for="unit in units" :key="unit.id" class="checkpoint-card">
+    <article v-for="unit in compact ? [] : units" :key="unit.id" class="checkpoint-card">
       <div>
         <h3>{{ unit.title }} checkpoint</h3>
         <p v-if="!unit.complete">
@@ -524,7 +565,7 @@ onBeforeUnmount(() => {
                 ? 'Unit checkpoint'
                 : kind === 'mistakes'
                   ? 'Mistake review'
-                  : 'Mixed review'
+                  : kind === 'due' ? 'Scheduled review' : 'Mixed review'
             }}
           </h2>
           <div class="lesson-header-controls">

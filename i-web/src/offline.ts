@@ -1,3 +1,4 @@
+import { nextReviewSchedule, type ReviewSchedule } from './reviewSchedule'
 import { renameCharacterContent } from './characters'
 import type { DashboardResponse, LessonResponse, PendingCompletion } from './types'
 
@@ -167,6 +168,7 @@ export type ReviewHistory = {
   version: string
   stepId: string
   practicedAt: string
+  schedule?: ReviewSchedule
   needsReview: boolean
   answerId: string | null
   explanation: string
@@ -179,7 +181,7 @@ export async function getReviewHistory(scope: string): Promise<ReviewHistory[]> 
 
 export async function saveReviewAttempt(
   scope: string, lesson: LessonResponse, stepId: string, answerId: string | null,
-  isCorrect: boolean, explanation: string, firstAttempt: boolean,
+  isCorrect: boolean, explanation: string, firstAttempt: boolean, helped = false,
 ): Promise<void> {
   const key = JSON.stringify([scope, lesson.id, lesson.version, stepId])
   const database = await openDatabase()
@@ -191,9 +193,11 @@ export async function saveReviewAttempt(
       const previous = request.result as ReviewHistory | undefined
       // A retry after seeing the model does not erase a mistake. A fresh first
       // answer can resolve it; this is practice history, not a mastery estimate.
+      const now = Date.now()
       store.put({
         key, scope, lessonId: lesson.id, version: lesson.version, stepId,
-        practicedAt: new Date().toISOString(),
+        practicedAt: new Date(now).toISOString(),
+        schedule: nextReviewSchedule(previous, isCorrect, firstAttempt, helped, now),
         needsReview: !isCorrect || (!firstAttempt && Boolean(previous?.needsReview)),
         answerId: isCorrect && !firstAttempt && previous?.needsReview ? previous.answerId : answerId,
         explanation: isCorrect && !firstAttempt && previous?.needsReview ? previous.explanation : explanation,

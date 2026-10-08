@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 4, 2026 · **Start here for current feature status.**
+Updated October 7, 2026 · **Start here for current feature status.**
 
 This is the single current plan. [AGENTS.md](AGENTS.md) holds product constraints;
 [the planning workflow](docs/planning-workflow.md) explains how agents maintain
@@ -8,23 +8,27 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**October 4 rollout active:** owner authorized push/deploy of the current checkout.
-Release API package is built; frontend and API delivery will be recorded in
-[the rollout note](docs/releases/2026-10-04.md). Curriculum publication is separate.
+**October 4 rollout:** release `5fead73` is committed and pushed. The alwaysdata
+API passed health and data-preservation checks; Vercel deployment was triggered,
+but final frontend verification was interrupted by usage limits. See
+[the rollout note](docs/releases/2026-10-04.md). No new curriculum was published.
 
-**F15.1 — Complete locally October 4:** personal study settings now drive a daily
-queue, with guest persistence, durable account preferences and offline conflict
-handling. [Implementation and verification](docs/personal-study-settings.md).
-Placement and bootcamp content remain open under F15; no rollout performed.
+**F15.1 — Complete October 4:** personal study settings now drive a daily queue,
+with guest persistence, durable account preferences and offline conflict handling.
+[Implementation and verification](docs/personal-study-settings.md).
+Placement and bootcamp content remain open under F15.
 
 **F12.1 — Draft unit complete October 4:** three source-linked lessons for
 “Make a plan together” are validated and imported locally as draft records 24–26.
 Owner wording review/publication is next; the twelve-week F12 target stays open.
 See [packages and verification](content/levantine/plans-02/README.md).
 
-**Now:** the learner/offline foundation, guided teaching, manual review/checkpoints,
-characters, and landing/welcome are implemented. Code release `26f8242` is live on
-web/API. The seven owner-approved first-unit revisions are now published as hosted
+**F10 — Complete October 7 locally:** owner-approved scheduled review now appears
+in Today and Practice, with deterministic offline intervals and version handling.
+[Policy and verification](docs/scheduled-review.md). Owner authorized push/deployment; rollout verification is in progress.
+
+**Now:** the learner/offline foundation, guided teaching, manual and scheduled review/checkpoints,
+characters, and landing/welcome are implemented. API release `5fead73` is verified; frontend confirmation remains open. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
@@ -33,7 +37,7 @@ Azure audition on October 3: the same three phrases in Jordanian Sana/Taim voice
 Six exact-text SSML requests are [prepared](tools/azure-speech/README.md); the signed-in
 account has no subscription. Owner free-account enrollment and F0 resource
 verification are needed before generation. No Azure audio
-or quality improvement is claimed yet. F10 still needs a scheduling decision.
+or quality improvement is claimed yet. F10 scheduled review is now complete locally.
 
 The owner deferred real-device preflight and the learner rehearsal (F18.1) until after
 more implementation. F19 is an interim synthetic-audio slice; F09's real-speaker
@@ -43,7 +47,7 @@ remains the published baseline.
 
 **Waiting on:** owner Azure free-account enrollment (signed in, but no subscription),
 verified F0 access and then owner listening review. No paid services authorized.
-Real recordings, review scheduling, live speech-provider choices, Quran permissions
+Real recordings, live speech-provider choices, Quran permissions
 and beta evidence remain separate dependencies.
 
 | ID | Feature / bounded scope | Status | Next action or limit |
@@ -59,14 +63,14 @@ and beta evidence remain separate dependencies.
 | [F08](#f08-first-unit-revision-release) | First-unit revision release | Done | All seven hosted v2 lessons and 52 source records verified |
 | [F09](#f09-reviewed-levantine-recordings) | Reviewed Levantine recordings | Needs input | Actual recordings, permissions and review |
 | [F09.1](#f091-first-recording-batch-preparation) | First recording batch preparation | Done | Eight exact prompts prepared; no real recordings yet |
-| [F10](#f10-scheduled-review) | Scheduled review | Needs decision | Agree intervals/selection behavior |
+| [F10](#f10-scheduled-review) | Scheduled review | Done · local | Approved 1/3/7/14-day policy; history stays on device |
 | [F11](#f11-guided-speaking) | Guided speaking | Needs decision | Choose a first scenario and provider/privacy setup |
 | [F12](#f12-levantine-course-expansion) | Levantine course expansion | Active · drafts ready | Review F12.1; remaining twelve-week curriculum stays open |
 | [F12.1](#f121-make-a-plan-together) | Make a plan together | Done · local drafts | Three lessons validated/imported; owner review/publication pending |
 | [F13](#f13-msa-course) | MSA course | Planned | Define first unit and extend publication support |
 | [F14](#f14-quranic-course) | Quranic course | Needs input | Approved source IDs/rights and integrity controls |
 | [F15](#f15-personal-study-plan-and-placement) | Personal study plan and placement | Active · settings done | Scope per-track placement and bootcamp content next |
-| [F15.1](#f151-personal-study-settings) | Personal study settings | Done · local | Goals/tracks drive queue; guest/account offline persistence verified |
+| [F15.1](#f151-personal-study-settings) | Personal study settings | Done · pushed | Goals/tracks drive queue; guest/account offline persistence verified |
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
@@ -84,20 +88,22 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  Code release `26f8242` is committed, pushed and deployed. Delivery evidence is in the
-  [October 2 rollout record](docs/releases/2026-10-02.md).
+  F10 frontend rollout is authorized and in progress; see the
+  [October 7 release record](docs/releases/2026-10-07.md).
+  Code release `5fead73` is committed and pushed; the API is verified deployed.
+  [October 4 rollout record](docs/releases/2026-10-04.md) records the frontend verification limit.
 - **Curriculum:** October 3 hosted release published all seven Everyday revisions as
   v2 through normal console gates. All seven public payloads and 52 source records
   match the approved packages; prior v1 records remain superseded for restoration.
   Local state differs: lesson 1 v4 was already published and lessons 2–7 remain drafts.
   [Release, audit and preservation evidence](docs/pilot/release-2026-10-03/README.md).
-- **Hosting:** Vercel plus alwaysdata development preview; code release `26f8242`
-  remains live. The curriculum release required no code redeployment. Seven Everyday
-  v2 lessons plus six existing fixtures are published. New docs/tests remain uncommitted.
-- **Verification basis:** October 2 release checks passed the production frontend
-  build, 24 API tests, all 40 standard browser tests and Release API publish. Earlier
-  feature notes preserve historical checks. Real screen-reader, learner-outcome
-  and supported-browser evidence remains open.
+- **Hosting:** Vercel plus alwaysdata development preview. The October 4 API rollout
+  preserved existing data and thirteen publications: seven Everyday v2 lessons and
+  six fixtures. Frontend deployment was triggered; final confirmation remains open.
+- **Verification basis:** October 4 preflight passed the production frontend build,
+  27 API tests, all 44 standard browser tests and Release API publish. These are
+  local checks; real screen-reader, learner-outcome and supported-browser evidence
+  remains open. No fresh hosted inspection is claimed by the October 7 planning update.
 
 ## Completed scopes
 
@@ -202,7 +208,7 @@ All seven serve `curriculum-levantine-everyday-01-0N-v2` (N = 1–7);
 **Delivery:** live on the alwaysdata API through the Vercel development preview;
 existing code release `26f8242` unchanged. Prior v1 records remain superseded with
 console restoration available. No fresh full hosted database backup obtained.
-Local draft state is separate; documentation/test changes remain uncommitted.
+Local draft state is separate; documentation/tests were committed and pushed in `5fead73`.
 **Next:** F19 synthetic phrase audio. F18.1 is owner-deferred; F09 real recordings remain separate.
 Publication does not establish native-expert review or beta readiness.
 
@@ -236,16 +242,27 @@ the permitted clips; a package change requires reconciling the batch hash first.
 
 ### F10 Scheduled review
 
-**Outcome:** review appears when due according to an explicitly chosen policy.
-**Next decision:** choose scheduling behavior; recommendation is a small deterministic
-policy using existing versioned history, with manual practice always available.
-The owner chose F19 Chatterbox audio ahead of F10 on October 3. Scheduled review
-remains a later proposal. Proposed initial intervals are 1, 3, 7 and 14 days, with
-earlier repetition after mistakes; no scheduling policy has been selected.
-Intervals and reminder behavior remain proposals until chosen. Notifications are separate.
-**Done when:** agreed due-selection/interval behavior works deterministically offline,
-handles changed versions, and passes the agreed scenarios without inventing mastery
-claims or gating retries. F05 is already complete.
+**Status:** Done — October 7, 2026, for local implementation.
+**Scope delivered:** due review in Today (selected tracks) and Practice, using
+published contexts and existing device-local guest/account history. Up to six
+unique exchanges per session; recall before optional help; manual practice and
+retries remain freely available. Review adds no duplicate completion or mastery claim.
+**Approved policy:** the owner selected 1, 3, 7 and 14 elapsed days. A correct first
+answer without translations/choices advances at the due instant; mistake/help
+resets to one day. Early successful practice and retries do not advance intervals.
+Changed versions restart scheduling; legacy records begin with a one-day interval.
+**Evidence:** [policy, implementation and verification](docs/scheduled-review.md),
+[scheduler](i-web/src/reviewSchedule.ts), [browser checks](i-web/tests/scheduled-review.spec.ts).
+Production frontend build, 27 API tests and all 49 standard browser tests pass;
+11 final focused checks pass after the date-label/context selection refinement.
+Offline reload, due boundaries, help/mistakes, duplicate contexts, version changes,
+withdrawals and identity isolation are covered.
+**Delivery:** owner authorized push/deployment; Git-triggered frontend rollout
+is in progress. [Release evidence](docs/releases/2026-10-07.md).
+The API and published curriculum are unchanged.
+**Limits / next:** review history remains on this device, with no notification
+service or cross-device synchronization. Rollout is now authorized;
+real-device/accessibility release evidence remains F18.
 
 ### F11 Guided speaking
 
@@ -284,7 +301,8 @@ first-unit/new-unit browser run (2 tests) and production frontend build pass. Va
 offline completion and reconnect persistence are covered. Real-device/accessibility,
 reviewed audio, owner wording review and measured lesson timing remain open.
 **Delivery:** local records 24–26 are unapproved draft v1 and match the authored
-packages. Files/tests are uncommitted. No hosted publication or deployment performed.
+packages. Files/tests were committed and pushed in `5fead73`; drafts were not
+uploaded or published by the code rollout.
 **Next:** owner previews and reviews the three drafts; publication is a separate
 content decision. F12's twelve-week scope and beta gates remain incomplete.
 
@@ -318,7 +336,7 @@ placement and applicable reading/sound modules work without a combined Arabic sc
 
 ### F15.1 Personal study settings
 
-**Status:** Done locally — October 4, 2026.
+**Status:** Done — October 4, 2026.
 **Scope delivered:** guest-accessible Account controls for 5/10/15/30-minute goals,
 selected tracks and a primary track. Guest preferences persist on device; account
 preferences persist in SQLite with revision-checked offline synchronization and
@@ -333,8 +351,9 @@ is claimed. One selected track receives the entire goal. Goals never block study
 [account service](i-api/Services/StudySettingsService.cs),
 [browser checks](i-web/tests/study-settings.spec.ts). Twenty-seven API tests,
 ten focused browser checks and the production frontend build passed.
-**Delivery:** uncommitted local implementation; no deployment or publication.
-**Next:** F15 placement/bootcamp work remains open; adaptive scheduled review is F10.
+**Delivery:** committed/pushed in `5fead73`; API deployed and verified October 4.
+Frontend deployment triggered; final hosted browser verification remains open.
+**Next:** F15 placement/bootcamp work remains open; F10 scheduled review is complete locally.
 Real-device assistive-technology evidence remains part of F18.
 
 ### F16 Account recovery and deletion
@@ -429,10 +448,21 @@ or hiring is included, and F09's eventual human-audio requirement is unchanged.
 two variants), five passing
 generator checks and offline resume verification. Owner confirms the revision
 retains pronunciation errors; no clips accepted or native review established. Full-batch/provenance integration remains.
-**Delivery:** local tooling and ignored samples, uncommitted; no application/database changes.
+**Delivery:** tooling committed/pushed in `5fead73`; generated samples remain local
+and ignored. No audio integrated into the application or database.
 New audio publication and any code rollout are separate from the already-approved v2 text/art release.
 
 ## Recent planning changes
+
+- **October 7, 2026 F10:** owner selected the 1/3/7/14-day policy. Implemented
+  due review in Today/Practice with offline, versioned device history. Build,
+  27 API tests, all 49 browser tests and 11 final focused checks pass. Done locally;
+  no commit, push, deployment or curriculum publication.
+
+- **October 7, 2026 delivery reconciliation:** recorded the October 4 push/API rollout,
+  preserved data and removed temporary SSH access. Frontend final verification was
+  usage-blocked. F12.1 publication, F10 scheduling policy and F15 placement remain open;
+  no additional implementation or curriculum publication started.
 
 - **October 4, 2026 F15.1:** implemented personal study settings and the daily queue,
   with guest/account persistence and offline conflict resolution. 27 API tests and
@@ -447,17 +477,6 @@ New audio publication and any code rollout are separate from the already-approve
   Prepared six exact-text SSML requests for Sana/Taim. Sign-in is complete but subscription inventory is empty; owner free-account
   enrollment and F0 verification are pending. No paid services, resources,
   generation or publication. F19 Active.
-
-- **October 3, 2026 F19 listening outcome:** owner confirms V2 retains V1's
-  pronunciation errors and questions continuing. Recorded unsuccessful audition;
-  F19 Needs decision on audio direction. No full batch or further tuning started.
-
-- **October 3, 2026 F19 implementation:** pinned source/dependencies/weights, verified
-  MPS inference and generated the three exact audition prompts. Owner requested
-  pronunciation/delivery revisions; F19 remains Active with zero accepted clips.
-  Five generator checks and offline resume pass. Local only; no integration or rollout.
-
-
 
 
 

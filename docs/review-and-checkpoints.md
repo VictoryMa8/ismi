@@ -27,10 +27,9 @@ are guided-practice observations, not mastery scores, pass/fail decisions, or
 evidence of spontaneous conversation. A checkpoint does not award minutes,
 create lesson-completion events, or gate retries.
 
-Scheduling remains manual. The owner was offered a provisional one-day reminder
-or entirely manual review; no response was available during implementation.
-No reminder interval or consequential mastery/scheduling policy was adopted.
-Practice history supports future scheduling after that decision is settled.
+F05 originally shipped manual scheduling only. F10 now extends this history with
+owner-selected scheduled review; see [the policy and current verification](scheduled-review.md).
+The historical F05 verification below describes the October 1 baseline.
 
 ## Device storage and versions
 

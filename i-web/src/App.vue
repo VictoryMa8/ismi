@@ -78,6 +78,7 @@ const introductionOpen = ref(false);
 const teachingWasCompleted = ref(false);
 const buildComplete = ref(false);
 const showEnglishHelp = ref(false);
+const practiceHelpUsed = ref(false);
 const showAnswerMeanings = ref(false);
 const responseMode = ref<'recall' | 'choose' | 'build'>('recall');
 const checkingAnswer = ref(false);
@@ -191,12 +192,14 @@ const buildSuggested = computed(() =>
 );
 function resetPracticeSupport() {
   stepAttemptCount = 0;
+  practiceHelpUsed.value = false;
   buildComplete.value = false;
   showEnglishHelp.value = false;
   showAnswerMeanings.value = false;
   responseMode.value = buildSuggested.value ? 'build' : 'recall';
 }
 async function showChoices() {
+  practiceHelpUsed.value = true;
   buildComplete.value = false;
   responseMode.value = 'choose';
   selectedAnswer.value = null;
@@ -207,6 +210,9 @@ const currentStep = computed(
   () => lesson.value?.steps[currentStepIndex.value] ?? null,
 );
 const studyPlan = computed(() => buildStudyPlan(studySettings.preferences.value, dashboard.value.dailyPlan.lessons));
+const todayReviewLessons = computed(() => dashboard.value.dailyPlan.lessons.filter(item =>
+  studySettings.preferences.value.selectedTrackIds.some(id => id === (item.trackId ?? 'levantine')),
+));
 const dailyGoal = computed(() => studySettings.preferences.value.goalMinutes);
 const dailyCompleted = computed(() => Math.min(dailyGoal.value,
   dashboard.value.dailyPlan.studyMinutesToday ?? dashboard.value.dailyPlan.completedMinutes));
@@ -913,6 +919,7 @@ async function rememberAttempt(feedback: LessonAttemptResponse) {
       feedback.isCorrect,
       feedback.explanation,
       first,
+      practiceHelpUsed.value,
     );
     reviewHistoryError.value = '';
   } catch {
@@ -1136,6 +1143,14 @@ async function finishLesson() {
               <span v-if="!allocation.available"> · Lessons not yet available</span>
             </li>
           </ul>
+          <ReviewPractice
+            compact
+            :scope="reviewScope"
+            :history-revision="reviewHistoryRevision"
+            :lessons="todayReviewLessons"
+            @open-change="reviewOpen = $event"
+            @prompt-playback="reviewAudioPlaying = $event"
+          />
           <ol v-if="studyPlan.queue.length" class="study-queue" aria-label="Today’s lesson queue">
             <li v-for="item in studyPlan.queue" :key="item.id"><button type="button" class="guest-action" @click="startLesson(item.id)">{{ item.title }} · {{ item.estimatedMinutes }} min</button></li>
           </ol>
@@ -1730,7 +1745,7 @@ async function finishLesson() {
                         class="text-button prompt-help"
                         type="button"
                         :aria-expanded="showEnglishHelp"
-                        @click="showEnglishHelp = !showEnglishHelp"
+                        @click="showEnglishHelp = !showEnglishHelp; practiceHelpUsed = true"
                       >
                         {{
                           showEnglishHelp
@@ -1859,7 +1874,7 @@ async function finishLesson() {
                     class="text-button response-help"
                     type="button"
                     :aria-expanded="showAnswerMeanings"
-                    @click="showAnswerMeanings = !showAnswerMeanings"
+                    @click="showAnswerMeanings = !showAnswerMeanings; practiceHelpUsed = true"
                   >
                     {{
                       showAnswerMeanings
