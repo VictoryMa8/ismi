@@ -8,10 +8,11 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**October 4 rollout:** release `5fead73` is committed and pushed. The alwaysdata
-API passed health and data-preservation checks; Vercel deployment was triggered,
-but final frontend verification was interrupted by usage limits. See
-[the rollout note](docs/releases/2026-10-04.md). No new curriculum was published.
+**October 9 rollout:** release `662d17c` is pushed and deployed to Vercel and
+alwaysdata. Live glossary/lesson loading, HTTPS health and exact persistent-data
+preservation checks passed. All 29 API tests and 55 distinct browser checks pass
+across broad/focused runs. See [the rollout note](docs/releases/2026-10-09.md).
+F12.2 correction packages are committed drafts; no curriculum was published.
 
 **F15.1 — Complete October 4:** personal study settings now drive a daily queue,
 with guest persistence, durable account preferences and offline conflict handling.
@@ -27,12 +28,12 @@ See [packages and verification](content/levantine/plans-02/README.md).
 in Today and Practice, with deterministic offline intervals and version handling.
 [Policy and verification](docs/scheduled-review.md). Code release `89a6537` is pushed and deployed to Vercel; live review opening verified.
 
-**F20 — Complete October 8; October 9 rollout in progress:** learned-word search/filter in Practice, with
+**F20 — Complete and deployed October 9:** learned-word search/filter in Practice, with
 source-linked teaching contexts, synced account inclusion and offline persistence.
-[Behavior and verification](docs/learned-word-glossary.md). Owner authorized code push/deployment October 9; [rollout record](docs/releases/2026-10-09.md).
+[Behavior and verification](docs/learned-word-glossary.md). Live glossary and existing account inclusion verified; [rollout record](docs/releases/2026-10-09.md).
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
-characters, and landing/welcome are implemented. API release `5fead73` is verified; frontend confirmation remains open. The seven owner-approved first-unit revisions are now published as hosted
+characters, and landing/welcome are implemented. Web/API release `662d17c` is deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
@@ -81,7 +82,7 @@ and beta evidence remain separate dependencies.
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
-| [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · local | Completed-lesson glossary; synced account inclusion and offline search verified |
+| [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
 | [F21](#f21-cultural-watch-and-listen-recommendations) | Cultural watch/listen recommendations | Planned | Scope a weekly curated pick; daily cadence remains a choice |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
@@ -96,6 +97,8 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
+  Latest web/API release `662d17c` is deployed and verified October 9;
+  [rollout evidence](docs/releases/2026-10-09.md).
   F10 frontend release `89a6537` is pushed and verified deployed; see the
   [October 7 release record](docs/releases/2026-10-07.md).
   Code release `5fead73` is committed and pushed; the API is verified deployed.
@@ -105,9 +108,12 @@ Priority is not a schedule or blanket publication/deployment authorization.
   match the approved packages; prior v1 records remain superseded for restoration.
   Local state differs: lesson 1 v4 was already published and lessons 2–7 remain drafts.
   [Release, audit and preservation evidence](docs/pilot/release-2026-10-03/README.md).
-- **Hosting:** Vercel plus alwaysdata development preview. The October 4 API rollout
+- **Hosting:** Vercel plus alwaysdata development preview. October 9 rollout
+  preserved all application table/recording/key hashes and passed health/dashboard
+  and live glossary checks. The October 4 API rollout
   preserved existing data and thirteen publications: seven Everyday v2 lessons and
-  six fixtures. Frontend deployment was triggered; final confirmation remains open.
+  six fixtures. October 4 frontend deployment is confirmed Ready by October 9 Vercel history inspection;
+  the current October 9 frontend is also Ready and live-verified.
 - **Verification basis:** October 4 preflight passed the production frontend build,
   27 API tests, all 44 standard browser tests and Release API publish. These are
   local checks; real screen-reader, learner-outcome and supported-browser evidence
@@ -202,8 +208,9 @@ mobile/desktop, fallback and offline rendering pass with unchanged written roles
 [revised concept, editable source and verification](docs/characters/vector-concept-02/README.md).
 Local Chromium desktop/mobile renders inspected; all images load, no horizontal
 overflow, portrait sizing checked. App-level fallback/offline verification remains open.
-**Delivery:** local review assets only; no app replacement, commit/push, publication
-or deployment. Preserve v1 assets and version future art separately.
+**Delivery:** review assets committed/pushed as historical documentation in `662d17c`;
+no app artwork replacement or content publication. Preserve v1 assets and version
+future art separately.
 
 ### F07 Landing page and app welcome
 
@@ -368,8 +375,9 @@ for audio claims. Revised package approval/publication and recording-script/hash
 reconciliation are separate gates; preserve published release snapshots.
 **Evidence:** [audit findings](docs/research/levantine-transliteration-audit-2026-10-08.md),
 [correction candidates, reviews and verification](content/levantine/everyday-01/revisions/transliteration-audit/README.md).
-**Delivery:** local candidate files/tests. Default database drafts 20/22/17 preserved;
-no hosted inspection, curriculum approval/publication, commit/push or deployment.
+**Delivery:** candidate files/tests committed and pushed in `662d17c`; compatible
+web/API code deployed October 9. Local drafts 20/22/17 preserved; hosted curriculum
+and all persistent-data hashes preserved. No correction import/approval/publication.
 
 ### F13 MSA course
 
@@ -519,7 +527,7 @@ New audio publication and any code rollout are separate from the already-approve
 
 ### F20 Learned-word glossary
 
-**Status:** Done — October 8, 2026; implemented locally.
+**Status:** Done — implemented October 8; pushed/deployed October 9, 2026.
 **Scope delivered:** free learned-word glossary in Practice, populated only by completed
 lessons; Arabic/English/transliteration search, track/dialect/type filters, pagination,
 source references, authored forms/usage notes and links to the exact teaching card.
@@ -542,11 +550,11 @@ cross-device inclusion, content changes/withdrawal, audio and keyboard/RTL/LTR l
 All 55 distinct browser checks pass across the broad/final focused runs; the
 [feature note](docs/learned-word-glossary.md) records initial timing/rate-limit failures
 and the final 10/10 rerun.
-**Next:** optional authorized rollout; additional reviewed forms/content follow the
-normal console workflow. F12.2 corrections, real audio and F18 real assistive-technology/
+**Next:** additional reviewed forms/content follow the normal console workflow. F12.2 corrections, real audio and F18 real assistive-technology/
 supported-browser evidence remain separate work.
-**Delivery:** local code and compatibility catalog only; no commit/push, deployment,
-new curriculum publication, external services or data migration to the host.
+**Delivery:** code/catalog committed and pushed in `662d17c`; web/API deployed
+October 9. Live existing-account glossary verified. No new curriculum publication
+or data migration. [Rollout and preservation checks](docs/releases/2026-10-09.md).
 
 ### F21 Cultural watch and listen recommendations
 
@@ -566,6 +574,11 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 **Delivery:** roadmap proposal only; no external recommendations published.
 
 ## Recent planning changes
+
+- **October 9, 2026 rollout:** owner authorized push/deployment. Release `662d17c`
+  deployed web/API; live glossary, health and persistent-data preservation passed.
+  All 29 API tests and 55 distinct browser checks pass. F12.2 remains committed
+  drafts; no curriculum publication. Temporary deployment key revoked and deleted.
 
 - **October 9, 2026 F12.2:** prepared reproducible lessons 3/5/7 plural/help
   correction candidates with matched source records and glossary senses. All 29 API
@@ -589,11 +602,6 @@ checks. This does not create a live-news operation, media hosting or rehosting r
   due review in Today/Practice with offline, versioned device history. Build,
   27 API tests, all 49 browser tests and 11 final focused checks pass. Release `89a6537` pushed/deployed; live review
   opening verified. API/curriculum unchanged.
-
-- **October 7, 2026 delivery reconciliation:** recorded the October 4 push/API rollout,
-  preserved data and removed temporary SSH access. Frontend final verification was
-  usage-blocked. F12.1 publication, F10 scheduling policy and F15 placement remain open;
-  no additional implementation or curriculum publication started.
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

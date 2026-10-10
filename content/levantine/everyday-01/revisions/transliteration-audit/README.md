@@ -94,6 +94,8 @@ pass is claimed. The lesson-1 eight-prompt recording batch and Azure audition te
 are unchanged. Any future recordings for lessons 3/5/7 must use the then-approved
 candidate hashes and exact text, not assume the F08 script remains current.
 
-Delivery is local candidate files, review artifacts and tests only: no default or
-hosted database mutation, curriculum approval/publication, commit/push or deployment.
+October 9 delivery: candidate files, review artifacts and tests committed/pushed in
+`662d17c`; compatible web/API code deployed. No candidate import into default/hosted
+databases or curriculum approval/publication. Hosted persistent data is preserved;
+see [rollout evidence](../../../../../docs/releases/2026-10-09.md).
 F12.2 remains Active pending owner wording review and actual speaker/model evidence.

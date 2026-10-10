@@ -114,10 +114,11 @@ References: [alwaysdata free plan](https://help.alwaysdata.com/en/admin-billing/
 
 ### Latest release
 
-The October 2 code release `26f8242` is deployed to both hosts. Health, dashboard,
-published lesson and live frontend checks passed; hosted account/content data and
-cookie keys were preserved. No new curriculum revisions were published. See the
-[rollout record](docs/releases/2026-10-02.md) for tests, hashes and rollback locations.
+The October 9 code release `662d17c` is deployed to both hosts. The learned-word
+glossary is live; health, dashboard and live glossary checks passed. Hosted accounts,
+progress, curriculum, recordings and cookie keys were preserved. F12.2 correction
+packages remain unapproved drafts; no curriculum publication occurred. See the
+[rollout record](docs/releases/2026-10-09.md) for tests, hashes and rollback locations.
 
 ### September 27, 2026 release (historical)
 

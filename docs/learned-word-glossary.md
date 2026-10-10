@@ -123,3 +123,12 @@ instead of an arbitrary older/superseded version. Automated keyboard,
 layout and offline checks do not establish real screen-reader or Safari beta gates;
 those remain under F18. Transport-fixture audio tests do not establish pronunciation
 quality or supply any reviewed curriculum audio.
+
+## October 9 delivery
+
+Release `662d17c` is pushed and deployed to both hosts. Live Practice loaded existing
+account completion and twenty learned entries, with all thirteen lessons available.
+The fresh rollout passed the frontend build, 29 API tests and all 55 distinct browser
+checks across the broad run and the two successful isolated curriculum reruns.
+Hosted data, recordings and cookie keys were preserved. No new curriculum was
+published; see [the rollout record](releases/2026-10-09.md).
