@@ -43,6 +43,43 @@ public sealed class CurriculumApiTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task VocabularyRequiresAuthoredContextAndProvenanceAndSurvivesPublication()
+    {
+        using var owner = CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        var options = new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web);
+        var package = System.Text.Json.JsonSerializer.Deserialize<CurriculumDraftRequest>(
+            await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "guided-teaching", "01-lesson.json")), options)!;
+        Assert.DoesNotContain("\"vocabulary\"", System.Text.Json.JsonSerializer.Serialize(package.Lesson, options));
+        var card = package.Lesson.Introduction!.TeachingCards![0];
+        var entry = new LessonVocabulary("check-in", "casual", "expression", card.Phrase.Arabic,
+            card.Phrase.Arabizi, card.Phrase.Meaning, "palestinian-urban", "conversational", [],
+            card.Note, card.SourceLocators ?? package.Lesson.Introduction.SourceLocators, 0);
+        var lesson = package.Lesson with { Vocabulary = [entry] };
+        using var scope = _factory.Services.CreateScope();
+        var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
+        Assert.True(validator.Validate(lesson, package.Sources).IsValid);
+        foreach (var invalid in new[] {
+            entry with { Id = "" }, entry with { SenseId = "" }, entry with { Meaning = "invented" },
+            entry with { Dialect = "unknown" }, entry with { SourceLocators = ["missing"] },
+            entry with { SourceLocators = [] }, entry with { TeachingCardIndex = -1 },
+            entry with { TeachingCardIndex = 999 }, entry with { Forms = [""] }, entry with { Kind = "unknown" }
+        }) Assert.False(validator.Validate(lesson with { Vocabulary = [invalid] }, package.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Vocabulary = [entry, entry] }, package.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Vocabulary = [entry with { Forms = null! }] }, package.Sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Vocabulary = [null!] }, package.Sources).IsValid);
+        var response = await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/admin/curriculum/drafts",
+            package with { Lesson = lesson });
+        response.EnsureSuccessStatusCode();
+        var detail = (await response.Content.ReadFromJsonAsync<CurriculumVersionDetail>())!;
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{detail.Id}/approve", new { })).EnsureSuccessStatusCode();
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{detail.Id}/publish", new { })).EnsureSuccessStatusCode();
+        var published = (await owner.GetFromJsonAsync<LessonResponse>($"/api/lessons/{lesson.Id}"))!;
+        Assert.Equal(entry.Id, Assert.Single(published.Vocabulary!).Id);
+        Assert.Equal(entry.SourceLocators, published.Vocabulary![0].SourceLocators);
+    }
+
+    [Fact]
     public async Task OwnerCanPublishAndRollbackWhileLearnersOnlySeePublishedVersions()
     {
         using var client = CreateClient();

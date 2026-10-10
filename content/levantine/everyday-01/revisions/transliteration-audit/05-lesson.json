@@ -1,0 +1,1152 @@
+{
+  "lesson": {
+    "id": "levantine-everyday-01-05",
+    "trackId": "levantine",
+    "title": "How's your family?",
+    "scenario": "Fattoush asks Knafeh about his family. Knafeh returns the interest by asking about Fattoush’s mother. Share only the detail the scene gives you.",
+    "steps": [
+      {
+        "id": "e05-01",
+        "instruction": "Ask Knafeh about his family, rather than about your own.",
+        "prompt": {
+          "arabic": "وإنتَ؟",
+          "arabizi": "W-inta?",
+          "meaning": "And you? (to Knafeh)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "كيف أهلي؟",
+            "arabizi": "Kīf ahli?",
+            "meaning": "How is my family?",
+            "rationale": "Ahli refers to the speaker’s family instead of Knafeh’s."
+          },
+          {
+            "id": "b",
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlak?",
+            "meaning": "How’s your family? (to Knafeh)",
+            "rationale": "Ahlak means Knafeh’s family when he is the listener."
+          },
+          {
+            "id": "c",
+            "arabic": "كيفك؟",
+            "arabizi": "Kīfak?",
+            "meaning": "How are you? (to Knafeh)",
+            "rationale": "This asks about Knafeh himself, not his family."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Ahlak means Knafeh’s family when he is the listener.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The ending should mean “your” to Knafeh."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e05-02",
+        "instruction": "Knafeh says the family members are well. Respond as Knafeh.",
+        "prompt": {
+          "arabic": "كيف أهلك؟",
+          "arabizi": "Kīf ahlak?",
+          "meaning": "How’s your family? (to Knafeh)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "منيحة.",
+            "arabizi": "Mnīḥa.",
+            "meaning": "She’s well.",
+            "rationale": "This refers to one woman, not the family group."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا منيح.",
+            "arabizi": "Ana mnīḥ.",
+            "meaning": "I’m well. (Knafeh speaking)",
+            "rationale": "This updates only Knafeh’s condition."
+          },
+          {
+            "id": "c",
+            "arabic": "مناح، شكراً.",
+            "arabizi": "Mnāḥ, shukran.",
+            "meaning": "They’re well, thank you.",
+            "rationale": "Mnāḥ refers to the family members as a group. Mnāḥ is the Palestinian plural taught here for people together."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Mnāḥ refers to the family members as a group. Mnāḥ is the Palestinian plural taught here for people together.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Answer about the group of people."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "e05-03",
+        "instruction": "Follow up specifically about Knafeh’s sister.",
+        "prompt": {
+          "arabic": "مناح، شكراً.",
+          "arabizi": "Mnāḥ, shukran.",
+          "meaning": "They’re well, thank you.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وأختك، كيفها؟",
+            "arabizi": "W-ukhtak, kīfha?",
+            "meaning": "And your sister, how is she? (to Knafeh)",
+            "rationale": "Naming the sister gives kīfha a clear referent."
+          },
+          {
+            "id": "b",
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlak?",
+            "meaning": "How’s your family? (to Knafeh)",
+            "rationale": "This repeats the general family question instead of following up about his sister."
+          },
+          {
+            "id": "c",
+            "arabic": "وكيف أمك؟",
+            "arabizi": "W-kīf immik?",
+            "meaning": "And how’s your mother? (to Fattoush)",
+            "rationale": "This asks Fattoush about her mother; both the listener and relative change."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Naming the sister gives kīfha a clear referent.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Name the sister before asking how she is."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e05-04",
+        "instruction": "The sister is well but has much work. Give that update.",
+        "prompt": {
+          "arabic": "وأختك، كيفها؟",
+          "arabizi": "W-ukhtak, kīfha?",
+          "meaning": "And your sister, how is she? (to Knafeh)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "منيحة. اليوم بالبيت.",
+            "arabizi": "Mnīḥa. Il-yōm bil-bēt.",
+            "meaning": "She’s well. Today she’s at home.",
+            "rationale": "Being home today is a different detail; it does not express the sister’s workload."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا عندي شغل كتير.",
+            "arabizi": "Ana ʿindi shughl ktīr.",
+            "meaning": "I have a lot of work.",
+            "rationale": "This changes the person from the sister to the speaker."
+          },
+          {
+            "id": "c",
+            "arabic": "منيحة، بس عندها شغل كتير.",
+            "arabizi": "Mnīḥa, bass ʿindha shughl ktīr.",
+            "meaning": "She’s well, but she has a lot of work.",
+            "rationale": "Both the positive condition and the work detail match the scenario."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Both the positive condition and the work detail match the scenario.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The work belongs to her: ʿindha."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "e05-05",
+        "instruction": "Fattoush has just mentioned her mother. Ask a short follow-up about the mother.",
+        "prompt": {
+          "arabic": "اليوم زرت أمي.",
+          "arabizi": "Il-yōm zurt immi.",
+          "meaning": "Today I visited my mother.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وكيفك؟",
+            "arabizi": "W-kīfik?",
+            "meaning": "And how are you? (to Fattoush)",
+            "rationale": "This asks about Fattoush rather than her mother."
+          },
+          {
+            "id": "b",
+            "arabic": "وكيفها؟",
+            "arabizi": "W-kīfha?",
+            "meaning": "And how is she?",
+            "rationale": "Kīfha refers back to the mother Fattoush has just named."
+          },
+          {
+            "id": "c",
+            "arabic": "شو عملتي اليوم؟",
+            "arabizi": "Shū ʿmilti il-yōm?",
+            "meaning": "What did you do today? (to Fattoush)",
+            "rationale": "This asks broadly about Fattoush’s activities instead of following up on her mother."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Kīfha refers back to the mother Fattoush has just named.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The short ending should refer to “her.”"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "e05-06",
+        "instruction": "Knafeh wants to ask Fattoush about her family. Choose the address to Fattoush.",
+        "prompt": {
+          "arabic": "وإنتِ؟",
+          "arabizi": "W-inti?",
+          "meaning": "And you? (to Fattoush)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlik?",
+            "meaning": "How’s your family? (to Fattoush)",
+            "rationale": "Ahlik is the selected feminine address; Arabic script alone may not show the short-vowel difference."
+          },
+          {
+            "id": "b",
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlak?",
+            "meaning": "How’s your family? (to Knafeh)",
+            "rationale": "Ahlak is addressed to Knafeh, not Fattoush."
+          },
+          {
+            "id": "c",
+            "arabic": "كيف أهلي؟",
+            "arabizi": "Kīf ahli?",
+            "meaning": "How is my family?",
+            "rationale": "This asks about the speaker’s own family."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Ahlik is the selected feminine address; Arabic script alone may not show the short-vowel difference.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Follow the transliteration: ahlik."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "e05-07",
+        "instruction": "Closing exchange, part 1: today Fattoush’s mother is well and at home. Reply as Fattoush.",
+        "prompt": {
+          "arabic": "وكيف أمك؟",
+          "arabizi": "W-kīf immik?",
+          "meaning": "And how’s your mother? (to Fattoush)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "منيحة، بس عندها شغل كتير.",
+            "arabizi": "Mnīḥa, bass ʿindha shughl ktīr.",
+            "meaning": "She’s well, but she has a lot of work.",
+            "rationale": "This introduces a heavy workload, which the new scene does not give."
+          },
+          {
+            "id": "b",
+            "arabic": "مناح، شكراً.",
+            "arabizi": "Mnāḥ, shukran.",
+            "meaning": "They’re well, thank you.",
+            "rationale": "This answers about several people, not the mother. Mnāḥ is the Palestinian plural taught here for people together."
+          },
+          {
+            "id": "c",
+            "arabic": "منيحة. اليوم بالبيت.",
+            "arabizi": "Mnīḥa. Il-yōm bil-bēt.",
+            "meaning": "She’s well. Today she’s at home.",
+            "rationale": "This gives the mother’s condition and today’s location without inventing extra detail."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This gives the mother’s condition and today’s location without inventing extra detail.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Keep the referent singular and the detail about home."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e05-08",
+        "instruction": "Closing exchange, part 2: agree to the proposed visit tomorrow.",
+        "prompt": {
+          "arabic": "بكرا نزورها؟",
+          "arabizi": "Bukra nzūrha?",
+          "meaning": "Shall we visit her tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "اليوم زرت أمي.",
+            "arabizi": "Il-yōm zurt immi.",
+            "meaning": "Today I visited my mother.",
+            "rationale": "This reports a past visit today; it does not agree to tomorrow’s visit."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، بكرا نزورها.",
+            "arabizi": "Āh, bukra nzūrha.",
+            "meaning": "Yes, let’s visit her tomorrow.",
+            "rationale": "This agrees to the future shared visit and keeps the same person and day."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "This declines rather than accepting the invitation."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This agrees to the future shared visit and keeps the same person and day.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Accept the invitation and preserve tomorrow."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "guided-teaching-draft",
+    "unitId": "levantine-everyday-01",
+    "unitTitle": "Everyday conversations with someone you love",
+    "courseOrder": 5,
+    "reviewStatus": "owner-review",
+    "introduction": {
+      "goal": "Ask about someone’s family, share a short update, and ask a relevant follow-up.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush → Knafeh",
+          "line": {
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlak?",
+            "meaning": "How’s your family? (to Knafeh)",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "مناح، شكراً.",
+            "arabizi": "Mnāḥ, shukran.",
+            "meaning": "They’re well, thank you.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush → Knafeh",
+          "line": {
+            "arabic": "وأختك، كيفها؟",
+            "arabizi": "W-ukhtak, kīfha?",
+            "meaning": "And your sister, how is she? (to Knafeh)",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh → Fattoush",
+          "line": {
+            "arabic": "منيحة، بس عندها شغل كتير. وكيف أمك؟",
+            "arabizi": "Mnīḥa, bass ʿindha shughl ktīr. W-kīf immik?",
+            "meaning": "She’s well, but she has a lot of work. And how’s your mother?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "منيحة. اليوم بالبيت.",
+            "arabizi": "Mnīḥa. Il-yōm bil-bēt.",
+            "meaning": "She’s well. Today she’s at home.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "منيح! بكرا نزورها؟",
+            "arabizi": "Mnīḥ! Bukra nzūrha?",
+            "meaning": "Good! Shall we visit her tomorrow?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "كيف أهلك؟",
+          "arabizi": "Kīf ahlak?",
+          "meaning": "How’s your family? (to Knafeh)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "مناح، شكراً.",
+          "arabizi": "Mnāḥ, shukran.",
+          "meaning": "They’re well, thank you.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "وأختك، كيفها؟",
+          "arabizi": "W-ukhtak, kīfha?",
+          "meaning": "And your sister, how is she? (to Knafeh)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "منيحة، بس عندها شغل كتير.",
+          "arabizi": "Mnīḥa, bass ʿindha shughl ktīr.",
+          "meaning": "She’s well, but she has a lot of work.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Keep track of the person you address and the person you describe. Ahlak or ahlik asks about your listener’s family; ahli means my family. After the mother or sister is mentioned, kīfha asks about her. Mnāḥ describes family members together; mnīḥa describes the mother or sister. Mnāḥ is the Palestinian plural taught here; other speaker variants need review.",
+      "dialectNote": "Urban Palestinian teaching target. This dialogue names the people before using “her.” Ahlak/ukhtak address Knafeh; ahlik/ukhtik address Fattoush. Immi is “my mother”; immik here is “your mother” when speaking to Fattoush. These are contextual choices, not the only Palestinian vowel variants. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Fattoush uses feminine self-description; Knafeh uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "https://resources.lingualism.com/levantine-arabic/family-3/",
+        "internal:ismi/everyday-01/05/guided-teaching",
+        "https://resources.lingualism.com/levantine-arabic/adjectives-3/",
+        "internal:ismi/everyday-01/05/transliteration-audit-2026-10-09"
+      ],
+      "teachingCards": [
+        {
+          "title": "Ask about their family",
+          "phrase": {
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlak?",
+            "meaning": "How’s your family? (to Knafeh)",
+            "audioUrl": null
+          },
+          "note": "Ahlak means your family when speaking to Knafeh; ahli means my family. Listen to the ending and keep transliteration handy.",
+          "recallCue": "You are Fattoush. Ask Knafeh how his family is.",
+          "chunks": [
+            {
+              "arabic": "كيف",
+              "arabizi": "kīf",
+              "meaning": "how"
+            },
+            {
+              "arabic": "أهلك",
+              "arabizi": "ahlak",
+              "meaning": "your family · to Knafeh"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/everyday-01/05/guided-teaching"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Answer about people together",
+          "phrase": {
+            "arabic": "مناح، شكراً.",
+            "arabizi": "Mnāḥ, shukran.",
+            "meaning": "They’re well, thank you.",
+            "audioUrl": null
+          },
+          "note": "Mnāḥ describes family members together; mnīḥa describes the mother or sister. Mnāḥ is the Palestinian plural taught here; other speaker variants need review.",
+          "recallCue": "You are Knafeh. Tell Fattoush your family members are well and thank her.",
+          "chunks": [
+            {
+              "arabic": "مناح",
+              "arabizi": "mnāḥ",
+              "meaning": "they are well · family members"
+            },
+            {
+              "arabic": "شكراً",
+              "arabizi": "shukran",
+              "meaning": "thank you"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "internal:ismi/everyday-01/05/guided-teaching",
+            "https://resources.lingualism.com/levantine-arabic/adjectives-3/"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Follow up about his sister",
+          "phrase": {
+            "arabic": "وأختك، كيفها؟",
+            "arabizi": "W-ukhtak, kīfha?",
+            "meaning": "And your sister, how is she? (to Knafeh)",
+            "audioUrl": null
+          },
+          "note": "Ukhtak is your sister when addressing Knafeh. Kīfha then refers to that sister, not to Knafeh.",
+          "recallCue": "You are Fattoush. Follow up specifically about Knafeh’s sister.",
+          "chunks": [
+            {
+              "arabic": "وأختك",
+              "arabizi": "w-ukhtak",
+              "meaning": "and your sister · to Knafeh"
+            },
+            {
+              "arabic": "كيفها",
+              "arabizi": "kīfha",
+              "meaning": "how is she · sister"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/everyday-01/05/guided-teaching"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Give a small update",
+          "phrase": {
+            "arabic": "منيحة، بس عندها شغل كتير.",
+            "arabizi": "Mnīḥa, bass ʿindha shughl ktīr.",
+            "meaning": "She’s well, but she has a lot of work.",
+            "audioUrl": null
+          },
+          "note": "Start with the sister’s condition. Bass introduces a contrast; ʿindha shughl says she has work, and ktīr gives the amount.",
+          "recallCue": "Knafeh’s sister is well but has a lot of work. Give her update.",
+          "chunks": [
+            {
+              "arabic": "منيحة",
+              "arabizi": "mnīḥa",
+              "meaning": "she is well"
+            },
+            {
+              "arabic": "بس",
+              "arabizi": "bass",
+              "meaning": "but"
+            },
+            {
+              "arabic": "عندها",
+              "arabizi": "ʿindha",
+              "meaning": "she has"
+            },
+            {
+              "arabic": "شغل كتير",
+              "arabizi": "shughl ktīr",
+              "meaning": "a lot of work"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "internal:ismi/everyday-01/05/guided-teaching"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Turn the family question back",
+          "phrase": {
+            "arabic": "كيف أهلك؟",
+            "arabizi": "Kīf ahlik?",
+            "meaning": "How’s your family? (to Fattoush)",
+            "audioUrl": null
+          },
+          "note": "Ahlik addresses Fattoush. It looks the same as ahlak in this unvowelled spelling, so the transliteration shows the spoken difference.",
+          "recallCue": "You are Knafeh. Ask Fattoush how her family is.",
+          "chunks": [
+            {
+              "arabic": "كيف",
+              "arabizi": "kīf",
+              "meaning": "how"
+            },
+            {
+              "arabic": "أهلك",
+              "arabizi": "ahlik",
+              "meaning": "your family · to Fattoush"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/everyday-01/05/guided-teaching"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Agree to a visit",
+          "phrase": {
+            "arabic": "آه، بكرا نزورها.",
+            "arabizi": "Āh, bukra nzūrha.",
+            "meaning": "Yes, let’s visit her tomorrow.",
+            "audioUrl": null
+          },
+          "note": "Bukra sets the plan in tomorrow. In nzūrha, the ending -ha points back to Fattoush’s mother; you are agreeing to visit her together.",
+          "recallCue": "Fattoush’s mother is at home. Agree to visit her together tomorrow.",
+          "chunks": [
+            {
+              "arabic": "آه",
+              "arabizi": "āh",
+              "meaning": "yes"
+            },
+            {
+              "arabic": "بكرا",
+              "arabizi": "bukra",
+              "meaning": "tomorrow"
+            },
+            {
+              "arabic": "نزورها",
+              "arabizi": "nzūrha",
+              "meaning": "we visit her · mother"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "internal:ismi/everyday-01/05/guided-teaching"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        }
+      ]
+    },
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "vocabulary": [
+      {
+        "id": "lev-58eddc1865877f5b81bd15c4",
+        "senseId": "sense-58eddc1865877f5b81bd15c4",
+        "kind": "expression",
+        "arabic": "كيف أهلك؟",
+        "arabizi": "Kīf ahlak?",
+        "meaning": "How’s your family? (to Knafeh)",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Ahlak means your family when speaking to Knafeh; ahli means my family. Listen to the ending and keep transliteration handy.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-84fcb880d20d74fe285a896c",
+        "senseId": "sense-84fcb880d20d74fe285a896c",
+        "kind": "word",
+        "arabic": "كيف",
+        "arabizi": "kīf",
+        "meaning": "how",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Ahlak means your family when speaking to Knafeh; ahli means my family. Listen to the ending and keep transliteration handy.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-2dd86333aae94af674e381ce",
+        "senseId": "sense-2dd86333aae94af674e381ce",
+        "kind": "word",
+        "arabic": "أهلك",
+        "arabizi": "ahlak",
+        "meaning": "your family · to Knafeh",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Ahlak means your family when speaking to Knafeh; ahli means my family. Listen to the ending and keep transliteration handy.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-1aa8279e3f76ee597381e70f",
+        "senseId": "sense-1aa8279e3f76ee597381e70f",
+        "kind": "expression",
+        "arabic": "مناح، شكراً.",
+        "arabizi": "Mnāḥ, shukran.",
+        "meaning": "They’re well, thank you.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Mnāḥ describes family members together; mnīḥa describes the mother or sister. Mnāḥ is the Palestinian plural taught here; other speaker variants need review.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "internal:ismi/everyday-01/05/guided-teaching",
+          "https://resources.lingualism.com/levantine-arabic/adjectives-3/"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "id": "lev-2751c74a580cb85455a16824",
+        "senseId": "sense-2751c74a580cb85455a16824",
+        "kind": "word",
+        "arabic": "مناح",
+        "arabizi": "mnāḥ",
+        "meaning": "they are well · family members",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Mnāḥ describes family members together; mnīḥa describes the mother or sister. Mnāḥ is the Palestinian plural taught here; other speaker variants need review.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "internal:ismi/everyday-01/05/guided-teaching",
+          "https://resources.lingualism.com/levantine-arabic/adjectives-3/"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "id": "lev-b95734e51a05fc2c790fadca",
+        "senseId": "sense-b95734e51a05fc2c790fadca",
+        "kind": "word",
+        "arabic": "شكراً",
+        "arabizi": "shukran",
+        "meaning": "thank you",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Mnāḥ describes family members together; mnīḥa describes the mother or sister. Mnāḥ is the Palestinian plural taught here; other speaker variants need review.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "internal:ismi/everyday-01/05/guided-teaching",
+          "https://resources.lingualism.com/levantine-arabic/adjectives-3/"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "id": "lev-4068bfe767910b54d26ff34a",
+        "senseId": "sense-4068bfe767910b54d26ff34a",
+        "kind": "expression",
+        "arabic": "وأختك، كيفها؟",
+        "arabizi": "W-ukhtak, kīfha?",
+        "meaning": "And your sister, how is she? (to Knafeh)",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Ukhtak is your sister when addressing Knafeh. Kīfha then refers to that sister, not to Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-625a0a424b85e726fd1c6277",
+        "senseId": "sense-625a0a424b85e726fd1c6277",
+        "kind": "word",
+        "arabic": "وأختك",
+        "arabizi": "w-ukhtak",
+        "meaning": "and your sister · to Knafeh",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Ukhtak is your sister when addressing Knafeh. Kīfha then refers to that sister, not to Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-32e1429dfc4c21e0274ab91d",
+        "senseId": "sense-32e1429dfc4c21e0274ab91d",
+        "kind": "word",
+        "arabic": "كيفها",
+        "arabizi": "kīfha",
+        "meaning": "how is she · sister",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Ukhtak is your sister when addressing Knafeh. Kīfha then refers to that sister, not to Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-7d394a520400357e01cffe90",
+        "senseId": "sense-7d394a520400357e01cffe90",
+        "kind": "expression",
+        "arabic": "منيحة، بس عندها شغل كتير.",
+        "arabizi": "Mnīḥa, bass ʿindha shughl ktīr.",
+        "meaning": "She’s well, but she has a lot of work.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Start with the sister’s condition. Bass introduces a contrast; ʿindha shughl says she has work, and ktīr gives the amount.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-7fce3bed295369d93b604404",
+        "senseId": "sense-7fce3bed295369d93b604404",
+        "kind": "word",
+        "arabic": "منيحة",
+        "arabizi": "mnīḥa",
+        "meaning": "she is well",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Start with the sister’s condition. Bass introduces a contrast; ʿindha shughl says she has work, and ktīr gives the amount.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-83e0ae2d258fd327cee89bc1",
+        "senseId": "sense-83e0ae2d258fd327cee89bc1",
+        "kind": "word",
+        "arabic": "بس",
+        "arabizi": "bass",
+        "meaning": "but",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Start with the sister’s condition. Bass introduces a contrast; ʿindha shughl says she has work, and ktīr gives the amount.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-5e8ce4c6bde4d43bcf85dde3",
+        "senseId": "sense-5e8ce4c6bde4d43bcf85dde3",
+        "kind": "word",
+        "arabic": "عندها",
+        "arabizi": "ʿindha",
+        "meaning": "she has",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Start with the sister’s condition. Bass introduces a contrast; ʿindha shughl says she has work, and ktīr gives the amount.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-c8b66ccd6df80d600eef4ca2",
+        "senseId": "sense-c8b66ccd6df80d600eef4ca2",
+        "kind": "expression",
+        "arabic": "شغل كتير",
+        "arabizi": "shughl ktīr",
+        "meaning": "a lot of work",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Start with the sister’s condition. Bass introduces a contrast; ʿindha shughl says she has work, and ktīr gives the amount.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-5144d1ec5cadbe334e7f33d8",
+        "senseId": "sense-5144d1ec5cadbe334e7f33d8",
+        "kind": "expression",
+        "arabic": "كيف أهلك؟",
+        "arabizi": "Kīf ahlik?",
+        "meaning": "How’s your family? (to Fattoush)",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Ahlik addresses Fattoush. It looks the same as ahlak in this unvowelled spelling, so the transliteration shows the spoken difference.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 4
+      },
+      {
+        "id": "lev-19c03d35a653d69efc3f98c5",
+        "senseId": "sense-19c03d35a653d69efc3f98c5",
+        "kind": "word",
+        "arabic": "أهلك",
+        "arabizi": "ahlik",
+        "meaning": "your family · to Fattoush",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Ahlik addresses Fattoush. It looks the same as ahlak in this unvowelled spelling, so the transliteration shows the spoken difference.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 4
+      },
+      {
+        "id": "lev-e4e080e8283813f6119baec5",
+        "senseId": "sense-e4e080e8283813f6119baec5",
+        "kind": "expression",
+        "arabic": "آه، بكرا نزورها.",
+        "arabizi": "Āh, bukra nzūrha.",
+        "meaning": "Yes, let’s visit her tomorrow.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Bukra sets the plan in tomorrow. In nzūrha, the ending -ha points back to Fattoush’s mother; you are agreeing to visit her together.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 5
+      },
+      {
+        "id": "lev-ffe356192da823f92e63e8bf",
+        "senseId": "sense-ffe356192da823f92e63e8bf",
+        "kind": "word",
+        "arabic": "آه",
+        "arabizi": "āh",
+        "meaning": "yes",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Bukra sets the plan in tomorrow. In nzūrha, the ending -ha points back to Fattoush’s mother; you are agreeing to visit her together.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 5
+      },
+      {
+        "id": "lev-ae99da92c2d5b5450eafe7b6",
+        "senseId": "sense-ae99da92c2d5b5450eafe7b6",
+        "kind": "word",
+        "arabic": "بكرا",
+        "arabizi": "bukra",
+        "meaning": "tomorrow",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Bukra sets the plan in tomorrow. In nzūrha, the ending -ha points back to Fattoush’s mother; you are agreeing to visit her together.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 5
+      },
+      {
+        "id": "lev-324a8a1dfe2ecf01d9fb18d5",
+        "senseId": "sense-324a8a1dfe2ecf01d9fb18d5",
+        "kind": "word",
+        "arabic": "نزورها",
+        "arabizi": "nzūrha",
+        "meaning": "we visit her · mother",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Bukra sets the plan in tomorrow. In nzūrha, the ending -ha points back to Fattoush’s mother; you are agreeing to visit her together.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "internal:ismi/everyday-01/05/guided-teaching"
+        ],
+        "teachingCardIndex": 5
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 628 (family/relatives), 528 (mother), 151 (sister), 31227/31228 (good), 16449 (work), 2684 (home), 13362 (visit). Lingualism family entries parents, mother, sister; publisher sample p.109 pronouns and T104 person endings. Original suffixed forms and agreement are explicitly scoped to named people and require final owner review. The sources support language facts, not assumptions about anyone’s family."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 628 (family/relatives), 528 (mother), 151 (sister), 31227/31228 (good), 16449 (work), 2684 (home), 13362 (visit). Lingualism family entries parents, mother, sister; publisher sample p.109 pronouns and T104 person endings. Original suffixed forms and agreement are explicitly scoped to named people and require final owner review. The sources support language facts, not assumptions about anyone’s family."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 628 (family/relatives), 528 (mother), 151 (sister), 31227/31228 (good), 16449 (work), 2684 (home), 13362 (visit). Lingualism family entries parents, mother, sister; publisher sample p.109 pronouns and T104 person endings. Original suffixed forms and agreement are explicitly scoped to named people and require final owner review. The sources support language facts, not assumptions about anyone’s family."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Family in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports relationship vocabulary checks; address and possession forms require explicit locators. Lesson-specific checks: Maknuune IDs 628 (family/relatives), 528 (mother), 151 (sister), 31227/31228 (good), 16449 (work), 2684 (home), 13362 (visit). Lingualism family entries parents, mother, sister; publisher sample p.109 pronouns and T104 person endings. Original suffixed forms and agreement are explicitly scoped to named people and require final owner review. The sources support language facts, not assumptions about anyone’s family."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi original dialogue and contextual answer design",
+      "locator": "internal:ismi/everyday-01/05/draft-1",
+      "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+      "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi guided teaching and contextual recall revision",
+      "locator": "internal:ismi/everyday-01/05/guided-teaching",
+      "rights": "Original Ismi explanations, recall cues and phrase grouping. No publisher examples, tables or audio reproduced.",
+      "notes": "Authored September 30, 2026. 6 phrase cards reuse the existing source-linked unit language and address distinctions. Per-card sources identify lexical/morphology support; the contextual exchanges and chunk glosses are AI-assisted compositions for owner approval. Existing foundation records retain exact Maknuune IDs and publisher locators. No native-expert review, publication authorization, new speaker evidence, or learning-outcome validation claimed. Prior portable package: ../../05-lesson.json; SHA-256 aa8782aa1d604d9948c33cf90f2a167fb1132efe07edfadcc596867c4ffb9241. Original package is preserved unchanged."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi pilot role-consistency correction",
+      "locator": "internal:ismi/everyday-01/05/pilot-release-2026-10-03",
+      "rights": "Original Ismi instruction/metadata correction; no third-party material added.",
+      "notes": "e05-01 prompt roles aligned to existing address; speaker continues into question. Existing Arabic, transliteration, translations, accepted answers, rationales and teaching sources are unchanged. Prepared for owner review; no native-expert approval claimed."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian adjectives: good, plural",
+      "locator": "https://resources.lingualism.com/levantine-arabic/adjectives-3/",
+      "rights": "Reference for language facts only; no publisher examples, recordings or datasets reproduced.",
+      "notes": "Publisher entry good inspected October 9, 2026: singular mnīɧ, plural mnāɧ. Ismi displays ḥ consistently. Supports the preferred plural, not exclusion of all variants or native review of these sentences."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "F12.2 correction draft",
+      "locator": "internal:ismi/everyday-01/05/transliteration-audit-2026-10-09",
+      "rights": "Original Ismi help, rationale and draft composition.",
+      "notes": "Based on immutable F08 package 05-lesson.json, SHA-256 d56f294d0a78017a14af5039fc0d6bf386b843e0d075708aec4ef39dfe4e78fa. AI-assisted correction draft; owner approval and speaker pronunciation review pending. No publication or recording approval."
+    }
+  ]
+}

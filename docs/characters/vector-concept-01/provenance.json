@@ -1,0 +1,46 @@
+{
+  "status": "local concept; owner review pending",
+  "createdOn": "2026-10-08",
+  "authorship": "Original SVG paths authored by Codex; AI-assisted vector artwork, not a human illustrator commission or image_gen raster output.",
+  "references": "Existing Ismi character identities and owner palette direction; no third-party artwork copied.",
+  "model": "Shared fixed face, hair and clothing geometry; expression-specific facial paths.",
+  "delivery": "Docs-only concept; no production registry/assets replaced.",
+  "files": [
+    {
+      "path": "fattoush-attentive.svg",
+      "sha256": "dde480aac4e10de78b84129c2048db726826d2813be390826c23cde142325a8a"
+    },
+    {
+      "path": "fattoush-encouraging.svg",
+      "sha256": "c0586e1f79af10e9da0e37ba1f888e94fc07fc18ba33878793bdb92491319b82"
+    },
+    {
+      "path": "fattoush-neutral.svg",
+      "sha256": "0219986a75f888c17c8fe891f08e452e54531c62655f804c5c807ab61ae5fc03"
+    },
+    {
+      "path": "fattoush-profile.svg",
+      "sha256": "c8f3a7b77df90094698304be5b866cb1e31e73fd69e771acd7006bbca2a31637"
+    },
+    {
+      "path": "knafeh-attentive.svg",
+      "sha256": "1810a4faf6df0bf4df9c8d187faaa7e6fabcc927eb60a2bba70184a678db74ae"
+    },
+    {
+      "path": "knafeh-encouraging.svg",
+      "sha256": "11db3de98bde03b9387bca15065e176f17694bb7ff0045bb47a7f53cac658983"
+    },
+    {
+      "path": "knafeh-neutral.svg",
+      "sha256": "fe2b522cfe90bfdc9517fa41d77f23a60eb3f8cd3e01c6b3bb0f66b0cd85a591"
+    },
+    {
+      "path": "knafeh-profile.svg",
+      "sha256": "dcd33c7ac9c55e649d2b3afde830df6ea260f927eebdd3bce17a886ba2dd0468"
+    },
+    {
+      "path": "model-sheet.svg",
+      "sha256": "fbee228fbba14f7acd3e9642706788b9e652d08869a22b352d00b7212ab1f11b"
+    }
+  ]
+}

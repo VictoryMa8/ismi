@@ -145,8 +145,9 @@ export function queueCompletion(completion: PendingCompletion): Promise<IDBValid
   return useStore(completionStore, 'readwrite', store => store.put(completion))
 }
 
-export function getPendingCompletions(): Promise<PendingCompletion[]> {
-  return useStore(completionStore, 'readonly', store => store.getAll())
+export async function getPendingCompletions(scope = 'guest'): Promise<PendingCompletion[]> {
+  return (await useStore<PendingCompletion[]>(completionStore, 'readonly', store => store.getAll()))
+    .filter(completion => (completion.scope ?? 'guest') === scope)
 }
 
 export function removePendingCompletion(completionId: string): Promise<undefined> {

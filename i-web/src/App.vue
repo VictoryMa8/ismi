@@ -26,6 +26,7 @@ import LessonStages from './LessonStages.vue';
 import LessonScroll from './LessonScroll.vue';
 import SoundToggle from './SoundToggle.vue';
 import ReviewPractice from './ReviewPractice.vue';
+import LearnedWords from './LearnedWords.vue';
 import CharacterCast from './CharacterCast.vue';
 import CharacterCue from './CharacterCue.vue';
 import { isLearnerRoute } from './routes';
@@ -71,10 +72,12 @@ const practiceMode = ref(false);
 const reviewOpen = ref(false);
 const reviewAudioPlaying = ref(false);
 const reviewScope = ref('guest');
+const dashboardScope = ref('');
 const reviewHistoryError = ref('');
 const reviewHistoryRevision = ref(0);
 let stepAttemptCount = 0;
 const introductionOpen = ref(false);
+const glossaryCardIndex = ref<number | undefined>();
 const teachingWasCompleted = ref(false);
 const buildComplete = ref(false);
 const showEnglishHelp = ref(false);
@@ -548,11 +551,13 @@ async function playPromptAudio() {
 }
 
 async function loadDashboard() {
+  const scope = reviewScope.value;
   await studySettings.load(reviewScope.value, authSession.value.isAuthenticated);
   let loadedDashboard: DashboardResponse | undefined;
 
   try {
     loadedDashboard = await getDashboard();
+    if (scope !== reviewScope.value) return;
     apiLive.value = true;
     try {
       await cacheDashboard(loadedDashboard, reviewScope.value);
@@ -562,12 +567,13 @@ async function loadDashboard() {
   } catch {
     apiLive.value = false;
     try {
-      loadedDashboard = await getCachedDashboard(reviewScope.value);
+      loadedDashboard = await getCachedDashboard(scope);
     } catch {
       loadedDashboard = undefined;
     }
   }
 
+  if (scope !== reviewScope.value) return;
   if (loadedDashboard) {
     loadedDashboard.dailyPlan.lessons ??= [];
     const today = new Date().toISOString().slice(0, 10);
@@ -578,10 +584,11 @@ async function loadDashboard() {
     }
     loadedDashboard.dailyPlan.studyDate = today;
     dashboard.value = loadedDashboard;
+    dashboardScope.value = scope;
   }
 
   try {
-    const pending = await getPendingCompletions();
+    const pending = await getPendingCompletions(reviewScope.value);
     pendingSyncCount.value = pending.length;
     const completedIds = new Set(
       dashboard.value.dailyPlan.lessons
@@ -673,7 +680,7 @@ async function syncPendingCompletions() {
 
   let pending: PendingCompletion[];
   try {
-    pending = await getPendingCompletions();
+    pending = await getPendingCompletions(reviewScope.value);
   } catch {
     return;
   }
@@ -700,13 +707,14 @@ async function syncPendingCompletions() {
   }
 
   try {
-    pendingSyncCount.value = (await getPendingCompletions()).length;
+    pendingSyncCount.value = (await getPendingCompletions(reviewScope.value)).length;
   } catch {
     pendingSyncCount.value = 0;
   }
 }
 
 async function previewLesson(draft: LessonResponse, opener: HTMLElement) {
+  glossaryCardIndex.value = undefined;
   lessonSession++;
   checkingAnswer.value = false;
   lessonOpener = opener;
@@ -730,7 +738,12 @@ async function previewLesson(draft: LessonResponse, opener: HTMLElement) {
   lessonCloseButton.value?.focus();
 }
 
-async function startLesson(requestedId?: string, practiceOnly = false) {
+async function openGlossaryLesson(id: string, cardIndex: number) {
+  await startLesson(id, true, cardIndex);
+}
+
+async function startLesson(requestedId?: string, practiceOnly = false, cardIndex?: number) {
+  glossaryCardIndex.value = cardIndex;
   const session = ++lessonSession;
   checkingAnswer.value = false;
   lessonOpener = document.activeElement as HTMLElement | null;
@@ -961,6 +974,7 @@ async function finishLesson() {
   }
 
   const completion: PendingCompletion = {
+    scope: reviewScope.value,
     completionId: crypto.randomUUID?.() ?? `${lesson.value.id}-${Date.now()}`,
     lessonId: lesson.value.id,
     completedAt: new Date().toISOString(),
@@ -1344,6 +1358,13 @@ async function finishLesson() {
           @prompt-playback="reviewAudioPlaying = $event"
         />
         <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
+        <LearnedWords
+          :scope="reviewScope"
+          :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []"
+          :suspended="lessonOpen || reviewOpen || page !== 'practice'"
+          @open-lesson="openGlossaryLesson"
+          @prompt-playback="reviewAudioPlaying = $event"
+        />
         <h2 class="practice-lessons-title">Lesson practice</h2>
         <section class="practice-list" aria-label="Practice lessons">
           <button
@@ -1671,6 +1692,7 @@ async function finishLesson() {
             :key="lesson.version"
             :lesson="lesson"
             :review="practiceMode || teachingWasCompleted"
+            :start-card-index="glossaryCardIndex"
             @done="beginPractice"
           />
           <section

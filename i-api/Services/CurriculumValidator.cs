@@ -156,6 +156,28 @@ public sealed class CurriculumValidator(RecordingStore recordings)
         if (lesson.ReviewStatus == "owner-review" && lesson.Introduction is null)
             errors.Add("Owner-review lesson packages require a dialogue and teaching notes.");
 
+        if (lesson.Vocabulary is { } vocabulary)
+        {
+            DuplicateErrors(errors, vocabulary.Select(entry => entry.Id + ":" + entry.SenseId), "vocabulary sense");
+            foreach (var entry in vocabulary)
+            {
+                foreach (var field in new[] { entry.Id, entry.SenseId, entry.Arabic, entry.Arabizi,
+                    entry.Meaning, entry.Dialect, entry.Register, entry.Note })
+                    Required(errors, field, "Vocabulary requires stable IDs, text, dialect/register and context notes.");
+                if (entry.Kind is not ("word" or "expression")) errors.Add("Vocabulary kind must be word or expression.");
+                if (entry.Dialect is not ("palestinian-urban" or "jordanian")) errors.Add("Vocabulary needs an explicit supported dialect.");
+                if (entry.SourceLocators.Count == 0 || entry.SourceLocators.Any(locator =>
+                    string.IsNullOrWhiteSpace(locator) || !sources.Any(source => source.Locator == locator)))
+                    errors.Add("Vocabulary must link to supplied provenance sources.");
+                if (entry.Forms.Any(string.IsNullOrWhiteSpace)) errors.Add("Vocabulary forms cannot be blank.");
+                var card = lesson.Introduction?.TeachingCards?.ElementAtOrDefault(entry.TeachingCardIndex);
+                if (entry.TeachingCardIndex < 0 || card is null || !(
+                    (card.Phrase.Arabic == entry.Arabic && card.Phrase.Arabizi == entry.Arabizi && card.Phrase.Meaning == entry.Meaning)
+                    || card.Chunks.Any(chunk => chunk.Arabic == entry.Arabic && chunk.Arabizi == entry.Arabizi && chunk.Meaning == entry.Meaning)))
+                    errors.Add("Vocabulary must match its authored teaching phrase or building block exactly.");
+            }
+        }
+
         if (sources.Count == 0) errors.Add("At least one provenance source is required.");
         for (var index = 0; index < sources.Count; index++)
         {
@@ -172,6 +194,8 @@ public sealed class CurriculumValidator(RecordingStore recordings)
 
     public static bool HasReadableShape(LessonResponse? lesson, IReadOnlyCollection<CurriculumSourceInput>? sources) =>
         lesson is { Id: not null, TrackId: not null, Steps: not null }
+        && (lesson.Vocabulary is null || lesson.Vocabulary.All(entry => entry is
+            { Forms: not null, SourceLocators: not null }))
         && sources is not null && sources.All(source => source is not null)
         && lesson.Steps.All(step => step is { Prompt: not null, Answers: not null, Evaluation: not null }
             && step.Answers.All(answer => answer is not null))

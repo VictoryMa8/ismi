@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 7, 2026 · **Start here for current feature status.**
+Updated October 9, 2026 · **Start here for current feature status.**
 
 This is the single current plan. [AGENTS.md](AGENTS.md) holds product constraints;
 [the planning workflow](docs/planning-workflow.md) explains how agents maintain
@@ -27,7 +27,11 @@ See [packages and verification](content/levantine/plans-02/README.md).
 in Today and Practice, with deterministic offline intervals and version handling.
 [Policy and verification](docs/scheduled-review.md). Code release `89a6537` is pushed and deployed to Vercel; live review opening verified.
 
-**Now:** the learner/offline foundation, guided teaching, manual and scheduled review/checkpoints,
+**F20 — Complete October 8; October 9 rollout in progress:** learned-word search/filter in Practice, with
+source-linked teaching contexts, synced account inclusion and offline persistence.
+[Behavior and verification](docs/learned-word-glossary.md). Owner authorized code push/deployment October 9; [rollout record](docs/releases/2026-10-09.md).
+
+**Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. API release `5fead73` is verified; frontend confirmation remains open. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
@@ -58,7 +62,8 @@ and beta evidence remain separate dependencies.
 | [F03](#f03-levantine-curriculum-console) | Levantine curriculum console | Done | Broader content operations remain in F13/F14/F18 |
 | [F04](#f04-first-unit-guided-teaching-packages) | First-unit guided teaching packages | Done | Authored packages; publication belongs to F08 |
 | [F05](#f05-manual-review-and-checkpoints) | Manual review and checkpoints | Done | Scheduling belongs to F10; history stays on device |
-| [F06](#f06-recurring-character-support) | Recurring character support | Done | Final art/package approval belongs to F08 |
+| [F06](#f06-recurring-character-support) | Recurring character support | Done | v1 approved under F08; proposed redesign belongs to F06.1 |
+| [F06.1](#f061-character-art-redesign) | Character art redesign | Needs decision · method rejected | Select illustrator, licensed art or reference-led image generation |
 | [F07](#f07-landing-page-and-app-welcome) | Landing page and app welcome | Done | Deployed; invitation gate belongs to F18 |
 | [F08](#f08-first-unit-revision-release) | First-unit revision release | Done | All seven hosted v2 lessons and 52 source records verified |
 | [F09](#f09-reviewed-levantine-recordings) | Reviewed Levantine recordings | Needs input | Actual recordings, permissions and review |
@@ -67,6 +72,7 @@ and beta evidence remain separate dependencies.
 | [F11](#f11-guided-speaking) | Guided speaking | Needs decision | Choose a first scenario and provider/privacy setup |
 | [F12](#f12-levantine-course-expansion) | Levantine course expansion | Active · drafts ready | Review F12.1; remaining twelve-week curriculum stays open |
 | [F12.1](#f121-make-a-plan-together) | Make a plan together | Done · local drafts | Three lessons validated/imported; owner review/publication pending |
+| [F12.2](#f122-transliteration-and-pronunciation-audit) | Transliteration and pronunciation audit | Active · correction drafts validated | Review exact lessons 3/5/7 candidates; speaker/model evidence remains |
 | [F13](#f13-msa-course) | MSA course | Planned | Define first unit and extend publication support |
 | [F14](#f14-quranic-course) | Quranic course | Needs input | Approved source IDs/rights and integrity controls |
 | [F15](#f15-personal-study-plan-and-placement) | Personal study plan and placement | Active · settings done | Scope per-track placement and bootcamp content next |
@@ -75,6 +81,8 @@ and beta evidence remain separate dependencies.
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
+| [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · local | Completed-lesson glossary; synced account inclusion and offline search verified |
+| [F21](#f21-cultural-watch-and-listen-recommendations) | Cultural watch/listen recommendations | Planned | Scope a weekly curated pick; daily cadence remains a choice |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
 Needs decision = a named choice prevents the next step; Needs input = external
@@ -171,6 +179,31 @@ fallbacks. Compatibility handles older names without rewriting stored publicatio
 [metadata packages](content/levantine/everyday-01/revisions/characters/README.md),
 [character checks](i-web/tests/zx-characters.spec.ts), [rename tests](i-tests/CharacterRenameTests.cs).
 Narrative expansion and final art/package approval are outside this implementation scope.
+
+### F06.1 Character art redesign
+
+**Status:** Needs decision — owner scrapped the programmatically drawn SVG method
+October 8 after rejecting both studies. The redesign goal remains open.
+**Current scope:** create an editable vector concept/model sheet and a portrait-size
+preview for owner review before replacement assets are integrated.
+**Outcome:** distinctive Fattoush/Knafeh designs with consistent, intentionally drawn
+expressions; F06's working portrait system remains complete.
+**Current result:** studies 01 and 02 are rejected historical comparisons; neither
+is a candidate for integration. No further SVG-path character generation is planned.
+**Next decision:** select a different art route. Recommend a character illustrator,
+chosen from actual finished portfolio work, with a bounded two-character concept
+commission before expression/turnaround production. Alternatives: licensed cohesive
+illustration assets, or image-generation concepts guided by approved visual references.
+No commission, contact, spending or production replacement authorized.
+**Done when:** owner approves the designs; editable sources, authorship/rights and hashes
+are recorded; neutral/attentive/encouraging/profile views remain consistent and legible;
+mobile/desktop, fallback and offline rendering pass with unchanged written roles.
+**Evidence:** [assessment and proposed workflow](docs/characters/redesign-direction-2026-10-08.md),
+[revised concept, editable source and verification](docs/characters/vector-concept-02/README.md).
+Local Chromium desktop/mobile renders inspected; all images load, no horizontal
+overflow, portrait sizing checked. App-level fallback/offline verification remains open.
+**Delivery:** local review assets only; no app replacement, commit/push, publication
+or deployment. Preserve v1 assets and version future art separately.
 
 ### F07 Landing page and app welcome
 
@@ -306,6 +339,37 @@ packages. Files/tests were committed and pushed in `5fead73`; drafts were not
 uploaded or published by the code rollout.
 **Next:** owner previews and reviews the three drafts; publication is a separate
 content decision. F12's twelve-week scope and beta gates remain incomplete.
+
+### F12.2 Transliteration and pronunciation audit
+
+**Status:** Active — correction candidates validated October 9 after owner
+authorization. Owner wording review and actual pronunciation evidence remain open.
+**Scope:** inspect unique Arabic/transliteration pairs across the seven current F08
+packages, three F12.1 drafts and seed fixtures; separate dialect usage, transcription
+conventions, text mismatches and actual pronunciation evidence.
+**Findings:** 611 paired objects / 214 unique pairs across ten packages, plus 16
+seed prompt/answer pairs inventoried and text-screened. Palestinian references support
+`مناح / mnāḥ` as the preferred plural; `law` represents /aw/, with pronunciation help
+needed for English readers. Other vowel/model checks require speaker evidence.
+**Current result October 9:** three exact candidates for lessons 3/5/7 correct all
+eight plural pairs and add pronunciation help while retaining law and listener
+endings. Source records, explanations, contextual grading and explicit glossary
+senses are matched; candidate/predecessor hashes and readable field reviews are saved.
+29 API tests pass, including draft validation/import/privacy and history preservation
+in a disposable database. No native/speaker pronunciation approval is claimed.
+**Next:** owner reviews the exact candidates; obtain identified urban Palestinian
+speaker/model dispositions for outstanding pronunciation flags. Reconcile existing
+local drafts before default-database integration; publication remains a separate gate.
+**Done when:** inventory coverage is recorded; each flagged form has a source-backed
+disposition; justified corrections are draft-validated and reviewed; unresolved
+speaker/audio questions are explicit. Text checks alone do not verify pronunciation.
+**Depends on:** approved-source constraints and reviewed Palestinian pronunciation
+for audio claims. Revised package approval/publication and recording-script/hash
+reconciliation are separate gates; preserve published release snapshots.
+**Evidence:** [audit findings](docs/research/levantine-transliteration-audit-2026-10-08.md),
+[correction candidates, reviews and verification](content/levantine/everyday-01/revisions/transliteration-audit/README.md).
+**Delivery:** local candidate files/tests. Default database drafts 20/22/17 preserved;
+no hosted inspection, curriculum approval/publication, commit/push or deployment.
 
 ### F13 MSA course
 
@@ -453,7 +517,73 @@ retains pronunciation errors; no clips accepted or native review established. Fu
 and ignored. No audio integrated into the application or database.
 New audio publication and any code rollout are separate from the already-approved v2 text/art release.
 
+### F20 Learned-word glossary
+
+**Status:** Done — October 8, 2026; implemented locally.
+**Scope delivered:** free learned-word glossary in Practice, populated only by completed
+lessons; Arabic/English/transliteration search, track/dialect/type filters, pagination,
+source references, authored forms/usage notes and links to the exact teaching card.
+Stable vocabulary/sense IDs deduplicate contexts while keeping meanings and variants
+separate. Missing forms/audio are explicit; no mastery or native-review claim.
+**Synchronization:** owner selected existing synced account completions as inclusion.
+Fresh online devices fetch completed packages; guest/account dashboards and pending
+completions remain isolated. Offline search uses scoped progress and downloaded versions;
+word edits, mastery, filters and review history have no new synchronization scope.
+**Content:** 123 distinct word/expression senses copied from 43 approved Everyday
+teaching cards (159 occurrences), with exact text/notes/source matching. Explicit
+vocabulary metadata supports future console-approved packages; demonstrative seeds and
+unpublished Plans drafts are excluded. F12.2 flags are shown without silent corrections.
+**Evidence:** [behavior, source boundary and verification](docs/learned-word-glossary.md),
+[interface](i-web/src/LearnedWords.vue), [model/catalog matching](i-web/src/glossary.ts),
+[browser checks](i-web/tests/glossary.spec.ts),
+[publication checks](i-tests/CurriculumApiTests.cs). Production build and 28 API tests
+pass; six focused glossary checks cover offline completion/reload, identity and
+cross-device inclusion, content changes/withdrawal, audio and keyboard/RTL/LTR layout.
+All 55 distinct browser checks pass across the broad/final focused runs; the
+[feature note](docs/learned-word-glossary.md) records initial timing/rate-limit failures
+and the final 10/10 rerun.
+**Next:** optional authorized rollout; additional reviewed forms/content follow the
+normal console workflow. F12.2 corrections, real audio and F18 real assistive-technology/
+supported-browser evidence remain separate work.
+**Delivery:** local code and compatibility catalog only; no commit/push, deployment,
+new curriculum publication, external services or data migration to the host.
+
+### F21 Cultural watch and listen recommendations
+
+**Status:** Planned — owner proposed daily or weekly recommendations October 8.
+**Outcome:** Ismi recommends a podcast, video or movie that supports cultural immersion,
+with track/dialect, difficulty, duration, subtitle/transcript availability, access/cost
+and a brief learning prompt. Use permitted external links to original publishers.
+**Next decision:** choose cadence and first curated scope. Recommend one weekly pick
+for the flagship Palestinian/Levantine track, optionally a short excerpt/time window;
+daily picks can follow once curation is sustainable. Cadence is not yet adopted policy.
+**Done when:** approved curated records display a current pick and past picks; links,
+dialect/level/access labels and factual descriptions are checked; unavailable content
+has a usable fallback; captions/transcript availability is honest. Viewing stays
+optional and does not control core progress/streaks or require a paid media subscription.
+**Depends on:** owner curation policy, permitted links/resources and availability
+checks. This does not create a live-news operation, media hosting or rehosting rights.
+**Delivery:** roadmap proposal only; no external recommendations published.
+
 ## Recent planning changes
+
+- **October 9, 2026 F12.2:** prepared reproducible lessons 3/5/7 plural/help
+  correction candidates with matched source records and glossary senses. All 29 API
+  tests pass; hashes and immutable predecessors verified. Owner wording review and
+  speaker evidence remain open; existing local drafts and hosted content preserved.
+
+- **October 8, 2026 F20:** owner authorized implementation and selected synced account
+  progress for glossary inclusion. Completed source-linked words/expressions, search,
+  filters, teaching-card links, version handling and offline/account isolation locally.
+  Verification and content limitations are in [the feature note](docs/learned-word-glossary.md).
+  No new publication, push or deployment.
+
+- **October 8, 2026 owner feedback and redesign kickoff:** original
+  studies 01/02 were rejected and the SVG drawing method scrapped; F06.1 now needs
+  an alternate art-route decision. App artwork unchanged. Recorded F12.2 desk audit (214 package pairs
+  plus seed fixtures; correction drafts/speaker review remain); added F20 learned-word glossary, F21 cultural watch/listen
+  recommendations and F06.1 drawn-character redesign proposals. No new features,
+  production art integration, curriculum publication or deployment are claimed.
 
 - **October 7, 2026 F10:** owner selected the 1/3/7/14-day policy. Implemented
   due review in Today/Practice with offline, versioned device history. Build,
@@ -464,22 +594,6 @@ New audio publication and any code rollout are separate from the already-approve
   preserved data and removed temporary SSH access. Frontend final verification was
   usage-blocked. F12.1 publication, F10 scheduling policy and F15 placement remain open;
   no additional implementation or curriculum publication started.
-
-- **October 4, 2026 F15.1:** implemented personal study settings and the daily queue,
-  with guest/account persistence and offline conflict resolution. 27 API tests and
-  10 focused browser checks pass. Done locally; F15 placement remains open.
-
-- **October 4, 2026 F12.1:** owner selected course expansion. Authored and validated
-  “Make a plan together”; three lessons imported locally as unapproved drafts 24–26.
-  API/publication-gate and offline browser checks pass. F12.1 Done for draft scope;
-  F12 remains open, with owner content review/publication next.
-
-- **October 3, 2026 Azure audition:** owner authorized the free F0 alternative.
-  Prepared six exact-text SSML requests for Sana/Taim. Sign-in is complete but subscription inventory is empty; owner free-account
-  enrollment and F0 verification are pending. No paid services, resources,
-  generation or publication. F19 Active.
-
-
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

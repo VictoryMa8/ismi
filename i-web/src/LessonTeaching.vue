@@ -14,7 +14,7 @@ import LessonScroll from './LessonScroll.vue';
 import CharacterCast from './CharacterCast.vue';
 import CharacterLabel from './CharacterLabel.vue';
 
-const props = defineProps<{ lesson: LessonResponse; review: boolean }>();
+const props = defineProps<{ lesson: LessonResponse; review: boolean; startCardIndex?: number }>();
 const emit = defineEmits<{ done: [] }>();
 const stage = ref<'scene' | 'learn' | 'recall' | 'pattern'>('scene');
 const index = ref(0);
@@ -52,6 +52,10 @@ const cards = computed<LessonTeachingCard[]>(() => {
     ];
   });
 });
+if (props.startCardIndex !== undefined && props.startCardIndex >= 0 && props.startCardIndex < cards.value.length) {
+  index.value = props.startCardIndex;
+  stage.value = 'learn';
+}
 const card = computed(() => cards.value[index.value]!);
 const patternNotes = computed(() =>
   props.lesson.introduction

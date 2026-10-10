@@ -1,0 +1,46 @@
+{
+  "status": "local concept; owner review pending",
+  "createdOn": "2026-10-08",
+  "authorship": "Original SVG paths authored by Codex; AI-assisted vector artwork, not a human illustrator commission or image_gen raster output.",
+  "references": "Existing Ismi character identities and owner palette direction; no third-party artwork copied.",
+  "model": "Curved front-view geometry shared across expressions; independently drawn side-view skull, hair, ear and beard silhouettes.",
+  "delivery": "Docs-only concept; no production registry/assets replaced.",
+  "files": [
+    {
+      "path": "fattoush-attentive.svg",
+      "sha256": "2898dea2f4242e55ae2f8e8b9ea4a4ed9107dbaa5bf04cc6026ba82db6fc33af"
+    },
+    {
+      "path": "fattoush-encouraging.svg",
+      "sha256": "57b67b93f27307d0bd68d83ead2abab5545477db9b60ceeeb494a50aff4053ad"
+    },
+    {
+      "path": "fattoush-neutral.svg",
+      "sha256": "775fb4322996ff7922296601aab2c0cdd0fa990af11921fd09555256bb5afdbd"
+    },
+    {
+      "path": "fattoush-profile.svg",
+      "sha256": "9af2fb467edd282ebe1c6a6a30609a9d5b4e1cc32196998ea76a941c74e41c79"
+    },
+    {
+      "path": "knafeh-attentive.svg",
+      "sha256": "1f50e9aab5675f91218913ea3224f875e351ccd99f1407ef9ac9186290393a56"
+    },
+    {
+      "path": "knafeh-encouraging.svg",
+      "sha256": "7559e46d3d5b336eebee4e2d5cc15c22b7a68f309010001887b5893081ea10df"
+    },
+    {
+      "path": "knafeh-neutral.svg",
+      "sha256": "80380832f0bd50164b0a50f9b098f120d3eb0a37a451bdef4cdca3eac6112d26"
+    },
+    {
+      "path": "knafeh-profile.svg",
+      "sha256": "fe9c9a1bf5b43a9457172644451d261c6dc99996d3e6fdaac9b90971171201ab"
+    },
+    {
+      "path": "model-sheet.svg",
+      "sha256": "875d026abdb237bd803f630e5c5982c33565e780df16439532188fbd31c14698"
+    }
+  ]
+}

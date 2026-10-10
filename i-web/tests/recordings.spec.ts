@@ -25,7 +25,7 @@ test('console recording publication downloads audio and plays after offline relo
     expect(login.ok()).toBeTruthy()
   }
   const originalVersions = await (await page.request.get('/api/admin/curriculum/versions')).json()
-  const original = originalVersions.find((version: { lessonId: string }) => version.lessonId === 'levantine-day-01')
+  const original = originalVersions.find((version: { lessonId: string; status: string }) => version.lessonId === 'levantine-day-01' && version.status === 'published')
 
   try {
     await page.setViewportSize({ width: 1440, height: 1000 })
@@ -132,6 +132,7 @@ for (const failure of ['missing', 'corrupt'] as const) {
         request.onsuccess = () => resolve(request.result)
         request.onerror = () => reject(request.error)
       })
+      if (!database.objectStoreNames.contains('lessons')) { database.close(); return 0 }
       return new Promise<number>(resolve => {
         const transaction = database.transaction('lessons', 'readonly')
         const request = transaction.objectStore('lessons').count()

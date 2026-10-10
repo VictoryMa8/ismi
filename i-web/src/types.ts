@@ -110,7 +110,15 @@ export type LessonStep = {
   evaluation: LessonEvaluation
 }
 
+export type LessonVocabulary = {
+  id: string; senseId: string; kind: 'word' | 'expression'
+  arabic: string; arabizi: string; meaning: string
+  dialect: string; register: string; forms: string[]; note: string
+  sourceLocators: string[]; teachingCardIndex: number
+}
+
 export type LessonResponse = {
+  vocabulary?: LessonVocabulary[] | null
   characters?: LessonCast | null
   englishHelpInitiallyHidden?: boolean
   introduction?: LessonIntroduction | null
@@ -144,6 +152,7 @@ export type LessonCompletionResponse = {
 }
 
 export type PendingCompletion = {
+  scope?: string
   completionId: string
   lessonId: string
   completedAt: string

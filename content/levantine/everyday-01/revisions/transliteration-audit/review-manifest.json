@@ -1,0 +1,40 @@
+{
+  "asOf": "2026-10-09",
+  "status": "draft-awaiting-owner-review",
+  "published": false,
+  "contentApproved": false,
+  "lessons": [
+    {
+      "lessonId": "levantine-everyday-01-03",
+      "package": "03-lesson.json",
+      "sha256": "443e9b57d226719b8c45ef12855d4cd88fe38e35153d6006173129d6f2ee435b",
+      "basedOnPackage": "../pilot-release/03-lesson.json",
+      "basedOnSha256": "54823a42b60830ead78a2bc665655b3350e8d6be4d26bb5513a3dcc1495615fc",
+      "changedFields": 16,
+      "glossaryEntries": 20
+    },
+    {
+      "lessonId": "levantine-everyday-01-05",
+      "package": "05-lesson.json",
+      "sha256": "0d1f5f19f5a72bcce63e0f0f997fc13603ffeec85daa2527500e7cca6973b3e8",
+      "basedOnPackage": "../pilot-release/05-lesson.json",
+      "basedOnSha256": "d56f294d0a78017a14af5039fc0d6bf386b843e0d075708aec4ef39dfe4e78fa",
+      "changedFields": 23,
+      "glossaryEntries": 20
+    },
+    {
+      "lessonId": "levantine-everyday-01-07",
+      "package": "07-lesson.json",
+      "sha256": "0c4bb4237b6f2b3f1952d1586fd014188aebb9cc5bca91edf2f7c01894c803d5",
+      "basedOnPackage": "../pilot-release/07-lesson.json",
+      "basedOnSha256": "392e49dc764aa1e996654098cccaf3c90b4544b32e02d31c25526b85ed8c3c0a",
+      "changedFields": 11,
+      "glossaryEntries": 22
+    }
+  ],
+  "acceptedVariantPolicy": {
+    "plural": "Teach mnāḥ; do not label mnīḥīn universally invalid. Speaker/model disposition remains pending. These exercises grade authored answer IDs, not free text.",
+    "law": "Keep law (/aw/). lau is a possible display spelling of the same sound, not a new Arabic answer. No app-wide spelling convention change.",
+    "address": "Retain samaḥt/samaḥti and their authored listener roles."
+  }
+}

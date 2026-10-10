@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="../content/levantine/everyday-01/revisions/transliteration-audit/*-lesson.json" Link="transliteration-audit/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../content/levantine/everyday-01/revisions/pilot-release/*-lesson.json" Link="pilot-release/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/plans-02/*-lesson.json" Link="plans-02/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/revisions/characters/*-lesson.json" Link="characters/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/revisions/guided-teaching/*-lesson.json" Link="guided-teaching/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />

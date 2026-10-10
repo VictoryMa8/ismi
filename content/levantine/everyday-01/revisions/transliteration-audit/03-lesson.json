@@ -1,0 +1,1154 @@
+{
+  "lesson": {
+    "id": "levantine-everyday-01-03",
+    "trackId": "levantine",
+    "title": "Want tea or coffee?",
+    "scenario": "Knafeh offers Fattoush a drink while they settle in. Preferences can be personal; choose the response requested by this particular scene.",
+    "steps": [
+      {
+        "id": "e03-01",
+        "instruction": "Offer a choice of drinks to Fattoush.",
+        "prompt": {
+          "arabic": "شاي ولا قهوة؟",
+          "arabizi": "Shāy walla ʾahwe?",
+          "meaning": "Tea or coffee?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بدك شاي ولا قهوة؟",
+            "arabizi": "Biddak shāy walla ʾahwe?",
+            "meaning": "Do you want tea or coffee? (to Knafeh)",
+            "rationale": "Biddak addresses Knafeh, but Fattoush is the listener here."
+          },
+          {
+            "id": "b",
+            "arabic": "بدك شاي ولا قهوة؟",
+            "arabizi": "Biddik shāy walla ʾahwe?",
+            "meaning": "Do you want tea or coffee? (to Fattoush)",
+            "rationale": "Biddik addresses Fattoush, and walla presents the two drinks as alternatives."
+          },
+          {
+            "id": "c",
+            "arabic": "بدك شاي وقهوة؟",
+            "arabizi": "Biddik shāy w-ʾahwe?",
+            "meaning": "Do you want tea and coffee? (to Fattoush)",
+            "rationale": "W means “and”; this offers both together instead of a choice."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Biddik addresses Fattoush, and walla presents the two drinks as alternatives.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Choose the feminine address and the word for “or.”"
+        },
+        "characters": {
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "e03-02",
+        "instruction": "Fattoush wants tea. Reply politely to Knafeh’s offer.",
+        "prompt": {
+          "arabic": "بدك شاي ولا قهوة؟",
+          "arabizi": "Biddik shāy walla ʾahwe?",
+          "meaning": "Do you want tea or coffee? (to Fattoush)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "قهوة، لو سمحتي.",
+            "arabizi": "ʾAhwe, law samaḥti.",
+            "meaning": "Coffee, please. (to Fattoush)",
+            "rationale": "This selects coffee and addresses Fattoush, so both the preference and listener differ. In law, aw sounds like English “how”."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "This politely declines both drinks rather than accepting tea."
+          },
+          {
+            "id": "c",
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Knafeh)",
+            "rationale": "This selects tea and uses law samaḥt for the male listener Knafeh. In law, aw sounds like English “how”."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This selects tea and uses law samaḥt for the male listener Knafeh. In law, aw sounds like English “how”.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Choose tea and a request addressed to Knafeh."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e03-03",
+        "instruction": "Fattoush does not want sugar. Respond to Knafeh.",
+        "prompt": {
+          "arabic": "بدك سكر؟",
+          "arabizi": "Biddik sukkar?",
+          "meaning": "Do you want sugar? (to Fattoush)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، بدون سكر، شكراً.",
+            "arabizi": "Laʾ, bidūn sukkar, shukran.",
+            "meaning": "No, without sugar, thank you.",
+            "rationale": "This explicitly declines sugar while retaining the drink request."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، مع سكر.",
+            "arabizi": "Āh, maʿ sukkar.",
+            "meaning": "Yes, with sugar.",
+            "rationale": "This asks for sugar, the opposite of Fattoush’s preference."
+          },
+          {
+            "id": "c",
+            "arabic": "بحب الشاي أكتر.",
+            "arabizi": "Baḥibb ish-shāy aktar.",
+            "meaning": "I like tea more.",
+            "rationale": "This expresses a drink preference but leaves the sugar question unanswered."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This explicitly declines sugar while retaining the drink request.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Look for bidūn, “without.”"
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e03-04",
+        "instruction": "Explain that you like tea more than coffee.",
+        "prompt": {
+          "arabic": "ليش شاي؟",
+          "arabizi": "Lēsh shāy?",
+          "meaning": "Why tea?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بحب القهوة أكتر.",
+            "arabizi": "Baḥibb il-ʾahwe aktar.",
+            "meaning": "I like coffee more.",
+            "rationale": "This names coffee as the preferred drink."
+          },
+          {
+            "id": "b",
+            "arabic": "بدي شاي.",
+            "arabizi": "Biddi shāy.",
+            "meaning": "I want tea.",
+            "rationale": "This repeats the request without expressing the comparison asked for."
+          },
+          {
+            "id": "c",
+            "arabic": "بحب الشاي أكتر.",
+            "arabizi": "Baḥibb ish-shāy aktar.",
+            "meaning": "I like tea more.",
+            "rationale": "Baḥibb ish-shāy aktar gives a reason: tea is your preference."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Baḥibb ish-shāy aktar gives a reason: tea is your preference.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The preferred drink comes after baḥibb."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e03-05",
+        "instruction": "Knafeh offers Fattoush coffee later. She wants no drink now. Decline politely.",
+        "prompt": {
+          "arabic": "بدك قهوة هلّق؟",
+          "arabizi": "Biddik ʾahwe hallaʾ?",
+          "meaning": "Do you want coffee now? (to Fattoush)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، لو سمحت.",
+            "arabizi": "Āh, law samaḥt.",
+            "meaning": "Yes, please. (to Knafeh)",
+            "rationale": "This accepts the coffee. In law, aw sounds like English “how”."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "A short no plus thanks fits the requested refusal."
+          },
+          {
+            "id": "c",
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Knafeh)",
+            "rationale": "This asks for a different drink; Fattoush wants no drink in this situation. In law, aw sounds like English “how”."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "A short no plus thanks fits the requested refusal.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "You can decline without giving another order."
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e03-06",
+        "instruction": "You are Fattoush. Say what you yourself want, rather than asking Knafeh.",
+        "prompt": {
+          "arabic": "بدك شاي ولا قهوة؟",
+          "arabizi": "Biddik shāy walla ʾahwe?",
+          "meaning": "Do you want tea or coffee? (to Fattoush)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بدي شاي.",
+            "arabizi": "Biddi shāy.",
+            "meaning": "I want tea.",
+            "rationale": "Biddi is the first-person form; the sentence states Fattoush’s own request."
+          },
+          {
+            "id": "b",
+            "arabic": "بدك شاي؟",
+            "arabizi": "Biddak shāy?",
+            "meaning": "Do you want tea? (to Knafeh)",
+            "rationale": "This asks the listener instead of answering about yourself."
+          },
+          {
+            "id": "c",
+            "arabic": "بدها شاي.",
+            "arabizi": "Biddha shāy.",
+            "meaning": "She wants tea.",
+            "rationale": "This reports another woman’s wish, not your own."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Biddi is the first-person form; the sentence states Fattoush’s own request.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Use the ending for “I.”"
+        },
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        }
+      },
+      {
+        "id": "e03-07",
+        "instruction": "Closing exchange, part 1: Fattoush now hosts Knafeh. He chooses coffee. Respond as Knafeh to Fattoush.",
+        "prompt": {
+          "arabic": "بدك شاي ولا قهوة؟",
+          "arabizi": "Biddak shāy walla ʾahwe?",
+          "meaning": "Do you want tea or coffee? (to Knafeh)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Knafeh)",
+            "rationale": "This chooses tea and directs “please” to a man. In law, aw sounds like English “how”."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، شكراً.",
+            "arabizi": "Laʾ, shukran.",
+            "meaning": "No, thank you.",
+            "rationale": "This declines the offer instead of accepting coffee."
+          },
+          {
+            "id": "c",
+            "arabic": "قهوة، لو سمحتي.",
+            "arabizi": "ʾAhwe, law samaḥti.",
+            "meaning": "Coffee, please. (to Fattoush)",
+            "rationale": "Coffee matches Knafeh’s choice, and law samaḥti addresses Fattoush. In law, aw sounds like English “how”."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "Coffee matches Knafeh’s choice, and law samaḥti addresses Fattoush. In law, aw sounds like English “how”.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "The person receiving “please” is Fattoush."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "e03-08",
+        "instruction": "Closing exchange, part 2: Knafeh wants his coffee without sugar. Answer Fattoush.",
+        "prompt": {
+          "arabic": "بدك سكر؟",
+          "arabizi": "Biddak sukkar?",
+          "meaning": "Do you want sugar? (to Knafeh)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، مع سكر.",
+            "arabizi": "Āh, maʿ sukkar.",
+            "meaning": "Yes, with sugar.",
+            "rationale": "This changes the order to coffee with sugar."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، بدون سكر، شكراً.",
+            "arabizi": "Laʾ, bidūn sukkar, shukran.",
+            "meaning": "No, without sugar, thank you.",
+            "rationale": "This completes the order by stating without sugar and thanking Fattoush."
+          },
+          {
+            "id": "c",
+            "arabic": "بحب القهوة أكتر.",
+            "arabizi": "Baḥibb il-ʾahwe aktar.",
+            "meaning": "I like coffee more.",
+            "rationale": "This says he prefers coffee, but does not settle the sugar choice."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this exchange.",
+          "correctExplanation": "This completes the order by stating without sugar and thanking Fattoush.",
+          "incorrectTitle": "Check the situation.",
+          "incorrectExplanation": "This is a possible expression, but it does not meet the request in this situation.",
+          "retryHint": "Answer the specific follow-up, not the earlier drink choice."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 6,
+    "version": "guided-teaching-draft",
+    "unitId": "levantine-everyday-01",
+    "unitTitle": "Everyday conversations with someone you love",
+    "courseOrder": 3,
+    "reviewStatus": "owner-review",
+    "introduction": {
+      "goal": "Offer a drink, express a preference, and politely accept or decline.",
+      "dialogue": [
+        {
+          "speaker": "Knafeh → Fattoush",
+          "line": {
+            "arabic": "بدك شاي ولا قهوة؟",
+            "arabizi": "Biddik shāy walla ʾahwe?",
+            "meaning": "Do you want tea or coffee? (to Fattoush)",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush → Knafeh",
+          "line": {
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Knafeh)",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh → Fattoush",
+          "line": {
+            "arabic": "بدك سكر؟",
+            "arabizi": "Biddik sukkar?",
+            "meaning": "Do you want sugar?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "لا، بدون سكر، شكراً.",
+            "arabizi": "Laʾ, bidūn sukkar, shukran.",
+            "meaning": "No, without sugar, thank you.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "أنا بدي قهوة.",
+            "arabizi": "Ana biddi ʾahwe.",
+            "meaning": "I want coffee.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "بحب الشاي أكتر.",
+            "arabizi": "Baḥibb ish-shāy aktar.",
+            "meaning": "I like tea more.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "بدك شاي ولا قهوة؟",
+          "arabizi": "Biddik shāy walla ʾahwe?",
+          "meaning": "Do you want tea or coffee? (to Fattoush)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "شاي، لو سمحت.",
+          "arabizi": "Shāy, law samaḥt.",
+          "meaning": "Tea, please. (to Knafeh)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "لا، بدون سكر، شكراً.",
+          "arabizi": "Laʾ, bidūn sukkar, shukran.",
+          "meaning": "No, without sugar, thank you.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "بحب الشاي أكتر.",
+          "arabizi": "Baḥibb ish-shāy aktar.",
+          "meaning": "I like tea more.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Offer a choice, name your preference, and add a polite request. Biddi describes what you want; biddak and biddik ask your listener. The ending of law samaḥt or law samaḥti follows the host you address.",
+      "dialectNote": "Urban Palestinian teaching target. This unit uses urban ʾahwe for قهوة. The approved publisher vocabulary reference gives a Gaza pronunciation with g; Maknuune encodes variation with Q. Neither spelling requires every Palestinian speaker to use the same sound. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+      "recordingNote": "No reviewed recordings yet. This six-turn transcript is the recording script: Fattoush uses feminine self-description; Knafeh uses masculine self-description. Read each speaker’s turns in order, then the practice prompts and answer options as separate clips. Retain the marked address distinctions. A Palestinian speaker and owner must check wording/pronunciation before assets are labeled reviewed. Optional device speech is a variable browser preview, not a dialect model.",
+      "sourceLocators": [
+        "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "internal:ismi/everyday-01/03/guided-teaching",
+        "https://palweb.app/library/terms/conjunction-law",
+        "internal:ismi/everyday-01/03/transliteration-audit-2026-10-09"
+      ],
+      "teachingCards": [
+        {
+          "title": "Offer a real choice",
+          "phrase": {
+            "arabic": "بدك شاي ولا قهوة؟",
+            "arabizi": "Biddik shāy walla ʾahwe?",
+            "meaning": "Do you want tea or coffee? (to Fattoush)",
+            "audioUrl": null
+          },
+          "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+          "recallCue": "You are Knafeh. Offer Fattoush tea or coffee.",
+          "chunks": [
+            {
+              "arabic": "بدك",
+              "arabizi": "biddik",
+              "meaning": "do you want · to Fattoush"
+            },
+            {
+              "arabic": "شاي",
+              "arabizi": "shāy",
+              "meaning": "tea"
+            },
+            {
+              "arabic": "ولا",
+              "arabizi": "walla",
+              "meaning": "or"
+            },
+            {
+              "arabic": "قهوة",
+              "arabizi": "ʾahwe",
+              "meaning": "coffee"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "internal:ismi/everyday-01/03/guided-teaching"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Accept politely",
+          "phrase": {
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Knafeh)",
+            "audioUrl": null
+          },
+          "note": "Name the drink, then add law samaḥt when asking Knafeh. The polite ending follows your listener. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+          "recallCue": "You are Fattoush. Ask Knafeh for tea politely.",
+          "chunks": [
+            {
+              "arabic": "شاي",
+              "arabizi": "shāy",
+              "meaning": "tea"
+            },
+            {
+              "arabic": "لو سمحت",
+              "arabizi": "law samaḥt",
+              "meaning": "please · to Knafeh"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "internal:ismi/everyday-01/03/guided-teaching",
+            "https://palweb.app/library/terms/conjunction-law"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Say how you want it",
+          "phrase": {
+            "arabic": "لا، بدون سكر، شكراً.",
+            "arabizi": "Laʾ, bidūn sukkar, shukran.",
+            "meaning": "No, without sugar, thank you.",
+            "audioUrl": null
+          },
+          "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+          "recallCue": "Knafeh asks about sugar. Say no sugar and thank him.",
+          "chunks": [
+            {
+              "arabic": "لا",
+              "arabizi": "laʾ",
+              "meaning": "no"
+            },
+            {
+              "arabic": "بدون",
+              "arabizi": "bidūn",
+              "meaning": "without"
+            },
+            {
+              "arabic": "سكر",
+              "arabizi": "sukkar",
+              "meaning": "sugar"
+            },
+            {
+              "arabic": "شكراً",
+              "arabizi": "shukran",
+              "meaning": "thank you"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "internal:ismi/everyday-01/03/guided-teaching"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Give your preference",
+          "phrase": {
+            "arabic": "بحب الشاي أكتر.",
+            "arabizi": "Baḥibb ish-shāy aktar.",
+            "meaning": "I like tea more.",
+            "audioUrl": null
+          },
+          "note": "Baḥibb says what you like. Aktar adds more, comparing tea with the coffee in this scene.",
+          "recallCue": "Knafeh asks why you chose tea. Say you like it more.",
+          "chunks": [
+            {
+              "arabic": "بحب",
+              "arabizi": "baḥibb",
+              "meaning": "I like"
+            },
+            {
+              "arabic": "الشاي",
+              "arabizi": "ish-shāy",
+              "meaning": "tea · the tea"
+            },
+            {
+              "arabic": "أكتر",
+              "arabizi": "aktar",
+              "meaning": "more"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "internal:ismi/everyday-01/03/guided-teaching"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Ask for yourself",
+          "phrase": {
+            "arabic": "بدي شاي.",
+            "arabizi": "Biddi shāy.",
+            "meaning": "I want tea.",
+            "audioUrl": null
+          },
+          "note": "Biddi means I want. Changing biddik to biddi changes a question about Fattoush into your own request.",
+          "recallCue": "You are Fattoush. Say that you yourself want tea.",
+          "chunks": [
+            {
+              "arabic": "بدي",
+              "arabizi": "biddi",
+              "meaning": "I want"
+            },
+            {
+              "arabic": "شاي",
+              "arabizi": "shāy",
+              "meaning": "tea"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "internal:ismi/everyday-01/03/guided-teaching"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Change the host",
+          "phrase": {
+            "arabic": "قهوة، لو سمحتي.",
+            "arabizi": "ʾAhwe, law samaḥti.",
+            "meaning": "Coffee, please. (to Fattoush)",
+            "audioUrl": null
+          },
+          "note": "Now Fattoush is serving Knafeh. Law samaḥti addresses Fattoush; the drink does not decide that ending. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+          "recallCue": "You are Knafeh. Fattoush is hosting. Ask her for coffee politely.",
+          "chunks": [
+            {
+              "arabic": "قهوة",
+              "arabizi": "ʾahwe",
+              "meaning": "coffee"
+            },
+            {
+              "arabic": "لو سمحتي",
+              "arabizi": "law samaḥti",
+              "meaning": "please · to Fattoush"
+            }
+          ],
+          "sourceLocators": [
+            "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+            "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "internal:ismi/everyday-01/03/guided-teaching",
+            "https://palweb.app/library/terms/conjunction-law"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "vocabulary": [
+      {
+        "id": "lev-047e7ada42ad0f7353569985",
+        "senseId": "sense-047e7ada42ad0f7353569985",
+        "kind": "expression",
+        "arabic": "بدك شاي ولا قهوة؟",
+        "arabizi": "Biddik shāy walla ʾahwe?",
+        "meaning": "Do you want tea or coffee? (to Fattoush)",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-79dd8c54f9e4c793f9c5f946",
+        "senseId": "sense-79dd8c54f9e4c793f9c5f946",
+        "kind": "word",
+        "arabic": "بدك",
+        "arabizi": "biddik",
+        "meaning": "do you want · to Fattoush",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-80e9b7620a22322911d491c5",
+        "senseId": "sense-80e9b7620a22322911d491c5",
+        "kind": "word",
+        "arabic": "شاي",
+        "arabizi": "shāy",
+        "meaning": "tea",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-537996067f212a1cdacdbbd4",
+        "senseId": "sense-537996067f212a1cdacdbbd4",
+        "kind": "word",
+        "arabic": "ولا",
+        "arabizi": "walla",
+        "meaning": "or",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-4f0bddef1715400923d5bd66",
+        "senseId": "sense-4f0bddef1715400923d5bd66",
+        "kind": "word",
+        "arabic": "قهوة",
+        "arabizi": "ʾahwe",
+        "meaning": "coffee",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-f9cd1d66b1b0c01d280e17bf",
+        "senseId": "sense-f9cd1d66b1b0c01d280e17bf",
+        "kind": "expression",
+        "arabic": "شاي، لو سمحت.",
+        "arabizi": "Shāy, law samaḥt.",
+        "meaning": "Tea, please. (to Knafeh)",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Name the drink, then add law samaḥt when asking Knafeh. The polite ending follows your listener. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching",
+          "https://palweb.app/library/terms/conjunction-law"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "id": "lev-86c972581d99c7b0a7530299",
+        "senseId": "sense-86c972581d99c7b0a7530299",
+        "kind": "expression",
+        "arabic": "لو سمحت",
+        "arabizi": "law samaḥt",
+        "meaning": "please · to Knafeh",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Name the drink, then add law samaḥt when asking Knafeh. The polite ending follows your listener. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching",
+          "https://palweb.app/library/terms/conjunction-law"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "id": "lev-a45b31bbb28a40129ef75d8a",
+        "senseId": "sense-a45b31bbb28a40129ef75d8a",
+        "kind": "expression",
+        "arabic": "لا، بدون سكر، شكراً.",
+        "arabizi": "Laʾ, bidūn sukkar, shukran.",
+        "meaning": "No, without sugar, thank you.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-1e595c1d36ab3767f125a92e",
+        "senseId": "sense-1e595c1d36ab3767f125a92e",
+        "kind": "word",
+        "arabic": "لا",
+        "arabizi": "laʾ",
+        "meaning": "no",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-b0c64feab2e8424e3e46a5a9",
+        "senseId": "sense-b0c64feab2e8424e3e46a5a9",
+        "kind": "word",
+        "arabic": "بدون",
+        "arabizi": "bidūn",
+        "meaning": "without",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-5dd0bce19c71ff002eb0e7f0",
+        "senseId": "sense-5dd0bce19c71ff002eb0e7f0",
+        "kind": "word",
+        "arabic": "سكر",
+        "arabizi": "sukkar",
+        "meaning": "sugar",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-b95734e51a05fc2c790fadca",
+        "senseId": "sense-b95734e51a05fc2c790fadca",
+        "kind": "word",
+        "arabic": "شكراً",
+        "arabizi": "shukran",
+        "meaning": "thank you",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-32386a8973800eff5d281844",
+        "senseId": "sense-32386a8973800eff5d281844",
+        "kind": "expression",
+        "arabic": "بحب الشاي أكتر.",
+        "arabizi": "Baḥibb ish-shāy aktar.",
+        "meaning": "I like tea more.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Baḥibb says what you like. Aktar adds more, comparing tea with the coffee in this scene.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-029551d984abac2ad46ae914",
+        "senseId": "sense-029551d984abac2ad46ae914",
+        "kind": "word",
+        "arabic": "بحب",
+        "arabizi": "baḥibb",
+        "meaning": "I like",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Baḥibb says what you like. Aktar adds more, comparing tea with the coffee in this scene.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-8ae4b45079be8a1137fee0ac",
+        "senseId": "sense-8ae4b45079be8a1137fee0ac",
+        "kind": "word",
+        "arabic": "الشاي",
+        "arabizi": "ish-shāy",
+        "meaning": "tea · the tea",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Baḥibb says what you like. Aktar adds more, comparing tea with the coffee in this scene.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-acf8fd2b1e1e7bd69e6cfeb3",
+        "senseId": "sense-acf8fd2b1e1e7bd69e6cfeb3",
+        "kind": "word",
+        "arabic": "أكتر",
+        "arabizi": "aktar",
+        "meaning": "more",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Baḥibb says what you like. Aktar adds more, comparing tea with the coffee in this scene.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-12f5ddc525e5ed17e450d56e",
+        "senseId": "sense-12f5ddc525e5ed17e450d56e",
+        "kind": "expression",
+        "arabic": "بدي شاي.",
+        "arabizi": "Biddi shāy.",
+        "meaning": "I want tea.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddi means I want. Changing biddik to biddi changes a question about Fattoush into your own request.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 4
+      },
+      {
+        "id": "lev-b1a6d94de733ebbfc6a425cd",
+        "senseId": "sense-b1a6d94de733ebbfc6a425cd",
+        "kind": "word",
+        "arabic": "بدي",
+        "arabizi": "biddi",
+        "meaning": "I want",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddi means I want. Changing biddik to biddi changes a question about Fattoush into your own request.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 4
+      },
+      {
+        "id": "lev-62dca8281d66af02a10472b0",
+        "senseId": "sense-62dca8281d66af02a10472b0",
+        "kind": "expression",
+        "arabic": "قهوة، لو سمحتي.",
+        "arabizi": "ʾAhwe, law samaḥti.",
+        "meaning": "Coffee, please. (to Fattoush)",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Now Fattoush is serving Knafeh. Law samaḥti addresses Fattoush; the drink does not decide that ending. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching",
+          "https://palweb.app/library/terms/conjunction-law"
+        ],
+        "teachingCardIndex": 5
+      },
+      {
+        "id": "lev-d336d5fd98653014a9fb0a85",
+        "senseId": "sense-d336d5fd98653014a9fb0a85",
+        "kind": "expression",
+        "arabic": "لو سمحتي",
+        "arabizi": "law samaḥti",
+        "meaning": "please · to Fattoush",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Now Fattoush is serving Knafeh. Law samaḥti addresses Fattoush; the drink does not decide that ending. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching",
+          "https://palweb.app/library/terms/conjunction-law"
+        ],
+        "teachingCardIndex": 5
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "reference-lexicon",
+      "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+      "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+      "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Verbs in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism — Food and Drink in Palestinian Arabic",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+      "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi original dialogue and contextual answer design",
+      "locator": "internal:ismi/everyday-01/03/draft-1",
+      "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+      "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi guided teaching and contextual recall revision",
+      "locator": "internal:ismi/everyday-01/03/guided-teaching",
+      "rights": "Original Ismi explanations, recall cues and phrase grouping. No publisher examples, tables or audio reproduced.",
+      "notes": "Authored September 30, 2026. 6 phrase cards reuse the existing source-linked unit language and address distinctions. Per-card sources identify lexical/morphology support; the contextual exchanges and chunk glosses are AI-assisted compositions for owner approval. Existing foundation records retain exact Maknuune IDs and publisher locators. No native-expert review, publication authorization, new speaker evidence, or learning-outcome validation claimed. Prior portable package: ../../03-lesson.json; SHA-256 3325265586e0f9adfbf8ee25452ab5dfe69bce741a0d65ba120fe0f2297b3ad8. Original package is preserved unchanged."
+    },
+    {
+      "sourceType": "reference-lexicon",
+      "title": "PalWeb Palestinian dictionary: لو / law",
+      "locator": "https://palweb.app/library/terms/conjunction-law",
+      "rights": "Reference for language facts only; no publisher examples, recordings or datasets reproduced.",
+      "notes": "Dictionary transcription /law/ and phrase membership لو سمحت inspected October 9, 2026. English “how” is an Ismi pronunciation cue for /aw/, not a recording or full pronunciation assessment."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "F12.2 correction draft",
+      "locator": "internal:ismi/everyday-01/03/transliteration-audit-2026-10-09",
+      "rights": "Original Ismi help, rationale and draft composition.",
+      "notes": "Based on immutable F08 package 03-lesson.json, SHA-256 54823a42b60830ead78a2bc665655b3350e8d6be4d26bb5513a3dcc1495615fc. AI-assisted correction draft; owner approval and speaker pronunciation review pending. No publication or recording approval."
+    }
+  ]
+}

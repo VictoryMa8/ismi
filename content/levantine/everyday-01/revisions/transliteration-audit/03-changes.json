@@ -1,0 +1,594 @@
+[
+  {
+    "path": "/lesson/introduction/dialectNote",
+    "before": "Urban Palestinian teaching target. This unit uses urban ʾahwe for قهوة. The approved publisher vocabulary reference gives a Gaza pronunciation with g; Maknuune encodes variation with Q. Neither spelling requires every Palestinian speaker to use the same sound. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit.",
+    "after": "Urban Palestinian teaching target. This unit uses urban ʾahwe for قهوة. The approved publisher vocabulary reference gives a Gaza pronunciation with g; Maknuune encodes variation with Q. Neither spelling requires every Palestinian speaker to use the same sound. Transliteration: ā/ī/ū and ē/ō mark long vowels; ʿ = ع, ḥ = ح, ʾ = glottal stop, sh = ش, kh = خ, gh = غ. Doubled letters are held longer. Jordanian alternatives are not introduced in this unit. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener."
+  },
+  {
+    "path": "/lesson/introduction/sourceLocators",
+    "before": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "internal:ismi/everyday-01/03/guided-teaching"
+    ],
+    "after": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "internal:ismi/everyday-01/03/guided-teaching",
+      "https://palweb.app/library/terms/conjunction-law",
+      "internal:ismi/everyday-01/03/transliteration-audit-2026-10-09"
+    ]
+  },
+  {
+    "path": "/lesson/introduction/teachingCards/1/note",
+    "before": "Name the drink, then add law samaḥt when asking Knafeh. The polite ending follows your listener.",
+    "after": "Name the drink, then add law samaḥt when asking Knafeh. The polite ending follows your listener. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener."
+  },
+  {
+    "path": "/lesson/introduction/teachingCards/1/sourceLocators",
+    "before": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "internal:ismi/everyday-01/03/guided-teaching"
+    ],
+    "after": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "internal:ismi/everyday-01/03/guided-teaching",
+      "https://palweb.app/library/terms/conjunction-law"
+    ]
+  },
+  {
+    "path": "/lesson/introduction/teachingCards/5/note",
+    "before": "Now Fattoush is serving Knafeh. Law samaḥti addresses Fattoush; the drink does not decide that ending.",
+    "after": "Now Fattoush is serving Knafeh. Law samaḥti addresses Fattoush; the drink does not decide that ending. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener."
+  },
+  {
+    "path": "/lesson/introduction/teachingCards/5/sourceLocators",
+    "before": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "internal:ismi/everyday-01/03/guided-teaching"
+    ],
+    "after": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "internal:ismi/everyday-01/03/guided-teaching",
+      "https://palweb.app/library/terms/conjunction-law"
+    ]
+  },
+  {
+    "path": "/lesson/steps/1/answers/0/rationale",
+    "before": "This selects coffee and addresses Fattoush, so both the preference and listener differ.",
+    "after": "This selects coffee and addresses Fattoush, so both the preference and listener differ. In law, aw sounds like English “how”."
+  },
+  {
+    "path": "/lesson/steps/1/answers/2/rationale",
+    "before": "This selects tea and uses law samaḥt for the male listener Knafeh.",
+    "after": "This selects tea and uses law samaḥt for the male listener Knafeh. In law, aw sounds like English “how”."
+  },
+  {
+    "path": "/lesson/steps/1/evaluation/correctExplanation",
+    "before": "This selects tea and uses law samaḥt for the male listener Knafeh.",
+    "after": "This selects tea and uses law samaḥt for the male listener Knafeh. In law, aw sounds like English “how”."
+  },
+  {
+    "path": "/lesson/steps/4/answers/0/rationale",
+    "before": "This accepts the coffee.",
+    "after": "This accepts the coffee. In law, aw sounds like English “how”."
+  },
+  {
+    "path": "/lesson/steps/4/answers/2/rationale",
+    "before": "This asks for a different drink; Fattoush wants no drink in this situation.",
+    "after": "This asks for a different drink; Fattoush wants no drink in this situation. In law, aw sounds like English “how”."
+  },
+  {
+    "path": "/lesson/steps/6/answers/0/rationale",
+    "before": "This chooses tea and directs “please” to a man.",
+    "after": "This chooses tea and directs “please” to a man. In law, aw sounds like English “how”."
+  },
+  {
+    "path": "/lesson/steps/6/answers/2/rationale",
+    "before": "Coffee matches Knafeh’s choice, and law samaḥti addresses Fattoush.",
+    "after": "Coffee matches Knafeh’s choice, and law samaḥti addresses Fattoush. In law, aw sounds like English “how”."
+  },
+  {
+    "path": "/lesson/steps/6/evaluation/correctExplanation",
+    "before": "Coffee matches Knafeh’s choice, and law samaḥti addresses Fattoush.",
+    "after": "Coffee matches Knafeh’s choice, and law samaḥti addresses Fattoush. In law, aw sounds like English “how”."
+  },
+  {
+    "path": "/lesson/vocabulary",
+    "before": null,
+    "after": [
+      {
+        "id": "lev-047e7ada42ad0f7353569985",
+        "senseId": "sense-047e7ada42ad0f7353569985",
+        "kind": "expression",
+        "arabic": "بدك شاي ولا قهوة؟",
+        "arabizi": "Biddik shāy walla ʾahwe?",
+        "meaning": "Do you want tea or coffee? (to Fattoush)",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-79dd8c54f9e4c793f9c5f946",
+        "senseId": "sense-79dd8c54f9e4c793f9c5f946",
+        "kind": "word",
+        "arabic": "بدك",
+        "arabizi": "biddik",
+        "meaning": "do you want · to Fattoush",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-80e9b7620a22322911d491c5",
+        "senseId": "sense-80e9b7620a22322911d491c5",
+        "kind": "word",
+        "arabic": "شاي",
+        "arabizi": "shāy",
+        "meaning": "tea",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-537996067f212a1cdacdbbd4",
+        "senseId": "sense-537996067f212a1cdacdbbd4",
+        "kind": "word",
+        "arabic": "ولا",
+        "arabizi": "walla",
+        "meaning": "or",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-4f0bddef1715400923d5bd66",
+        "senseId": "sense-4f0bddef1715400923d5bd66",
+        "kind": "word",
+        "arabic": "قهوة",
+        "arabizi": "ʾahwe",
+        "meaning": "coffee",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddik addresses Fattoush. Walla offers alternatives: tea or coffee. Biddak is the form for Knafeh.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "id": "lev-f9cd1d66b1b0c01d280e17bf",
+        "senseId": "sense-f9cd1d66b1b0c01d280e17bf",
+        "kind": "expression",
+        "arabic": "شاي، لو سمحت.",
+        "arabizi": "Shāy, law samaḥt.",
+        "meaning": "Tea, please. (to Knafeh)",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Name the drink, then add law samaḥt when asking Knafeh. The polite ending follows your listener. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching",
+          "https://palweb.app/library/terms/conjunction-law"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "id": "lev-86c972581d99c7b0a7530299",
+        "senseId": "sense-86c972581d99c7b0a7530299",
+        "kind": "expression",
+        "arabic": "لو سمحت",
+        "arabizi": "law samaḥt",
+        "meaning": "please · to Knafeh",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Name the drink, then add law samaḥt when asking Knafeh. The polite ending follows your listener. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching",
+          "https://palweb.app/library/terms/conjunction-law"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "id": "lev-a45b31bbb28a40129ef75d8a",
+        "senseId": "sense-a45b31bbb28a40129ef75d8a",
+        "kind": "expression",
+        "arabic": "لا، بدون سكر، شكراً.",
+        "arabizi": "Laʾ, bidūn sukkar, shukran.",
+        "meaning": "No, without sugar, thank you.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-1e595c1d36ab3767f125a92e",
+        "senseId": "sense-1e595c1d36ab3767f125a92e",
+        "kind": "word",
+        "arabic": "لا",
+        "arabizi": "laʾ",
+        "meaning": "no",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-b0c64feab2e8424e3e46a5a9",
+        "senseId": "sense-b0c64feab2e8424e3e46a5a9",
+        "kind": "word",
+        "arabic": "بدون",
+        "arabizi": "bidūn",
+        "meaning": "without",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-5dd0bce19c71ff002eb0e7f0",
+        "senseId": "sense-5dd0bce19c71ff002eb0e7f0",
+        "kind": "word",
+        "arabic": "سكر",
+        "arabizi": "sukkar",
+        "meaning": "sugar",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-b95734e51a05fc2c790fadca",
+        "senseId": "sense-b95734e51a05fc2c790fadca",
+        "kind": "word",
+        "arabic": "شكراً",
+        "arabizi": "shukran",
+        "meaning": "thank you",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Laʾ answers the sugar question. Bidūn sukkar specifies without sugar; shukran closes warmly. Laʾ, shukran can decline the drink itself when that is what was offered.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "id": "lev-32386a8973800eff5d281844",
+        "senseId": "sense-32386a8973800eff5d281844",
+        "kind": "expression",
+        "arabic": "بحب الشاي أكتر.",
+        "arabizi": "Baḥibb ish-shāy aktar.",
+        "meaning": "I like tea more.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Baḥibb says what you like. Aktar adds more, comparing tea with the coffee in this scene.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-029551d984abac2ad46ae914",
+        "senseId": "sense-029551d984abac2ad46ae914",
+        "kind": "word",
+        "arabic": "بحب",
+        "arabizi": "baḥibb",
+        "meaning": "I like",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Baḥibb says what you like. Aktar adds more, comparing tea with the coffee in this scene.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-8ae4b45079be8a1137fee0ac",
+        "senseId": "sense-8ae4b45079be8a1137fee0ac",
+        "kind": "word",
+        "arabic": "الشاي",
+        "arabizi": "ish-shāy",
+        "meaning": "tea · the tea",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Baḥibb says what you like. Aktar adds more, comparing tea with the coffee in this scene.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-acf8fd2b1e1e7bd69e6cfeb3",
+        "senseId": "sense-acf8fd2b1e1e7bd69e6cfeb3",
+        "kind": "word",
+        "arabic": "أكتر",
+        "arabizi": "aktar",
+        "meaning": "more",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Baḥibb says what you like. Aktar adds more, comparing tea with the coffee in this scene.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 3
+      },
+      {
+        "id": "lev-12f5ddc525e5ed17e450d56e",
+        "senseId": "sense-12f5ddc525e5ed17e450d56e",
+        "kind": "expression",
+        "arabic": "بدي شاي.",
+        "arabizi": "Biddi shāy.",
+        "meaning": "I want tea.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddi means I want. Changing biddik to biddi changes a question about Fattoush into your own request.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 4
+      },
+      {
+        "id": "lev-b1a6d94de733ebbfc6a425cd",
+        "senseId": "sense-b1a6d94de733ebbfc6a425cd",
+        "kind": "word",
+        "arabic": "بدي",
+        "arabizi": "biddi",
+        "meaning": "I want",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Biddi means I want. Changing biddik to biddi changes a question about Fattoush into your own request.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching"
+        ],
+        "teachingCardIndex": 4
+      },
+      {
+        "id": "lev-62dca8281d66af02a10472b0",
+        "senseId": "sense-62dca8281d66af02a10472b0",
+        "kind": "expression",
+        "arabic": "قهوة، لو سمحتي.",
+        "arabizi": "ʾAhwe, law samaḥti.",
+        "meaning": "Coffee, please. (to Fattoush)",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Now Fattoush is serving Knafeh. Law samaḥti addresses Fattoush; the drink does not decide that ending. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching",
+          "https://palweb.app/library/terms/conjunction-law"
+        ],
+        "teachingCardIndex": 5
+      },
+      {
+        "id": "lev-d336d5fd98653014a9fb0a85",
+        "senseId": "sense-d336d5fd98653014a9fb0a85",
+        "kind": "expression",
+        "arabic": "لو سمحتي",
+        "arabizi": "law samaḥti",
+        "meaning": "please · to Fattoush",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "forms": [],
+        "note": "Now Fattoush is serving Knafeh. Law samaḥti addresses Fattoush; the drink does not decide that ending. In law, pronounce aw as in English “how”. Keep samaḥt for a male listener and samaḥti for a female listener.",
+        "sourceLocators": [
+          "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+          "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "internal:ismi/everyday-01/03/guided-teaching",
+          "https://palweb.app/library/terms/conjunction-law"
+        ],
+        "teachingCardIndex": 5
+      }
+    ]
+  },
+  {
+    "path": "/sources",
+    "before": [
+      {
+        "sourceType": "reference-lexicon",
+        "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+        "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+        "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+      },
+      {
+        "sourceType": "publisher-reference",
+        "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+        "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+        "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+      },
+      {
+        "sourceType": "publisher-reference",
+        "title": "Lingualism — Verbs in Palestinian Arabic",
+        "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+        "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+      },
+      {
+        "sourceType": "publisher-reference",
+        "title": "Lingualism — Food and Drink in Palestinian Arabic",
+        "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+        "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+      },
+      {
+        "sourceType": "original-authoring-record",
+        "title": "Ismi original dialogue and contextual answer design",
+        "locator": "internal:ismi/everyday-01/03/draft-1",
+        "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+        "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+      },
+      {
+        "sourceType": "original-authoring-record",
+        "title": "Ismi guided teaching and contextual recall revision",
+        "locator": "internal:ismi/everyday-01/03/guided-teaching",
+        "rights": "Original Ismi explanations, recall cues and phrase grouping. No publisher examples, tables or audio reproduced.",
+        "notes": "Authored September 30, 2026. 6 phrase cards reuse the existing source-linked unit language and address distinctions. Per-card sources identify lexical/morphology support; the contextual exchanges and chunk glosses are AI-assisted compositions for owner approval. Existing foundation records retain exact Maknuune IDs and publisher locators. No native-expert review, publication authorization, new speaker evidence, or learning-outcome validation claimed. Prior portable package: ../../03-lesson.json; SHA-256 3325265586e0f9adfbf8ee25452ab5dfe69bce741a0d65ba120fe0f2297b3ad8. Original package is preserved unchanged."
+      }
+    ],
+    "after": [
+      {
+        "sourceType": "reference-lexicon",
+        "title": "Maknuune Palestinian Arabic Lexicon — CAMeL Lab",
+        "locator": "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+        "rights": "Consultation for lexical facts only; no dataset, examples, or audio redistribution authorized by this proposal.",
+        "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Covers multiple Palestinian varieties. Check entry-level location/usage labels; do not assume every entry is urban. Reference paper: https://aclanthology.org/2022.wanlp-1.13/. Consulted download: maknuune-v1.0.1.tsv, SHA-256 0c92f52340e8907f3a81cf362990ab805c3ca9ece859644c5ef52eddc14a937d. Entry IDs are stable locators within this snapshot. Download page: https://sites.google.com/nyu.edu/palestine-lexicon/download. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+      },
+      {
+        "sourceType": "publisher-reference",
+        "title": "Matthew Aldrich with Ahmed Younis, Palestinian Arabic Verbs (2021), publisher sample",
+        "locator": "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+        "rights": "Copyright Matthew Aldrich, all rights reserved. Fact checking only; no reproduced tables, examples, or audio.",
+        "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. ISBN 978-1-949650-27-3. Consulted introduction p. ii, pronunciation p. v, tables 1, 2, 34, 55, 56, 104 in the sample. Gaza speaker/model; urban pronunciation requires separate checking. Full grammar chapter listed in contents is NOT evidence of access to that chapter. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+      },
+      {
+        "sourceType": "publisher-reference",
+        "title": "Lingualism — Verbs in Palestinian Arabic",
+        "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+        "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Use entry names as precise sublocators in lesson provenance notes. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+      },
+      {
+        "sourceType": "publisher-reference",
+        "title": "Lingualism — Food and Drink in Palestinian Arabic",
+        "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "rights": "Reference for lexical facts; no permission to copy exercises, illustrative sentences, or audio assumed.",
+        "notes": "Foundation approved by owner on 2026-09-22; finished content still awaits review. Supports food/drink vocabulary checks, not all pragmatic or grammar claims. Lesson-specific checks: Maknuune IDs 964/965/966 (want/I want/negative), 26910 (coffee), 15460 (tea), 14501 (sugar), 16682 (thanks), 665 (yes), 28664 (no). Publisher sample T104/p.105 supports biddi/biddak/biddik; p.109 pronouns. Food/drink entries tea, coffee, sugar, without. The polite requests and preference dialogue are original contextual constructions for owner review; no publisher sentence or audio is reused."
+      },
+      {
+        "sourceType": "original-authoring-record",
+        "title": "Ismi original dialogue and contextual answer design",
+        "locator": "internal:ismi/everyday-01/03/draft-1",
+        "rights": "Original Ismi draft; publisher examples, exercises and audio are not reproduced.",
+        "notes": "AI-assisted composition, not a linguistic source. Source foundation approved September 22, 2026. Every finished dialogue, gender form, answer rationale and teaching note awaits owner review; no native-expert approval claimed."
+      },
+      {
+        "sourceType": "original-authoring-record",
+        "title": "Ismi guided teaching and contextual recall revision",
+        "locator": "internal:ismi/everyday-01/03/guided-teaching",
+        "rights": "Original Ismi explanations, recall cues and phrase grouping. No publisher examples, tables or audio reproduced.",
+        "notes": "Authored September 30, 2026. 6 phrase cards reuse the existing source-linked unit language and address distinctions. Per-card sources identify lexical/morphology support; the contextual exchanges and chunk glosses are AI-assisted compositions for owner approval. Existing foundation records retain exact Maknuune IDs and publisher locators. No native-expert review, publication authorization, new speaker evidence, or learning-outcome validation claimed. Prior portable package: ../../03-lesson.json; SHA-256 3325265586e0f9adfbf8ee25452ab5dfe69bce741a0d65ba120fe0f2297b3ad8. Original package is preserved unchanged."
+      },
+      {
+        "sourceType": "reference-lexicon",
+        "title": "PalWeb Palestinian dictionary: لو / law",
+        "locator": "https://palweb.app/library/terms/conjunction-law",
+        "rights": "Reference for language facts only; no publisher examples, recordings or datasets reproduced.",
+        "notes": "Dictionary transcription /law/ and phrase membership لو سمحت inspected October 9, 2026. English “how” is an Ismi pronunciation cue for /aw/, not a recording or full pronunciation assessment."
+      },
+      {
+        "sourceType": "original-authoring-record",
+        "title": "F12.2 correction draft",
+        "locator": "internal:ismi/everyday-01/03/transliteration-audit-2026-10-09",
+        "rights": "Original Ismi help, rationale and draft composition.",
+        "notes": "Based on immutable F08 package 03-lesson.json, SHA-256 54823a42b60830ead78a2bc665655b3350e8d6be4d26bb5513a3dcc1495615fc. AI-assisted correction draft; owner approval and speaker pronunciation review pending. No publication or recording approval."
+      }
+    ]
+  }
+]

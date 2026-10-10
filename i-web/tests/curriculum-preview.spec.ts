@@ -10,6 +10,7 @@ test('owner imports and completes a saved draft without exposing or caching it',
   await page.getByLabel('Email', { exact: true }).fill('preview-owner@example.test')
   await page.getByLabel('Password', { exact: true }).fill('test-only-long-password')
   await page.getByRole('button', { name: 'Create account', exact: true }).last().click()
+  await expect(page).toHaveURL(/#\/today$/)
   await expect(page.getByRole('button', { name: 'Open account for Preview owner' }).first()).toBeVisible()
   await page.getByRole('button', { name: 'Open account for Preview owner' }).first().click()
   await page.getByRole('button', { name: 'Open curriculum console' }).click()

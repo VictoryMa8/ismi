@@ -14,7 +14,9 @@ public sealed record LessonResponse(
     string ReviewStatus,
     LessonIntroduction? Introduction = null,
     bool EnglishHelpInitiallyHidden = false,
-    LessonCast? Characters = null);
+    LessonCast? Characters = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    IReadOnlyList<LessonVocabulary>? Vocabulary = null);
 
 public sealed record LessonCast(string RegistryVersion, IReadOnlyList<string> CharacterIds);
 public sealed record CharacterRoles(string? SpeakerId = null, string? AddresseeId = null,
@@ -104,3 +106,9 @@ public sealed record LessonDefinition(LessonResponse Response)
         Response.Steps.FirstOrDefault(step =>
             string.Equals(step.Id, stepId, StringComparison.OrdinalIgnoreCase));
 }
+
+// Explicit, source-linked senses; morphology is supplied by authors, never inferred.
+public sealed record LessonVocabulary(string Id, string SenseId, string Kind,
+    string Arabic, string Arabizi, string Meaning, string Dialect, string Register,
+    IReadOnlyList<string> Forms, string Note, IReadOnlyList<string> SourceLocators,
+    int TeachingCardIndex);
