@@ -8,13 +8,13 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**October 9 rollout:** release `662d17c` is pushed and deployed to Vercel and
-alwaysdata. Live glossary/lesson loading, HTTPS health and exact persistent-data
-preservation checks passed. All 29 API tests and 55 distinct browser checks pass
-across broad/focused runs. See [the rollout note](docs/releases/2026-10-09.md).
-F12.2 correction packages are committed drafts; no curriculum was published.
+**October 11 rollout:** frontend release `267f98e` is pushed and deployed to Vercel.
+The live placement check loads the hosted v2 curriculum with dialogue and provenance.
+API release `662d17c` remains deployed; no backend/data/content changes.
+Production build, all 29 API tests and 12 distinct targeted browser checks pass across
+runs. See [the rollout note](docs/releases/2026-10-11.md).
 
-**F15.2 — Complete locally October 11:** optional six-question Levantine starting-point
+**F15.2 — Complete and deployed October 11:** optional six-question Levantine starting-point
 check now works with published lessons, device-scoped results, offline downloads
 and support preferences. [Behavior and verification](docs/placement-starting-point.md).
 Reading/sound bootcamp content and MSA/Quranic assessments remain open under F15.
@@ -38,7 +38,7 @@ source-linked teaching contexts, synced account inclusion and offline persistenc
 [Behavior and verification](docs/learned-word-glossary.md). Live glossary and existing account inclusion verified; [rollout record](docs/releases/2026-10-09.md).
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
-characters, and landing/welcome are implemented. Web/API release `662d17c` is deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
+characters, and landing/welcome are implemented. Frontend release `267f98e` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
@@ -82,7 +82,7 @@ and beta evidence remain separate dependencies.
 | [F13](#f13-msa-course) | MSA course | Planned | Define first unit and extend publication support |
 | [F14](#f14-quranic-course) | Quranic course | Needs input | Approved source IDs/rights and integrity controls |
 | [F15](#f15-personal-study-plan-and-placement) | Personal study plan and placement | Active · Levantine starting check done | Scope reviewed bootcamp content and remaining track assessments |
-| [F15.2](#f152-placement-starting-point) | Placement starting point | Done · local | Published-content Levantine check; bootcamps/other tracks remain open |
+| [F15.2](#f152-placement-starting-point) | Placement starting point | Done · deployed | Published-content Levantine check; bootcamps/other tracks remain open |
 | [F15.1](#f151-personal-study-settings) | Personal study settings | Done · pushed | Goals/tracks drive queue; guest/account offline persistence verified |
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
@@ -103,8 +103,10 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  Latest web/API release `662d17c` is deployed and verified October 9;
-  [rollout evidence](docs/releases/2026-10-09.md).
+  Frontend release `267f98e` is deployed and live-verified October 11;
+  [placement rollout evidence](docs/releases/2026-10-11.md).
+  API release `662d17c` remains deployed and verified October 9;
+  [API rollout evidence](docs/releases/2026-10-09.md).
   F10 frontend release `89a6537` is pushed and verified deployed; see the
   [October 7 release record](docs/releases/2026-10-07.md).
   Code release `5fead73` is committed and pushed; the API is verified deployed.
@@ -439,7 +441,7 @@ Real-device assistive-technology evidence remains part of F18.
 
 ### F15.2 Placement starting point
 
-**Status:** Done — bounded local implementation October 11, 2026.
+**Status:** Done — bounded implementation and frontend deployment October 11, 2026.
 **Scope delivered:** optional six-question Levantine check from the first three
 published, source-linked, non-demonstrative lessons, with original dialogue context,
 optional help and existing reviewed answer rationales/explanations. Skip and retry
@@ -459,8 +461,9 @@ isolation, withdrawn-content handling, keyboard and 320px layout covered. Mobile
 question/result renders inspected; real AT and learner calibration remain open.
 **Next:** F15 reviewed bootcamp content and other-track assessments; account results
 remain device-local with no cross-device placement sync.
-**Delivery:** owner authorized push/deployment October 11. Frontend release pending;
-API stays at `662d17c`. No curriculum publication or database migration.
+**Delivery:** code committed/pushed in `267f98e`; Vercel Ready with the stable alias
+and live published-v2 placement loading verified October 11. API stays at `662d17c`.
+No curriculum publication or database migration.
 [Rollout record](docs/releases/2026-10-11.md).
 
 ### F16 Account recovery and deletion
@@ -613,8 +616,8 @@ checks. This does not create a live-news operation, media hosting or rehosting r
   Levantine starting check using published content, with offline/device identity
   handling and support preferences. Build, 29 API tests and 12 distinct targeted
   browser checks pass across runs. F15 remains open for bootcamp content and other
-  tracks. Owner subsequently authorized push/deployment; frontend rollout pending.
-  API and curriculum unchanged.
+  tracks. Owner authorized push/deployment; frontend release `267f98e` is Ready and
+  live placement loading verified. API and curriculum unchanged.
 
 - **October 9, 2026 rollout:** owner authorized push/deployment. Release `662d17c`
   deployed web/API; live glossary, health and persistent-data preservation passed.

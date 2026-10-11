@@ -1,7 +1,7 @@
 # Placement starting point
 
-F15.2 · October 11, 2026 · Implementation verified; owner-authorized frontend rollout
-pending. [Release record](releases/2026-10-11.md). No curriculum publication.
+F15.2 · October 11, 2026 · Committed/pushed in `267f98e` and deployed to Vercel;
+live published-v2 placement loading verified. [Release record](releases/2026-10-11.md). No curriculum publication.
 
 Account → Find your starting point offers a skippable Palestinian Levantine check.
 MSA and Quranic selections display unavailable assessments and modules explicitly.
@@ -80,3 +80,7 @@ in `App.vue`. Checks: `i-web/tests/placement.spec.ts`.
 Real assistive-technology, supported-device evidence, learner calibration,
 cross-device result sync and hosted verification are outside this slice. New module
 content remains subject to source, validation and owner publication gates.
+
+Live smoke check: Account loads the new check; all six questions initialize from
+hosted lessons, and the first dialogue/question shows v2 and its source locators.
+No answers or results were submitted; existing account progress was unchanged.

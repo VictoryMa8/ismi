@@ -114,11 +114,12 @@ References: [alwaysdata free plan](https://help.alwaysdata.com/en/admin-billing/
 
 ### Latest release
 
-The October 9 code release `662d17c` is deployed to both hosts. The learned-word
-glossary is live; health, dashboard and live glossary checks passed. Hosted accounts,
-progress, curriculum, recordings and cookie keys were preserved. F12.2 correction
-packages remain unapproved drafts; no curriculum publication occurred. See the
-[rollout record](docs/releases/2026-10-09.md) for tests, hashes and rollback locations.
+The October 11 frontend release `267f98e` is deployed to Vercel. The optional
+Levantine starting check loads the existing hosted v2 curriculum; live dialogue,
+question and provenance loading passed. The API remains at the October 9 release
+`662d17c`. No backend, data or curriculum changes were made. See the
+[October 11 rollout record](docs/releases/2026-10-11.md); prior glossary/API
+preservation evidence remains in the [October 9 record](docs/releases/2026-10-09.md).
 
 ### September 27, 2026 release (historical)
 
