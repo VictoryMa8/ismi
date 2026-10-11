@@ -17,6 +17,7 @@ import {
 } from '@lucide/vue';
 import CurriculumConsole from './CurriculumConsole.vue';
 import StudySettings from './StudySettings.vue';
+import PlacementCheck from './PlacementCheck.vue';
 import { buildStudyPlan } from './studyPlan';
 import { useStudySettings } from './useStudySettings';
 import LessonTeaching from './LessonTeaching.vue';
@@ -1413,6 +1414,8 @@ async function finishLesson() {
           @save="async value => { await studySettings.save(value); await cacheUpcomingLessons(); }"
           @resolve="studySettings.resolve"
         />
+        <PlacementCheck :scope="reviewScope" :selected-track-ids="studySettings.preferences.value.selectedTrackIds"
+          :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []" @open-lesson="id => startLesson(id)" />
         <template v-if="authSession.isAuthenticated">
           <div class="account-profile">
             <span class="account-avatar" aria-hidden="true">{{

@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 9, 2026 · **Start here for current feature status.**
+Updated October 11, 2026 · **Start here for current feature status.**
 
 This is the single current plan. [AGENTS.md](AGENTS.md) holds product constraints;
 [the planning workflow](docs/planning-workflow.md) explains how agents maintain
@@ -13,6 +13,11 @@ alwaysdata. Live glossary/lesson loading, HTTPS health and exact persistent-data
 preservation checks passed. All 29 API tests and 55 distinct browser checks pass
 across broad/focused runs. See [the rollout note](docs/releases/2026-10-09.md).
 F12.2 correction packages are committed drafts; no curriculum was published.
+
+**F15.2 — Complete locally October 11:** optional six-question Levantine starting-point
+check now works with published lessons, device-scoped results, offline downloads
+and support preferences. [Behavior and verification](docs/placement-starting-point.md).
+Reading/sound bootcamp content and MSA/Quranic assessments remain open under F15.
 
 **F15.1 — Complete October 4:** personal study settings now drive a daily queue,
 with guest persistence, durable account preferences and offline conflict handling.
@@ -76,7 +81,8 @@ and beta evidence remain separate dependencies.
 | [F12.2](#f122-transliteration-and-pronunciation-audit) | Transliteration and pronunciation audit | Active · correction drafts validated | Review exact lessons 3/5/7 candidates; speaker/model evidence remains |
 | [F13](#f13-msa-course) | MSA course | Planned | Define first unit and extend publication support |
 | [F14](#f14-quranic-course) | Quranic course | Needs input | Approved source IDs/rights and integrity controls |
-| [F15](#f15-personal-study-plan-and-placement) | Personal study plan and placement | Active · settings done | Scope per-track placement and bootcamp content next |
+| [F15](#f15-personal-study-plan-and-placement) | Personal study plan and placement | Active · Levantine starting check done | Scope reviewed bootcamp content and remaining track assessments |
+| [F15.2](#f152-placement-starting-point) | Placement starting point | Done · local | Published-content Levantine check; bootcamps/other tracks remain open |
 | [F15.1](#f151-personal-study-settings) | Personal study settings | Done · pushed | Goals/tracks drive queue; guest/account offline persistence verified |
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
@@ -401,9 +407,11 @@ Never generate or silently normalize canonical text, or invent qualified reviewe
 
 **Outcome:** selectable tracks/primary track, 5/10/15/30-minute goals, separate progress,
 and short skippable track-specific placement with bootcamp recommendations.
-**Status:** Active — settings and the deterministic daily queue are complete in F15.1.
-**Next:** define bounded per-track placement and reading/sound bootcamp content.
-No placement results or bootcamp recommendations are implemented by F15.1.
+**Status:** Active — F15.1 settings/queue and F15.2 bounded Levantine starting check
+are complete. Reading/sound support preferences are self-reported; modules remain open.
+**Next:** scope source-linked reading/sound bootcamp content and the remaining
+track-specific assessments. F15.2 is not a calibrated proficiency assessment or
+evidence of pronunciation/decoding ability; it does not complete F15.
 **Done when:** selected goals/tracks drive the queue and persist as agreed; per-track
 placement and applicable reading/sound modules work without a combined Arabic score.
 
@@ -428,6 +436,32 @@ ten focused browser checks and the production frontend build passed.
 Frontend deployment triggered; final hosted browser verification remains open.
 **Next:** F15 placement/bootcamp work remains open; F10 scheduled review is complete and deployed.
 Real-device assistive-technology evidence remains part of F18.
+
+### F15.2 Placement starting point
+
+**Status:** Done — bounded local implementation October 11, 2026.
+**Scope delivered:** optional six-question Levantine check from the first three
+published, source-linked, non-demonstrative lessons, with original dialogue context,
+optional help and existing reviewed answer rationales/explanations. Skip and retry
+remain available. Results and skipped state persist separately for guests/accounts
+on this device, retaining first answers, help, source locators and lesson versions.
+**Recommendation:** earliest sampled lesson needing practice/help; last sampled
+lesson when all six fit without help. This conservative implementation default is
+not a calibrated proficiency scale. No completions, mastery, XP, course locks or
+queue changes. Reading/sound self-reports identify support preferences; reviewed
+bootcamp modules and MSA/Quranic checks remain unavailable.
+**Evidence:** [behavior, policy and checks](docs/placement-starting-point.md),
+[component](i-web/src/PlacementCheck.vue), [selection/policy](i-web/src/placement.ts),
+[browser checks](i-web/tests/placement.spec.ts). Production build, all 29 API tests,
+four final placement checks and eight existing study-settings/navigation checks pass.
+Offline reload/retry, help/wrong-answer recommendations, skip persistence, identity
+isolation, withdrawn-content handling, keyboard and 320px layout covered. Mobile
+question/result renders inspected; real AT and learner calibration remain open.
+**Next:** F15 reviewed bootcamp content and other-track assessments; account results
+remain device-local with no cross-device placement sync.
+**Delivery:** owner authorized push/deployment October 11. Frontend release pending;
+API stays at `662d17c`. No curriculum publication or database migration.
+[Rollout record](docs/releases/2026-10-11.md).
 
 ### F16 Account recovery and deletion
 
@@ -575,6 +609,13 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 
 ## Recent planning changes
 
+- **October 11, 2026 F15.2:** owner authorized beginning F15. Added the bounded
+  Levantine starting check using published content, with offline/device identity
+  handling and support preferences. Build, 29 API tests and 12 distinct targeted
+  browser checks pass across runs. F15 remains open for bootcamp content and other
+  tracks. Owner subsequently authorized push/deployment; frontend rollout pending.
+  API and curriculum unchanged.
+
 - **October 9, 2026 rollout:** owner authorized push/deployment. Release `662d17c`
   deployed web/API; live glossary, health and persistent-data preservation passed.
   All 29 API tests and 55 distinct browser checks pass. F12.2 remains committed
@@ -597,11 +638,6 @@ checks. This does not create a live-news operation, media hosting or rehosting r
   plus seed fixtures; correction drafts/speaker review remain); added F20 learned-word glossary, F21 cultural watch/listen
   recommendations and F06.1 drawn-character redesign proposals. No new features,
   production art integration, curriculum publication or deployment are claimed.
-
-- **October 7, 2026 F10:** owner selected the 1/3/7/14-day policy. Implemented
-  due review in Today/Practice with offline, versioned device history. Build,
-  27 API tests, all 49 browser tests and 11 final focused checks pass. Release `89a6537` pushed/deployed; live review
-  opening verified. API/curriculum unchanged.
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.
