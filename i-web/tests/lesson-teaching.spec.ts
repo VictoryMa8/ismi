@@ -82,7 +82,6 @@ test('teaching supports recall, bounded phrase assembly, optional translations a
     await dialog.locator('.word-bank .word-tile:not(:disabled)').filter({ has: page.locator('[lang="ar"]', { hasText: word }) }).first().click()
   }
   await expect(dialog.getByRole('button', { name: 'Check answer' })).toBeEnabled()
-  await expect(dialog.getByText('All pieces placed. Check your response when you’re ready.')).toBeVisible()
   await dialog.getByRole('button', { name: 'Check answer' }).click()
   await expect(dialog.locator('.feedback-panel')).toBeFocused()
   await expect(dialog.getByText('Compare the phrase order', { exact: true })).toBeVisible()

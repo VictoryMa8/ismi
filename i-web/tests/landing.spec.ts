@@ -25,12 +25,13 @@ for (const width of [320, 390, 768, 1440]) {
       const style = getComputedStyle(el);
       return { border: style.borderWidth, radius: style.borderRadius, outline: style.outlineStyle, shadow: style.boxShadow };
     });
-    expect(heroFrame).toEqual({ border: '0px', radius: '0px', outline: 'none', shadow: 'none' });
+    expect(heroFrame).toEqual({ border: '0px', radius: '50%', outline: 'none', shadow: 'none' });
+    await page.locator('.hero-art').screenshot({ path: testInfo.outputPath(`hero-oval-${width}.png`) })
     await page.screenshot({ path: testInfo.outputPath(`landing-${width}.png`), fullPage: true })
     expect(apiRequests).toEqual([])
     await page.locator('.hero-copy').getByRole('link', { name: 'Try out the app' }).click()
     await expect(page).toHaveURL(/#\/today$/)
-    const dialog = page.getByRole('dialog', { name: 'Before we let you loose' })
+    const dialog = page.getByRole('dialog', { name: 'Welcome to Ismi' })
     await expect(dialog).toBeVisible()
     await expect(dialog.getByRole('heading')).toHaveText('Start with a conversation')
     await expect(dialog.getByRole('heading')).toBeFocused()
@@ -73,7 +74,7 @@ test('direct app entry offers a skippable intro; Escape dismisses without changi
   const writes: string[] = []
   page.on('request', r => { if (r.url().includes('/api/') && r.method() !== 'GET') writes.push(r.url()) })
   await page.goto('/#/courses')
-  const dialog = page.getByRole('dialog', { name: 'Before we let you loose' })
+  const dialog = page.getByRole('dialog', { name: 'Welcome to Ismi' })
   await expect(dialog).toBeVisible()
   await page.keyboard.press('Escape')
   await expect(dialog).toHaveCount(0)
@@ -110,7 +111,7 @@ test('skip intro and logo return work without browser storage', async ({ page })
   await expect(page.locator('.hero-description')).toBeVisible()
   await page.locator('.hero-copy').getByRole('link', { name: 'Try out the app' }).click()
   await expect(page.getByRole('heading', { name: 'Marhaba, Guest.' })).toBeVisible()
-  await expect(page.getByRole('dialog', { name: 'Before we let you loose' })).toHaveCount(0)
+  await expect(page.getByRole('dialog', { name: 'Welcome to Ismi' })).toHaveCount(0)
 })
 
 test('landing and welcome remain usable without art/API and with enlarged text', async ({ page }) => {
@@ -124,7 +125,7 @@ test('landing and welcome remain usable without art/API and with enlarged text',
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= Math.ceil(visualViewport?.width ?? innerWidth))).toBeTruthy()
   await page.locator('.hero-copy').getByRole('link', { name: 'Try out the app' }).click()
-  const dialog = page.getByRole('dialog', { name: 'Before we let you loose' })
+  const dialog = page.getByRole('dialog', { name: 'Welcome to Ismi' })
   await expect(dialog).toBeVisible()
   expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth)).toBeTruthy()
   await dialog.getByRole('button', { name: 'Skip intro' }).click()

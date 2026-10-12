@@ -93,6 +93,7 @@ and beta evidence remain separate dependencies.
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
 | [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
 | [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · deployed | Startup/refresh, cached offline and retry verified; hero edge removed |
+| [F17.3](#f173-interface-copy-cleanup) | Interface copy cleanup | Done · local | Redundant subtitles/quips removed; build and 31 targeted checks pass |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
@@ -230,6 +231,11 @@ no app artwork replacement or content publication. Preserve v1 assets and versio
 future art separately.
 
 ### F07 Landing page and app welcome
+
+**October 11 owner refinement:** Done locally — border-free oval hero with both
+faces visible. Build and four responsive landing/welcome checks pass; mobile/desktop
+renders inspected. [Preview and evidence](docs/landing/README.md#current-owner-revision).
+Uncommitted; live site still serves the square-corner F17.2 rollout.
 
 **Scope delivered:** mobile/desktop landing page with preserved owner copy and
 border-free hero; entry into the real app; once-per-browser skippable three-card
@@ -527,13 +533,28 @@ mastery, streak and reminder scope remains open.
 empty/guest/offline dashboard during startup; navigation remains available;
 cached offline plans and uncached failure/retry settle correctly. Reduced motion
 preserves status text without spinner movement. The landing hero's rounded picture
-edge is removed, with explicit zero border/radius and no outline/shadow; artwork
-and landing wording are preserved.
+edge was removed at that rollout, with zero border/radius and no outline/shadow; artwork
+and landing wording are preserved. A later F07 owner refinement changes the image
+to a border-free oval locally.
 **Evidence:** [behavior and verification](docs/dashboard-loading.md), production
 build and 20 distinct targeted Chromium checks pass across focused runs.
 **Next:** owner feedback; F18 real assistive-technology/browser gates remain open.
 **Delivery:** code release `138a186` pushed/deployed October 11;
 [live verification](docs/releases/2026-10-11-loading.md). API/curriculum unchanged.
+
+### F17.3 Interface copy cleanup
+
+**Status:** Done — implemented locally October 11.
+**Scope delivered:** removed decorative teaching/welcome/completion quips,
+repeated loading explanations, builder/checkpoint subtitles and duplicate
+review/settings status. Useful instructions, answer feedback, provenance,
+privacy and offline/error notices remain. Landing wording and the prior local
+oval hero are preserved.
+**Evidence:** [exact removals and verification](docs/interface-copy-cleanup.md).
+Production build and 31 targeted Chromium checks pass; loading, teaching and
+completion screenshots inspected. F18 real AT/browser gates remain open.
+**Next:** owner feedback on local copy cleanup.
+**Delivery:** owner authorized push/deployment October 11; rollout pending. No curriculum publication.
 
 ### F18 Invite-only beta readiness
 
@@ -663,10 +684,17 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 
 ## Recent planning changes
 
+- **October 11, 2026 F17.3:** removed redundant learner subtitles/quips and
+  repeated status text; retained explanations, provenance and useful controls.
+  Build and 31 targeted browser checks pass; local/uncommitted. Oval hero preserved.
+  [Cleanup evidence](docs/interface-copy-cleanup.md).
+
 - **October 11, 2026 F17.2:** added visible dashboard startup/refresh feedback,
   cached offline fallback and explicit uncached retry. Removed hero image rounding
   and made its border-free treatment explicit. Build and 20 distinct targeted
   browser checks pass; `138a186` pushed/deployed, live transition and hero verified.
+  Subsequent F07 owner refinement makes the hero oval locally; build and four
+  responsive checks pass. [Preview](docs/landing/hero-oval-preview.png).
   [Evidence](docs/dashboard-loading.md).
 
 - **October 11, 2026 F17.1/F07:** owner authorized implementation; recommended
@@ -686,11 +714,6 @@ checks. This does not create a live-news operation, media hosting or rehosting r
   deployed web/API; live glossary, health and persistent-data preservation passed.
   All 29 API tests and 55 distinct browser checks pass. F12.2 remains committed
   drafts; no curriculum publication. Temporary deployment key revoked and deleted.
-
-- **October 9, 2026 F12.2:** prepared reproducible lessons 3/5/7 plural/help
-  correction candidates with matched source records and glossary senses. All 29 API
-  tests pass; hashes and immutable predecessors verified. Owner wording review and
-  speaker evidence remain open; existing local drafts and hosted content preserved.
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

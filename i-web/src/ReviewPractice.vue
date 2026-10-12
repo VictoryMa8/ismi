@@ -481,8 +481,8 @@ onBeforeUnmount(() => {
   <section ref="hub" tabindex="-1" class="review-hub" :aria-label="compact ? 'Scheduled review' : 'Review and checkpoints'">
     <h2 v-if="!compact">Review</h2>
     <p v-if="!compact" class="review-status-note">History stays on this device.</p>
-    <p v-if="!loading && turns.length" role="status">
-      {{ dueCount ? `${dueCount} review exchange${dueCount === 1 ? '' : 's'} due` : nextDue ? `Next review: ${nextDue}` : 'No reviews due' }}
+    <p v-if="!loading && turns.length && !dueCount" role="status">
+      {{ nextDue ? `Next review: ${nextDue}` : 'No reviews due' }}
     </p>
     <p v-if="loading" role="status">Preparing review…</p>
     <p v-if="notice" role="status">{{ notice }}</p>
@@ -521,9 +521,6 @@ onBeforeUnmount(() => {
         </p>
         <p v-else-if="!unit.available">
           Connect to download all of this unit’s lessons.
-        </p>
-        <p v-else>
-          Try the exchange before revealing help. You can retry freely.
         </p>
         <p v-if="results[unit.id]" class="checkpoint-history">
           Last checkpoint: {{ results[unit.id]!.firstCorrect }} of

@@ -5,6 +5,14 @@ This file supplies design/implementation evidence; historical checks are dated c
 
 ## Current owner revision
 
+Latest October 11 revision: owner requested a circular/oval picture. The hero now
+uses a border-free ellipse (`border-radius: 50%`) at its existing 3:2 proportions.
+Both faces remain fully visible; original artwork and wording are unchanged.
+Production build and all four existing responsive landing/welcome checks pass at
+320/390/768/1440px. Mobile and desktop hero renders were inspected.
+[Oval preview](hero-oval-preview.png). Local/uncommitted; no deployment yet.
+The earlier square-corner rollout below is historical evidence.
+
 Subsequent October 11 implementation: owner reiterated removal of the picture
 frame. The hero's rounded corners are now removed, and CSS explicitly sets no
 border, radius, outline or shadow. Mobile/desktop styles and navigation pass;

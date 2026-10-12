@@ -8,6 +8,9 @@ without changing APIs, curriculum, learning records or landing wording.
 
 ## Behavior
 
+Later local [F17.3 cleanup](interface-copy-cleanup.md) removes the loading
+explanation sentence and lesson-opening subtitle; the status label remains.
+
 Startup shows “Loading your study plan…” with a decorative spinner and concise
 explanation while session lookup, queued progress sync, study settings and dashboard
 loading finish. Today, Courses and Practice wait for the actual plan, avoiding a
@@ -26,10 +29,12 @@ under reduced motion while the same text remains. No artificial progress percent
 or forced delay is introduced. The existing requests do not have a new timeout;
 a request that remains pending keeps showing the indicator.
 
-The hero artwork already had no border stroke. Its 18px corner rounding has now
+At the F17.2 rollout, the hero artwork already had no border stroke. Its 18px corner rounding has now
 been removed, and the image explicitly has zero border, zero radius, no outline
 and no shadow. The artwork, character portraits, landing wording and separate
-conversation example card are unchanged.
+conversation example card are unchanged. The owner subsequently requested an oval
+hero, implemented locally under [F07](landing/README.md#current-owner-revision);
+the zero-radius description above is historical rollout behavior.
 
 ## Verification
 

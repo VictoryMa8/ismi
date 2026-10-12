@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { studyTracks, type StudyPreferences, type TrackId } from './studyPlan'
-const props = defineProps<{ preferences: StudyPreferences; busy: boolean; message: string; conflict: boolean; accountScoped: boolean }>()
+const props = defineProps<{ preferences: StudyPreferences; busy: boolean; message: string; conflict: boolean }>()
 const emit = defineEmits<{ save: [value: StudyPreferences]; resolve: [keepLocal: boolean] }>()
 const draft = ref<StudyPreferences>({ ...props.preferences, selectedTrackIds: [...props.preferences.selectedTrackIds] })
 watch(() => props.preferences, value => { draft.value = { ...value, selectedTrackIds: [...value.selectedTrackIds] } }, { deep: true })
@@ -40,7 +40,6 @@ function toggle(id: TrackId, checked: boolean) {
         </select>
       </div>
       <p v-if="!selected.length" role="alert">Select at least one track.</p>
-      <p class="study-settings-note">{{ accountScoped ? 'Account settings sync when connected.' : 'Guest settings stay on this device.' }}</p>
       <button class="primary-action" type="submit" :disabled="busy || !selected.length || conflict">{{ busy ? 'Saving…' : 'Save study settings' }}</button>
     </form>
     <p v-if="message" role="status">{{ message }}</p>
@@ -63,6 +62,5 @@ input { accent-color: #12613f; width: 1.1rem; height: 1.1rem; }
 small { display: block; font-size: .8rem; font-weight: 400; }
 .primary-track-select { display: grid; gap: .5rem; }
 select { max-width: 100%; min-height: 44px; padding: .5rem; background: white; color: inherit; border: 1px solid #738d7b; border-radius: .5rem; font: inherit; }
-.study-settings-note { font-size: .9rem; }
 .settings-conflict { display: flex; flex-wrap: wrap; gap: .5rem; }
 </style>

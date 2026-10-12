@@ -30,7 +30,7 @@
 .landing-status { color: #657065; font-size: .8125rem; margin-top: 21px !important; }
 .landing-status span { padding-inline: 5px; }
 .hero-scene { position: relative; }
-.hero-art { width: 100%; max-width: 100%; height: auto; display: block; border: 0; border-radius: 0; outline: none; box-shadow: none; }
+.hero-art { width: 100%; max-width: 100%; height: auto; display: block; border: 0; border-radius: 50%; outline: none; box-shadow: none; }
 .hero-exchange { width: 82%; margin-top: 16px; position: relative; margin-inline: auto; border: 1px solid #17684e; border-radius: 15px; background: #fffdf7; box-shadow: 0 16px 35px #263a3410; overflow: hidden; }
 .hero-exchange-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 18px; border-bottom: 1px solid #e5e6d9; font-size: .75rem; color: #636e61; }
 .landing-tag { display: inline-block; color: #365a3b; background: #eaf0dc; padding: 4px 9px; border-radius: 4px;; font-size: .75rem; font-weight: 650; }

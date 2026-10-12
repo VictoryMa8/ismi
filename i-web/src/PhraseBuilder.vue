@@ -137,8 +137,5 @@ function reset() {
         <RotateCcw :size="16" aria-hidden="true" /> Clear
       </button>
     </div>
-    <p v-if="full && !disabled" class="coach-caption">
-      All pieces placed. Check your response when you’re ready.
-    </p>
   </section>
 </template>

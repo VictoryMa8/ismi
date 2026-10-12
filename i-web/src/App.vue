@@ -1153,7 +1153,7 @@ async function finishLesson() {
 
       <div v-if="dashboardLoading" class="dashboard-loading" :class="{ 'initial-loading': initialDashboardLoading }" role="status" aria-live="polite">
         <LoaderCircle class="loading-spinner" :size="28" aria-hidden="true" />
-        <div><strong>{{ initialDashboardLoading ? 'Loading your study plan…' : 'Updating your study plan…' }}</strong><p v-if="initialDashboardLoading">Getting your lessons and progress ready.</p></div>
+        <div><strong>{{ initialDashboardLoading ? 'Loading your study plan…' : 'Updating your study plan…' }}</strong></div>
       </div>
       <section v-else-if="dashboardUnavailable && page !== 'account'" class="dashboard-error" aria-labelledby="dashboard-error-heading">
         <WifiOff :size="28" aria-hidden="true" />
@@ -1473,7 +1473,6 @@ async function finishLesson() {
         <StudySettings
           :preferences="studySettings.preferences.value" :busy="studySettings.busy.value"
           :message="studySettings.message.value" :conflict="Boolean(studySettings.conflict.value)"
-          :account-scoped="reviewScope !== 'guest'"
           @save="async value => { await studySettings.save(value); await cacheUpcomingLessons(); }"
           @resolve="studySettings.resolve"
         />
@@ -1679,7 +1678,6 @@ async function finishLesson() {
             <div v-if="lessonLoading" class="lesson-state" role="status">
               <span class="lesson-state-mark" aria-hidden="true">ا</span>
               <strong>Opening your downloaded lesson…</strong>
-              <p>Checking for the latest published version.</p>
             </div>
 
             <div
@@ -1703,12 +1701,6 @@ async function finishLesson() {
               <strong ref="completionHeading" tabindex="-1">{{
                 previewMode ? 'Preview complete' : 'Conversation complete'
               }}</strong>
-              <p>
-                {{
-                  lesson?.introduction?.goal ??
-                  'You practiced responding in a guided conversation.'
-                }}
-              </p>
               <div v-if="completionSummary.total" class="completion-recap">
                 <details v-if="completionSummary.phrases.length" class="practiced-responses">
                   <summary>Practiced responses</summary>
@@ -1719,7 +1711,6 @@ async function finishLesson() {
               </div>
               <div v-if="lesson?.characters?.characterIds?.length" class="completion-encouragement">
                 <CharacterPortrait :character-id="lesson.characters.characterIds[0]!" :registry-version="lesson.characters.registryVersion" expression="encouraging" />
-                <span>Keep building on this conversation.</span>
               </div>
               <p v-if="dailyGoalReached" class="goal-milestone"><Check :size="18" aria-hidden="true" /> Daily goal complete · {{ dailyGoal }} minutes</p>
               <p v-if="previewMode">

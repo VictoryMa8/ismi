@@ -120,7 +120,6 @@ async function back() {
             <span class="coach-icon"
               ><MessageCircle :size="24" aria-hidden="true"
             /></span>
-            <p class="section-kicker">A conversation worth having</p>
             <h3 ref="heading" tabindex="-1">
               {{ lesson.introduction?.goal ?? lesson.title }}
             </h3>
@@ -161,7 +160,6 @@ async function back() {
           </template>
           <template v-else-if="stage === 'learn' || stage === 'recall'">
             <p class="section-kicker">
-              {{ stage === 'learn' ? 'Learn a piece' : 'Bring it back' }} ·
               {{ index + 1 }} of {{ cards.length }}
             </p>
             <h3 ref="heading" tabindex="-1">
@@ -175,10 +173,6 @@ async function back() {
             />
             <p v-if="stage === 'recall'" class="recall-cue">
               {{ card.recallCue || card.phrase.meaning }}
-            </p>
-            <p v-if="stage === 'recall' && !revealed" class="coach-caption">
-              Try saying it or thinking it through. Take as long as you need,
-              then compare.
             </p>
             <div v-if="stage === 'learn' || revealed" class="phrase-spotlight">
               <p class="spotlight-arabic" lang="ar" dir="rtl">
@@ -235,7 +229,6 @@ async function back() {
             <span class="coach-icon"
               ><Lightbulb :size="24" aria-hidden="true"
             /></span>
-            <p class="section-kicker">Make the pieces work together</p>
             <h3 ref="heading" tabindex="-1">Notice the pattern</h3>
             <div class="pattern-notes">
               <p v-for="(note, n) in patternNotes" :key="n">

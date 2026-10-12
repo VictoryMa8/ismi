@@ -69,13 +69,12 @@ onBeforeUnmount(() => {
   <dialog
     ref="dialog"
     class="app-welcome"
-    aria-labelledby="welcome-title"
+    aria-label="Welcome to Ismi"
     aria-describedby="welcome-card-title welcome-card-text"
     @cancel.prevent="emit('close')"
     @keydown="trapFocus"
   >
     <header class="welcome-header">
-      <p id="welcome-title">Before we let you loose</p>
       <button type="button" class="welcome-skip" @click="emit('close')">
         Skip intro
       </button>
@@ -145,7 +144,7 @@ onBeforeUnmount(() => {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 8px 16px;
   padding: 20px 24px;
 }
