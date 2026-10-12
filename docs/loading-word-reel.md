@@ -1,6 +1,6 @@
 # Loading word reel
 
-October 12, 2026 · F17.4 · Local frontend implementation
+October 12, 2026 · F17.4 · Deployed frontend implementation
 
 The owner requested a more stimulating loading animation, with words rolling
 through transliteration, Arabic script and English meaning like a slot machine.
@@ -64,5 +64,5 @@ Tests: [word reel](../i-web/tests/loading-words.spec.ts),
 [loading/offline](../i-web/tests/dashboard-loading.spec.ts),
 [satisfaction](../i-web/tests/satisfaction.spec.ts).
 
-Delivery: owner authorized deployment October 12; rollout pending. No API changes
-or curriculum publication. Real assistive-technology/browser release gates stay under F18.
+Delivery: code release `7bb2c22` pushed/deployed October 12;
+[live rollout evidence](releases/2026-10-12-word-reel.md). No API changes or curriculum publication. Real assistive-technology/browser release gates stay under F18.

@@ -8,15 +8,15 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**F17.4 — Complete locally October 12:** source-linked loading word reel with
+**F17.4 — Complete and deployed October 12:** source-linked loading word reel with
 pause and reduced motion. Build and nine targeted checks pass;
-[behavior and preview](docs/loading-word-reel.md). Not deployed yet.
+[behavior and preview](docs/loading-word-reel.md). Live loader and readiness transition verified.
 
-**October 11 latest rollout:** F17.3 frontend release `eada137` is pushed and deployed
-to Vercel. Live oval hero, simpler loading/review copy and published lesson opening
-are verified. API release `662d17c` remains
-deployed; no backend/data/content changes. Production build and 31 targeted browser
-checks pass. See [the copy/oval rollout note](docs/releases/2026-10-11-copy-cleanup.md).
+**October 12 latest rollout:** F17.4 frontend release `7bb2c22` is pushed and deployed
+to Vercel. Live word-reel loading and transition into Today are verified. API release
+`662d17c` remains deployed; no backend/data/content changes. Production build and
+nine targeted checks pass; [word-reel rollout](docs/releases/2026-10-12-word-reel.md).
+Earlier [copy/oval rollout](docs/releases/2026-10-11-copy-cleanup.md) remains verified.
 Earlier [placement rollout](docs/releases/2026-10-11.md) remains verified.
 
 **F15.2 — Complete and deployed October 11:** optional six-question Levantine starting-point
@@ -48,7 +48,7 @@ with distinct gold completion/goal markers and factual session recaps. Build and
 Sound audition and optional recall pacing remain proposals.
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
-characters, and landing/welcome are implemented. Frontend release `eada137` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
+characters, and landing/welcome are implemented. Frontend release `7bb2c22` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
@@ -99,7 +99,7 @@ and beta evidence remain separate dependencies.
 | [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
 | [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · deployed | Startup/refresh, cached offline and retry verified; hero edge removed |
 | [F17.3](#f173-interface-copy-cleanup) | Interface copy cleanup | Done · deployed | Redundant subtitles/quips removed; build and 31 targeted checks pass |
-| [F17.4](#f174-loading-word-reel) | Loading word reel | Done · local | Six exact glossary samples; pause/reduced motion verified |
+| [F17.4](#f174-loading-word-reel) | Loading word reel | Done · deployed | Six exact glossary samples; pause/reduced motion verified |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
@@ -117,8 +117,9 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  Frontend release `eada137` is deployed and live-verified October 11;
-  [copy/oval rollout evidence](docs/releases/2026-10-11-copy-cleanup.md).
+  Frontend release `7bb2c22` is deployed and live-verified October 12;
+  [word-reel rollout evidence](docs/releases/2026-10-12-word-reel.md).
+  Earlier [copy/oval rollout evidence](docs/releases/2026-10-11-copy-cleanup.md) remains applicable.
   Earlier [loading/hero rollout evidence](docs/releases/2026-10-11-loading.md) remains applicable.
   Earlier [satisfaction rollout evidence](docs/releases/2026-10-11-satisfaction.md) remains applicable.
   Earlier [placement rollout evidence](docs/releases/2026-10-11.md) remains applicable.
@@ -566,7 +567,7 @@ completion screenshots inspected. F18 real AT/browser gates remain open.
 
 ### F17.4 Loading word reel
 
-**Status:** Done — implemented locally October 12.
+**Status:** Done — implemented and deployed October 12.
 **Scope delivered:** green/gold slot-style loader cycles six source-linked
 Levantine words through transliteration → Arabic → meaning. Includes keyboard
 pause/resume, hidden-document pause, a still reduced-motion triplet, separate
@@ -575,8 +576,9 @@ remain truthful and never delay ready content.
 **Evidence:** [behavior, source records and verification](docs/loading-word-reel.md),
 production build and nine distinct targeted Chromium checks pass across runs.
 Mobile/enlarged text and real-time Arabic rendering inspected. F18 gates remain open.
-**Next:** owner feedback on local animation.
-**Delivery:** owner authorized deployment October 12; rollout pending. No API change or curriculum publication.
+**Next:** owner feedback on the deployed animation.
+**Delivery:** code release `7bb2c22` pushed/deployed October 12;
+[live rollout evidence](docs/releases/2026-10-12-word-reel.md). API/curriculum unchanged.
 
 ### F18 Invite-only beta readiness
 
@@ -708,7 +710,8 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 
 - **October 12, 2026 F17.4:** implemented source-linked loading word reel with
   transliteration/Arabic/meaning rolls, pause, reduced motion and hidden-tab handling.
-  Build and nine targeted checks pass; local/uncommitted.
+  Build and nine targeted checks pass; `7bb2c22` pushed/deployed. Live loader and
+  transition to Today verified.
   [Evidence](docs/loading-word-reel.md).
 
 - **October 11, 2026 F17.3:** removed redundant learner subtitles/quips and

@@ -114,12 +114,13 @@ References: [alwaysdata free plan](https://help.alwaysdata.com/en/admin-billing/
 
 ### Latest release
 
-The October 11 F17.3 frontend release `eada137` is deployed to Vercel. Learner
-screens now omit redundant subtitles/quips, and the border-free hero is oval.
-Live hero, loading/review copy and published lesson opening passed. API remains
-at `662d17c`; no backend, data or curriculum changes. See the
-[copy/oval rollout record](docs/releases/2026-10-11-copy-cleanup.md).
-Earlier [loading rollout](docs/releases/2026-10-11-loading.md),
+The October 12 F17.4 frontend release `7bb2c22` is deployed to Vercel. Loading now
+cycles six source-linked Levantine words through transliteration, Arabic and meaning,
+with pause and reduced motion. Live loader and transition into Today passed. API
+remains at `662d17c`; no backend, data or curriculum changes. See the
+[word-reel rollout](docs/releases/2026-10-12-word-reel.md).
+Earlier [copy/oval rollout](docs/releases/2026-10-11-copy-cleanup.md),
+[loading rollout](docs/releases/2026-10-11-loading.md),
 [placement rollout](docs/releases/2026-10-11.md) and
 [API preservation evidence](docs/releases/2026-10-09.md) remain available.
 
