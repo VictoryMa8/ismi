@@ -1741,9 +1741,9 @@ h2 { font-size: 22px; line-height: 1.35; }
   --teal-soft: #e5f5eb;
   --coral: #ce3341;
   --coral-soft: #fff0f0;
-  --gold: #ce3341;
-  --gold-soft: #fff0f0;
-  --gold-bright: #e65059;
+  --gold: #b58116;
+  --gold-soft: #f8edd1;
+  --gold-bright: #f4bf50;
 }
 body { background: radial-gradient(ellipse at 100% 0, #e9f6ee 0, transparent 38rem), radial-gradient(ellipse at 0 0, #fff0ef 0, transparent 25rem), var(--cream); }
 button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
@@ -1905,3 +1905,29 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 .study-queue .guest-action { text-align: left; min-height: 44px; padding: .5rem 0; }
 .study-plan .section-heading { flex-wrap: wrap; gap: .75rem; }
 .study-plan a { color: var(--green-dark, #176344); text-underline-offset: .2em; }
+
+/* F17.1: the next conversation leads Today; gold marks factual completion. */
+.daily-progress.goal-complete { background: var(--gold-soft); }
+.goal-complete .section-kicker { color: #70500c; display: flex; align-items: center; gap: 6px; }
+.goal-complete .progress-fill { background: var(--gold); }
+.progress-fill { transition: width 300ms ease; }
+.plan-details { margin-top: 18px; }
+.plan-details summary { cursor: pointer; padding: 10px 0; font-weight: 700; }
+.plan-details summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+.up-next-heading { font-size: 16px; margin: 20px 0 8px; }
+.completion-recap { width: min(100%, 430px); padding: 14px 18px; border-radius: 14px; background: white; border: 1px solid var(--line); }
+.completion-recap p { margin: 6px 0; line-height: 1.5; }
+.completion-encouragement { display: flex; align-items: center; justify-content: center; gap: 12px; max-width: 430px; }
+.completion-encouragement .character-portrait { --portrait-size: 56px; }
+.lesson-success .goal-milestone { display: flex; align-items: center; gap: 8px; color: #70500c; background: var(--gold-soft); border-radius: 12px; padding: 12px 16px; }
+.lesson-success .completion-mark { color: #493507; background: var(--gold-bright); box-shadow: 0 0 0 9px var(--gold-soft); }
+@media (prefers-reduced-motion: reduce) { .progress-fill, .lesson-success { transition: none; animation: none; } }
+
+.welcome-row + .section-block { margin-top: 0; }
+.section-block + .daily-progress { margin-top: 24px; }
+
+.practiced-responses summary { cursor: pointer; padding: 8px 0; font-weight: 700; }
+.practiced-responses summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+.practiced-responses ul { list-style: none; padding: 0; }
+.practiced-responses li { display: grid; gap: 4px; padding: 10px 0; }
+.practiced-responses [lang="ar"] { font-size: 1.5em; }

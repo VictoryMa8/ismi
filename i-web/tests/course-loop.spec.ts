@@ -45,6 +45,8 @@ test('download, offline completion, and exactly-once reconnection advance the co
   await page.getByRole('button', { name: 'Check answer' }).click()
   await page.getByRole('button', { name: 'Complete lesson' }).click()
   await expect(page.getByText('Saved on this device. Ismi will sync it when you reconnect.')).toBeVisible()
+  await expect(lessonDialog.getByText('1 of 1 responses correct on the first attempt', { exact: true })).toBeVisible()
+  await expect(lessonDialog.getByText('Help used in 1 of 1 turns', { exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'Back to today' }).click()
   await expect(page.getByText('1 of 6 lessons complete')).toBeVisible()
   await page.getByRole('link', { name: 'Courses', exact: true }).click()

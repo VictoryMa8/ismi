@@ -5,8 +5,14 @@ This file supplies design/implementation evidence; historical checks are dated c
 
 ## Current owner revision
 
-The hero is now outlined as one complete image, with no surrounding decorative
-bubble. Green, red and gold surfaces replace the pastel fills across the landing
+October 11, 2026: the owner requested a border-free hero image. The current
+stylesheet and image asset already satisfy this request, and the hosted
+`https://ismi-arabic.vercel.app/` image was inspected: computed border is
+`0px none`, outline style is `none`, and the rendered illustration has no frame.
+The older saved preview images below show a superseded outlined treatment.
+The durable instruction now preserves the border-free image; no application
+code change or deployment was needed. No surrounding decorative bubble is used.
+Green, red and gold surfaces replace the pastel fills across the landing
 and welcome cards. Reload disables browser scroll restoration and clears a
 landing section hash before hydration, then resets scroll at page show. Learner
 routes remain intact on reload; explicit section links still navigate normally.

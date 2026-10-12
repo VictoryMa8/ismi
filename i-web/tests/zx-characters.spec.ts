@@ -82,6 +82,9 @@ for (const imagesFail of [false, true]) {
       await dialog.getByRole('button', { name: index === 7 ? 'Complete lesson' : 'Next step' }).click()
     }
     await expect(dialog.getByText('Preview complete', { exact: true })).toBeVisible()
+    await expect(dialog.locator('.completion-encouragement')).toContainText('Keep building on this conversation.')
+    await expect(dialog.locator('.completion-recap')).toContainText(`7 of 8 responses correct on the first attempt`)
+    await expect(dialog.locator('.goal-milestone')).toHaveCount(0)
     expect((await page.request.get(`/api/lessons/${pack.lesson.id}`)).status()).toBe(404)
     expect(errors).toEqual([])
   })

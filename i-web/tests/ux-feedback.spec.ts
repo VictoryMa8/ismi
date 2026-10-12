@@ -65,8 +65,11 @@ test('friendly sounds start after interaction, stay quiet, mute persistently, an
   })
   expect(peak).toBeLessThan(.3)
   await page.screenshot({ path: testInfo.outputPath('friendly-feedback.png') })
+  const beforeComplete = await page.evaluate(() => (window as SoundProbe).toneCount)
   await dialog.getByRole('button', { name: 'Complete lesson', exact: true }).click()
   await expect(dialog.getByText('Conversation complete', { exact: true })).toBeVisible()
+  // Four notes, each with three harmonics: one completion chime, no navigation chime.
+  await expect.poll(() => page.evaluate(() => (window as SoundProbe).toneCount).then(count => count - beforeComplete)).toBe(12)
   await dialog.getByRole('button', { name: 'Back to practice', exact: true }).click()
   await page.evaluate(async () => { await navigator.serviceWorker.ready })
   await context.setOffline(true)

@@ -30,6 +30,7 @@ import ReviewPractice from './ReviewPractice.vue';
 import LearnedWords from './LearnedWords.vue';
 import CharacterCast from './CharacterCast.vue';
 import CharacterCue from './CharacterCue.vue';
+import CharacterPortrait from './CharacterPortrait.vue';
 import { isLearnerRoute } from './routes';
 import { evaluateOffline } from './evaluation';
 import { installUiSounds, playUiSound } from './uiSounds';
@@ -99,6 +100,21 @@ const downloadError = ref<string | null>(null);
 const currentStepIndex = ref(0);
 const lessonFinished = ref(false);
 const completionWasQueued = ref(false);
+// Session-only facts, never inferred mastery or a score for spoken recall.
+const sessionResponses = ref<Record<string, { firstCorrect: boolean; helpUsed: boolean }>>({});
+const dailyGoalReached = ref(false);
+const completionSummary = computed(() => {
+  const responses = Object.values(sessionResponses.value);
+  return {
+    total: responses.length,
+    firstCorrect: responses.filter(item => item.firstCorrect).length,
+    helped: responses.filter(item => item.helpUsed).length,
+    phrases: (lesson.value?.steps ?? [])
+      .filter(step => sessionResponses.value[step.id])
+      .map(step => step.answers.find(answer => answer.id.toLowerCase() === step.evaluation.correctAnswerId.toLowerCase()))
+      .filter(answer => Boolean(answer)),
+  };
+});
 const pendingSyncCount = ref(0);
 type PageName = 'today' | 'courses' | 'practice' | 'account';
 const navigation = [
@@ -731,6 +747,8 @@ async function previewLesson(draft: LessonResponse, opener: HTMLElement) {
   attemptFeedback.value = null;
   lessonFinished.value = false;
   completionWasQueued.value = false;
+  sessionResponses.value = {};
+  dailyGoalReached.value = false;
   currentStepIndex.value = 0;
   resetPracticeSupport();
   lessonError.value = null;
@@ -764,6 +782,8 @@ async function startLesson(requestedId?: string, practiceOnly = false, cardIndex
   attemptFeedback.value = null;
   lessonFinished.value = false;
   completionWasQueued.value = false;
+  sessionResponses.value = {};
+  dailyGoalReached.value = false;
   currentStepIndex.value = 0;
   lessonError.value = null;
   lessonLoading.value = true;
@@ -922,8 +942,14 @@ async function retryAnswer() {
 }
 
 async function rememberAttempt(feedback: LessonAttemptResponse) {
-  if (previewMode.value || !lesson.value || !currentStep.value) return;
+  if (!lesson.value || !currentStep.value) return;
   const first = stepAttemptCount++ === 0;
+  const previous = sessionResponses.value[currentStep.value.id];
+  sessionResponses.value[currentStep.value.id] = {
+    firstCorrect: previous?.firstCorrect ?? feedback.isCorrect,
+    helpUsed: Boolean(previous?.helpUsed || practiceHelpUsed.value),
+  };
+  if (previewMode.value) return;
   try {
     await saveReviewAttempt(
       reviewScope.value,
@@ -989,9 +1015,11 @@ async function finishLesson() {
     // Online submission can still succeed when device storage is unavailable.
   }
 
+  const wasBelowGoal = dailyCompleted.value < dailyGoal.value;
   dashboard.value.dailyPlan.studyMinutesToday =
     (dashboard.value.dailyPlan.studyMinutesToday ?? dashboard.value.dailyPlan.completedMinutes) + lesson.value.estimatedMinutes;
   dashboard.value.dailyPlan.completedMinutes = dailyCompleted.value;
+  dailyGoalReached.value = wasBelowGoal && dailyCompleted.value >= dailyGoal.value;
   await markLessonCompletedLocally(lesson.value.id);
 
   try {
@@ -1127,51 +1155,6 @@ async function finishLesson() {
           </div>
         </section>
 
-        <section class="daily-progress" aria-labelledby="progress-heading">
-          <div class="progress-copy">
-            <span class="section-kicker">Daily goal</span>
-            <h2 id="progress-heading">
-              {{ dailyCompleted }} of
-              {{ dailyGoal }} minutes
-            </h2>
-          </div>
-          <div
-            class="progress-track"
-            role="progressbar"
-            aria-valuemin="0"
-            :aria-valuemax="dailyGoal"
-            :aria-valuenow="dailyCompleted"
-            :aria-label="`${dailyCompleted} of ${dailyGoal} daily minutes complete`"
-          >
-            <span
-              class="progress-fill"
-              :style="{ width: `${progressPercent}%` }"
-            ></span>
-          </div>
-        </section>
-
-        <section class="study-plan section-block" aria-labelledby="study-plan-heading">
-          <div class="section-heading"><h2 id="study-plan-heading">Your plan</h2><a href="#/account">Edit study settings</a></div>
-          <ul class="study-allocations">
-            <li v-for="allocation in studyPlan.allocations" :key="allocation.id">
-              <strong>{{ allocation.name }}</strong> · {{ allocation.minutes }} min
-              <span v-if="!allocation.available"> · Lessons not yet available</span>
-            </li>
-          </ul>
-          <ReviewPractice
-            compact
-            :scope="reviewScope"
-            :history-revision="reviewHistoryRevision"
-            :lessons="todayReviewLessons"
-            @open-change="reviewOpen = $event"
-            @prompt-playback="reviewAudioPlaying = $event"
-          />
-          <ol v-if="studyPlan.queue.length" class="study-queue" aria-label="Today’s lesson queue">
-            <li v-for="item in studyPlan.queue" :key="item.id"><button type="button" class="guest-action" @click="startLesson(item.id)">{{ item.title }} · {{ item.estimatedMinutes }} min</button></li>
-          </ol>
-          <p v-else>{{ dailyCompleted >= dailyGoal ? 'Daily goal complete. Practice is always available.' : 'No new lessons are available for this plan. You can still explore courses and practice.' }}</p>
-        </section>
-
         <section v-if="nextStudyLesson" class="section-block" aria-labelledby="next-heading">
           <div class="section-heading">
             <div>
@@ -1227,6 +1210,55 @@ async function finishLesson() {
             ><ChevronRight :size="16" aria-hidden="true"
           /></a>
         </section>
+        <section class="daily-progress" :class="{ 'goal-complete': dailyCompleted >= dailyGoal }" aria-labelledby="progress-heading">
+          <div class="progress-copy">
+            <span class="section-kicker"><Check v-if="dailyCompleted >= dailyGoal" :size="16" aria-hidden="true" /> {{ dailyCompleted >= dailyGoal ? 'Daily goal complete' : 'Daily goal' }}</span>
+            <h2 id="progress-heading">
+              {{ dailyCompleted }} of
+              {{ dailyGoal }} minutes
+            </h2>
+          </div>
+          <div
+            class="progress-track"
+            role="progressbar"
+            aria-valuemin="0"
+            :aria-valuemax="dailyGoal"
+            :aria-valuenow="dailyCompleted"
+            :aria-label="`${dailyCompleted} of ${dailyGoal} daily minutes complete`"
+          >
+            <span
+              class="progress-fill"
+              :style="{ width: `${progressPercent}%` }"
+            ></span>
+          </div>
+        </section>
+
+        <section class="study-plan section-block" aria-labelledby="study-plan-heading">
+          <div class="section-heading"><h2 id="study-plan-heading">Your plan</h2><a href="#/account">Edit study settings</a></div>
+          <ReviewPractice
+            compact
+            :scope="reviewScope"
+            :history-revision="reviewHistoryRevision"
+            :lessons="todayReviewLessons"
+            @open-change="reviewOpen = $event"
+            @prompt-playback="reviewAudioPlaying = $event"
+          />
+          <h3 v-if="studyPlan.queue.length > 1" class="up-next-heading">Up next</h3>
+          <ol v-if="studyPlan.queue.length > 1" class="study-queue" aria-label="Today’s lesson queue">
+            <li v-for="item in studyPlan.queue.slice(1)" :key="item.id"><button type="button" class="guest-action" @click="startLesson(item.id)">{{ item.title }} · {{ item.estimatedMinutes }} min</button></li>
+          </ol>
+          <p v-if="!studyPlan.queue.length">{{ dailyCompleted >= dailyGoal ? 'Daily goal complete. Practice is always available.' : 'No new lessons are available for this plan. You can still explore courses and practice.' }}</p>
+          <details class="plan-details">
+            <summary>Study time by track</summary>
+          <ul class="study-allocations">
+            <li v-for="allocation in studyPlan.allocations" :key="allocation.id">
+              <strong>{{ allocation.name }}</strong> · {{ allocation.minutes }} min
+              <span v-if="!allocation.available"> · Lessons not yet available</span>
+            </li>
+          </ul>
+          </details>
+        </section>
+
       </template>
 
       <template v-if="page === 'courses'">
@@ -1646,6 +1678,19 @@ async function finishLesson() {
                   'You practiced responding in a guided conversation.'
                 }}
               </p>
+              <div v-if="completionSummary.total" class="completion-recap">
+                <details v-if="completionSummary.phrases.length" class="practiced-responses">
+                  <summary>Practiced responses</summary>
+                  <ul><li v-for="(answer, index) in completionSummary.phrases" :key="index"><bdi lang="ar" dir="rtl">{{ answer?.arabic }}</bdi><span>{{ answer?.meaning }}</span></li></ul>
+                </details>
+                <p>{{ completionSummary.firstCorrect }} of {{ completionSummary.total }} responses correct on the first attempt</p>
+                <p>Help used in {{ completionSummary.helped }} of {{ completionSummary.total }} turns</p>
+              </div>
+              <div v-if="lesson?.characters?.characterIds?.length" class="completion-encouragement">
+                <CharacterPortrait :character-id="lesson.characters.characterIds[0]!" :registry-version="lesson.characters.registryVersion" expression="encouraging" />
+                <span>Keep building on this conversation.</span>
+              </div>
+              <p v-if="dailyGoalReached" class="goal-milestone"><Check :size="18" aria-hidden="true" /> Daily goal complete · {{ dailyGoal }} minutes</p>
               <p v-if="previewMode">
                 No learner progress was saved. Preview does not approve or
                 publish content.
@@ -1971,7 +2016,7 @@ async function finishLesson() {
                 v-else-if="attemptFeedback"
                 type="button"
                 class="primary-action lesson-check"
-                data-ui-sound="advance"
+                :data-ui-sound="currentStepIndex === (lesson?.steps.length ?? 0) - 1 ? 'silent' : 'advance'"
                 @click="continueLesson"
               >
                 {{

@@ -37,6 +37,11 @@ in Today and Practice, with deterministic offline intervals and version handling
 source-linked teaching contexts, synced account inclusion and offline persistence.
 [Behavior and verification](docs/learned-word-glossary.md). Live glossary and existing account inclusion verified; [rollout record](docs/releases/2026-10-09.md).
 
+**F17.1 — First slice complete locally October 11:** Today prioritizes Continue,
+with distinct gold completion/goal markers and factual session recaps. Build and
+19 targeted browser checks pass; [behavior and verification](docs/learner-satisfaction.md).
+Sound audition and optional recall pacing remain proposals.
+
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. Frontend release `267f98e` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
@@ -86,6 +91,7 @@ and beta evidence remain separate dependencies.
 | [F15.1](#f151-personal-study-settings) | Personal study settings | Done · pushed | Goals/tracks drive queue; guest/account offline persistence verified |
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
+| [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · local first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
@@ -223,7 +229,7 @@ future art separately.
 ### F07 Landing page and app welcome
 
 **Scope delivered:** mobile/desktop landing page with preserved owner copy and
-outlined hero; entry into the real app; once-per-browser skippable three-card
+border-free hero; entry into the real app; once-per-browser skippable three-card
 welcome; explicit return links; stable portrait sizing and reload/section navigation.
 The isolated sample is retired. No invitation form or enforced beta gate exists.
 
@@ -234,6 +240,10 @@ The implementation notes record a production build, 24 backend tests and 36 dist
 browser checks across full/focused runs; later owner refinements have targeted coverage.
 The October 2 code release is deployed; live landing, welcome, dashboard and lesson
 loading passed. See the [rollout record](docs/releases/2026-10-02.md).
+**October 11 reconciliation:** owner requested removal of the hero image border.
+Current source/asset and live rendered image already have no border or outline;
+superseded instructions and documentation were corrected. No app code change or
+rollout required. [Inspection evidence](docs/landing/README.md#current-owner-revision).
 
 ## Remaining work
 
@@ -484,6 +494,28 @@ explicitly. Existing in-lesson explanations are delivered under F01/F04.
 trivial farming, preserve free explanations/retries and honor opt-out/quiet hours.
 No hearts, leagues, guilt or paid streak repair. Billing is outside the beta.
 
+### F17.1 Learner satisfaction
+
+**Status:** Done — bounded Today/color/completion slice implemented October 11.
+Owner authorized F17.1 implementation; the recommended first slice is delivered.
+**Scope delivered:** Continue leads Today; compact daily progress/review and an
+Up next list avoid repeating the primary lesson. Track allocations remain in an
+accessible disclosure. Distinct gold marks completion and daily goals. Lesson
+recaps show actual first-attempt results, help use and practiced responses, with
+existing encouraging portraits and one completion chime. No mastery or spoken
+recall score is inferred; previews/practice do not award daily milestones.
+**Verification:** production build and 19 distinct targeted Chromium checks pass
+across focused runs, covering mobile/desktop, keyboard/doubled text, reduced motion,
+offline completion/reconnection, mute, single completion chime, recording playback,
+fixed lesson layout and character fallbacks. Real assistive-technology/browser
+release gates remain under F18.
+**Next:** review the local implementation. New sound timbres need an audition;
+optional Quick recall and its durations remain separate proposals. F17's broader
+mastery, streak and reminder scope remains open.
+**Evidence:** [implementation and verification](docs/learner-satisfaction.md),
+[original UI findings and proposal](docs/learner-satisfaction-proposal.md).
+**Delivery:** owner authorized push/deployment October 11; rollout verification pending. No curriculum publication.
+
 ### F18 Invite-only beta readiness
 
 **Outcome:** a free adult English-language invite-only first-100 beta after a smaller pilot.
@@ -612,6 +644,12 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 
 ## Recent planning changes
 
+- **October 11, 2026 F17.1/F07:** owner authorized implementation; recommended
+  Today/color/completion slice is complete locally. Build and 19 targeted browser
+  checks pass; no commit/push/deployment or publication. Sound audition and optional
+  recall pacing remain proposals. Earlier hero inspection found it already
+  border-free; stale outline instructions were corrected.
+
 - **October 11, 2026 F15.2:** owner authorized beginning F15. Added the bounded
   Levantine starting check using published content, with offline/device identity
   handling and support preferences. Build, 29 API tests and 12 distinct targeted
@@ -634,13 +672,6 @@ checks. This does not create a live-news operation, media hosting or rehosting r
   filters, teaching-card links, version handling and offline/account isolation locally.
   Verification and content limitations are in [the feature note](docs/learned-word-glossary.md).
   No new publication, push or deployment.
-
-- **October 8, 2026 owner feedback and redesign kickoff:** original
-  studies 01/02 were rejected and the SVG drawing method scrapped; F06.1 now needs
-  an alternate art-route decision. App artwork unchanged. Recorded F12.2 desk audit (214 package pairs
-  plus seed fixtures; correction drafts/speaker review remain); added F20 learned-word glossary, F21 cultural watch/listen
-  recommendations and F06.1 drawn-character redesign proposals. No new features,
-  production art integration, curriculum publication or deployment are claimed.
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

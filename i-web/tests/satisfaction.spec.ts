@@ -1,0 +1,67 @@
+import { expect, test } from '@playwright/test'
+import { finishTeaching, responseChoices } from './lesson-helpers'
+
+test('Today leads with Continue and keeps review, queue and settings accessible at mobile and desktop sizes', async ({ page }, testInfo) => {
+  await page.goto('/#/today')
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: 844 })
+    const action = page.getByRole('button', { name: /Continue in Levantine/ })
+    await expect(action).toBeVisible()
+    const box = await action.boundingBox()
+    expect(box!.y + box!.height).toBeLessThan(650)
+    const card = await page.locator('.primary-lesson-card').boundingBox()
+    const progress = await page.locator('.daily-progress').boundingBox()
+    expect(card!.y).toBeLessThan(progress!.y)
+    const queue = page.getByRole('list', { name: 'Today’s lesson queue' })
+    await expect(queue).not.toContainText('Answer a friend’s check-in')
+    await page.getByText('Study time by track', { exact: true }).focus()
+    await page.keyboard.press('Enter')
+    await expect(page.locator('.study-allocations')).toBeVisible()
+    await page.getByText('Study time by track', { exact: true }).click()
+    await expect(page.getByRole('link', { name: 'Edit study settings' })).toBeVisible()
+    await expect(page.getByRole('region', { name: 'Scheduled review', exact: true })).toHaveCount(1)
+    await page.screenshot({ path: testInfo.outputPath(`today-${width}.png`), fullPage: true })
+  }
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.evaluate(() => {
+    const elements = [...document.querySelectorAll<HTMLElement>('#main-content, #main-content *')];
+    const sizes = elements.map(el => parseFloat(getComputedStyle(el).fontSize));
+    elements.forEach((el, index) => { el.style.fontSize = `${sizes[index]! * 2}px` });
+  })
+  expect(await page.locator('body').evaluate(el => el.scrollWidth <= window.innerWidth)).toBeTruthy()
+  await page.screenshot({ path: testInfo.outputPath('today-enlarged-text.png'), fullPage: true })
+  await page.getByRole('button', { name: /Continue in Levantine/ }).focus()
+  await page.keyboard.press('Enter')
+  await expect(page.getByRole('button', { name: 'Close lesson' })).toBeFocused()
+})
+
+test('completion reports retries honestly and marks a reached goal without blocking the next action', async ({ page }, testInfo) => {
+  await page.goto('/#/account')
+  await page.getByLabel('5 min', { exact: true }).check()
+  await page.getByRole('button', { name: 'Save study settings' }).click()
+  await expect(page.getByRole('button', { name: 'Save study settings' })).toBeEnabled()
+  await page.getByRole('link', { name: 'Today', exact: true }).click()
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await page.getByRole('button', { name: /Continue in Levantine/ }).click()
+  const dialog = page.getByRole('dialog', { name: 'Answer a friend’s check-in' })
+  await finishTeaching(page, dialog)
+  await responseChoices(dialog)
+  await dialog.locator('.answer-option').nth(1).click()
+  await dialog.getByRole('button', { name: 'Check answer' }).click()
+  await dialog.getByRole('button', { name: 'Try again' }).click()
+  await dialog.locator('.answer-option').first().click()
+  await dialog.getByRole('button', { name: 'Check answer' }).click()
+  await dialog.getByRole('button', { name: 'Complete lesson' }).click()
+  await expect(dialog.getByText('0 of 1 responses correct on the first attempt', { exact: true })).toBeVisible()
+  await expect(dialog.getByText('Help used in 1 of 1 turns', { exact: true })).toBeVisible()
+  await expect(dialog.getByText('Daily goal complete · 5 minutes', { exact: true })).toBeVisible()
+  expect(await dialog.locator('.lesson-success').evaluate(el => getComputedStyle(el).animationName)).toBe('none')
+  await dialog.getByText('Practiced responses', { exact: true }).focus()
+  await page.keyboard.press('Enter')
+  await expect(dialog.locator('.practiced-responses [lang="ar"]')).toHaveText('كان منيح، بس طويل شوي.')
+  await page.screenshot({ path: testInfo.outputPath('completion.png') })
+  await dialog.getByRole('button', { name: 'Back to today' }).click()
+  await expect(page.locator('.daily-progress')).toHaveClass(/goal-complete/)
+  await page.getByRole('button', { name: /Continue in Levantine/ }).click()
+  await expect(page.locator('.completion-recap')).toHaveCount(0)
+})
