@@ -8,10 +8,10 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**October 11 latest rollout:** F17.1 frontend release `0852fec` is pushed and deployed
-to Vercel, with the new live Today hierarchy verified. API release `662d17c` remains
-deployed; no backend/data/content changes. Production build and 19 targeted browser
-checks pass across runs. See [the satisfaction rollout note](docs/releases/2026-10-11-satisfaction.md).
+**October 11 latest rollout:** F17.2 frontend release `138a186` is pushed and deployed
+to Vercel. Live loading-to-dashboard transition and the unframed hero are verified. API release `662d17c` remains
+deployed; no backend/data/content changes. Production build and 20 targeted browser
+checks pass across runs. See [the loading/hero rollout note](docs/releases/2026-10-11-loading.md).
 Earlier [placement rollout](docs/releases/2026-10-11.md) remains verified.
 
 **F15.2 — Complete and deployed October 11:** optional six-question Levantine starting-point
@@ -43,7 +43,7 @@ with distinct gold completion/goal markers and factual session recaps. Build and
 Sound audition and optional recall pacing remain proposals.
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
-characters, and landing/welcome are implemented. Frontend release `0852fec` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
+characters, and landing/welcome are implemented. Frontend release `138a186` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
@@ -92,7 +92,7 @@ and beta evidence remain separate dependencies.
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
 | [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
-| [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · local | Startup/refresh, cached offline and retry verified; hero edge removed |
+| [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · deployed | Startup/refresh, cached offline and retry verified; hero edge removed |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
@@ -110,8 +110,9 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  Frontend release `0852fec` is deployed and live-verified October 11;
-  [satisfaction rollout evidence](docs/releases/2026-10-11-satisfaction.md).
+  Frontend release `138a186` is deployed and live-verified October 11;
+  [loading/hero rollout evidence](docs/releases/2026-10-11-loading.md).
+  Earlier [satisfaction rollout evidence](docs/releases/2026-10-11-satisfaction.md) remains applicable.
   Earlier [placement rollout evidence](docs/releases/2026-10-11.md) remains applicable.
   API release `662d17c` remains deployed and verified October 9;
   [API rollout evidence](docs/releases/2026-10-09.md).
@@ -521,7 +522,7 @@ mastery, streak and reminder scope remains open.
 
 ### F17.2 Dashboard loading feedback
 
-**Status:** Done — implemented locally October 11.
+**Status:** Done — implemented and deployed October 11.
 **Scope delivered:** visible startup and refresh feedback; no misleading
 empty/guest/offline dashboard during startup; navigation remains available;
 cached offline plans and uncached failure/retry settle correctly. Reduced motion
@@ -530,8 +531,9 @@ edge is removed, with explicit zero border/radius and no outline/shadow; artwork
 and landing wording are preserved.
 **Evidence:** [behavior and verification](docs/dashboard-loading.md), production
 build and 20 distinct targeted Chromium checks pass across focused runs.
-**Next:** local owner review; F18 real assistive-technology/browser gates remain open.
-**Delivery:** owner authorized push/deployment October 11; rollout pending. No curriculum publication.
+**Next:** owner feedback; F18 real assistive-technology/browser gates remain open.
+**Delivery:** code release `138a186` pushed/deployed October 11;
+[live verification](docs/releases/2026-10-11-loading.md). API/curriculum unchanged.
 
 ### F18 Invite-only beta readiness
 
@@ -664,7 +666,8 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 - **October 11, 2026 F17.2:** added visible dashboard startup/refresh feedback,
   cached offline fallback and explicit uncached retry. Removed hero image rounding
   and made its border-free treatment explicit. Build and 20 distinct targeted
-  browser checks pass; local changes only. [Evidence](docs/dashboard-loading.md).
+  browser checks pass; `138a186` pushed/deployed, live transition and hero verified.
+  [Evidence](docs/dashboard-loading.md).
 
 - **October 11, 2026 F17.1/F07:** owner authorized implementation; recommended
   Today/color/completion slice is complete and deployed in `0852fec`. Build and 19

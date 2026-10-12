@@ -1,6 +1,6 @@
 # Dashboard loading feedback and border-free hero
 
-October 11, 2026 · F17.2 · Local frontend changes
+October 11, 2026 · F17.2 · Deployed frontend changes
 
 The owner requested visible feedback while the dashboard loads, then reiterated
 that the landing character picture should have no border. This extends F17.1
@@ -54,5 +54,5 @@ Checks: [loading](../i-web/tests/dashboard-loading.spec.ts),
 [course loop](../i-web/tests/course-loop.spec.ts),
 [satisfaction](../i-web/tests/satisfaction.spec.ts).
 
-Delivery: owner authorized push/deployment October 11; rollout pending. No
-API deployment or curriculum publication.
+Delivery: code release `138a186` pushed/deployed October 11; live loading and
+hero verified. [Rollout evidence](releases/2026-10-11-loading.md). API/curriculum unchanged.
