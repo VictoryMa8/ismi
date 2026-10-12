@@ -7,7 +7,6 @@ import {
   ChevronRight,
   Headphones,
   Home,
-  LoaderCircle,
   MessageCircle,
   Newspaper,
   RotateCcw,
@@ -18,6 +17,7 @@ import {
 } from '@lucide/vue';
 import CurriculumConsole from './CurriculumConsole.vue';
 import StudySettings from './StudySettings.vue';
+import LoadingWords from './LoadingWords.vue';
 import PlacementCheck from './PlacementCheck.vue';
 import { buildStudyPlan } from './studyPlan';
 import { useStudySettings } from './useStudySettings';
@@ -1151,10 +1151,7 @@ async function finishLesson() {
 
       <p v-if="downloadError" role="status">{{ downloadError }}</p>
 
-      <div v-if="dashboardLoading" class="dashboard-loading" :class="{ 'initial-loading': initialDashboardLoading }" role="status" aria-live="polite">
-        <LoaderCircle class="loading-spinner" :size="28" aria-hidden="true" />
-        <div><strong>{{ initialDashboardLoading ? 'Loading your study plan…' : 'Updating your study plan…' }}</strong></div>
-      </div>
+      <LoadingWords v-if="dashboardLoading" :compact="!initialDashboardLoading" />
       <section v-else-if="dashboardUnavailable && page !== 'account'" class="dashboard-error" aria-labelledby="dashboard-error-heading">
         <WifiOff :size="28" aria-hidden="true" />
         <h1 id="dashboard-error-heading">Your study plan couldn’t load</h1>

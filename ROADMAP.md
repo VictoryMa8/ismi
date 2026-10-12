@@ -1,12 +1,16 @@
 # Ismi roadmap
 
-Updated October 11, 2026 · **Start here for current feature status.**
+Updated October 12, 2026 · **Start here for current feature status.**
 
 This is the single current plan. [AGENTS.md](AGENTS.md) holds product constraints;
 [the planning workflow](docs/planning-workflow.md) explains how agents maintain
 this file. Older plans provide design context, not current priority or permission.
 
 ## At a glance
+
+**F17.4 — Complete locally October 12:** source-linked loading word reel with
+pause and reduced motion. Build and nine targeted checks pass;
+[behavior and preview](docs/loading-word-reel.md). Not deployed yet.
 
 **October 11 latest rollout:** F17.3 frontend release `eada137` is pushed and deployed
 to Vercel. Live oval hero, simpler loading/review copy and published lesson opening
@@ -95,6 +99,7 @@ and beta evidence remain separate dependencies.
 | [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
 | [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · deployed | Startup/refresh, cached offline and retry verified; hero edge removed |
 | [F17.3](#f173-interface-copy-cleanup) | Interface copy cleanup | Done · deployed | Redundant subtitles/quips removed; build and 31 targeted checks pass |
+| [F17.4](#f174-loading-word-reel) | Loading word reel | Done · local | Six exact glossary samples; pause/reduced motion verified |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
@@ -559,6 +564,20 @@ completion screenshots inspected. F18 real AT/browser gates remain open.
 **Delivery:** code release `eada137` pushed/deployed October 11;
 [live verification](docs/releases/2026-10-11-copy-cleanup.md). API/curriculum unchanged.
 
+### F17.4 Loading word reel
+
+**Status:** Done — implemented locally October 12.
+**Scope delivered:** green/gold slot-style loader cycles six source-linked
+Levantine words through transliteration → Arabic → meaning. Includes keyboard
+pause/resume, hidden-document pause, a still reduced-motion triplet, separate
+screen-reader loading status and a fixed-height reel. Startup and compact refresh
+remain truthful and never delay ready content.
+**Evidence:** [behavior, source records and verification](docs/loading-word-reel.md),
+production build and nine distinct targeted Chromium checks pass across runs.
+Mobile/enlarged text and real-time Arabic rendering inspected. F18 gates remain open.
+**Next:** owner feedback on local animation.
+**Delivery:** owner authorized deployment October 12; rollout pending. No API change or curriculum publication.
+
 ### F18 Invite-only beta readiness
 
 **Outcome:** a free adult English-language invite-only first-100 beta after a smaller pilot.
@@ -687,6 +706,11 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 
 ## Recent planning changes
 
+- **October 12, 2026 F17.4:** implemented source-linked loading word reel with
+  transliteration/Arabic/meaning rolls, pause, reduced motion and hidden-tab handling.
+  Build and nine targeted checks pass; local/uncommitted.
+  [Evidence](docs/loading-word-reel.md).
+
 - **October 11, 2026 F17.3:** removed redundant learner subtitles/quips and
   repeated status text; retained explanations, provenance and useful controls.
   Build and 31 targeted browser checks pass; `eada137` pushed/deployed. Oval hero
@@ -713,11 +737,6 @@ checks. This does not create a live-news operation, media hosting or rehosting r
   browser checks pass across runs. F15 remains open for bootcamp content and other
   tracks. Owner authorized push/deployment; frontend release `267f98e` is Ready and
   live placement loading verified. API and curriculum unchanged.
-
-- **October 9, 2026 rollout:** owner authorized push/deployment. Release `662d17c`
-  deployed web/API; live glossary, health and persistent-data preservation passed.
-  All 29 API tests and 55 distinct browser checks pass. F12.2 remains committed
-  drafts; no curriculum publication. Temporary deployment key revoked and deleted.
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

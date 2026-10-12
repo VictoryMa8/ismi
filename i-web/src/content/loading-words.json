@@ -1,0 +1,90 @@
+[
+  {
+    "id": "lev-b95734e51a05fc2c790fadca",
+    "arabizi": "shukran",
+    "arabic": "شكراً",
+    "meaning": "thank you",
+    "lessonId": "levantine-everyday-01-03",
+    "packagePath": "content/levantine/everyday-01/revisions/pilot-release/03-lesson.json",
+    "packageSha256": "54823a42b60830ead78a2bc665655b3350e8d6be4d26bb5513a3dcc1495615fc",
+    "sourceLocators": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "internal:ismi/everyday-01/03/guided-teaching"
+    ]
+  },
+  {
+    "id": "lev-80e9b7620a22322911d491c5",
+    "arabizi": "shāy",
+    "arabic": "شاي",
+    "meaning": "tea",
+    "lessonId": "levantine-everyday-01-03",
+    "packagePath": "content/levantine/everyday-01/revisions/pilot-release/03-lesson.json",
+    "packageSha256": "54823a42b60830ead78a2bc665655b3350e8d6be4d26bb5513a3dcc1495615fc",
+    "sourceLocators": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "internal:ismi/everyday-01/03/guided-teaching"
+    ]
+  },
+  {
+    "id": "lev-4f0bddef1715400923d5bd66",
+    "arabizi": "ʾahwe",
+    "arabic": "قهوة",
+    "meaning": "coffee",
+    "lessonId": "levantine-everyday-01-03",
+    "packagePath": "content/levantine/everyday-01/revisions/pilot-release/03-lesson.json",
+    "packageSha256": "54823a42b60830ead78a2bc665655b3350e8d6be4d26bb5513a3dcc1495615fc",
+    "sourceLocators": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "internal:ismi/everyday-01/03/guided-teaching"
+    ]
+  },
+  {
+    "id": "lev-c9a1f5002972c291532c9304",
+    "arabizi": "il-yōm",
+    "arabic": "اليوم",
+    "meaning": "today",
+    "lessonId": "levantine-everyday-01-02",
+    "packagePath": "content/levantine/everyday-01/revisions/pilot-release/02-lesson.json",
+    "packageSha256": "fb0861235c902ce1d1f90a661c54c3e14b73c2a8dab184557051a504b1210e72",
+    "sourceLocators": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "internal:ismi/everyday-01/02/guided-teaching"
+    ]
+  },
+  {
+    "id": "lev-ae99da92c2d5b5450eafe7b6",
+    "arabizi": "bukra",
+    "arabic": "بكرا",
+    "meaning": "tomorrow",
+    "lessonId": "levantine-everyday-01-05",
+    "packagePath": "content/levantine/everyday-01/revisions/pilot-release/05-lesson.json",
+    "packageSha256": "d56f294d0a78017a14af5039fc0d6bf386b843e0d075708aec4ef39dfe4e78fa",
+    "sourceLocators": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "internal:ismi/everyday-01/05/guided-teaching"
+    ]
+  },
+  {
+    "id": "lev-ffe356192da823f92e63e8bf",
+    "arabizi": "āh",
+    "arabic": "آه",
+    "meaning": "yes",
+    "lessonId": "levantine-everyday-01-01",
+    "packagePath": "content/levantine/everyday-01/revisions/pilot-release/01-lesson.json",
+    "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+    "sourceLocators": [
+      "https://sites.google.com/nyu.edu/palestine-lexicon/lexicon",
+      "https://media.lingualism.com/wp-content/uploads/Sample-Palestinian-Arabic-Verbs-Lingualism.pdf",
+      "internal:ismi/everyday-01/01/guided-teaching"
+    ]
+  }
+]

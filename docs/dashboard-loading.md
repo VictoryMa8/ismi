@@ -8,6 +8,10 @@ without changing APIs, curriculum, learning records or landing wording.
 
 ## Behavior
 
+October 12 local extension: [F17.4](loading-word-reel.md) adds source-linked
+word rolls, pause and a still reduced-motion triplet. It preserves the loading,
+retry and offline behavior below; it is not deployed yet.
+
 The deployed [F17.3 cleanup](interface-copy-cleanup.md) removes the loading
 explanation sentence and lesson-opening subtitle; the status label remains.
 
