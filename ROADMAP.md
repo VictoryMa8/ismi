@@ -8,10 +8,11 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**October 11 latest rollout:** F17.2 frontend release `138a186` is pushed and deployed
-to Vercel. Live loading-to-dashboard transition and the unframed hero are verified. API release `662d17c` remains
-deployed; no backend/data/content changes. Production build and 20 targeted browser
-checks pass across runs. See [the loading/hero rollout note](docs/releases/2026-10-11-loading.md).
+**October 11 latest rollout:** F17.3 frontend release `eada137` is pushed and deployed
+to Vercel. Live oval hero, simpler loading/review copy and published lesson opening
+are verified. API release `662d17c` remains
+deployed; no backend/data/content changes. Production build and 31 targeted browser
+checks pass. See [the copy/oval rollout note](docs/releases/2026-10-11-copy-cleanup.md).
 Earlier [placement rollout](docs/releases/2026-10-11.md) remains verified.
 
 **F15.2 — Complete and deployed October 11:** optional six-question Levantine starting-point
@@ -43,7 +44,7 @@ with distinct gold completion/goal markers and factual session recaps. Build and
 Sound audition and optional recall pacing remain proposals.
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
-characters, and landing/welcome are implemented. Frontend release `138a186` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
+characters, and landing/welcome are implemented. Frontend release `eada137` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
@@ -93,7 +94,7 @@ and beta evidence remain separate dependencies.
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
 | [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
 | [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · deployed | Startup/refresh, cached offline and retry verified; hero edge removed |
-| [F17.3](#f173-interface-copy-cleanup) | Interface copy cleanup | Done · local | Redundant subtitles/quips removed; build and 31 targeted checks pass |
+| [F17.3](#f173-interface-copy-cleanup) | Interface copy cleanup | Done · deployed | Redundant subtitles/quips removed; build and 31 targeted checks pass |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
@@ -111,8 +112,9 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  Frontend release `138a186` is deployed and live-verified October 11;
-  [loading/hero rollout evidence](docs/releases/2026-10-11-loading.md).
+  Frontend release `eada137` is deployed and live-verified October 11;
+  [copy/oval rollout evidence](docs/releases/2026-10-11-copy-cleanup.md).
+  Earlier [loading/hero rollout evidence](docs/releases/2026-10-11-loading.md) remains applicable.
   Earlier [satisfaction rollout evidence](docs/releases/2026-10-11-satisfaction.md) remains applicable.
   Earlier [placement rollout evidence](docs/releases/2026-10-11.md) remains applicable.
   API release `662d17c` remains deployed and verified October 9;
@@ -232,10 +234,10 @@ future art separately.
 
 ### F07 Landing page and app welcome
 
-**October 11 owner refinement:** Done locally — border-free oval hero with both
+**October 11 owner refinement:** Done and deployed — border-free oval hero with both
 faces visible. Build and four responsive landing/welcome checks pass; mobile/desktop
 renders inspected. [Preview and evidence](docs/landing/README.md#current-owner-revision).
-Uncommitted; live site still serves the square-corner F17.2 rollout.
+Deployed in `eada137`; [rollout evidence](docs/releases/2026-10-11-copy-cleanup.md).
 
 **Scope delivered:** mobile/desktop landing page with preserved owner copy and
 border-free hero; entry into the real app; once-per-browser skippable three-card
@@ -535,7 +537,7 @@ cached offline plans and uncached failure/retry settle correctly. Reduced motion
 preserves status text without spinner movement. The landing hero's rounded picture
 edge was removed at that rollout, with zero border/radius and no outline/shadow; artwork
 and landing wording are preserved. A later F07 owner refinement changes the image
-to a border-free oval locally.
+to a border-free oval, deployed in `eada137`.
 **Evidence:** [behavior and verification](docs/dashboard-loading.md), production
 build and 20 distinct targeted Chromium checks pass across focused runs.
 **Next:** owner feedback; F18 real assistive-technology/browser gates remain open.
@@ -544,17 +546,18 @@ build and 20 distinct targeted Chromium checks pass across focused runs.
 
 ### F17.3 Interface copy cleanup
 
-**Status:** Done — implemented locally October 11.
+**Status:** Done — implemented and deployed October 11.
 **Scope delivered:** removed decorative teaching/welcome/completion quips,
 repeated loading explanations, builder/checkpoint subtitles and duplicate
 review/settings status. Useful instructions, answer feedback, provenance,
-privacy and offline/error notices remain. Landing wording and the prior local
-oval hero are preserved.
+privacy and offline/error notices remain. Landing wording is preserved and
+the oval hero is deployed.
 **Evidence:** [exact removals and verification](docs/interface-copy-cleanup.md).
 Production build and 31 targeted Chromium checks pass; loading, teaching and
 completion screenshots inspected. F18 real AT/browser gates remain open.
-**Next:** owner feedback on local copy cleanup.
-**Delivery:** owner authorized push/deployment October 11; rollout pending. No curriculum publication.
+**Next:** owner feedback on the deployed copy cleanup.
+**Delivery:** code release `eada137` pushed/deployed October 11;
+[live verification](docs/releases/2026-10-11-copy-cleanup.md). API/curriculum unchanged.
 
 ### F18 Invite-only beta readiness
 
@@ -686,14 +689,15 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 
 - **October 11, 2026 F17.3:** removed redundant learner subtitles/quips and
   repeated status text; retained explanations, provenance and useful controls.
-  Build and 31 targeted browser checks pass; local/uncommitted. Oval hero preserved.
+  Build and 31 targeted browser checks pass; `eada137` pushed/deployed. Oval hero
+  and simplified learner copy verified live.
   [Cleanup evidence](docs/interface-copy-cleanup.md).
 
 - **October 11, 2026 F17.2:** added visible dashboard startup/refresh feedback,
   cached offline fallback and explicit uncached retry. Removed hero image rounding
   and made its border-free treatment explicit. Build and 20 distinct targeted
   browser checks pass; `138a186` pushed/deployed, live transition and hero verified.
-  Subsequent F07 owner refinement makes the hero oval locally; build and four
+  Subsequent F07 owner refinement makes the hero oval (deployed in `eada137`); build and four
   responsive checks pass. [Preview](docs/landing/hero-oval-preview.png).
   [Evidence](docs/dashboard-loading.md).
 

@@ -10,7 +10,7 @@ uses a border-free ellipse (`border-radius: 50%`) at its existing 3:2 proportion
 Both faces remain fully visible; original artwork and wording are unchanged.
 Production build and all four existing responsive landing/welcome checks pass at
 320/390/768/1440px. Mobile and desktop hero renders were inspected.
-[Oval preview](hero-oval-preview.png). Local/uncommitted; no deployment yet.
+[Oval preview](hero-oval-preview.png). Deployed in `eada137`; [live rollout evidence](../releases/2026-10-11-copy-cleanup.md).
 The earlier square-corner rollout below is historical evidence.
 
 Subsequent October 11 implementation: owner reiterated removal of the picture

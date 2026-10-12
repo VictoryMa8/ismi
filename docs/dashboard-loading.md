@@ -8,7 +8,7 @@ without changing APIs, curriculum, learning records or landing wording.
 
 ## Behavior
 
-Later local [F17.3 cleanup](interface-copy-cleanup.md) removes the loading
+The deployed [F17.3 cleanup](interface-copy-cleanup.md) removes the loading
 explanation sentence and lesson-opening subtitle; the status label remains.
 
 Startup shows “Loading your study plan…” with a decorative spinner and concise
@@ -33,7 +33,7 @@ At the F17.2 rollout, the hero artwork already had no border stroke. Its 18px co
 been removed, and the image explicitly has zero border, zero radius, no outline
 and no shadow. The artwork, character portraits, landing wording and separate
 conversation example card are unchanged. The owner subsequently requested an oval
-hero, implemented locally under [F07](landing/README.md#current-owner-revision);
+hero, implemented and deployed under [F07](landing/README.md#current-owner-revision);
 the zero-radius description above is historical rollout behavior.
 
 ## Verification

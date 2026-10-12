@@ -1,10 +1,10 @@
 # Interface copy cleanup
 
-October 11, 2026 · F17.3 · Local frontend changes
+October 11, 2026 · F17.3 · Deployed frontend changes
 
 The owner requested removal of subtitles and small quips that clutter the app.
 This pass removes redundant interface copy without changing published lesson
-records or the owner's landing-page wording. The prior local oval hero is preserved.
+records or the owner's landing-page wording. The prior oval hero refinement is included in this release.
 
 Removed or simplified:
 
@@ -47,5 +47,5 @@ Implementation: [learner shell](../i-web/src/App.vue),
 [builder](../i-web/src/PhraseBuilder.vue), [review](../i-web/src/ReviewPractice.vue),
 [settings](../i-web/src/StudySettings.vue).
 
-Delivery: owner authorized push/deployment October 11; rollout pending. API and
-curriculum unchanged. F18's real assistive-technology and broader browser gates remain open.
+Delivery: code release `eada137` pushed/deployed October 11;
+[live rollout evidence](releases/2026-10-11-copy-cleanup.md). API/curriculum unchanged. F18's real assistive-technology and broader browser gates remain open.
