@@ -1,6 +1,6 @@
 # Learner satisfaction — Today and completion
 
-October 11, 2026 · F17.1 · Local implementation
+October 11, 2026 · F17.1 · Deployed frontend implementation
 
 The owner authorized F17.1 implementation. This delivers the recommended first
 slice from [the proposal](learner-satisfaction-proposal.md): Today hierarchy,
@@ -70,4 +70,6 @@ Coverage: [satisfaction](../i-web/tests/satisfaction.spec.ts),
 [layout](../i-web/tests/lesson-layout.spec.ts),
 [recordings](../i-web/tests/recordings.spec.ts).
 
-Delivery: owner authorized push/deployment October 11; rollout verification pending. No content publication.
+Delivery: code release `0852fec` committed/pushed and deployed October 11.
+Live Today hierarchy/disclosure verified; [rollout evidence](releases/2026-10-11-satisfaction.md).
+API and curriculum unchanged.

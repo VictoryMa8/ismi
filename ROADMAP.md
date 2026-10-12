@@ -8,11 +8,11 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**October 11 rollout:** frontend release `267f98e` is pushed and deployed to Vercel.
-The live placement check loads the hosted v2 curriculum with dialogue and provenance.
-API release `662d17c` remains deployed; no backend/data/content changes.
-Production build, all 29 API tests and 12 distinct targeted browser checks pass across
-runs. See [the rollout note](docs/releases/2026-10-11.md).
+**October 11 latest rollout:** F17.1 frontend release `0852fec` is pushed and deployed
+to Vercel, with the new live Today hierarchy verified. API release `662d17c` remains
+deployed; no backend/data/content changes. Production build and 19 targeted browser
+checks pass across runs. See [the satisfaction rollout note](docs/releases/2026-10-11-satisfaction.md).
+Earlier [placement rollout](docs/releases/2026-10-11.md) remains verified.
 
 **F15.2 — Complete and deployed October 11:** optional six-question Levantine starting-point
 check now works with published lessons, device-scoped results, offline downloads
@@ -37,13 +37,13 @@ in Today and Practice, with deterministic offline intervals and version handling
 source-linked teaching contexts, synced account inclusion and offline persistence.
 [Behavior and verification](docs/learned-word-glossary.md). Live glossary and existing account inclusion verified; [rollout record](docs/releases/2026-10-09.md).
 
-**F17.1 — First slice complete locally October 11:** Today prioritizes Continue,
+**F17.1 — First slice complete and deployed October 11:** Today prioritizes Continue,
 with distinct gold completion/goal markers and factual session recaps. Build and
 19 targeted browser checks pass; [behavior and verification](docs/learner-satisfaction.md).
 Sound audition and optional recall pacing remain proposals.
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
-characters, and landing/welcome are implemented. Frontend release `267f98e` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
+characters, and landing/welcome are implemented. Frontend release `0852fec` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
@@ -91,7 +91,7 @@ and beta evidence remain separate dependencies.
 | [F15.1](#f151-personal-study-settings) | Personal study settings | Done · pushed | Goals/tracks drive queue; guest/account offline persistence verified |
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
-| [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · local first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
+| [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
@@ -109,8 +109,9 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  Frontend release `267f98e` is deployed and live-verified October 11;
-  [placement rollout evidence](docs/releases/2026-10-11.md).
+  Frontend release `0852fec` is deployed and live-verified October 11;
+  [satisfaction rollout evidence](docs/releases/2026-10-11-satisfaction.md).
+  Earlier [placement rollout evidence](docs/releases/2026-10-11.md) remains applicable.
   API release `662d17c` remains deployed and verified October 9;
   [API rollout evidence](docs/releases/2026-10-09.md).
   F10 frontend release `89a6537` is pushed and verified deployed; see the
@@ -509,12 +510,13 @@ across focused runs, covering mobile/desktop, keyboard/doubled text, reduced mot
 offline completion/reconnection, mute, single completion chime, recording playback,
 fixed lesson layout and character fallbacks. Real assistive-technology/browser
 release gates remain under F18.
-**Next:** review the local implementation. New sound timbres need an audition;
+**Next:** gather owner feedback on the deployed first slice. New sound timbres need an audition;
 optional Quick recall and its durations remain separate proposals. F17's broader
 mastery, streak and reminder scope remains open.
 **Evidence:** [implementation and verification](docs/learner-satisfaction.md),
 [original UI findings and proposal](docs/learner-satisfaction-proposal.md).
-**Delivery:** owner authorized push/deployment October 11; rollout verification pending. No curriculum publication.
+**Delivery:** code release `0852fec` pushed/deployed October 11; live Today verified.
+[Rollout evidence](docs/releases/2026-10-11-satisfaction.md). API and curriculum unchanged.
 
 ### F18 Invite-only beta readiness
 
@@ -645,8 +647,8 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 ## Recent planning changes
 
 - **October 11, 2026 F17.1/F07:** owner authorized implementation; recommended
-  Today/color/completion slice is complete locally. Build and 19 targeted browser
-  checks pass; no commit/push/deployment or publication. Sound audition and optional
+  Today/color/completion slice is complete and deployed in `0852fec`. Build and 19
+  targeted browser checks pass; live hierarchy/disclosure verified. API/content unchanged. Sound audition and optional
   recall pacing remain proposals. Earlier hero inspection found it already
   border-free; stale outline instructions were corrected.
 

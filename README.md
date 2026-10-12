@@ -114,11 +114,13 @@ References: [alwaysdata free plan](https://help.alwaysdata.com/en/admin-billing/
 
 ### Latest release
 
-The October 11 frontend release `267f98e` is deployed to Vercel. The optional
-Levantine starting check loads the existing hosted v2 curriculum; live dialogue,
-question and provenance loading passed. The API remains at the October 9 release
+The October 11 F17.1 frontend release `0852fec` is deployed to Vercel. Today now
+prioritizes Continue, with factual completion recaps and distinct gold goal markers.
+Live Today hierarchy and track-allocation disclosure passed. The earlier optional
+Levantine starting check remains available. The API remains at the October 9 release
 `662d17c`. No backend, data or curriculum changes were made. See the
-[October 11 rollout record](docs/releases/2026-10-11.md); prior glossary/API
+[F17.1 rollout record](docs/releases/2026-10-11-satisfaction.md) and
+[placement rollout record](docs/releases/2026-10-11.md); prior glossary/API
 preservation evidence remains in the [October 9 record](docs/releases/2026-10-09.md).
 
 ### September 27, 2026 release (historical)
