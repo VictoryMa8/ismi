@@ -21,6 +21,11 @@ for (const width of [320, 390, 768, 1440]) {
       const ratio = await portrait.locator('img').evaluate(img => img.getBoundingClientRect().width / img.getBoundingClientRect().height)
       expect(ratio).toBeCloseTo(2, 1)
     }
+    const heroFrame = await page.locator('.hero-art').evaluate(el => {
+      const style = getComputedStyle(el);
+      return { border: style.borderWidth, radius: style.borderRadius, outline: style.outlineStyle, shadow: style.boxShadow };
+    });
+    expect(heroFrame).toEqual({ border: '0px', radius: '0px', outline: 'none', shadow: 'none' });
     await page.screenshot({ path: testInfo.outputPath(`landing-${width}.png`), fullPage: true })
     expect(apiRequests).toEqual([])
     await page.locator('.hero-copy').getByRole('link', { name: 'Try out the app' }).click()
@@ -123,7 +128,8 @@ test('landing and welcome remain usable without art/API and with enlarged text',
   await expect(dialog).toBeVisible()
   expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth)).toBeTruthy()
   await dialog.getByRole('button', { name: 'Skip intro' }).click()
-  await expect(page.getByRole('heading', { name: 'Marhaba, Guest.' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Your study plan couldn’t load' })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Try again', exact: true })).toBeEnabled()
 })
 
 test('built root is readable without JavaScript, with learner PWA entry', async ({ browser }) => {

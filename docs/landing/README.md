@@ -5,6 +5,12 @@ This file supplies design/implementation evidence; historical checks are dated c
 
 ## Current owner revision
 
+Subsequent October 11 implementation: owner reiterated removal of the picture
+frame. The hero's rounded corners are now removed, and CSS explicitly sets no
+border, radius, outline or shadow. Mobile/desktop styles and navigation pass;
+artwork and wording are unchanged. This is local frontend work under
+[F17.2](../dashboard-loading.md), awaiting rollout.
+
 October 11, 2026: the owner requested a border-free hero image. The current
 stylesheet and image asset already satisfy this request, and the hosted
 `https://ismi-arabic.vercel.app/` image was inspected: computed border is

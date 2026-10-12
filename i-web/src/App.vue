@@ -7,6 +7,7 @@ import {
   ChevronRight,
   Headphones,
   Home,
+  LoaderCircle,
   MessageCircle,
   Newspaper,
   RotateCcw,
@@ -75,6 +76,12 @@ const reviewOpen = ref(false);
 const reviewAudioPlaying = ref(false);
 const reviewScope = ref('guest');
 const dashboardScope = ref('');
+const startupLoading = ref(true);
+const dashboardLoads = ref(0);
+const dashboardUnavailable = ref(false);
+const dashboardLoading = computed(() => startupLoading.value || dashboardLoads.value > 0);
+const initialDashboardLoading = computed(() => dashboardLoading.value && dashboardScope.value !== reviewScope.value);
+const studyPageAvailable = computed(() => !initialDashboardLoading.value && !dashboardUnavailable.value);
 const reviewHistoryError = ref('');
 const reviewHistoryRevision = ref(0);
 let stepAttemptCount = 0;
@@ -358,10 +365,13 @@ onMounted(async () => {
   }
 
   try { await migrateLegacyDashboard(); } catch { /* Existing online study remains available. */ }
-  await loadAuthSession();
-  await syncPendingCompletions();
-  await loadDashboard();
-
+  try {
+    await loadAuthSession();
+    await syncPendingCompletions();
+    await loadDashboard();
+  } finally {
+    startupLoading.value = false;
+  }
   await cacheUpcomingLessons();
 });
 
@@ -568,6 +578,15 @@ async function playPromptAudio() {
 }
 
 async function loadDashboard() {
+  dashboardLoads.value++;
+  try {
+    await loadDashboardData();
+  } finally {
+    dashboardLoads.value--;
+  }
+}
+
+async function loadDashboardData() {
   const scope = reviewScope.value;
   await studySettings.load(reviewScope.value, authSession.value.isAuthenticated);
   let loadedDashboard: DashboardResponse | undefined;
@@ -591,6 +610,7 @@ async function loadDashboard() {
   }
 
   if (scope !== reviewScope.value) return;
+  dashboardUnavailable.value = !loadedDashboard && dashboardScope.value !== scope;
   if (loadedDashboard) {
     loadedDashboard.dailyPlan.lessons ??= [];
     const today = new Date().toISOString().slice(0, 10);
@@ -1131,7 +1151,18 @@ async function finishLesson() {
 
       <p v-if="downloadError" role="status">{{ downloadError }}</p>
 
-      <template v-if="page === 'today'">
+      <div v-if="dashboardLoading" class="dashboard-loading" :class="{ 'initial-loading': initialDashboardLoading }" role="status" aria-live="polite">
+        <LoaderCircle class="loading-spinner" :size="28" aria-hidden="true" />
+        <div><strong>{{ initialDashboardLoading ? 'Loading your study plan…' : 'Updating your study plan…' }}</strong><p v-if="initialDashboardLoading">Getting your lessons and progress ready.</p></div>
+      </div>
+      <section v-else-if="dashboardUnavailable && page !== 'account'" class="dashboard-error" aria-labelledby="dashboard-error-heading">
+        <WifiOff :size="28" aria-hidden="true" />
+        <h1 id="dashboard-error-heading">Your study plan couldn’t load</h1>
+        <p>Reconnect and try again. No saved plan is available on this device.</p>
+        <button type="button" class="primary-action" @click="loadDashboard">Try again</button>
+      </section>
+
+      <template v-if="page === 'today' && studyPageAvailable">
         <section class="welcome-row" aria-labelledby="today-heading">
           <div>
             <h1 id="today-heading">
@@ -1261,7 +1292,7 @@ async function finishLesson() {
 
       </template>
 
-      <template v-if="page === 'courses'">
+      <template v-if="page === 'courses' && studyPageAvailable">
         <header class="page-heading">
           <h1>Courses</h1>
           <p class="review-status-note">{{ courseProgressLabel }}</p>
@@ -1379,7 +1410,7 @@ async function finishLesson() {
         </section>
       </template>
 
-      <template v-if="page === 'practice'">
+      <template v-if="page === 'practice' && studyPageAvailable">
         <header class="page-heading">
           <h1>Practice</h1>
         </header>

@@ -92,6 +92,7 @@ and beta evidence remain separate dependencies.
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
 | [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
 | [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
+| [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · local | Startup/refresh, cached offline and retry verified; hero edge removed |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
@@ -518,6 +519,20 @@ mastery, streak and reminder scope remains open.
 **Delivery:** code release `0852fec` pushed/deployed October 11; live Today verified.
 [Rollout evidence](docs/releases/2026-10-11-satisfaction.md). API and curriculum unchanged.
 
+### F17.2 Dashboard loading feedback
+
+**Status:** Done — implemented locally October 11.
+**Scope delivered:** visible startup and refresh feedback; no misleading
+empty/guest/offline dashboard during startup; navigation remains available;
+cached offline plans and uncached failure/retry settle correctly. Reduced motion
+preserves status text without spinner movement. The landing hero's rounded picture
+edge is removed, with explicit zero border/radius and no outline/shadow; artwork
+and landing wording are preserved.
+**Evidence:** [behavior and verification](docs/dashboard-loading.md), production
+build and 20 distinct targeted Chromium checks pass across focused runs.
+**Next:** local owner review; F18 real assistive-technology/browser gates remain open.
+**Delivery:** owner authorized push/deployment October 11; rollout pending. No curriculum publication.
+
 ### F18 Invite-only beta readiness
 
 **Outcome:** a free adult English-language invite-only first-100 beta after a smaller pilot.
@@ -646,6 +661,11 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 
 ## Recent planning changes
 
+- **October 11, 2026 F17.2:** added visible dashboard startup/refresh feedback,
+  cached offline fallback and explicit uncached retry. Removed hero image rounding
+  and made its border-free treatment explicit. Build and 20 distinct targeted
+  browser checks pass; local changes only. [Evidence](docs/dashboard-loading.md).
+
 - **October 11, 2026 F17.1/F07:** owner authorized implementation; recommended
   Today/color/completion slice is complete and deployed in `0852fec`. Build and 19
   targeted browser checks pass; live hierarchy/disclosure verified. API/content unchanged. Sound audition and optional
@@ -668,12 +688,6 @@ checks. This does not create a live-news operation, media hosting or rehosting r
   correction candidates with matched source records and glossary senses. All 29 API
   tests pass; hashes and immutable predecessors verified. Owner wording review and
   speaker evidence remain open; existing local drafts and hosted content preserved.
-
-- **October 8, 2026 F20:** owner authorized implementation and selected synced account
-  progress for glossary inclusion. Completed source-linked words/expressions, search,
-  filters, teaching-card links, version handling and offline/account isolation locally.
-  Verification and content limitations are in [the feature note](docs/learned-word-glossary.md).
-  No new publication, push or deployment.
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

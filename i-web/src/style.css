@@ -1931,3 +1931,13 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 .practiced-responses ul { list-style: none; padding: 0; }
 .practiced-responses li { display: grid; gap: 4px; padding: 10px 0; }
 .practiced-responses [lang="ar"] { font-size: 1.5em; }
+
+.dashboard-loading { display: flex; align-items: center; gap: 16px; padding: 18px 20px; margin: 20px 0; border-radius: 16px; background: white; border: 1px solid var(--line); color: var(--teal-dark); }
+.dashboard-loading.initial-loading { min-height: 200px; justify-content: center; }
+.dashboard-loading p { margin: 6px 0 0; color: var(--ink-soft); line-height: 1.5; }
+.loading-spinner { flex: 0 0 auto; animation: loading-turn 1.2s linear infinite; }
+.dashboard-error { padding: 32px 20px; margin-top: 24px; background: white; border: 1px solid var(--line); border-radius: 16px; }
+.dashboard-error h1 { margin: 16px 0; font-size: 26px; }
+.dashboard-error p { line-height: 1.5; color: var(--ink-soft); }
+@keyframes loading-turn { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .loading-spinner { animation: none; } }
