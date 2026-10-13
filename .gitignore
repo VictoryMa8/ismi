@@ -70,3 +70,6 @@ logs/
 # Local Azure audition audio and private configuration
 /tools/azure-speech/outputs/
 /tools/azure-speech/.cache/
+
+# Owner-only programmatic hosting credentials
+/deploy/alwaysdata.local.json

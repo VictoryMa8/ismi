@@ -162,6 +162,24 @@ export async function getDeviceSnapshot<T>(key: string): Promise<T | undefined> 
   return (await useStore<Snapshot<T> | undefined>(snapshotStore, 'readonly', store => store.get(key)))?.value
 }
 
+// Read/modify/write in one transaction so two tabs cannot overwrite one another's
+// recall attempts or explicitly consented reports.
+export async function updateDeviceSnapshot<T>(key: string, update: (value: T | undefined) => T): Promise<void> {
+  const database = await openDatabase()
+  await new Promise<void>((resolve, reject) => {
+    const transaction = database.transaction(snapshotStore, 'readwrite')
+    const store = transaction.objectStore(snapshotStore)
+    const request = store.get(key)
+    request.onsuccess = () => {
+      try { store.put({ key, value: JSON.parse(JSON.stringify(update(request.result?.value as T | undefined))) }) }
+      catch { transaction.abort() }
+    }
+    transaction.oncomplete = () => { database.close(); resolve() }
+    transaction.onabort = () => { database.close(); reject(transaction.error ?? new Error('Snapshot update failed.')) }
+    transaction.onerror = () => { database.close(); reject(transaction.error) }
+  })
+}
+
 export type ReviewHistory = {
   key: string
   scope: string

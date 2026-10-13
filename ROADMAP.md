@@ -8,6 +8,13 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
+**F22 — implementation verified October 12; rollout in progress:** typed Arabic/Arabizi
+recall, first/help/retry evidence, later reserved situations and owner review reports
+are implemented. Build, 32 API tests and seven F22 checks pass. The owner approved
+all six exact situations/answer records; three Everyday revisions still await hosted
+console publication. Reusable alwaysdata credentials are being configured for the
+new terminal deployment workflow. [Behavior and evidence](docs/recall-and-recombine.md).
+
 **October 12 scope expansion — F24–F26 planned:** the owner added French, Khmer
 and parallel language study to Ismi's roadmap. Arabic remains the flagship.
 The full plans below include a shared foundation and separate proposed twelve-week
@@ -19,8 +26,9 @@ first-100 beta remain explicit decisions. Existing Arabic commitments are retain
 5 and 6 for future implementation: F22 recall/recombine, F23 mini-stories,
 F17.5 phrase anatomy/grammar, F17.6 can-do progress and F17.7 weekly quests/forgiving
 habits. [Expanded scopes and completion criteria](docs/learning-engagement-plan.md).
-F22/F23 and F17.5/F17.6 remain Planned. F17.7 was subsequently authorized and
-implemented locally; the original planning selection did not authorize release.
+F22 was subsequently authorized and implemented, with rollout in progress. F23 and
+F17.5/F17.6 remain Planned. F17.7 is implemented/deployed; the original planning
+selection did not itself authorize release.
 
 **F17.7 — Complete and deployed October 12:** optional goal-sized weekly quests and
 independent forgiving streaks use the owner-selected Monday/timezone/two-grace-day
@@ -90,7 +98,8 @@ recordings and all beta evidence requirements remain open. The existing eight-pr
 batch provides the initial text; [v2 release evidence](docs/pilot/release-2026-10-03/README.md)
 remains the published baseline.
 
-**Waiting on:** owner Azure free-account enrollment (signed in, but no subscription),
+**Waiting on:** reusable alwaysdata credentials to finish the F22 API/content rollout;
+owner Azure free-account enrollment (signed in, but no subscription),
 verified F0 access and then owner listening review. No paid services authorized.
 Real recordings, live speech-provider choices, Quran permissions
 and beta evidence remain separate dependencies.
@@ -134,7 +143,7 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
 | [F21](#f21-cultural-watch-and-listen-recommendations) | Cultural watch/listen recommendations | Planned | Scope a weekly curated pick; daily cadence remains a choice |
-| [F22](#f22-recall-and-recombine) | Recall and recombine | Planned | Scope three targets/six authored variants and structured typed evaluation |
+| [F22](#f22-recall-and-recombine) | Recall and recombine | Active · verified; rollout pending | Exact package owner-approved; deploy API, publish three revisions and verify hosted practice |
 | [F23](#f23-recurring-mini-stories) | Recurring mini-stories | Planned | Start F23.1, then scope a linked three-episode text arc |
 | [F23.1](#f231-first-text-episode) | First text episode | Planned | One reviewed episode, two comprehension checks and a response |
 | [F24](#f24-multi-language-foundation-and-parallel-study) | Multi-language foundation and parallel study | Planned | Define compatible language/course records; agree queue policy |
@@ -833,7 +842,18 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 
 ### F22 Recall and recombine
 
-**Status:** Planned — owner selected research priority 1 on October 12, 2026.
+**Status:** Active — implementation and local verification complete October 12, 2026.
+Owner authorized push/deployment, selected the answer policy, and approved the exact
+six-situation package. Hosted API delivery, console publication and live checks remain.
+**Implemented:** source-linked optional recall metadata/validation, typed Arabic/Arabizi
+practice, independent-first/help/retry facts, F10-based due selection with reserved later
+variants, atomic device persistence and version-aware human report cases/console resolution.
+**Policy:** documented NFC/case/space/sentence-punctuation/Arabic-harakat normalization;
+letters and meaningful word differences remain. Unknown answers are Unable to judge;
+raw text is session-only unless voluntarily reported. [Details](docs/recall-and-recombine.md).
+**Current next:** finish reusable hosting-auth setup, deploy the prepared API, import/validate/
+approve/publish the three exact owner-approved revisions, verify hosted practice, then
+record the exact web/API/content release. No hosted completion is claimed yet.
 **Outcome:** learners produce familiar language in changed authored situations before
 assistance, with structured accepted alternatives, explanations and free hints/retries.
 F05/F10's think/say-then-tiles practice remains delivered; this adds captured independent
@@ -841,10 +861,10 @@ typed responses and transfer evidence rather than rebuilding scheduled review.
 **First scope:** one Levantine unit, three communicative targets and six source-linked
 changed-context variants, with one variant per target reserved for a later transfer
 check. Once seen, a variant is labeled repeated practice rather than unseen transfer.
-**Next:** inspect current published units and define targets/accepted inputs; recommend
-Arabic plus Arabizi support and deterministic authored evaluation. Agree normalization
-and uncertain-answer reporting before coding the evaluator. F12.1 is eligible only
-after its drafts are owner-approved/published; current published Everyday can be used.
+**Selected content:** Everyday lessons 1/3/6, copied from exact hosted v2 payloads.
+Three targets cover accepting a rest, requesting tea and confirming seven; each has
+an ordinary and reserved later situation. Existing teaching text/sources are preserved.
+[Approved package review](content/levantine/everyday-01/revisions/recall/REVIEW.md).
 **Done when:** all variants/rationales/explanations are validated, approved/published;
 independent first attempts, help and retries remain distinct; accepted alternatives
 and contextual errors follow the agreed policy, plausible uncertainty has a recoverable
@@ -856,7 +876,11 @@ reuse F18's report-case work if available, otherwise scope the minimal review pa
 **Evidence:** [expanded flow, data boundaries and checks](docs/learning-engagement-plan.md#f22-recall-and-recombine);
 existing [review](docs/review-and-checkpoints.md), [schedule](docs/scheduled-review.md)
 and [transfer drafts](content/levantine/plans-02/README.md).
-**Delivery:** planning only; no typed evaluator, new practice content or publication.
+**Verification:** production build/Release API publish, all 32 API tests, seven F22 browser
+checks, six glossary checks and eleven review/scheduling/console checks pass. Real AT/
+supported-device and learner-outcome evidence remain F18 gates.
+**Delivery:** local implementation and owner-approved package files; hosted API/content
+rollout pending reusable credentials. [Programmatic deployment](deploy/README.md).
 
 ### F23 Recurring mini-stories
 
@@ -1300,8 +1324,8 @@ F17.6 needs independent F22 evidence, and F17.7 uses approved available activiti
 [Detailed future-agent plan](docs/learning-engagement-plan.md).
 
 F17.7 was subsequently authorized, completed and deployed with explicit owner-selected
-habit policies; the remaining selected features are Planned, awaiting implementation
-authorization. Assessment, rewards and provider choices are not silently settled
+habit policies; F22 is authorized/implemented and undergoing rollout; F23/F17.5/F17.6 remain
+Planned, awaiting implementation authorization. Assessment, rewards and provider choices are not silently settled
 by the planning selection. Existing F09/F12/F19 work and the
 owner-deferred F18.1 rehearsal retain their statuses; beta gates remain requirements.
 Research priority **3 (record/replay/compare)** stays unselected research, without a
@@ -1316,6 +1340,13 @@ authoring should follow the respective first-unit evidence. No completion dates 
 committed without agreed scope, content/reviewer availability and measured first-unit effort.
 
 ## Recent planning changes
+
+- **October 12, 2026 F22:** owner authorized implementation/push/deployment, selected
+  the typed-answer policy and approved the exact six-situation package. Code/build,
+  32 API tests and seven F22 checks pass. Hosted API/content rollout remains pending
+  reusable credentials. Prepared tested terminal alwaysdata deployment tooling.
+  [Feature evidence](docs/recall-and-recombine.md), [deployment workflow](deploy/README.md).
+
 
 - **October 12, 2026 F17.7:** owner authorized implementation and selected the habit
   policy; independent weekly quests/streaks work with available activities, free grace
@@ -1339,12 +1370,6 @@ committed without agreed scope, content/reviewer availability and measured first
   Build and nine targeted checks pass; `7bb2c22` pushed/deployed. Live loader and
   transition to Today verified.
   [Evidence](docs/loading-word-reel.md).
-
-- **October 11, 2026 F17.3:** removed redundant learner subtitles/quips and
-  repeated status text; retained explanations, provenance and useful controls.
-  Build and 31 targeted browser checks pass; `eada137` pushed/deployed. Oval hero
-  and simplified learner copy verified live.
-  [Cleanup evidence](docs/interface-copy-cleanup.md).
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

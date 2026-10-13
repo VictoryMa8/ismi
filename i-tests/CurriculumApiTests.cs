@@ -604,6 +604,88 @@ public sealed class CurriculumApiTests : IAsyncLifetime
 
     private sealed record RecordingUpload(string AudioUrl);
 
+    [Fact]
+    public async Task RecallPackagesValidateAndKeepExactPublishedTeachingModels()
+    {
+        using var scope = _factory.Services.CreateScope();
+        var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
+        var options = new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web);
+        foreach (var number in new[] { 1, 3, 6 })
+        {
+            var package = System.Text.Json.JsonSerializer.Deserialize<CurriculumDraftRequest>(
+                await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "recall", $"{number:00}-lesson.json")), options)!;
+            var validation = validator.Validate(package.Lesson, package.Sources);
+            Assert.True(validation.IsValid, string.Join("; ", validation.Errors));
+            var target = Assert.Single(package.Lesson.Recall!);
+            foreach (var invalid in new[] {
+                target with { Id = "" }, target with { Dialect = "msa" }, target with { RequiredConcepts = [] },
+                target with { SourceLocators = ["missing"] }, target with { Variants = [] },
+                target with { Variants = target.Variants.Select(v => v with { ReservedForLater = false }).ToList() },
+                target with { AcceptedAnswers = [] }, target with { KnownErrors = target.AcceptedAnswers },
+                target with { AcceptedAnswers = [target.AcceptedAnswers[0] with { Arabic = "invented" }] },
+                target with { AcceptedAnswers = [target.AcceptedAnswers[0] with { Rationale = "" }] }
+            }) Assert.False(validator.Validate(package.Lesson with { Recall = [invalid] }, package.Sources).IsValid);
+            Assert.False(validator.Validate(package.Lesson with { Recall = [null!] }, package.Sources).IsValid);
+            Assert.False(validator.Validate(package.Lesson with { Recall = [target with { AcceptedAnswers = [null!] }] }, package.Sources).IsValid);
+        }
+    }
+
+    [Fact]
+    public void RecallEvaluationPreservesMeaningAndLeavesUnknownResponsesUnjudged()
+    {
+        Assert.Equal("الساعة سبعة", RecallEvaluator.Normalize(" السَّاعةُ   سَبْعَة؟ "));
+        Assert.Equal("is-saa sab'a", RecallEvaluator.Normalize(" IS-SAA   SAB'A! "));
+        Assert.NotEqual(RecallEvaluator.Normalize("sab'a"), RecallEvaluator.Normalize("saba"));
+        var answer = new RecallAnswer("الساعة سبعة.", "Is-sāʿa sabʿa.", "At seven.", "Seven fits.", [], ["is-saa sab3a"]);
+        var wrong = new RecallAnswer("الساعة ستة.", "Is-sāʿa sitte.", "At six.", "Six differs.", [], []);
+        var target = new RecallTarget("time", "Give seven", "palestinian-urban", "conversational", ["seven"], ["source"], [answer], [wrong], "time", []);
+        Assert.Equal("accepted", RecallEvaluator.Evaluate(target, "الساعةُ سَبْعة", "arabic"));
+        Assert.Equal("accepted", RecallEvaluator.Evaluate(target, "IS-SAA SAB3A!", "arabizi"));
+        Assert.Equal("context-error", RecallEvaluator.Evaluate(target, "الساعة ستة", "arabic"));
+        Assert.Equal("uncertain", RecallEvaluator.Evaluate(target, "seven please", "arabizi"));
+        Assert.Equal("uncertain", RecallEvaluator.Evaluate(target, "سبعة", "arabic"));
+    }
+
+    [Fact]
+    public async Task RecallReportsRequirePublishedVersionsConsentAndOwnerAccess()
+    {
+        using var owner = CreateClient();
+        using var guest = CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        var options = new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web);
+        var package = System.Text.Json.JsonSerializer.Deserialize<CurriculumDraftRequest>(
+            await File.ReadAllTextAsync(Path.Combine(AppContext.BaseDirectory, "recall", "06-lesson.json")), options)!;
+        var draftResponse = await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/admin/curriculum/drafts", package);
+        draftResponse.EnsureSuccessStatusCode();
+        var draft = (await draftResponse.Content.ReadFromJsonAsync<CurriculumVersionDetail>())!;
+        var report = new RecallReportRequest(Guid.NewGuid().ToString(), draft.Lesson.Id, draft.Lesson.Version,
+            "confirm-seven", "confirm-seven-practice", "arabizi", "at seven", "My response gives the time.");
+        Assert.Equal(HttpStatusCode.BadRequest, (await SendWithCsrfAsync(guest, HttpMethod.Post, "/api/recall/reports", report)).StatusCode);
+        Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync("/api/lessons/" + draft.Lesson.Id)).StatusCode);
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/approve", new { })).EnsureSuccessStatusCode();
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/publish", new { })).EnsureSuccessStatusCode();
+        var publishedRecall = (await guest.GetFromJsonAsync<LessonResponse>("/api/lessons/" + draft.Lesson.Id))!;
+        Assert.NotNull(publishedRecall.Recall);
+        report = report with { Version = publishedRecall.Version };
+        Assert.Equal(HttpStatusCode.BadRequest, (await guest.PostAsJsonAsync("/api/recall/reports", report)).StatusCode);
+        var sentReport = await SendWithCsrfAsync(guest, HttpMethod.Post, "/api/recall/reports", report);
+        Assert.True(sentReport.IsSuccessStatusCode, await sentReport.Content.ReadAsStringAsync());
+        (await SendWithCsrfAsync(guest, HttpMethod.Post, "/api/recall/reports", report)).EnsureSuccessStatusCode();
+        Assert.Equal(HttpStatusCode.BadRequest, (await SendWithCsrfAsync(guest, HttpMethod.Post, "/api/recall/reports", report with { Response = "changed" })).StatusCode);
+        Assert.Equal(HttpStatusCode.BadRequest, (await SendWithCsrfAsync(guest, HttpMethod.Post, "/api/recall/reports", report with { Id = Guid.NewGuid().ToString(), Version = "wrong" })).StatusCode);
+        Assert.Equal(HttpStatusCode.Unauthorized, (await guest.GetAsync("/api/admin/curriculum/recall-reports")).StatusCode);
+        var cases = (await owner.GetFromJsonAsync<List<RecallReviewCase>>("/api/admin/curriculum/recall-reports"))!;
+        var saved = Assert.Single(cases);
+        Assert.Equal(report, saved.Report);
+        Assert.Equal("open", saved.Status);
+        Assert.Contains("uncertain", saved.Evaluation);
+        Assert.NotEmpty(saved.Sources);
+        Assert.Equal("palestinian-urban", saved.Dialect);
+        var resolve = await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/recall-reports/{report.Id}/resolve", new RecallResolutionRequest("Keep as uncertain; no published changes."));
+        resolve.EnsureSuccessStatusCode();
+        Assert.Equal("resolved", (await resolve.Content.ReadFromJsonAsync<RecallReviewCase>())!.Status);
+    }
+
     private HttpClient CreateClient() =>
         _factory.CreateClient(new WebApplicationFactoryClientOptions
         {

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="../content/levantine/everyday-01/revisions/recall/*-lesson.json" Link="recall/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/revisions/transliteration-audit/*-lesson.json" Link="transliteration-audit/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/revisions/pilot-release/*-lesson.json" Link="pilot-release/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/plans-02/*-lesson.json" Link="plans-02/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />

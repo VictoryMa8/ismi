@@ -164,6 +164,7 @@ Do not include billing, a social network, or a live-news content operation in th
 - Design the learner experience mobile-browser first while keeping it fully usable on desktop. Design the internal curriculum console primarily for desktop.
 - The beta account slice uses ASP.NET Core Identity, HttpOnly cookie sessions, and a local SQLite database; the production hosting/database and any external authentication providers remain unresolved.
 - A free development preview runs at `https://ismi-arabic.vercel.app` (Vercel Hobby), with `https://ismi-ruby.vercel.app` redirecting there, and the ASP.NET API at `https://ismi.alwaysdata.net` (alwaysdata Free, .NET 10). Persistent SQLite, recordings, and cookie keys live outside the uploaded application directory. This is not a commercial hosting commitment or a completed beta release; paid hosting requires explicit user approval.
+- Prefer `npm run deploy:api` for authorized alwaysdata API updates after the one-time reusable SSH-key/API-token setup described in `deploy/README.md`. The owner requested a programmatic workflow instead of repeated browser uploads/temporary-key setup. Credentials belong only in the ignored owner-only local config; inspect `--check` before claiming access.
 - Keep AI and speech-provider credentials server-side.
 - Offline behavior will require a PWA-capable client, local lesson/progress storage, and later synchronization.
 

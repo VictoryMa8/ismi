@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
 import RecordingEditor from './RecordingEditor.vue';
+import RecallReports from './RecallReports.vue';
 import CharacterMapping from './CharacterMapping.vue';
 import {
   ArrowLeft,
@@ -383,6 +384,8 @@ function formatDate(value: string | null): string {
     <p v-if="notice" class="console-message success" role="status">
       {{ notice }}
     </p>
+
+    <RecallReports />
 
     <label class="package-import"
       >Import a lesson package as a draft

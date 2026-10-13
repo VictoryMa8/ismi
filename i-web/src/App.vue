@@ -31,6 +31,7 @@ import LessonStages from './LessonStages.vue';
 import LessonScroll from './LessonScroll.vue';
 import SoundToggle from './SoundToggle.vue';
 import ReviewPractice from './ReviewPractice.vue';
+import RecallPractice from './RecallPractice.vue';
 import LearnedWords from './LearnedWords.vue';
 import CharacterCast from './CharacterCast.vue';
 import CharacterCue from './CharacterCue.vue';
@@ -1484,6 +1485,8 @@ async function finishLesson() {
           @prompt-playback="reviewAudioPlaying = $event"
           @activity-complete="creditStudyActivity"
         />
+        <RecallPractice :scope="reviewScope" :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []"
+          :history-revision="reviewHistoryRevision" @open-change="reviewOpen = $event" />
         <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
         <LearnedWords
           :scope="reviewScope"

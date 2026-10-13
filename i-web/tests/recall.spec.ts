@@ -1,0 +1,210 @@
+import { readFileSync } from 'node:fs'
+import { expect, test, request, type APIRequestContext, type Page } from '@playwright/test'
+import { evaluateRecall, normalizeRecall } from '../src/recallEvaluation'
+import { recallQueue } from '../src/recallQueue'
+import type { LessonResponse } from '../src/types'
+import type { RecallEvidence } from '../src/recallStorage'
+import type { ReviewHistory } from '../src/offline'
+
+const packages = [1, 3, 6].map(n => JSON.parse(readFileSync(new URL(`../../content/levantine/everyday-01/revisions/recall/${String(n).padStart(2, '0')}-lesson.json`, import.meta.url), 'utf8'))) as Array<{ lesson: LessonResponse; sources: unknown[] }>
+let owner: APIRequestContext
+let lessons: LessonResponse[]
+async function post(client: APIRequestContext, path: string, data: unknown) {
+  const csrf = await (await client.get('/api/auth/csrf')).json()
+  return client.post(path, { data, headers: { 'X-CSRF-TOKEN': csrf.token } })
+}
+async function seedCompletions(page: Page) {
+  await page.request.get('/api/dashboard')
+  for (const lesson of lessons) expect((await post(page.request, `/api/lessons/${lesson.id}/completions`, { completionId: crypto.randomUUID(), completedAt: new Date().toISOString() })).ok()).toBeTruthy()
+  await page.goto('/#/practice')
+  await expect(page.getByRole('button', { name: 'Start typed recall' })).toBeEnabled()
+}
+async function snapshots(page: Page) {
+  return page.evaluate(async () => {
+    const db = await new Promise<IDBDatabase>(resolve => { const r = indexedDB.open('ismi-offline'); r.onsuccess = () => resolve(r.result) })
+    return new Promise<Array<{ key: string; value: any }>>(resolve => { const r = db.transaction('snapshots').objectStore('snapshots').getAll(); r.onsuccess = () => { db.close(); resolve(r.result) } })
+  })
+}
+async function evidence(page: Page): Promise<RecallEvidence[]> { return (await snapshots(page)).find(s => s.key === 'recall-evidence-v1:guest')?.value ?? [] }
+
+test.beforeAll(async () => {
+  owner = await request.newContext({ baseURL: 'http://127.0.0.1:4173' })
+  const registered = await post(owner, '/api/auth/register', { displayName: 'Recall reviewer', email: 'preview-owner@example.test', password: 'test-only-long-password' })
+  if (!registered.ok()) expect((await post(owner, '/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password', rememberMe: false })).ok()).toBeTruthy()
+  lessons = []
+  for (const pack of packages) {
+    const created = await post(owner, '/api/admin/curriculum/drafts', pack)
+    expect(created.ok()).toBeTruthy()
+    const draft = await created.json()
+    expect((await post(owner, `/api/admin/curriculum/versions/${draft.id}/approve`, {})).ok()).toBeTruthy()
+    const published = await post(owner, `/api/admin/curriculum/versions/${draft.id}/publish`, {})
+    expect(published.ok()).toBeTruthy()
+    lessons.push((await published.json()).lesson)
+  }
+})
+test.afterAll(async () => { await owner.dispose() })
+
+test('authored evaluation accepts only documented normalization and leaves unknown language uncertain', () => {
+  const time = packages[2]!.lesson.recall![0]!
+  expect(evaluateRecall(time, ' السَّاعةُ  سَبْعة؟ ', 'arabic').kind).toBe('accepted')
+  expect(evaluateRecall(time, 'IS-SAA SAB3A!', 'arabizi').kind).toBe('accepted')
+  expect(evaluateRecall(time, 'الساعة ستة', 'arabic').kind).toBe('context-error')
+  for (const input of ['seven', 'سبعة', 'الساعة سبع', 'الساعة سبعة عشر']) expect(evaluateRecall(time, input, 'arabic').kind).toBe('uncertain')
+  expect(normalizeRecall("sab'a")).not.toBe(normalizeRecall('saba'))
+  expect(normalizeRecall('ā')).not.toBe(normalizeRecall('a'))
+})
+
+test('reserved situations require an actual response on an earlier due day; revised versions reset current claims', () => {
+  const lesson = packages[0]!.lesson
+  const now = Date.now()
+  const shown: RecallEvidence = { id: 'exposure', scope: 'guest', lessonId: lesson.id, version: lesson.version, targetId: 'rest-a-little', variantId: 'rest-a-little-practice', shownAt: new Date(now - 2 * 86400000).toISOString(), completedAt: null, firstResult: null, firstHelped: false, helped: false, repeated: false, attempts: [] }
+  expect(recallQueue([lesson], [shown], [], now)[0]!.variant.reservedForLater).toBe(false)
+  const attempted = { ...shown, firstResult: 'accepted' as const }
+  expect(recallQueue([lesson], [attempted], [], now)[0]!.variant.reservedForLater).toBe(true)
+  const history: ReviewHistory = { key: '', scope: 'guest', lessonId: lesson.id, version: lesson.version, stepId: 'recall:rest-a-little', practicedAt: shown.shownAt, needsReview: false, answerId: null, explanation: '', schedule: { intervalIndex: 1, dueAt: new Date(now + 86400000).toISOString() } }
+  expect(recallQueue([lesson], [attempted], [history], now)[0]!.variant.reservedForLater).toBe(false)
+  const revised = { ...lesson, version: 'revised' }
+  expect(recallQueue([revised], [attempted], [history], now)[0]!.repeated).toBe(false)
+  const laterSeen = { ...shown, variantId: 'rest-a-little-later' }
+  expect(recallQueue([lesson], [attempted, laterSeen], [], now)[0]!.repeated).toBe(true)
+})
+
+test('typed first answers, contextual retry and help retain distinct evidence without raw text', async ({ page }) => {
+  await seedCompletions(page)
+  await page.getByRole('button', { name: 'Start typed recall' }).click()
+  const dialog = page.getByRole('dialog', { name: 'Recall and recombine' })
+  await expect(dialog.locator('[data-recall-variant]')).toHaveAttribute('data-recall-variant', 'rest-a-little-practice')
+  await page.screenshot({ path: '/tmp/ismi-f22-mobile.png', animations: 'disabled' })
+  await dialog.getByLabel('Your response').fill('ah biddi artah shwayy')
+  await dialog.getByRole('button', { name: 'Check response' }).click()
+  await expect(dialog.getByText('That fits.', { exact: true })).toBeVisible()
+  await dialog.getByRole('button', { name: 'Next target' }).click()
+  await dialog.getByLabel('Write in').selectOption('arabic')
+  await dialog.getByLabel('Your response').fill('قهوة، لو سمحتي.')
+  await dialog.getByRole('button', { name: 'Check response' }).click()
+  await expect(dialog.getByText('Check the situation.', { exact: true })).toBeVisible()
+  await expect(dialog.locator('.feedback-panel')).toContainText('coffee')
+  await dialog.getByRole('button', { name: 'Try again' }).click()
+  await dialog.getByLabel('Your response').fill('شاي لو سمحت')
+  await dialog.getByRole('button', { name: 'Check response' }).click()
+  await expect(dialog.getByText('That fits.', { exact: true })).toBeVisible()
+  await dialog.getByRole('button', { name: 'Next target' }).click()
+  await dialog.getByRole('button', { name: 'Hint', exact: true }).click()
+  await dialog.getByLabel('Your response').fill('الساعة سبعة')
+  await dialog.getByRole('button', { name: 'Check response' }).click()
+  await expect(dialog.getByText('Help used before the first response.')).toBeVisible()
+  await dialog.getByRole('button', { name: 'Finish recall' }).click()
+  await expect(dialog.getByText('1 of 3 first answers matched without help.')).toBeVisible()
+  const saved = await evidence(page)
+  expect(saved.map(e => e.firstResult)).toEqual(['accepted', 'context-error', 'accepted'])
+  expect(saved[1]!.attempts).toHaveLength(2)
+  expect(saved[2]!.firstHelped).toBe(true)
+  expect(JSON.stringify(await snapshots(page))).not.toContain('ah biddi artah shwayy')
+  await dialog.getByRole('button', { name: 'Back to practice' }).click()
+  await page.getByRole('button', { name: 'Start typed recall' }).click()
+  await expect(dialog.getByText('Repeated situation', { exact: true })).toBeVisible()
+})
+
+test('offline uncertainty, explicit reports and reconnection retain version context without duplicate cases', async ({ page, context }) => {
+  await seedCompletions(page)
+  await page.evaluate(async () => { await navigator.serviceWorker.ready })
+  await context.setOffline(true)
+  await page.reload()
+  await page.getByRole('button', { name: 'Start typed recall' }).click()
+  const dialog = page.getByRole('dialog', { name: 'Recall and recombine' })
+  const raw = 'I would like a little break'
+  await dialog.getByLabel('Your response').fill(raw)
+  await dialog.getByRole('button', { name: 'Check response' }).click()
+  await expect(dialog.getByText('Unable to judge.', { exact: true })).toBeVisible()
+  expect(JSON.stringify(await snapshots(page))).not.toContain(raw)
+  await dialog.getByRole('button', { name: 'Report this answer' }).click()
+  await dialog.getByLabel('Why should this response fit? (optional)').fill('I meant accepting a rest.')
+  await dialog.getByRole('button', { name: 'Send answer for review' }).click()
+  await expect(dialog.getByText('Report saved on this device; it will send when connected.')).toBeVisible()
+  const saved = (await snapshots(page)).find(s => s.key === 'recall-reports-v1:guest')!.value[0].report
+  expect(saved.response).toBe(raw)
+  await dialog.getByRole('button', { name: 'Close recall' }).click()
+  await page.reload()
+  await expect(page.getByText('Recall report waiting to send when you reconnect.')).toBeVisible()
+  expect((await evidence(page))[0]!.firstResult).toBe('uncertain')
+  await context.setOffline(false)
+  await page.evaluate(() => window.dispatchEvent(new Event('online')))
+  await expect(page.getByText('Recall report waiting to send when you reconnect.')).toHaveCount(0)
+  const cases = await (await owner.get('/api/admin/curriculum/recall-reports')).json()
+  const item = cases.find((c: any) => c.id === saved.id)
+  expect(item.report.version).toBe(lessons[0]!.version)
+  expect(item.report.response).toBe(raw)
+  expect(item.sources.length).toBeGreaterThan(0)
+  expect((await post(page.request, '/api/recall/reports', saved)).ok()).toBeTruthy()
+  const repeated = await (await owner.get('/api/admin/curriculum/recall-reports')).json()
+  expect(repeated.filter((c: any) => c.id === saved.id)).toHaveLength(1)
+  expect((await page.request.get('/api/admin/curriculum/recall-reports')).status()).toBe(401)
+})
+
+test('keyboard focus, model assistance, Arabic layout and guest/account separation work', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 700 })
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await seedCompletions(page)
+  const start = page.getByRole('button', { name: 'Start typed recall' })
+  await start.focus(); await page.keyboard.press('Enter')
+  const dialog = page.getByRole('dialog', { name: 'Recall and recombine' })
+  await expect(dialog.getByRole('button', { name: 'Close recall' })).toBeFocused()
+  await page.keyboard.press('Shift+Tab')
+  await page.keyboard.press('Shift+Tab')
+  await expect(dialog.getByRole('button', { name: 'Skip target' })).toBeFocused()
+  await page.keyboard.press('Tab')
+  await page.keyboard.press('Tab')
+  await expect(dialog.getByRole('button', { name: 'Close recall' })).toBeFocused()
+  await dialog.getByRole('button', { name: 'Show model' }).click()
+  await dialog.getByLabel('Write in').selectOption('arabic')
+  await dialog.getByLabel('Your response').fill('آه بدي أرتاح شوي')
+  await expect(dialog.getByLabel('Your response')).toHaveAttribute('dir', 'rtl')
+  await dialog.getByRole('button', { name: 'Check response' }).click()
+  await expect(dialog.getByText('Help used before the first response.')).toBeVisible()
+  expect(await dialog.evaluate(e => e.scrollWidth <= e.clientWidth + 1)).toBeTruthy()
+  await page.keyboard.press('Escape')
+  await expect(start).toBeFocused()
+  expect((await evidence(page))[0]!.firstHelped).toBe(true)
+  const registered = await post(page.request, '/api/auth/register', { displayName: 'Recall learner', email: `recall-${Date.now()}@example.test`, password: 'test-only-long-password' })
+  expect(registered.ok()).toBeTruthy()
+  await page.reload()
+  await expect(start).toBeDisabled()
+  await post(page.request, '/api/auth/logout', {})
+  await page.reload()
+  await expect(start).toBeEnabled()
+  expect((await evidence(page))[0]!.firstHelped).toBe(true)
+})
+
+test('an explicit server withdrawal cannot fall back to a downloaded recall package', async ({ page }) => {
+  await seedCompletions(page)
+  await page.route('**/api/lessons/levantine-everyday-01-01', route => route.fulfill({ status: 410, json: { message: 'Withdrawn' } }))
+  await page.reload()
+  await expect(page.getByRole('region', { name: 'Recall and recombine' })).toContainText('2 targets available')
+  await page.getByRole('button', { name: 'Start typed recall' }).click()
+  const dialog = page.getByRole('dialog', { name: 'Recall and recombine' })
+  await expect(dialog.locator('[data-recall-target]')).toHaveAttribute('data-recall-target', 'request-tea')
+})
+
+
+test('concurrent tabs retain both attempt records without advancing the schedule twice', async ({ page, context }) => {
+  await seedCompletions(page)
+  const second = await context.newPage()
+  await second.goto('/#/practice')
+  await expect(second.getByRole('button', { name: 'Start typed recall' })).toBeEnabled()
+  await Promise.all([page.getByRole('button', { name: 'Start typed recall' }).click(), second.getByRole('button', { name: 'Start typed recall' }).click()])
+  for (const tab of [page, second]) await tab.getByLabel('Your response').fill('ah biddi artah shwayy')
+  await Promise.all([page.getByRole('button', { name: 'Check response' }).click(), second.getByRole('button', { name: 'Check response' }).click()])
+  for (const tab of [page, second]) await expect(tab.getByText('That fits.', { exact: true })).toBeVisible()
+  const records = await evidence(page)
+  expect(records).toHaveLength(2)
+  expect(records.every(r => r.firstResult === 'accepted')).toBe(true)
+  expect(records.every(r => r.attempts.length === 1)).toBe(true)
+  expect(new Set(records.map(r => r.id)).size).toBe(2)
+  const schedules = await page.evaluate(async () => {
+    const db = await new Promise<IDBDatabase>(resolve => { const r = indexedDB.open('ismi-offline'); r.onsuccess = () => resolve(r.result) })
+    return new Promise<any[]>(resolve => { const r = db.transaction('review-history').objectStore('review-history').getAll(); r.onsuccess = () => { db.close(); resolve(r.result.filter((h: any) => h.stepId === 'recall:rest-a-little')) } })
+  })
+  expect(schedules).toHaveLength(1)
+  expect(schedules[0].schedule.intervalIndex).toBe(0)
+  await second.close()
+})

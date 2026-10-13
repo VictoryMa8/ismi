@@ -112,6 +112,9 @@ builder.Services.AddAntiforgery(options =>
 builder.Services.AddRateLimiter(options =>
 {
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.AddPolicy("recall-report", context => RateLimitPartition.GetFixedWindowLimiter(
+        context.Connection.RemoteIpAddress?.ToString() ?? "unknown", _ => new FixedWindowRateLimiterOptions
+        { PermitLimit = 10, Window = TimeSpan.FromMinutes(1), QueueLimit = 0, AutoReplenishment = true }));
     options.AddFixedWindowLimiter("auth", limiter =>
     {
         limiter.PermitLimit = 10;
@@ -138,6 +141,7 @@ builder.Services.AddScoped<AccountProgressService>();
 builder.Services.AddScoped<StudySettingsService>();
 builder.Services.AddScoped<CurriculumPublishingService>();
 builder.Services.AddScoped<CurriculumPackageImporter>();
+builder.Services.AddScoped<RecallReportService>();
 builder.Services.AddSingleton<RecordingStore>();
 builder.Services.AddSingleton<CurriculumValidator>();
 builder.Services.AddSingleton<CurriculumAccessService>();
@@ -150,6 +154,7 @@ await using (var scope = app.Services.CreateAsyncScope())
     await database.Database.EnsureCreatedAsync();
     await CurriculumSchemaInitializer.EnsureCurriculumSchemaAsync(database);
     await StudySettingsService.EnsureSchemaAsync(database);
+    await RecallReportService.EnsureSchemaAsync(database);
     var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
     var seed = scope.ServiceProvider.GetRequiredService<SeedCurriculum>();
     await publishing.EnsureSeededAsync(seed.GetInitialLessons());
@@ -431,6 +436,28 @@ app.MapPost("/api/lessons/{lessonId}/completions", async Task<IResult> (
 var curriculumAdmin = app.MapGroup("/api/admin/curriculum")
     .RequireAuthorization()
     .AddEndpointFilter<CurriculumApproverFilter>();
+
+app.MapPost("/api/recall/reports", async Task<IResult> (
+    RecallReportRequest request, HttpContext context, IAntiforgery antiforgery,
+    RecallReportService reports, CancellationToken ct) =>
+{
+    var csrf = await ValidateAntiforgeryAsync(context, antiforgery);
+    if (csrf is not null) return csrf;
+    var saved = await reports.SubmitAsync(request, ct);
+    return saved is null ? Results.BadRequest(new ApiError("invalid_report", "Report must match a published recall version and contain a response of at most 500 characters."))
+        : Results.Ok(new { accepted = true, id = saved.Id });
+}).RequireRateLimiting("recall-report");
+
+curriculumAdmin.MapGet("/recall-reports", (RecallReportService reports, CancellationToken ct) => reports.ListAsync(ct));
+curriculumAdmin.MapPost("/recall-reports/{id}/resolve", async Task<IResult> (
+    string id, RecallResolutionRequest request, HttpContext context, IAntiforgery antiforgery,
+    RecallReportService reports, CancellationToken ct) =>
+{
+    var csrf = await ValidateAntiforgeryAsync(context, antiforgery);
+    if (csrf is not null) return csrf;
+    var saved = await reports.ResolveAsync(id, request.Resolution, CurriculumActor(context), ct);
+    return saved is null ? Results.BadRequest(new ApiError("invalid_resolution", "Choose an existing case and provide a resolution of at most 1000 characters.")) : Results.Ok(saved);
+});
 
 // Draft assets can be previewed by the owner; only published assets reach learners.
 app.MapGet("/api/recordings/{file}", async Task<IResult> (

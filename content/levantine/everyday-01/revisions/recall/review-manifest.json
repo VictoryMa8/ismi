@@ -1,0 +1,23 @@
+[
+  {
+    "file": "01-lesson.json",
+    "sha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+    "lessonId": "levantine-everyday-01-01",
+    "baselineVersion": "curriculum-levantine-everyday-01-01-v2",
+    "baselineSha256": "a0f504da031cd1b3e8d6f5aadba9311702cadef7560a446e7a5ae211439cd820"
+  },
+  {
+    "file": "03-lesson.json",
+    "sha256": "892f191054f59cb272ff80fb8c09be2f3fec82965410f046bb57ea8b54344dc0",
+    "lessonId": "levantine-everyday-01-03",
+    "baselineVersion": "curriculum-levantine-everyday-01-03-v2",
+    "baselineSha256": "2c5436e800328f0b9b4a20b893c8279d54d0acca6520c4329f86ffd43bf0f3cc"
+  },
+  {
+    "file": "06-lesson.json",
+    "sha256": "f62853b93a468bcc825891378c412b3d7cf7d361d6a57dc5e86575590139e5f2",
+    "lessonId": "levantine-everyday-01-06",
+    "baselineVersion": "curriculum-levantine-everyday-01-06-v2",
+    "baselineSha256": "fccedcbd0da096031c000c79779a2750e8bfee6e7821375d16adb1e1d5072aa5"
+  }
+]

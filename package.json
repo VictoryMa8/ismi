@@ -5,7 +5,8 @@
   "scripts": {
     "setup": "npm ci --prefix i-web && dotnet restore Ismi.slnx",
     "api": "node scripts/dev.mjs api",
-    "web": "node scripts/dev.mjs web"
+    "web": "node scripts/dev.mjs web",
+    "deploy:api": "python3 deploy/alwaysdata.py"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"

@@ -13,6 +13,7 @@ public sealed class CurriculumValidator(RecordingStore recordings)
             return new(false, ["The package has missing or null lesson, step, answer, dialogue, or source fields."]);
 
         CharacterRegistry.Validate(lesson, errors);
+        RecallValidator.Validate(lesson, sources, errors);
 
         Required(errors, lesson.Id, "Lesson ID is required.");
         if (lesson.Id.Length > 100) errors.Add("Lesson ID cannot exceed 100 characters.");
@@ -194,6 +195,7 @@ public sealed class CurriculumValidator(RecordingStore recordings)
 
     public static bool HasReadableShape(LessonResponse? lesson, IReadOnlyCollection<CurriculumSourceInput>? sources) =>
         lesson is { Id: not null, TrackId: not null, Steps: not null }
+        && RecallValidator.HasShape(lesson.Recall)
         && (lesson.Vocabulary is null || lesson.Vocabulary.All(entry => entry is
             { Forms: not null, SourceLocators: not null }))
         && sources is not null && sources.All(source => source is not null)

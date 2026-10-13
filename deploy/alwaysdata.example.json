@@ -1,0 +1,4 @@
+{
+  "ssh_identity": "/absolute/path/to/your/ismi-deploy-key",
+  "api_token": "PUT_THE_TOKEN_ONLY_IN_THE_IGNORED_LOCAL_COPY"
+}

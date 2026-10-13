@@ -16,7 +16,9 @@ public sealed record LessonResponse(
     bool EnglishHelpInitiallyHidden = false,
     LessonCast? Characters = null,
     [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-    IReadOnlyList<LessonVocabulary>? Vocabulary = null);
+    IReadOnlyList<LessonVocabulary>? Vocabulary = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    IReadOnlyList<RecallTarget>? Recall = null);
 
 public sealed record LessonCast(string RegistryVersion, IReadOnlyList<string> CharacterIds);
 public sealed record CharacterRoles(string? SpeakerId = null, string? AddresseeId = null,
@@ -112,3 +114,12 @@ public sealed record LessonVocabulary(string Id, string SenseId, string Kind,
     string Arabic, string Arabizi, string Meaning, string Dialect, string Register,
     IReadOnlyList<string> Forms, string Note, IReadOnlyList<string> SourceLocators,
     int TeachingCardIndex);
+
+// Authored production practice travels through the same immutable publication gate.
+public sealed record RecallTarget(string Id, string Intent, string Dialect, string Register,
+    IReadOnlyList<string> RequiredConcepts, IReadOnlyList<string> SourceLocators,
+    IReadOnlyList<RecallAnswer> AcceptedAnswers, IReadOnlyList<RecallAnswer> KnownErrors,
+    string Hint, IReadOnlyList<RecallVariant> Variants);
+public sealed record RecallAnswer(string Arabic, string Arabizi, string Meaning, string Rationale,
+    IReadOnlyList<string> ArabicVariants, IReadOnlyList<string> ArabiziVariants);
+public sealed record RecallVariant(string Id, string Situation, bool ReservedForLater);

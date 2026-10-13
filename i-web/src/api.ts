@@ -222,3 +222,23 @@ export function getStudySettings(): Promise<StudySettings> {
 export function saveStudySettings(settings: StudySettings): Promise<StudySettings> {
   return request('/api/study-settings', { method: 'POST', body: JSON.stringify(settings) })
 }
+
+export type RecallReport = {
+  id: string; lessonId: string; version: string; targetId: string; variantId: string
+  inputMode: 'arabic' | 'arabizi'; response: string; explanation: string
+}
+export type RecallReviewCase = {
+  id: string; status: string; createdAtUtc: string; report: RecallReport
+  dialect: string; register: string; evaluation: string
+  target: import('./types').RecallTarget; sources: CurriculumSource[]
+  resolution: string | null; resolvedBy: string | null; resolvedAtUtc: string | null
+}
+export function submitRecallReport(report: RecallReport): Promise<{ accepted: boolean; id: string }> {
+  return request('/api/recall/reports', { method: 'POST', body: JSON.stringify(report) })
+}
+export function getRecallReports(): Promise<RecallReviewCase[]> {
+  return request('/api/admin/curriculum/recall-reports')
+}
+export function resolveRecallReport(id: string, resolution: string): Promise<RecallReviewCase> {
+  return request(`/api/admin/curriculum/recall-reports/${id}/resolve`, { method: 'POST', body: JSON.stringify({ resolution }) })
+}

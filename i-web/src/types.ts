@@ -118,6 +118,7 @@ export type LessonVocabulary = {
 }
 
 export type LessonResponse = {
+  recall?: RecallTarget[] | null
   vocabulary?: LessonVocabulary[] | null
   characters?: LessonCast | null
   englishHelpInitiallyHidden?: boolean
@@ -133,6 +134,17 @@ export type LessonResponse = {
   unitTitle: string
   courseOrder: number
   reviewStatus: 'demonstrative' | 'reviewed' | 'owner-review'
+}
+
+export type RecallAnswer = {
+  arabic: string; arabizi: string; meaning: string; rationale: string
+  arabicVariants: string[]; arabiziVariants: string[]
+}
+export type RecallTarget = {
+  id: string; intent: string; dialect: string; register: string
+  requiredConcepts: string[]; sourceLocators: string[]
+  acceptedAnswers: RecallAnswer[]; knownErrors: RecallAnswer[]
+  hint: string; variants: Array<{ id: string; situation: string; reservedForLater: boolean }>
 }
 
 export type LessonAttemptResponse = {
