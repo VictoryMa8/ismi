@@ -156,21 +156,30 @@ export function getCurriculumVersion(versionId: number): Promise<CurriculumVersi
   return request<CurriculumVersionDetail>(`/api/admin/curriculum/versions/${versionId}`).then(detail => ({ ...detail, lesson: renameCharacterContent(detail.lesson), sources: renameCharacterContent(detail.sources) }))
 }
 
-export function createCurriculumDraft(
+async function ensureRecallSupport(lesson: LessonResponse): Promise<void> {
+  if (!lesson.recall?.length) return
+  const health = await request<{ features?: string[] }>('/api/health')
+  if (!health.features?.includes('typed-recall-v1'))
+    throw new ApiRequestError('Deploy the API with recall support before importing or saving recall content.', 409)
+}
+
+export async function createCurriculumDraft(
   lesson: LessonResponse,
   sources: CurriculumSource[],
 ): Promise<CurriculumVersionDetail> {
+  await ensureRecallSupport(lesson)
   return request<CurriculumVersionDetail>('/api/admin/curriculum/drafts', {
     method: 'POST',
     body: JSON.stringify({ lesson, sources }),
   })
 }
 
-export function updateCurriculumDraft(
+export async function updateCurriculumDraft(
   versionId: number,
   lesson: LessonResponse,
   sources: CurriculumSource[],
 ): Promise<CurriculumVersionDetail> {
+  await ensureRecallSupport(lesson)
   return request<CurriculumVersionDetail>(`/api/admin/curriculum/versions/${versionId}`, {
     method: 'PUT',
     body: JSON.stringify({ lesson, sources }),

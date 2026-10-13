@@ -2,7 +2,9 @@
 
 October 12, 2026 · Owner selected research priorities **1, 2, 4, 5 and 6** for
 future implementation. This is an expanded design plan; current statuses and
-priorities live in [ROADMAP.md](../ROADMAP.md). These features are Planned.
+priorities live in [ROADMAP.md](../ROADMAP.md). This document preserves the original
+planning scope; F22 and F17.7 were subsequently authorized. See the roadmap and
+linked feature notes for current implementation and delivery evidence.
 The selection authorizes roadmap planning, not immediate product implementation,
 publication, deployment, new providers or spending.
 

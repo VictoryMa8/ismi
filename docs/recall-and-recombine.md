@@ -76,9 +76,9 @@ F18 reports/quarantine system.
 - Production TypeScript/Vite/PWA build and Release API publish pass.
 - All 32 API tests pass, including recall validation, known/uncertain evaluation,
   draft/publication privacy, CSRF, owner access and idempotent review cases.
-- Seven F22 Playwright checks pass: evaluation boundaries, reserved/version rules,
+- Eight F22 Playwright checks pass: evaluation boundaries, reserved/version rules,
   first/help/retry records, offline reports/reconnection, keyboard/RTL/320px/reduced
-  motion/identity, withdrawal and concurrent-tab writes/scheduling.
+  motion/identity, withdrawal, concurrent-tab writes/scheduling, and refusing imports against an older API.
 - Six glossary checks and eleven review/scheduling/console checks have passing
   evidence. The initial combined run polluted a fixture-only checkpoint test with
   F22 test publications and hit the shared auth rate limit. Fresh-database rerun
@@ -86,6 +86,9 @@ F18 reports/quarantine system.
   databases only; they are not owner curriculum approval.
 - Mobile render inspected. Real assistive-technology and supported-device release
   evidence and immediate/delayed learner-outcome observations remain F18 gates.
+
+The console requires the API’s `typed-recall-v1` capability before importing/saving
+recall metadata, preventing an older API from silently dropping the field.
 
 API startup adds the empty `RecallReviewCases` table; existing curriculum/account/
 progress tables, recordings and cookie keys are not replaced. Current hosted source

@@ -190,6 +190,7 @@ app.MapGet("/api/health", () => Results.Ok(new
 {
     status = "healthy",
     service = "ismi-api",
+    features = new[] { "typed-recall-v1" },
     revision = typeof(LessonResponse).Assembly
         .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
         .Cast<System.Reflection.AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,

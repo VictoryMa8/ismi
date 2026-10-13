@@ -208,3 +208,16 @@ test('concurrent tabs retain both attempt records without advancing the schedule
   expect(schedules[0].schedule.intervalIndex).toBe(0)
   await second.close()
 })
+
+test('console refuses recall imports while an older API would silently discard the metadata', async ({ page }) => {
+  await page.goto('/#/account')
+  expect((await post(page.request, '/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password', rememberMe: false })).ok()).toBeTruthy()
+  await page.reload()
+  await page.getByRole('button', { name: 'Open curriculum console' }).click()
+  let writes = 0
+  page.on('request', req => { if (req.url().endsWith('/api/admin/curriculum/drafts') && req.method() === 'POST') writes++ })
+  await page.route('**/api/health', route => route.fulfill({ json: { status: 'healthy', service: 'ismi-api' } }))
+  await page.getByLabel('Import a lesson package as a draft').setInputFiles({ name: 'recall.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(packages[0])) })
+  await expect(page.getByRole('alert')).toContainText('Deploy the API with recall support before importing or saving recall content.')
+  expect(writes).toBe(0)
+})

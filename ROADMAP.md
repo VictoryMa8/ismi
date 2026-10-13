@@ -10,7 +10,7 @@ this file. Older plans provide design context, not current priority or permissio
 
 **F22 — implementation verified October 12; rollout in progress:** typed Arabic/Arabizi
 recall, first/help/retry evidence, later reserved situations and owner review reports
-are implemented. Build, 32 API tests and seven F22 checks pass. The owner approved
+are implemented. Build, 32 API tests and eight F22 checks pass. The owner approved
 all six exact situations/answer records; three Everyday revisions still await hosted
 console publication. Frontend `3af91b0` is pushed/deployed; Practice entry verified.
 Reusable alwaysdata credentials are being configured for the
@@ -877,7 +877,7 @@ reuse F18's report-case work if available, otherwise scope the minimal review pa
 **Evidence:** [expanded flow, data boundaries and checks](docs/learning-engagement-plan.md#f22-recall-and-recombine);
 existing [review](docs/review-and-checkpoints.md), [schedule](docs/scheduled-review.md)
 and [transfer drafts](content/levantine/plans-02/README.md).
-**Verification:** production build/Release API publish, all 32 API tests, seven F22 browser
+**Verification:** production build/Release API publish, all 32 API tests, eight F22 browser
 checks, six glossary checks and eleven review/scheduling/console checks pass. Real AT/
 supported-device and learner-outcome evidence remain F18 gates.
 **Delivery:** frontend `3af91b0` pushed/deployed; stable Practice entry verified. API
@@ -1345,7 +1345,7 @@ committed without agreed scope, content/reviewer availability and measured first
 
 - **October 12, 2026 F22:** owner authorized implementation/push/deployment, selected
   the typed-answer policy and approved the exact six-situation package. Code/build,
-  32 API tests and seven F22 checks pass. Hosted API/content rollout remains pending
+  32 API tests and eight F22 checks pass. Hosted API/content rollout remains pending
   reusable credentials. Prepared tested terminal alwaysdata deployment tooling.
   [Feature evidence](docs/recall-and-recombine.md), [deployment workflow](deploy/README.md).
 
