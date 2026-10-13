@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import {
   BookOpen,
   BookCheck,
@@ -17,6 +17,9 @@ import {
 } from '@lucide/vue';
 import CurriculumConsole from './CurriculumConsole.vue';
 import StudySettings from './StudySettings.vue';
+import LearningHabits from './LearningHabits.vue';
+import { useLearningHabits } from './useLearningHabits';
+import { emptyReviewAvailability, type QuestTask, type StudyActivity } from './learningHabits';
 import LoadingWords from './LoadingWords.vue';
 import PlacementCheck from './PlacementCheck.vue';
 import { buildStudyPlan } from './studyPlan';
@@ -69,6 +72,12 @@ import type {
 } from './types';
 
 const studySettings = useStudySettings();
+const learningHabits = useLearningHabits();
+const habitNow = ref(Date.now());
+let habitClock: ReturnType<typeof setInterval> | undefined;
+const questReview = ref<InstanceType<typeof ReviewPractice> | null>(null);
+const questReviewAvailability = ref(emptyReviewAvailability());
+const offlineQuestLessonIds = ref<string[]>([]);
 const lessonOpen = ref(false);
 const previewMode = ref(false);
 const practiceMode = ref(false);
@@ -97,6 +106,8 @@ const checkingAnswer = ref(false);
 const retryCount = ref(0);
 let lessonOpener: HTMLElement | null = null;
 let lessonSession = 0;
+let lessonActivityId = '';
+let lessonActivityScope = 'guest';
 const selectedAnswer = ref<string | null>(null);
 const attemptFeedback = ref<LessonAttemptResponse | null>(null);
 const apiLive = ref(false);
@@ -241,6 +252,40 @@ const todayReviewLessons = computed(() => dashboard.value.dailyPlan.lessons.filt
   studySettings.preferences.value.selectedTrackIds.some(id => id === (item.trackId ?? 'levantine')),
 ));
 const dailyGoal = computed(() => studySettings.preferences.value.goalMinutes);
+const questLessons = computed(() => dashboardScope.value === reviewScope.value
+  ? todayReviewLessons.value.filter(item => apiLive.value || offlineQuestLessonIds.value.includes(item.id)) : []);
+watch(reviewScope, scope => {
+  learningHabits.load(scope);
+  questReviewAvailability.value = emptyReviewAvailability();
+  offlineQuestLessonIds.value = [];
+}, { immediate: true });
+watch(() => [learningHabits.state.value.questsEnabled, studySettings.preferences.value,
+  questLessons.value, questReviewAvailability.value, habitNow.value, studySettings.busy.value, page.value] as const, () => {
+  if (page.value === 'today' && studyPageAvailable.value && !studySettings.busy.value)
+    learningHabits.plan(studySettings.preferences.value, questLessons.value, questReviewAvailability.value);
+}, { deep: true });
+function updateHabitClock() {
+  habitNow.value = Date.now();
+  learningHabits.refresh();
+}
+function handleHabitStorage(event: StorageEvent) {
+  if (event.key === null || event.key === `ismi-learning-habits-v1:${reviewScope.value}`) updateHabitClock();
+}
+function creditStudyActivity(activity: StudyActivity, scope: string) {
+  learningHabits.credit(activity, scope);
+}
+async function startQuest(task: QuestTask) {
+  if (task.kind === 'lesson') await startLesson(task.lessonId);
+  else await questReview.value?.start(task.kind === 'checkpoint' ? 'checkpoint' : task.due ? 'due' : 'mixed', task.unitId);
+}
+async function refreshOfflineQuestLessons() {
+  const scope = reviewScope.value;
+  const ids: string[] = [];
+  for (const item of todayReviewLessons.value) {
+    try { if (await getCachedLesson(item.id)) ids.push(item.id); } catch { /* Unavailable offline. */ }
+  }
+  if (scope === reviewScope.value) offlineQuestLessonIds.value = ids;
+}
 const dailyCompleted = computed(() => Math.min(dailyGoal.value,
   dashboard.value.dailyPlan.studyMinutesToday ?? dashboard.value.dailyPlan.completedMinutes));
 const nextStudyLesson = computed(() => studyPlan.value.queue[0] ?? dashboard.value.dailyPlan.lessons.find(
@@ -346,6 +391,9 @@ const syncStatus = computed(() => {
 });
 
 onMounted(async () => {
+  habitClock = setInterval(updateHabitClock, 30_000);
+  window.addEventListener('focus', updateHabitClock);
+  window.addEventListener('storage', handleHabitStorage);
   try {
     localStorage.setItem('ismi-learner-visited', 'yes');
   } catch {
@@ -376,6 +424,9 @@ onMounted(async () => {
 });
 
 onBeforeUnmount(() => {
+  clearInterval(habitClock);
+  window.removeEventListener('focus', updateHabitClock);
+  window.removeEventListener('storage', handleHabitStorage);
   removeUiSounds?.();
   window.removeEventListener('online', handleOnline);
   window.removeEventListener('hashchange', handlePageChange);
@@ -644,6 +695,7 @@ async function loadDashboardData() {
   } catch {
     pendingSyncCount.value = 0;
   }
+  await refreshOfflineQuestLessons();
 }
 
 async function cacheUpcomingLessons() {
@@ -667,6 +719,7 @@ async function cacheUpcomingLessons() {
   } catch {
     // Learning remains available when storage reporting is unavailable.
   }
+  await refreshOfflineQuestLessons();
 }
 
 async function markLessonCompletedLocally(lessonId: string, completedToday = true) {
@@ -784,6 +837,8 @@ async function openGlossaryLesson(id: string, cardIndex: number) {
 async function startLesson(requestedId?: string, practiceOnly = false, cardIndex?: number) {
   glossaryCardIndex.value = cardIndex;
   const session = ++lessonSession;
+  lessonActivityId = crypto.randomUUID();
+  lessonActivityScope = reviewScope.value;
   checkingAnswer.value = false;
   lessonOpener = document.activeElement as HTMLElement | null;
   previewMode.value = false;
@@ -1016,17 +1071,21 @@ async function finishLesson() {
   stopPromptAudio();
 
   if (previewMode.value || practiceMode.value) {
+    if (!previewMode.value) creditStudyActivity({ id: lessonActivityId,
+      kind: 'lesson', lessonId: lesson.value.id, practiceOnly: true, completedAt: new Date().toISOString() }, lessonActivityScope);
     lessonFinished.value = true;
     return;
   }
 
   const completion: PendingCompletion = {
     scope: reviewScope.value,
-    completionId: crypto.randomUUID?.() ?? `${lesson.value.id}-${Date.now()}`,
+    completionId: lessonActivityId,
     lessonId: lesson.value.id,
     completedAt: new Date().toISOString(),
     estimatedMinutes: lesson.value.estimatedMinutes,
   };
+  creditStudyActivity({ id: completion.completionId, kind: 'lesson', lessonId: completion.lessonId,
+    completedAt: completion.completedAt }, lessonActivityScope);
 
   try {
     await queueCompletion(completion);
@@ -1264,12 +1323,15 @@ async function finishLesson() {
         <section class="study-plan section-block" aria-labelledby="study-plan-heading">
           <div class="section-heading"><h2 id="study-plan-heading">Your plan</h2><a href="#/account">Edit study settings</a></div>
           <ReviewPractice
+            ref="questReview"
             compact
             :scope="reviewScope"
             :history-revision="reviewHistoryRevision"
             :lessons="todayReviewLessons"
             @open-change="reviewOpen = $event"
             @prompt-playback="reviewAudioPlaying = $event"
+            @availability="questReviewAvailability = $event"
+            @activity-complete="creditStudyActivity"
           />
           <h3 v-if="studyPlan.queue.length > 1" class="up-next-heading">Up next</h3>
           <ol v-if="studyPlan.queue.length > 1" class="study-queue" aria-label="Today’s lesson queue">
@@ -1286,6 +1348,9 @@ async function finishLesson() {
           </ul>
           </details>
         </section>
+
+        <LearningHabits :state="learningHabits.state.value" :now="habitNow" :error="learningHabits.error.value"
+          :review-ready="questReviewAvailability.ready" @start="startQuest" />
 
       </template>
 
@@ -1417,6 +1482,7 @@ async function finishLesson() {
           :lessons="dashboard.dailyPlan.lessons"
           @open-change="reviewOpen = $event"
           @prompt-playback="reviewAudioPlaying = $event"
+          @activity-complete="creditStudyActivity"
         />
         <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
         <LearnedWords
@@ -1473,6 +1539,8 @@ async function finishLesson() {
           @save="async value => { await studySettings.save(value); await cacheUpcomingLessons(); }"
           @resolve="studySettings.resolve"
         />
+        <LearningHabits settings :state="learningHabits.state.value" :now="habitNow" :error="learningHabits.error.value"
+          @toggle="learningHabits.toggle" />
         <PlacementCheck :scope="reviewScope" :selected-track-ids="studySettings.preferences.value.selectedTrackIds"
           :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []" @open-lesson="id => startLesson(id)" />
         <template v-if="authSession.isAuthenticated">

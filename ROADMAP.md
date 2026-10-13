@@ -8,6 +8,25 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
+**October 12 scope expansion — F24–F26 planned:** the owner added French, Khmer
+and parallel language study to Ismi's roadmap. Arabic remains the flagship.
+The full plans below include a shared foundation and separate proposed twelve-week
+courses, with child tasks, outcomes and release gates. Implementation is unstarted;
+course depth/varieties, scheduling policy, review arrangements and inclusion in the
+first-100 beta remain explicit decisions. Existing Arabic commitments are retained.
+
+**October 12 planned additions:** the owner selected research priorities 1, 2, 4,
+5 and 6 for future implementation: F22 recall/recombine, F23 mini-stories,
+F17.5 phrase anatomy/grammar, F17.6 can-do progress and F17.7 weekly quests/forgiving
+habits. [Expanded scopes and completion criteria](docs/learning-engagement-plan.md).
+F22/F23 and F17.5/F17.6 remain Planned. F17.7 was subsequently authorized and
+implemented locally; the original planning selection did not authorize release.
+
+**F17.7 — Complete locally October 12:** optional goal-sized weekly quests and
+independent forgiving streaks use the owner-selected Monday/timezone/two-grace-day
+policy. Production build and 29 targeted checks pass;
+[behavior and verification](docs/weekly-learning-habits.md). Owner-authorized rollout in progress.
+
 **F17.4 — Complete and deployed October 12:** source-linked loading word reel with
 pause and reduced motion. Build and nine targeted checks pass;
 [behavior and preview](docs/loading-word-reel.md). Live loader and readiness transition verified.
@@ -48,7 +67,8 @@ with distinct gold completion/goal markers and factual session recaps. Build and
 Sound audition and optional recall pacing remain proposals.
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
-characters, and landing/welcome are implemented. Frontend release `7bb2c22` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
+characters, and landing/welcome are implemented. F17.7 weekly quests/forgiving habits
+are complete locally; the owner-authorized rollout is in progress. Frontend release `7bb2c22` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
@@ -69,6 +89,8 @@ remains the published baseline.
 verified F0 access and then owner listening review. No paid services authorized.
 Real recordings, live speech-provider choices, Quran permissions
 and beta evidence remain separate dependencies.
+For the new language plans, course-definition decisions precede authoring; exact
+sources, permissions and linguistic/audio review are needed before publication.
 
 | ID | Feature / bounded scope | Status | Next action or limit |
 | --- | --- | --- | --- |
@@ -95,15 +117,24 @@ and beta evidence remain separate dependencies.
 | [F15.2](#f152-placement-starting-point) | Placement starting point | Done · deployed | Published-content Levantine check; bootcamps/other tracks remain open |
 | [F15.1](#f151-personal-study-settings) | Personal study settings | Done · pushed | Goals/tracks drive queue; guest/account offline persistence verified |
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
-| [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | Split guides, mastery and reminders into tasks |
+| [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | F17.7 done locally; F17.5/F17.6, reminders and XP remain open |
 | [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
 | [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · deployed | Startup/refresh, cached offline and retry verified; hero edge removed |
 | [F17.3](#f173-interface-copy-cleanup) | Interface copy cleanup | Done · deployed | Redundant subtitles/quips removed; build and 31 targeted checks pass |
 | [F17.4](#f174-loading-word-reel) | Loading word reel | Done · deployed | Six exact glossary samples; pause/reduced motion verified |
+| [F17.5](#f175-phrase-anatomy-and-grammar-reference) | Phrase anatomy and grammar reference | Planned | Map six phrases to two patterns and three sourced usage notes |
+| [F17.6](#f176-can-do-progress-and-outcome-achievements) | Can-do progress and outcome achievements | Planned | Define one unit's evidence rules using F22 independent attempts |
+| [F17.7](#f177-weekly-learning-quests-and-forgiving-habits) | Weekly learning quests and forgiving habits | Done · rollout in progress | Owner authorized push/deployment; real AT release checks remain |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
 | [F21](#f21-cultural-watch-and-listen-recommendations) | Cultural watch/listen recommendations | Planned | Scope a weekly curated pick; daily cadence remains a choice |
+| [F22](#f22-recall-and-recombine) | Recall and recombine | Planned | Scope three targets/six authored variants and structured typed evaluation |
+| [F23](#f23-recurring-mini-stories) | Recurring mini-stories | Planned | Start F23.1, then scope a linked three-episode text arc |
+| [F23.1](#f231-first-text-episode) | First text episode | Planned | One reviewed episode, two comprehension checks and a response |
+| [F24](#f24-multi-language-foundation-and-parallel-study) | Multi-language foundation and parallel study | Planned | Define compatible language/course records; agree queue policy |
+| [F25](#f25-french-course) | French course | Planned · definition decisions | Proposed twelve-week course; select variety, depth and review route |
+| [F26](#f26-khmer-course) | Khmer course | Planned · definition decisions | Proposed twelve-week course; select variety, script/help and review route |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
 Needs decision = a named choice prevents the next step; Needs input = external
@@ -434,6 +465,12 @@ Never generate or silently normalize canonical text, or invent qualified reviewe
 
 ### F15 Personal study plan and placement
 
+**October 12 expansion:** the owner authorized roadmap plans for French/Khmer and
+parallel language study. F24 extends F15.1's multi-track foundation; F25/F26 define
+the new courses. [Inspection evidence](docs/multi-language-feasibility.md).
+F15's remaining Arabic placement/bootcamp scope stays open. No new implementation
+or beta inclusion is inferred from the planning authorization.
+
 **Outcome:** selectable tracks/primary track, 5/10/15/30-minute goals, separate progress,
 and short skippable track-specific placement with bootcamp recommendations.
 **Status:** Active — F15.1 settings/queue and F15.2 bounded Levantine starting check
@@ -505,8 +542,11 @@ External identity remains optional unresolved work, not a condition of F02 compl
 
 **Outcome:** searchable grammar references, meaningful mastery/achievements/XP,
 optional forgiving streaks and opt-in reminders with categories/quiet hours.
-**Next:** split these into bounded tasks; define consequential mastery/reminder rules
-explicitly. Existing in-lesson explanations are delivered under F01/F04.
+**Next:** F17.7 weekly quests/forgiving habits are complete locally. Remaining selected
+scopes are F17.5 phrase anatomy/grammar and F17.6 evidence-based can-do progress/achievements.
+Define their consequential rules before dependent implementation; reminder delivery and the
+XP economy still need separate bounded tasks. Existing in-lesson explanations are
+delivered under F01/F04; selected children do not complete the full F17 scope.
 **Done when:** agreed subfeatures are usable and verified, reward learning without
 trivial farming, preserve free explanations/retries and honor opt-out/quiet hours.
 No hearts, leagues, guilt or paid streak repair. Billing is outside the beta.
@@ -528,7 +568,7 @@ fixed lesson layout and character fallbacks. Real assistive-technology/browser
 release gates remain under F18.
 **Next:** gather owner feedback on the deployed first slice. New sound timbres need an audition;
 optional Quick recall and its durations remain separate proposals. F17's broader
-mastery, streak and reminder scope remains open.
+mastery and reminder scope remains open; device-local habits are delivered under F17.7.
 **Evidence:** [implementation and verification](docs/learner-satisfaction.md),
 [original UI findings and proposal](docs/learner-satisfaction-proposal.md).
 **Delivery:** code release `0852fec` pushed/deployed October 11; live Today verified.
@@ -579,6 +619,83 @@ Mobile/enlarged text and real-time Arabic rendering inspected. F18 gates remain 
 **Next:** owner feedback on the deployed animation.
 **Delivery:** code release `7bb2c22` pushed/deployed October 12;
 [live rollout evidence](docs/releases/2026-10-12-word-reel.md). API/curriculum unchanged.
+
+### F17.5 Phrase anatomy and grammar reference
+
+**Status:** Planned — owner selected research priority 4 on October 12, 2026.
+**Outcome:** optional phrase explanations connect natural/literal meaning, labeled
+chunk functions, specific culture/register guidance and searchable grammar references.
+Extend F04's existing chunks/notes and F20 context links rather than duplicate them.
+**First scope:** six approved Levantine phrases, two reusable grammar patterns and
+three source-linked situational usage notes; teaching/feedback/reference navigation
+and offline access. Optional colors always have equivalent text labels.
+**Next:** map the selected unit's phrases to source-backed patterns and usage notes;
+prepare the required versioned console metadata and readable owner review.
+**Done when:** all selected records are validated, approved/published and linked from
+their teaching contexts; reference search/back navigation and downloaded access work;
+literal glosses and usage claims are reviewed; keyboard, screen-reader, enlarged
+Arabic and RTL/LTR rendering work without relying on color. Record local/hosted
+verification separately; no expert-review claim without actual evidence.
+**Depends on:** F03/F04/F20, approved sources/content and publication approval.
+**Evidence:** [expanded behavior and checks](docs/learning-engagement-plan.md#f175-phrase-anatomy-and-grammar-reference);
+existing baseline [teaching](i-web/src/LessonTeaching.vue) and [glossary](docs/learned-word-glossary.md).
+**Delivery:** planning only; no new references, content publication or app release.
+
+### F17.6 Can-do progress and outcome achievements
+
+**Status:** Planned — owner selected research priority 5 on October 12, 2026.
+**Outcome:** learners see concrete unit outcomes, supporting attempts/help/dates,
+recommended next practice and an optional achievement grounded in demonstrated learning.
+Keep skills/tracks separate; completion, XP and typed work never imply spoken fluency.
+**First scope:** three can-do targets for the F22 unit, device-local versioned evidence
+and one outcome achievement. Proposed states distinguish assisted practice,
+independent success and successful later demonstration; due review is a separate action.
+**Next decision:** agree evidence thresholds, delay/help rules and achievement wording.
+Recommend independent success in two distinct contexts, including a later due-review
+day; this is a proposal, not an adopted mastery/proficiency scale.
+**Done when:** agreed rules and supporting evidence are visible and verified;
+help/retries/uncertain answers cannot create independent evidence; delayed/new-context
+checks, offline identity separation and changed/withdrawn versions work; legacy
+completions are not upgraded to mastery; history remains honest about skill and device
+scope. Learner calibration and thirty-day outcome evidence remain F18 work.
+**Depends on:** F22 independent attempts and target metadata, F05/F10/F17.1;
+explicit assessment rules. Cross-device evidence sync is a separate scope.
+**Evidence:** [expanded behavior, proposed rules and checks](docs/learning-engagement-plan.md#f176-can-do-progress-and-outcome-achievements);
+existing [checkpoint limits](docs/review-and-checkpoints.md) and [recaps](docs/learner-satisfaction.md).
+**Delivery:** planning only; no can-do classifier, new mastery claims or rewards shipped.
+
+### F17.7 Weekly learning quests and forgiving habits
+
+**Status:** Done — owner-authorized device-local slice implemented October 12, 2026.
+**Outcome:** optional weekly activities mix new learning, due review and available
+story/transfer practice within the existing daily allocation; separately optional
+streaks support returning without guilt or restrictions.
+**Scope delivered:** independent opt-in weekly checklist and forgiving streak controls
+in Account/Today, up to 1/2/3/6 available activities for 5/10/15/30-minute goals,
+simple completion acknowledgment and welcoming restart. Existing lesson, due/mixed
+review and completed-unit checkpoint flows are reused, with cached-only new lesson
+choices offline. No new XP economy or reminder delivery service.
+**Selected policy:** completed lessons, reviews and checkpoints qualify; Monday weeks
+and calendar days use the timezone saved at opt-in. Two free grace days per week,
+unused days expire; goal changes preserve checked tasks and resize the remainder.
+Quests/streaks independently default off; guest/account history stays on this device.
+Stable activity IDs prevent retry/reload/reconnection credit duplication.
+**Verification:** production TypeScript/Vite/PWA build and 29 targeted Chromium
+checks pass, including eleven F17.7 checks. Goals, missing content, completed-task
+preservation, partial sessions, Monday/DST/timezone/grace boundaries, returning,
+offline/reload/reconnect, identity isolation and storage errors are covered.
+Keyboard, roles/status labels, doubled text, mobile/desktop and persistent mute
+with reduced motion are verified. Real assistive-technology and supported-browser
+release checks remain under F18; no learner-outcome evidence is inferred.
+**Next:** finish the owner-authorized rollout and live verification. F22/F23 task types,
+cross-device habit sync and reminder delivery remain separate scopes.
+**Depends on:** F15.1 goals/queue, F05/F10 practice, F17.1 feedback; F22/F23 supply
+optional task types as delivered, not a requirement to invent unavailable activities.
+**Evidence:** [implementation, selected rules and verification](docs/weekly-learning-habits.md),
+[focused checks](i-web/tests/learning-habits.spec.ts),
+[original plan](docs/learning-engagement-plan.md#f177-weekly-learning-quests-and-forgiving-habits).
+**Delivery:** owner authorized commit/push and frontend deployment; rollout in progress.
+No API/database/content change or curriculum publication.
 
 ### F18 Invite-only beta readiness
 
@@ -706,7 +823,507 @@ optional and does not control core progress/streaks or require a paid media subs
 checks. This does not create a live-news operation, media hosting or rehosting rights.
 **Delivery:** roadmap proposal only; no external recommendations published.
 
+### F22 Recall and recombine
+
+**Status:** Planned — owner selected research priority 1 on October 12, 2026.
+**Outcome:** learners produce familiar language in changed authored situations before
+assistance, with structured accepted alternatives, explanations and free hints/retries.
+F05/F10's think/say-then-tiles practice remains delivered; this adds captured independent
+typed responses and transfer evidence rather than rebuilding scheduled review.
+**First scope:** one Levantine unit, three communicative targets and six source-linked
+changed-context variants, with one variant per target reserved for a later transfer
+check. Once seen, a variant is labeled repeated practice rather than unseen transfer.
+**Next:** inspect current published units and define targets/accepted inputs; recommend
+Arabic plus Arabizi support and deterministic authored evaluation. Agree normalization
+and uncertain-answer reporting before coding the evaluator. F12.1 is eligible only
+after its drafts are owner-approved/published; current published Everyday can be used.
+**Done when:** all variants/rationales/explanations are validated, approved/published;
+independent first attempts, help and retries remain distinct; accepted alternatives
+and contextual errors follow the agreed policy, plausible uncertainty has a recoverable
+review/report path; downloaded practice/evidence survive reload, identity changes and
+version/withdrawal handling; accessibility and evaluation checks pass. Maintain F10's
+existing intervals; neither tiles nor unassessed speaking become production evidence.
+**Depends on:** F03/F04/F05/F10, published source-linked content and explicit input policy;
+reuse F18's report-case work if available, otherwise scope the minimal review path.
+**Evidence:** [expanded flow, data boundaries and checks](docs/learning-engagement-plan.md#f22-recall-and-recombine);
+existing [review](docs/review-and-checkpoints.md), [schedule](docs/scheduled-review.md)
+and [transfer drafts](content/levantine/plans-02/README.md).
+**Delivery:** planning only; no typed evaluator, new practice content or publication.
+
+### F23 Recurring mini-stories
+
+**Status:** Planned — owner selected research priority 2 on October 12, 2026.
+**Outcome:** short connected scenes with Fattoush/Knafeh give learners a reason to
+understand a whole situation and contribute a useful response. Extend F04 opening
+dialogues/F06 roles; F21 external cultural recommendations remain separate.
+**Bounded target:** a linked three-episode Levantine text arc using taught language,
+with source-linked comprehension/response practice and offline delivery. Start with
+F23.1; scope the remaining two episodes after reviewing the first. Audio editions
+are a separate extension dependent on F09, not a gate for the text arc.
+**Next:** outline the arc and begin F23.1 when implementation is authorized.
+**Done when:** all three episodes meet F23.1's publication, practice, offline,
+version/identity and accessibility criteria, preserve a coherent arc and have distinct
+communicative targets. F23.1 completion alone does not complete F23; learning benefit
+needs separate learner evidence.
+**Depends on:** F03/F04/F06 and approved curriculum; F22 for independently graded
+typed responses. Character redesign and external media curation are independent.
+**Evidence:** [expanded narrative scope and checks](docs/learning-engagement-plan.md#f23-recurring-mini-stories).
+**Delivery:** planning only; no stories published or app rollout.
+
+### F23.1 First text episode
+
+**Status:** Planned — first bounded child of F23.
+**Outcome / scope:** one reviewed Levantine text episode using taught language, a small
+problem/resolution, two comprehension checks and one learner response. Target 2–4
+minutes as an estimate to verify, without a timer. Link from the unit/Practice;
+Today integration requires an explicit daily-goal accounting rule.
+**Next:** outline one selected unit's episode, roles, targets and source records;
+extend console content validation/publication without depending on character redesign.
+**Done when:** approved/published episode, checks and rationales are source-linked;
+help/retry/resume and downloaded text/progress work; version/withdrawal and identity
+handling pass; repeat completion cannot inflate core lessons/minutes; fixed-frame
+mobile/desktop, keyboard, screen-reader and RTL/LTR reading work. A text release makes
+no listening claim; a later audio edition requires F09 accepted recordings/transcripts.
+**Depends on:** F03/F04/F06 and approved curriculum; F22 if the response is independently
+typed/graded, otherwise report assisted evidence honestly. F09 is needed only for audio.
+**Evidence:** [expanded narrative scope and checks](docs/learning-engagement-plan.md#f23-recurring-mini-stories).
+**Delivery:** planning only; no episode, new publication, audio or app rollout.
+**Parent limit:** F23's remaining two text episodes need their own child scopes;
+listening editions need separately scoped F09 recordings/transcripts.
+
+### F24 Multi-language foundation and parallel study
+
+**Status:** Planned — owner authorized roadmap expansion October 12, 2026.
+**Outcome:** learners study Arabic, French and Khmer singly or in parallel in the
+same English-language app. Arabic retains distinct Levantine/MSA/Quranic courses;
+each course has separate placement, progress, review and content safeguards.
+Reuse F01/F02/F03/F05/F10/F15.1/F20 rather than rebuilding delivered features.
+**Next:** F24.1 compatibility design, followed by agreement on F24.3 scheduling
+before implementing the queue. Recommend shared foundation → first French unit →
+first Khmer unit → mixed-language pilot → remaining course units. Prototype Khmer
+rendering early. This sequence does not supersede the owner's selected Arabic
+engagement order, F19 authorization or deferred F18.1 rehearsal.
+**Done when:** all six children pass; both first-unit packages work alongside Arabic
+with correct language presentation and course accounting; old Arabic publications,
+downloads, identities and pending progress survive the upgrade; supported-browser,
+offline and real accessibility evidence is recorded. F24 does not complete the full
+F25/F26 courses or the original Arabic beta gates.
+**Depends on:** existing foundations; F25.2/F26.2 packages for complete-flow checks;
+agreed queue policy and supported-browser/device matrix.
+**Evidence:** [checkout assessment](docs/multi-language-feasibility.md),
+[existing settings](docs/personal-study-settings.md). No expansion implementation,
+migration, browser or learner evidence yet; link it here as work proceeds.
+**Delivery:** local planning only; no new code, migration, publication or deployment.
+
+#### F24.1 Language and course records with compatibility
+
+**Status:** Planned.
+**Scope:** stable language/course IDs, language tags, script direction, font,
+pronunciation-help type, audio locale and published-content availability. Recommend
+one Arabic language with three courses, plus distinct French and Khmer courses.
+Version target-text/help fields to replace Arabic-only naming without rewriting
+immutable Arabic publications or losing old downloads and queued completions.
+**Next:** map API/package/client/IndexedDB/settings records; specify an additive
+migration and recovery procedure, preserving current lesson/version identifiers.
+**Done when:** old/new packages and offline caches load; settings/guest/account
+isolation survive; pending completions retain their meaning and remain idempotent;
+upgrade/recovery checks pass against a preserved copy of existing state.
+**Depends on:** F01/F02/F03/F15.1/F20; production database choice remains unresolved.
+
+#### F24.2 Language-aware learner presentation
+
+**Status:** Planned.
+**Scope:** course-driven direction, language tags, fonts, help, audio controls,
+teaching, exercises, reviews, glossary and placement. Availability follows actual
+published packages. Retain the fixed lesson frame, free help/retries and mute choice.
+**Next:** inventory Arabic assumptions; use clearly labeled French/Khmer fixtures
+while preserving owner landing wording. Do not advertise fixtures as courses.
+**Done when:** Arabic RTL and French/Khmer LTR work without clipped text or broken
+focus; downloaded fonts/audio work offline; missing model/device voices have honest
+fallbacks; switching courses preserves a started lesson's language/state. Keyboard,
+screen-reader and non-listening/non-speaking paths support core study.
+**Depends on:** F24.1; language-specific checks in F25.3/F26.3.
+
+#### F24.3 Parallel study settings and daily queue
+
+**Status:** Needs decision — allocation and secondary-course rotation policy.
+**Scope:** select courses, choose a primary course and retain 5/10/15/30-minute total
+goals; allocate due review/new learning independently and persist guest/account
+choices with existing offline conflict handling. No combined proficiency score.
+**Recommendation:** retain the primary-course concept; rotate secondary courses
+across days when the budget cannot fit useful whole micro-lessons. Keep the current
+60% split where useful; agree rounding, rotation, due-review overflow and whole-lesson
+overruns explicitly. Show courses omitted today and keep manual study available.
+**Next:** agree deterministic examples for 1–5 courses and all goals, including
+5 minutes across five courses, unavailable content, overdue review and goal changes.
+**Done when:** agreed examples pass online/offline with stable ordering, bounded
+rotation so no course starves, no silent substitution/duplicate rewards and visible
+overruns; removing/re-adding a course preserves its history and started lessons.
+**Depends on:** F24.1/F15.1/F10. Cross-device review-history sync is a separate scope.
+
+#### F24.4 Multi-language curriculum console and validation
+
+**Status:** Planned.
+**Scope:** per-language draft/import/source/audio checks, review dispositions, owner
+approval, publication, rollback and audit. Reject mismatched language/audio/segment
+records and unresolved critical linguistic or rights defects. Retain Quran integrity
+and MSA/Quranic publication gates until their own controls exist; enabling French
+and Khmer must not bypass those gates or establish expert-review claims.
+**Next:** specify validator profiles and source/rights/reviewer fields for F25/F26;
+coordinate with F22 typed-response work without making its future evaluator universal.
+**Done when:** valid drafts pass their profiles; invalid/unauthorized publication
+fails; rollback restores exact releases; public/download endpoints serve only
+approved versions with factual source/reviewer status and accepted-answer rationale.
+**Depends on:** F24.1/F03 and agreed course source/review definitions.
+
+#### F24.5 Mixed-language verification and pilot
+
+**Status:** Planned.
+**Scope:** Arabic + French + Khmer settings, placement, lessons, glossary, due review,
+download, offline reload/completion and reconnection. Cover identity isolation,
+interrupted downloads, withdrawals, stale packages and switching; verify actual
+mobile text/input, keyboard and screen-reader behavior.
+**Next:** agree devices/browsers, participant setup and observation rubric when first
+units exist. New-language participant contact is a separate owner action.
+**Done when:** meaningful API/browser checks and real-device evidence pass; a small
+observed mixed-language pilot records versions, immediate/delayed retrieval, help,
+attempt counts and fix/retest dispositions. Access/progress blockers prevent release.
+Do not resume owner-deferred F18.1 without authorization.
+**Depends on:** F24.1–F24.4, first-unit text/audio/support under F25/F26 and pilot setup.
+
+#### F24.6 Expansion release decision and delivery
+
+**Status:** Needs decision — pilot/beta inclusion and release order.
+**Scope:** truthful course depth/variety/review/provenance display, versioned release
+manifests, rollback, hosted verification and correction/support handling. No automatic
+landing-copy rewrite, billing, interface localization or paid hosting/provider signup.
+**Recommendation:** verify both first units internally, then run a small language
+pilot before deciding whether either joins the first-100 Arabic beta. Retain original
+Arabic gates; keep unavailable courses factual until approved publication.
+**Next:** owner selects cohort/release boundary using pilot evidence. Code rollout
+and exact curriculum approval/publication remain separate authorized actions.
+**Done when:** authorized rollout records web/API/content versions, preservation of
+existing data/caches, live study/offline checks and a withdrawal/rollback rehearsal;
+no unverified outcome, CEFR-level or reviewer claims appear publicly.
+**Depends on:** F24.5 and approved per-language release scope; F18 if beta is widened.
+
+### F25 French course
+
+**Status:** Planned — owner requested a full roadmap plan October 12, 2026.
+**Outcome:** English-taught, relationship-centered French for adult beginners/false
+beginners, alone or alongside Arabic/Khmer, with free core lessons, explanations,
+review, downloads and baseline guided speaking.
+**Proposed depth:** twelve units/weeks, five new 5–7-minute lessons per unit
+(60 new lessons), plus varied review and one checkpoint per unit. Review/checkpoints
+do not inflate the new-lesson count. Weeks are a suggested study pace, not delivery
+dates or a promise for learners sharing their daily time across languages.
+The depth and outcomes below are recommendations awaiting F25.1 agreement.
+**Proposed outcomes:** at 30 days with 15 minutes devoted to French daily, handle a
+three-minute guided introduction/food/plan exchange, extract four requested facts
+from a slow 45–60-second studied-topic dialogue and write a short invitation/reply.
+At twelve units, complete a five-minute guided social/day-out scenario and understand/
+write short practical messages. Record help and delayed/new-context retrieval;
+completion alone establishes none of these outcomes.
+**Level framework:** selected Pre-A1/A1 communicative descriptors guide tasks; assess
+listening, reading, interaction and writing separately. The
+[Council of Europe CEFR Companion Volume](https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-companion-volume-and-its-language-versions)
+is a planning reference. [Official DELF A1 information](https://www.france-education-international.fr/diplome/delf-tout-public/niveau-a1)
+provides an assessment comparison; no DELF preparation/certification or A1 attainment
+guarantee is promised. References do not grant permission to copy exam/course material.
+**Next:** F25.1 definition/source/review plan, then F25.2 first-unit drafts.
+**Done when:** all six children meet agreed criteria; every agreed unit, explanation,
+accepted-answer record and model recording is source-linked, validated, reviewed,
+owner-approved and published; offline/accessibility, baseline speaking and observed
+outcome checks pass. A first unit or 60 drafted lessons does not complete the parent.
+**Depends on:** F24, approved text/audio rights and named linguistic review route;
+separately approved speech/AI setup for automated feedback.
+**Evidence:** [inspection](docs/multi-language-feasibility.md), reference links above.
+No French packages, recordings, committed reviewers or outcome evidence yet.
+**Delivery:** local planning only; no authoring, code, publication or deployment.
+
+**Proposed unit sequence:** ordering and linguistic targets require source/reviewer
+validation before drafting. These are learning briefs, not approved course content.
+
+| Unit | Scenario and observable task | Language/support focus |
+| --- | --- | --- |
+| 1 | Meet someone: greet, introduce yourself, ask a name and ask for repetition | Greeting/repair phrases, short questions and sound/spelling help |
+| 2 | Talk about people you love: introduce a partner/friend and explain relationships | Pronouns, common être/avoir patterns, articles and basic agreement |
+| 3 | Share food or a café visit: order, state preferences and clarify a request | Polite requests, quantities, food phrases and register |
+| 4 | Make a plan together: propose a day/time, accept/decline and confirm | Days/time, common present forms and questions; month-one checkpoint |
+| 5 | Describe your day: compare routines and ask about someone else's | Useful present forms, frequency, negation and routine patterns |
+| 6 | Find your way: ask for a place, follow directions and confirm | Location, movement, directions and number recognition |
+| 7 | Visit someone's home: describe rooms, offer help and find things | Possession, location, descriptions and situational politeness |
+| 8 | Shop together: ask price/size, compare options and clarify | Numbers, demonstratives, comparisons and agreement in context |
+| 9 | Make upcoming plans: arrange a weekend and change it | Near-future patterns, invitations, weather and short messages |
+| 10 | Share a recent experience: say what happened and ask a follow-up | Selected past-event patterns and sequencing, without exhaustive drills |
+| 11 | Ask for practical help: explain a simple problem and understand the reply | Needs, repair strategies and safe everyday scenarios |
+| 12 | Spend a day together: integrate food, introductions, directions and plans | New-context transfer, practical message exchange and delayed checkpoint |
+
+#### F25.1 French definition, sources and review route
+
+**Status:** Needs decision — variety, depth/outcomes and review arrangements.
+**Recommendation:** contemporary everyday French with a France-based reference
+variety and labeled Canadian/other alternatives where supported; informal/polite
+address follows the situation. Beginner entry includes a skippable false-beginner check.
+**Next:** agree proposed scope/variety; inventory trusted grammar, dictionary and
+pronunciation sources with exact reuse/audio rights. Recommend a named fluent French
+reviewer; no hire, contact or availability is assumed.
+**Done when:** course brief, unit outcomes, assessment rubric, source/rights register
+and review route are agreed; unresolved linguistic claims are excluded.
+**Depends on:** owner definition decisions and verified reference rights/access.
+
+#### F25.2 French first unit
+
+**Status:** Planned.
+**Scope:** five authored introduction/greeting/repair lessons, contextual recall,
+varied review and checkpoint; provenance and rationale for every teaching/answer record.
+**Next:** draft from approved sources, validate and obtain owner wording approval
+before publication; first-unit pilot findings precede full-course authoring.
+**Done when:** complete packages pass F24.4 with recorded linguistic dispositions;
+accessible offline use and changed-context recall can be verified. Text-ready,
+audio-ready, approved and published states are reported separately.
+**Depends on:** F25.1; F24.4 for import/publication; F25.3/F25.5 for full learner delivery.
+
+#### F25.3 French starting check, sounds and text support
+
+**Status:** Planned.
+**Scope:** short skippable placement from approved content, optional spelling/sound
+modules, accent input/help and readable phrase/word chunks. Pronunciation notes are
+authored/source-linked; any IPA help is optional rather than an entry requirement.
+**Next:** define reading/listening/response samples and conservative starting-point
+policy; select reviewed sound targets with the language reviewer.
+**Done when:** skip/retry and accessible alternatives work; accents/apostrophes and
+segments render correctly; reviewed answer rules explain when spelling matters
+without changing originals. Results stay course-specific, with no fluency claim.
+**Depends on:** F25.1/F25.2, F24.1/F24.2; result-sync expansion needs its own scope.
+
+#### F25.4 French remaining units and reference material
+
+**Status:** Planned.
+**Scope:** units 2–12 (proposed 55 further lessons), reviews/checkpoints, short searchable
+grammar/use guides and explicit glossary forms/senses tied to teaching contexts.
+**Next:** confirm sequencing using first-unit findings; author in bounded unit batches
+through draft → source validation → linguistic review → owner approval.
+**Done when:** agreed 12-unit/60-lesson manifest has no missing rationale, explanation
+or source records; retrieval is spaced across varied contexts and checkpoints require
+transfer. Draft validation does not establish publication or learner outcomes.
+**Depends on:** F25.1/F25.2 and first-unit pilot under F25.6; F24.4; F25.5 audio.
+
+#### F25.5 French model audio and guided speaking
+
+**Status:** Planned — speaker/source and provider decisions remain open.
+**Scope:** permitted reviewed model recordings for listening/teaching targets,
+transcripts, speaker/variety labels and exact phrase/version mappings. Recommend
+multiple human speakers; synthetic previews remain labeled and reviewed. Baseline
+speaking uses controlled authored branches, optional record/replay and feedback on
+intent, intelligibility and important sounds, with text alternatives.
+**Next:** prepare first-unit scripts/rights checklist; assess actual French accuracy,
+no-training terms, minimum data, deletion and cost before selecting providers.
+**Done when:** complete agreed audio mappings pass review/playback/offline checks;
+scenario feedback handles uncertainty without authoritative rejection; recordings
+are deleted after feedback and improvement retention requires separate consent.
+If AI feedback is deferred, record the incomplete scope; audio alone does not finish it.
+**Depends on:** approved F25.2/F25.4 text, F24.2/F24.4 and provider/privacy decisions.
+
+#### F25.6 French pilot, publication and release evidence
+
+**Status:** Planned.
+**Scope:** first-unit pilot, then full-course verification against agreed outcomes,
+versions, immediate/delayed tasks, help used and attempts/denominators.
+**Next:** agree setup/rubric through F25.1; observe first-unit use before widening
+authoring, then review the complete candidate. Participant contact is a separate action.
+**Done when:** offline/reconnection and real accessibility pass; linguistic/audio
+defects have fix/retest dispositions; observed tasks support factual outcome claims;
+owner-authorized publications and rollout record exact versions and rollback evidence.
+A small pilot is formative evidence, not proof of universal A1 attainment.
+**Depends on:** F25.2/F25.3 and first-unit F25.5 audio for initial pilot; F25.4/full
+audio and F24.5/F24.6 for full release. These stages do not form a dependency cycle.
+
+### F26 Khmer course
+
+**Status:** Planned — owner requested a full roadmap plan October 12, 2026.
+**Outcome:** English-taught Khmer for adult beginners/false beginners communicating
+with partners, family and friends. Conversation and gradual script learning support
+each other; optional pronunciation help remains available without requiring reading
+mastery before beginning conversation. Keep the same free learning floor.
+**Proposed depth:** twelve units/weeks, five new 5–7-minute lessons per unit
+(60 new lessons), plus varied review and one checkpoint per unit. Add a separate
+optional script/sound pathway; exact module count is an F26.1/F26.3 decision.
+Weeks guide study pace, not delivery or a promise under a shared daily budget.
+Depth and outcomes below are recommendations awaiting F26.1 agreement.
+**Proposed outcomes:** at 30 days with 15 minutes devoted to Khmer daily, handle a
+two-to-three-minute guided greeting/family/food/plan exchange, extract four requested
+facts from a slow 30–45-second studied-topic dialogue and recognize an agreed set
+of taught words in script. At twelve units, complete a five-minute guided social/day-out
+scenario and read short taught-topic messages with optional help. Define the exact
+reading inventory/help in the rubric; promise neither unrestricted literacy nor
+proficiency certification. Distinguish conversation/listening/reading evidence.
+**Next:** F26.1 definition/source/review choices, then first-unit/script support design.
+Prototype Khmer rendering/input/segments alongside French's first unit so technical
+issues are discovered before committing to full-course authoring.
+**Done when:** all six children pass; agreed units and script/sound modules are
+source-linked, validated, linguistically reviewed, owner-approved and published;
+audio, baseline guided speaking, offline/accessibility and observed outcomes pass.
+First-unit or script-rendering success does not complete this parent.
+**Depends on:** F24, approved sources/audio rights, named Khmer linguistic review
+route and separately approved speech/AI setup for automated feedback.
+**Evidence:** [inspection](docs/multi-language-feasibility.md),
+[Unicode segmentation guidance](https://www.unicode.org/reports/tr29/#Word_Boundaries)
+and [W3C draft Khmer layout gap analysis](https://www.w3.org/TR/khmr-gap/).
+Unicode identifies tailored word/line-boundary needs; the W3C draft is a browser-check
+reference, not curriculum authority. No Khmer packages, recordings, committed
+reviewers or learner evidence exist yet.
+**Delivery:** local planning only; no authoring, code, publication or deployment.
+
+**Proposed unit sequence:** Khmer wording, grammar, pronunciation, address and
+cultural notes require approved sources/reviewer validation before lesson drafting.
+
+| Unit | Scenario and observable task | Language/support focus |
+| --- | --- | --- |
+| 1 | Meet someone: greet, introduce yourself and ask for repetition | Reviewed greeting/repair phrases, address choices and script/help orientation |
+| 2 | Meet family/friends: introduce a person and explain a relationship | Contextual relationship/address terms and statement/question patterns |
+| 3 | Share a meal: request food, state a preference and clarify an order | Polite requests, quantities and food vocabulary |
+| 4 | Make a plan together: propose a time, accept/decline and confirm | Days/time and plan patterns; month-one conversation/listening checkpoint |
+| 5 | Describe your day: exchange simple information about routines | Useful action/time/frequency patterns; reading taught phrases |
+| 6 | Find a place: ask directions and confirm a route | Location/direction phrases, transport and number recognition |
+| 7 | Visit someone's home: find things and offer help | Everyday objects, location and reviewed interaction conventions |
+| 8 | Shop together: ask price/quantity and choose between items | Numbers, quantities, comparisons and misunderstanding repair |
+| 9 | Share a recent experience: describe an event and ask a follow-up | Reviewed time/aspect expressions and sequencing in context |
+| 10 | Make upcoming plans: arrange a visit and change it | Upcoming-time expressions, invitations and short taught-topic messages |
+| 11 | Ask for practical help: describe a problem and understand a reply | Needs, clarification and safe everyday scenarios |
+| 12 | Spend a day together: integrate family, food, directions and plans | New-context transfer, short supported reading and delayed checkpoint |
+
+#### F26.1 Khmer definition, sources and review route
+
+**Status:** Needs decision — variety, depth/outcomes, help convention and review route.
+**Recommendation:** contemporary Cambodian Khmer with an identified Phnom Penh-based
+speaker/reference model; label regional/register differences only with evidence.
+Select one consistent learner pronunciation-help convention with a reviewer; do
+not present proposed romanization as authoritative spelling.
+**Next:** agree depth, exact reading outcome and reference model; inventory permissioned
+dictionary/teaching/grammar/pronunciation sources. Recommend named fluent Khmer
+review including address/cultural notes; no hire/contact/availability is assumed.
+**Done when:** course brief, reading inventory, rubric, source/rights register and
+review route are agreed; uncertain linguistic/cultural claims are excluded.
+**Depends on:** owner course-definition decisions and verified source access/rights.
+
+#### F26.2 Khmer first unit
+
+**Status:** Planned.
+**Scope:** five authored greeting/introduction/repair lessons, contextual recall,
+varied review and checkpoint; separate source-linked script, help, meaning, accepted
+answers and audio. Do not mechanically translate the French lesson sequence.
+**Next:** draft from approved sources; record linguistic dispositions and owner
+wording approval before publication. Use early pilot findings before full authoring.
+**Done when:** packages/authored segments pass F24.4; address/register/help and
+answer rationales are checked; changed-context recall and accessible offline study
+can be verified. Text, audio, approval and publication states remain distinct.
+**Depends on:** F26.1 and F26.3's agreed text/segment rules; F24.4 and F26.5 audio.
+
+#### F26.3 Khmer script, sounds, input and starting check
+
+**Status:** Planned.
+**Scope:** skippable placement and optional staged script/sound modules linked to
+actual lesson words. Reviewed modules cover consonant/vowel patterns, signs and
+syllable combinations without an alphabet memorization gate. Separate reading,
+listening and support-choice evidence; never infer pronunciation from text answers.
+**Next:** reviewer selects exact modules/inventory/help rules; prototype downloaded
+fonts, shaping, line height/wrapping and input. Use authored word/phrase segments
+for tiles; do not split Khmer into words by whitespace or insert artificial spaces.
+**Done when:** original text is preserved and segments recombine exactly; combining/
+stacked text is not clipped; help/script work offline at enlarged sizes; input,
+selection and real screen-reader checks pass on agreed devices. Skip/retry and
+alternatives to typing/listening/speaking preserve progress. Placement recommends
+a starting point, not calibrated literacy/pronunciation scores.
+**Depends on:** F26.1 and F24.1/F24.2 for prototype; F26.2 for integrated check/modules.
+
+#### F26.4 Khmer remaining units and reference material
+
+**Status:** Planned.
+**Scope:** units 2–12 (proposed 55 further lessons), reviews/checkpoints, searchable
+use/grammar guides, glossary senses and progressive supported reading linked to
+F26.3. Script inventory and vocabulary need not mirror French or Arabic.
+**Next:** revise sequence after first-unit findings; author bounded unit batches
+through source validation, linguistic review and owner approval.
+**Done when:** agreed 12-unit/60-lesson manifest and optional modules are complete;
+every answer has rationale/source linkage; help and segments are consistent; spaced
+recall and new-context checkpoints cover taught skills. Drafts, TTS alone and
+recognition drills alone do not establish the completed course or its outcomes.
+**Depends on:** F26.1/F26.2 and first-unit pilot under F26.6; F26.3/F24.4; F26.5 audio.
+
+#### F26.5 Khmer model audio and guided speaking
+
+**Status:** Planned — recordings and Khmer provider suitability remain unresolved.
+**Scope:** permitted reviewed human model recordings, exact text/version mappings,
+speaker/variety labels and transcripts; recommend multiple speakers. Controlled
+branches and optional record/replay use reviewed responses and intelligibility/
+intent targets, with text alternatives and the free baseline floor.
+**Next:** prepare first-unit scripts and speaker/rights checklist; assess actual
+Khmer recognition/feedback with reviewed samples and privacy/cost terms. Advertised
+support or French/Arabic results do not establish Khmer suitability.
+**Done when:** full agreed audio coverage passes linguistic/playback/offline checks;
+automated feedback is verified for taught scenarios, handles uncertainty and meets
+no-training/minimum-data/deletion rules. Raw recordings are deleted after feedback;
+improvement retention needs separate informed consent. If no acceptable provider
+exists, record the gap and request a bounded fallback/scope decision; self-recording
+does not by itself fulfill automated assessment.
+**Depends on:** approved F26.2/F26.4 text, F24.2/F24.4 and provider/privacy decisions.
+
+#### F26.6 Khmer pilot, publication and release evidence
+
+**Status:** Planned.
+**Scope:** first-unit pilot then full-course verification, with separate conversation,
+listening and taught-script tasks, immediate/delayed retrieval, help and versioned
+attempt counts. Include actual mobile input/shaping/screen-reader and offline checks.
+**Next:** agree setup/rubric through F26.1; resolve early findings before full authoring,
+then assess the complete candidate. Participant contact is a separate action.
+**Done when:** critical linguistic/audio/script/access/progress defects are resolved;
+observed tasks support factual outcomes; exact owner-authorized publications and
+rollout include rollback, withdrawal and support handling. Rendered script or one
+successful participant is not proof of literacy or general course effectiveness.
+**Depends on:** F26.2/F26.3 and first-unit F26.5 audio for early pilot; F26.4/full audio
+and F24.5/F24.6 for full release. Early/full stages have separate evidence manifests.
+
+## Selected future implementation order
+
+The owner selected research priorities **1, 2, 4, 5 and 6** on October 12:
+**F22 → F23 → F17.5 → F17.6 → F17.7**. F17.5 authoring can support F22 sooner;
+F17.6 needs independent F22 evidence, and F17.7 uses approved available activities.
+[Detailed future-agent plan](docs/learning-engagement-plan.md).
+
+F17.7 was subsequently authorized and completed locally with explicit owner-selected
+habit policies; the remaining selected features are Planned, awaiting implementation
+authorization. Assessment, rewards and provider choices are not silently settled
+by the planning selection. Existing F09/F12/F19 work and the
+owner-deferred F18.1 rehearsal retain their statuses; beta gates remain requirements.
+Research priority **3 (record/replay/compare)** stays unselected research, without a
+new implementation task. Existing F09 recordings/F11 guided speaking remain open.
+
+The new language roadmap has its own dependency order: **F24 foundation → F25/F26
+first units and support → mixed-language pilot → remaining units → release decision**.
+It does not replace the selected Arabic engagement order above. No relative priority
+between these workstreams or new implementation start is inferred from adding plans.
+Course definition/source work can proceed independently when authorized; full course
+authoring should follow the respective first-unit evidence. No completion dates are
+committed without agreed scope, content/reviewer availability and measured first-unit effort.
+
 ## Recent planning changes
+
+- **October 12, 2026 F17.7:** owner authorized implementation and selected the habit
+  policy; independent weekly quests/streaks now work locally with available activities,
+  free grace and offline/identity isolation. Build and 29 targeted checks pass.
+  Owner-authorized rollout in progress; [implementation evidence](docs/weekly-learning-habits.md).
+
+- **October 12, 2026 F24–F26:** owner expanded the roadmap to parallel language study,
+  French and Khmer. Added the shared foundation and full proposed twelve-unit courses,
+  each with six child tasks, decisions, outcomes and release gates. Updated durable
+  product scope; first-100 inclusion remains a decision. Planning only.
+
+- **October 12, 2026 selected additions:** owner selected research priorities
+  1/2/4/5/6; added Planned F22/F23 and F17.5–F17.7 with bounded first slices,
+  dependencies, policy decisions and completion criteria. Priority 3 remains
+  unselected; no implementation or release. [Expanded plan](docs/learning-engagement-plan.md),
+  [research](docs/research/duolingo-mango-feature-candidates.md).
 
 - **October 12, 2026 F17.4:** implemented source-linked loading word reel with
   transliteration/Arabic/meaning rolls, pause, reduced motion and hidden-tab handling.
@@ -719,27 +1336,6 @@ checks. This does not create a live-news operation, media hosting or rehosting r
   Build and 31 targeted browser checks pass; `eada137` pushed/deployed. Oval hero
   and simplified learner copy verified live.
   [Cleanup evidence](docs/interface-copy-cleanup.md).
-
-- **October 11, 2026 F17.2:** added visible dashboard startup/refresh feedback,
-  cached offline fallback and explicit uncached retry. Removed hero image rounding
-  and made its border-free treatment explicit. Build and 20 distinct targeted
-  browser checks pass; `138a186` pushed/deployed, live transition and hero verified.
-  Subsequent F07 owner refinement makes the hero oval (deployed in `eada137`); build and four
-  responsive checks pass. [Preview](docs/landing/hero-oval-preview.png).
-  [Evidence](docs/dashboard-loading.md).
-
-- **October 11, 2026 F17.1/F07:** owner authorized implementation; recommended
-  Today/color/completion slice is complete and deployed in `0852fec`. Build and 19
-  targeted browser checks pass; live hierarchy/disclosure verified. API/content unchanged. Sound audition and optional
-  recall pacing remain proposals. Earlier hero inspection found it already
-  border-free; stale outline instructions were corrected.
-
-- **October 11, 2026 F15.2:** owner authorized beginning F15. Added the bounded
-  Levantine starting check using published content, with offline/device identity
-  handling and support preferences. Build, 29 API tests and 12 distinct targeted
-  browser checks pass across runs. F15 remains open for bootcamp content and other
-  tracks. Owner authorized push/deployment; frontend release `267f98e` is Ready and
-  live placement loading verified. API and curriculum unchanged.
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

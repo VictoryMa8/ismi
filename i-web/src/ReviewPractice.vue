@@ -41,6 +41,7 @@ import PhraseBuilder from './PhraseBuilder.vue';
 import SoundToggle from './SoundToggle.vue';
 import CharacterCue from './CharacterCue.vue';
 import { playUiSound } from './uiSounds';
+import type { ReviewAvailability, StudyActivity } from './learningHabits';
 
 const props = defineProps<{
   compact?: boolean;
@@ -51,6 +52,8 @@ const props = defineProps<{
 const emit = defineEmits<{
   'open-change': [open: boolean];
   'prompt-playback': [playing: boolean];
+  'availability': [value: ReviewAvailability];
+  'activity-complete': [activity: StudyActivity, scope: string];
 }>();
 const packages = ref<LessonResponse[]>([]);
 const history = ref<Awaited<ReturnType<typeof getReviewHistory>>>([]);
@@ -86,6 +89,8 @@ const feedbackPanel = ref<HTMLElement | null>(null);
 const finishHeading = ref<HTMLElement | null>(null);
 let opener: HTMLElement | null = null;
 let generation = 0;
+let sessionId = '';
+let sessionScope = '';
 let audio: HTMLAudioElement | null = null;
 let objectUrl: string | null = null;
 let audioGeneration = 0;
@@ -133,6 +138,13 @@ const units = computed(() => {
     ),
   }));
 });
+watch(() => [loading.value, dueCount.value, turns.value.length, units.value] as const, () => {
+  emit('availability', {
+    ready: !loading.value, due: !loading.value && dueCount.value > 0,
+    mixed: !loading.value && turns.value.length > 0,
+    checkpoints: loading.value ? [] : units.value.filter(unit => unit.complete && unit.available).map(unit => ({ id: unit.id, title: unit.title })),
+  });
+}, { immediate: true });
 
 async function refresh() {
   if (open.value) return;
@@ -284,6 +296,8 @@ async function start(nextKind: ReviewKind, unitId?: string) {
   if (!selected.length) return;
   opener = document.activeElement as HTMLElement;
   kind.value = nextKind;
+  sessionId = crypto.randomUUID();
+  sessionScope = props.scope;
   queue.value = selected;
   index.value = 0;
   finished.value = false;
@@ -438,6 +452,11 @@ async function advance() {
     saving.value = false;
   }
   finished.value = true;
+  emit('activity-complete', {
+    id: sessionId, kind: kind.value === 'checkpoint' ? 'checkpoint' : 'review',
+    completedAt: result.completedAt, unitId: kind.value === 'checkpoint' ? queue.value[0]?.lesson.unitId : undefined,
+    due: kind.value === 'due',
+  }, sessionScope);
   playUiSound('complete');
   await nextTick();
   finishHeading.value?.focus();
@@ -475,6 +494,7 @@ onBeforeUnmount(() => {
   document.body.style.overflow = '';
   window.removeEventListener('online', refresh);
 });
+defineExpose({ start });
 </script>
 
 <template>
