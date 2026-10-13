@@ -114,11 +114,14 @@ References: [alwaysdata free plan](https://help.alwaysdata.com/en/admin-billing/
 
 ### Latest release
 
-The October 12 F17.4 frontend release `7bb2c22` is deployed to Vercel. Loading now
-cycles six source-linked Levantine words through transliteration, Arabic and meaning,
-with pause and reduced motion. Live loader and transition into Today passed. API
+The October 12 F17.7 frontend release `5aec0ec` is deployed to Vercel. Account now
+has independent, default-off Weekly quests and Forgiving streak controls; Today
+shows available-content activities and the selected free grace policy. Live controls,
+published-path order and reload persistence pass. Build and 29 distinct targeted
+checks pass across focused runs, including 16 after the ordering correction. API
 remains at `662d17c`; no backend, data or curriculum changes. See the
-[word-reel rollout](docs/releases/2026-10-12-word-reel.md).
+[weekly-habits rollout](docs/releases/2026-10-12-weekly-habits.md).
+Earlier [word-reel rollout](docs/releases/2026-10-12-word-reel.md) remains verified.
 Earlier [copy/oval rollout](docs/releases/2026-10-11-copy-cleanup.md),
 [loading rollout](docs/releases/2026-10-11-loading.md),
 [placement rollout](docs/releases/2026-10-11.md) and

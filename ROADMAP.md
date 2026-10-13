@@ -22,19 +22,24 @@ habits. [Expanded scopes and completion criteria](docs/learning-engagement-plan.
 F22/F23 and F17.5/F17.6 remain Planned. F17.7 was subsequently authorized and
 implemented locally; the original planning selection did not authorize release.
 
-**F17.7 — Complete locally October 12:** optional goal-sized weekly quests and
+**F17.7 — Complete and deployed October 12:** optional goal-sized weekly quests and
 independent forgiving streaks use the owner-selected Monday/timezone/two-grace-day
 policy. Production build and 29 targeted checks pass;
-[behavior and verification](docs/weekly-learning-habits.md). Owner-authorized rollout in progress.
+[behavior and verification](docs/weekly-learning-habits.md). Release `5aec0ec` is
+pushed/deployed, with live controls, published-path order and persistence verified;
+[rollout evidence](docs/releases/2026-10-12-weekly-habits.md).
 
 **F17.4 — Complete and deployed October 12:** source-linked loading word reel with
 pause and reduced motion. Build and nine targeted checks pass;
 [behavior and preview](docs/loading-word-reel.md). Live loader and readiness transition verified.
 
-**October 12 latest rollout:** F17.4 frontend release `7bb2c22` is pushed and deployed
-to Vercel. Live word-reel loading and transition into Today are verified. API release
-`662d17c` remains deployed; no backend/data/content changes. Production build and
-nine targeted checks pass; [word-reel rollout](docs/releases/2026-10-12-word-reel.md).
+**October 12 latest rollout:** F17.7 frontend release `5aec0ec` is pushed and deployed
+to Vercel. Live controls, published-path quest ordering, reload persistence and
+independent opt-out are verified. Build and 29 distinct targeted checks pass across
+focused runs, including 16 checks after the ordering correction;
+[weekly-habits rollout](docs/releases/2026-10-12-weekly-habits.md).
+API release `662d17c` remains deployed; no backend/data/content changes.
+Earlier [word-reel rollout](docs/releases/2026-10-12-word-reel.md) remains verified.
 Earlier [copy/oval rollout](docs/releases/2026-10-11-copy-cleanup.md) remains verified.
 Earlier [placement rollout](docs/releases/2026-10-11.md) remains verified.
 
@@ -68,7 +73,7 @@ Sound audition and optional recall pacing remain proposals.
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. F17.7 weekly quests/forgiving habits
-are complete locally; the owner-authorized rollout is in progress. Frontend release `7bb2c22` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
+are complete and live-verified. Frontend release `5aec0ec` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
@@ -117,14 +122,14 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F15.2](#f152-placement-starting-point) | Placement starting point | Done · deployed | Published-content Levantine check; bootcamps/other tracks remain open |
 | [F15.1](#f151-personal-study-settings) | Personal study settings | Done · pushed | Goals/tracks drive queue; guest/account offline persistence verified |
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
-| [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | F17.7 done locally; F17.5/F17.6, reminders and XP remain open |
+| [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | F17.7 deployed; F17.5/F17.6, reminders and XP remain open |
 | [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
 | [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · deployed | Startup/refresh, cached offline and retry verified; hero edge removed |
 | [F17.3](#f173-interface-copy-cleanup) | Interface copy cleanup | Done · deployed | Redundant subtitles/quips removed; build and 31 targeted checks pass |
 | [F17.4](#f174-loading-word-reel) | Loading word reel | Done · deployed | Six exact glossary samples; pause/reduced motion verified |
 | [F17.5](#f175-phrase-anatomy-and-grammar-reference) | Phrase anatomy and grammar reference | Planned | Map six phrases to two patterns and three sourced usage notes |
 | [F17.6](#f176-can-do-progress-and-outcome-achievements) | Can-do progress and outcome achievements | Planned | Define one unit's evidence rules using F22 independent attempts |
-| [F17.7](#f177-weekly-learning-quests-and-forgiving-habits) | Weekly learning quests and forgiving habits | Done · rollout in progress | Owner authorized push/deployment; real AT release checks remain |
+| [F17.7](#f177-weekly-learning-quests-and-forgiving-habits) | Weekly learning quests and forgiving habits | Done · deployed | Controls/path/persistence live-verified; real AT release checks remain |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
@@ -148,8 +153,9 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  Frontend release `7bb2c22` is deployed and live-verified October 12;
-  [word-reel rollout evidence](docs/releases/2026-10-12-word-reel.md).
+  Frontend release `5aec0ec` is deployed and live-verified October 12;
+  [weekly-habits rollout evidence](docs/releases/2026-10-12-weekly-habits.md).
+  Earlier [word-reel rollout evidence](docs/releases/2026-10-12-word-reel.md) remains applicable.
   Earlier [copy/oval rollout evidence](docs/releases/2026-10-11-copy-cleanup.md) remains applicable.
   Earlier [loading/hero rollout evidence](docs/releases/2026-10-11-loading.md) remains applicable.
   Earlier [satisfaction rollout evidence](docs/releases/2026-10-11-satisfaction.md) remains applicable.
@@ -542,7 +548,7 @@ External identity remains optional unresolved work, not a condition of F02 compl
 
 **Outcome:** searchable grammar references, meaningful mastery/achievements/XP,
 optional forgiving streaks and opt-in reminders with categories/quiet hours.
-**Next:** F17.7 weekly quests/forgiving habits are complete locally. Remaining selected
+**Next:** F17.7 weekly quests/forgiving habits are complete and deployed. Remaining selected
 scopes are F17.5 phrase anatomy/grammar and F17.6 evidence-based can-do progress/achievements.
 Define their consequential rules before dependent implementation; reminder delivery and the
 XP economy still need separate bounded tasks. Existing in-lesson explanations are
@@ -687,14 +693,16 @@ offline/reload/reconnect, identity isolation and storage errors are covered.
 Keyboard, roles/status labels, doubled text, mobile/desktop and persistent mute
 with reduced motion are verified. Real assistive-technology and supported-browser
 release checks remain under F18; no learner-outcome evidence is inferred.
-**Next:** finish the owner-authorized rollout and live verification. F22/F23 task types,
+**Next:** gather owner feedback on the deployed slice. F22/F23 task types,
 cross-device habit sync and reminder delivery remain separate scopes.
 **Depends on:** F15.1 goals/queue, F05/F10 practice, F17.1 feedback; F22/F23 supply
 optional task types as delivered, not a requirement to invent unavailable activities.
 **Evidence:** [implementation, selected rules and verification](docs/weekly-learning-habits.md),
 [focused checks](i-web/tests/learning-habits.spec.ts),
 [original plan](docs/learning-engagement-plan.md#f177-weekly-learning-quests-and-forgiving-habits).
-**Delivery:** owner authorized commit/push and frontend deployment; rollout in progress.
+**Delivery:** `5aec0ec` committed/pushed and deployed to Vercel; live controls,
+published-path ordering and persistence pass.
+[Rollout evidence](docs/releases/2026-10-12-weekly-habits.md).
 No API/database/content change or curriculum publication.
 
 ### F18 Invite-only beta readiness
@@ -1291,7 +1299,7 @@ The owner selected research priorities **1, 2, 4, 5 and 6** on October 12:
 F17.6 needs independent F22 evidence, and F17.7 uses approved available activities.
 [Detailed future-agent plan](docs/learning-engagement-plan.md).
 
-F17.7 was subsequently authorized and completed locally with explicit owner-selected
+F17.7 was subsequently authorized, completed and deployed with explicit owner-selected
 habit policies; the remaining selected features are Planned, awaiting implementation
 authorization. Assessment, rewards and provider choices are not silently settled
 by the planning selection. Existing F09/F12/F19 work and the
@@ -1310,9 +1318,10 @@ committed without agreed scope, content/reviewer availability and measured first
 ## Recent planning changes
 
 - **October 12, 2026 F17.7:** owner authorized implementation and selected the habit
-  policy; independent weekly quests/streaks now work locally with available activities,
-  free grace and offline/identity isolation. Build and 29 targeted checks pass.
-  Owner-authorized rollout in progress; [implementation evidence](docs/weekly-learning-habits.md).
+  policy; independent weekly quests/streaks work with available activities, free grace
+  and offline/identity isolation. Build and 29 distinct targeted checks pass across
+  focused runs. `5aec0ec` pushed/deployed; live controls/path/persistence verified.
+  [Implementation](docs/weekly-learning-habits.md), [rollout](docs/releases/2026-10-12-weekly-habits.md).
 
 - **October 12, 2026 F24–F26:** owner expanded the roadmap to parallel language study,
   French and Khmer. Added the shared foundation and full proposed twelve-unit courses,

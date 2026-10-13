@@ -89,17 +89,21 @@ screenshots were inspected; keyboard controls and doubled text have no horizonta
 page overflow. Existing interface mute persists through offline completion/reload;
 no new animation is introduced and reduced-motion study continues to work.
 
-Production TypeScript/Vite/PWA build and **29 targeted Chromium checks pass**,
+Production TypeScript/Vite/PWA build and **29 distinct targeted Chromium checks pass**
+across focused runs,
 including all eleven F17.7 checks plus course-loop, review/checkpoints, curriculum
 preview, scheduled review, study settings and satisfaction regression coverage.
 Command: `npm run test:e2e --prefix i-web -- learning-habits.spec.ts course-loop.spec.ts review.spec.ts scheduled-review.spec.ts study-settings.spec.ts satisfaction.spec.ts`.
+The rollout ordering correction additionally passed all 16 affected quest, study-settings
+and satisfaction checks, including a cross-unit published-path assertion.
 Automated roles, labels, focus and status checks do
 not establish a real VoiceOver/NVDA pass or the full supported-browser release gate;
 those remain F18 work. Checklist completion is not learning-outcome evidence.
 
 ## Delivery
 
-Owner authorized commit, push and deployment in the follow-up request. Frontend
-rollout is in progress; there is no API/database schema change or curriculum
-publication. See the roadmap for confirmed delivery state. Reminder delivery and cross-device history remain
-separate scopes.
+Owner authorized commit, push and deployment in the follow-up request. Application
+release `5aec0ec` is pushed and deployed to Vercel, with live controls, published-path
+ordering and reload persistence verified. [Rollout evidence](releases/2026-10-12-weekly-habits.md).
+There is no API/database schema change or curriculum publication. Reminder delivery
+and cross-device history remain separate scopes.
