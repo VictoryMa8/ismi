@@ -130,11 +130,13 @@ print('Assembly, SQLite integrity, recordings and cookie keys verified.')
 '''
 
 
-def health():
+def health(expected_revision=None):
     for _ in range(20):
         try:
             with urllib.request.urlopen(SITE_URL + '/api/health', timeout=10) as response:
-                if json.load(response).get('status') == 'healthy': return
+                payload = json.load(response)
+                version = payload.get('revision', '')
+                if payload.get('status') == 'healthy' and (expected_revision is None or version.endswith('+' + expected_revision)): return
         except (urllib.error.URLError, TimeoutError, ValueError):
             pass
         time.sleep(2)
@@ -184,7 +186,7 @@ def main():
         print(ssh(options, INSTALL, release, digest))
         try:
             site_api(token, 'POST', 'restart/')
-            health()
+            health(revision)
             print(ssh(options, VERIFY, release))
         except Exception:
             print(ssh(options, ROLLBACK, release))

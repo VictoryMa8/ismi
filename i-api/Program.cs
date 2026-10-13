@@ -190,6 +190,9 @@ app.MapGet("/api/health", () => Results.Ok(new
 {
     status = "healthy",
     service = "ismi-api",
+    revision = typeof(LessonResponse).Assembly
+        .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
+        .Cast<System.Reflection.AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,
     utc = DateTimeOffset.UtcNow
 }));
 

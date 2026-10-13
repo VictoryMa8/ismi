@@ -12,7 +12,8 @@ this file. Older plans provide design context, not current priority or permissio
 recall, first/help/retry evidence, later reserved situations and owner review reports
 are implemented. Build, 32 API tests and seven F22 checks pass. The owner approved
 all six exact situations/answer records; three Everyday revisions still await hosted
-console publication. Reusable alwaysdata credentials are being configured for the
+console publication. Frontend `3af91b0` is pushed/deployed; Practice entry verified.
+Reusable alwaysdata credentials are being configured for the
 new terminal deployment workflow. [Behavior and evidence](docs/recall-and-recombine.md).
 
 **October 12 scope expansion — F24–F26 planned:** the owner added French, Khmer
@@ -879,8 +880,9 @@ and [transfer drafts](content/levantine/plans-02/README.md).
 **Verification:** production build/Release API publish, all 32 API tests, seven F22 browser
 checks, six glossary checks and eleven review/scheduling/console checks pass. Real AT/
 supported-device and learner-outcome evidence remain F18 gates.
-**Delivery:** local implementation and owner-approved package files; hosted API/content
-rollout pending reusable credentials. [Programmatic deployment](deploy/README.md).
+**Delivery:** frontend `3af91b0` pushed/deployed; stable Practice entry verified. API
+and three owner-approved content revisions await hosted rollout after credential setup.
+[Rollout record](docs/releases/2026-10-12-recall.md), [programmatic deployment](deploy/README.md).
 
 ### F23 Recurring mini-stories
 
