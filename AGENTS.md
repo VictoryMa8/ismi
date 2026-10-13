@@ -10,18 +10,21 @@
 
 ## Purpose
 
-Ismi is a web-first Arabic learning product inspired by Duolingo, focused exclusively on:
+Ismi is a web-first language learning product inspired by Duolingo, with Arabic as its flagship:
 
 1. Urban Palestinian Levantine Arabic, with Jordanian variants labeled where useful.
 2. Modern Standard Arabic (MSA).
 3. Quranic Arabic.
+4. French (planned expansion).
+5. Khmer (planned expansion).
 
-Users may study any one track or any combination of the three. The user has confirmed enough shared understanding to begin bounded vertical-slice implementation. Continue to resolve open product decisions explicitly before they become architecture or policy commitments.
+Users may study one course or several languages/courses in parallel, with separate progress. On October 12, 2026 the owner authorized expanding the roadmap to French, Khmer and parallel language study. This authorizes planning, not implementation or release of the new courses. Previously authorized Arabic implementation remains in scope. Continue to resolve open product decisions explicitly before they become architecture or policy commitments.
 
 ## Primary audience and promise
 
 - First users are false beginners who already know enough Arabic for basic questions or directions.
 - The primary audience is English-speaking people with Levantine partners or friends; many may also be Muslim.
+- Planned French and Khmer courses extend the relationship-centered approach to English-speaking adult beginners and false beginners; exact course audiences and outcomes remain planning decisions.
 - The initial release is for adults age 18 and older.
 - Launch as an invite-only English-language beta without a broad geographic availability promise.
 - Product tone is warm, mature, relationship-centered, and lightly playful in ordinary practice. Quranic lessons use a restrained and respectful tone.
@@ -35,6 +38,7 @@ Users may study any one track or any combination of the three. The user has conf
 
 - Levantine is the flagship track.
 - Launch target: 12 weeks of Levantine content and 4 weeks each of MSA and Quranic Arabic.
+- French and Khmer are included in the product roadmap. Their recommended initial depth, language varieties, review arrangements and release timing are unresolved; do not silently add them to the first-100 beta commitment. English remains the teaching/interface language unless the owner requests localization.
 - Levantine uses urban Palestinian as the primary model and labels Jordanian alternatives.
 - Quranic Arabic is comprehension-first. Teach decoding and pronunciation, but not detailed tajwid in the initial product.
 - Connect related words, roots, meanings, and register differences across tracks when useful; do not force the three curricula into identical vocabulary sequences.
@@ -55,6 +59,7 @@ Users may study any one track or any combination of the three. The user has conf
 - MSA and Quranic lessons prioritize Arabic script, with vowel marks and tap-for-help support.
 - Users select a daily goal; offer 5, 10, 15, and 30 minutes, defaulting to 15.
 - A personalized daily queue distributes study time across selected tracks while preserving separate progress per track.
+- Parallel language study must preserve course-specific placement, review and progress. Do not infer a combined proficiency score or promise each course's single-language outcomes from a shared daily time budget.
 - When multiple tracks are selected, the learner chooses one primary track; remaining time is distributed across secondary tracks, with adaptive review inside each allocation.
 - Offer a short, skippable placement assessment for each selected track rather than one combined Arabic score.
 - Use placement results to recommend alphabet, reading, and sound bootcamp modules.
@@ -192,6 +197,7 @@ Do not include billing, a social network, or a live-news content operation in th
 
 ## Open decisions
 
+- French and Khmer course varieties, initial depth/outcomes, content/audio sources and linguistic review arrangements; parallel-language allocation/rotation policy and whether either course joins the first-100 beta.
 - Final approved Quran translation, word-level, morphology, and recitation resource IDs and written permissions.
 - Subscription pricing, trials, family plans, and regional pricing.
 - External authentication providers, production account recovery/email delivery, analytics, and detailed data-retention periods.
