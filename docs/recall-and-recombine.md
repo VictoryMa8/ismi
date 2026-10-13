@@ -104,4 +104,4 @@ Owner requested a better alternative to browser-driven alwaysdata updates.
 existing site/SSH target, retains application/SQLite rollback, uploads by SSH/SCP,
 restarts through the provider API and checks health/assets/keys. Four fixture tests
 pass for install/rollback/data preservation, unsafe/corrupt archives, key changes and running-release health identity.
-Actual hosting authentication and end-to-end API rollout have not been established. Frontend commit `3af91b0` is pushed/deployed, with the stable Practice entry verified; the exact API/content rollout remains pending credentials.
+Actual hosting authentication and end-to-end API rollout have not been established. Frontend `85fc99b` is pushed/Vercel Ready, with the initial F22 Practice entry verified; the exact API/content rollout remains pending credentials.

@@ -7,7 +7,16 @@ Vercel; this command deploys only API application files and never publishes curr
 
 ## One-time owner setup
 
-1. Configure a reusable, dedicated SSH key on the existing Ismi SSH user. Keep its
+1. Generate a reusable dedicated SSH key in your own terminal (enter a passphrase
+   when prompted), then add the `.pub` file's public key to the existing Ismi SSH
+   user's authorized keys in alwaysdata:
+
+   ```sh
+   ssh-keygen -t ed25519 -a 64 -f ~/.ssh/ismi_alwaysdata_deploy -C ismi-deploy
+   ssh-add ~/.ssh/ismi_alwaysdata_deploy
+   ```
+
+   Keep its
    private key outside Git (prefer a passphrase-protected key loaded in your SSH agent).
    Verify the server fingerprint against Remote access → SSH/SFTP before trusting it.
    The script uses strict host-key verification; it will not auto-accept a host key.

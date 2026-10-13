@@ -12,7 +12,7 @@ this file. Older plans provide design context, not current priority or permissio
 recall, first/help/retry evidence, later reserved situations and owner review reports
 are implemented. Build, 32 API tests and eight F22 checks pass. The owner approved
 all six exact situations/answer records; three Everyday revisions still await hosted
-console publication. Frontend `3af91b0` is pushed/deployed; Practice entry verified.
+console publication. Frontend `85fc99b` is Ready; Practice entry verified on the initial F22 release.
 Reusable alwaysdata credentials are being configured for the
 new terminal deployment workflow. [Behavior and evidence](docs/recall-and-recombine.md).
 
@@ -42,15 +42,15 @@ pushed/deployed, with live controls, published-path order and persistence verifi
 pause and reduced motion. Build and nine targeted checks pass;
 [behavior and preview](docs/loading-word-reel.md). Live loader and readiness transition verified.
 
-**October 12 latest rollout:** F17.7 frontend release `5aec0ec` is pushed and deployed
-to Vercel. Live controls, published-path quest ordering, reload persistence and
-independent opt-out are verified. Build and 29 distinct targeted checks pass across
-focused runs, including 16 checks after the ordering correction;
-[weekly-habits rollout](docs/releases/2026-10-12-weekly-habits.md).
-API release `662d17c` remains deployed; no backend/data/content changes.
-Earlier [word-reel rollout](docs/releases/2026-10-12-word-reel.md) remains verified.
-Earlier [copy/oval rollout](docs/releases/2026-10-11-copy-cleanup.md) remains verified.
-Earlier [placement rollout](docs/releases/2026-10-11.md) remains verified.
+**October 12 latest rollout:** F22 frontend `85fc99b` is pushed and Vercel Ready,
+including the older-API import guard. The initial F22 Practice entry is live-verified;
+[rollout evidence](docs/releases/2026-10-12-recall.md). API `662d17c` and the existing
+thirteen publications remain hosted while reusable credentials are being configured;
+F22's exact package is owner-approved but not yet published.
+Earlier [weekly-habits rollout](docs/releases/2026-10-12-weekly-habits.md),
+[word reel](docs/releases/2026-10-12-word-reel.md),
+[copy/oval](docs/releases/2026-10-11-copy-cleanup.md) and
+[placement](docs/releases/2026-10-11.md) evidence remains applicable.
 
 **F15.2 — Complete and deployed October 11:** optional six-question Levantine starting-point
 check now works with published lessons, device-scoped results, offline downloads
@@ -82,7 +82,7 @@ Sound audition and optional recall pacing remain proposals.
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. F17.7 weekly quests/forgiving habits
-are complete and live-verified. Frontend release `5aec0ec` and API release `662d17c` are deployed and verified. The seven owner-approved first-unit revisions are now published as hosted
+are complete and live-verified. F22 frontend `85fc99b` is Ready; API `662d17c` remains deployed. F22 API/content delivery awaits reusable credentials. The seven owner-approved first-unit revisions are now published as hosted
 v2, with current art and verified content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
@@ -163,8 +163,9 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  Frontend release `5aec0ec` is deployed and live-verified October 12;
-  [weekly-habits rollout evidence](docs/releases/2026-10-12-weekly-habits.md).
+  F22 frontend `85fc99b` is Ready October 12; the initial F22 Practice entry is
+  live-verified. API/content delivery remains open; [F22 rollout](docs/releases/2026-10-12-recall.md).
+  Earlier [weekly-habits rollout evidence](docs/releases/2026-10-12-weekly-habits.md) remains applicable.
   Earlier [word-reel rollout evidence](docs/releases/2026-10-12-word-reel.md) remains applicable.
   Earlier [copy/oval rollout evidence](docs/releases/2026-10-11-copy-cleanup.md) remains applicable.
   Earlier [loading/hero rollout evidence](docs/releases/2026-10-11-loading.md) remains applicable.
@@ -880,7 +881,7 @@ and [transfer drafts](content/levantine/plans-02/README.md).
 **Verification:** production build/Release API publish, all 32 API tests, eight F22 browser
 checks, six glossary checks and eleven review/scheduling/console checks pass. Real AT/
 supported-device and learner-outcome evidence remain F18 gates.
-**Delivery:** frontend `3af91b0` pushed/deployed; stable Practice entry verified. API
+**Delivery:** frontend `85fc99b` Ready; initial F22 Practice entry verified. API
 and three owner-approved content revisions await hosted rollout after credential setup.
 [Rollout record](docs/releases/2026-10-12-recall.md), [programmatic deployment](deploy/README.md).
 
