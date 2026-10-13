@@ -24,6 +24,8 @@ test('all goals get bounded distinct available tasks; empty content, pending ava
     if (count! >= 3) expect(planned.tasks[2]!.kind).toBe('checkpoint')
   }
   const none = { ready: true, due: false, mixed: false, checkpoints: [] }
+  const acrossUnits = [{ ...catalog[3]!, unitId: 'published-path' }, { ...catalog[0]!, unitId: 'fixtures' }]
+  expect(planQuests(enabled(), { ...defaultPreferences(), goalMinutes: 5 }, acrossUnits, none).tasks[0]!.lessonId).toBe(catalog[3]!.id)
   expect(planQuests(enabled(), defaultPreferences(), [], none).tasks).toEqual([])
   expect(planQuests(enabled(), defaultPreferences(), catalog, { ...none, ready: false }).tasks).toEqual([])
   expect(planQuests(enabled(), { goalMinutes: 30, primaryTrack: 'msa', selectedTrackIds: ['msa'] }, catalog, none).tasks).toEqual([])

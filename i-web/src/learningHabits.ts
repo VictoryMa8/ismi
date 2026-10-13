@@ -51,8 +51,10 @@ export function rollWeek(state: HabitState, now: number): HabitState {
 export function questCapacity(goal: number): number { return ({ 5: 1, 10: 2, 15: 3, 30: 6 } as Record<number, number>)[goal] ?? 3 }
 export function planQuests(state: HabitState, preferences: StudyPreferences, lessons: CourseLessonSummary[], review: ReviewAvailability): HabitState {
   if (!state.questsEnabled || !review.ready) return state
+  // The dashboard already carries the published path order across units. Course
+  // numbers restart in each unit, so sorting those globally can promote fixtures.
   const selected = lessons.filter(lesson => preferences.selectedTrackIds.includes((lesson.trackId ?? 'levantine') as typeof preferences.primaryTrack))
-    .sort((a, b) => Number(b.trackId === preferences.primaryTrack) - Number(a.trackId === preferences.primaryTrack) || a.courseOrder - b.courseOrder || a.id.localeCompare(b.id))
+    .sort((a, b) => Number((b.trackId ?? 'levantine') === preferences.primaryTrack) - Number((a.trackId ?? 'levantine') === preferences.primaryTrack))
   const newTasks: QuestTask[] = selected.filter(lesson => !lesson.isCompleted).map(lesson => ({
     id: `lesson:${lesson.id}`, kind: 'lesson', label: lesson.title, lessonId: lesson.id,
   }))
