@@ -1,6 +1,6 @@
 # F22 Everyday recall review
 
-October 12, 2026. Three exact hosted v2 lesson revisions; only the new `recall` field is added. No existing teaching, exercises, vocabulary, audio or sources are changed. Owner approved this exact package October 12; console approval/publication and hosted verification remain pending.
+October 12, 2026. Three exact hosted v2 lesson revisions; only the new `recall` field is added. No existing teaching, exercises, vocabulary, audio or sources are changed. Owner approved this exact package October 12. The three exact revisions were validated, previewed, approved and published as hosted v3 October 13; [release and audit evidence](../../../../../docs/releases/2026-10-13-recall.md).
 
 All targets are urban Palestinian, conversational register. These are written production tasks, with no spoken proficiency or expert-review claim. Models are copied exactly from published teaching cards. Owner review covers the new English situations, rationales and ASCII transliteration alternatives.
 ## rest-a-little

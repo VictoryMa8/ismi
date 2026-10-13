@@ -1,0 +1,109 @@
+{
+  "publications": [
+    {
+      "lessonId": "levantine-everyday-01-01",
+      "versionId": 21,
+      "version": 3,
+      "previousVersionId": 14,
+      "sourceCount": 7,
+      "audit": [
+        {
+          "id": 84,
+          "action": "created",
+          "atUtc": "2026-10-13 16:18:52.4148802"
+        },
+        {
+          "id": 85,
+          "action": "validated",
+          "atUtc": "2026-10-13 16:19:28.8251605"
+        },
+        {
+          "id": 86,
+          "action": "validated",
+          "atUtc": "2026-10-13 16:19:29.7809739"
+        },
+        {
+          "id": 87,
+          "action": "approved",
+          "atUtc": "2026-10-13 16:19:58.5273867"
+        },
+        {
+          "id": 88,
+          "action": "published",
+          "atUtc": "2026-10-13 16:20:07.6358726"
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-everyday-01-03",
+      "versionId": 22,
+      "version": 3,
+      "previousVersionId": 16,
+      "sourceCount": 6,
+      "audit": [
+        {
+          "id": 90,
+          "action": "created",
+          "atUtc": "2026-10-13 16:20:36.5548614"
+        },
+        {
+          "id": 91,
+          "action": "validated",
+          "atUtc": "2026-10-13 16:20:37.63474"
+        },
+        {
+          "id": 92,
+          "action": "validated",
+          "atUtc": "2026-10-13 16:20:38.141117"
+        },
+        {
+          "id": 93,
+          "action": "approved",
+          "atUtc": "2026-10-13 16:20:53.6709767"
+        },
+        {
+          "id": 94,
+          "action": "published",
+          "atUtc": "2026-10-13 16:20:54.7105214"
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-everyday-01-06",
+      "versionId": 23,
+      "version": 3,
+      "previousVersionId": 19,
+      "sourceCount": 8,
+      "audit": [
+        {
+          "id": 96,
+          "action": "created",
+          "atUtc": "2026-10-13 16:21:06.7127612"
+        },
+        {
+          "id": 97,
+          "action": "validated",
+          "atUtc": "2026-10-13 16:21:07.622974"
+        },
+        {
+          "id": 98,
+          "action": "validated",
+          "atUtc": "2026-10-13 16:21:08.1182483"
+        },
+        {
+          "id": 99,
+          "action": "approved",
+          "atUtc": "2026-10-13 16:21:19.1019947"
+        },
+        {
+          "id": 100,
+          "action": "published",
+          "atUtc": "2026-10-13 16:21:20.0653084"
+        }
+      ]
+    }
+  ],
+  "totalPublished": 13,
+  "nonCurriculumTablesUnchanged": true,
+  "recallReports": 0
+}

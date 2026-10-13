@@ -91,11 +91,11 @@ The console requires the API’s `typed-recall-v1` capability before importing/s
 recall metadata, preventing an older API from silently dropping the field.
 
 API startup adds the empty `RecallReviewCases` table; existing curriculum/account/
-progress tables, recordings and cookie keys are not replaced. Current hosted source
-baseline was fetched October 12: Everyday lessons 1/3/6 are v2. New packages are owner-approved files, not hosted publications. Three exact revisions
-must be imported/validated/approved/published through the normal console service gates
-before learners get the targets.
-Code rollout is separately authorized; record web/API/content versions after release.
+progress tables, recordings and cookie keys are not replaced. The October 12 hosted v2 baseline was used for the exact owner-approved revisions.
+On October 13, Everyday lessons 1/3/6 were imported, validated, previewed, approved
+and published as hosted v3 through console gates. Public payloads, all 21 source
+records and audit history match; prior v2 records remain superseded for rollback.
+[Application, publication and preservation evidence](releases/2026-10-13-recall.md).
 
 ## Programmatic API deployment
 
@@ -104,4 +104,10 @@ Owner requested a better alternative to browser-driven alwaysdata updates.
 existing site/SSH target, retains application/SQLite rollback, uploads by SSH/SCP,
 restarts through the provider API and checks health/assets/keys. Four fixture tests
 pass for install/rollback/data preservation, unsafe/corrupt archives, key changes and running-release health identity.
-Actual hosting authentication and end-to-end API rollout have not been established. Frontend `85fc99b` is pushed/Vercel Ready, with the initial F22 Practice entry verified; the exact API/content rollout remains pending credentials.
+The owner selected temporary SSH/Safari deployment for the October 13 release.
+Frontend/API application release `6419f84` is deployed and live Practice enables
+typed recall for completed eligible lessons. API health reports the exact running
+revision and capability; data/assets were preserved. Temporary access was revoked
+and local keys removed. Reusable credentials remain future setup for this terminal workflow.
+The [rollout record](releases/2026-10-13-recall.md) distinguishes hosted availability
+from the full passing local evaluator/offline/report checks and remaining beta gates.

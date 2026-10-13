@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 12, 2026 · **Start here for current feature status.**
+Updated October 13, 2026 · **Start here for current feature status.**
 
 This is the single current plan. [AGENTS.md](AGENTS.md) holds product constraints;
 [the planning workflow](docs/planning-workflow.md) explains how agents maintain
@@ -8,13 +8,13 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**F22 — implementation verified October 12; rollout in progress:** typed Arabic/Arabizi
-recall, first/help/retry evidence, later reserved situations and owner review reports
-are implemented. Build, 32 API tests and eight F22 checks pass. The owner approved
-all six exact situations/answer records; three Everyday revisions still await hosted
-console publication. Frontend `85fc99b` is Ready; Practice entry verified on the initial F22 release.
-Reusable alwaysdata credentials are being configured for the
-new terminal deployment workflow. [Behavior and evidence](docs/recall-and-recombine.md).
+**F22 — Complete and deployed October 13:** typed Arabic/Arabizi recall,
+first/help/retry evidence, reserved later situations and owner review reports are
+implemented. The owner-approved Everyday 1/3/6 revisions are published as v3 through
+console gates. Frontend/API application release `6419f84` is deployed; healthy API,
+exact payload/source/audit matching, data/asset preservation and enabled live Practice
+entry are verified. [Behavior](docs/recall-and-recombine.md),
+[rollout evidence](docs/releases/2026-10-13-recall.md).
 
 **October 12 scope expansion — F24–F26 planned:** the owner added French, Khmer
 and parallel language study to Ismi's roadmap. Arabic remains the flagship.
@@ -27,7 +27,7 @@ first-100 beta remain explicit decisions. Existing Arabic commitments are retain
 5 and 6 for future implementation: F22 recall/recombine, F23 mini-stories,
 F17.5 phrase anatomy/grammar, F17.6 can-do progress and F17.7 weekly quests/forgiving
 habits. [Expanded scopes and completion criteria](docs/learning-engagement-plan.md).
-F22 was subsequently authorized and implemented, with rollout in progress. F23 and
+F22 was subsequently authorized, completed and deployed. F23 and
 F17.5/F17.6 remain Planned. F17.7 is implemented/deployed; the original planning
 selection did not itself authorize release.
 
@@ -42,11 +42,10 @@ pushed/deployed, with live controls, published-path order and persistence verifi
 pause and reduced motion. Build and nine targeted checks pass;
 [behavior and preview](docs/loading-word-reel.md). Live loader and readiness transition verified.
 
-**October 12 latest rollout:** F22 frontend `85fc99b` is pushed and Vercel Ready,
-including the older-API import guard. The initial F22 Practice entry is live-verified;
-[rollout evidence](docs/releases/2026-10-12-recall.md). API `662d17c` and the existing
-thirteen publications remain hosted while reusable credentials are being configured;
-F22's exact package is owner-approved but not yet published.
+**October 13 latest rollout:** F22 frontend/API application release `6419f84` is
+deployed and its exact owner-approved packages are published as v3. Live Practice
+is enabled for eligible completed lessons; prior v2 versions and application/database
+rollback are retained. [Rollout evidence](docs/releases/2026-10-13-recall.md).
 Earlier [weekly-habits rollout](docs/releases/2026-10-12-weekly-habits.md),
 [word reel](docs/releases/2026-10-12-word-reel.md),
 [copy/oval](docs/releases/2026-10-11-copy-cleanup.md) and
@@ -82,8 +81,9 @@ Sound audition and optional recall pacing remain proposals.
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. F17.7 weekly quests/forgiving habits
-are complete and live-verified. F22 frontend `85fc99b` is Ready; API `662d17c` remains deployed. F22 API/content delivery awaits reusable credentials. The seven owner-approved first-unit revisions are now published as hosted
-v2, with current art and verified content/source records. F08 is complete.
+are complete and live-verified. F22 frontend/API `6419f84` is deployed. The first unit
+has three Everyday v3 and four v2 publications, with current art and verified
+content/source records. F08 is complete.
 
 **F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
 retained pronunciation errors and remain unaccepted. The owner selected a free-tier
@@ -99,8 +99,7 @@ recordings and all beta evidence requirements remain open. The existing eight-pr
 batch provides the initial text; [v2 release evidence](docs/pilot/release-2026-10-03/README.md)
 remains the published baseline.
 
-**Waiting on:** reusable alwaysdata credentials to finish the F22 API/content rollout;
-owner Azure free-account enrollment (signed in, but no subscription),
+**Waiting on:** owner Azure free-account enrollment (signed in, but no subscription),
 verified F0 access and then owner listening review. No paid services authorized.
 Real recordings, live speech-provider choices, Quran permissions
 and beta evidence remain separate dependencies.
@@ -144,7 +143,7 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
 | [F21](#f21-cultural-watch-and-listen-recommendations) | Cultural watch/listen recommendations | Planned | Scope a weekly curated pick; daily cadence remains a choice |
-| [F22](#f22-recall-and-recombine) | Recall and recombine | Active · verified; rollout pending | Exact package owner-approved; deploy API, publish three revisions and verify hosted practice |
+| [F22](#f22-recall-and-recombine) | Recall and recombine | Done · deployed/published | Three targets/six situations live; broader AT/device and outcome evidence remains F18 |
 | [F23](#f23-recurring-mini-stories) | Recurring mini-stories | Planned | Start F23.1, then scope a linked three-episode text arc |
 | [F23.1](#f231-first-text-episode) | First text episode | Planned | One reviewed episode, two comprehension checks and a response |
 | [F24](#f24-multi-language-foundation-and-parallel-study) | Multi-language foundation and parallel study | Planned | Define compatible language/course records; agree queue policy |
@@ -163,16 +162,17 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  F22 frontend `85fc99b` is Ready October 12; the initial F22 Practice entry is
-  live-verified. API/content delivery remains open; [F22 rollout](docs/releases/2026-10-12-recall.md).
+  F22 frontend/API application release `6419f84` is deployed October 13; three
+  exact approved revisions are published v3 and live Practice is enabled.
+  [F22 rollout](docs/releases/2026-10-13-recall.md).
   Earlier [weekly-habits rollout evidence](docs/releases/2026-10-12-weekly-habits.md) remains applicable.
   Earlier [word-reel rollout evidence](docs/releases/2026-10-12-word-reel.md) remains applicable.
   Earlier [copy/oval rollout evidence](docs/releases/2026-10-11-copy-cleanup.md) remains applicable.
   Earlier [loading/hero rollout evidence](docs/releases/2026-10-11-loading.md) remains applicable.
   Earlier [satisfaction rollout evidence](docs/releases/2026-10-11-satisfaction.md) remains applicable.
   Earlier [placement rollout evidence](docs/releases/2026-10-11.md) remains applicable.
-  API release `662d17c` remains deployed and verified October 9;
-  [API rollout evidence](docs/releases/2026-10-09.md).
+  Earlier API release `662d17c` was verified October 9;
+  [historical API rollout evidence](docs/releases/2026-10-09.md).
   F10 frontend release `89a6537` is pushed and verified deployed; see the
   [October 7 release record](docs/releases/2026-10-07.md).
   Code release `5fead73` is committed and pushed; the API is verified deployed.
@@ -180,6 +180,8 @@ Priority is not a schedule or blanket publication/deployment authorization.
 - **Curriculum:** October 3 hosted release published all seven Everyday revisions as
   v2 through normal console gates. All seven public payloads and 52 source records
   match the approved packages; prior v1 records remain superseded for restoration.
+  October 13 F22 supersedes Everyday 1/3/6 with approved v3 revisions; the other
+  four Everyday lessons remain v2. [Current audit evidence](docs/releases/2026-10-13-recall.md).
   Local state differs: lesson 1 v4 was already published and lessons 2–7 remain drafts.
   [Release, audit and preservation evidence](docs/pilot/release-2026-10-03/README.md).
 - **Hosting:** Vercel plus alwaysdata development preview. October 9 rollout
@@ -844,18 +846,17 @@ checks. This does not create a live-news operation, media hosting or rehosting r
 
 ### F22 Recall and recombine
 
-**Status:** Active — implementation and local verification complete October 12, 2026.
-Owner authorized push/deployment, selected the answer policy, and approved the exact
-six-situation package. Hosted API delivery, console publication and live checks remain.
+**Status:** Done — implemented/verified October 12; deployed/published October 13, 2026.
+Owner authorized push/deployment, selected the answer policy and approved the exact
+six-situation package. Hosted API, publication and live Practice availability are verified.
 **Implemented:** source-linked optional recall metadata/validation, typed Arabic/Arabizi
 practice, independent-first/help/retry facts, F10-based due selection with reserved later
 variants, atomic device persistence and version-aware human report cases/console resolution.
 **Policy:** documented NFC/case/space/sentence-punctuation/Arabic-harakat normalization;
 letters and meaningful word differences remain. Unknown answers are Unable to judge;
 raw text is session-only unless voluntarily reported. [Details](docs/recall-and-recombine.md).
-**Current next:** finish reusable hosting-auth setup, deploy the prepared API, import/validate/
-approve/publish the three exact owner-approved revisions, verify hosted practice, then
-record the exact web/API/content release. No hosted completion is claimed yet.
+**Current next:** gather feedback on the deployed slice. Broader AT/device and learner-
+outcome evidence remains under F18; additional authored targets need their own approval.
 **Outcome:** learners produce familiar language in changed authored situations before
 assistance, with structured accepted alternatives, explanations and free hints/retries.
 F05/F10's think/say-then-tiles practice remains delivered; this adds captured independent
@@ -881,9 +882,12 @@ and [transfer drafts](content/levantine/plans-02/README.md).
 **Verification:** production build/Release API publish, all 32 API tests, eight F22 browser
 checks, six glossary checks and eleven review/scheduling/console checks pass. Real AT/
 supported-device and learner-outcome evidence remain F18 gates.
-**Delivery:** frontend `85fc99b` Ready; initial F22 Practice entry verified. API
-and three owner-approved content revisions await hosted rollout after credential setup.
-[Rollout record](docs/releases/2026-10-12-recall.md), [programmatic deployment](deploy/README.md).
+**Delivery:** frontend/API application release `6419f84` deployed; exact approved Everyday
+1/3/6 packages published as hosted v3. Public payloads, 21 sources, audit history,
+account/progress/asset preservation and enabled live Practice are verified October 13.
+[Rollout record](docs/releases/2026-10-13-recall.md). Temporary SSH access was revoked
+and local keys removed. [Programmatic deployment](deploy/README.md) remains available
+after reusable credential setup; the owner selected the old workflow for this release.
 
 ### F23 Recurring mini-stories
 
@@ -1327,7 +1331,7 @@ F17.6 needs independent F22 evidence, and F17.7 uses approved available activiti
 [Detailed future-agent plan](docs/learning-engagement-plan.md).
 
 F17.7 was subsequently authorized, completed and deployed with explicit owner-selected
-habit policies; F22 is authorized/implemented and undergoing rollout; F23/F17.5/F17.6 remain
+habit policies; F22 is completed, deployed and published; F23/F17.5/F17.6 remain
 Planned, awaiting implementation authorization. Assessment, rewards and provider choices are not silently settled
 by the planning selection. Existing F09/F12/F19 work and the
 owner-deferred F18.1 rehearsal retain their statuses; beta gates remain requirements.
@@ -1344,10 +1348,16 @@ committed without agreed scope, content/reviewer availability and measured first
 
 ## Recent planning changes
 
+- **October 13, 2026 F22 rollout:** application release `6419f84` deployed to Vercel/alwaysdata;
+  Everyday 1/3/6 published v3 through console validation/approval/publication. Exact
+  payloads/21 sources/audits, preserved data/assets and enabled live Practice verified.
+  Owner selected temporary SSH/Safari workflow; access revoked and local keys removed.
+  [Release evidence](docs/releases/2026-10-13-recall.md).
+
 - **October 12, 2026 F22:** owner authorized implementation/push/deployment, selected
   the typed-answer policy and approved the exact six-situation package. Code/build,
-  32 API tests and eight F22 checks pass. Hosted API/content rollout remains pending
-  reusable credentials. Prepared tested terminal alwaysdata deployment tooling.
+  32 API tests and eight F22 checks passed. At that checkpoint API/content rollout
+  awaited reusable credentials. Prepared tested terminal alwaysdata deployment tooling.
   [Feature evidence](docs/recall-and-recombine.md), [deployment workflow](deploy/README.md).
 
 
@@ -1367,12 +1377,6 @@ committed without agreed scope, content/reviewer availability and measured first
   dependencies, policy decisions and completion criteria. Priority 3 remains
   unselected; no implementation or release. [Expanded plan](docs/learning-engagement-plan.md),
   [research](docs/research/duolingo-mango-feature-candidates.md).
-
-- **October 12, 2026 F17.4:** implemented source-linked loading word reel with
-  transliteration/Arabic/meaning rolls, pause, reduced motion and hidden-tab handling.
-  Build and nine targeted checks pass; `7bb2c22` pushed/deployed. Live loader and
-  transition to Today verified.
-  [Evidence](docs/loading-word-reel.md).
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.
