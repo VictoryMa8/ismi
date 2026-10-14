@@ -10,10 +10,17 @@ import LessonScroll from './LessonScroll.vue'
 import LessonTransition from './LessonTransition.vue'
 import SoundToggle from './SoundToggle.vue'
 import { playUiSound } from './uiSounds'
+import { reviewDueAt } from './reviewSchedule'
+import CanDoProgress from './CanDoProgress.vue'
 
 const props = defineProps<{ scope: string; lessons: CourseLessonSummary[]; historyRevision: number }>()
 const emit = defineEmits<{ 'open-change': [open: boolean] }>()
-const available = ref<RecallTurn[]>([])
+const packages = ref<LessonResponse[]>([])
+const savedEvidence = ref<RecallEvidence[]>([])
+const savedHistory = ref<Awaited<ReturnType<typeof getReviewHistory>>>([])
+const now = ref(Date.now())
+const available = computed(() => recallQueue(packages.value, savedEvidence.value, savedHistory.value, now.value))
+let clock: ReturnType<typeof setInterval> | undefined
 const loading = ref(true)
 const error = ref('')
 const notice = ref('')
@@ -51,7 +58,7 @@ async function refresh() {
   try {
     const saved = await getRecallEvidence(scope)
     const history = await getReviewHistory(scope)
-    const packages: LessonResponse[] = []
+    const loaded: LessonResponse[] = []
     let missing = false
     for (const item of props.lessons.filter(l => l.isCompleted && l.reviewStatus !== 'demonstrative')) {
       let lesson: LessonResponse | undefined
@@ -64,36 +71,50 @@ async function refresh() {
         else { lesson ??= await getCachedLesson(item.id); missing ||= !lesson }
       }
       if (token !== generation || scope !== props.scope) return
-      if (lesson?.trackId === 'levantine' && lesson.recall?.length) packages.push(lesson)
+      if (lesson?.trackId === 'levantine' && lesson.recall?.length) loaded.push(lesson)
     }
     if (token !== generation || scope !== props.scope) return
-    available.value = recallQueue(packages, saved, history)
+    packages.value = loaded; savedEvidence.value = saved; savedHistory.value = history; now.value = Date.now()
     if (missing) notice.value = 'Connect to download recall practice for completed lessons.'
     await flushRecallReports(scope)
     if (token !== generation || scope !== props.scope) return
     pending.value = await getPendingRecallReports(scope)
-  } catch { if (token === generation) error.value = 'Device storage is unavailable. Recall evidence and reports cannot be saved.' }
+  } catch { if (token === generation) {
+    packages.value = []; savedEvidence.value = []; savedHistory.value = []
+    error.value = 'Device storage is unavailable. Recall evidence and reports cannot be saved.'
+  } }
   finally { if (token === generation) loading.value = false }
 }
 async function showTurn() {
   const current = turn.value
   if (!current) return
+  const scope = sessionScope
   answer.value = ''; result.value = null; help.value = 'none'; reportForm.value = false; reportSaved.value = false
   reportExplanation.value = ''; reportId.value = crypto.randomUUID()
-  evidence.value = {
-    id: crypto.randomUUID(), scope: sessionScope, lessonId: current.lesson.id, version: current.lesson.version,
+  const entry: RecallEvidence = {
+    id: crypto.randomUUID(), scope, lessonId: current.lesson.id, version: current.lesson.version,
     targetId: current.target.id, variantId: current.variant.id, shownAt: new Date().toISOString(), completedAt: null,
     firstResult: null, firstHelped: false, helped: false, repeated: current.repeated, attempts: [],
+    reviewDueAt: null,
   }
-  try { await saveRecallEvidence(evidence.value) }
-  catch { error.value = 'This prompt could not be saved. Practice remains available; no evidence is claimed.' }
+  evidence.value = entry
+  try {
+    const prior = (await getReviewHistory(scope)).find(h => h.lessonId === current.lesson.id &&
+      h.version === current.lesson.version && h.stepId === recallStepId(current.target))
+    entry.reviewDueAt = prior ? new Date(reviewDueAt(prior)).toISOString() : null
+    await saveRecallEvidence(entry)
+  }
+  catch { if (scope === props.scope) error.value = 'This prompt could not be saved. Practice remains available; no evidence is claimed.' }
+  if (scope !== props.scope) return
   await nextTick(); focusHeading()
 }
-async function start() {
+async function start(lessonId?: string, targetId?: string) {
   if (loading.value || busy.value || !available.value.length) return
   opener = document.activeElement as HTMLElement
   sessionScope = props.scope
-  queue.value = available.value.slice(0, 6); index.value = 0; finished.value = false; independent.value = 0; total.value = 0
+  queue.value = lessonId ? available.value.filter(t => t.lesson.id === lessonId && t.target.id === targetId) : available.value.slice(0, 6)
+  if (!queue.value.length) return
+  index.value = 0; finished.value = false; independent.value = 0; total.value = 0
   open.value = true; document.body.style.overflow = 'hidden'
   busy.value = true
   try { await showTurn() } finally { busy.value = false }
@@ -200,20 +221,30 @@ async function online() {
 watch(open, value => emit('open-change', value))
 watch(() => props.scope, () => {
   generation++; open.value = false; document.body.style.overflow = ''; answer.value = ''; queue.value = []; evidence.value = null
-  pending.value = []; available.value = []; void refresh()
+  pending.value = []; packages.value = []; savedEvidence.value = []; savedHistory.value = []; void refresh()
 })
 watch(() => [props.lessons, props.historyRevision], () => void refresh())
-onMounted(() => { void refresh(); window.addEventListener('online', online) })
-onBeforeUnmount(() => { generation++; window.removeEventListener('online', online); if (open.value) document.body.style.overflow = '' })
+function visibility() { if (document.visibilityState === 'visible') { now.value = Date.now(); void refresh() } }
+onMounted(() => {
+  void refresh(); window.addEventListener('online', online); document.addEventListener('visibilitychange', visibility)
+  clock = setInterval(() => { now.value = Date.now() }, 60_000)
+})
+onBeforeUnmount(() => {
+  generation++; window.removeEventListener('online', online); document.removeEventListener('visibilitychange', visibility)
+  if (clock) clearInterval(clock)
+  if (open.value) document.body.style.overflow = ''
+})
 </script>
 
 <template>
+  <CanDoProgress :scope="scope" :lessons="packages" :evidence="savedEvidence" :history="savedHistory"
+    :now="now" :loading="loading" @practice="start" />
   <section class="review-hub" aria-label="Recall and recombine">
     <h2>Recall and recombine</h2>
     <p v-if="loading" role="status">Loading recall practice…</p>
     <p v-else-if="!available.length">Complete a lesson with published recall practice to begin.</p>
     <p v-else>{{ available.length }} targets available · {{ available.filter(t => t.due).length }} due</p>
-    <button class="primary-action" :disabled="loading || busy || !available.length" @click="start">Start typed recall</button>
+    <button class="primary-action" :disabled="loading || busy || !available.length" @click="start()">Start typed recall</button>
     <p v-if="notice" role="status">{{ notice }}</p>
     <p v-if="error && !open" role="alert">{{ error }}</p>
     <div v-for="item in pending" :key="item.report.id">

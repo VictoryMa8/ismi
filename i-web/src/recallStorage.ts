@@ -6,6 +6,9 @@ export type RecallEvidence = {
   id: string; scope: string; lessonId: string; version: string; targetId: string; variantId: string
   shownAt: string; completedAt: string | null; firstResult: RecallResult | null
   firstHelped: boolean; helped: boolean; repeated: boolean
+  // Review deadline captured at prompt exposure, before this answer reschedules it.
+  // Older F22 records lack this fact and cannot establish a due-day demonstration.
+  reviewDueAt?: string | null
   attempts: Array<{ result: RecallResult; at: string; inputMode: 'arabic' | 'arabizi'; helped: boolean }>
 }
 const evidenceKey = (scope: string) => `recall-evidence-v1:${scope}`

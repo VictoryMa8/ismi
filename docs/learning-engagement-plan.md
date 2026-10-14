@@ -3,7 +3,7 @@
 October 12, 2026 · Owner selected research priorities **1, 2, 4, 5 and 6** for
 future implementation. This is an expanded design plan; current statuses and
 priorities live in [ROADMAP.md](../ROADMAP.md). This document preserves the original
-planning scope; F22 and F17.7 were subsequently authorized. See the roadmap and
+planning scope; F22, F17.6 and F17.7 were subsequently authorized. See the roadmap and
 linked feature notes for current implementation and delivery evidence.
 The selection authorizes roadmap planning, not immediate product implementation,
 publication, deployment, new providers or spending.
@@ -191,6 +191,11 @@ English word positions.
   native-expert review is not claimed without actual reviewer evidence.
 
 ## F17.6 Can-do progress and outcome achievements
+
+October 13: the owner authorized implementation and approved the recommended
+24-hour due-review / independent first-response / distinct-situation policy and
+achievement wording. [Implemented behavior and verification](can-do-progress.md)
+records the adopted rules; the original proposal below remains design context.
 
 ### Learner experience
 
