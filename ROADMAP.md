@@ -8,6 +8,12 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
+**F20.1 — Complete and deployed October 13:** Account form controls/status now have
+consistent spacing and mobile daily goals use equal columns. Learned words lives
+on `#/words`, linked from Practice. Build and all 27 distinct focused/regression
+checks pass across runs; live route, 56 existing entries, return link and Account
+layout verified. [Behavior and delivery](docs/learned-word-glossary.md#october-13-page-and-account-spacing--f201).
+
 **F22 — Complete and deployed October 13:** typed Arabic/Arabizi recall,
 first/help/retry evidence, reserved later situations and owner review reports are
 implemented. The owner-approved Everyday 1/3/6 revisions are published as v3 through
@@ -141,7 +147,7 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F17.7](#f177-weekly-learning-quests-and-forgiving-habits) | Weekly learning quests and forgiving habits | Done · deployed | Controls/path/persistence live-verified; real AT release checks remain |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
-| [F20.1](#f201-learned-words-page-and-account-spacing) | Learned words page and Account spacing | Active | Separate glossary route; verify mobile spacing, then push/deploy |
+| [F20.1](#f201-learned-words-page-and-account-spacing) | Learned words page and Account spacing | Done · deployed | Separate glossary route and Account gaps verified on Vercel |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
 | [F21](#f21-cultural-watch-and-listen-recommendations) | Cultural watch/listen recommendations | Planned | Scope a weekly curated pick; daily cadence remains a choice |
 | [F22](#f22-recall-and-recombine) | Recall and recombine | Done · deployed/published | Three targets/six situations live; broader AT/device and outcome evidence remains F18 |
@@ -799,7 +805,7 @@ New audio publication and any code rollout are separate from the already-approve
 
 ### F20.1 Learned words page and Account spacing
 
-**Status:** Active — owner authorized implementation, push and deployment October 13.
+**Status:** Done — implemented, pushed and deployed October 13, 2026.
 **Scope:** move the existing F20 glossary onto its own learner route, linked from
 Practice, preserving search, filters, teaching links, offline and scoped inclusion;
 fix F15.1 Account form spacing, including selector/save/status separation and mobile goals.
@@ -809,8 +815,10 @@ Ready on the existing Vercel preview.
 **Evidence:** [behavior and verification](docs/learned-word-glossary.md#october-13-page-and-account-spacing--f201),
 [route/navigation checks](i-web/tests/navigation.spec.ts). Final production build and
 all 14 glossary/settings/navigation checks pass, including four viewport widths.
-**Next:** push the verified code and confirm Ready on the existing Vercel preview.
-**Delivery:** implemented and verified locally; rollout pending. No new publication or API change needed.
+**Next:** no remaining work in this bounded scope; broader F18 device/AT checks remain separate.
+**Delivery:** application `04a4f4e` pushed to main and Ready on the existing Vercel
+preview; live route, 56 existing entries, return link and Account spacing verified.
+No new curriculum publication or API deployment.
 
 ### F20 Learned-word glossary
 
@@ -1368,7 +1376,7 @@ committed without agreed scope, content/reviewer availability and measured first
 - **October 13, 2026 F20.1:** owner authorized separate Learned words page and Account
   spacing fixes with push/deployment. Final build and 14 focused glossary/settings/
   navigation checks pass, plus five isolated review checks and eight recall checks.
-  Implementation is complete locally; Vercel rollout is next.
+  `04a4f4e` pushed and Vercel Ready; live words/return/Account layout verified.
   [Behavior and verification](docs/learned-word-glossary.md#october-13-page-and-account-spacing--f201).
 
 - **October 13, 2026 F22 rollout:** application release `6419f84` deployed to Vercel/alwaysdata;

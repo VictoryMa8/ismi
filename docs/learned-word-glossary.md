@@ -164,4 +164,16 @@ database. Together the runs provide passing evidence for all 27 distinct checks.
 The first sandboxed test-server attempt could not start; checks run with approved
 local-server permissions.
 
-Vercel delivery is pending; see the F20.1 roadmap record.
+Application release `04a4f4ef62394c60734ea0ae259a906ee8a29aee` is pushed to main;
+Vercel production deployment `dpl_E2GNEAzwcSha6gWjPqqDHFe8R12F` is Ready in the
+existing `ismi` project/team. The production target serves the existing development
+preview at [ismi-arabic.vercel.app](https://ismi-arabic.vercel.app/), with verified
+alias assignment. [Immutable application deployment](https://ismi-8jjiieip9-victorys-projects-c1cb4594.vercel.app/).
+
+Live browser verification confirmed the compact Practice link, standalone words
+heading/URL, 56 existing account entries, return navigation and Account form spacing.
+The existing PWA initially served its cached prior bundle; after the service-worker
+update/reload the new layout loaded. No learner answers, completions, account
+settings, curriculum publications or backend resources were changed during live
+verification. The API remains on its prior F22 release. Real Safari/screen-reader
+beta evidence remains under F18.
