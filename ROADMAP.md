@@ -8,12 +8,13 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**F17.6 — Complete locally October 13:** three Everyday written-recall can-do cards,
+**F17.6 — Complete and deployed October 13:** three Everyday written-recall can-do cards,
 versioned attempt/help/date evidence, targeted practice and an optional outcome
 achievement use the owner-approved independent / distinct-situation / 24-hour
 due-review policy. Offline persistence, identity separation and content revisions/
-withdrawal are verified. [Behavior and local verification](docs/can-do-progress.md).
-Owner subsequently authorized commit/push/deployment; frontend rollout is pending.
+withdrawal are verified. Application release `7b80136` is pushed/Vercel Ready; live
+Practice cards, policy, mobile layout and reload are verified. [Behavior](docs/can-do-progress.md),
+[rollout evidence](docs/releases/2026-10-13-can-do.md).
 
 **F20.1 — Complete and deployed October 13:** Account form controls/status now have
 consistent spacing and mobile daily goals use equal columns. Learned words lives
@@ -41,7 +42,7 @@ first-100 beta remain explicit decisions. Existing Arabic commitments are retain
 F17.5 phrase anatomy/grammar, F17.6 can-do progress and F17.7 weekly quests/forgiving
 habits. [Expanded scopes and completion criteria](docs/learning-engagement-plan.md).
 F22 was subsequently authorized, completed and deployed. F23/F17.5 remain Planned.
-F17.6 is implemented locally; F17.7 is implemented/deployed. The original planning
+F17.6/F17.7 are implemented/deployed. The original planning
 selection did not itself authorize release.
 
 **F17.7 — Complete and deployed October 12:** optional goal-sized weekly quests and
@@ -55,8 +56,10 @@ pushed/deployed, with live controls, published-path order and persistence verifi
 pause and reduced motion. Build and nine targeted checks pass;
 [behavior and preview](docs/loading-word-reel.md). Live loader and readiness transition verified.
 
-**October 13 latest rollout:** F22 frontend/API application release `6419f84` is
-deployed and its exact owner-approved packages are published as v3. Live Practice
+**October 13 latest rollout:** F17.6 frontend `7b80136` is deployed with verified
+live Practice/cards/policy/reload. [F17.6 rollout](docs/releases/2026-10-13-can-do.md).
+F22 API application release `6419f84` remains deployed and its exact owner-approved
+packages are published as v3. Live Practice
 is enabled for eligible completed lessons; prior v2 versions and application/database
 rollback are retained. [Rollout evidence](docs/releases/2026-10-13-recall.md).
 Earlier [weekly-habits rollout](docs/releases/2026-10-12-weekly-habits.md),
@@ -94,7 +97,7 @@ Sound audition and optional recall pacing remain proposals.
 
 **Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. F17.7 weekly quests/forgiving habits
-are complete and live-verified. F17.6 can-do cards/achievement are complete locally. F22 frontend/API `6419f84` is deployed. The first unit
+are complete and live-verified. F17.6 can-do cards/achievement are complete and deployed. F22 frontend/API `6419f84` is deployed. The first unit
 has three Everyday v3 and four v2 publications, with current art and verified
 content/source records. F08 is complete.
 
@@ -144,13 +147,13 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F15.2](#f152-placement-starting-point) | Placement starting point | Done · deployed | Published-content Levantine check; bootcamps/other tracks remain open |
 | [F15.1](#f151-personal-study-settings) | Personal study settings | Done · pushed | Goals/tracks drive queue; guest/account offline persistence verified |
 | [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
-| [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | F17.6 local/F17.7 deployed; F17.5, reminders and XP remain open |
+| [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | F17.6/F17.7 deployed; F17.5, reminders and XP remain open |
 | [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
 | [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · deployed | Startup/refresh, cached offline and retry verified; hero edge removed |
 | [F17.3](#f173-interface-copy-cleanup) | Interface copy cleanup | Done · deployed | Redundant subtitles/quips removed; build and 31 targeted checks pass |
 | [F17.4](#f174-loading-word-reel) | Loading word reel | Done · deployed | Six exact glossary samples; pause/reduced motion verified |
 | [F17.5](#f175-phrase-anatomy-and-grammar-reference) | Phrase anatomy and grammar reference | Planned | Map six phrases to two patterns and three sourced usage notes |
-| [F17.6](#f176-can-do-progress-and-outcome-achievements) | Can-do progress and outcome achievements | Done · local | Approved evidence/cards/achievement verified; authorized frontend rollout pending |
+| [F17.6](#f176-can-do-progress-and-outcome-achievements) | Can-do progress and outcome achievements | Done · deployed | Approved policy/cards/achievement; live Practice/reload verified |
 | [F17.7](#f177-weekly-learning-quests-and-forgiving-habits) | Weekly learning quests and forgiving habits | Done · deployed | Controls/path/persistence live-verified; real AT release checks remain |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
@@ -176,6 +179,8 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
+  F17.6 frontend application release `7b80136` is pushed/Vercel Ready October 13;
+  live Practice/cards/policy/reload verified. [F17.6 rollout](docs/releases/2026-10-13-can-do.md).
   F22 frontend/API application release `6419f84` is deployed October 13; three
   exact approved revisions are published v3 and live Practice is enabled.
   [F22 rollout](docs/releases/2026-10-13-recall.md).
@@ -577,7 +582,7 @@ External identity remains optional unresolved work, not a condition of F02 compl
 **Outcome:** searchable grammar references, meaningful mastery/achievements/XP,
 optional forgiving streaks and opt-in reminders with categories/quiet hours.
 **Next:** F17.7 weekly quests/forgiving habits are complete and deployed; F17.6
-can-do progress/achievements is complete locally. F17.5 phrase anatomy/grammar remains
+can-do progress/achievements is complete and deployed. F17.5 phrase anatomy/grammar remains
 planned and needs its consequential rules defined before implementation; reminder delivery and the
 XP economy still need separate bounded tasks. Existing in-lesson explanations are
 delivered under F01/F04; selected children do not complete the full F17 scope.
@@ -677,7 +682,7 @@ existing baseline [teaching](i-web/src/LessonTeaching.vue) and [glossary](docs/l
 
 ### F17.6 Can-do progress and outcome achievements
 
-**Status:** Done — bounded first unit, locally October 13, 2026.
+**Status:** Done — bounded first unit, deployed October 13, 2026.
 **Outcome delivered:** three Everyday conversations written-recall cards show state,
 source version/dialect/register, dates, help/retries and historical attempts, with
 per-target practice and an optional outcome achievement. Evidence stays device-local
@@ -694,15 +699,15 @@ checks pass across focused runs; includes real typed → offline delayed review 
 achievement, persistence/toggle/concurrent tabs, revisions/withdrawal, keyboard focus,
 320px enlarged text/reduced motion and guest/account isolation. Mobile render inspected.
 **Next/limit:** no remaining work in this local slice. Publication changes are unnecessary;
-owner authorized commit/push/deployment; frontend rollout is pending. Real assistive-technology/device checks,
+frontend deployment `7b80136` is Ready and live-verified. Real assistive-technology/device checks,
 learner calibration and thirty-day outcomes remain F18 work. Cross-device evidence
 sync and additional units/skills require separate scope.
 **Depends on:** F22 metadata/attempts and F10 scheduling, using existing owner-approved
 published packages; no new content, provider or backend migration.
 **Evidence:** [behavior, policy, implementation and verification](docs/can-do-progress.md).
-**Delivery:** implemented and verified locally on `main`; owner authorized commit,
-push and frontend deployment October 13. Rollout is pending. No new curriculum
-publication or API update; hosted F22 packages remain unchanged.
+**Delivery:** application release `7b80136` is pushed on `main`, Vercel Ready and
+live-verified October 13. [Rollout evidence](docs/releases/2026-10-13-can-do.md).
+No new curriculum publication or API update; hosted F22 packages remain unchanged.
 
 ### F17.7 Weekly learning quests and forgiving habits
 
@@ -1370,7 +1375,7 @@ F17.6 needs independent F22 evidence, and F17.7 uses approved available activiti
 [Detailed future-agent plan](docs/learning-engagement-plan.md).
 
 F17.7 was subsequently authorized, completed and deployed with explicit owner-selected
-habit policies; F22 is completed, deployed and published; F17.6 is completed locally
+habit policies; F22 is completed, deployed and published; F17.6 is completed/deployed
 under the October 13 authorization and approved evidence rules. F23/F17.5 remain
 Planned, awaiting implementation authorization. Assessment, rewards and provider choices are not silently settled
 by the planning selection. Existing F09/F12/F19 work and the
@@ -1390,9 +1395,9 @@ committed without agreed scope, content/reviewer availability and measured first
 
 - **October 13, 2026 F17.6:** owner authorized implementation and approved the
   independent first-response / distinct-situation / 24-hour due-review policy. Three
-  can-do cards and an optional versioned outcome achievement are complete locally;
-  build and 18 distinct focused/regression checks pass. Owner subsequently authorized
-  commit/push and frontend deployment; rollout is pending.
+  can-do cards and an optional versioned outcome achievement are complete/deployed;
+  build and 18 distinct focused/regression checks pass. `7b80136` is pushed/Vercel Ready;
+  live Practice/cards/policy/reload verified. [Rollout](docs/releases/2026-10-13-can-do.md).
   [Behavior and verification](docs/can-do-progress.md).
 
 - **October 13, 2026 F20.1:** owner authorized separate Learned words page and Account

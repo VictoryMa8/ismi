@@ -4,8 +4,9 @@ October 13, 2026. The owner authorized implementation and explicitly approved th
 recommended first-response, distinct-situation and 24-hour due-review policy.
 This is a bounded Everyday conversations written-recall feature on `main`.
 After local implementation/verification, the owner authorized commit, push and
-deployment on October 13. Frontend rollout is pending; no API update, database
-migration or curriculum publication is needed.
+deployment on October 13. Application release `7b80136` is pushed and Vercel Ready;
+the stable Practice route is live-verified. [Rollout evidence](releases/2026-10-13-can-do.md).
+No API update, database migration or curriculum publication was needed.
 
 ## Delivered behavior
 
