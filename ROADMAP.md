@@ -141,6 +141,7 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F17.7](#f177-weekly-learning-quests-and-forgiving-habits) | Weekly learning quests and forgiving habits | Done · deployed | Controls/path/persistence live-verified; real AT release checks remain |
 | [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
+| [F20.1](#f201-learned-words-page-and-account-spacing) | Learned words page and Account spacing | Active | Separate glossary route; verify mobile spacing, then push/deploy |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
 | [F21](#f21-cultural-watch-and-listen-recommendations) | Cultural watch/listen recommendations | Planned | Scope a weekly curated pick; daily cadence remains a choice |
 | [F22](#f22-recall-and-recombine) | Recall and recombine | Done · deployed/published | Three targets/six situations live; broader AT/device and outcome evidence remains F18 |
@@ -796,10 +797,26 @@ retains pronunciation errors; no clips accepted or native review established. Fu
 and ignored. No audio integrated into the application or database.
 New audio publication and any code rollout are separate from the already-approved v2 text/art release.
 
+### F20.1 Learned words page and Account spacing
+
+**Status:** Active — owner authorized implementation, push and deployment October 13.
+**Scope:** move the existing F20 glossary onto its own learner route, linked from
+Practice, preserving search, filters, teaching links, offline and scoped inclusion;
+fix F15.1 Account form spacing, including selector/save/status separation and mobile goals.
+**Done when:** standalone route, return/navigation/reload and existing glossary flows
+pass; settings have clear spacing without mobile overflow; tested code is pushed and
+Ready on the existing Vercel preview.
+**Evidence:** [behavior and verification](docs/learned-word-glossary.md#october-13-page-and-account-spacing--f201),
+[route/navigation checks](i-web/tests/navigation.spec.ts). Final production build and
+all 14 glossary/settings/navigation checks pass, including four viewport widths.
+**Next:** push the verified code and confirm Ready on the existing Vercel preview.
+**Delivery:** implemented and verified locally; rollout pending. No new publication or API change needed.
+
 ### F20 Learned-word glossary
 
 **Status:** Done — implemented October 8; pushed/deployed October 9, 2026.
-**Scope delivered:** free learned-word glossary in Practice, populated only by completed
+**Scope delivered:** free learned-word glossary (now a separate page linked from Practice
+under F20.1), populated only by completed
 lessons; Arabic/English/transliteration search, track/dialect/type filters, pagination,
 source references, authored forms/usage notes and links to the exact teaching card.
 Stable vocabulary/sense IDs deduplicate contexts while keeping meanings and variants
@@ -1348,6 +1365,12 @@ committed without agreed scope, content/reviewer availability and measured first
 
 ## Recent planning changes
 
+- **October 13, 2026 F20.1:** owner authorized separate Learned words page and Account
+  spacing fixes with push/deployment. Final build and 14 focused glossary/settings/
+  navigation checks pass, plus five isolated review checks and eight recall checks.
+  Implementation is complete locally; Vercel rollout is next.
+  [Behavior and verification](docs/learned-word-glossary.md#october-13-page-and-account-spacing--f201).
+
 - **October 13, 2026 F22 rollout:** application release `6419f84` deployed to Vercel/alwaysdata;
   Everyday 1/3/6 published v3 through console validation/approval/publication. Exact
   payloads/21 sources/audits, preserved data/assets and enabled live Practice verified.
@@ -1371,12 +1394,6 @@ committed without agreed scope, content/reviewer availability and measured first
   French and Khmer. Added the shared foundation and full proposed twelve-unit courses,
   each with six child tasks, decisions, outcomes and release gates. Updated durable
   product scope; first-100 inclusion remains a decision. Planning only.
-
-- **October 12, 2026 selected additions:** owner selected research priorities
-  1/2/4/5/6; added Planned F22/F23 and F17.5–F17.7 with bounded first slices,
-  dependencies, policy decisions and completion criteria. Priority 3 remains
-  unselected; no implementation or release. [Expanded plan](docs/learning-engagement-plan.md),
-  [research](docs/research/duolingo-mango-feature-candidates.md).
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

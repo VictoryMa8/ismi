@@ -58,7 +58,7 @@ test('catalog pins approved records, preserves senses and variants, and refuses 
 
 test('completed lessons populate searchable accessible words and context links; offline reload retains them', async ({ page, context }, info) => {
   await fixture(page)
-  await page.goto('/#/practice')
+  await page.goto('/#/words')
   const glossary = page.getByRole('region', { name: 'Learned words', exact: true })
   const expected = learnedVocabulary([first])
   await expect(glossary.getByText(`${expected.length} entries`, { exact: true })).toBeVisible()
@@ -105,7 +105,7 @@ test('completed lessons populate searchable accessible words and context links; 
 
 test('changed versions replace glossary text and withdrawn lessons cannot fall back to downloads', async ({ page }) => {
   await fixture(page)
-  await page.goto('/#/practice')
+  await page.goto('/#/words')
   const glossary = page.getByRole('region', { name: 'Learned words', exact: true })
   await expect(glossary.locator('.glossary-entry').first()).toBeVisible()
   const updated = structuredClone(first)
@@ -125,7 +125,7 @@ test('changed versions replace glossary text and withdrawn lessons cannot fall b
 
 test('completion adds words locally offline without relying on review history', async ({ page, context }) => {
   await fixture(page, [])
-  await page.goto('/#/practice')
+  await page.goto('/#/words')
   const glossary = page.getByRole('region', { name: 'Learned words', exact: true })
   await expect(glossary.getByText('0 entries', { exact: true })).toBeVisible()
   // Download before going offline, as a learner does on Today.
@@ -144,6 +144,7 @@ test('completion adds words locally offline without relying on review history', 
   }
   await page.getByRole('button', { name: 'Back to today', exact: true }).click()
   await page.getByRole('link', { name: 'Practice', exact: true }).click()
+  await page.getByRole('link', { name: 'Learned words', exact: true }).click()
   await expect(glossary.getByText(`${learnedVocabulary([first]).length} entries`, { exact: true })).toBeVisible()
   await page.reload()
   await expect(glossary.getByText(`${learnedVocabulary([first]).length} entries`, { exact: true })).toBeVisible()
@@ -165,7 +166,7 @@ test('supplied audio plays from verified offline bytes and stops when opening co
   await fixture(page)
   await page.route(`**/api/lessons/${first.id}`, route => route.fulfill({ json: recorded }))
   await page.route(`**${url}`, route => route.fulfill({ body: bytes, contentType: 'audio/wav' }))
-  await page.goto('/#/practice')
+  await page.goto('/#/words')
   const glossary = page.getByRole('region', { name: 'Learned words', exact: true })
   await expect(glossary.getByText(`${learnedVocabulary([first]).length} entries`, { exact: true })).toBeVisible()
   await page.evaluate(async () => { await navigator.serviceWorker.ready })
@@ -219,19 +220,20 @@ test('synced completions populate a second device and stay isolated from guests 
     const password = 'long test password'
     expect((await csrfPost(page.request, '/api/auth/register', { displayName: 'Word learner', email, password })).ok()).toBeTruthy()
     expect((await csrfPost(page.request, `/api/lessons/${lessonId}/completions`, { completionId: crypto.randomUUID(), completedAt: new Date().toISOString() })).ok()).toBeTruthy()
-    await page.goto('/#/practice')
+    await page.goto('/#/words')
     const glossary = page.getByRole('region', { name: 'Learned words', exact: true })
     await expect(glossary.getByText(`${learnedVocabulary([first]).length} entries`, { exact: true })).toBeVisible()
     const device = await browser.newContext({ storageState: { cookies: [], origins: [{ origin: 'http://127.0.0.1:4173', localStorage: [{ name: 'ismi-welcome-v1', value: 'done' }] }] } })
     try {
       expect((await csrfPost(device.request, '/api/auth/login', { email, password, rememberMe: false })).ok()).toBeTruthy()
       const secondPage = await device.newPage()
-      await secondPage.goto('/#/practice')
+      await secondPage.goto('/#/words')
       await expect(secondPage.getByRole('region', { name: 'Learned words', exact: true }).getByText(`${learnedVocabulary([first]).length} entries`, { exact: true })).toBeVisible()
     } finally { await device.close() }
     await page.getByRole('link', { name: 'Account', exact: true }).click()
     await page.getByRole('button', { name: 'Sign out', exact: true }).click()
     await page.getByRole('link', { name: 'Practice', exact: true }).click()
+    await page.getByRole('link', { name: 'Learned words', exact: true }).click()
     await expect(glossary.getByText('0 entries', { exact: true })).toBeVisible()
     // A guest's offline queue must never enroll a new account in those lessons.
     await page.evaluate(async lessonId => {
@@ -250,6 +252,7 @@ test('synced completions populate a second device and stay isolated from guests 
     await page.locator('.auth-form').getByRole('button', { name: 'Create account', exact: true }).click()
     await expect(page.getByRole('heading', { name: 'Marhaba, Other learner.', exact: true })).toBeVisible()
     await page.getByRole('link', { name: 'Practice', exact: true }).click()
+    await page.getByRole('link', { name: 'Learned words', exact: true }).click()
     await expect(glossary.getByText('0 entries', { exact: true })).toBeVisible()
     const dashboard = await (await page.request.get('/api/dashboard')).json()
     expect(dashboard.dailyPlan.lessons.find((lesson: { id: string }) => lesson.id === lessonId).isCompleted).toBe(false)

@@ -118,7 +118,7 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
 
 <template>
   <section class="glossary" aria-labelledby="learned-words-title" :aria-busy="loading">
-    <h2 id="learned-words-title">Learned words</h2>
+    <h1 id="learned-words-title">Learned words</h1>
     <p>Words and expressions from completed lessons. Completion does not mean mastery.</p>
     <div class="glossary-filters">
       <label class="glossary-search">Search words<input v-model="query" type="search" placeholder="Arabic, English or transliteration" dir="auto" /></label>
@@ -168,7 +168,7 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
 
 <style scoped>
 .glossary { margin: 1.5rem 0; padding: 1.2rem; border: 1px solid var(--border, #c9cec8); border-radius: 1rem; background: #fff; color: #202820; }
-.glossary h2 { margin-top: 0; }
+.glossary h1 { margin-top: 0; }
 .glossary-filters { display: flex; flex-wrap: wrap; gap: .75rem; }
 .glossary-filters label { display: grid; gap: .35rem; font-weight: 600; flex: 1 1 10rem; min-width: 0; }
 .glossary-search { flex-basis: 100% !important; }

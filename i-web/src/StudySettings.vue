@@ -42,7 +42,7 @@ function toggle(id: TrackId, checked: boolean) {
       <p v-if="!selected.length" role="alert">Select at least one track.</p>
       <button class="primary-action" type="submit" :disabled="busy || !selected.length || conflict">{{ busy ? 'Saving…' : 'Save study settings' }}</button>
     </form>
-    <p v-if="message" role="status">{{ message }}</p>
+    <p v-if="message" class="settings-status" role="status">{{ message }}</p>
     <div v-if="conflict" class="settings-conflict">
       <button class="secondary-action" :disabled="busy" @click="emit('resolve', false)">Use account settings</button>
       <button class="secondary-action" :disabled="busy" @click="emit('resolve', true)">Keep this device’s settings</button>
@@ -53,14 +53,19 @@ function toggle(id: TrackId, checked: boolean) {
 <style scoped>
 .study-settings { margin: 1.5rem 0; padding: 1.25rem; border: 1px solid #b5c2b8; border-radius: 1rem; color: #192b23; background: #fff; }
 h2 { margin-top: 0; }
-fieldset { border: 0; padding: 0; margin: 1rem 0; min-width: 0; }
+form { display: grid; gap: 1.25rem; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+legend { padding: 0; margin-bottom: .65rem; }
 legend, .primary-track-select { font-weight: 700; }
-.goal-options { display: flex; flex-wrap: wrap; gap: .5rem; }
+.goal-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
 .goal-options label { display: flex; gap: .35rem; align-items: center; padding: .65rem; border: 1px solid #738d7b; border-radius: .5rem; }
-input { accent-color: #12613f; width: 1.1rem; height: 1.1rem; }
+input { flex-shrink: 0; margin: 0; accent-color: #12613f; width: 1.1rem; height: 1.1rem; }
 .study-track-option { display: flex; align-items: center; gap: .65rem; min-height: 48px; margin-top: .4rem; }
 small { display: block; font-size: .8rem; font-weight: 400; }
 .primary-track-select { display: grid; gap: .5rem; }
 select { max-width: 100%; min-height: 44px; padding: .5rem; background: white; color: inherit; border: 1px solid #738d7b; border-radius: .5rem; font: inherit; }
+.settings-status { margin: 1rem 0 0; }
+form > p { margin: 0; }
+@media (min-width: 600px) { .goal-options { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .settings-conflict { display: flex; flex-wrap: wrap; gap: .5rem; }
 </style>

@@ -55,7 +55,8 @@ test('guest settings work offline, keep unavailable tracks honest and preserve c
   await plan.getByText('Study time by track', { exact: true }).click()
   await expect(plan).toContainText('Quranic Arabic · 18 min')
   await expect(plan).toContainText('Palestinian Levantine · 6 min')
-  await expect(plan.getByRole('list', { name: 'Today’s lesson queue' }).getByRole('listitem')).toHaveCount(1)
+  // Today now surfaces the next lesson directly rather than duplicating a queue.
+  await expect(page.getByRole('button', { name: /Continue in Levantine/ })).toBeVisible()
   await page.getByRole('link', { name: 'Edit study settings' }).click()
   await page.getByRole('checkbox', { name: 'Palestinian Levantine', exact: true }).uncheck()
   await page.getByRole('checkbox', { name: /Modern Standard Arabic/ }).uncheck()

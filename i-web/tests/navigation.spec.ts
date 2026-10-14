@@ -23,7 +23,27 @@ for (const width of [320, 390, 768, 1280]) {
         expect(await page.locator('.course-path .sr-only').first().evaluate(element => element.getBoundingClientRect().width)).toBeLessThanOrEqual(1)
         expect(await page.locator('.course-path-copy').first().evaluate(element => element.getBoundingClientRect().width)).toBeGreaterThan(120)
       }
-      if (name === 'Account') await expect(page.getByLabel('Email', { exact: true })).toBeVisible()
+      if (name === 'Practice') {
+        await expect(page.getByRole('region', { name: 'Learned words', exact: true })).toHaveCount(0)
+        await page.getByRole('link', { name: 'Learned words', exact: true }).click()
+        await expect(page).toHaveURL(/#\/words$/)
+        await expect(page.getByRole('heading', { name: 'Learned words', level: 1 })).toBeVisible()
+        await expect(page).toHaveTitle('Learned words · Ismi')
+        await expect(page.locator('#main-content')).toBeFocused()
+        await expect(links.getByRole('link', { name: 'Practice', exact: true })).toHaveAttribute('aria-current', 'page')
+        await page.reload()
+        await expect(page.getByRole('heading', { name: 'Learned words', level: 1 })).toBeVisible()
+        await page.getByRole('link', { name: 'Back to Practice', exact: true }).click()
+        await expect(page.getByRole('region', { name: 'Learned words', exact: true })).toHaveCount(0)
+        if (width === 390) await page.screenshot({ path: testInfo.outputPath('practice.png'), scale: 'css' })
+      }
+      if (name === 'Account') {
+        await expect(page.getByLabel('Email', { exact: true })).toBeVisible()
+        const selector = await page.getByLabel('Primary track', { exact: true }).boundingBox()
+        const save = await page.getByRole('button', { name: 'Save study settings', exact: true }).boundingBox()
+        expect(save!.y - selector!.y - selector!.height).toBeGreaterThanOrEqual(16)
+        if (width === 390) await page.screenshot({ path: testInfo.outputPath('account.png'), scale: 'css' })
+      }
     }
     await page.goBack()
     await expect(page.getByRole('heading', { name: 'Welcome back' })).toBeVisible()

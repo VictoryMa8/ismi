@@ -3,7 +3,8 @@
 Implemented October 8, 2026. Local code only; no commit, push, deployment or
 curriculum publication is part of this task.
 
-The free glossary lives in **Practice → Learned words**. A completed lesson adds
+The free glossary lives on its own **Learned words** page (`#/words`), opened from
+**Practice → Learned words**, with a return link to Practice. A completed lesson adds
 its explicitly taught words and expressions. Attempting a lesson, previewing a
 draft, doing review or downloading a lesson does not add entries. “Learned” means
 encountered in a completed lesson, not mastered.
@@ -132,3 +133,35 @@ The fresh rollout passed the frontend build, 29 API tests and all 55 distinct br
 checks across the broad run and the two successful isolated curriculum reruns.
 Hosted data, recordings and cookie keys were preserved. No new curriculum was
 published; see [the rollout record](releases/2026-10-09.md).
+
+## October 13 page and Account spacing — F20.1
+
+The glossary now has its own `#/words` route and page heading. Practice links to it
+with one compact row; its filters/results no longer extend the Practice page.
+The existing four main navigation links remain, with Practice highlighted while
+viewing words. Direct entry/reload, browser history, keyboard focus, landing return
+and offline route recognition use the same learner shell. Teaching links return to
+the words page and preserve opener focus. Search, scoped inclusion, audio and
+publication behavior are unchanged.
+
+Account study settings use consistent gaps between goal/track/primary/save controls,
+two equal goal columns on mobile and four at wider sizes. The sync message has
+its own space below Save. Checkbox/radio controls keep their size when labels wrap.
+
+The final production build and all 14 glossary/settings/navigation checks pass.
+Navigation covers 320/390/768/1280px, direct entry/reload, main-content focus, return
+links and a measured selector/save gap of at least 16px. Glossary checks retain
+search, filters, pagination, teaching/opener focus, enlarged text, offline/reload,
+withdrawal/version replacement, audio and account/guest/cross-device inclusion.
+Mobile Account and words screenshots were inspected.
+
+The broader initial run passed 25 of 27 tests, including all eight typed-recall
+checks. Its two failures were stale test assumptions: an old Today queue selector
+and a single-unit checkpoint selector after recall fixtures publish another unit.
+The settings test now verifies the existing next-lesson control; its final focused
+run passes. All five review checks, including the checkpoint, pass with an isolated fresh
+database. Together the runs provide passing evidence for all 27 distinct checks.
+The first sandboxed test-server attempt could not start; checks run with approved
+local-server permissions.
+
+Vercel delivery is pending; see the F20.1 roadmap record.

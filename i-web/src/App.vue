@@ -135,7 +135,7 @@ const completionSummary = computed(() => {
   };
 });
 const pendingSyncCount = ref(0);
-type PageName = 'today' | 'courses' | 'practice' | 'account';
+type PageName = 'today' | 'courses' | 'practice' | 'account' | 'words';
 const navigation = [
   { id: 'today', label: 'Today', icon: Home },
   { id: 'courses', label: 'Courses', icon: BookOpen },
@@ -144,9 +144,11 @@ const navigation = [
 ] as const;
 function readPage(): PageName {
   const path = window.location.hash.replace(/^#\/?/, '');
-  return navigation.find((item) => item.id === path)?.id ?? 'today';
+  return path === 'words' ? 'words' : navigation.find((item) => item.id === path)?.id ?? 'today';
 }
 const page = ref<PageName>(readPage());
+const primaryPage = computed(() => page.value === 'words' ? 'practice' : page.value);
+const pageTitle = computed(() => page.value === 'words' ? 'Learned words' : navigation.find(item => item.id === page.value)?.label);
 function navigate(destination: PageName) {
   window.location.hash = `/${destination}`;
 }
@@ -158,7 +160,7 @@ async function handlePageChange() {
   lessonOpen.value = false;
   page.value = destination;
   accountPassword.value = '';
-  document.title = `${navigation.find((item) => item.id === destination)?.label} · Ismi`;
+  document.title = `${pageTitle.value} · Ismi`;
   await nextTick();
   window.scrollTo({ top: 0, behavior: 'instant' });
   document
@@ -405,7 +407,7 @@ onMounted(async () => {
   );
   window.addEventListener('online', handleOnline);
   window.addEventListener('hashchange', handlePageChange);
-  document.title = `${navigation.find((item) => item.id === page.value)?.label} · Ismi`;
+  document.title = `${pageTitle.value} · Ismi`;
   speechSupported.value =
     'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
   if (speechSupported.value) {
@@ -1154,9 +1156,9 @@ async function finishLesson() {
           v-for="item in navigation"
           :key="item.id"
           class="nav-link"
-          :class="{ active: page === item.id }"
+          :class="{ active: primaryPage === item.id }"
           :href="`#/${item.id}`"
-          :aria-current="page === item.id ? 'page' : undefined"
+          :aria-current="primaryPage === item.id ? 'page' : undefined"
         >
           <component :is="item.icon" :size="21" aria-hidden="true" />
           <span>{{ item.label }}</span>
@@ -1488,13 +1490,11 @@ async function finishLesson() {
         <RecallPractice :scope="reviewScope" :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []"
           :history-revision="reviewHistoryRevision" @open-change="reviewOpen = $event" />
         <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
-        <LearnedWords
-          :scope="reviewScope"
-          :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []"
-          :suspended="lessonOpen || reviewOpen || page !== 'practice'"
-          @open-lesson="openGlossaryLesson"
-          @prompt-playback="reviewAudioPlaying = $event"
-        />
+        <a class="learned-words-link" href="#/words">
+          <BookOpen :size="22" aria-hidden="true" />
+          <span>Learned words</span>
+          <ChevronRight :size="20" aria-hidden="true" />
+        </a>
         <h2 class="practice-lessons-title">Lesson practice</h2>
         <section class="practice-list" aria-label="Practice lessons">
           <button
@@ -1516,6 +1516,16 @@ async function finishLesson() {
             download your first lessons.
           </p>
         </section>
+      </template>
+      <template v-if="page === 'words' && studyPageAvailable">
+        <a class="page-link words-return" href="#/practice">Back to Practice</a>
+        <LearnedWords
+          :scope="reviewScope"
+          :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []"
+          :suspended="lessonOpen || reviewOpen"
+          @open-lesson="openGlossaryLesson"
+          @prompt-playback="reviewAudioPlaying = $event"
+        />
       </template>
       <section
         v-if="page === 'account'"
@@ -1694,9 +1704,9 @@ async function finishLesson() {
       <a
         v-for="item in navigation"
         :key="item.id"
-        :class="{ active: page === item.id }"
+        :class="{ active: primaryPage === item.id }"
         :href="`#/${item.id}`"
-        :aria-current="page === item.id ? 'page' : undefined"
+        :aria-current="primaryPage === item.id ? 'page' : undefined"
         ><component :is="item.icon" :size="21" aria-hidden="true" /><span>{{
           item.label
         }}</span></a
@@ -1814,9 +1824,11 @@ async function finishLesson() {
                   ? 'Back to curriculum'
                   : page === 'courses'
                     ? 'Back to courses'
-                    : page === 'practice'
-                      ? 'Back to practice'
-                      : 'Back to today'
+                    : page === 'words'
+                      ? 'Back to learned words'
+                      : page === 'practice'
+                        ? 'Back to practice'
+                        : 'Back to today'
               }}
             </button>
           </footer>
