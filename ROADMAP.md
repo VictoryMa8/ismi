@@ -167,7 +167,7 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F24](#f24-multi-language-foundation-and-parallel-study) | Multi-language foundation and parallel study | Planned | Define compatible language/course records; agree queue policy |
 | [F25](#f25-french-course) | French course | Planned · definition decisions | Proposed twelve-week course; select variety, depth and review route |
 | [F26](#f26-khmer-course) | Khmer course | Planned · definition decisions | Proposed twelve-week course; select variety, script/help and review route |
-| [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · local, uncommitted | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
+| [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
 Needs decision = a named choice prevents the next step; Needs input = external
@@ -181,7 +181,7 @@ Priority is not a schedule or blanket publication/deployment authorization.
 ## Delivery and evidence
 
 - **Implementation:** Done rows describe the bounded scopes in this checkout.
-  F27 navigation is Done locally only: uncommitted, not pushed, not deployed.
+  F27 navigation frontend `3d87ff4` is pushed and Vercel Ready October 15; live bundle includes the new routes. API not redeployed (rate-limit change is test-only).
   F17.6 frontend application release `7b80136` is pushed/Vercel Ready October 13;
   live Practice/cards/policy/reload verified. [F17.6 rollout](docs/releases/2026-10-13-can-do.md).
   F22 frontend/API application release `6419f84` is deployed October 13; three
@@ -1405,11 +1405,11 @@ and F24.5/F24.6 for full release. Early/full stages have separate evidence manif
 **Status:** Done locally — owner authorized October 14, 2026; completion criteria met October 15 in this checkout.
 **Outcome:** learners can reach review, weekly quests, streak, can-do progress and word search without scrolling through long Today or Practice screens. Feature tiles use a restrained green/red/gold/charcoal accent so each feature is recognizable. New learners see weekly quests and the forgiving streak immediately, and can turn either off.
 **Scope:** five bottom tabs (Today, Courses, Practice, Progress, Words). Account moves to the mobile header profile button and the desktop sidebar footer. Practice becomes a short tile hub linking to Review, Checkpoints, Recall and Lesson practice. Progress holds streak, weekly quests, can-do cards and habit switches. Today shows a compact streak / this week / review-due strip. Words is a tab with search at the top. New habit states default both switches on; existing saved states are unchanged.
-**Next:** owner decides whether to commit and push (pushing `main` deploys the frontend; the API change is a test-configurable rate limit and needs no deploy for production behavior).
+**Next:** none; optional live click-through on mobile.
 **Done when:** the five tabs and focused pages work on mobile and desktop; each Practice tile opens its page; the Today strip links to Progress or starts due review; search is one tap from any tab; new guests have both habits on and a saved off state survives reload; keyboard names include counts; color is not the only signal; build and focused checks pass.
 **Depends on:** F05/F10 review, F17.6 can-do, F17.7 habits, F20 glossary.
 **Evidence:** [behavior and verification](docs/feature-navigation.md). October 15: full Playwright suite 100 passed; API tests 32 passed.
-**Delivery:** local and uncommitted; not pushed or deployed.
+**Delivery:** frontend `3d87ff4` pushed to `main` and Vercel Ready October 15; API not redeployed.
 
 ## Selected future implementation order
 
@@ -1437,7 +1437,7 @@ committed without agreed scope, content/reviewer availability and measured first
 
 ## Recent planning changes
 
-- **October 15, 2026 F27:** Done locally, uncommitted and not deployed. The full Playwright suite (100) and API tests (32) pass. Courses “Review and checkpoint” now opens `#/practice/checkpoints`. The recall browser spec runs last as `zzzz-recall.spec.ts` because its published lessons change later specs. The Playwright API server raises the auth rate limit; production keeps 10 per minute. [Verification](docs/feature-navigation.md#verification).
+- **October 15, 2026 F27:** Done and deployed (`3d87ff4`, Vercel Ready). The full Playwright suite (100) and API tests (32) pass. Courses “Review and checkpoint” now opens `#/practice/checkpoints`. The recall browser spec runs last as `zzzz-recall.spec.ts` because its published lessons change later specs. The Playwright API server raises the auth rate limit; production keeps 10 per minute. [Verification](docs/feature-navigation.md#verification).
 
 - **October 14, 2026 F27:** owner authorized feature discoverability. Five tabs (Account moves to the header), a Practice tile hub, a Progress page, restrained feature colors, and weekly quests/streak on by default for new learners. Existing saved habit states stay as stored. [Plan](docs/feature-navigation.md).
 
