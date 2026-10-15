@@ -13,6 +13,13 @@ import unittest
 import alwaysdata
 
 class DeployTests(unittest.TestCase):
+    def test_dotnet_site_target_uses_working_directory_and_rejects_wrong_targets(self):
+        site={'type':'dotnet','working_directory':'ismi/app','addresses':['ismi.alwaysdata.net/']}
+        alwaysdata.validate_site(site)
+        for changes in ({'working_directory':'other/app'}, {'type':'php'}, {'addresses':['other.alwaysdata.net']}, {'working_directory':'','path':'ismi/app'}):
+            with self.subTest(changes=changes), self.assertRaises(RuntimeError):
+                alwaysdata.validate_site({**site, **changes})
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory(prefix='ismi-deploy-check-')
         self.root = Path(self.temp.name)

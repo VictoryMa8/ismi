@@ -55,6 +55,14 @@ def site_api(token, method='GET', action=''):
         return json.loads(raw) if raw else None
 
 
+def validate_site(site):
+    # .NET sites expose working_directory; path belongs to static/PHP sites.
+    if site.get('type') != 'dotnet' or site.get('working_directory', '').rstrip('/') not in {'ismi/app', '/home/ismi/ismi/app'}:
+        raise RuntimeError('Site working directory does not match the existing Ismi API target.')
+    if not any(a.rstrip('/') == 'ismi.alwaysdata.net' for a in site.get('addresses', [])):
+        raise RuntimeError('Site addresses do not match the existing Ismi API target.')
+
+
 def ssh(options, code, *arguments):
     # All arguments are validated internal release IDs, not user-supplied shell text.
     return run(['ssh', *options, HOST, 'python3', '-', *arguments], input=code, text=True,
@@ -164,10 +172,7 @@ def main():
         raise RuntimeError('Configure a real SSH identity file and API token in the ignored owner-only file.')
     options = ['-o', 'BatchMode=yes', '-o', 'StrictHostKeyChecking=yes', '-o', 'IdentitiesOnly=yes', '-i', identity]
     site = site_api(token)
-    if site.get('path', '').rstrip('/') not in {'ismi/app', '/home/ismi/ismi/app'}:
-        raise RuntimeError('Site working directory does not match the existing Ismi API target.')
-    if not any(a.rstrip('/') == 'ismi.alwaysdata.net' for a in site.get('addresses', [])):
-        raise RuntimeError('Site addresses do not match the existing Ismi API target.')
+    validate_site(site)
     ssh(options, "print('SSH authenticated.')")
     if args.check:
         print('Existing site 1076252 and SSH authentication verified; no deployment performed.')

@@ -26,12 +26,20 @@ archive successfully; real deployment will rebuild the committed revision.
 that its temporary SSH keys were removed. An ignored mode-600 local config is
 prepared, with an empty token and the dedicated SSH identity path.
 
-Alwaysdata's signed-in token form requires enabling profile 2FA before token
-creation. Owner authentication setup is pending. An attempted unencrypted
-persistent SSH key creation was rejected by automatic approval review; no key was
-created. A passphrase prompt was then started and cancelled without creating a
-key. The owner was asked to create a passphrase-protected dedicated key, load it
-in their SSH agent, and save the API token only in the ignored config.
+The owner enabled profile 2FA, saved the API token locally, created a protected
+SSH key and loaded it into the SSH agent. The API token successfully reads the
+existing site. Its .NET target is `working_directory=ismi/app`, type `dotnet`,
+address `ismi.alwaysdata.net/`. The deployment script incorrectly checked the
+static/PHP `path` field; this was corrected with wrong-target regression coverage.
+All five deployment fixture tests pass. The dedicated public key still needs
+registering; fresh SSH authentication currently fails. Concurrent owner Safari
+activity interrupted browser registration, so an available browser window was
+requested.
+
+An earlier unencrypted persistent key attempt was rejected by approval review;
+no key was created. The owner subsequently created the protected key privately.
+The loaded agent key matches the `.pub` fingerprint. The account ED25519 host
+fingerprint was verified and recorded in local known_hosts for strict checking.
 
 No application files, hosted database, recordings or cookie keys have been
 changed. No hosted preservation result or new rollback location is claimed.
