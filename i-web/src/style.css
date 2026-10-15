@@ -2008,3 +2008,52 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 .learned-words-link:hover { background: var(--teal-soft); }
 
 .words-return { display: flex; width: fit-content; }
+
+/* F21: optional publisher-linked cultural collections. */
+.tile-culture { order: 5; }
+.culture-today-link { display: inline-flex; align-items: center; gap: 8px; margin: 6px 0 28px; }
+.culture-page { max-width: 960px; margin: 0 auto 36px; overflow-wrap: anywhere; }
+.culture-page-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin: 14px 0; }
+.culture-page-heading h1 { margin: 0; }
+.culture-edition-label, .culture-credit, .culture-labels { color: var(--ink-soft); }
+.culture-edition-label { margin-bottom: 6px; font-weight: 700; }
+.culture-edition-title { margin: 0 0 12px; font-size: 1.6rem; }
+.culture-optional { margin: 16px 0 24px; }
+.culture-cards { display: grid; gap: 22px; }
+.culture-card { --media-color: var(--teal-dark); min-width: 0; padding: 0 22px 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); overflow: hidden; overflow-wrap: anywhere; }
+.culture-film { --media-color: var(--ink); }
+.culture-song { --media-color: var(--coral); }
+.culture-card-heading { display: flex; align-items: center; gap: 12px; margin: 0 -22px 20px; padding: 14px 22px; background: var(--media-color); color: #fff; font-weight: 750; }
+.culture-song .culture-card-heading { background: var(--gold-bright); color: var(--ink); }
+.culture-icon { display: inline-flex; }
+.culture-card h2 { margin: 0 0 8px; font-size: 1.35rem; }
+.culture-card h2 [lang="ar"] { display: block; margin-top: 6px; font-size: 1.6rem; line-height: 1.8; text-align: start; }
+.culture-card p { line-height: 1.65; margin: 10px 0; }
+.culture-resource { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 16px; }
+.culture-external { display: inline-flex; max-width: 100%; margin: 4px 0 8px; white-space: normal; text-align: start; }
+.culture-unavailable, .culture-saved { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; }
+.culture-card details { margin-top: 14px; }
+.culture-card summary, .culture-checks summary { padding: 12px 0; cursor: pointer; font-weight: 700; }
+.culture-access { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 6px; }
+.culture-access h3 { font-size: 1rem; }
+.culture-archive { margin: 28px 0 20px; }
+.culture-archive ul { padding-inline-start: 22px; }
+.culture-archive li { padding: 10px 0; }
+.culture-admin-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 18px 0; }
+.culture-admin-toolbar label { display: grid; gap: 6px; }
+.culture-admin-layout { display: grid; grid-template-columns: minmax(180px, 250px) minmax(0, 1fr); gap: 26px; }
+.culture-admin-layout > * { min-width: 0; }
+.culture-admin-layout label { display: block; font-weight: 700; margin: 12px 0 6px; }
+.culture-admin-layout textarea { width: 100%; box-sizing: border-box; padding: 14px; border: 1px solid var(--line); border-radius: 8px; color: var(--ink); background: var(--paper); font: inherit; }
+.culture-admin-layout .culture-json { min-height: 420px; font: 13px/1.6 monospace; white-space: pre-wrap; }
+.culture-edition-button { display: grid; gap: 8px; width: 100%; padding: 14px; margin: 8px 0; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); background: var(--paper); text-align: start; font: inherit; cursor: pointer; overflow-wrap: anywhere; }
+.culture-edition-button[aria-pressed="true"] { border: 2px solid var(--teal-dark); }
+.culture-version-select select { margin-inline-start: 12px; padding: 8px; font: inherit; }
+.culture-resource-check { margin: 12px 0; padding: 14px; border: 1px solid var(--line); border-radius: 8px; }
+.culture-resource-check span { display: block; overflow-wrap: anywhere; }
+.culture-resource-check button { margin: 8px 12px 0 0; }
+.culture-preview { margin-top: 28px; }
+.culture-audit { overflow-wrap: anywhere; }
+.culture-audit li { margin: 12px 0; }
+@media (max-width: 700px) { .culture-admin-layout { grid-template-columns: 1fr; } .culture-card { padding-inline: 16px; } .culture-card-heading { margin-inline: -16px; padding-inline: 16px; } }
+@media (forced-colors: active) { .culture-card-heading { border-bottom: 1px solid CanvasText; } .culture-card { border-color: CanvasText; } }

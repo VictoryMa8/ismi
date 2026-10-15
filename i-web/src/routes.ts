@@ -1,4 +1,5 @@
 export const learnerHashes = ['#/today', '#/courses', '#/practice', '#/practice/review', '#/practice/checkpoints', '#/practice/recall', '#/practice/lessons', '#/progress', '#/words', '#/account']
 export function isLearnerRoute(hash: string) {
-  return learnerHashes.includes(hash.toLowerCase()) || ['#today', '#courses', '#practice', '#progress', '#words', '#account'].includes(hash.toLowerCase())
+  return /^#\/practice\/culture(?:\/[a-z0-9][a-z0-9-]{0,79})?$/.test(hash.toLowerCase())
+    || learnerHashes.includes(hash.toLowerCase()) || ['#today', '#courses', '#practice', '#progress', '#words', '#account'].includes(hash.toLowerCase())
 }

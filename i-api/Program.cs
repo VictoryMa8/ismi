@@ -145,6 +145,9 @@ builder.Services.AddScoped<RecallReportService>();
 builder.Services.AddSingleton<RecordingStore>();
 builder.Services.AddSingleton<CurriculumValidator>();
 builder.Services.AddSingleton<CurriculumAccessService>();
+builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddSingleton<CulturalMediaValidator>();
+builder.Services.AddScoped<CulturalMediaService>();
 
 var app = builder.Build();
 
@@ -155,9 +158,34 @@ await using (var scope = app.Services.CreateAsyncScope())
     await CurriculumSchemaInitializer.EnsureCurriculumSchemaAsync(database);
     await StudySettingsService.EnsureSchemaAsync(database);
     await RecallReportService.EnsureSchemaAsync(database);
+    await CulturalMediaService.EnsureSchemaAsync(database);
     var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
     var seed = scope.ServiceProvider.GetRequiredService<SeedCurriculum>();
     await publishing.EnsureSeededAsync(seed.GetInitialLessons());
+    if (builder.Configuration["import-culture"] is { Length: > 0 } culturePath)
+    {
+        var service = scope.ServiceProvider.GetRequiredService<CulturalMediaService>();
+        try
+        {
+            var path = Path.GetFullPath(culturePath);
+            var files = Directory.Exists(path) ? Directory.GetFiles(path, "*.edition.json").Order().ToArray() : [path];
+            if (files.Length == 0) throw new InvalidOperationException("No *.edition.json files found.");
+            foreach (var file in files)
+            {
+                var edition = JsonSerializer.Deserialize<CulturalEdition>(await File.ReadAllTextAsync(file), new JsonSerializerOptions(JsonSerializerDefaults.Web))
+                    ?? throw new InvalidOperationException("An edition object is required.");
+                var existing = (await service.ListAsync(CancellationToken.None)).FirstOrDefault(e => e.Id == edition.Id);
+                if (existing is not null && (!builder.Configuration.GetValue<bool>("update-import-drafts") || existing.Status != "draft"))
+                { Console.WriteLine($"Kept existing collection {edition.Id}; no approved/published records changed."); continue; }
+                var draft = await service.SaveDraftAsync(new(edition, existing?.Revision), "local draft import", CancellationToken.None);
+                var validation = await service.ValidateAsync(draft.Id, draft.State.Versions.Last().Number, CancellationToken.None);
+                Console.WriteLine($"Imported draft {draft.Id}; {validation.Errors.Length} validation issue(s). No approval or publication.");
+            }
+        }
+        catch (Exception error) when (error is IOException or JsonException or InvalidOperationException or CulturalMediaException)
+        { Console.Error.WriteLine($"Culture import failed: {error.Message}"); Environment.ExitCode = 1; }
+        return;
+    }
     if (builder.Configuration["import-curriculum"] is { Length: > 0 } importPath)
     {
         try
@@ -185,6 +213,7 @@ app.UseCors("IsmiWeb");
 app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
+app.MapCulturalMedia();
 
 app.MapGet("/api/health", () => Results.Ok(new
 {

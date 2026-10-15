@@ -60,6 +60,29 @@ The console appears in the signed-in account's desktop navigation. A draft must 
 
 This beta slice does not yet send email, so email confirmation and password-reset delivery are intentionally unavailable. External Google, Apple, or Microsoft sign-in and the production database remain future deployment decisions.
 
+## Weekly watch & listen
+
+The learner's Watch & listen page opens from Today or Practice at
+`#/practice/culture`. Each published edition contains a YouTube video, film and
+song, with individual Arabic dialect/register and access labels. External playback
+is optional; saved metadata and learning prompts work offline.
+
+The owner console's **Watch & listen** section supports draft import/edit, preview,
+validation, approval, Monday UTC publication, link checks, withdrawal and rollback.
+These media selections are separate from lesson publication; MSA/Quranic lesson
+controls remain as described above. To prepare the four research drafts locally:
+
+```sh
+npm run culture:import
+```
+
+The importer exits after writing drafts; it never approves or publishes. Existing
+editions are preserved by default. Root `.env` files are not loaded by this command;
+use the normal `Database__Path` environment override to target a different local
+database. Actual runtime/playback/access/support and owner editorial checks remain
+open in these candidates. See [source gaps and import details](content/culture/README.md)
+and [behavior/verification](docs/cultural-watch-listen.md).
+
 ## Validate
 
 ```bash

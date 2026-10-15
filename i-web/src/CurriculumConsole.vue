@@ -3,6 +3,7 @@ import { computed, onMounted, ref } from 'vue';
 import RecordingEditor from './RecordingEditor.vue';
 import RecallReports from './RecallReports.vue';
 import CharacterMapping from './CharacterMapping.vue';
+import CulturalMediaConsole from './CulturalMediaConsole.vue';
 import {
   ArrowLeft,
   CheckCircle2,
@@ -40,6 +41,7 @@ const emit = defineEmits<{
 }>();
 
 const versions = ref<CurriculumVersionSummary[]>([]);
+const consoleSection = ref<'lessons' | 'media'>('lessons');
 const selected = ref<CurriculumVersionDetail | null>(null);
 const lessonJson = ref('');
 const sources = ref<CurriculumSource[]>([]);
@@ -362,15 +364,22 @@ function formatDate(value: string | null): string {
       <div>
         <span class="section-kicker">Internal · publication control</span>
         <h1>Curriculum console</h1>
-        <p>
+        <p v-if="consoleSection === 'lessons'">
           Draft, validate, approve, and publish source-linked Levantine lessons.
         </p>
+        <p v-else>Review and publish weekly Arabic media collections.</p>
       </div>
       <button class="secondary-action" type="button" @click="$emit('close')">
         <ArrowLeft :size="18" aria-hidden="true" /> Back to learner app
       </button>
     </header>
 
+    <nav class="culture-admin-toolbar" aria-label="Console sections">
+      <button type="button" class="secondary-action" :aria-pressed="consoleSection === 'lessons'" @click="consoleSection = 'lessons'">Lessons</button>
+      <button type="button" class="secondary-action" :aria-pressed="consoleSection === 'media'" @click="consoleSection = 'media'">Watch &amp; listen</button>
+    </nav>
+    <CulturalMediaConsole v-if="consoleSection === 'media'" />
+    <template v-else>
     <div class="console-safety-note">
       <ShieldCheck :size="22" aria-hidden="true" />
       <p>
@@ -655,5 +664,6 @@ function formatDate(value: string | null): string {
         </template>
       </main>
     </div>
+    </template>
   </div>
 </template>

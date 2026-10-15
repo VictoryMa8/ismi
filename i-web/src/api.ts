@@ -1,4 +1,5 @@
 import type { StudySettings } from './studyPlan'
+import type { CulturalCatalog, PublicCulturalEdition, CulturalDetail, CulturalEdition, CulturalSummary } from './culture'
 import { renameCharacterContent } from './characters'
 import type {
   AuthSession,
@@ -78,6 +79,16 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 
   if (response.status === 204) return undefined as T
   return response.json() as Promise<T>
+}
+
+export const getCulturalCatalog = (offset = 0) => request<CulturalCatalog>(`/api/culture/weekly?offset=${offset}`)
+export const getCulturalEdition = (id: string) => request<PublicCulturalEdition>(`/api/culture/editions/${encodeURIComponent(id)}`)
+export const listCulturalEditions = () => request<CulturalSummary[]>('/api/admin/culture/editions')
+export const getCulturalDraft = (id: string) => request<CulturalDetail>(`/api/admin/culture/editions/${encodeURIComponent(id)}`)
+export const saveCulturalDraft = (edition: CulturalEdition, expectedRevision?: number) => request<CulturalDetail>('/api/admin/culture/drafts', {
+  method: 'POST', body: JSON.stringify({ edition, expectedRevision }) })
+export function culturalCommand<T = CulturalDetail>(id: string, action: string, payload: object) {
+  return request<T>(`/api/admin/culture/editions/${encodeURIComponent(id)}/${action}`, { method: 'POST', body: JSON.stringify(payload) })
 }
 
 export function getAuthSession(): Promise<AuthSession> {

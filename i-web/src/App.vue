@@ -17,6 +17,7 @@ import {
   UserRound,
   Volume2,
   WifiOff,
+  Clapperboard,
 } from '@lucide/vue';
 import CurriculumConsole from './CurriculumConsole.vue';
 import StudySettings from './StudySettings.vue';
@@ -36,6 +37,7 @@ import SoundToggle from './SoundToggle.vue';
 import ReviewPractice from './ReviewPractice.vue';
 import RecallPractice from './RecallPractice.vue';
 import LearnedWords from './LearnedWords.vue';
+import CulturalPicks from './CulturalPicks.vue';
 import CharacterCast from './CharacterCast.vue';
 import CharacterCue from './CharacterCue.vue';
 import CharacterPortrait from './CharacterPortrait.vue';
@@ -138,15 +140,17 @@ const completionSummary = computed(() => {
   };
 });
 const pendingSyncCount = ref(0);
-type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'progress' | 'words' | 'account';
+type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'practice-culture' | 'progress' | 'words' | 'account';
 const pageNames: Record<string, PageName> = {
   today: 'today', courses: 'courses', practice: 'practice', 'practice/review': 'practice-review',
   'practice/checkpoints': 'practice-checkpoints', 'practice/recall': 'practice-recall', 'practice/lessons': 'practice-lessons',
+  'practice/culture': 'practice-culture',
   progress: 'progress', words: 'words', account: 'account',
 };
 const pageTitles: Record<PageName, string> = {
   today: 'Today', courses: 'Courses', practice: 'Practice', 'practice-review': 'Review',
   'practice-checkpoints': 'Checkpoints', 'practice-recall': 'Recall', 'practice-lessons': 'Lesson practice',
+  'practice-culture': 'Watch & listen',
   progress: 'Progress', words: 'Learned words', account: 'Account',
 };
 const navigation = [
@@ -158,21 +162,25 @@ const navigation = [
 ] as const;
 function readPage(): PageName {
   const path = window.location.hash.replace(/^#\/?/, '').toLowerCase();
+  if (/^practice\/culture(?:\/[a-z0-9][a-z0-9-]{0,79})?$/.test(path)) return 'practice-culture';
   return pageNames[path] ?? 'today';
 }
 const page = ref<PageName>(readPage());
+const culturalEditionId = ref<string | null>(window.location.hash.split('/')[3] ?? null);
 const primaryPage = computed(() => page.value.startsWith('practice') ? 'practice' : page.value);
 const pageTitle = computed(() => pageTitles[page.value]);
 const reviewView = computed(() => page.value === 'practice' ? 'tiles' : page.value === 'practice-review' ? 'review' : page.value === 'practice-checkpoints' ? 'checkpoints' : 'hidden');
 const recallView = computed(() => page.value === 'practice' ? 'tile' : page.value === 'practice-recall' ? 'recall' : page.value === 'progress' ? 'can-do' : 'hidden');
-const practiceChild = computed(() => page.value.startsWith('practice-'));
+const practiceChild = computed(() => page.value.startsWith('practice-') && page.value !== 'practice-culture');
 function navigate(destination: PageName) {
   window.location.hash = `/${Object.keys(pageNames).find(path => pageNames[path] === destination) ?? destination}`;
 }
 async function handlePageChange() {
   if (!isLearnerRoute(window.location.hash)) return;
   const destination = readPage();
-  if (page.value === destination) return;
+  const oldEditionId = culturalEditionId.value;
+  culturalEditionId.value = destination === 'practice-culture' ? window.location.hash.split('/')[3] ?? null : null;
+  if (page.value === destination && oldEditionId === culturalEditionId.value) return;
   stopPromptAudio();
   lessonOpen.value = false;
   page.value = destination;
@@ -1239,8 +1247,8 @@ async function finishLesson() {
 
       <p v-if="downloadError" role="status">{{ downloadError }}</p>
 
-      <LoadingWords v-if="dashboardLoading" :compact="!initialDashboardLoading" />
-      <section v-else-if="dashboardUnavailable && page !== 'account'" class="dashboard-error" aria-labelledby="dashboard-error-heading">
+      <LoadingWords v-if="dashboardLoading && page !== 'practice-culture'" :compact="!initialDashboardLoading" />
+      <section v-else-if="dashboardUnavailable && page !== 'account' && page !== 'practice-culture'" class="dashboard-error" aria-labelledby="dashboard-error-heading">
         <WifiOff :size="28" aria-hidden="true" />
         <h1 id="dashboard-error-heading">Your study plan couldn’t load</h1>
         <p>Reconnect and try again. No saved plan is available on this device.</p>
@@ -1396,6 +1404,7 @@ async function finishLesson() {
           </details>
         </section>
 
+        <a class="page-link culture-today-link" href="#/practice/culture"><Clapperboard :size="18" aria-hidden="true" /> Watch &amp; listen</a>
       </template>
 
       <template v-if="page === 'courses' && studyPageAvailable">
@@ -1521,6 +1530,10 @@ async function finishLesson() {
           <h1>Practice</h1>
         </header>
         <div id="practice-hub" class="feature-grid">
+          <a class="feature-tile accent-ink tile-culture" href="#/practice/culture">
+            <span class="feature-badge" aria-hidden="true"><Clapperboard :size="18" /></span>
+            <span class="feature-copy"><strong>Watch &amp; listen</strong><small>Weekly Arabic picks</small></span>
+          </a>
           <a class="feature-tile accent-green tile-lessons" href="#/practice/lessons" :aria-label="`Lesson practice, ${dashboard.dailyPlan.lessons.length} lessons`">
             <span class="feature-badge" aria-hidden="true"><Headphones :size="18" /></span>
             <span class="feature-copy"><strong>Lesson practice</strong><small>{{ dashboard.dailyPlan.lessons.length }} lessons</small></span>
@@ -1529,6 +1542,7 @@ async function finishLesson() {
         </div>
         <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
       </template>
+      <CulturalPicks v-if="page === 'practice-culture'" :edition-id="culturalEditionId" />
       <template v-if="practiceChild && studyPageAvailable">
         <a class="page-link" href="#/practice">Back to Practice</a>
         <header class="page-heading"><h1>{{ pageTitle }}</h1></header>

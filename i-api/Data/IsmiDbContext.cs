@@ -17,10 +17,17 @@ public sealed class IsmiDbContext(DbContextOptions<IsmiDbContext> options)
     public DbSet<CurriculumAuditRecord> CurriculumAuditEvents => Set<CurriculumAuditRecord>();
 
     public DbSet<StudySettingsRecord> StudySettings => Set<StudySettingsRecord>();
+    public DbSet<CulturalCollectionRecord> CulturalCollections => Set<CulturalCollectionRecord>();
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<CulturalCollectionRecord>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+            entity.HasIndex(e => e.WeekStartUtc).IsUnique();
+            entity.Property(e => e.Revision).IsConcurrencyToken();
+        });
         builder.Entity<StudySettingsRecord>(entity =>
         {
             entity.HasKey(s => s.UserId);

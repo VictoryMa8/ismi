@@ -6,6 +6,7 @@
     "setup": "npm ci --prefix i-web && dotnet restore Ismi.slnx",
     "api": "node scripts/dev.mjs api",
     "web": "node scripts/dev.mjs web",
+    "culture:import": "node scripts/import-culture.mjs",
     "deploy:api": "python3 deploy/alwaysdata.py"
   },
   "engines": {

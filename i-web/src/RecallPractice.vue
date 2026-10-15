@@ -49,6 +49,7 @@ const dialog = ref<HTMLElement | null>(null)
 const field = ref<HTMLTextAreaElement | null>(null)
 const closeButton = ref<HTMLButtonElement | null>(null)
 let opener: HTMLElement | null = null
+let returnFocusScope: string | null = null
 let generation = 0
 let sessionScope = ''
 const independent = ref(0)
@@ -115,6 +116,7 @@ async function showTurn() {
 async function start(lessonId?: string, targetId?: string) {
   if (loading.value || busy.value || !available.value.length) return
   opener = document.activeElement as HTMLElement
+  returnFocusScope = null
   sessionScope = props.scope
   queue.value = lessonId ? available.value.filter(t => t.lesson.id === lessonId && t.target.id === targetId) : available.value.slice(0, 6)
   if (!queue.value.length) return
@@ -127,9 +129,22 @@ async function start(lessonId?: string, targetId?: string) {
 async function close() {
   if (busy.value) return
   open.value = false; answer.value = ''; reportExplanation.value = ''; queue.value = []; evidence.value = null
+  returnFocusScope = props.scope
   document.body.style.overflow = ''; await refresh(); await nextTick()
+  await restoreOpenerFocus()
+}
+async function restoreOpenerFocus() {
+  if (returnFocusScope !== props.scope || open.value || loading.value || busy.value) return
+  await nextTick()
+  if (returnFocusScope !== props.scope || open.value || loading.value || busy.value) return
+  returnFocusScope = null
+  // A newer refresh may supersede close()'s refresh. Restore only when that
+  // refresh settles, and do not steal focus if the learner has already moved on.
+  const active = document.activeElement
+  if (active !== document.body && active?.id !== 'main-content') return
   if (opener?.isConnected && !opener.matches(':disabled')) opener.focus()
 }
+watch([loading, busy], () => void restoreOpenerFocus())
 function focusHeading() {
   const content = heading.value?.closest<HTMLElement>('.lesson-content')
   if (content) content.scrollTop = 0
@@ -224,6 +239,7 @@ async function online() {
 }
 watch(open, value => emit('open-change', value))
 watch(() => props.scope, () => {
+  returnFocusScope = null
   generation++; open.value = false; document.body.style.overflow = ''; answer.value = ''; queue.value = []; evidence.value = null
   pending.value = []; packages.value = []; savedEvidence.value = []; savedHistory.value = []; void refresh()
 })
