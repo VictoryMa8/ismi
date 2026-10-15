@@ -22,7 +22,7 @@ explicitly presents the approved appearance for known v1/v2 cast metadata withou
 rewriting published/downloaded source records. Unknown registries retain fallbacks.
 All new assets are precached. The integration was committed/pushed/deployed in
 `03bc3b8`; the owner confirmed the live artwork October 15. Lesson/home portraits
-are being enlarged to 64px in a bounded CSS refinement.
+now use 64px in refinement `9b585a2`, deployed October 15.
 
 ## Historical v1 baseline
 

@@ -1,6 +1,6 @@
 # Current app character artwork / v2
 
-October 14–15, 2026 · F06.1.1 · Original artwork deployed; portrait-size refinement verified locally.
+October 14–15, 2026 · F06.1.1 · Original artwork and portrait-size refinement deployed.
 
 The owner approved using the selected simple cartoon direction in the app after
 reviewing [the three-state/two-scene sample](../fattoush-expressive-02/README.md).
@@ -119,5 +119,10 @@ by the two existing Today/completion checks after the final home-card override.
 The latter include 390/1280px layouts, enlarged text, keyboard entry and completion
 navigation. The home-card test's seed fixture is text-only; the 64px portrait rule
 is applied to its existing compact cast when character metadata is present.
-No new tests were written for this CSS-only adjustment. Follow-up push/deployment
-is pending at this checkpoint.
+No new tests were written for this CSS-only adjustment. Follow-up commit
+`9b585a2c83b6fcd26351f926e586c652adef80bf` is pushed to main and Vercel Ready as
+`dpl_12TFheFLkQm6K5b18sjuZbc7Vi4R`, at
+`https://ismi-7381qapi6-victorys-projects-c1cb4594.vercel.app`. CLI inspection confirms
+the stable `https://ismi-arabic.vercel.app` alias. Verification of this follow-up
+uses the local checks and deployment metadata, not an automated live browser pass.
+The documentation-only follow-up leaves the application tree identical to `9b585a2`.
