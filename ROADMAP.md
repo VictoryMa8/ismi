@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 14, 2026 · **Start here for current feature status.**
+Updated October 15, 2026 · **Start here for current feature status.**
 
 This is the single current plan. [AGENTS.md](AGENTS.md) holds product constraints;
 [the planning workflow](docs/planning-workflow.md) explains how agents maintain
@@ -132,7 +132,7 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F05](#f05-manual-review-and-checkpoints) | Manual review and checkpoints | Done | Scheduling belongs to F10; history stays on device |
 | [F06](#f06-recurring-character-support) | Recurring character support | Done | Portrait behavior retained; current local artwork is F06.1.1 |
 | [F06.1](#f061-character-art-redesign) | Character art redesign | Active · art integrated locally | F06.1.1 complete; broader profile/turnaround views remain |
-| [F06.1.1](#f0611-selected-art-integration) | Selected art integration | Done · rollout active | Owner authorized push/deploy; verify Vercel release and live art |
+| [F06.1.1](#f0611-selected-art-integration) | Selected art integration | Active · portrait size refinement | Original art deployed/owner-checked; larger lesson/home portraits verified locally |
 | [F07](#f07-landing-page-and-app-welcome) | Landing page and app welcome | Done | Deployed; invitation gate belongs to F18 |
 | [F08](#f08-first-unit-revision-release) | First-unit revision release | Done | All seven hosted v2 lessons and 52 source records verified |
 | [F09](#f09-reviewed-levantine-recordings) | Reviewed Levantine recordings | Needs input | Actual recordings, permissions and review |
@@ -286,15 +286,17 @@ Narrative expansion and final art/package approval are outside this implementati
 
 ### F06.1 Character art redesign
 
-**Status:** Active — selected art integrated locally under completed F06.1.1 on
-October 14; the broader profile/turnaround scope remains unmade. The owner selected
+**Status:** Active — selected art deployed October 14 under F06.1.1; the broader
+profile/turnaround scope remains unmade. The owner selected
 the least-detailed cartoon treatment, specified Knafeh as a lighter-skinned Palestinian
 Arab man with straight hair and no facial hair, then authorized use in the app.
 The October 8 rejection of custom SVG-path character studies still applies.
 **Current scope delivered:** review sample, seven matching app portrait states,
 coffee/planning scenes and local integration with mobile/desktop, failure fallback,
 decorative accessibility and real offline checks. The owner subsequently authorized
-commit, push and deployment; frontend rollout is in progress. Curriculum publication
+commit, push and deployment; `03bc3b8` reached Vercel Ready and the owner confirmed
+the live artwork October 15. A small portrait-size follow-up is verified locally.
+Curriculum publication
 is outside this artwork release.
 **Outcome:** distinctive Fattoush/Knafeh designs with consistent, intentionally drawn
 expressions; F06's working portrait system remains complete.
@@ -305,9 +307,9 @@ exact prompts/hashes and conversion/layout sources are supplied; character artwo
 has no layered illustrator originals. Earlier CC0 Open Peeps and rejected studies
 remain historical; no new third-party or Canva premium assets were used.
 **Next:** profile/turnaround views remain from the broader design target; no current
-app call site requires them. Further asset production/human illustration handoff and
-any further asset production remain separate authorization scopes. The selected app
-artwork rollout is now authorized. No commission/contact/spending.
+app call site requires them. Further asset production/human illustration handoff
+remain separate authorization scopes. The selected app artwork rollout and its
+requested size refinement use the existing frontend workflow. No commission/contact/spending.
 **Done when:** owner approves the designs; editable sources, authorship/rights and hashes
 are recorded; neutral/attentive/encouraging/profile views remain consistent and legible;
 mobile/desktop, fallback and offline rendering pass with unchanged written roles.
@@ -315,15 +317,17 @@ mobile/desktop, fallback and offline rendering pass with unchanged written roles
 [app integration, sources and verification](docs/characters/app-art-v2/README.md),
 [earlier Open Peeps sample](docs/characters/canva-sample-2026-10-13.md),
 [historical assessment](docs/characters/redesign-direction-2026-10-08.md).
-**Delivery:** review sample saved separately in Canva; new app art/code/docs are local
-and uncommitted. Original art preserved; selected v2 is now the local app presentation.
-No push, deployment or content publication. Broader real-device/assistive-technology
+**Delivery:** review sample saved separately in Canva; selected v2 app art/code/docs
+were committed/pushed/deployed in `03bc3b8`. Original art is preserved. No content
+publication. Broader real-device/assistive-technology
 release gates remain under F18. Historical review assets were
 committed/pushed in `662d17c`; preserve v1 assets and version future art separately.
 
 ### F06.1.1 Selected art integration
 
-**Status:** Done — October 14, 2026, locally.
+**Status:** Done — deployed October 14 as `03bc3b8`; owner confirmed the live result
+October 15. A bounded portrait-size refinement is Active: enlarge lesson/home-card
+portraits and verify mobile/desktop layout before its frontend rollout.
 **Scope delivered:** neutral/attentive/encouraging portraits for both characters,
 welcoming Fattoush, oval coffee landing hero, relevant planning introductions,
 welcome/console rendering, supported older cast metadata and offline precaching.
@@ -335,10 +339,13 @@ All these bounded criteria are met; unused profile/turnaround views stay in F06.
 **Evidence:** [implementation, 23 focused browser checks and screenshots](docs/characters/app-art-v2/README.md).
 Production build passes. Thirteen landing/welcome, three lesson-frame and seven
 character checks pass across final runs; all ten v2 assets fetch offline.
-**Next/delivery:** owner authorized commit/push/deployment on October 14; rollout
-is in progress through the existing main-to-Vercel integration. Verify the exact
-deployment revision and live artwork before claiming delivery. Backend/content
-remain at their previous release versions.
+**October 15 size refinement:** lesson and home next-lesson portraits use 64px,
+compact course portraits 44px and completion portraits 72px. Existing larger welcome
+and console previews are retained. Production build and 12 existing focused checks
+pass across the character/layout and Today/completion runs. No new tests or art assets.
+**Next/delivery:** original art release `03bc3b8` reached Vercel Ready (deployment
+`dpl_5dKSPFy9mB8MaTfV4ZwqmcQNFAGA`); owner visually confirmed October 15. Larger
+portraits are ready locally for the follow-up push/deploy. Backend/content remain unchanged.
 
 ### F07 Landing page and app welcome
 
@@ -1437,18 +1444,15 @@ committed without agreed scope, content/reviewer availability and measured first
 
 ## Recent planning changes
 
+- **October 15, 2026 F06.1.1:** original art release `03bc3b8` is deployed and
+  owner-checked. Requested larger lesson/home portraits are implemented locally;
+  production build and 12 existing character/layout/Today/completion checks pass.
+  Follow-up rollout pending. [Evidence](docs/characters/app-art-v2/README.md#october-15-portrait-size-refinement).
+
 - **October 15, 2026 F27:** Done and deployed (`3d87ff4`, Vercel Ready). The full Playwright suite (100) and API tests (32) pass. Courses “Review and checkpoint” now opens `#/practice/checkpoints`. The recall browser spec runs last as `zzzz-recall.spec.ts` because its published lessons change later specs. The Playwright API server raises the auth rate limit; production keeps 10 per minute. [Verification](docs/feature-navigation.md#verification).
 
 - **October 14, 2026 F27:** owner authorized feature discoverability. Five tabs (Account moves to the header), a Practice tile hub, a Progress page, restrained feature colors, and weekly quests/streak on by default for new learners. Existing saved habit states stay as stored. [Plan](docs/feature-navigation.md).
 
-- **October 14, 2026 F06.1:** completed the revised three-state/two-scene sample.
-  Owner selected the least-detail cartoon direction and revised Knafeh's appearance.
-  Subsequently authorized app integration: F06.1.1 is complete locally with seven
-  portraits, two scenes, versioned sources and retained originals. Build and 23 focused
-  checks pass, including all ten assets offline. Profile views remain in the parent;
-  no commit, push, deployment, purchase, contact or curriculum publication.
-  [Sample](docs/characters/fattoush-expressive-02/README.md),
-  [integration evidence](docs/characters/app-art-v2/README.md).
 
 - **October 13, 2026 F17.6:** owner authorized implementation and approved the
   independent first-response / distinct-situation / 24-hour due-review policy. Three
@@ -1463,11 +1467,6 @@ committed without agreed scope, content/reviewer availability and measured first
   `04a4f4e` pushed and Vercel Ready; live words/return/Account layout verified.
   [Behavior and verification](docs/learned-word-glossary.md#october-13-page-and-account-spacing--f201).
 
-- **October 13, 2026 F22 rollout:** application release `6419f84` deployed to Vercel/alwaysdata;
-  Everyday 1/3/6 published v3 through console validation/approval/publication. Exact
-  payloads/21 sources/audits, preserved data/assets and enabled live Practice verified.
-  Owner selected temporary SSH/Safari workflow; access revoked and local keys removed.
-  [Release evidence](docs/releases/2026-10-13-recall.md).
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

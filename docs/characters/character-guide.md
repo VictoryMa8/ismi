@@ -20,7 +20,9 @@ teaching, never as recall/grading cues. Written names/roles remain authoritative
 New assets live under `characters/v2/`, with v1 bytes retained. The current client
 explicitly presents the approved appearance for known v1/v2 cast metadata without
 rewriting published/downloaded source records. Unknown registries retain fallbacks.
-All new assets are precached. The integration is local, uncommitted and undeployed.
+All new assets are precached. The integration was committed/pushed/deployed in
+`03bc3b8`; the owner confirmed the live artwork October 15. Lesson/home portraits
+are being enlarged to 64px in a bounded CSS refinement.
 
 ## Historical v1 baseline
 

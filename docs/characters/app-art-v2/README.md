@@ -1,6 +1,6 @@
 # Current app character artwork / v2
 
-October 14, 2026 · F06.1.1 · Integrated and verified; authorized rollout in progress.
+October 14–15, 2026 · F06.1.1 · Original artwork deployed; portrait-size refinement verified locally.
 
 The owner approved using the selected simple cartoon direction in the app after
 reviewing [the three-state/two-scene sample](../fattoush-expressive-02/README.md).
@@ -92,9 +92,32 @@ The bounded app integration is complete. Profile/turnaround views from the broad
 F06.1 design target remain unmade; no current app component requires them.
 Future character expansion or a layered human illustration handoff is separate work.
 
-The owner subsequently authorized commit, push and deployment. The frontend rollout
-is in progress; live delivery will be recorded after verification. No assets were
-purchased and no curriculum was published. No backend or
+The owner subsequently authorized commit, push and deployment. Application commit
+`03bc3b86fc171692970f59d6a85b2ad67eac311f` reached Vercel Ready as deployment
+`dpl_5dKSPFy9mB8MaTfV4ZwqmcQNFAGA`, at
+`https://ismi-186d4pbtd-victorys-projects-c1cb4594.vercel.app`, aliased to
+`https://ismi-arabic.vercel.app`. The owner visually checked and accepted the live
+artwork October 15. The agent's live browser attempt was blocked by an automatic
+approval-review usage limit; no automated live visual pass is claimed.
+
+No assets were purchased and no curriculum was published. No backend or
 database schema changes, curriculum publication, billing, image-generation service
-or runtime AI credentials were added. The live preview retains its previous release
-until the authorized rollout completes.
+or runtime AI credentials were added.
+
+## October 15 portrait-size refinement
+
+The owner asked for clearer expressions in the small lesson and home-card portraits.
+The shared CSS now uses 64px instead of 44px for lesson/feedback portraits, 64px
+instead of 28px on the home next-lesson card, 44px instead of 28px for other compact
+course portraits, and 72px instead of 56px for completion encouragement. Existing
+88px welcome and 96px console previews keep their own sizes. All sizes still use
+`--portrait-size`, fixed flex sizing and a square frame. No new artwork was made.
+
+Production build passes. Ten existing character/lesson-frame checks pass (including
+320/390px layouts, fixed navigation, failure fallback and offline assets), followed
+by the two existing Today/completion checks after the final home-card override.
+The latter include 390/1280px layouts, enlarged text, keyboard entry and completion
+navigation. The home-card test's seed fixture is text-only; the 64px portrait rule
+is applied to its existing compact cast when character metadata is present.
+No new tests were written for this CSS-only adjustment. Follow-up push/deployment
+is pending at this checkpoint.
