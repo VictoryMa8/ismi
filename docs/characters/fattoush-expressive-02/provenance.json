@@ -1,0 +1,120 @@
+{
+  "title": "Ismi F06.1 expressive character review 02",
+  "date": "2026-10-14",
+  "status": "Review sample only. Owner selected the least-detailed direction; production approval and integration remain separate.",
+  "authorship": {
+    "kind": "AI-generated raster concepts",
+    "tool": "OpenAI built-in image_gen",
+    "model": "Not exposed by tool",
+    "humanIllustrator": null,
+    "assembly": "ReportLab/Python compose unmodified artwork and live text; Pillow only produces QA size exports. No character paths drawn or traced."
+  },
+  "sourceAndRights": {
+    "thirdPartyIllustratorAssetsUsed": [],
+    "canvaLibraryAssetsUsed": [],
+    "canvaEducationPremiumAssetsUsed": false,
+    "claims": "Generated concepts are not represented as human-drawn, commissioned, exclusive or production-approved. No new illustrator asset license is asserted.",
+    "earlierSample": "../canva-sample-01/provenance.json retains Pablo Stanley / Open Peeps / DiceBear 10.6.0 CC0 provenance. No source artwork from that library was used in this new sample."
+  },
+  "direction": {
+    "fattoush": "Selected least-detail graphic cartoon: dark scalloped wavy hair, green overshirt, warm brown skin, gold studs.",
+    "knafeh": "Owner-requested lighter-skinned Palestinian Arab adult, straight dark side-swept hair, clean-shaven; red sweater. Appearance is individual, not a regional standard."
+  },
+  "assets": [
+    {
+      "file": "fattoush-welcoming.png",
+      "prompt": "welcomeGraphic",
+      "generationFile": "exec-c36846a3-8256-4db9-b5a8-3db624f54c8f.png",
+      "inputImages": []
+    },
+    {
+      "file": "fattoush-listening.png",
+      "prompt": "listening",
+      "generationFile": "exec-872fc041-ca71-4281-b43b-312fb9a5d4bc.png",
+      "inputImages": [
+        "fattoush-welcoming.png"
+      ]
+    },
+    {
+      "file": "fattoush-encouraging.png",
+      "prompt": "encouraging",
+      "generationFile": "exec-0808bfb4-ade6-4906-bd45-6d9734910501.png",
+      "inputImages": [
+        "fattoush-welcoming.png"
+      ]
+    },
+    {
+      "file": "lesson-coffee.png",
+      "prompt": "coffeeKnafehRevision",
+      "generationFile": "exec-ba5a35cb-b56f-493f-b7b5-76a64a2651e3.png",
+      "inputImages": [
+        "original coffee draft: exec-75fe247e-6741-42f0-a7e7-f8906b58265d.png"
+      ],
+      "initialDraftPrompt": "coffee"
+    },
+    {
+      "file": "lesson-plans.png",
+      "prompt": "plansKnafehRevision",
+      "generationFile": "exec-0972d2ef-ccca-42d0-aa2f-0a08e71a42a6.png",
+      "inputImages": [
+        "original planning draft: exec-05888284-eede-462e-879b-9dffaf2e5cae.png",
+        "lesson-coffee.png"
+      ],
+      "initialDraftPrompt": "plans"
+    }
+  ],
+  "alternates": {
+    "detailed": "alternates/welcoming-detailed.png",
+    "middle": "alternates/welcoming-middle.png",
+    "selected": "Least-detailed graphic version; owner chose it after requesting an intermediate trial."
+  },
+  "canva": {
+    "designId": "DAHYCpUzutI",
+    "editUrl": "https://www.canva.com/d/ZaRlwUi4pRg3X7R",
+    "pages": 2,
+    "import": "review-board.pdf",
+    "dimensions": [
+      2133,
+      1800
+    ],
+    "verified": "Saved design metadata, both pages, editable text and separate image fills inspected. Page 1 imported thumbnail visually inspected. No transaction edits made; inspection transaction canceled.",
+    "sizing": "Canva scaled 1600x1350 PDF points to 2133x1800 design pixels. Use local rendered PNG at 100% or review.html for exact 64/96px sizes; Canva 75% zoom is approximately the original review size."
+  },
+  "delivery": {
+    "local": true,
+    "committed": false,
+    "pushed": false,
+    "deployed": false,
+    "appGraphicsReplaced": false,
+    "canvaSaved": true
+  },
+  "sha256": {
+    "README.md": "5336b9a3288e5c6c7c1e42b715b00930922c25b7b2b77879efd4e7b54f67bb7c",
+    "alternates/encouraging-graphic.png": "a8dd8f42c39f734147f6d338decf115fde888cc45a3241f4cc2086e32b71dc82",
+    "alternates/listening-graphic.png": "5d756bc7104b9014b488751b97671dd1522d19b00f7c582f22a70de2d4663f69",
+    "alternates/welcoming-detailed-64.png": "51d46f08827418a1dfd02cdc967ef4b78ef0bb1b3c8b2667307d0c06b4f7efb8",
+    "alternates/welcoming-detailed-96.png": "3651daa47603c21e85fcb5ff2ea9b758368fbe8747b1020a40b32c5cfce74ca6",
+    "alternates/welcoming-detailed.png": "76a2e1d1574cf14e961f2c437d330ab39932c29999fafce00e72420c2ac941cc",
+    "alternates/welcoming-graphic-64.png": "41f0c47b7e81debeb004f96fef7f9a687a5b58aa3e26bb3c3bc7e97285ded350",
+    "alternates/welcoming-graphic-96.png": "676ee20d66a358e05c53f45671a8c890fb7f7e3154e84e85cabd3ea30846824b",
+    "alternates/welcoming-graphic.png": "b957b2af80fe7cb1f2aac326ac8955d275502663e934f690e7b7318ac46e4f34",
+    "alternates/welcoming-middle.png": "73dbd6ba67fc09fb7850783435aad60dbd97cb932f46439ecfc3c4e4cf02a5a8",
+    "build_review.py": "a953b1ad042e862844f4f48e6d65f53b9628dc71d817eebe33883c3365cc0ff8",
+    "fattoush-encouraging-64.png": "5afbe0944a4dddc27aba3fef3cbc9ba99d92e00d1318f700bf7b75c3a617720c",
+    "fattoush-encouraging-96.png": "c22c8e6418f5416749b8909232e6dff7d91a8772c93b71e1097a479e4b3ca4f2",
+    "fattoush-encouraging.png": "a8dd8f42c39f734147f6d338decf115fde888cc45a3241f4cc2086e32b71dc82",
+    "fattoush-listening-64.png": "28aed60944b55cd35acfde8800ec0785e6470565b350fe58e25d6d8bc0c2c32d",
+    "fattoush-listening-96.png": "06e27adee742bae0823df920b87416f79173a75980f727a04fb232dfa7e9cac2",
+    "fattoush-listening.png": "5d756bc7104b9014b488751b97671dd1522d19b00f7c582f22a70de2d4663f69",
+    "fattoush-welcoming-64.png": "41f0c47b7e81debeb004f96fef7f9a687a5b58aa3e26bb3c3bc7e97285ded350",
+    "fattoush-welcoming-96.png": "676ee20d66a358e05c53f45671a8c890fb7f7e3154e84e85cabd3ea30846824b",
+    "fattoush-welcoming.png": "b957b2af80fe7cb1f2aac326ac8955d275502663e934f690e7b7318ac46e4f34",
+    "lesson-coffee.png": "1d3b1ae9b591909e1aa5b935a3410c87bcee4a8ffad757b09b1e069e97051675",
+    "lesson-plans.png": "203dde2db4bae118cd043611056197baa78fb5c63dcb91e4c51696af155ec603",
+    "prompts.json": "9f84880f1eac0324d1fa9687e8f48b6e6e37aee0a94f5a96fedd58315fe113bf",
+    "review-board-1.png": "08e6cc58221f2ee0c29f4fb2284fdf2e72809f0b7e7ae3a937d2333e8ca6b9ef",
+    "review-board-2.png": "357b5c8e6c58c58a4080d7fd8a85efc4032da09966370f8a9cc181c3c0fcaae0",
+    "review-board.pdf": "80eb21dcfd4da39afb2a7fbfaa277102caa4eddc84b33cfbd714a102c6db5195",
+    "review.html": "90fa25d8761d823aac30507744b1b43071326a543c36f55494d6018e43b3550f"
+  }
+}

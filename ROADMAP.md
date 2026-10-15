@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 13, 2026 · **Start here for current feature status.**
+Updated October 14, 2026 · **Start here for current feature status.**
 
 This is the single current plan. [AGENTS.md](AGENTS.md) holds product constraints;
 [the planning workflow](docs/planning-workflow.md) explains how agents maintain
@@ -130,8 +130,9 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F03](#f03-levantine-curriculum-console) | Levantine curriculum console | Done | Broader content operations remain in F13/F14/F18 |
 | [F04](#f04-first-unit-guided-teaching-packages) | First-unit guided teaching packages | Done | Authored packages; publication belongs to F08 |
 | [F05](#f05-manual-review-and-checkpoints) | Manual review and checkpoints | Done | Scheduling belongs to F10; history stays on device |
-| [F06](#f06-recurring-character-support) | Recurring character support | Done | v1 approved under F08; proposed redesign belongs to F06.1 |
-| [F06.1](#f061-character-art-redesign) | Character art redesign | Active · Canva sample | One character in three expressions and two matching lesson pictures for review |
+| [F06](#f06-recurring-character-support) | Recurring character support | Done | Portrait behavior retained; current local artwork is F06.1.1 |
+| [F06.1](#f061-character-art-redesign) | Character art redesign | Active · art integrated locally | F06.1.1 complete; broader profile/turnaround views remain |
+| [F06.1.1](#f0611-selected-art-integration) | Selected art integration | Done · rollout active | Owner authorized push/deploy; verify Vercel release and live art |
 | [F07](#f07-landing-page-and-app-welcome) | Landing page and app welcome | Done | Deployed; invitation gate belongs to F18 |
 | [F08](#f08-first-unit-revision-release) | First-unit revision release | Done | All seven hosted v2 lessons and 52 source records verified |
 | [F09](#f09-reviewed-levantine-recordings) | Reviewed Levantine recordings | Needs input | Actual recordings, permissions and review |
@@ -283,30 +284,59 @@ Narrative expansion and final art/package approval are outside this implementati
 
 ### F06.1 Character art redesign
 
-**Status:** Active — October 13 owner authorized a Canva sample: one character in
-three expressions and two matching lesson pictures. The October 8 rejection of
-programmatically drawn SVG character studies still applies.
-**Current scope:** prepare a reviewable Canva illustration sample with recorded
-asset sources and a portrait-size comparison before any replacement integration.
+**Status:** Active — selected art integrated locally under completed F06.1.1 on
+October 14; the broader profile/turnaround scope remains unmade. The owner selected
+the least-detailed cartoon treatment, specified Knafeh as a lighter-skinned Palestinian
+Arab man with straight hair and no facial hair, then authorized use in the app.
+The October 8 rejection of custom SVG-path character studies still applies.
+**Current scope delivered:** review sample, seven matching app portrait states,
+coffee/planning scenes and local integration with mobile/desktop, failure fallback,
+decorative accessibility and real offline checks. The owner subsequently authorized
+commit, push and deployment; frontend rollout is in progress. Curriculum publication
+is outside this artwork release.
 **Outcome:** distinctive Fattoush/Knafeh designs with consistent, intentionally drawn
 expressions; F06's working portrait system remains complete.
-**Current result:** studies 01 and 02 are rejected historical comparisons; neither
-is a candidate for integration. No further SVG-path character generation is planned.
-**Next decision:** select a different art route. Recommend a character illustrator,
-chosen from actual finished portfolio work, with a bounded two-character concept
-commission before expression/turnaround production. Alternatives: licensed cohesive
-illustration assets, or image-generation concepts guided by approved visual references.
-No commission, contact, spending or production replacement authorized.
+**Current result:** generated OpenAI image_gen raster art, explicitly attributed as
+such. `characters/v2/` preserves original v1 assets. Known v1/v2 cast metadata uses
+the selected v2 presentation without rewriting stored source records. PNG sources,
+exact prompts/hashes and conversion/layout sources are supplied; character artwork
+has no layered illustrator originals. Earlier CC0 Open Peeps and rejected studies
+remain historical; no new third-party or Canva premium assets were used.
+**Next:** profile/turnaround views remain from the broader design target; no current
+app call site requires them. Further asset production/human illustration handoff and
+any further asset production remain separate authorization scopes. The selected app
+artwork rollout is now authorized. No commission/contact/spending.
 **Done when:** owner approves the designs; editable sources, authorship/rights and hashes
 are recorded; neutral/attentive/encouraging/profile views remain consistent and legible;
 mobile/desktop, fallback and offline rendering pass with unchanged written roles.
-**Evidence:** [assessment and proposed workflow](docs/characters/redesign-direction-2026-10-08.md),
-[revised concept, editable source and verification](docs/characters/vector-concept-02/README.md).
-Local Chromium desktop/mobile renders inspected; all images load, no horizontal
-overflow, portrait sizing checked. App-level fallback/offline verification remains open.
-**Delivery:** review assets committed/pushed as historical documentation in `662d17c`;
-no app artwork replacement or content publication. Preserve v1 assets and version
-future art separately.
+**Evidence:** [revised sample, provenance, size assessment and Canva link](docs/characters/fattoush-expressive-02/README.md),
+[app integration, sources and verification](docs/characters/app-art-v2/README.md),
+[earlier Open Peeps sample](docs/characters/canva-sample-2026-10-13.md),
+[historical assessment](docs/characters/redesign-direction-2026-10-08.md).
+**Delivery:** review sample saved separately in Canva; new app art/code/docs are local
+and uncommitted. Original art preserved; selected v2 is now the local app presentation.
+No push, deployment or content publication. Broader real-device/assistive-technology
+release gates remain under F18. Historical review assets were
+committed/pushed in `662d17c`; preserve v1 assets and version future art separately.
+
+### F06.1.1 Selected art integration
+
+**Status:** Done — October 14, 2026, locally.
+**Scope delivered:** neutral/attentive/encouraging portraits for both characters,
+welcoming Fattoush, oval coffee landing hero, relevant planning introductions,
+welcome/console rendering, supported older cast metadata and offline precaching.
+Written roles, recall hiding, retries and fixed lesson frame remain intact.
+**Done when:** selected artwork serves existing app roles, originals remain preserved,
+sources/hashes are recorded, mobile/desktop and image-failure checks pass, and older
+downloaded packages plus every new art file work through a real offline reload.
+All these bounded criteria are met; unused profile/turnaround views stay in F06.1.
+**Evidence:** [implementation, 23 focused browser checks and screenshots](docs/characters/app-art-v2/README.md).
+Production build passes. Thirteen landing/welcome, three lesson-frame and seven
+character checks pass across final runs; all ten v2 assets fetch offline.
+**Next/delivery:** owner authorized commit/push/deployment on October 14; rollout
+is in progress through the existing main-to-Vercel integration. Verify the exact
+deployment revision and live artwork before claiming delivery. Backend/content
+remain at their previous release versions.
 
 ### F07 Landing page and app welcome
 
@@ -1393,6 +1423,15 @@ committed without agreed scope, content/reviewer availability and measured first
 
 ## Recent planning changes
 
+- **October 14, 2026 F06.1:** completed the revised three-state/two-scene sample.
+  Owner selected the least-detail cartoon direction and revised Knafeh's appearance.
+  Subsequently authorized app integration: F06.1.1 is complete locally with seven
+  portraits, two scenes, versioned sources and retained originals. Build and 23 focused
+  checks pass, including all ten assets offline. Profile views remain in the parent;
+  no commit, push, deployment, purchase, contact or curriculum publication.
+  [Sample](docs/characters/fattoush-expressive-02/README.md),
+  [integration evidence](docs/characters/app-art-v2/README.md).
+
 - **October 13, 2026 F17.6:** owner authorized implementation and approved the
   independent first-response / distinct-situation / 24-hour due-review policy. Three
   can-do cards and an optional versioned outcome achievement are complete/deployed;
@@ -1417,12 +1456,6 @@ committed without agreed scope, content/reviewer availability and measured first
   32 API tests and eight F22 checks passed. At that checkpoint API/content rollout
   awaited reusable credentials. Prepared tested terminal alwaysdata deployment tooling.
   [Feature evidence](docs/recall-and-recombine.md), [deployment workflow](deploy/README.md).
-
-- **October 12, 2026 F17.7:** owner authorized implementation and selected the habit
-  policy; independent weekly quests/streaks work with available activities, free grace
-  and offline/identity isolation. Build and 29 distinct targeted checks pass across
-  focused runs. `5aec0ec` pushed/deployed; live controls/path/persistence verified.
-  [Implementation](docs/weekly-learning-habits.md), [rollout](docs/releases/2026-10-12-weekly-habits.md).
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

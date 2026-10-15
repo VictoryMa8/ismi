@@ -100,8 +100,8 @@ onMounted(() => {
           <div class="hero-scene">
             <img
               class="hero-art"
-              src="/landing/hero.webp"
-              srcset="/landing/hero-mobile.webp 640w, /landing/hero.webp 1200w"
+              src="/characters/v2/lesson-coffee.webp"
+              srcset="/characters/v2/lesson-coffee-mobile.webp 640w, /characters/v2/lesson-coffee.webp 1200w"
               sizes="(max-width: 760px) 100vw, 52vw"
               width="1200"
               height="800"

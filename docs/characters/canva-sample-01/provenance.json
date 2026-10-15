@@ -1,0 +1,32 @@
+{
+  "source": "https://cdn.hopjs.net/npm/@dicebear/styles@10.6.0/dist/open-peeps.min.json",
+  "original_artist": "Pablo Stanley",
+  "original_library": "https://www.openpeeps.com/",
+  "remix_documentation": "https://www.dicebear.com/styles/open-peeps/",
+  "license": "CC0-1.0",
+  "retrieved": "2026-10-14",
+  "assembly": "Existing illustrator character paths assembled and recolored; simple scene props and board layout composed for this review. No image generation.",
+  "files": {
+    "assemble.py": "04077d5134ea15c720c1cdc72aba5decb4130add08ea3d6eb82af73210a7005b",
+    "canva-preview.png": "fea260c5e3710432a5e079c6a3e124930354b5a9721542c614d5c29ba5dd03a6",
+    "fattoush-calm-64.png": "12e65f6613c11d9fe95e04c4e6134a310c8f92c0efd1e677fb2492f56e7912e1",
+    "fattoush-calm-96.png": "83001a6bad0eb2673c11acabb473612d73dd7b9512c26b90ebe8937dfed7bf1d",
+    "fattoush-calm.png": "33061772fa78fac2d501bf5bacf367b9b355d34f7402cf12073c1ff5625b8b63",
+    "fattoush-calm.svg": "8ba6e677258882efe43ba946741e4d7ccc91e7e4dc0baeb7590b2a9662725cd7",
+    "fattoush-explaining-64.png": "6ef297d657dadd23ae54d21e23565f5dc2f777a8684ddb5ba69008656de810f7",
+    "fattoush-explaining-96.png": "f66c2c17520c0701445b600fe47df64c1727b4e5be8172b00a3e9af3c1e4ad0e",
+    "fattoush-explaining.png": "6a4c098626d649ca2544ac31e6eb9ebdac4da390ef4ab9ee8f880371dc127955",
+    "fattoush-explaining.svg": "ded9bbc4b334d5ec52c10c685fb6b1a3424154c8504a20e97e73d8d1300b9951",
+    "fattoush-smile-64.png": "c1a6fd30a61bf112f08c7c4f9d46863568e1f4e3e43adc169f9c6142b09321c7",
+    "fattoush-smile-96.png": "629cf8b85bf00055497a8eba571004b5454be096b2509adaef3faf6fb6002610",
+    "fattoush-smile.png": "d7092c67a52f7dbe6b42db01a1bd2063a6b34e75ba5cbf3b777238050ae34070",
+    "fattoush-smile.svg": "ed446b5b09dfad211ae91881924f833f9503a817783129756bb887ec100f6c67",
+    "lesson-cafe.png": "2b0cb12f6476b2e72f440d49405162177bf7ae23fffc85588225ca0d5d6ccf79",
+    "lesson-cafe.svg": "7b2e6525c28259a9e09ce909ab46b378f7abdd5436439ce63f0b5e965bedde8b",
+    "lesson-plans.png": "f37aa00fda21ee2b961ea3c48785326a8a4f6ab1675fc09b20245b24244ed555",
+    "lesson-plans.svg": "e681d41b8891fb598e053146eaaddd12a9c64b57c6d816ffed0a035d659e2345",
+    "sample-board.png": "92b5c94a445ea4d3198591ebd0c04e3c3e1fb0d7cb4803921d6445aa0cce270d",
+    "sample-board.svg": "908275bf4375d841327c872ed1ebf18b5635058780a41f4fc893c0f55cb1541e",
+    "source/open-peeps-10.6.0.json": "f0087b7b30c18340c06a0d73f8e6380044ff18417e3d5a54fcd7de743d94902a"
+  }
+}

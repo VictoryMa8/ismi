@@ -1,16 +1,17 @@
-import { readFileSync } from 'node:fs'
+import { readFileSync, readdirSync } from 'node:fs'
 import { expect, test } from '@playwright/test'
 import { finishTeaching, responseChoices } from './lesson-helpers'
 import type { LessonResponse } from '../src/types'
 
 const proposal = JSON.parse(readFileSync(new URL('../../content/levantine/everyday-01/revisions/characters/01-lesson.json', import.meta.url), 'utf8'))
+const planningProposal = JSON.parse(readFileSync(new URL('../../content/levantine/plans-02/01-lesson.json', import.meta.url), 'utf8'))
 const names: Record<string, string> = { fattoush: 'Fattoush', knafeh: 'Knafeh' }
 test.use({ serviceWorkers: 'block' })
 
 for (const imagesFail of [false, true]) {
   test(`character owner preview completes with ${imagesFail ? 'failed' : 'loaded'} portraits and unchanged recall`, async ({ page, context }, testInfo) => {
     test.setTimeout(90_000)
-    if (imagesFail) await page.route('**/characters/v1/cast.webp', route => route.abort())
+    if (imagesFail) await page.route('**/characters/v2/*.webp', route => route.abort())
     await page.emulateMedia({ reducedMotion: 'reduce' })
     await page.goto('/#/today')
     const errors: string[] = []
@@ -45,6 +46,8 @@ for (const imagesFail of [false, true]) {
       await context.setOffline(true)
     } else {
       await expect.poll(async () => dialog.locator('.character-portrait img').first().evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBeTruthy()
+      await expect(dialog.locator('.character-cast img').first()).toHaveAttribute('src', '/characters/v2/fattoush-neutral.webp')
+      await expect(dialog.locator('.dialogue-transcript .character-portrait img').first()).toHaveAttribute('src', '/characters/v2/fattoush-attentive.webp')
     }
     for (const width of [320, 1280]) {
       await page.setViewportSize({ width, height: 900 })
@@ -105,6 +108,49 @@ test('unknown character references retain authored text and usable teaching', as
   await expect(dialog.getByRole('button', { name: 'Try from memory' })).toBeEnabled()
 })
 
+for (const registryVersion of ['ismi-cast-v1', 'ismi-cast-v2']) {
+  test(`planning scene uses current artwork with ${registryVersion} metadata and stays out of recall`, async ({ page }, testInfo) => {
+    const lesson: LessonResponse = structuredClone(planningProposal.lesson)
+    lesson.id = 'levantine-day-01'
+    lesson.unitId = 'levantine-plans-02'
+    lesson.characters!.registryVersion = registryVersion
+    await page.route('**/api/lessons/levantine-day-01', route => route.fulfill({ json: lesson }))
+    await page.goto('/#/today')
+    await page.getByRole('button', { name: /Continue in Levantine/ }).click()
+    const dialog = page.getByRole('dialog')
+    const scene = dialog.locator('.lesson-scene-art')
+    await expect.poll(() => scene.evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBeTruthy()
+    await expect(scene).toHaveAttribute('src', '/characters/v2/lesson-plans.webp')
+    await expect(dialog.getByRole('img')).toHaveCount(0)
+    for (const width of [320, 1280]) {
+      await page.setViewportSize({ width, height: 900 })
+      expect(await dialog.evaluate(element => element.scrollWidth <= element.clientWidth)).toBeTruthy()
+      await expect(dialog.getByRole('button', { name: 'Learn the phrases' })).toBeInViewport()
+      await page.screenshot({ path: testInfo.outputPath(`planning-${width}.png`) })
+    }
+    await dialog.getByRole('button', { name: 'Learn the phrases' }).click()
+    await expect(scene).toHaveCount(0)
+    await dialog.getByRole('button', { name: 'Try from memory' }).click()
+    await expect(scene).toHaveCount(0)
+    await expect(dialog.locator('.phrase-spotlight')).toHaveCount(0)
+  })
+}
+
+test('failed planning illustration preserves scene text and lesson navigation', async ({ page }) => {
+  const lesson: LessonResponse = structuredClone(planningProposal.lesson)
+  lesson.id = 'levantine-day-01'
+  lesson.unitId = 'levantine-plans-02'
+  await page.route('**/api/lessons/levantine-day-01', route => route.fulfill({ json: lesson }))
+  await page.route('**/characters/v2/lesson-plans.webp', route => route.abort())
+  await page.goto('/#/today')
+  await page.getByRole('button', { name: /Continue in Levantine/ }).click()
+  const dialog = page.getByRole('dialog')
+  await expect(dialog.locator('.lesson-scene-art')).toHaveCount(0)
+  await expect(dialog.locator('.coach-context')).toHaveText(lesson.scenario)
+  await dialog.getByRole('button', { name: 'Learn the phrases' }).click()
+  await expect(dialog.getByRole('button', { name: 'Try from memory' })).toBeEnabled()
+})
+
 test.describe('legacy offline compatibility', () => {
   test.use({ serviceWorkers: 'allow' })
 
@@ -147,5 +193,13 @@ test('legacy downloaded character packages use current names after offline reloa
   await expect(dialog.locator('.character-label strong').first()).toHaveText('Fattoush → Knafeh')
   await expect(dialog).not.toContainText(/Lina|Omar/)
   await expect(dialog.locator('.character-portrait img').first()).toBeVisible()
+  await expect.poll(() => dialog.locator('.character-portrait img').first().evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0)).toBeTruthy()
+  await expect(dialog.locator('.character-cast img').first()).toHaveAttribute('src', '/characters/v2/fattoush-neutral.webp')
+  await expect(dialog.locator('.dialogue-transcript .character-portrait img').first()).toHaveAttribute('src', '/characters/v2/fattoush-attentive.webp')
+  const assets = readdirSync(new URL('../public/characters/v2/', import.meta.url)).filter(name => name.endsWith('.webp'))
+  expect(await page.evaluate(async names => Promise.all(names.map(async name => {
+    const response = await fetch(`/characters/v2/${name}`)
+    return response.ok && (await response.arrayBuffer()).byteLength > 0
+  })), assets)).toEqual(assets.map(() => true))
 })
 })

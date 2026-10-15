@@ -13,12 +13,15 @@ import LessonStages from './LessonStages.vue';
 import LessonScroll from './LessonScroll.vue';
 import CharacterCast from './CharacterCast.vue';
 import CharacterLabel from './CharacterLabel.vue';
+import { lessonScene } from './characters';
 
 const props = defineProps<{ lesson: LessonResponse; review: boolean; startCardIndex?: number }>();
 const emit = defineEmits<{ done: [] }>();
 const stage = ref<'scene' | 'learn' | 'recall' | 'pattern'>('scene');
 const index = ref(0);
 const revealed = ref(false);
+const sceneSource = computed(() => lessonScene(props.lesson));
+const sceneFailed = ref(false);
 const heading = ref<HTMLElement | null>(null);
 const cards = computed<LessonTeachingCard[]>(() => {
   if (props.lesson.introduction?.teachingCards?.length)
@@ -124,6 +127,7 @@ async function back() {
               {{ lesson.introduction?.goal ?? lesson.title }}
             </h3>
             <p class="coach-context">{{ lesson.scenario }}</p>
+            <img v-if="sceneSource && !sceneFailed" class="lesson-scene-art" :src="sceneSource" alt="" aria-hidden="true" width="960" height="640" @error="sceneFailed = true" />
             <CharacterCast :cast="lesson.characters" />
             <ol
               v-if="lesson.introduction"

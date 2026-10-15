@@ -24,7 +24,7 @@ export default defineConfig({
     },
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['ismi-mark.svg', 'characters/v1/*.webp'],
+      includeAssets: ['ismi-mark.svg', 'characters/v1/*.webp', 'characters/v2/*.webp'],
       workbox: { globIgnores: ['landing/**', 'og.png'] },
       manifest: {
         name: 'Ismi — Arabic for the conversations that matter',

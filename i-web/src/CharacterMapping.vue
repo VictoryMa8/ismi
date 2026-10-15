@@ -3,9 +3,10 @@ import { computed } from 'vue';
 import {
   character,
   characterName,
-  characterRegistryVersion,
+  supportsCharacterRegistry,
 } from './characters';
 import CharacterCast from './CharacterCast.vue';
+import CharacterPortrait from './CharacterPortrait.vue';
 import type { LessonResponse } from './types';
 const props = defineProps<{ lessonJson: string }>();
 const preview = computed(() => {
@@ -28,7 +29,7 @@ const preview = computed(() => {
         warnings.push('Speaker and addressee must differ.');
       return `${characterName(speaker)} → ${characterName(addressee)}`;
     }
-    if (cast && cast.registryVersion !== characterRegistryVersion)
+    if (cast && !supportsCharacterRegistry(cast.registryVersion))
       warnings.push('Unknown character registry version.');
     for (const id of cast?.characterIds ?? [])
       if (!character(id)) warnings.push(`Unknown cast ID: ${id}`);
@@ -116,17 +117,19 @@ const preview = computed(() => {
       </details>
     </template>
     <details class="character-design-review">
-      <summary>Fattoush and Knafeh · proposed character designs</summary>
+      <summary>Fattoush and Knafeh · current character artwork</summary>
       <p>
-        Flat corporate cartoon treatment. Fattoush above, Knafeh below: neutral,
-        attentive, encouraging, profile. Final designs await owner selection.
+        Owner-selected generated artwork. Fattoush has dark wavy hair and green
+        clothing; Knafeh has lighter skin, straight hair and a clean-shaven face.
+        Neutral, attentive and encouraging portraits appear below.
       </p>
-      <img
-        src="/characters/v1/cast.webp"
-        alt="Two rows of adult cartoon portraits: Fattoush with wavy hair and a green shirt; Knafeh with curly hair, a beard and a terracotta shirt. Each row shows neutral, attentive, encouraging and profile views."
-        width="1536"
-        height="1024"
-      />
+      <div v-for="id in ['fattoush', 'knafeh']" :key="id" class="character-art-states">
+        <strong>{{ characterName(id) }}</strong>
+        <span v-for="expression in (['neutral', 'attentive', 'encouraging'] as const)" :key="expression">
+          <CharacterPortrait :character-id="id" :expression="expression" />
+          {{ expression }}
+        </span>
+      </div>
     </details>
   </section>
 </template>

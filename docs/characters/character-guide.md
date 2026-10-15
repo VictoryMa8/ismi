@@ -3,6 +3,27 @@
 Current feature status and next actions live in [the roadmap](../../ROADMAP.md#f06-recurring-character-support).
 This file supplies design/implementation evidence; historical checks are dated checkpoints.
 
+## Current artwork / October 14, 2026
+
+The owner selected the least-detailed simple cartoon direction and authorized app
+integration. [v2 artwork, state mapping, provenance and verification](app-art-v2/README.md)
+are now the current local implementation. Fattoush has dark wavy hair and green
+clothing. Knafeh is a lighter-skinned Palestinian Arab man with straight dark hair
+and no facial hair, per the owner's representation brief. Both are individual
+fictional adults, not regional appearance standards.
+
+Neutral, attentive and encouraging portraits serve the existing roles; welcoming
+Fattoush is reserved for onboarding. Encouragement remains the same after either a
+correct or incorrect attempt. Decorative scene illustrations appear only before
+teaching, never as recall/grading cues. Written names/roles remain authoritative.
+
+New assets live under `characters/v2/`, with v1 bytes retained. The current client
+explicitly presents the approved appearance for known v1/v2 cast metadata without
+rewriting published/downloaded source records. Unknown registries retain fallbacks.
+All new assets are precached. The integration is local, uncommitted and undeployed.
+
+## Historical v1 baseline
+
 October 1, 2026. Implementation proposal, incorporating the owner's direction:
 “cartoonish, like kind of corporate artish.” Final character selection and
 curriculum publication remain owner decisions.

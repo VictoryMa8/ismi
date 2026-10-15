@@ -1,0 +1,135 @@
+{
+  "date": "2026-10-14",
+  "registry": "ismi-cast-v2",
+  "ownerAuthorization": "Use this in the app now; selected simple cartoon direction, including lighter-skinned Palestinian Arab Knafeh with straight hair and no facial hair.",
+  "authorship": "Generated with built-in OpenAI image_gen. No human illustrator attribution. Exact model not exposed by tool.",
+  "rights": "No third-party illustrator or Canva premium assets used. Generated raster source, not a layered illustrator original or an exclusivity claim.",
+  "previousSample": "../fattoush-expressive-02/provenance.json",
+  "additionalGenerationFiles": {
+    "fattoush-neutral": "exec-c97c1935-d763-4253-92ac-2ebaa40d0353.png",
+    "knafeh-neutral": "exec-5209c851-87be-42f1-874e-931486a2d737.png",
+    "knafeh-attentive": "exec-a9375515-6841-4a26-a6d5-4170a90eaec9.png",
+    "knafeh-encouraging": "exec-4d386667-1d4f-4834-a773-48ffe378dceb.png"
+  },
+  "additionalPrompts": "prompts.json",
+  "processing": "build_assets.mjs: format conversion/downsampling only. Portraits 512x512 WebP q88; coffee 1200x800 q86 / 640px q84; plans 960x640 q86.",
+  "contentCompatibility": "v1 and v2 named cast metadata use the owner-selected v2 presentation in this client. Stored/downloaded source metadata and published snapshots are not rewritten. Unsupported registries retain textual roles and placeholders.",
+  "preservedV1Sha256": "f8fe3c69f4af3621a117be1ee1439d3d885af2e115d3a740f2c8d5b4cd286759",
+  "sourceArtwork": {
+    "fattoush-neutral": "docs/characters/app-art-v2/fattoush-neutral.png",
+    "fattoush-attentive": "docs/characters/fattoush-expressive-02/fattoush-listening.png",
+    "fattoush-encouraging": "docs/characters/fattoush-expressive-02/fattoush-encouraging.png",
+    "fattoush-welcoming": "docs/characters/fattoush-expressive-02/fattoush-welcoming.png",
+    "knafeh-neutral": "docs/characters/app-art-v2/knafeh-neutral.png",
+    "knafeh-attentive": "docs/characters/app-art-v2/knafeh-attentive.png",
+    "knafeh-encouraging": "docs/characters/app-art-v2/knafeh-encouraging.png",
+    "lesson-coffee": "docs/characters/fattoush-expressive-02/lesson-coffee.png",
+    "lesson-plans": "docs/characters/fattoush-expressive-02/lesson-plans.png"
+  },
+  "files": {
+    "docs/characters/app-art-v2/build_assets.mjs": {
+      "sha256": "012656a17c89a802ff0282324b288f975ddd6197b728b67a4812b9abfef91020",
+      "bytes": 1530
+    },
+    "docs/characters/app-art-v2/fattoush-neutral.png": {
+      "sha256": "095475272fc4ec6d846cd2b2e4fd43c81579afd35b905e36f7196ab8c3f64eae",
+      "bytes": 1447745
+    },
+    "docs/characters/app-art-v2/knafeh-attentive.png": {
+      "sha256": "4347fea26a4da9ca0ca07f772474f6e46c73e5e90008109a05c3f02f2f62601f",
+      "bytes": 1441330
+    },
+    "docs/characters/app-art-v2/knafeh-encouraging.png": {
+      "sha256": "863712d2990fe37cbab8ce2b433d690a47afe066bad8c3a0097af8c9d5a3624a",
+      "bytes": 1512817
+    },
+    "docs/characters/app-art-v2/knafeh-neutral.png": {
+      "sha256": "8d517bca3572054442ffdaf77f0c6c753e7e651acd1899b7eaffe8f73604694a",
+      "bytes": 1472459
+    },
+    "docs/characters/app-art-v2/prompts.json": {
+      "sha256": "22e7845029bc80206dde8ca5ddd73eb2e3fdc374b529c92329430ab44e5a2db3",
+      "bytes": 4762
+    },
+    "docs/characters/fattoush-expressive-02/fattoush-encouraging.png": {
+      "sha256": "a8dd8f42c39f734147f6d338decf115fde888cc45a3241f4cc2086e32b71dc82",
+      "bytes": 1446865
+    },
+    "docs/characters/fattoush-expressive-02/fattoush-listening.png": {
+      "sha256": "5d756bc7104b9014b488751b97671dd1522d19b00f7c582f22a70de2d4663f69",
+      "bytes": 1410839
+    },
+    "docs/characters/fattoush-expressive-02/fattoush-welcoming.png": {
+      "sha256": "b957b2af80fe7cb1f2aac326ac8955d275502663e934f690e7b7318ac46e4f34",
+      "bytes": 1275820
+    },
+    "docs/characters/fattoush-expressive-02/lesson-coffee.png": {
+      "sha256": "1d3b1ae9b591909e1aa5b935a3410c87bcee4a8ffad757b09b1e069e97051675",
+      "bytes": 1481459
+    },
+    "docs/characters/fattoush-expressive-02/lesson-plans.png": {
+      "sha256": "203dde2db4bae118cd043611056197baa78fb5c63dcb91e4c51696af155ec603",
+      "bytes": 1528871
+    },
+    "i-web/public/characters/v2/fattoush-attentive.webp": {
+      "sha256": "877b08279a9b66ed5049afe42458cdda2a46ba77a6248f432b96937d3df724ae",
+      "bytes": 15608
+    },
+    "i-web/public/characters/v2/fattoush-encouraging.webp": {
+      "sha256": "c0f26be70b003835d2466ecf5c3b22c90912717c52ad675c08b42346ddce6ee1",
+      "bytes": 17766
+    },
+    "i-web/public/characters/v2/fattoush-neutral.webp": {
+      "sha256": "dd04d4424a1efbae29e2ebef3c5779d215ccd4f16ace1f9fabb50f53f53ace7f",
+      "bytes": 14610
+    },
+    "i-web/public/characters/v2/fattoush-welcoming.webp": {
+      "sha256": "3f1b77fd93c482981cc4c31f3f9dba41082135eb749733c5109c77120c48016c",
+      "bytes": 16696
+    },
+    "i-web/public/characters/v2/knafeh-attentive.webp": {
+      "sha256": "e1215badc42d775a6b007151a5e067ce837d58fe8bd3ddcdeac41ff15d2244f9",
+      "bytes": 13440
+    },
+    "i-web/public/characters/v2/knafeh-encouraging.webp": {
+      "sha256": "17e9474acf7d4304edb43e20dd731db2b38803193f2b3da31f932499dfd0115a",
+      "bytes": 16294
+    },
+    "i-web/public/characters/v2/knafeh-neutral.webp": {
+      "sha256": "9ea6b662b0240cc713a2a88268dd984dc9c13833709c0246a6434682e631905f",
+      "bytes": 13206
+    },
+    "i-web/public/characters/v2/lesson-coffee-mobile.webp": {
+      "sha256": "67b351eeea290c1e2dbb7c8e54778594a7e44fe7f58248f67624dda2e189a6a6",
+      "bytes": 26610
+    },
+    "i-web/public/characters/v2/lesson-coffee.webp": {
+      "sha256": "f35b0eb60c51c2959ee84edf131e5b1c9bf020f6c05b930f0985d2742a64ed83",
+      "bytes": 57158
+    },
+    "i-web/public/characters/v2/lesson-plans.webp": {
+      "sha256": "a6f3bc25a26cb8df437d3e16ca07c71bf89697382e56c3bcdc0a89b1d37251a5",
+      "bytes": 43178
+    },
+    "docs/characters/app-art-v2/README.md": {
+      "sha256": "a382da3b1435540cc99403b22c1765fe98e141d25a978e96cc4bd315c35ab38a",
+      "bytes": 6047
+    },
+    "docs/characters/app-art-v2/screenshots/characters-desktop.png": {
+      "sha256": "e841aa1ce419689c54099ef93c136a65da9f01aefe5b884400656ae2417d356a",
+      "bytes": 496309
+    },
+    "docs/characters/app-art-v2/screenshots/mistake-feedback.png": {
+      "sha256": "6927b89102f93ddc659b5765c7ce57991e25fb149d2b58e37924751db5e78be0",
+      "bytes": 470122
+    },
+    "docs/characters/app-art-v2/screenshots/planning-desktop.png": {
+      "sha256": "9493f46d284a057a5c081977cd100addde65db2efe2946eacb2dfe6012643259",
+      "bytes": 860052
+    },
+    "docs/characters/app-art-v2/screenshots/planning-mobile.png": {
+      "sha256": "0188cec1f23c328d86babe2d79252cf5eebfc90e983bf749a7ead36e04309434",
+      "bytes": 465394
+    }
+  }
+}

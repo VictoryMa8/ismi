@@ -19,7 +19,7 @@ for (const width of [320, 390, 768, 1440]) {
       const size = await portrait.boundingBox()
       expect(Math.abs(size!.width - size!.height)).toBeLessThan(1)
       const ratio = await portrait.locator('img').evaluate(img => img.getBoundingClientRect().width / img.getBoundingClientRect().height)
-      expect(ratio).toBeCloseTo(2, 1)
+      expect(ratio).toBeCloseTo(1, 1)
     }
     const heroFrame = await page.locator('.hero-art').evaluate(el => {
       const style = getComputedStyle(el);

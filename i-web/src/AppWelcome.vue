@@ -81,7 +81,7 @@ onBeforeUnmount(() => {
     </header>
     <div class="welcome-art" :class="`welcome-art-${index}`" aria-hidden="true">
       <template v-if="index === 0">
-        <CharacterPortrait character-id="fattoush" expression="attentive" />
+        <CharacterPortrait character-id="fattoush" expression="welcoming" />
         <span class="welcome-art-icon"
           ><component :is="card.icon" :size="36"
         /></span>
