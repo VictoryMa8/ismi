@@ -175,5 +175,5 @@ report-data retention policy was introduced.
 No content is approved or published in the actual database. The owner authorized
 push and application deployment on October 15, followed by reusable alwaysdata
 credential setup. Frontend `c366a8d` is pushed/Vercel Ready and its route is verified;
-API deployment awaits owner 2FA/token and protected SSH setup. See the
+API token and protected SSH key are verified; public-key registration and API deployment remain. See the
 [rollout record](releases/2026-10-15-cultural-media.md). No spending or creator contact is authorized or performed.

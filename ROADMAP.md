@@ -44,8 +44,8 @@ Arabic with explicit dialect/register labels. Four research drafts are imported
 locally; no actual media is approved/published. Build, 37 API tests and final 21
 focused browser checks pass; initial broad run was 106/107 with a recall focus race
 subsequently fixed. [Behavior and evidence](docs/cultural-watch-listen.md).
-Frontend `c366a8d` is pushed/Vercel Ready; API deployment awaits owner 2FA/token
-and passphrase-protected SSH setup. Real media/access/editorial, AT and content
+Frontend `c366a8d` is pushed/Vercel Ready; API token and protected SSH key are configured; public-key registration and API
+deployment remain. Real media/access/editorial, AT and content
 publication remain open. [Rollout evidence](docs/releases/2026-10-15-cultural-media.md).
 
 **October 12 planned additions:** the owner selected research priorities 1, 2, 4,
@@ -171,7 +171,7 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
 | [F20.1](#f201-learned-words-page-and-account-spacing) | Learned words page and Account spacing | Done · deployed | Separate glossary route and Account gaps verified on Vercel |
 | [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
-| [F21](#f21-cultural-watch-and-listen-recommendations) | Cultural watch/listen recommendations | Active · frontend deployed | Finish API credentials/deployment; media/access/AT review remains |
+| [F21](#f21-cultural-watch-and-listen-recommendations) | Cultural watch/listen recommendations | Active · frontend deployed | Register public SSH key/deploy API; media/access/AT review remains |
 | [F21.1](#f211-curation-and-first-four-collections) | Curation and first four collections | Active · four research drafts | Resolve playback/runtime/access/support and editorial gaps |
 | [F21.2](#f212-media-catalog-and-publication-console) | Media catalog and publication console | Done · API rollout pending | Owner-only versioned workflow, Monday UTC selection and audit verified |
 | [F21.3](#f213-learner-collections-and-offline-metadata) | Learner collections and offline metadata | Done · frontend deployed | Three cards/archive, safe links and atomic offline snapshots verified |
@@ -953,7 +953,7 @@ approval. No new provider, spending or creator contact is required by this softw
 [content sources and exact review gaps](content/culture/README.md),
 [original detailed plan](docs/cultural-watch-listen-plan.md).
 **Delivery:** application `c366a8d` pushed; frontend Vercel Ready and route verified.
-API deployment awaits owner 2FA/token and protected SSH key setup.
+API token and protected SSH key are verified; public-key registration and API deployment remain.
 [Rollout evidence](docs/releases/2026-10-15-cultural-media.md). Four v1 drafts remain in the local SQLite database;
 all 12 non-media tables retain identical logical row hashes/counts. No actual media
 approval/publication or completed API deployment yet. Build and all 37 API tests
@@ -1024,14 +1024,14 @@ Local software only; no real curation cycle or hosted operational claim.
 **Status:** Active — local software checks complete; real content/accessibility/release gates open.
 **Next:** inspect actual media/support, run real AT/supported-device checks, complete
 owner review of exact revisions, then publish only with exact approval. Complete the
-already-authorized API rollout after owner credential setup.
+already-authorized API rollout after registering the prepared public SSH key.
 **Done when:** the complete acceptance matrix has real-source/AT evidence, exact first
 edition approval/publication and authorized web/API rollout/preservation/rollback records.
 **Depends on:** F21.1/F21.4 completion and exact owner publication approval; application rollout is authorized.
 **Evidence:** [full flow and exact test results](docs/cultural-watch-listen.md#verification-on-october-15).
 37 API tests passed; 106/107 initial broad browser checks, then 21/21 final focused
 checks after a recall focus-return race fix. Source checks and automated tests differ.
-**Delivery:** frontend `c366a8d` deployed; API pending owner credential setup. No actual
+**Delivery:** frontend `c366a8d` deployed; API pending public SSH key registration. No actual
 content approval/publication. [Rollout evidence](docs/releases/2026-10-15-cultural-media.md).
 
 ### F22 Recall and recombine
@@ -1555,7 +1555,7 @@ committed without agreed scope, content/reviewer availability and measured first
   four research drafts imported with explicit blocking media checks. Build/37 API
   tests and final 21 focused browser checks pass; found recall focus race fixed.
   [Behavior/evidence](docs/cultural-watch-listen.md). Real content/AT review and release
-  remain open; frontend `c366a8d` is deployed, API awaits owner credential setup.
+  remain open; frontend `c366a8d` is deployed, API awaits public SSH key registration.
   No actual content published. [Rollout](docs/releases/2026-10-15-cultural-media.md).
 
 - **October 15, 2026 F06.1.1:** original art release `03bc3b8` is deployed and
