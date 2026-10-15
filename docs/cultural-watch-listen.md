@@ -168,11 +168,12 @@ F21.2/F21.3's local software scope is implemented. F21.1 stays open for actual
 playback/metadata/access/editorial checks, and F21.4 still needs a real editorial
 cycle using accepted replacement content. F21.5 remains open for real
 assistive-technology/supported-device checks, exact owner content approval and
-publication, and separately authorized web/API rollout with hosted preservation
+publication, and completion of the authorized API rollout with hosted preservation
 and rollback evidence. Optional learner issue submission is deferred; no unagreed
 report-data retention policy was introduced.
 
 No content is approved or published in the actual database. The owner authorized
 push and application deployment on October 15, followed by reusable alwaysdata
-credential setup. Rollout is in progress; actual delivery evidence will be recorded
-separately. No spending or creator contact is authorized or performed.
+credential setup. Frontend `c366a8d` is pushed/Vercel Ready and its route is verified;
+API deployment awaits owner 2FA/token and protected SSH setup. See the
+[rollout record](releases/2026-10-15-cultural-media.md). No spending or creator contact is authorized or performed.
