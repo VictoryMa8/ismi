@@ -103,6 +103,7 @@ test('console recording publication downloads audio and plays after offline relo
     await page.getByRole('button', { name: 'Close lesson' }).click()
     expect(await page.evaluate(() => (window as unknown as { testAudio: HTMLAudioElement }).testAudio.paused)).toBe(true)
     await page.getByRole('link', { name: 'Practice', exact: true }).click()
+    await page.getByRole('link', { name: /^Review,/ }).click()
     await page.getByRole('button', { name: 'Mixed review' }).click()
     const review = page.getByRole('dialog', { name: 'Mixed review' })
     await review.getByText('Recording transcript and source', { exact: true }).click()

@@ -169,7 +169,7 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
 <style scoped>
 .glossary { margin: 1.5rem 0; padding: 1.2rem; border: 1px solid var(--border, #c9cec8); border-radius: 1rem; background: #fff; color: #202820; }
 .glossary h1 { margin-top: 0; }
-.glossary-filters { display: flex; flex-wrap: wrap; gap: .75rem; }
+.glossary-filters { display: flex; flex-wrap: wrap; gap: .75rem; position: sticky; top: 0; z-index: 2; background: #fff; padding-bottom: .35rem; }
 .glossary-filters label { display: grid; gap: .35rem; font-weight: 600; flex: 1 1 10rem; min-width: 0; }
 .glossary-search { flex-basis: 100% !important; }
 .glossary input, .glossary select { width: 100%; min-width: 0; padding: .65rem; border: 1px solid #657465; border-radius: .4rem; background: #fff; color: #202820; font: inherit; }

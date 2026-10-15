@@ -11,7 +11,7 @@ for (const width of [320, 390, 768, 1280]) {
     const nav = page.getByRole('navigation', { name: width > 900 ? 'Primary navigation' : 'Mobile navigation' })
     // Desktop uses an aside landmark containing its navigation.
     const links = width > 900 ? page.getByRole('complementary', { name: 'Primary navigation' }) : nav
-    for (const name of ['Courses', 'Practice', 'Account', 'Today']) {
+    for (const name of ['Courses', 'Practice', 'Progress', 'Words']) {
       await links.getByRole('link', { name, exact: true }).click()
       await expect(page).toHaveURL(new RegExp(`#/${name.toLowerCase()}$`))
       await expect(links.getByRole('link', { name, exact: true })).toHaveAttribute('aria-current', 'page')
@@ -24,27 +24,35 @@ for (const width of [320, 390, 768, 1280]) {
         expect(await page.locator('.course-path-copy').first().evaluate(element => element.getBoundingClientRect().width)).toBeGreaterThan(120)
       }
       if (name === 'Practice') {
-        await expect(page.getByRole('region', { name: 'Learned words', exact: true })).toHaveCount(0)
-        await page.getByRole('link', { name: 'Learned words', exact: true }).click()
-        await expect(page).toHaveURL(/#\/words$/)
-        await expect(page.getByRole('heading', { name: 'Learned words', level: 1 })).toBeVisible()
-        await expect(page).toHaveTitle('Learned words · Ismi')
-        await expect(page.locator('#main-content')).toBeFocused()
+        await expect(page.getByRole('link', { name: /^Review,/ })).toBeVisible()
+        await page.getByRole('link', { name: /^Review,/ }).click()
+        await expect(page).toHaveURL(/#\/practice\/review$/)
         await expect(links.getByRole('link', { name: 'Practice', exact: true })).toHaveAttribute('aria-current', 'page')
-        await page.reload()
-        await expect(page.getByRole('heading', { name: 'Learned words', level: 1 })).toBeVisible()
         await page.getByRole('link', { name: 'Back to Practice', exact: true }).click()
-        await expect(page.getByRole('region', { name: 'Learned words', exact: true })).toHaveCount(0)
+        await expect(page).toHaveURL(/#\/practice$/)
         if (width === 390) await page.screenshot({ path: testInfo.outputPath('practice.png'), scale: 'css' })
       }
-      if (name === 'Account') {
-        await expect(page.getByLabel('Email', { exact: true })).toBeVisible()
-        const selector = await page.getByLabel('Primary track', { exact: true }).boundingBox()
-        const save = await page.getByRole('button', { name: 'Save study settings', exact: true }).boundingBox()
-        expect(save!.y - selector!.y - selector!.height).toBeGreaterThanOrEqual(16)
-        if (width === 390) await page.screenshot({ path: testInfo.outputPath('account.png'), scale: 'css' })
+      if (name === 'Words') {
+        await expect(page.getByRole('heading', { name: 'Learned words', level: 1 })).toBeVisible()
+        await expect(page).toHaveTitle('Learned words · Ismi')
+        await expect(page.getByRole('link', { name: 'Back to Practice', exact: true })).toHaveCount(0)
+        await page.reload()
+        await expect(page.getByRole('heading', { name: 'Learned words', level: 1 })).toBeVisible()
+        await expect(links.getByRole('link', { name: 'Words', exact: true })).toHaveAttribute('aria-current', 'page')
       }
     }
+    const account = page.getByRole('link', { name: 'Account', exact: true })
+    await account.click()
+    await expect(page).toHaveURL(/#\/account$/)
+    await expect(account).toHaveAttribute('aria-current', 'page')
+    await expect(page.locator('#main-content')).toBeFocused()
+    await expect(page.getByLabel('Email', { exact: true })).toBeVisible()
+    const selector = await page.getByLabel('Primary track', { exact: true }).boundingBox()
+    const save = await page.getByRole('button', { name: 'Save study settings', exact: true }).boundingBox()
+    expect(save!.y - selector!.y - selector!.height).toBeGreaterThanOrEqual(16)
+    if (width === 390) await page.screenshot({ path: testInfo.outputPath('account.png'), scale: 'css' })
+    await links.getByRole('link', { name: 'Today', exact: true }).click()
+    await expect(links.getByRole('link', { name: 'Today', exact: true })).toHaveAttribute('aria-current', 'page')
     await page.goBack()
     await expect(page.getByRole('heading', { name: 'Welcome back' })).toBeVisible()
     await page.reload()
@@ -55,7 +63,7 @@ for (const width of [320, 390, 768, 1280]) {
 }
 
 test('practice is repeatable without completing an unstudied course lesson', async ({ page }) => {
-  await page.goto('/#/practice')
+  await page.goto('/#/practice/lessons')
   await page.getByRole('button', { name: /Answer a friend’s check-in/ }).click()
   const dialog = page.getByRole('dialog')
   await finishTeaching(page, dialog)

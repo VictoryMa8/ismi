@@ -143,8 +143,7 @@ test('completion adds words locally offline without relying on review history', 
     await dialog.getByRole('button', { name: /Next step|Complete lesson/ }).click()
   }
   await page.getByRole('button', { name: 'Back to today', exact: true }).click()
-  await page.getByRole('link', { name: 'Practice', exact: true }).click()
-  await page.getByRole('link', { name: 'Learned words', exact: true }).click()
+  await page.getByRole('link', { name: 'Words', exact: true }).click()
   await expect(glossary.getByText(`${learnedVocabulary([first]).length} entries`, { exact: true })).toBeVisible()
   await page.reload()
   await expect(glossary.getByText(`${learnedVocabulary([first]).length} entries`, { exact: true })).toBeVisible()
@@ -232,8 +231,7 @@ test('synced completions populate a second device and stay isolated from guests 
     } finally { await device.close() }
     await page.getByRole('link', { name: 'Account', exact: true }).click()
     await page.getByRole('button', { name: 'Sign out', exact: true }).click()
-    await page.getByRole('link', { name: 'Practice', exact: true }).click()
-    await page.getByRole('link', { name: 'Learned words', exact: true }).click()
+    await page.getByRole('link', { name: 'Words', exact: true }).click()
     await expect(glossary.getByText('0 entries', { exact: true })).toBeVisible()
     // A guest's offline queue must never enroll a new account in those lessons.
     await page.evaluate(async lessonId => {
@@ -251,8 +249,7 @@ test('synced completions populate a second device and stay isolated from guests 
     await page.getByLabel('Password', { exact: true }).fill(password)
     await page.locator('.auth-form').getByRole('button', { name: 'Create account', exact: true }).click()
     await expect(page.getByRole('heading', { name: 'Marhaba, Other learner.', exact: true })).toBeVisible()
-    await page.getByRole('link', { name: 'Practice', exact: true }).click()
-    await page.getByRole('link', { name: 'Learned words', exact: true }).click()
+    await page.getByRole('link', { name: 'Words', exact: true }).click()
     await expect(glossary.getByText('0 entries', { exact: true })).toBeVisible()
     const dashboard = await (await page.request.get('/api/dashboard')).json()
     expect(dashboard.dailyPlan.lessons.find((lesson: { id: string }) => lesson.id === lessonId).isCompleted).toBe(false)

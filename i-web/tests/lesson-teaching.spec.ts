@@ -15,7 +15,7 @@ test('teaching supports recall, bounded phrase assembly, optional translations a
     expect((await page.request.post('/api/auth/login', { data: { ...credentials, rememberMe: false }, headers: { 'X-CSRF-TOKEN': token.token } })).ok()).toBeTruthy()
   }
   await page.reload()
-  await page.getByRole('button', { name: 'Open account for Preview owner' }).first().click()
+  await page.getByRole('link', { name: 'Account', exact: true }).first().click()
   await page.getByRole('button', { name: 'Open curriculum console' }).click()
   const pack = { ...revision, lesson: { ...revision.lesson, id: 'teaching-v2-fixture', title: 'Teaching flow fixture' } }
   await page.getByLabel('Import a lesson package as a draft').setInputFiles({ name: 'lesson.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(pack)) })

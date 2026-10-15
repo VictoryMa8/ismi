@@ -16,7 +16,7 @@ async function post(client: APIRequestContext, path: string, data: unknown) {
 async function seedCompletions(page: Page) {
   await page.request.get('/api/dashboard')
   for (const lesson of lessons) expect((await post(page.request, `/api/lessons/${lesson.id}/completions`, { completionId: crypto.randomUUID(), completedAt: new Date().toISOString() })).ok()).toBeTruthy()
-  await page.goto('/#/practice')
+  await page.goto('/#/practice/recall')
   await expect(page.getByRole('button', { name: 'Start typed recall' })).toBeEnabled()
 }
 async function snapshots(page: Page) {
@@ -189,7 +189,7 @@ test('an explicit server withdrawal cannot fall back to a downloaded recall pack
 test('concurrent tabs retain both attempt records without advancing the schedule twice', async ({ page, context }) => {
   await seedCompletions(page)
   const second = await context.newPage()
-  await second.goto('/#/practice')
+  await second.goto('/#/practice/recall')
   await expect(second.getByRole('button', { name: 'Start typed recall' })).toBeEnabled()
   await Promise.all([page.getByRole('button', { name: 'Start typed recall' }).click(), second.getByRole('button', { name: 'Start typed recall' }).click()])
   for (const tab of [page, second]) await tab.getByLabel('Your response').fill('ah biddi artah shwayy')
@@ -223,6 +223,7 @@ test('console refuses recall imports while an older API would silently discard t
 })
 
 async function answerAllRecall(page: Page) {
+  if (!page.url().includes('#/practice/recall')) await page.goto('/#/practice/recall')
   await page.getByRole('button', { name: 'Start typed recall' }).click()
   const dialog = page.getByRole('dialog', { name: 'Recall and recombine' })
   for (let index = 0; index < lessons.length; index++) {
@@ -240,22 +241,27 @@ test('F17.6 real first responses and offline later review earn one optional, per
   const start = Date.now()
   await page.clock.setFixedTime(start)
   await seedCompletions(page)
+  await page.goto('/#/progress')
   const progress = page.getByRole('region', { name: 'What you can do' })
   await expect(progress.getByText('Not yet practiced', { exact: true })).toHaveCount(3)
   await answerAllRecall(page)
+  await page.goto('/#/progress')
   await expect(progress.getByText('Demonstrated independently', { exact: true })).toHaveCount(3)
   await expect(progress.locator('.can-do-achievements')).toHaveCount(0)
   // Before the deadline, even accepted repetitions cannot demonstrate again later.
   await page.clock.setFixedTime(start + 86400000 - 1)
   await page.reload()
   await answerAllRecall(page)
+  await page.goto('/#/progress')
   await expect(progress.getByText('Demonstrated independently', { exact: true })).toHaveCount(3)
   await page.evaluate(async () => { await navigator.serviceWorker.ready })
   await context.setOffline(true)
   await page.clock.setFixedTime(start + 86400000)
+  await page.goto('/#/progress')
   await page.reload()
   await expect(progress.getByText('Due for review', { exact: true })).toHaveCount(3)
   await answerAllRecall(page)
+  await page.goto('/#/progress')
   await expect(progress.getByText('Demonstrated again later', { exact: true })).toHaveCount(3)
   const achievements = progress.locator('.can-do-achievements')
   await expect(achievements.getByRole('heading', { name: 'Everyday responses — demonstrated again later' })).toBeVisible()
@@ -279,7 +285,7 @@ test('F17.6 real first responses and offline later review earn one optional, per
   await context.setOffline(false)
   const second = await context.newPage()
   await second.clock.setFixedTime(start + 5 * 86400000)
-  await second.goto('/#/practice')
+  await second.goto('/#/progress')
   await expect(second.locator('.can-do-achievements')).toBeVisible()
   expect((await snapshots(page)).find(s => s.key === 'can-do-v1:guest')!.value.achievements).toHaveLength(1)
   await second.close()
@@ -301,6 +307,7 @@ test('F17.6 targeted practice, help facts, keyboard, enlarged layout and identit
   await page.setViewportSize({ width: 320, height: 700 })
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await seedCompletions(page)
+  await page.goto('/#/progress')
   await page.addStyleTag({ content: 'html { font-size: 200%; }' })
   const progress = page.getByRole('region', { name: 'What you can do' })
   const card = progress.locator('[data-can-do="request-tea"]')

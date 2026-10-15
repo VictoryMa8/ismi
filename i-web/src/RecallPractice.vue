@@ -12,14 +12,18 @@ import SoundToggle from './SoundToggle.vue'
 import { playUiSound } from './uiSounds'
 import { reviewDueAt } from './reviewSchedule'
 import CanDoProgress from './CanDoProgress.vue'
+import { PenLine } from '@lucide/vue'
 
-const props = defineProps<{ scope: string; lessons: CourseLessonSummary[]; historyRevision: number }>()
+const props = defineProps<{ scope: string; lessons: CourseLessonSummary[]; historyRevision: number; view?: 'hidden' | 'tile' | 'recall' | 'can-do' }>()
+const hubView = computed(() => props.view ?? 'recall')
+const hubTarget = computed(() => ({ tile: '#practice-hub', recall: '#practice-recall', 'can-do': '#progress-cando' })[hubView.value as 'tile' | 'recall' | 'can-do'] ?? '')
 const emit = defineEmits<{ 'open-change': [open: boolean] }>()
 const packages = ref<LessonResponse[]>([])
 const savedEvidence = ref<RecallEvidence[]>([])
 const savedHistory = ref<Awaited<ReturnType<typeof getReviewHistory>>>([])
 const now = ref(Date.now())
 const available = computed(() => recallQueue(packages.value, savedEvidence.value, savedHistory.value, now.value))
+const dueTargets = computed(() => available.value.filter(item => item.due).length)
 let clock: ReturnType<typeof setInterval> | undefined
 const loading = ref(true)
 const error = ref('')
@@ -237,21 +241,28 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <CanDoProgress :scope="scope" :lessons="packages" :evidence="savedEvidence" :history="savedHistory"
-    :now="now" :loading="loading" @practice="start" />
-  <section class="review-hub" aria-label="Recall and recombine">
-    <h2>Recall and recombine</h2>
-    <p v-if="loading" role="status">Loading recall practice…</p>
-    <p v-else-if="!available.length">Complete a lesson with published recall practice to begin.</p>
-    <p v-else>{{ available.length }} targets available · {{ available.filter(t => t.due).length }} due</p>
-    <button class="primary-action" :disabled="loading || busy || !available.length" @click="start()">Start typed recall</button>
-    <p v-if="notice" role="status">{{ notice }}</p>
-    <p v-if="error && !open" role="alert">{{ error }}</p>
-    <div v-for="item in pending" :key="item.report.id">
-      <p role="status">{{ item.error || 'Recall report waiting to send when you reconnect.' }}</p>
-      <button class="text-button" @click="discard(item.report.id)">Discard saved report</button>
-    </div>
-  </section>
+  <Teleport v-if="hubTarget" :to="hubTarget">
+    <a v-if="hubView === 'tile'" class="feature-tile accent-red tile-recall" href="#/practice/recall" :aria-label="`Recall and recombine, ${available.length} targets, ${dueTargets} due`">
+      <span class="feature-badge" aria-hidden="true"><PenLine :size="18" /></span>
+      <span class="feature-copy"><strong>Recall</strong><small>{{ dueTargets }} due</small></span>
+      <span class="feature-count">{{ available.length }}</span>
+    </a>
+    <CanDoProgress v-else-if="hubView === 'can-do'" :scope="scope" :lessons="packages" :evidence="savedEvidence" :history="savedHistory"
+      :now="now" :loading="loading" @practice="start" />
+    <section v-else class="review-hub" aria-label="Recall and recombine">
+      <h2>Recall and recombine</h2>
+      <p v-if="loading" role="status">Loading recall practice…</p>
+      <p v-else-if="!available.length">Complete a lesson with published recall practice to begin.</p>
+      <p v-else>{{ available.length }} targets available · {{ dueTargets }} due</p>
+      <button class="primary-action" :disabled="loading || busy || !available.length" @click="start()">Start typed recall</button>
+      <p v-if="notice" role="status">{{ notice }}</p>
+      <p v-if="error && !open" role="alert">{{ error }}</p>
+      <div v-for="item in pending" :key="item.report.id">
+        <p role="status">{{ item.error || 'Recall report waiting to send when you reconnect.' }}</p>
+        <button class="text-button" @click="discard(item.report.id)">Discard saved report</button>
+      </div>
+    </section>
+  </Teleport>
   <Teleport to="body">
     <div v-if="open" class="lesson-overlay" @click.self="close">
       <section ref="dialog" class="lesson-sheet" role="dialog" aria-modal="true" aria-labelledby="recall-title" @keydown.esc="close" @keydown="trap">

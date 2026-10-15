@@ -9,9 +9,16 @@ The broader F17 support/reward/reminder scope and beta release gates remain open
 
 ## Learner behavior
 
-Account → Learning habits has independent **Weekly quests** and **Forgiving streak**
-switches, both initially off. Enabling either adds its information below Your plan
-on Today. Weekly quests call the existing lesson/review/checkpoint flows; they do
+Account → Learning habits originally had independent **Weekly quests** and **Forgiving streak**
+switches, both initially off. Enabling either added its information below Your plan
+on Today.
+
+On October 14, 2026, F27 moved those switches to Progress and turns both on for a
+new habit state. A state already saved on the device stays as stored, including
+off. Either switch can still be turned off, and turning one off does not erase
+saved days or completed tasks. The timezone is captured when the habit state is
+first created. Today shows a short streak and weekly-quest summary that links to
+Progress instead of the full checklist. Weekly quests call the existing lesson/review/checkpoint flows; they do
 not add duplicate daily queue entries, extra lesson completions, minutes or XP.
 Learners can continue through Courses and Practice regardless of checklist state.
 
@@ -43,7 +50,7 @@ and Today panels.
   not qualify. Draft previews do not count. A new-lesson quest specifically requires
   core completion; lesson practice can contribute a study day without claiming it.
 - Activity time is the completion time. Calendar days end at midnight and weeks
-  begin Monday in the IANA timezone captured at first opt-in. Travel, browser
+  begin Monday in the IANA timezone captured when the habit state is first created. Travel, browser
   timezone changes and daylight-saving changes do not reinterpret stored dates.
 - One or more completed activities on a date add **one** study day. Grace preserves
   continuity but does not inflate the displayed study-day count.

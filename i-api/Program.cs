@@ -117,7 +117,7 @@ builder.Services.AddRateLimiter(options =>
         { PermitLimit = 10, Window = TimeSpan.FromMinutes(1), QueueLimit = 0, AutoReplenishment = true }));
     options.AddFixedWindowLimiter("auth", limiter =>
     {
-        limiter.PermitLimit = 10;
+        limiter.PermitLimit = builder.Configuration.GetValue("RateLimits:AuthPermitLimit", 10);
         limiter.Window = TimeSpan.FromMinutes(1);
         limiter.QueueLimit = 0;
         limiter.AutoReplenishment = true;

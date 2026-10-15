@@ -4,15 +4,15 @@ import { expect, test } from '@playwright/test'
 // Uses only existing demonstration language. This is not an authored lesson.
 test('owner imports and completes a saved draft without exposing or caching it', async ({ page }) => {
   await page.goto('/#/today')
-  await page.getByRole('button', { name: 'Sign in or create an account', exact: true }).first().click()
+  await page.getByRole('link', { name: 'Account', exact: true }).first().click()
   await page.getByRole('button', { name: 'Create account', exact: true }).click()
   await page.getByLabel('Display name', { exact: true }).fill('Preview owner')
   await page.getByLabel('Email', { exact: true }).fill('preview-owner@example.test')
   await page.getByLabel('Password', { exact: true }).fill('test-only-long-password')
   await page.getByRole('button', { name: 'Create account', exact: true }).last().click()
   await expect(page).toHaveURL(/#\/today$/)
-  await expect(page.getByRole('button', { name: 'Open account for Preview owner' }).first()).toBeVisible()
-  await page.getByRole('button', { name: 'Open account for Preview owner' }).first().click()
+  await expect(page.getByRole('link', { name: 'Account', exact: true }).first()).toBeVisible()
+  await page.getByRole('link', { name: 'Account', exact: true }).first().click()
   await page.getByRole('button', { name: 'Open curriculum console' }).click()
 
   const seed = await (await page.request.get('/api/lessons/levantine-day-01')).json()

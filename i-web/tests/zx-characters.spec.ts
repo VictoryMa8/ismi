@@ -23,7 +23,7 @@ for (const imagesFail of [false, true]) {
     const registered = await post('/api/auth/register', { displayName: 'Preview owner', email: 'preview-owner@example.test', password: 'test-only-long-password' })
     if (!registered.ok()) expect((await post('/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password', rememberMe: false })).ok()).toBeTruthy()
     await page.reload()
-    await page.getByRole('button', { name: /Open account for/ }).first().click()
+    await page.getByRole('link', { name: 'Account', exact: true }).first().click()
     await page.getByRole('button', { name: 'Open curriculum console' }).click()
     const pack = structuredClone(proposal)
     pack.lesson.id = imagesFail ? 'character-preview-fallback' : 'character-preview-loaded'

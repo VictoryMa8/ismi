@@ -40,6 +40,7 @@ test('friendly sounds start after interaction, stay quiet, mute persistently, an
   await expect(sound).toHaveAttribute('aria-pressed', 'false')
   await sound.click()
   await expect.poll(() => page.evaluate(() => (window as SoundProbe).toneCount)).toBeGreaterThan(0)
+  await page.getByRole('link', { name: /^Lesson practice,/ }).click()
   await page.getByRole('button', { name: /Answer a friend’s check-in/ }).click()
   const dialog = page.getByRole('dialog')
   await finishTeaching(page, dialog)
@@ -87,7 +88,7 @@ test('friendly sounds start after interaction, stay quiet, mute persistently, an
 test('missing audio support and reduced motion never block lessons', async ({ page }) => {
   await page.addInitScript(() => { Object.defineProperty(window, 'AudioContext', { value: undefined }) })
   await page.emulateMedia({ reducedMotion: 'reduce' })
-  await page.goto('/#/practice')
+  await page.goto('/#/practice/lessons')
   await page.getByRole('button', { name: /Answer a friend’s check-in/ }).click()
   const dialog = page.getByRole('dialog')
   await finishTeaching(page, dialog)

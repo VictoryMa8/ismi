@@ -19,7 +19,7 @@ test('Today leads with Continue and keeps review, queue and settings accessible 
     await expect(page.locator('.study-allocations')).toBeVisible()
     await page.getByText('Study time by track', { exact: true }).click()
     await expect(page.getByRole('link', { name: 'Edit study settings' })).toBeVisible()
-    await expect(page.getByRole('region', { name: 'Scheduled review', exact: true })).toHaveCount(1)
+    await expect(page.getByRole('button', { name: /^Review due/ })).toBeVisible()
     await page.screenshot({ path: testInfo.outputPath(`today-${width}.png`), fullPage: true })
   }
   await page.setViewportSize({ width: 390, height: 844 })

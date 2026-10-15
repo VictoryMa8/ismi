@@ -120,4 +120,4 @@ Implementation: [classifier](../i-web/src/canDo.ts),
 [cards](../i-web/src/CanDoProgress.vue),
 [recall integration](../i-web/src/RecallPractice.vue).
 Checks: [policy boundaries](../i-web/tests/can-do-policy.spec.ts),
-[F22 and integrated F17.6 flows](../i-web/tests/recall.spec.ts).
+[F22 and integrated F17.6 flows](../i-web/tests/zzzz-recall.spec.ts).

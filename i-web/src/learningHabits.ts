@@ -8,8 +8,8 @@ export type StudyActivity = {
 export type QuestTask = {
   id: string; kind: ActivityKind; label: string; lessonId?: string; unitId?: string; due?: boolean; completedBy?: string
 }
-export type ReviewAvailability = { ready: boolean; due: boolean; mixed: boolean; checkpoints: { id: string; title: string }[] }
-export const emptyReviewAvailability = (): ReviewAvailability => ({ ready: false, due: false, mixed: false, checkpoints: [] })
+export type ReviewAvailability = { ready: boolean; due: boolean; mixed: boolean; dueCount?: number; mistakeCount?: number; checkpoints: { id: string; title: string }[] }
+export const emptyReviewAvailability = (): ReviewAvailability => ({ ready: false, due: false, mixed: false, dueCount: 0, mistakeCount: 0, checkpoints: [] })
 export type HabitState = {
   version: 1; timezone: string; questsEnabled: boolean; streakEnabled: boolean;
   week: string; tasks: QuestTask[]; studyDays: string[]; creditedIds: string[]; lastActivityDay: string
@@ -29,7 +29,7 @@ export function weekStart(day: string): string {
   return shiftDay(day, -(weekday + 6) % 7)
 }
 export function freshHabits(now = Date.now(), timezone = deviceTimezone()): HabitState {
-  return { version: 1, timezone, questsEnabled: false, streakEnabled: false, week: weekStart(calendarDay(now, timezone)),
+  return { version: 1, timezone, questsEnabled: true, streakEnabled: true, week: weekStart(calendarDay(now, timezone)),
     tasks: [], studyDays: [], creditedIds: [], lastActivityDay: '' }
 }
 export function validHabits(value: HabitState): boolean {

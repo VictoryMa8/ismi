@@ -5,11 +5,14 @@ import {
   BookCheck,
   Check,
   ChevronRight,
+  Flame,
   Headphones,
   Home,
   MessageCircle,
   Newspaper,
   RotateCcw,
+  Search,
+  Trophy,
   UserPlus,
   UserRound,
   Volume2,
@@ -19,7 +22,7 @@ import CurriculumConsole from './CurriculumConsole.vue';
 import StudySettings from './StudySettings.vue';
 import LearningHabits from './LearningHabits.vue';
 import { useLearningHabits } from './useLearningHabits';
-import { emptyReviewAvailability, type QuestTask, type StudyActivity } from './learningHabits';
+import { emptyReviewAvailability, streakSummary, type QuestTask, type StudyActivity } from './learningHabits';
 import LoadingWords from './LoadingWords.vue';
 import PlacementCheck from './PlacementCheck.vue';
 import { buildStudyPlan } from './studyPlan';
@@ -135,22 +138,36 @@ const completionSummary = computed(() => {
   };
 });
 const pendingSyncCount = ref(0);
-type PageName = 'today' | 'courses' | 'practice' | 'account' | 'words';
+type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'progress' | 'words' | 'account';
+const pageNames: Record<string, PageName> = {
+  today: 'today', courses: 'courses', practice: 'practice', 'practice/review': 'practice-review',
+  'practice/checkpoints': 'practice-checkpoints', 'practice/recall': 'practice-recall', 'practice/lessons': 'practice-lessons',
+  progress: 'progress', words: 'words', account: 'account',
+};
+const pageTitles: Record<PageName, string> = {
+  today: 'Today', courses: 'Courses', practice: 'Practice', 'practice-review': 'Review',
+  'practice-checkpoints': 'Checkpoints', 'practice-recall': 'Recall', 'practice-lessons': 'Lesson practice',
+  progress: 'Progress', words: 'Learned words', account: 'Account',
+};
 const navigation = [
   { id: 'today', label: 'Today', icon: Home },
   { id: 'courses', label: 'Courses', icon: BookOpen },
   { id: 'practice', label: 'Practice', icon: Headphones },
-  { id: 'account', label: 'Account', icon: UserRound },
+  { id: 'progress', label: 'Progress', icon: Trophy },
+  { id: 'words', label: 'Words', icon: Search },
 ] as const;
 function readPage(): PageName {
-  const path = window.location.hash.replace(/^#\/?/, '');
-  return path === 'words' ? 'words' : navigation.find((item) => item.id === path)?.id ?? 'today';
+  const path = window.location.hash.replace(/^#\/?/, '').toLowerCase();
+  return pageNames[path] ?? 'today';
 }
 const page = ref<PageName>(readPage());
-const primaryPage = computed(() => page.value === 'words' ? 'practice' : page.value);
-const pageTitle = computed(() => page.value === 'words' ? 'Learned words' : navigation.find(item => item.id === page.value)?.label);
+const primaryPage = computed(() => page.value.startsWith('practice') ? 'practice' : page.value);
+const pageTitle = computed(() => pageTitles[page.value]);
+const reviewView = computed(() => page.value === 'practice' ? 'tiles' : page.value === 'practice-review' ? 'review' : page.value === 'practice-checkpoints' ? 'checkpoints' : 'hidden');
+const recallView = computed(() => page.value === 'practice' ? 'tile' : page.value === 'practice-recall' ? 'recall' : page.value === 'progress' ? 'can-do' : 'hidden');
+const practiceChild = computed(() => page.value.startsWith('practice-'));
 function navigate(destination: PageName) {
-  window.location.hash = `/${destination}`;
+  window.location.hash = `/${Object.keys(pageNames).find(path => pageNames[path] === destination) ?? destination}`;
 }
 async function handlePageChange() {
   if (!isLearnerRoute(window.location.hash)) return;
@@ -254,6 +271,10 @@ const studyPlan = computed(() => buildStudyPlan(studySettings.preferences.value,
 const todayReviewLessons = computed(() => dashboard.value.dailyPlan.lessons.filter(item =>
   studySettings.preferences.value.selectedTrackIds.some(id => id === (item.trackId ?? 'levantine')),
 ));
+const hubReviewLessons = computed(() => page.value.startsWith('practice')
+  ? dashboard.value.dailyPlan.lessons : todayReviewLessons.value);
+const streak = computed(() => streakSummary(learningHabits.state.value, habitNow.value));
+const questsDone = computed(() => learningHabits.state.value.tasks.filter(task => task.completedBy).length);
 const dailyGoal = computed(() => studySettings.preferences.value.goalMinutes);
 const questLessons = computed(() => dashboardScope.value === reviewScope.value
   ? todayReviewLessons.value.filter(item => apiLive.value || offlineQuestLessonIds.value.includes(item.id)) : []);
@@ -264,7 +285,7 @@ watch(reviewScope, scope => {
 }, { immediate: true });
 watch(() => [learningHabits.state.value.questsEnabled, studySettings.preferences.value,
   questLessons.value, questReviewAvailability.value, habitNow.value, studySettings.busy.value, page.value] as const, () => {
-  if (page.value === 'today' && studyPageAvailable.value && !studySettings.busy.value)
+  if (studyPageAvailable.value && !studySettings.busy.value)
     learningHabits.plan(studySettings.preferences.value, questLessons.value, questReviewAvailability.value);
 }, { deep: true });
 function updateHabitClock() {
@@ -342,11 +363,6 @@ const deviceVoiceDescription = computed(() => {
   }
   return 'Device voice preview · browser-selected Arabic voice';
 });
-const accountButtonLabel = computed(() =>
-  authSession.value.isAuthenticated
-    ? `Open account for ${authSession.value.displayName}`
-    : 'Sign in or create an account',
-);
 const progressPercent = computed(() =>
   Math.min(
     100,
@@ -1175,6 +1191,15 @@ async function finishLesson() {
       </nav>
 
       <div class="side-note">
+        <a
+          class="nav-link"
+          :class="{ active: page === 'account' }"
+          href="#/account"
+          :aria-current="page === 'account' ? 'page' : undefined"
+        >
+          <UserRound :size="21" aria-hidden="true" />
+          <span>Account</span>
+        </a>
         <a class="landing-return" href="#">Back to landing page</a>
         <div class="sound-preference">
           <SoundToggle /><span>Interface sounds</span>
@@ -1196,14 +1221,15 @@ async function finishLesson() {
           <span class="brand-word">ismi</span>
         </a>
         <div class="header-controls">
-          <SoundToggle /><button
+          <SoundToggle /><a
             class="profile-button"
-            type="button"
-            :aria-label="accountButtonLabel"
-            @click="openAccount()"
+            href="#/account"
+            :aria-current="page === 'account' ? 'page' : undefined"
+            @click.prevent="openAccount()"
           >
             <UserRound :size="23" aria-hidden="true" />
-          </button>
+            <span class="sr-only">Account</span>
+          </a>
         </div>
       </header>
 
@@ -1243,6 +1269,35 @@ async function finishLesson() {
               <span>{{ syncStatus }}</span>
             </div>
           </div>
+        </section>
+
+        <section class="status-strip" aria-label="Today’s shortcuts">
+          <a class="feature-tile accent-gold" href="#/progress">
+            <span class="feature-badge" aria-hidden="true"><Flame :size="18" /></span>
+            <span class="feature-copy">
+              <strong>Streak</strong>
+              <small>{{ learningHabits.state.value.streakEnabled ? `${streak.studyDays} days · ${streak.graceRemaining} grace` : 'Off' }}</small>
+            </span>
+          </a>
+          <a class="feature-tile accent-gold" href="#/progress">
+            <span class="feature-badge" aria-hidden="true"><Trophy :size="18" /></span>
+            <span class="feature-copy">
+              <strong>This week</strong>
+              <small>{{ learningHabits.state.value.questsEnabled ? `${questsDone} of ${learningHabits.state.value.tasks.length}` : 'Off' }}</small>
+            </span>
+          </a>
+          <button
+            type="button"
+            class="feature-tile accent-green"
+            :disabled="!questReviewAvailability.due"
+            @click="questReview?.start('due')"
+          >
+            <span class="feature-badge" aria-hidden="true"><RotateCcw :size="18" /></span>
+            <span class="feature-copy">
+              <strong>Review due</strong>
+              <small>{{ questReviewAvailability.dueCount ?? 0 }}</small>
+            </span>
+          </button>
         </section>
 
         <section v-if="nextStudyLesson" class="section-block" aria-labelledby="next-heading">
@@ -1325,17 +1380,6 @@ async function finishLesson() {
 
         <section class="study-plan section-block" aria-labelledby="study-plan-heading">
           <div class="section-heading"><h2 id="study-plan-heading">Your plan</h2><a href="#/account">Edit study settings</a></div>
-          <ReviewPractice
-            ref="questReview"
-            compact
-            :scope="reviewScope"
-            :history-revision="reviewHistoryRevision"
-            :lessons="todayReviewLessons"
-            @open-change="reviewOpen = $event"
-            @prompt-playback="reviewAudioPlaying = $event"
-            @availability="questReviewAvailability = $event"
-            @activity-complete="creditStudyActivity"
-          />
           <h3 v-if="studyPlan.queue.length > 1" class="up-next-heading">Up next</h3>
           <ol v-if="studyPlan.queue.length > 1" class="study-queue" aria-label="Today’s lesson queue">
             <li v-for="item in studyPlan.queue.slice(1)" :key="item.id"><button type="button" class="guest-action" @click="startLesson(item.id)">{{ item.title }} · {{ item.estimatedMinutes }} min</button></li>
@@ -1351,9 +1395,6 @@ async function finishLesson() {
           </ul>
           </details>
         </section>
-
-        <LearningHabits :state="learningHabits.state.value" :now="habitNow" :error="learningHabits.error.value"
-          :review-ready="questReviewAvailability.ready" @start="startQuest" />
 
       </template>
 
@@ -1423,7 +1464,7 @@ async function finishLesson() {
               <button
                 class="secondary-action"
                 type="button"
-                @click="navigate('practice')"
+                @click="navigate('practice-checkpoints')"
               >
                 Review and checkpoint
               </button>
@@ -1479,24 +1520,22 @@ async function finishLesson() {
         <header class="page-heading">
           <h1>Practice</h1>
         </header>
-        <ReviewPractice
-          :scope="reviewScope"
-          :history-revision="reviewHistoryRevision"
-          :lessons="dashboard.dailyPlan.lessons"
-          @open-change="reviewOpen = $event"
-          @prompt-playback="reviewAudioPlaying = $event"
-          @activity-complete="creditStudyActivity"
-        />
-        <RecallPractice :scope="reviewScope" :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []"
-          :history-revision="reviewHistoryRevision" @open-change="reviewOpen = $event" />
+        <div id="practice-hub" class="feature-grid">
+          <a class="feature-tile accent-green tile-lessons" href="#/practice/lessons" :aria-label="`Lesson practice, ${dashboard.dailyPlan.lessons.length} lessons`">
+            <span class="feature-badge" aria-hidden="true"><Headphones :size="18" /></span>
+            <span class="feature-copy"><strong>Lesson practice</strong><small>{{ dashboard.dailyPlan.lessons.length }} lessons</small></span>
+            <span class="feature-count">{{ dashboard.dailyPlan.lessons.length }}</span>
+          </a>
+        </div>
         <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
-        <a class="learned-words-link" href="#/words">
-          <BookOpen :size="22" aria-hidden="true" />
-          <span>Learned words</span>
-          <ChevronRight :size="20" aria-hidden="true" />
-        </a>
-        <h2 class="practice-lessons-title">Lesson practice</h2>
-        <section class="practice-list" aria-label="Practice lessons">
+      </template>
+      <template v-if="practiceChild && studyPageAvailable">
+        <a class="page-link" href="#/practice">Back to Practice</a>
+        <header class="page-heading"><h1>{{ pageTitle }}</h1></header>
+        <div v-if="page === 'practice-review'" id="practice-review"></div>
+        <div v-if="page === 'practice-checkpoints'" id="practice-checkpoints"></div>
+        <div v-if="page === 'practice-recall'" id="practice-recall"></div>
+        <section v-if="page === 'practice-lessons'" class="practice-list" aria-label="Practice lessons">
           <button
             v-for="item in dashboard.dailyPlan.lessons"
             :key="item.id"
@@ -1517,8 +1556,34 @@ async function finishLesson() {
           </p>
         </section>
       </template>
+      <template v-if="page === 'progress' && studyPageAvailable">
+        <header class="page-heading"><h1>Progress</h1></header>
+        <LearningHabits section="streak" :state="learningHabits.state.value" :now="habitNow" :error="learningHabits.error.value" @toggle="learningHabits.toggle" />
+        <LearningHabits section="quests" :state="learningHabits.state.value" :now="habitNow" :error="''" :review-ready="questReviewAvailability.ready" @toggle="learningHabits.toggle" @start="startQuest" />
+        <div id="progress-cando"></div>
+        <LearningHabits section="rules" :state="learningHabits.state.value" :now="habitNow" error="" />
+      </template>
+      <ReviewPractice
+        v-if="studyPageAvailable"
+        ref="questReview"
+        :view="reviewView"
+        :scope="reviewScope"
+        :history-revision="reviewHistoryRevision"
+        :lessons="hubReviewLessons"
+        @open-change="reviewOpen = $event"
+        @prompt-playback="reviewAudioPlaying = $event"
+        @availability="questReviewAvailability = $event"
+        @activity-complete="creditStudyActivity"
+      />
+      <RecallPractice
+        v-if="studyPageAvailable"
+        :view="recallView"
+        :scope="reviewScope"
+        :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []"
+        :history-revision="reviewHistoryRevision"
+        @open-change="reviewOpen = $event"
+      />
       <template v-if="page === 'words' && studyPageAvailable">
-        <a class="page-link words-return" href="#/practice">Back to Practice</a>
         <LearnedWords
           :scope="reviewScope"
           :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []"
@@ -1552,8 +1617,6 @@ async function finishLesson() {
           @save="async value => { await studySettings.save(value); await cacheUpcomingLessons(); }"
           @resolve="studySettings.resolve"
         />
-        <LearningHabits settings :state="learningHabits.state.value" :now="habitNow" :error="learningHabits.error.value"
-          @toggle="learningHabits.toggle" />
         <PlacementCheck :scope="reviewScope" :selected-track-ids="studySettings.preferences.value.selectedTrackIds"
           :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []" @open-lesson="id => startLesson(id)" />
         <template v-if="authSession.isAuthenticated">
@@ -1826,7 +1889,7 @@ async function finishLesson() {
                     ? 'Back to courses'
                     : page === 'words'
                       ? 'Back to learned words'
-                      : page === 'practice'
+                      : page.startsWith('practice')
                         ? 'Back to practice'
                         : 'Back to today'
               }}

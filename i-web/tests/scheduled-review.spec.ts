@@ -101,7 +101,7 @@ test('Today due review survives offline reload; help resets, early practice stay
   expect(Date.parse(saved.schedule.dueAt)).toBeGreaterThanOrEqual(before + day)
   await dialog.getByRole('button', { name: 'Close review' }).click()
   await expect(dialog).toHaveCount(0)
-  await page.getByRole('link', { name: 'Practice', exact: true }).click()
+  await page.goto('/#/practice/review')
   await expect(page.getByRole('button', { name: 'Mixed review', exact: true })).toBeEnabled()
   await page.screenshot({ path: testInfo.outputPath('scheduled-review-mobile.png'), fullPage: true })
   await seed(page, lesson, '2099-01-01T00:00:00Z')

@@ -36,7 +36,7 @@ test('planning drafts preview privately; test publications complete offline and 
   const registration = await post(page, '/api/auth/register', { displayName: 'Preview owner', email: 'preview-owner@example.test', password: 'test-only-long-password' })
   if (!registration.ok()) expect((await post(page, '/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password', rememberMe: false })).ok()).toBeTruthy()
   await page.reload()
-  await page.getByRole('button', { name: 'Open account for Preview owner' }).first().click()
+  await page.getByRole('link', { name: 'Account', exact: true }).first().click()
   await page.getByRole('button', { name: 'Open curriculum console' }).click()
   const versions: number[] = []
   for (const pack of packages) {

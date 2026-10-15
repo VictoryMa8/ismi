@@ -7,7 +7,7 @@ import {
   ref,
   watch,
 } from 'vue';
-import { Check, ChevronRight, RotateCcw } from '@lucide/vue';
+import { Check, ChevronRight, Flag, RotateCcw } from '@lucide/vue';
 import { ApiRequestError, getLesson } from './api';
 import {
   cacheLesson,
@@ -45,10 +45,13 @@ import type { ReviewAvailability, StudyActivity } from './learningHabits';
 
 const props = defineProps<{
   compact?: boolean;
+  view?: 'hidden' | 'tiles' | 'review' | 'checkpoints';
   scope: string;
   lessons: CourseLessonSummary[];
   historyRevision: number;
 }>();
+const hubView = computed(() => props.view ?? (props.compact ? 'hidden' : 'review'));
+const hubTarget = computed(() => ({ tiles: '#practice-hub', review: '#practice-review', checkpoints: '#practice-checkpoints' })[hubView.value as 'tiles' | 'review' | 'checkpoints'] ?? '');
 const emit = defineEmits<{
   'open-change': [open: boolean];
   'prompt-playback': [playing: boolean];
@@ -142,6 +145,8 @@ watch(() => [loading.value, dueCount.value, turns.value.length, units.value] as 
   emit('availability', {
     ready: !loading.value, due: !loading.value && dueCount.value > 0,
     mixed: !loading.value && turns.value.length > 0,
+    dueCount: loading.value ? 0 : dueCount.value,
+    mistakeCount: loading.value ? 0 : mistakeCount.value,
     checkpoints: loading.value ? [] : units.value.filter(unit => unit.complete && unit.available).map(unit => ({ id: unit.id, title: unit.title })),
   });
 }, { immediate: true });
@@ -498,67 +503,76 @@ defineExpose({ start });
 </script>
 
 <template>
-  <section ref="hub" tabindex="-1" class="review-hub" :aria-label="compact ? 'Scheduled review' : 'Review and checkpoints'">
-    <h2 v-if="!compact">Review</h2>
-    <p v-if="!compact" class="review-status-note">History stays on this device.</p>
-    <p v-if="!loading && turns.length && !dueCount" role="status">
-      {{ nextDue ? `Next review: ${nextDue}` : 'No reviews due' }}
-    </p>
-    <p v-if="loading" role="status">Preparing review…</p>
-    <p v-if="notice" role="status">{{ notice }}</p>
-    <p v-if="storageError" role="alert">{{ storageError }}</p>
-    <div class="review-actions">
-      <button type="button" class="primary-action" :disabled="loading || !dueCount" @click="start('due')">
-        Review due ({{ dueCount }})
-      </button>
-      <button
-        type="button"
-        class="primary-action"
-        :disabled="loading || !turns.length"
-        v-if="!compact"
-        @click="start('mixed')"
-      >
-        Mixed review
-      </button>
-      <button
-        type="button"
-        class="secondary-action"
-        :disabled="loading || !mistakeCount"
-        v-if="!compact"
-        @click="start('mistakes')"
-      >
-        Review mistakes ({{ mistakeCount }})
-      </button>
+  <Teleport v-if="hubTarget" :to="hubTarget">
+    <div v-if="hubView === 'tiles'" class="feature-tiles">
+      <a class="feature-tile accent-green tile-review" href="#/practice/review" :aria-label="`Review, ${dueCount} due, ${mistakeCount} mistakes`">
+        <span class="feature-badge" aria-hidden="true"><RotateCcw :size="18" /></span>
+        <span class="feature-copy"><strong>Review</strong><small>{{ dueCount }} due</small></span>
+        <span class="feature-count">{{ dueCount }}</span>
+      </a>
+      <a class="feature-tile accent-gold tile-checkpoints" href="#/practice/checkpoints" :aria-label="`Checkpoints, ${units.filter(unit => unit.complete && unit.available).length} ready`">
+        <span class="feature-badge" aria-hidden="true"><Flag :size="18" /></span>
+        <span class="feature-copy"><strong>Checkpoints</strong><small>{{ units.filter(unit => unit.complete && unit.available).length }} ready</small></span>
+        <span class="feature-count">{{ units.filter(unit => unit.complete && unit.available).length }}</span>
+      </a>
     </div>
-    <p v-if="!loading && !turns.length">
-      Complete a lesson or try an exercise to begin review.
-    </p>
-    <article v-for="unit in compact ? [] : units" :key="unit.id" class="checkpoint-card">
-      <div>
-        <h3>{{ unit.title }} checkpoint</h3>
-        <p v-if="!unit.complete">
-          Complete the unit’s lessons to open its checkpoint.
-        </p>
-        <p v-else-if="!unit.available">
-          Connect to download all of this unit’s lessons.
-        </p>
-        <p v-if="results[unit.id]" class="checkpoint-history">
-          Last checkpoint: {{ results[unit.id]!.firstCorrect }} of
-          {{ results[unit.id]!.total }} first answers matched · translations or
-          choices used on {{ results[unit.id]!.helped }}.
-        </p>
+    <section v-else-if="hubView === 'review'" ref="hub" tabindex="-1" class="review-hub" aria-label="Review and checkpoints">
+      <h2>Review</h2>
+      <p class="review-status-note">History stays on this device.</p>
+      <p v-if="!loading && turns.length && !dueCount" role="status">
+        {{ nextDue ? `Next review: ${nextDue}` : 'No reviews due' }}
+      </p>
+      <p v-if="loading" role="status">Preparing review…</p>
+      <p v-if="notice" role="status">{{ notice }}</p>
+      <p v-if="storageError" role="alert">{{ storageError }}</p>
+      <div class="review-actions">
+        <button type="button" class="primary-action" :disabled="loading || !dueCount" @click="start('due')">
+          Review due ({{ dueCount }})
+        </button>
+        <button type="button" class="primary-action" :disabled="loading || !turns.length" @click="start('mixed')">
+          Mixed review
+        </button>
+        <button type="button" class="secondary-action" :disabled="loading || !mistakeCount" @click="start('mistakes')">
+          Review mistakes ({{ mistakeCount }})
+        </button>
       </div>
-      <button
-        type="button"
-        class="secondary-action"
-        :disabled="loading || !unit.complete || !unit.available"
-        :aria-label="`Start ${unit.title} checkpoint`"
-        @click="start('checkpoint', unit.id)"
-      >
-        Start checkpoint
-      </button>
-    </article>
-  </section>
+      <p v-if="!loading && !turns.length">
+        Complete a lesson or try an exercise to begin review.
+      </p>
+    </section>
+    <section v-else class="review-hub" aria-label="Checkpoints">
+      <h2>Checkpoints</h2>
+      <p v-if="loading" role="status">Preparing review…</p>
+      <p v-if="notice" role="status">{{ notice }}</p>
+      <p v-if="storageError" role="alert">{{ storageError }}</p>
+      <article v-for="unit in units" :key="unit.id" class="checkpoint-card">
+        <div>
+          <h3>{{ unit.title }} checkpoint</h3>
+          <p v-if="!unit.complete">
+            Complete the unit’s lessons to open its checkpoint.
+          </p>
+          <p v-else-if="!unit.available">
+            Connect to download all of this unit’s lessons.
+          </p>
+          <p v-if="results[unit.id]" class="checkpoint-history">
+            Last checkpoint: {{ results[unit.id]!.firstCorrect }} of
+            {{ results[unit.id]!.total }} first answers matched · translations or
+            choices used on {{ results[unit.id]!.helped }}.
+          </p>
+        </div>
+        <button
+          type="button"
+          class="secondary-action"
+          :disabled="loading || !unit.complete || !unit.available"
+          :aria-label="`Start ${unit.title} checkpoint`"
+          @click="start('checkpoint', unit.id)"
+        >
+          Start checkpoint
+        </button>
+      </article>
+      <p v-if="!loading && !units.length">Complete a lesson to open a checkpoint.</p>
+    </section>
+  </Teleport>
 
   <Teleport to="body">
     <div
