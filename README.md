@@ -123,7 +123,7 @@ With the Vercel CLI signed in, use `vercel deploy --project ismi --scope victory
 
 The current deployment target is alwaysdata's Free plan: .NET 10, 1 GB persistent disk, and 256 MB RAM. It is limited to non-commercial use and the supplied `alwaysdata.net` address. This is a development-preview target, not a production hosting commitment. No paid Render service was activated and its proposed blueprint was removed.
 
-For repeatable terminal updates, see [the programmatic alwaysdata workflow](deploy/README.md). `npm run deploy:api` uses a reusable SSH key and API token in an ignored owner-only local config; one-time credential setup and a first hosted verification remain pending.
+For repeatable terminal updates, see [the programmatic alwaysdata workflow](deploy/README.md). `npm run deploy:api` uses a reusable SSH key and API token in an ignored owner-only local config; owner-authorized credential setup, authenticated access and a real deployment were verified October 15; see [rollout evidence](docs/releases/2026-10-15-cultural-media.md).
 
 Publish the API locally with `dotnet publish i-api/Ismi.Api.csproj -c Release -o /tmp/ismi-backend/app`, then include `deploy/start-alwaysdata.sh` in that output directory. Upload the published files to the hosting account's application directory. Create a .NET 10 site with that working directory and the command `sh start-alwaysdata.sh`. Set `ISMI_DATA_DIR` to a separate absolute directory within the account (for example, `/home/ACCOUNT/ismi/data`). The host supplies `IP` and `PORT`. Forwarded headers are enabled for its TLS-terminating proxy; the application listener must remain behind that trusted proxy. Set `Curriculum__ApproverEmail` to the intended owner's email.
 

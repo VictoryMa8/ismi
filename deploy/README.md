@@ -54,8 +54,9 @@ npm run deploy:api -- --prepare
 python3 -m unittest discover -s deploy -p 'test_*.py'
 ```
 
-Local fixture tests pass; a real authenticated `--check` and deployment remain required
-before claiming the workflow is proven on alwaysdata. Backups consume the existing
+All five local fixture tests pass. A real authenticated `--check` and deployment
+were verified October 15, including exact revision, database and asset preservation;
+see [rollout evidence](../docs/releases/2026-10-15-cultural-media.md). Backups consume the existing
 1 GB allowance; keep useful release backups and remove obsolete ones deliberately.
 Physical free-space checks do not establish the account's provider quota. Brief
 restart downtime is possible. This is a manual terminal workflow; GitHub Actions

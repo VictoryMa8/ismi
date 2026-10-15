@@ -164,16 +164,17 @@ verification requires no paid service or external media credentials.
 
 ## Exact remaining release work
 
-F21.2/F21.3's local software scope is implemented. F21.1 stays open for actual
+F21.2/F21.3's software scope is implemented and deployed. F21.1 stays open for actual
 playback/metadata/access/editorial checks, and F21.4 still needs a real editorial
 cycle using accepted replacement content. F21.5 remains open for real
 assistive-technology/supported-device checks, exact owner content approval and
-publication, and completion of the authorized API rollout with hosted preservation
-and rollback evidence. Optional learner issue submission is deferred; no unagreed
+publication, and content release evidence. The authorized application rollout is complete, with
+hosted preservation and rollback evidence. Optional learner issue submission is deferred; no unagreed
 report-data retention policy was introduced.
 
-No content is approved or published in the actual database. The owner authorized
+No media collection is approved or published in either actual database. The owner authorized
 push and application deployment on October 15, followed by reusable alwaysdata
-credential setup. Frontend `c366a8d` is pushed/Vercel Ready and its route is verified;
-API token and protected SSH key are verified; public-key registration and API deployment remain. See the
+credential setup. Frontend/API application `4545fea` is pushed/deployed and live
+page/owner-console checks pass. All 14 existing hosted tables and persistent assets
+are preserved; the new hosted catalog is empty. See the
 [rollout record](releases/2026-10-15-cultural-media.md). No spending or creator contact is authorized or performed.
