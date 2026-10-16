@@ -226,3 +226,11 @@ software behavior, not linguistic quality or human learning/accessibility eviden
 [Deployment candidate details](deployment-candidate.md) record artifact hashes,
 compatibility order and recovery. No commit, push, rollout or real curriculum
 publication was performed.
+
+## October 16 notice spacing correction
+
+The unavailable-course card now has a 24 px bottom margin so the Today welcome
+heading has a clear gap. This applies to every unavailable course. Direct browser
+measurements at 320 and 1280 px both show 24 px separation and no horizontal
+overflow; the production TypeScript/Vite/PWA build passes. This is a CSS-only
+follow-up; no API, settings or curriculum change is needed.

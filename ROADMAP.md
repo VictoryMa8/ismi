@@ -1298,6 +1298,7 @@ no unverified outcome, CEFR-level or reviewer claims appear publicly.
 #### F24.7 Multi-language wording, landing and visual identity
 
 **Status:** Active — shared copy, landing Languages section and Khmer accents deployed.
+**October 16 follow-up:** owner reported the unavailable-course notice crowding the welcome heading; a 24 px bottom gap is implemented. Production build and direct 320/1280 px checks pass (24 px measured gap, no horizontal overflow); frontend rollout is in progress.
 **Outcome:** Ismi welcomes Khmer and future-language learners through shared English
 copy and course discovery while retaining its Arabic flagship and Palestinian roots.
 **Scope:** landing hero support, Languages section, course statuses/examples/FAQ,
