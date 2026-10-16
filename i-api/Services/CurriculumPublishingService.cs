@@ -249,6 +249,19 @@ public sealed class CurriculumPublishingService(
         return ToDetail(record);
     }
 
+    public async Task<CurriculumReadinessResult> ReadinessAsync(
+        long versionId, string actor, CancellationToken cancellationToken = default)
+    {
+        var record = await LoadAsync(versionId, cancellationToken);
+        var lesson = Deserialize(record.ContentJson);
+        var sources = record.Sources.Select(ToSource).ToList();
+        var result = new CurriculumReadinessResult(validator.ValidateDraft(lesson, sources), validator.Validate(lesson, sources));
+        record.AuditEvents.Add(Audit("draft-checked", actor, DateTime.UtcNow,
+            $"Draft structure: {(result.Draft.IsValid ? "passed" : "failed")}; publication: {(result.Publication.IsValid ? "ready" : "blocked")}. No approval granted."));
+        await database.SaveChangesAsync(cancellationToken);
+        return result;
+    }
+
     public async Task<CurriculumValidationResult> ValidateAsync(
         long versionId,
         string actor,

@@ -22,6 +22,14 @@ Users may study one course or several languages/courses in parallel, with separa
 
 On October 15, 2026 the owner requested a fuller Khmer implementation plan, including a shared landing-page and wording overhaul in preparation for French, eventual Portuguese and further languages. Retain Ismi's Arabic/Palestinian roots while making the shared app welcoming across languages. Cambodian flag-inspired red and blue can join the existing palette. The owner subsequently authorized the entirety of F24 foundation/presentation implementation on October 15, including a deployment candidate. This does not approve F25/F26 curriculum authoring/publication, deployment, beta expansion or Portuguese course scope/variety. See F26/F24.7 in ROADMAP.md and docs/khmer-course-and-brand-expansion.md.
 
+On October 16, 2026 the owner authorized F26 implementation and selected contemporary
+Cambodian Khmer with a Phnom Penh reference model, twelve units/sixty lessons and
+conversation-first learning with optional script help. Prepare unpublished drafts
+now and designate a fluent Khmer reviewer before publication. This supersedes the
+earlier planning-only F26 limit; it does not authorize publication, deployment,
+hiring, provider spending or beta expansion. Exact sources/rights, pronunciation-help
+convention, reading inventory and review/audio evidence remain gates.
+
 ## Primary audience and promise
 
 - First users are false beginners who already know enough Arabic for basic questions or directions.
@@ -40,7 +48,7 @@ On October 15, 2026 the owner requested a fuller Khmer implementation plan, incl
 
 - Levantine is the flagship track.
 - Launch target: 12 weeks of Levantine content and 4 weeks each of MSA and Quranic Arabic.
-- French and Khmer are included in the product roadmap. Their recommended initial depth, language varieties, review arrangements and release timing are unresolved; do not silently add them to the first-100 beta commitment. English remains the teaching/interface language unless the owner requests localization.
+- French and Khmer are included in the product roadmap. Khmer's Cambodian/Phnom Penh model, twelve-unit target and conversation-first optional script direction were selected October 16; fluent review, exact reading/help/source decisions and release timing remain open. French definition remains unresolved. Neither joins the first-100 beta automatically. English remains the teaching/interface language unless the owner requests localization.
 - Levantine uses urban Palestinian as the primary model and labels Jordanian alternatives.
 - Quranic Arabic is comprehension-first. Teach decoding and pronunciation, but not detailed tajwid in the initial product.
 - Connect related words, roots, meanings, and register differences across tracks when useful; do not force the three curricula into identical vocabulary sequences.
@@ -201,7 +209,7 @@ Do not include billing, a social network, or a live-news content operation in th
 
 ## Open decisions
 
-- French and Khmer course varieties, initial depth/outcomes, content/audio sources and linguistic review arrangements; whether either course joins the first-100 beta. The F24 queue policy was approved October 15: whole sessions, about 60% primary when useful, rotating secondary courses, due review first within each allocation, visible overruns/omissions and manual access.
+- French course definition; Khmer exact reading inventory/help convention and both courses' content/audio sources, linguistic review arrangements and beta inclusion. Khmer's Cambodian/Phnom Penh model, twelve-unit/sixty-lesson target and draft-first/fluent-review-before-publication route were approved October 16. The F24 queue policy was approved October 15: whole sessions, about 60% primary when useful, rotating secondary courses, due review first within each allocation, visible overruns/omissions and manual access.
 - Final approved Quran translation, word-level, morphology, and recitation resource IDs and written permissions.
 - Subscription pricing, trials, family plans, and regional pricing.
 - External authentication providers, production account recovery/email delivery, analytics, and detailed data-retention periods.

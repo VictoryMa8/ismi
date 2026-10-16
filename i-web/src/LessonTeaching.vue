@@ -123,12 +123,31 @@ async function back() {
       </button>
     </div>
     <LessonScroll>
+      <p v-if="lesson.contentReview && lesson.contentReview.reviewDisposition !== 'accepted'" class="draft-review-notice" role="status">
+        Unreviewed draft · fluent linguistic review pending.
+      </p>
       <details v-if="lesson.contentReview && stage === 'scene'" class="content-review-record">
         <summary>Course and review record</summary>
         <p>{{ lesson.contentReview.languageTag }} · {{ lesson.contentReview.variety }} · {{ lesson.version }}</p>
-        <p>Review credit: {{ lesson.contentReview.reviewer }} · {{ lesson.contentReview.reviewDisposition }}</p>
+        <p>Review credit: {{ lesson.contentReview.reviewer || 'Reviewer not yet designated' }} · {{ lesson.contentReview.reviewDisposition }}</p>
         <p>Pronunciation help: {{ lesson.contentReview.helpConvention }}. Rights: {{ lesson.contentReview.rightsDisposition }}.</p>
         <p v-if="lesson.contentReview.engineeringFixture">Engineering fixture · not approved curriculum.</p>
+      </details>
+      <details v-if="stage === 'scene' && lesson.introduction?.scriptSupport" class="script-support">
+        <summary>{{ lesson.introduction.scriptSupport.title }}</summary>
+        <p>{{ lesson.introduction.scriptSupport.note }}</p>
+        <ol>
+          <li v-for="cardIndex in lesson.introduction.scriptSupport.teachingCardIndexes" :key="cardIndex">
+            <template v-if="cards[cardIndex]">
+              <p v-bind="textAttributes(lesson.trackId)">{{ cards[cardIndex]!.phrase.arabic }}</p>
+              <details><summary>Show pronunciation help and meaning</summary>
+                <p dir="ltr">{{ cards[cardIndex]!.phrase.arabizi }}</p>
+                <p>{{ cards[cardIndex]!.phrase.meaning }}</p>
+              </details>
+            </template>
+          </li>
+        </ol>
+        <p>No score is recorded. Continue the lesson whenever you are ready.</p>
       </details>
       <LessonTransition @after-enter="focusHeading">
         <div :key="`${stage}-${index}-${revealed}`" class="teaching-page">
@@ -328,3 +347,11 @@ async function back() {
     </footer>
   </section>
 </template>
+
+<style scoped>
+.script-support { padding: .75rem 1rem; margin-bottom: 1rem; border: 1px solid currentColor; border-radius: .75rem; }
+.script-support summary { cursor: pointer; min-height: 44px; padding-block: .65rem; box-sizing: border-box; font-weight: 700; }
+.script-support p { overflow-wrap: anywhere; }
+.script-support [lang^="km"] { font-size: 1.6em; line-height: 2; }
+.draft-review-notice { font-weight: 700; }
+</style>

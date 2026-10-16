@@ -55,6 +55,10 @@ public sealed record CurriculumValidationResult(
     bool IsValid,
     IReadOnlyList<string> Errors);
 
+public sealed record CurriculumReadinessResult(
+    CurriculumValidationResult Draft,
+    CurriculumValidationResult Publication);
+
 public sealed record CurriculumRollbackRequest(long TargetVersionId);
 
 public sealed record CurriculumWithdrawalRequest(string Reason);

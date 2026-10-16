@@ -1,0 +1,636 @@
+{
+  "schemaVersion": 1,
+  "status": "unreviewed-draft",
+  "sources": [
+    {
+      "sourceType": "teaching-reference",
+      "title": "NIU SEAsite Khmer: Unit 1 useful words",
+      "locator": "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+      "rights": "Reference only. No redistribution licence established; no source audio, images, dialogue or teaching prose is bundled. Publication rights review pending.",
+      "notes": "Lexical/reference support for greeting, thanks, excuse me and speaking/understanding. Source spellings are retained in the research note; lesson combinations and readable help below are original AI-assisted candidates, not source quotations or linguistic review."
+    },
+    {
+      "sourceType": "grammar-reference",
+      "title": "NIU SEAsite Khmer: Unit 1 grammar",
+      "locator": "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+      "rights": "Reference only; no commercial content reuse grant established. No source lessons/media copied. Rights disposition remains pending.",
+      "notes": "Reference for first-person form, same-age address and name question. Some legacy-page spellings appear anomalous; do not treat the page as a canonical text. Original lesson script and contextual address choices require fluent review."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "Vathanak Sok, Basic Khmer (2022), 1.1 informal conversation",
+      "locator": "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+      "rights": "CC BY-NC 4.0 except otherwise noted. Reference only; no commercial adaptation/distribution permission established. No source dialogue, prose, video or audio is bundled.",
+      "notes": "Reference for name-giving and peer origin patterns. Ismi uses original situations, assigned names, script compositions and provisional readable help. Neither the source nor its licence approves these candidates for publication."
+    },
+    {
+      "sourceType": "historical-reference",
+      "title": "FSI Cambodian Basic Course Volume 1, Noss and Proum (1966), printed pp. 6 and 9",
+      "locator": "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+      "rights": "Historical US Department of State publication; institutional origin verified via ERIC ED041276. Exact commercial text/audio rights are not attested here. No scan or audio redistributed. Publication clearance pending.",
+      "notes": "Phonemic request-for-repetition and slower-repetition patterns on PDF pages 10 and 13. Modern Khmer script and readable help in the draft are new compositions requiring review, not a transcription claimed to appear in the scan."
+    },
+    {
+      "sourceType": "authoring-record",
+      "title": "Ismi F26 first-unit AI-assisted draft record",
+      "locator": "internal:khmer/meet-01/authoring-v1",
+      "rights": "Original AI-assisted dialogue arrangement, scenarios and explanations for private review. Does not clear external reference rights or constitute owner publication approval.",
+      "notes": "October 16 authorization: draft now, fluent Khmer review before publication. No actual reviewer or human recording. Reference model target: contemporary Cambodian Khmer, Phnom Penh; not verified speaker evidence."
+    }
+  ],
+  "phrases": {
+    "hello": [
+      "សួស្ដី",
+      "sua-sdey",
+      "Hello.",
+      [
+        "សួស្ដី"
+      ]
+    ],
+    "formal": [
+      "ជំរាបសួរ",
+      "jom-riab-sua",
+      "Hello (formal greeting).",
+      [
+        "ជំរាបសួរ"
+      ]
+    ],
+    "thanks": [
+      "អរគុណ",
+      "aw-kun",
+      "Thank you.",
+      [
+        "អរគុណ"
+      ]
+    ],
+    "sorry": [
+      "សូមទោស",
+      "som-toh",
+      "Excuse me / sorry.",
+      [
+        "សូមទោស"
+      ]
+    ],
+    "nameq": [
+      "អ្នកឈ្មោះអី?",
+      "neak chhmoh ey?",
+      "What is your name?",
+      [
+        "អ្នក",
+        "ឈ្មោះ",
+        "អី",
+        "?"
+      ]
+    ],
+    "alex": [
+      "ខ្ញុំឈ្មោះ Alex។",
+      "khnhom chhmoh Alex",
+      "My name is Alex.",
+      [
+        "ខ្ញុំ",
+        "ឈ្មោះ",
+        " Alex",
+        "។"
+      ]
+    ],
+    "sam": [
+      "ខ្ញុំឈ្មោះ Sam។",
+      "khnhom chhmoh Sam",
+      "My name is Sam.",
+      [
+        "ខ្ញុំ",
+        "ឈ្មោះ",
+        " Sam",
+        "។"
+      ]
+    ],
+    "fromq": [
+      "អ្នកមកពីណា?",
+      "neak mok pii naa?",
+      "Where are you from?",
+      [
+        "អ្នក",
+        "មកពី",
+        "ណា",
+        "?"
+      ]
+    ],
+    "frompp": [
+      "ខ្ញុំមកពីភ្នំពេញ។",
+      "khnhom mok pii Phnom Penh",
+      "I am from Phnom Penh.",
+      [
+        "ខ្ញុំ",
+        "មកពី",
+        "ភ្នំពេញ",
+        "។"
+      ]
+    ],
+    "fromus": [
+      "ខ្ញុំមកពីអាមេរិក។",
+      "khnhom mok pii aa-me-rik",
+      "I am from America.",
+      [
+        "ខ្ញុំ",
+        "មកពី",
+        "អាមេរិក",
+        "។"
+      ]
+    ],
+    "repeat": [
+      "សូមនិយាយម្តងទៀត។",
+      "som niyeay mdong tiet",
+      "Please say it again.",
+      [
+        "សូម",
+        "និយាយ",
+        "ម្តងទៀត",
+        "។"
+      ]
+    ],
+    "slow": [
+      "សូមនិយាយយឺតៗ។",
+      "som niyeay yeut yeut",
+      "Please speak slowly.",
+      [
+        "សូម",
+        "និយាយ",
+        "យឺតៗ",
+        "។"
+      ]
+    ]
+  },
+  "notes": {
+    "hello": [
+      "Greet a peer",
+      "Use this candidate for a casual meeting between adults of similar age. Review the greeting and setting together; this is not a universal address rule.",
+      "You meet a friend of your partner. Offer a casual hello."
+    ],
+    "formal": [
+      "Recognize a formal greeting",
+      "Keep the formal greeting distinct from the casual scene. A fluent reviewer must confirm when it fits; recognition here is not a cultural etiquette assessment.",
+      "You need to recognize the formal greeting from this lesson."
+    ],
+    "thanks": [
+      "Thank someone",
+      "Use this after someone helps you. It acknowledges help rather than asking for new information.",
+      "Someone repeats their name for you. Thank them."
+    ],
+    "sorry": [
+      "Get someone’s attention",
+      "This candidate marks an apology or excuse me. Review the situation and intonation before recording it; it does not itself ask for repetition.",
+      "Politely get someone’s attention before asking for help."
+    ],
+    "nameq": [
+      "Ask a name",
+      "The draft scene uses adults of similar age. The address choice needs fluent review; do not generalize it to every relationship or formal meeting.",
+      "Ask the person you just met for their name."
+    ],
+    "alex": [
+      "Give your name",
+      "Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices.",
+      "You are playing Alex. Say what your name is."
+    ],
+    "sam": [
+      "Recognize another name",
+      "Sam is a different practice name. Keep the name asked for in view; both name sentences are possible in other situations.",
+      "You are playing Sam. Introduce yourself."
+    ],
+    "fromq": [
+      "Ask where someone is from",
+      "This asks about origin in the draft scene. It is a different request from asking for someone’s name. The colloquial wording needs contemporary review.",
+      "Ask where your new acquaintance is from."
+    ],
+    "frompp": [
+      "Share an origin",
+      "The assigned practice detail is Phnom Penh. This does not imply where any actual learner lives or comes from.",
+      "Your practice character is from Phnom Penh. Share that detail."
+    ],
+    "fromus": [
+      "Recognize a different origin",
+      "The assigned practice detail is America. The place-name wording and help are provisional; a reviewer must confirm them.",
+      "Your practice character is from America. Share that detail."
+    ],
+    "repeat": [
+      "Ask to hear it again",
+      "Use the repetition request when you missed the words. It is distinct from a request to change speed. The script/help is an original modern candidate informed by a historical pattern, pending fluent review.",
+      "You missed a name. Ask the person to say it again."
+    ],
+    "slow": [
+      "Ask for a slower exchange",
+      "Use the speed request when the words came too quickly. This modern script/help candidate needs fluent review; the historical reference does not approve it.",
+      "You heard the words but the pace was too fast. Ask for slower speech."
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "greet",
+      "title": "Greet someone",
+      "goal": "Greet a peer and thank them for their welcome.",
+      "scenario": "Your partner introduces you to a friend of a similar age at their home. Greet each other, introduce yourselves, then thank the host for welcoming you.",
+      "dialogue": [
+        [
+          "Host",
+          "hello"
+        ],
+        [
+          "Guest",
+          "hello"
+        ],
+        [
+          "Host",
+          "sam"
+        ],
+        [
+          "Guest",
+          "alex"
+        ],
+        [
+          "Guest",
+          "thanks"
+        ]
+      ],
+      "cards": [
+        "hello",
+        "thanks",
+        "sorry",
+        "formal"
+      ],
+      "usage": "Keep the greeting, thank-you and attention-getter attached to their situations. The formal greeting is a recognition contrast; this casual scene does not require it.",
+      "practice": [
+        [
+          "Your peer has just greeted you. Return the casual greeting taught in this scene.",
+          "hello",
+          "hello",
+          "thanks",
+          "sorry"
+        ],
+        [
+          "Your host helped you join the conversation. Thank them.",
+          "hello",
+          "thanks",
+          "nameq",
+          "sorry"
+        ],
+        [
+          "You need to get someone’s attention before your question. Choose the attention-getter.",
+          "hello",
+          "sorry",
+          "thanks",
+          "fromq"
+        ],
+        [
+          "You are reading a note labeled “formal greeting.” Select the matching expression, rather than a thank-you or an apology.",
+          "hello",
+          "formal",
+          "thanks",
+          "sorry"
+        ],
+        [
+          "At the end of the welcome, the host helps with your coat. Acknowledge that help.",
+          "hello",
+          "thanks",
+          "nameq",
+          "formal"
+        ],
+        [
+          "In the hallway, get a person’s attention before a question. Choose the expression that does that.",
+          "hello",
+          "sorry",
+          "thanks",
+          "fromq"
+        ]
+      ]
+    },
+    {
+      "slug": "names",
+      "title": "Introduce yourself",
+      "goal": "Give your name and ask someone else’s name.",
+      "scenario": "You are Alex, meeting Sam through a friend. You are both adults of a similar age. Use the assigned names in this practice.",
+      "dialogue": [
+        [
+          "Alex",
+          "hello"
+        ],
+        [
+          "Sam",
+          "hello"
+        ],
+        [
+          "Alex",
+          "alex"
+        ],
+        [
+          "Alex",
+          "nameq"
+        ],
+        [
+          "Sam",
+          "sam"
+        ],
+        [
+          "Alex",
+          "thanks"
+        ]
+      ],
+      "cards": [
+        "alex",
+        "nameq",
+        "sam"
+      ],
+      "usage": "Keep your assigned name separate from the other person’s name. A name question calls for a name; an origin question calls for a place. Address and name spacing remain review items.",
+      "practice": [
+        [
+          "Sam asks your name. You are playing Alex. Give your own name.",
+          "nameq",
+          "alex",
+          "sam",
+          "frompp"
+        ],
+        [
+          "You have introduced yourself. Ask Sam for their name.",
+          "alex",
+          "nameq",
+          "fromq",
+          "thanks"
+        ],
+        [
+          "Alex asks your name. You are now playing Sam. Give the name assigned to you.",
+          "nameq",
+          "sam",
+          "alex",
+          "fromus"
+        ],
+        [
+          "You missed the name on a written introduction card. Which expression asks for a name?",
+          "hello",
+          "nameq",
+          "fromq",
+          "sorry"
+        ],
+        [
+          "A written profile asks for the name Alex. Choose the matching self-introduction, not the other person’s name.",
+          "nameq",
+          "alex",
+          "sam",
+          "frompp"
+        ],
+        [
+          "At another meeting you are Sam. Alex has introduced themself; ask the name question yourself.",
+          "alex",
+          "nameq",
+          "fromq",
+          "sorry"
+        ]
+      ]
+    },
+    {
+      "slug": "details",
+      "title": "Get to know each other",
+      "goal": "Exchange a name and one simple personal detail.",
+      "scenario": "At a small gathering, Alex is from America and Sam is from Phnom Penh. These are assigned practice details, not assumptions about you.",
+      "dialogue": [
+        [
+          "Alex",
+          "alex"
+        ],
+        [
+          "Alex",
+          "fromus"
+        ],
+        [
+          "Alex",
+          "fromq"
+        ],
+        [
+          "Sam",
+          "sam"
+        ],
+        [
+          "Sam",
+          "frompp"
+        ],
+        [
+          "Alex",
+          "thanks"
+        ]
+      ],
+      "cards": [
+        "fromq",
+        "frompp",
+        "fromus"
+      ],
+      "usage": "Choose the detail the question asks for. Reuse the introduction pattern in a new meeting rather than treating a name and an origin as interchangeable answers.",
+      "practice": [
+        [
+          "You know Sam’s name. Ask about their origin next.",
+          "sam",
+          "fromq",
+          "nameq",
+          "thanks"
+        ],
+        [
+          "Alex asks where you are from. You are Sam, whose assigned origin is Phnom Penh.",
+          "fromq",
+          "frompp",
+          "sam",
+          "fromus"
+        ],
+        [
+          "Sam asks the same question. You are Alex, whose assigned origin is America.",
+          "fromq",
+          "fromus",
+          "alex",
+          "frompp"
+        ],
+        [
+          "At a later introduction you are asked for your name, not your origin. You are Alex.",
+          "nameq",
+          "alex",
+          "fromus",
+          "frompp"
+        ],
+        [
+          "In an introduction message, give only the assigned origin America rather than a name or a different origin.",
+          "fromq",
+          "fromus",
+          "sam",
+          "frompp"
+        ],
+        [
+          "A friend has introduced themselves as Alex. Ask the origin question next, rather than repeating the name question.",
+          "alex",
+          "fromq",
+          "nameq",
+          "thanks"
+        ]
+      ]
+    },
+    {
+      "slug": "repair",
+      "title": "Ask for help understanding",
+      "goal": "Ask for repetition or slower speech, then respond.",
+      "scenario": "In a noisy room you miss Sam’s name. Ask for help, read the repeated line, then respond. No listening is required in this text candidate.",
+      "dialogue": [
+        [
+          "Sam",
+          "sam"
+        ],
+        [
+          "Alex",
+          "repeat"
+        ],
+        [
+          "Sam",
+          "sam"
+        ],
+        [
+          "Alex",
+          "slow"
+        ],
+        [
+          "Sam",
+          "sam"
+        ],
+        [
+          "Alex",
+          "thanks"
+        ]
+      ],
+      "cards": [
+        "repeat",
+        "slow",
+        "thanks"
+      ],
+      "usage": "A request to repeat asks for the words again; a speed request asks for a slower delivery. After clarification, respond to the actual information. These requests need contemporary script, pronunciation and politeness review before use as teaching models.",
+      "practice": [
+        [
+          "You missed Sam’s name. Ask to hear it again.",
+          "sam",
+          "repeat",
+          "slow",
+          "thanks"
+        ],
+        [
+          "The person is speaking too fast. Ask them to slow down.",
+          "fromq",
+          "slow",
+          "repeat",
+          "nameq"
+        ],
+        [
+          "Sam repeats their name to help you. Thank them.",
+          "sam",
+          "thanks",
+          "repeat",
+          "fromq"
+        ],
+        [
+          "The question has now been clarified: it asks for your name. You are Alex. Answer it.",
+          "nameq",
+          "alex",
+          "fromus",
+          "slow"
+        ],
+        [
+          "A chair scrapes across the floor while the name is said. Request the words again.",
+          "sam",
+          "repeat",
+          "thanks",
+          "fromq"
+        ],
+        [
+          "At a later table a different person is speaking too fast. Ask specifically for a change of pace.",
+          "alex",
+          "slow",
+          "nameq",
+          "repeat"
+        ]
+      ]
+    },
+    {
+      "slug": "together",
+      "title": "Keep the exchange going",
+      "goal": "Greet someone, exchange details and repair a missed question.",
+      "scenario": "A different gathering: you are Sam and meet Alex at a friend’s home. Use earlier phrases in a changed role and clarify when needed.",
+      "dialogue": [
+        [
+          "Sam",
+          "hello"
+        ],
+        [
+          "Sam",
+          "sam"
+        ],
+        [
+          "Alex",
+          "nameq"
+        ],
+        [
+          "Sam",
+          "repeat"
+        ],
+        [
+          "Alex",
+          "nameq"
+        ],
+        [
+          "Sam",
+          "sam"
+        ]
+      ],
+      "cards": [
+        "hello",
+        "sam",
+        "fromq",
+        "repeat",
+        "slow"
+      ],
+      "usage": "Use the earlier phrases in a new role. Answer a name question with a name and an origin question with a place. Ask for clarification whenever it helps; needing help does not prevent finishing.",
+      "practice": [
+        [
+          "At the doorway, return a peer’s casual greeting before you exchange details.",
+          "hello",
+          "hello",
+          "thanks",
+          "repeat"
+        ],
+        [
+          "You are Sam at this gathering. Give your assigned name.",
+          "nameq",
+          "sam",
+          "alex",
+          "frompp"
+        ],
+        [
+          "Alex asks where you are from. Your assigned origin is Phnom Penh.",
+          "fromq",
+          "frompp",
+          "sam",
+          "fromus"
+        ],
+        [
+          "You missed the next question. Ask for repetition instead of guessing an answer.",
+          "nameq",
+          "repeat",
+          "thanks",
+          "frompp"
+        ],
+        [
+          "You can read the clarified question: it asks for your name. You are Sam.",
+          "nameq",
+          "sam",
+          "frompp",
+          "alex"
+        ],
+        [
+          "At the next table the pace is too fast. Ask for slower speech.",
+          "fromq",
+          "slow",
+          "repeat",
+          "thanks"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "feature": "F26.6",
+  "status": "not-run",
+  "webRevision": null,
+  "apiRevision": null,
+  "packageHashes": [],
+  "linguisticReviewer": null,
+  "textHelpSourceDispositions": [],
+  "recordingVersionsAndRights": [],
+  "ownerCandidateApproval": null,
+  "publicationAuthorization": null,
+  "privateObservationLocator": null,
+  "deviceAndAssistiveTechnologyChecks": [],
+  "immediateTasks": [],
+  "delayedTasks": [],
+  "helpAndAttempts": [],
+  "defectsAndRetests": [],
+  "remainingGates": ["Fluent review", "Source and rights approval", "Reviewed human audio", "Real devices and assistive technology", "Observed learning evidence", "Exact owner publication and rollout decisions"]
+}

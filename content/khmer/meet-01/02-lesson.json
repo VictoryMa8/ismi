@@ -1,0 +1,742 @@
+{
+  "lesson": {
+    "id": "khmer-meet-01-02",
+    "trackId": "khmer",
+    "schemaVersion": 2,
+    "title": "Introduce yourself",
+    "scenario": "You are Alex, meeting Sam through a friend. You are both adults of a similar age. Use the assigned names in this practice.",
+    "estimatedMinutes": 5,
+    "version": "draft",
+    "unitId": "khmer-meet-01",
+    "unitTitle": "Meet someone and keep the exchange going",
+    "courseOrder": 2,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": false,
+    "contentReview": {
+      "languageTag": "km-KH",
+      "variety": "cambodian-phnom-penh",
+      "helpConvention": "Ismi readable draft help v0; provisional, not IPA or approved romanization",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "criticalIssues": [
+        "No fluent Khmer reviewer designated; all wording, accepted choices, address and cultural notes need review.",
+        "Reference access is not reuse clearance; source selection and publication rights await owner review.",
+        "Readable pronunciation help is provisional; modern script compositions and historical repair patterns need verification.",
+        "No reviewed human model audio, sound modules, real-device/AT or observed learning evidence."
+      ],
+      "sourceLanguages": {
+        "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm": "km-KH",
+        "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm": "km-KH",
+        "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/": "km-KH",
+        "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf": "km-KH",
+        "internal:khmer/meet-01/authoring-v1": "km-KH"
+      }
+    },
+    "introduction": {
+      "goal": "Give your name and ask someone else’s name.",
+      "dialogue": [
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សួស្ដី",
+            "pronunciationHelp": "sua-sdey",
+            "meaning": "Hello.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Sam",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សួស្ដី",
+            "pronunciationHelp": "sua-sdey",
+            "meaning": "Hello.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Alex។",
+            "pronunciationHelp": "khnhom chhmoh Alex",
+            "meaning": "My name is Alex.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Sam",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំឈ្មោះ Alex។",
+          "pronunciationHelp": "khnhom chhmoh Alex",
+          "meaning": "My name is Alex.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកឈ្មោះអី?",
+          "pronunciationHelp": "neak chhmoh ey?",
+          "meaning": "What is your name?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំឈ្មោះ Sam។",
+          "pronunciationHelp": "khnhom chhmoh Sam",
+          "meaning": "My name is Sam.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Keep your assigned name separate from the other person’s name. A name question calls for a name; an origin question calls for a place. Address and name spacing remain review items.",
+      "dialectNote": "Target model: contemporary Cambodian Khmer with a Phnom Penh reference. This candidate has no verified model speaker. Same-age peer address is provisional; do not generalize it to older relatives or formal settings.",
+      "recordingNote": "Unreviewed text draft. No human model audio is supplied. Device speech, if available, is only a preview and does not validate the pronunciation help.",
+      "sourceLocators": [
+        "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+        "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+        "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+        "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+        "internal:khmer/meet-01/authoring-v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Give your name",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Alex។",
+            "pronunciationHelp": "khnhom chhmoh Alex",
+            "meaning": "My name is Alex.",
+            "audioUrl": null
+          },
+          "note": "Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices.",
+          "recallCue": "You are playing Alex. Say what your name is.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "ខ្ញុំឈ្មោះ Alex។",
+              "pronunciationHelp": "khnhom chhmoh Alex",
+              "meaning": "My name is Alex."
+            }
+          ]
+        },
+        {
+          "title": "Ask a name",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "audioUrl": null
+          },
+          "note": "The draft scene uses adults of similar age. The address choice needs fluent review; do not generalize it to every relationship or formal meeting.",
+          "recallCue": "Ask the person you just met for their name.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "អ្នកឈ្មោះអី?",
+              "pronunciationHelp": "neak chhmoh ey?",
+              "meaning": "What is your name?"
+            }
+          ]
+        },
+        {
+          "title": "Recognize another name",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "audioUrl": null
+          },
+          "note": "Sam is a different practice name. Keep the name asked for in view; both name sentences are possible in other situations.",
+          "recallCue": "You are playing Sam. Introduce yourself.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "ខ្ញុំឈ្មោះ Sam។",
+              "pronunciationHelp": "khnhom chhmoh Sam",
+              "meaning": "My name is Sam."
+            }
+          ]
+        }
+      ],
+      "scriptSupport": {
+        "title": "Optional script practice",
+        "note": "Compare these whole expressions with the dialogue. Try recognizing a familiar expression before revealing its help. These are draft reading examples, not a decoding or pronunciation assessment.",
+        "teachingCardIndexes": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "vocabulary": [
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "ខ្ញុំឈ្មោះ Alex។",
+        "pronunciationHelp": "khnhom chhmoh Alex",
+        "meaning": "My name is Alex.",
+        "id": "alex",
+        "senseId": "meet-alex",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "អ្នកឈ្មោះអី?",
+        "pronunciationHelp": "neak chhmoh ey?",
+        "meaning": "What is your name?",
+        "id": "nameq",
+        "senseId": "meet-nameq",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "The draft scene uses adults of similar age. The address choice needs fluent review; do not generalize it to every relationship or formal meeting.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "ខ្ញុំឈ្មោះ Sam។",
+        "pronunciationHelp": "khnhom chhmoh Sam",
+        "meaning": "My name is Sam.",
+        "id": "sam",
+        "senseId": "meet-sam",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "Sam is a different practice name. Keep the name asked for in view; both name sentences are possible in other situations.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 2
+      }
+    ],
+    "steps": [
+      {
+        "id": "names-1",
+        "instruction": "Sam asks your name. You are playing Alex. Give your own name.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកឈ្មោះអី?",
+          "pronunciationHelp": "neak chhmoh ey?",
+          "meaning": "What is your name?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "id": "a",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Sam",
+              "។"
+            ],
+            "rationale": "This says “My name is Sam.” It does not supply the response requested here: “My name is Alex.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+            "pronunciationHelp": "khnhom mok pii Phnom Penh",
+            "meaning": "I am from Phnom Penh.",
+            "id": "b",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "ភ្នំពេញ",
+              "។"
+            ],
+            "rationale": "This says “I am from Phnom Penh.” It does not supply the response requested here: “My name is Alex.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Alex។",
+            "pronunciationHelp": "khnhom chhmoh Alex",
+            "meaning": "My name is Alex.",
+            "id": "c",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Alex",
+              "។"
+            ],
+            "rationale": "The requested response is “My name is Alex.” in this situation. Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “My name is Alex.” in this situation. Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You are playing Alex. Say what your name is."
+        }
+      },
+      {
+        "id": "names-2",
+        "instruction": "You have introduced yourself. Ask Sam for their name.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំឈ្មោះ Alex។",
+          "pronunciationHelp": "khnhom chhmoh Alex",
+          "meaning": "My name is Alex.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "a",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "This says “Thank you.” It does not supply the response requested here: “What is your name?” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "id": "b",
+            "segments": [
+              "អ្នក",
+              "ឈ្មោះ",
+              "អី",
+              "?"
+            ],
+            "rationale": "The requested response is “What is your name?” in this situation. The draft scene uses adults of similar age. The address choice needs fluent review; do not generalize it to every relationship or formal meeting."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "id": "c",
+            "segments": [
+              "អ្នក",
+              "មកពី",
+              "ណា",
+              "?"
+            ],
+            "rationale": "This says “Where are you from?” It does not supply the response requested here: “What is your name?” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “What is your name?” in this situation. The draft scene uses adults of similar age. The address choice needs fluent review; do not generalize it to every relationship or formal meeting.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Ask the person you just met for their name."
+        }
+      },
+      {
+        "id": "names-3",
+        "instruction": "Alex asks your name. You are now playing Sam. Give the name assigned to you.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកឈ្មោះអី?",
+          "pronunciationHelp": "neak chhmoh ey?",
+          "meaning": "What is your name?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "id": "a",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Sam",
+              "។"
+            ],
+            "rationale": "The requested response is “My name is Sam.” in this situation. Sam is a different practice name. Keep the name asked for in view; both name sentences are possible in other situations."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Alex។",
+            "pronunciationHelp": "khnhom chhmoh Alex",
+            "meaning": "My name is Alex.",
+            "id": "b",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Alex",
+              "។"
+            ],
+            "rationale": "This says “My name is Alex.” It does not supply the response requested here: “My name is Sam.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីអាមេរិក។",
+            "pronunciationHelp": "khnhom mok pii aa-me-rik",
+            "meaning": "I am from America.",
+            "id": "c",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "អាមេរិក",
+              "។"
+            ],
+            "rationale": "This says “I am from America.” It does not supply the response requested here: “My name is Sam.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “My name is Sam.” in this situation. Sam is a different practice name. Keep the name asked for in view; both name sentences are possible in other situations.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You are playing Sam. Introduce yourself."
+        }
+      },
+      {
+        "id": "names-4",
+        "instruction": "You missed the name on a written introduction card. Which expression asks for a name?",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សួស្ដី",
+          "pronunciationHelp": "sua-sdey",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "id": "a",
+            "segments": [
+              "អ្នក",
+              "មកពី",
+              "ណា",
+              "?"
+            ],
+            "rationale": "This says “Where are you from?” It does not supply the response requested here: “What is your name?” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមទោស",
+            "pronunciationHelp": "som-toh",
+            "meaning": "Excuse me / sorry.",
+            "id": "b",
+            "segments": [
+              "សូមទោស"
+            ],
+            "rationale": "This says “Excuse me / sorry.” It does not supply the response requested here: “What is your name?” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "id": "c",
+            "segments": [
+              "អ្នក",
+              "ឈ្មោះ",
+              "អី",
+              "?"
+            ],
+            "rationale": "The requested response is “What is your name?” in this situation. The draft scene uses adults of similar age. The address choice needs fluent review; do not generalize it to every relationship or formal meeting."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “What is your name?” in this situation. The draft scene uses adults of similar age. The address choice needs fluent review; do not generalize it to every relationship or formal meeting.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Ask the person you just met for their name."
+        }
+      },
+      {
+        "id": "names-5",
+        "instruction": "A written profile asks for the name Alex. Choose the matching self-introduction, not the other person’s name.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកឈ្មោះអី?",
+          "pronunciationHelp": "neak chhmoh ey?",
+          "meaning": "What is your name?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+            "pronunciationHelp": "khnhom mok pii Phnom Penh",
+            "meaning": "I am from Phnom Penh.",
+            "id": "a",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "ភ្នំពេញ",
+              "។"
+            ],
+            "rationale": "This says “I am from Phnom Penh.” It does not supply the response requested here: “My name is Alex.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Alex។",
+            "pronunciationHelp": "khnhom chhmoh Alex",
+            "meaning": "My name is Alex.",
+            "id": "b",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Alex",
+              "។"
+            ],
+            "rationale": "The requested response is “My name is Alex.” in this situation. Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "id": "c",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Sam",
+              "។"
+            ],
+            "rationale": "This says “My name is Sam.” It does not supply the response requested here: “My name is Alex.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “My name is Alex.” in this situation. Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You are playing Alex. Say what your name is."
+        }
+      },
+      {
+        "id": "names-6",
+        "instruction": "At another meeting you are Sam. Alex has introduced themself; ask the name question yourself.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំឈ្មោះ Alex។",
+          "pronunciationHelp": "khnhom chhmoh Alex",
+          "meaning": "My name is Alex.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "id": "a",
+            "segments": [
+              "អ្នក",
+              "ឈ្មោះ",
+              "អី",
+              "?"
+            ],
+            "rationale": "The requested response is “What is your name?” in this situation. The draft scene uses adults of similar age. The address choice needs fluent review; do not generalize it to every relationship or formal meeting."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "id": "b",
+            "segments": [
+              "អ្នក",
+              "មកពី",
+              "ណា",
+              "?"
+            ],
+            "rationale": "This says “Where are you from?” It does not supply the response requested here: “What is your name?” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមទោស",
+            "pronunciationHelp": "som-toh",
+            "meaning": "Excuse me / sorry.",
+            "id": "c",
+            "segments": [
+              "សូមទោស"
+            ],
+            "rationale": "This says “Excuse me / sorry.” It does not supply the response requested here: “What is your name?” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “What is your name?” in this situation. The draft scene uses adults of similar age. The address choice needs fluent review; do not generalize it to every relationship or formal meeting.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Ask the person you just met for their name."
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "teaching-reference",
+      "title": "NIU SEAsite Khmer: Unit 1 useful words",
+      "locator": "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+      "rights": "Reference only. No redistribution licence established; no source audio, images, dialogue or teaching prose is bundled. Publication rights review pending.",
+      "notes": "Lexical/reference support for greeting, thanks, excuse me and speaking/understanding. Source spellings are retained in the research note; lesson combinations and readable help below are original AI-assisted candidates, not source quotations or linguistic review."
+    },
+    {
+      "sourceType": "grammar-reference",
+      "title": "NIU SEAsite Khmer: Unit 1 grammar",
+      "locator": "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+      "rights": "Reference only; no commercial content reuse grant established. No source lessons/media copied. Rights disposition remains pending.",
+      "notes": "Reference for first-person form, same-age address and name question. Some legacy-page spellings appear anomalous; do not treat the page as a canonical text. Original lesson script and contextual address choices require fluent review."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "Vathanak Sok, Basic Khmer (2022), 1.1 informal conversation",
+      "locator": "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+      "rights": "CC BY-NC 4.0 except otherwise noted. Reference only; no commercial adaptation/distribution permission established. No source dialogue, prose, video or audio is bundled.",
+      "notes": "Reference for name-giving and peer origin patterns. Ismi uses original situations, assigned names, script compositions and provisional readable help. Neither the source nor its licence approves these candidates for publication."
+    },
+    {
+      "sourceType": "historical-reference",
+      "title": "FSI Cambodian Basic Course Volume 1, Noss and Proum (1966), printed pp. 6 and 9",
+      "locator": "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+      "rights": "Historical US Department of State publication; institutional origin verified via ERIC ED041276. Exact commercial text/audio rights are not attested here. No scan or audio redistributed. Publication clearance pending.",
+      "notes": "Phonemic request-for-repetition and slower-repetition patterns on PDF pages 10 and 13. Modern Khmer script and readable help in the draft are new compositions requiring review, not a transcription claimed to appear in the scan."
+    },
+    {
+      "sourceType": "authoring-record",
+      "title": "Ismi F26 first-unit AI-assisted draft record",
+      "locator": "internal:khmer/meet-01/authoring-v1",
+      "rights": "Original AI-assisted dialogue arrangement, scenarios and explanations for private review. Does not clear external reference rights or constitute owner publication approval.",
+      "notes": "October 16 authorization: draft now, fluent Khmer review before publication. No actual reviewer or human recording. Reference model target: contemporary Cambodian Khmer, Phnom Penh; not verified speaker evidence."
+    }
+  ]
+}

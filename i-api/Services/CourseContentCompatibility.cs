@@ -24,7 +24,8 @@ public static class CourseContentCompatibility
             Arabizi = v.PronunciationHelp ?? v.Arabizi }).ToArray()
     };
 
-    public static void ValidateProfile(LessonResponse lesson, IReadOnlyCollection<CurriculumSourceInput> sources, List<string> errors)
+    public static void ValidateProfile(LessonResponse lesson, IReadOnlyCollection<CurriculumSourceInput> sources, List<string> errors,
+        bool forPublication = true)
     {
         var course = CourseCatalog.Find(lesson.TrackId);
         if (course is null) { errors.Add("Unknown course ID."); return; }
@@ -50,17 +51,24 @@ public static class CourseContentCompatibility
         if (lesson.ContentReview is not { } review) { errors.Add("New-language content needs a course review record."); return; }
         if (string.IsNullOrWhiteSpace(review.LanguageTag) || review.LanguageTag != course.Tag && !review.LanguageTag.StartsWith(course.Tag + "-", StringComparison.Ordinal))
             errors.Add("Review language does not match the course.");
-        if (new[] { review.Variety, review.HelpConvention, review.Reviewer }.Any(string.IsNullOrWhiteSpace))
-            errors.Add("Specify course variety, pronunciation-help convention and actual reviewer.");
-        if (review.ReviewDisposition != "accepted" || review.RightsDisposition != "cleared"
-            || review.CriticalIssues is null || review.CriticalIssues.Count > 0)
+        if (new[] { review.Variety, review.HelpConvention }.Any(string.IsNullOrWhiteSpace))
+            errors.Add("Specify course variety and pronunciation-help convention.");
+        if ((forPublication || review.ReviewDisposition == "accepted") && string.IsNullOrWhiteSpace(review.Reviewer))
+            errors.Add("Record the actual linguistic reviewer before approval.");
+        if (review.ReviewDisposition is not ("pending" or "accepted" or "changes-requested")
+            || review.RightsDisposition is not ("pending" or "cleared" or "restricted"))
+            errors.Add("Use an explicit pending/accepted/changes-requested review and pending/cleared/restricted rights disposition.");
+        if (review.CriticalIssues is null)
+            errors.Add("Record critical issues explicitly, including an empty list when none are known.");
+        if (forPublication && (review.ReviewDisposition != "accepted" || review.RightsDisposition != "cleared"
+            || review.CriticalIssues is null || review.CriticalIssues.Count > 0))
             errors.Add("Resolve critical linguistic/rights issues and record accepted review/cleared rights.");
         if (review.SourceLanguages is null || sources.Any(source => string.IsNullOrWhiteSpace(source.Locator) || !review.SourceLanguages.TryGetValue(source.Locator, out var tag) || tag != review.LanguageTag))
             errors.Add("Every source locator needs a matching language declaration in contentReview.sourceLanguages.");
         if (texts.Any(t => (t.Item2 ?? "").Any(ch => ch is >= '\u0600' and <= '\u06ff')))
             errors.Add("Arabic-script target text does not match this French/Khmer course profile.");
-        if (review.EngineeringFixture) errors.Add("Engineering fixtures cannot be approved or published.");
-        if (!sources.Any(s => s.SourceType == "linguistic-review" && !string.IsNullOrWhiteSpace(s.Notes)))
+        if (forPublication && review.EngineeringFixture) errors.Add("Engineering fixtures cannot be approved or published.");
+        if (forPublication && !sources.Any(s => s.SourceType == "linguistic-review" && !string.IsNullOrWhiteSpace(s.Notes)))
             errors.Add("A factual linguistic-review disposition source is required.");
         foreach (var answer in lesson.Steps.SelectMany(s => s.Answers))
         {

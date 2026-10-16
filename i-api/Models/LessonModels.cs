@@ -34,7 +34,13 @@ public sealed record LessonIntroduction(
     string DialectNote,
     string RecordingNote,
     IReadOnlyList<string> SourceLocators,
-    IReadOnlyList<LessonTeachingCard>? TeachingCards = null);
+    IReadOnlyList<LessonTeachingCard>? TeachingCards = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    LessonScriptSupport? ScriptSupport = null);
+
+// Optional whole-expression script practice reuses exact reviewed teaching text.
+// It does not add an alphabet gate or infer reading/pronunciation proficiency.
+public sealed record LessonScriptSupport(string Title, string Note, IReadOnlyList<int> TeachingCardIndexes);
 
 public sealed record LessonTeachingCard(string Title, LessonPrompt Phrase, string Note, IReadOnlyList<LessonPhraseChunk> Chunks,
     string? RecallCue = null, IReadOnlyList<string>? SourceLocators = null,

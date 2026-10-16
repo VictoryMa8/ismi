@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "feature": "F26",
+  "unitId": "khmer-meet-01",
+  "date": "2026-10-16",
+  "status": "unreviewed-draft",
+  "ownerDecisions": {
+    "variety": "cambodian-phnom-penh",
+    "targetUnits": 12,
+    "newLessonsPerUnit": 5,
+    "optionalScript": true,
+    "route": "Draft now; designate fluent Khmer reviewer before publication."
+  },
+  "sourceApproval": "pending",
+  "linguisticReview": "pending",
+  "pronunciationHelp": "provisional-v0",
+  "humanModelAudio": "missing",
+  "ownerWordingApproval": "pending",
+  "publication": "not-authorized",
+  "packages": [
+    {
+      "lessonId": "khmer-meet-01-01",
+      "file": "01-lesson.json",
+      "sha256": "2224bd136e0fcdda1ec04ce15994bf9ebdd57bba5decdabd653acfaf47c127b3",
+      "dialogueTurns": 5,
+      "teachingCards": 4,
+      "practiceSteps": 6
+    },
+    {
+      "lessonId": "khmer-meet-01-02",
+      "file": "02-lesson.json",
+      "sha256": "dbdd9898c8ae7a195fc415bf29a2afc8f259ca35358ffa34039ac1b14b6f6eff",
+      "dialogueTurns": 6,
+      "teachingCards": 3,
+      "practiceSteps": 6
+    },
+    {
+      "lessonId": "khmer-meet-01-03",
+      "file": "03-lesson.json",
+      "sha256": "eb1f2cf47d2ef65f31707d53548f1aa32f1768ff4583fce8f4671be34ab803e9",
+      "dialogueTurns": 6,
+      "teachingCards": 3,
+      "practiceSteps": 6
+    },
+    {
+      "lessonId": "khmer-meet-01-04",
+      "file": "04-lesson.json",
+      "sha256": "4365ee17b61b0f3d89e958b41021c46768cc52e13beb9d8e5ec89b1b07c2625a",
+      "dialogueTurns": 6,
+      "teachingCards": 3,
+      "practiceSteps": 6
+    },
+    {
+      "lessonId": "khmer-meet-01-05",
+      "file": "05-lesson.json",
+      "sha256": "76d79aeae71bba70feb0a485f67ccda203da303ed805a9f18bdc49384ea74209",
+      "dialogueTurns": 6,
+      "teachingCards": 5,
+      "practiceSteps": 6
+    }
+  ],
+  "readingInventory": [
+    {
+      "phraseId": "hello",
+      "targetText": "សួស្ដី",
+      "kind": "whole-expression recognition candidate",
+      "rubric": "Recognize the requested taught expression among alternatives; record help separately. No unrestricted decoding/literacy claim."
+    },
+    {
+      "phraseId": "thanks",
+      "targetText": "អរគុណ",
+      "kind": "whole-expression recognition candidate",
+      "rubric": "Recognize the requested taught expression among alternatives; record help separately. No unrestricted decoding/literacy claim."
+    },
+    {
+      "phraseId": "sorry",
+      "targetText": "សូមទោស",
+      "kind": "whole-expression recognition candidate",
+      "rubric": "Recognize the requested taught expression among alternatives; record help separately. No unrestricted decoding/literacy claim."
+    },
+    {
+      "phraseId": "nameq",
+      "targetText": "អ្នកឈ្មោះអី?",
+      "kind": "whole-expression recognition candidate",
+      "rubric": "Recognize the requested taught expression among alternatives; record help separately. No unrestricted decoding/literacy claim."
+    },
+    {
+      "phraseId": "alex",
+      "targetText": "ខ្ញុំឈ្មោះ Alex។",
+      "kind": "whole-expression recognition candidate",
+      "rubric": "Recognize the requested taught expression among alternatives; record help separately. No unrestricted decoding/literacy claim."
+    },
+    {
+      "phraseId": "fromq",
+      "targetText": "អ្នកមកពីណា?",
+      "kind": "whole-expression recognition candidate",
+      "rubric": "Recognize the requested taught expression among alternatives; record help separately. No unrestricted decoding/literacy claim."
+    },
+    {
+      "phraseId": "repeat",
+      "targetText": "សូមនិយាយម្តងទៀត។",
+      "kind": "whole-expression recognition candidate",
+      "rubric": "Recognize the requested taught expression among alternatives; record help separately. No unrestricted decoding/literacy claim."
+    },
+    {
+      "phraseId": "slow",
+      "targetText": "សូមនិយាយយឺតៗ។",
+      "kind": "whole-expression recognition candidate",
+      "rubric": "Recognize the requested taught expression among alternatives; record help separately. No unrestricted decoding/literacy claim."
+    }
+  ],
+  "checkpoint": {
+    "mode": "existing unit checkpoint after eligible completion",
+    "scope": "Contextual written choice/reconstruction only; no listening/speaking or general literacy score.",
+    "laterSituations": [
+      "Meet a different peer at a visit; exchange a different assigned name.",
+      "After a delay, clarify a missed introduction in a noisy gathering."
+    ],
+    "newSituationStatus": "English task briefs only; exact prompts/answers await fluent review and pilot setup."
+  },
+  "recordingScript": [
+    {
+      "id": "hello",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "សួស្ដី",
+      "pronunciationHelp": "sua-sdey",
+      "meaning": "Hello.",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "formal",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "ជំរាបសួរ",
+      "pronunciationHelp": "jom-riab-sua",
+      "meaning": "Hello (formal greeting).",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "thanks",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "អរគុណ",
+      "pronunciationHelp": "aw-kun",
+      "meaning": "Thank you.",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "sorry",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "សូមទោស",
+      "pronunciationHelp": "som-toh",
+      "meaning": "Excuse me / sorry.",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "nameq",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "អ្នកឈ្មោះអី?",
+      "pronunciationHelp": "neak chhmoh ey?",
+      "meaning": "What is your name?",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "alex",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "ខ្ញុំឈ្មោះ Alex។",
+      "pronunciationHelp": "khnhom chhmoh Alex",
+      "meaning": "My name is Alex.",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "sam",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "ខ្ញុំឈ្មោះ Sam។",
+      "pronunciationHelp": "khnhom chhmoh Sam",
+      "meaning": "My name is Sam.",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "fromq",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "អ្នកមកពីណា?",
+      "pronunciationHelp": "neak mok pii naa?",
+      "meaning": "Where are you from?",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "frompp",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+      "pronunciationHelp": "khnhom mok pii Phnom Penh",
+      "meaning": "I am from Phnom Penh.",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "fromus",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "ខ្ញុំមកពីអាមេរិក។",
+      "pronunciationHelp": "khnhom mok pii aa-me-rik",
+      "meaning": "I am from America.",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "repeat",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "សូមនិយាយម្តងទៀត។",
+      "pronunciationHelp": "som niyeay mdong tiet",
+      "meaning": "Please say it again.",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    },
+    {
+      "id": "slow",
+      "arabic": "",
+      "arabizi": "",
+      "targetText": "សូមនិយាយយឺតៗ។",
+      "pronunciationHelp": "som niyeay yeut yeut",
+      "meaning": "Please speak slowly.",
+      "audioUrl": null,
+      "status": "Do not record until exact script/help/meaning approved; speaker credit, consent and playback/offline rights required."
+    }
+  ],
+  "speakingBranches": [
+    {
+      "intent": "introduction",
+      "roles": [
+        "Alex",
+        "Sam"
+      ],
+      "targetPhraseIds": [
+        "hello",
+        "alex",
+        "sam",
+        "nameq"
+      ],
+      "assessment": "Intelligible assigned name and an appropriate greeting/question; text alternatives remain available."
+    },
+    {
+      "intent": "origin",
+      "targetPhraseIds": [
+        "fromq",
+        "frompp",
+        "fromus"
+      ],
+      "assessment": "Supply the assigned origin; meaning and intent before accent imitation."
+    },
+    {
+      "intent": "repair",
+      "targetPhraseIds": [
+        "repeat",
+        "slow",
+        "thanks"
+      ],
+      "assessment": "Request suitable clarification and respond after help; uncertain feedback must not reject natural language."
+    }
+  ],
+  "remainingUnits": [
+    {
+      "unit": 2,
+      "title": "Meet family and friends",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    },
+    {
+      "unit": 3,
+      "title": "Share a meal",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    },
+    {
+      "unit": 4,
+      "title": "Make a plan together",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    },
+    {
+      "unit": 5,
+      "title": "Describe your day",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    },
+    {
+      "unit": 6,
+      "title": "Find a place",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    },
+    {
+      "unit": 7,
+      "title": "Visit someone’s home",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    },
+    {
+      "unit": 8,
+      "title": "Shop together",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    },
+    {
+      "unit": 9,
+      "title": "Share a recent experience",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    },
+    {
+      "unit": 10,
+      "title": "Make upcoming plans",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    },
+    {
+      "unit": 11,
+      "title": "Ask for practical help",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    },
+    {
+      "unit": 12,
+      "title": "Spend a day together",
+      "newLessonTarget": 5,
+      "status": "await first-unit review and pilot; no authored lessons"
+    }
+  ]
+}

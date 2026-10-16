@@ -1,0 +1,745 @@
+{
+  "lesson": {
+    "id": "khmer-meet-01-03",
+    "trackId": "khmer",
+    "schemaVersion": 2,
+    "title": "Get to know each other",
+    "scenario": "At a small gathering, Alex is from America and Sam is from Phnom Penh. These are assigned practice details, not assumptions about you.",
+    "estimatedMinutes": 5,
+    "version": "draft",
+    "unitId": "khmer-meet-01",
+    "unitTitle": "Meet someone and keep the exchange going",
+    "courseOrder": 3,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": false,
+    "contentReview": {
+      "languageTag": "km-KH",
+      "variety": "cambodian-phnom-penh",
+      "helpConvention": "Ismi readable draft help v0; provisional, not IPA or approved romanization",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "criticalIssues": [
+        "No fluent Khmer reviewer designated; all wording, accepted choices, address and cultural notes need review.",
+        "Reference access is not reuse clearance; source selection and publication rights await owner review.",
+        "Readable pronunciation help is provisional; modern script compositions and historical repair patterns need verification.",
+        "No reviewed human model audio, sound modules, real-device/AT or observed learning evidence."
+      ],
+      "sourceLanguages": {
+        "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm": "km-KH",
+        "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm": "km-KH",
+        "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/": "km-KH",
+        "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf": "km-KH",
+        "internal:khmer/meet-01/authoring-v1": "km-KH"
+      }
+    },
+    "introduction": {
+      "goal": "Exchange a name and one simple personal detail.",
+      "dialogue": [
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Alex។",
+            "pronunciationHelp": "khnhom chhmoh Alex",
+            "meaning": "My name is Alex.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីអាមេរិក។",
+            "pronunciationHelp": "khnhom mok pii aa-me-rik",
+            "meaning": "I am from America.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Sam",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Sam",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+            "pronunciationHelp": "khnhom mok pii Phnom Penh",
+            "meaning": "I am from Phnom Penh.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកមកពីណា?",
+          "pronunciationHelp": "neak mok pii naa?",
+          "meaning": "Where are you from?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+          "pronunciationHelp": "khnhom mok pii Phnom Penh",
+          "meaning": "I am from Phnom Penh.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំមកពីអាមេរិក។",
+          "pronunciationHelp": "khnhom mok pii aa-me-rik",
+          "meaning": "I am from America.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Choose the detail the question asks for. Reuse the introduction pattern in a new meeting rather than treating a name and an origin as interchangeable answers.",
+      "dialectNote": "Target model: contemporary Cambodian Khmer with a Phnom Penh reference. This candidate has no verified model speaker. Same-age peer address is provisional; do not generalize it to older relatives or formal settings.",
+      "recordingNote": "Unreviewed text draft. No human model audio is supplied. Device speech, if available, is only a preview and does not validate the pronunciation help.",
+      "sourceLocators": [
+        "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+        "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+        "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+        "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+        "internal:khmer/meet-01/authoring-v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Ask where someone is from",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "audioUrl": null
+          },
+          "note": "This asks about origin in the draft scene. It is a different request from asking for someone’s name. The colloquial wording needs contemporary review.",
+          "recallCue": "Ask where your new acquaintance is from.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "អ្នកមកពីណា?",
+              "pronunciationHelp": "neak mok pii naa?",
+              "meaning": "Where are you from?"
+            }
+          ]
+        },
+        {
+          "title": "Share an origin",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+            "pronunciationHelp": "khnhom mok pii Phnom Penh",
+            "meaning": "I am from Phnom Penh.",
+            "audioUrl": null
+          },
+          "note": "The assigned practice detail is Phnom Penh. This does not imply where any actual learner lives or comes from.",
+          "recallCue": "Your practice character is from Phnom Penh. Share that detail.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+              "pronunciationHelp": "khnhom mok pii Phnom Penh",
+              "meaning": "I am from Phnom Penh."
+            }
+          ]
+        },
+        {
+          "title": "Recognize a different origin",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីអាមេរិក។",
+            "pronunciationHelp": "khnhom mok pii aa-me-rik",
+            "meaning": "I am from America.",
+            "audioUrl": null
+          },
+          "note": "The assigned practice detail is America. The place-name wording and help are provisional; a reviewer must confirm them.",
+          "recallCue": "Your practice character is from America. Share that detail.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "ខ្ញុំមកពីអាមេរិក។",
+              "pronunciationHelp": "khnhom mok pii aa-me-rik",
+              "meaning": "I am from America."
+            }
+          ]
+        }
+      ],
+      "scriptSupport": {
+        "title": "Optional script practice",
+        "note": "Compare these whole expressions with the dialogue. Try recognizing a familiar expression before revealing its help. These are draft reading examples, not a decoding or pronunciation assessment.",
+        "teachingCardIndexes": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "vocabulary": [
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "អ្នកមកពីណា?",
+        "pronunciationHelp": "neak mok pii naa?",
+        "meaning": "Where are you from?",
+        "id": "fromq",
+        "senseId": "meet-fromq",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "This asks about origin in the draft scene. It is a different request from asking for someone’s name. The colloquial wording needs contemporary review.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+        "pronunciationHelp": "khnhom mok pii Phnom Penh",
+        "meaning": "I am from Phnom Penh.",
+        "id": "frompp",
+        "senseId": "meet-frompp",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "The assigned practice detail is Phnom Penh. This does not imply where any actual learner lives or comes from.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "ខ្ញុំមកពីអាមេរិក។",
+        "pronunciationHelp": "khnhom mok pii aa-me-rik",
+        "meaning": "I am from America.",
+        "id": "fromus",
+        "senseId": "meet-fromus",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "The assigned practice detail is America. The place-name wording and help are provisional; a reviewer must confirm them.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 2
+      }
+    ],
+    "steps": [
+      {
+        "id": "details-1",
+        "instruction": "You know Sam’s name. Ask about their origin next.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំឈ្មោះ Sam។",
+          "pronunciationHelp": "khnhom chhmoh Sam",
+          "meaning": "My name is Sam.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "a",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "This says “Thank you.” It does not supply the response requested here: “Where are you from?” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "id": "b",
+            "segments": [
+              "អ្នក",
+              "មកពី",
+              "ណា",
+              "?"
+            ],
+            "rationale": "The requested response is “Where are you from?” in this situation. This asks about origin in the draft scene. It is a different request from asking for someone’s name. The colloquial wording needs contemporary review."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "id": "c",
+            "segments": [
+              "អ្នក",
+              "ឈ្មោះ",
+              "អី",
+              "?"
+            ],
+            "rationale": "This says “What is your name?” It does not supply the response requested here: “Where are you from?” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Where are you from?” in this situation. This asks about origin in the draft scene. It is a different request from asking for someone’s name. The colloquial wording needs contemporary review.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Ask where your new acquaintance is from."
+        }
+      },
+      {
+        "id": "details-2",
+        "instruction": "Alex asks where you are from. You are Sam, whose assigned origin is Phnom Penh.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកមកពីណា?",
+          "pronunciationHelp": "neak mok pii naa?",
+          "meaning": "Where are you from?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+            "pronunciationHelp": "khnhom mok pii Phnom Penh",
+            "meaning": "I am from Phnom Penh.",
+            "id": "a",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "ភ្នំពេញ",
+              "។"
+            ],
+            "rationale": "The requested response is “I am from Phnom Penh.” in this situation. The assigned practice detail is Phnom Penh. This does not imply where any actual learner lives or comes from."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "id": "b",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Sam",
+              "។"
+            ],
+            "rationale": "This says “My name is Sam.” It does not supply the response requested here: “I am from Phnom Penh.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីអាមេរិក។",
+            "pronunciationHelp": "khnhom mok pii aa-me-rik",
+            "meaning": "I am from America.",
+            "id": "c",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "អាមេរិក",
+              "។"
+            ],
+            "rationale": "This says “I am from America.” It does not supply the response requested here: “I am from Phnom Penh.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “I am from Phnom Penh.” in this situation. The assigned practice detail is Phnom Penh. This does not imply where any actual learner lives or comes from.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Your practice character is from Phnom Penh. Share that detail."
+        }
+      },
+      {
+        "id": "details-3",
+        "instruction": "Sam asks the same question. You are Alex, whose assigned origin is America.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកមកពីណា?",
+          "pronunciationHelp": "neak mok pii naa?",
+          "meaning": "Where are you from?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Alex។",
+            "pronunciationHelp": "khnhom chhmoh Alex",
+            "meaning": "My name is Alex.",
+            "id": "a",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Alex",
+              "។"
+            ],
+            "rationale": "This says “My name is Alex.” It does not supply the response requested here: “I am from America.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+            "pronunciationHelp": "khnhom mok pii Phnom Penh",
+            "meaning": "I am from Phnom Penh.",
+            "id": "b",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "ភ្នំពេញ",
+              "។"
+            ],
+            "rationale": "This says “I am from Phnom Penh.” It does not supply the response requested here: “I am from America.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីអាមេរិក។",
+            "pronunciationHelp": "khnhom mok pii aa-me-rik",
+            "meaning": "I am from America.",
+            "id": "c",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "អាមេរិក",
+              "។"
+            ],
+            "rationale": "The requested response is “I am from America.” in this situation. The assigned practice detail is America. The place-name wording and help are provisional; a reviewer must confirm them."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “I am from America.” in this situation. The assigned practice detail is America. The place-name wording and help are provisional; a reviewer must confirm them.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Your practice character is from America. Share that detail."
+        }
+      },
+      {
+        "id": "details-4",
+        "instruction": "At a later introduction you are asked for your name, not your origin. You are Alex.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកឈ្មោះអី?",
+          "pronunciationHelp": "neak chhmoh ey?",
+          "meaning": "What is your name?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+            "pronunciationHelp": "khnhom mok pii Phnom Penh",
+            "meaning": "I am from Phnom Penh.",
+            "id": "a",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "ភ្នំពេញ",
+              "។"
+            ],
+            "rationale": "This says “I am from Phnom Penh.” It does not supply the response requested here: “My name is Alex.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Alex។",
+            "pronunciationHelp": "khnhom chhmoh Alex",
+            "meaning": "My name is Alex.",
+            "id": "b",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Alex",
+              "។"
+            ],
+            "rationale": "The requested response is “My name is Alex.” in this situation. Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីអាមេរិក។",
+            "pronunciationHelp": "khnhom mok pii aa-me-rik",
+            "meaning": "I am from America.",
+            "id": "c",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "អាមេរិក",
+              "។"
+            ],
+            "rationale": "This says “I am from America.” It does not supply the response requested here: “My name is Alex.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “My name is Alex.” in this situation. Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You are playing Alex. Say what your name is."
+        }
+      },
+      {
+        "id": "details-5",
+        "instruction": "In an introduction message, give only the assigned origin America rather than a name or a different origin.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកមកពីណា?",
+          "pronunciationHelp": "neak mok pii naa?",
+          "meaning": "Where are you from?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីអាមេរិក។",
+            "pronunciationHelp": "khnhom mok pii aa-me-rik",
+            "meaning": "I am from America.",
+            "id": "a",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "អាមេរិក",
+              "។"
+            ],
+            "rationale": "The requested response is “I am from America.” in this situation. The assigned practice detail is America. The place-name wording and help are provisional; a reviewer must confirm them."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "id": "b",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Sam",
+              "។"
+            ],
+            "rationale": "This says “My name is Sam.” It does not supply the response requested here: “I am from America.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីភ្នំពេញ។",
+            "pronunciationHelp": "khnhom mok pii Phnom Penh",
+            "meaning": "I am from Phnom Penh.",
+            "id": "c",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "ភ្នំពេញ",
+              "។"
+            ],
+            "rationale": "This says “I am from Phnom Penh.” It does not supply the response requested here: “I am from America.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “I am from America.” in this situation. The assigned practice detail is America. The place-name wording and help are provisional; a reviewer must confirm them.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Your practice character is from America. Share that detail."
+        }
+      },
+      {
+        "id": "details-6",
+        "instruction": "A friend has introduced themselves as Alex. Ask the origin question next, rather than repeating the name question.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំឈ្មោះ Alex។",
+          "pronunciationHelp": "khnhom chhmoh Alex",
+          "meaning": "My name is Alex.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "id": "a",
+            "segments": [
+              "អ្នក",
+              "ឈ្មោះ",
+              "អី",
+              "?"
+            ],
+            "rationale": "This says “What is your name?” It does not supply the response requested here: “Where are you from?” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "b",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "This says “Thank you.” It does not supply the response requested here: “Where are you from?” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "id": "c",
+            "segments": [
+              "អ្នក",
+              "មកពី",
+              "ណា",
+              "?"
+            ],
+            "rationale": "The requested response is “Where are you from?” in this situation. This asks about origin in the draft scene. It is a different request from asking for someone’s name. The colloquial wording needs contemporary review."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Where are you from?” in this situation. This asks about origin in the draft scene. It is a different request from asking for someone’s name. The colloquial wording needs contemporary review.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Ask where your new acquaintance is from."
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "teaching-reference",
+      "title": "NIU SEAsite Khmer: Unit 1 useful words",
+      "locator": "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+      "rights": "Reference only. No redistribution licence established; no source audio, images, dialogue or teaching prose is bundled. Publication rights review pending.",
+      "notes": "Lexical/reference support for greeting, thanks, excuse me and speaking/understanding. Source spellings are retained in the research note; lesson combinations and readable help below are original AI-assisted candidates, not source quotations or linguistic review."
+    },
+    {
+      "sourceType": "grammar-reference",
+      "title": "NIU SEAsite Khmer: Unit 1 grammar",
+      "locator": "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+      "rights": "Reference only; no commercial content reuse grant established. No source lessons/media copied. Rights disposition remains pending.",
+      "notes": "Reference for first-person form, same-age address and name question. Some legacy-page spellings appear anomalous; do not treat the page as a canonical text. Original lesson script and contextual address choices require fluent review."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "Vathanak Sok, Basic Khmer (2022), 1.1 informal conversation",
+      "locator": "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+      "rights": "CC BY-NC 4.0 except otherwise noted. Reference only; no commercial adaptation/distribution permission established. No source dialogue, prose, video or audio is bundled.",
+      "notes": "Reference for name-giving and peer origin patterns. Ismi uses original situations, assigned names, script compositions and provisional readable help. Neither the source nor its licence approves these candidates for publication."
+    },
+    {
+      "sourceType": "historical-reference",
+      "title": "FSI Cambodian Basic Course Volume 1, Noss and Proum (1966), printed pp. 6 and 9",
+      "locator": "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+      "rights": "Historical US Department of State publication; institutional origin verified via ERIC ED041276. Exact commercial text/audio rights are not attested here. No scan or audio redistributed. Publication clearance pending.",
+      "notes": "Phonemic request-for-repetition and slower-repetition patterns on PDF pages 10 and 13. Modern Khmer script and readable help in the draft are new compositions requiring review, not a transcription claimed to appear in the scan."
+    },
+    {
+      "sourceType": "authoring-record",
+      "title": "Ismi F26 first-unit AI-assisted draft record",
+      "locator": "internal:khmer/meet-01/authoring-v1",
+      "rights": "Original AI-assisted dialogue arrangement, scenarios and explanations for private review. Does not clear external reference rights or constitute owner publication approval.",
+      "notes": "October 16 authorization: draft now, fluent Khmer review before publication. No actual reviewer or human recording. Reference model target: contemporary Cambodian Khmer, Phnom Penh; not verified speaker evidence."
+    }
+  ]
+}

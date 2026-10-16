@@ -756,6 +756,64 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         (await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/study-settings", new SaveStudySettingsRequest(preferences, 0))).EnsureSuccessStatusCode();
         Assert.Equal(5, (await owner.GetFromJsonAsync<StudySettingsResponse>("/api/study-settings"))!.Preferences.SelectedTrackIds.Count);
     }
+    [Fact]
+    public async Task UnreviewedKhmerUnitImportsAndPreviewsPrivatelyButCannotApproveOrPublish()
+    {
+        using var owner = CreateClient();
+        using var guest = CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        var arabicBefore = await guest.GetStringAsync("/api/lessons/levantine-day-01");
+        using var scope = _factory.Services.CreateScope();
+        var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
+        var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
+        var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
+        var path = Path.Combine(AppContext.BaseDirectory, "khmer-meet-01");
+        Assert.Equal(5, (await importer.ImportAsync(path)).Count);
+        Assert.All(await importer.ImportAsync(path), line => Assert.StartsWith("Unchanged:", line));
+        var drafts = (await publishing.ListAsync()).Where(v => v.LessonId.StartsWith("khmer-meet-01-")).ToArray();
+        Assert.Equal(5, drafts.Length);
+        foreach (var draft in drafts)
+        {
+            var detail = (await publishing.GetAsync(draft.Id))!;
+            Assert.Equal(CurriculumStatuses.Draft, detail.Status);
+            Assert.Null(detail.ApprovedBy);
+            Assert.Null(detail.PublishedBy);
+            Assert.Equal("pending", detail.Lesson.ContentReview!.ReviewDisposition);
+            Assert.Equal("pending", detail.Lesson.ContentReview.RightsDisposition);
+            Assert.True(validator.ValidateDraft(detail.Lesson, detail.Sources).IsValid);
+            Assert.False(validator.Validate(detail.Lesson, detail.Sources).IsValid);
+            var readinessResponse = await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{draft.Id}/readiness", new { });
+            readinessResponse.EnsureSuccessStatusCode();
+            var readiness = (await readinessResponse.Content.ReadFromJsonAsync<CurriculumReadinessResult>())!;
+            Assert.True(readiness.Draft.IsValid);
+            Assert.False(readiness.Publication.IsValid);
+            Assert.NotEmpty(readiness.Publication.Errors);
+            Assert.Equal(HttpStatusCode.Unauthorized, (await SendWithCsrfAsync(guest, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{draft.Id}/readiness", new { })).StatusCode);
+            Assert.Equal(HttpStatusCode.BadRequest, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{draft.Id}/approve", new { })).StatusCode);
+            Assert.Equal(HttpStatusCode.Conflict, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{draft.Id}/publish", new { })).StatusCode);
+            Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{draft.LessonId}")).StatusCode);
+            var script = detail.Lesson.Introduction!.ScriptSupport!;
+            Assert.NotEmpty(script.TeachingCardIndexes);
+            Assert.All(detail.Lesson.Steps.SelectMany(s => s.Answers), a => Assert.Equal(a.TargetText, string.Concat(a.Segments!)));
+            var first = detail.Lesson.Steps[0];
+            var brokenSegments = detail.Lesson with { Steps = [first with {
+                Answers = first.Answers.Select(a => a with { Segments = ["changed"] }).ToArray() }] };
+            Assert.False(validator.ValidateDraft(brokenSegments, detail.Sources).IsValid);
+            var brokenScript = detail.Lesson with { Introduction = detail.Lesson.Introduction with {
+                ScriptSupport = script with { TeachingCardIndexes = [999] } } };
+            Assert.False(validator.ValidateDraft(brokenScript, detail.Sources).IsValid);
+            Assert.False(validator.ValidateDraft(detail.Lesson with { ContentReview = detail.Lesson.ContentReview with {
+                SourceLanguages = new Dictionary<string, string>() } }, detail.Sources).IsValid);
+        }
+        var dashboard = (await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
+        Assert.DoesNotContain(dashboard.DailyPlan.Lessons, l => l.TrackId == "khmer");
+        Assert.Equal(arabicBefore, await guest.GetStringAsync("/api/lessons/levantine-day-01"));
+    }
+
     private sealed class LessonJsonComparer : IEqualityComparer<LessonResponse>
     {
         public bool Equals(LessonResponse? x, LessonResponse? y) => System.Text.Json.JsonSerializer.Serialize(x) == System.Text.Json.JsonSerializer.Serialize(y);

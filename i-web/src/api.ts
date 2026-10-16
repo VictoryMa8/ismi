@@ -5,6 +5,7 @@ import { renameCharacterContent } from './characters'
 import type {
   AuthSession,
   CurriculumSource,
+  CurriculumReadinessResult,
   CurriculumValidationResult,
   CurriculumVersionDetail,
   CurriculumVersionSummary,
@@ -202,6 +203,13 @@ export async function updateCurriculumDraft(
 
 export function validateCurriculumVersion(versionId: number): Promise<CurriculumValidationResult> {
   return request<CurriculumValidationResult>(`/api/admin/curriculum/versions/${versionId}/validate`, {
+    method: 'POST',
+    body: '{}',
+  })
+}
+
+export function checkCurriculumReadiness(versionId: number): Promise<CurriculumReadinessResult> {
+  return request<CurriculumReadinessResult>(`/api/admin/curriculum/versions/${versionId}/readiness`, {
     method: 'POST',
     body: '{}',
   })

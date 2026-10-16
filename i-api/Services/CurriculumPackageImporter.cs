@@ -26,7 +26,7 @@ public sealed class CurriculumPackageImporter(
             var package = JsonSerializer.Deserialize<CurriculumDraftRequest>(
                 await File.ReadAllTextAsync(file, cancellationToken), JsonOptions)
                 ?? throw new InvalidOperationException($"Empty package: {file}");
-            var validation = validator.Validate(package.Lesson, package.Sources);
+            var validation = validator.ValidateDraft(package.Lesson, package.Sources);
             if (!validation.IsValid)
                 throw new InvalidOperationException($"{file}: {string.Join("; ", validation.Errors)}");
             packages.Add(package);

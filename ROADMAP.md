@@ -8,10 +8,22 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
+**F26 — Implementation active October 16:** owner selected contemporary Cambodian
+Khmer/Phnom Penh, twelve units/sixty lessons and conversation-first optional script
+help. Five unreviewed first-unit candidates are imported locally as draft records
+27–31, with private preview, optional script practice, recording/reading manifests
+and source-rights research. API 40/40 and 11 distinct focused browser checks pass
+across runs. All 13 existing local published payloads are preserved. Fluent review,
+source/help/inventory approval, human audio and first-unit/device evidence precede
+publication and units 2–12. Owner authorized push/deployment October 16; application
+rollout is in progress, with no hosted draft import or curriculum publication.
+[Candidate and evidence](docs/khmer/README.md).
+
 **F24 — Application deployed October 16:** multi-language foundation, course selector,
 independent state, approved parallel queue, console safeguards and shared wording
 are pushed/deployed as `f515f43`. Live selection/Arabic entry and hosted data
-preservation pass. French/Khmer remain planned with zero published lessons.
+preservation pass. French/Khmer learner availability remains planned with zero
+published lessons; F26 now has private local candidates, described above.
 Parent stays Active for reviewed first units, real device/AT/pilot evidence, Safari
 offline verification and beta/content decisions. [Behavior](docs/multi-language/README.md),
 [rollout](docs/releases/2026-10-16-multi-language.md).
@@ -45,13 +57,14 @@ exact payload/source/audit matching, data/asset preservation and enabled live Pr
 entry are verified. [Behavior](docs/recall-and-recombine.md),
 [rollout evidence](docs/releases/2026-10-13-recall.md).
 
-**October 12 scope expansion — F25/F26 planned; F24 authorized October 15:** the owner added French, Khmer
+**October 12 scope expansion — F25 planned; F26 authorized October 16; F24 authorized October 15:** the owner added French, Khmer
 and parallel language study to Ismi's roadmap. Arabic remains the flagship.
 The full plans below include a shared foundation and separate proposed twelve-week
 courses, with child tasks, outcomes and release gates. The owner subsequently authorized
 all F24 foundation/presentation implementation and a deployment candidate, and approved
-its queue policy. F25/F26 content, course depth/varieties, review arrangements and
-first-100 beta inclusion remain separate decisions. Existing Arabic commitments are retained.
+its queue policy. F26 draft implementation and definition defaults were authorized
+October 16; exact review/source/audio and first-100 beta inclusion remain open.
+F25 definition/authoring remain separate. Existing Arabic commitments are retained.
 
 **October 15 Khmer plan expansion — F26 / F24.7:** the owner requested a fuller
 Khmer implementation path and a shared landing/wording overhaul that prepares Ismi
@@ -60,7 +73,8 @@ and visible Arabic/Palestinian roots; add Cambodian-inspired red/blue accents.
 Follow-up scope: explore an English/Arabic/Khmer brand title (F24.7), make Arabic–Khmer
 switching obvious (F24.8), and improve page-back controls for mobile (F27.1).
 [First-unit milestones, landing, copy and identity plan](docs/khmer-course-and-brand-expansion.md).
-Khmer curriculum and release remain planned; F24 shared application work is now implemented and deployed.
+F26 now has authorized private curriculum candidates; release remains gated. F24
+shared application work is implemented and deployed.
 
 **F21 — Application deployed October 15:** weekly YouTube video + film + song
 collections now have a versioned owner console, Monday UTC delivery, learner/archive
@@ -155,8 +169,9 @@ remains the published baseline.
 verified F0 access and then owner listening review. No paid services authorized.
 Real recordings, live speech-provider choices, Quran permissions
 and beta evidence remain separate dependencies.
-For the new language plans, course-definition decisions precede authoring; exact
-sources, permissions and linguistic/audio review are needed before publication.
+For French, course-definition decisions precede authoring. Khmer definition defaults
+and draft preparation are authorized; a fluent reviewer, exact source/help/inventory
+dispositions, permissions and linguistic/audio evidence remain before publication.
 
 | ID | Feature / bounded scope | Status | Next action or limit |
 | --- | --- | --- | --- |
@@ -209,7 +224,7 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F24.7](#f247-multi-language-wording-landing-and-visual-identity) | Multi-language wording, landing and visual identity | Active · application deployed | Shared copy, Languages and Khmer colors deployed; title A approved; real AT remains |
 | [F24.8](#f248-prominent-language-and-course-switching) | Prominent language and course switching | Active · application deployed | Selector live; offline flows verified with fixtures; approved units/observed task remain |
 | [F25](#f25-french-course) | French course | Planned · definition decisions | Proposed twelve-week course; select variety, depth and review route |
-| [F26](#f26-khmer-course) | Khmer course | Planned · expanded October 15 | Agree definition/review route; one-lesson integration → first unit, with F24.7 entry/wording |
+| [F26](#f26-khmer-course) | Khmer course | Active · five local drafts | Review exact candidates/sources/help; fluent review/audio/pilot precede publication and remaining units |
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 | [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
 
@@ -1491,17 +1506,21 @@ audio and F24.5/F24.6 for full release. These stages do not form a dependency cy
 
 ### F26 Khmer course
 
-**Status:** Planned — October 12 course plan expanded October 15 with implementation
-milestones, first-unit briefs and F24.7 landing/wording/identity dependencies.
+**Status:** Active — owner authorized F26 implementation October 16 and selected the
+recommended Cambodian/Phnom Penh reference, twelve-unit/sixty-lesson target and
+conversation-first optional script pathway. Prepare drafts now; designate a fluent
+Khmer reviewer before publication. No publication, deployment, hiring or provider
+spend is authorized by this instruction.
 **Outcome:** English-taught Khmer for adult beginners/false beginners communicating
 with partners, family and friends. Conversation and gradual script learning support
 each other; optional pronunciation help remains available without requiring reading
 mastery before beginning conversation. Keep the same free learning floor.
-**Proposed depth:** twelve units/weeks, five new 5–7-minute lessons per unit
+**Agreed target depth (October 16):** twelve units/weeks, five new 5–7-minute lessons per unit
 (60 new lessons), plus varied review and one checkpoint per unit. Add a separate
 optional script/sound pathway; exact module count is an F26.1/F26.3 decision.
 Weeks guide study pace, not delivery or a promise under a shared daily budget.
-Depth and outcomes below are recommendations awaiting F26.1 agreement.
+The exact reading inventory/help and observed outcome rubric still need review;
+these are targets, not demonstrated learner outcomes.
 **Proposed outcomes:** at 30 days with 15 minutes devoted to Khmer daily, handle a
 two-to-three-minute guided greeting/family/food/plan exchange, extract four requested
 facts from a slow 30–45-second studied-topic dialogue and recognize an agreed set
@@ -1509,11 +1528,11 @@ of taught words in script. At twelve units, complete a five-minute guided social
 scenario and read short taught-topic messages with optional help. Define the exact
 reading inventory/help in the rubric; promise neither unrestricted literacy nor
 proficiency certification. Distinguish conversation/listening/reading evidence.
-**Next:** F26.1 definition/source/review choices, then one complete Khmer lesson
-through import, study, download, offline completion and reconnect beside Arabic.
-Prepare five first-unit lessons and script/audio support, with F24.7's landing and
-course-aware wording/identity. Prototype rendering/input/segments early; a completed
-French course is not a prerequisite. Use first-unit findings before bulk authoring.
+**Next:** designate fluent Khmer review and disposition the five exact first-unit
+candidates, sources/rights, provisional help and eight-expression reading inventory.
+Obtain reviewed human audio; verify real input/AT/Safari offline and the agreed
+first-unit pilot before bulk authoring. Private draft import/preview works; actual
+published download/completion/reconnect awaits those gates. French is not a prerequisite.
 **Done when:** all six children pass; agreed units and script/sound modules are
 source-linked, validated, linguistically reviewed, owner-approved and published;
 audio, baseline guided speaking, offline/accessibility and observed outcomes pass.
@@ -1528,9 +1547,15 @@ route and separately approved speech/AI setup for automated feedback.
 [Unicode segmentation guidance](https://www.unicode.org/reports/tr29/#Word_Boundaries)
 and [W3C draft Khmer layout gap analysis](https://www.w3.org/TR/khmr-gap/).
 Unicode identifies tailored word/line-boundary needs; the W3C draft is a browser-check
-reference, not curriculum authority. No Khmer packages, recordings, committed
-reviewers or learner evidence exist yet.
-**Delivery:** local planning only; no authoring, code, publication or deployment.
+reference, not curriculum authority. [First-unit implementation/evidence](docs/khmer/README.md),
+[packages/review sheets](content/khmer/meet-01/README.md),
+[source/rights register](docs/research/khmer-course-sources.md). No human recordings,
+committed reviewer or learner outcome evidence exists.
+**Delivery:** push/deployment authorized October 16; application rollout in progress.
+Five local v1 draft records 27–31 remain unpublished; no hosted import is included.
+API 40/40, build and 11 distinct focused browser checks pass across runs; all 13
+existing local published payloads compare exactly. [Rollout](docs/releases/2026-10-16-khmer-drafts.md).
+Parent remains Active; full scope and remaining review/audio/pilot gates are unchanged.
 
 **Proposed unit sequence:** Khmer wording, grammar, pronunciation, address and
 cultural notes require approved sources/reviewer validation before lesson drafting.
@@ -1552,28 +1577,37 @@ cultural notes require approved sources/reviewer validation before lesson drafti
 
 #### F26.1 Khmer definition, sources and review route
 
-**Status:** Needs decision — variety, depth/outcomes, help convention and review route.
-**Recommendation:** contemporary Cambodian Khmer with an identified Phnom Penh-based
-speaker/reference model; label regional/register differences only with evidence.
+**Status:** Active — owner selected recommended variety/depth/conversation-first
+reading direction October 16; exact inventory/help/source approvals and named fluent
+reviewer remain. Draft preparation is authorized while review is pending.
+**Agreed direction:** contemporary Cambodian Khmer with a Phnom Penh-based reference
+model; the actual speaker is not yet identified. Label regional/register differences
+only with evidence.
 Select one consistent learner pronunciation-help convention with a reviewer; do
 not present proposed romanization as authoritative spelling.
-**Next:** agree depth, exact reading outcome and reference model; inventory permissioned
-dictionary/teaching/grammar/pronunciation sources. Recommend named fluent Khmer
-review including address/cultural notes; no hire/contact/availability is assumed.
+**Next:** name the fluent review route and approve exact source/rights, v0 help and
+reading-inventory dispositions. [Primary-source register](docs/research/khmer-course-sources.md)
+records NIU access without reuse clearance, MSU noncommercial limits and historical
+FSI evidence; none is silently declared an approved commercial curriculum foundation.
+No reviewer hire/contact/availability is assumed.
 **Done when:** course brief, reading inventory, rubric, source/rights register and
 review route are agreed; uncertain linguistic/cultural claims are excluded.
 **Depends on:** owner course-definition decisions and verified source access/rights.
 
 #### F26.2 Khmer first unit
 
-**Status:** Planned.
+**Status:** Active — five unreviewed candidates authored/imported locally October 16;
+not linguistically reviewed, approved or published.
 **Scope:** five authored greeting/introduction/repair lessons, contextual recall,
 varied review and checkpoint; separate source-linked script, help, meaning, accepted
 answers and audio. Do not mechanically translate the French lesson sequence.
 The [five lesson briefs](docs/khmer-course-and-brand-expansion.md#first-unit-meet-someone-and-keep-the-exchange-going)
 cover greeting, names, personal details, communication repair and an integrated exchange.
-**Next:** draft from approved sources; record linguistic dispositions and owner
-wording approval before publication. Use early pilot findings before full authoring.
+**Next:** review [the five candidates](content/khmer/meet-01/README.md), including
+original script/help compositions and contextual answer rationales; disposition exact
+sources, text, segments and human audio before owner wording approval/publication.
+Use first-unit pilot findings before full authoring. Draft software structure passes;
+source approval and linguistic/rights review remain pending.
 **Done when:** packages/authored segments pass F24.4; address/register/help and
 answer rationales are checked; changed-context recall and accessible offline study
 can be verified. Text, audio, approval and publication states remain distinct.
@@ -1581,14 +1615,18 @@ can be verified. Text, audio, approval and publication states remain distinct.
 
 #### F26.3 Khmer script, sounds, input and starting check
 
-**Status:** Planned.
+**Status:** Active — optional exact-expression script practice implemented October 16,
+with skippable help and no score/gate. The candidate manifest proposes eight taught
+expressions; phonics/sound modules, agreed inventory and real input/AT remain open.
 **Scope:** skippable placement and optional staged script/sound modules linked to
 actual lesson words. Reviewed modules cover consonant/vowel patterns, signs and
 syllable combinations without an alphabet memorization gate. Separate reading,
 listening and support-choice evidence; never infer pronunciation from text answers.
-**Next:** reviewer selects exact modules/inventory/help rules; prototype downloaded
-fonts, shaping, line height/wrapping and input. Use authored word/phrase segments
-for tiles; do not split Khmer into words by whitespace or insert artificial spaces.
+**Next:** reviewer selects exact consonant/vowel/sound modules, inventory and help
+rules; verify real device input/selection/AT and approved audio offline. Draft
+script examples pass keyboard, 320/1440 px and 200% text checks using the existing
+font/lesson frame. Authored answer segments recombine exactly; no whitespace splitting
+or inserted spaces. The existing course-scoped starting check needs published content.
 **Done when:** original text is preserved and segments recombine exactly; combining/
 stacked text is not clipped; help/script work offline at enlarged sizes; input,
 selection and real screen-reader checks pass on agreed devices. Skip/retry and
@@ -1612,13 +1650,16 @@ recognition drills alone do not establish the completed course or its outcomes.
 
 #### F26.5 Khmer model audio and guided speaking
 
-**Status:** Planned — recordings and Khmer provider suitability remain unresolved.
+**Status:** Active · preparation only — twelve exact candidate recording scripts and
+three speaking branch briefs are in the [manifest](content/khmer/meet-01/review-manifest.json).
+No human recordings, permissions or provider suitability are established.
 **Scope:** permitted reviewed human model recordings, exact text/version mappings,
 speaker/variety labels and transcripts; recommend multiple speakers. Controlled
 branches and optional record/replay use reviewed responses and intelligibility/
 intent targets, with text alternatives and the free baseline floor.
-**Next:** prepare first-unit scripts and speaker/rights checklist; assess actual
-Khmer recognition/feedback with reviewed samples and privacy/cost terms. Advertised
+**Next:** linguistically approve exact scripts, then obtain speaker consent/rights and
+reviewed recordings. Assess actual Khmer recognition/feedback with reviewed samples
+and explicitly approved privacy/cost terms. Advertised
 support or French/Arabic results do not establish Khmer suitability.
 **Done when:** full agreed audio coverage passes linguistic/playback/offline checks;
 automated feedback is verified for taught scenarios, handles uncertainty and meets
@@ -1630,7 +1671,8 @@ does not by itself fulfill automated assessment.
 
 #### F26.6 Khmer pilot, publication and release evidence
 
-**Status:** Planned.
+**Status:** Active · protocol prepared — [task/rubric and evidence template](docs/khmer/README.md#first-unit-review-and-observation-protocol)
+prepared October 16; no pilot, human AT check or release has run.
 **Scope:** first-unit pilot then full-course verification, with separate conversation,
 listening and taught-script tasks, immediate/delayed retrieval, help and versioned
 attempt counts. Include actual mobile input/shaping/screen-reader and offline checks.
@@ -1712,7 +1754,9 @@ The new language roadmap has its own dependency order: **F24 foundation → F25/
 first units and support → mixed-language pilot → remaining units → release decision**.
 It does not replace the selected Arabic engagement order above. No relative priority
 between these workstreams was inferred from adding plans. The owner subsequently
-authorized the entirety of F24 on October 15; F25/F26 authoring remains separate.
+authorized the entirety of F24 on October 15 and F26 draft implementation on October
+16. F25 authoring remains separate; Khmer bulk authoring follows reviewed first-unit
+and pilot evidence.
 Course definition/source work can proceed independently when authorized; full course
 authoring should follow the respective first-unit evidence. No completion dates are
 committed without agreed scope, content/reviewer availability and measured first-unit effort.
@@ -1721,6 +1765,15 @@ enabled course entry and public claims must follow actual approved availability.
 Portuguese is eventual expansion direction, not a new implemented course or beta commitment.
 
 ## Recent planning changes
+
+- **October 16, 2026 F26:** owner authorized implementation and selected Cambodian/
+  Phnom Penh, twelve units/sixty lessons, optional script and draft-now/fluent-review-
+  before-publication. Five first-unit candidates imported locally (27–31), with
+  truthful pending review/rights, private preview and optional script support.
+  API 40/40, build and 11 distinct focused browser checks pass across runs; all
+  13 local published payloads preserved. [Evidence](docs/khmer/README.md).
+  Owner subsequently authorized push/deployment; application rollout in progress.
+  Reviewer/audio/pilot and units 2–12 remain; no hosted draft import or publication.
 
 - **October 16, 2026 F24:** owner authorized push/deployment. Application `f515f43`
   is deployed to the existing web/API preview, with exact revision, all 15 hosted
@@ -1751,11 +1804,6 @@ Portuguese is eventual expansion direction, not a new implemented course or beta
   remain open; frontend/API `4545fea` are deployed and live-verified with hosted
   data/recording/cookie-key preservation. Reusable deployment access is configured.
   No actual content published. [Rollout](docs/releases/2026-10-15-cultural-media.md).
-
-- **October 15, 2026 F06.1.1:** original art release `03bc3b8` is deployed and
-  owner-checked. Requested larger lesson/home portraits are deployed as `9b585a2`;
-  production build and 12 existing character/layout/Today/completion checks pass.
-  Vercel Ready and stable alias confirmed. [Evidence](docs/characters/app-art-v2/README.md#october-15-portrait-size-refinement).
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

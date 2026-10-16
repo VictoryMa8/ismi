@@ -6,13 +6,23 @@ public sealed class CurriculumValidator(RecordingStore recordings)
 {
     public CurriculumValidationResult Validate(
         LessonResponse lesson,
-        IReadOnlyCollection<CurriculumSourceInput> sources)
+        IReadOnlyCollection<CurriculumSourceInput> sources) => Validate(lesson, sources, true);
+
+    // Drafts can truthfully record pending review/rights. This is never the approval gate.
+    public CurriculumValidationResult ValidateDraft(
+        LessonResponse lesson,
+        IReadOnlyCollection<CurriculumSourceInput> sources) => Validate(lesson, sources, false);
+
+    private CurriculumValidationResult Validate(
+        LessonResponse lesson,
+        IReadOnlyCollection<CurriculumSourceInput> sources,
+        bool forPublication)
     {
         var errors = new List<string>();
         if (!HasReadableShape(lesson, sources))
             return new(false, ["The package has missing or null lesson, step, answer, dialogue, or source fields."]);
 
-        CourseContentCompatibility.ValidateProfile(lesson, sources, errors);
+        CourseContentCompatibility.ValidateProfile(lesson, sources, errors, forPublication);
         lesson = CourseContentCompatibility.Readable(lesson);
         var needsPronunciationHelp = lesson.TrackId != "french" || lesson.ContentReview?.HelpConvention != "none";
         CharacterRegistry.Validate(lesson, errors);
@@ -151,6 +161,15 @@ public sealed class CurriculumValidator(RecordingStore recordings)
                 }
             }
             if (introduction.SourceLocators.Count == 0) errors.Add("Teaching notes need source locators.");
+            if (introduction.ScriptSupport is { } script)
+            {
+                Required(errors, script.Title, "Script support needs a title.");
+                Required(errors, script.Note, "Script support needs a contextual note.");
+                if (script.TeachingCardIndexes is null || script.TeachingCardIndexes.Count == 0
+                    || script.TeachingCardIndexes.Distinct().Count() != script.TeachingCardIndexes.Count
+                    || script.TeachingCardIndexes.Any(i => i < 0 || i >= (introduction.TeachingCards?.Count ?? 0)))
+                    errors.Add("Script support must reference distinct existing teaching cards.");
+            }
             foreach (var locator in introduction.SourceLocators)
             {
                 if (!sources.Any(source => source.Locator == locator)) errors.Add($"Teaching source '{locator}' is missing from provenance.");

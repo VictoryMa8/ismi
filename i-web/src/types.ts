@@ -76,6 +76,7 @@ export type LessonTeachingCard = {
 }
 
 export type LessonIntroduction = {
+  scriptSupport?: { title: string; note: string; teachingCardIndexes: number[] } | null
   teachingCards?: LessonTeachingCard[] | null
   goal: string
   dialogue: Array<{ speaker: string; line: LessonPrompt; speakerId?: string | null; addresseeId?: string | null }>
@@ -229,4 +230,9 @@ export type CurriculumVersionDetail = {
 export type CurriculumValidationResult = {
   isValid: boolean
   errors: string[]
+}
+
+export type CurriculumReadinessResult = {
+  draft: CurriculumValidationResult
+  publication: CurriculumValidationResult
 }

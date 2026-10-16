@@ -20,6 +20,7 @@ import {
 } from '@lucide/vue';
 import {
   approveCurriculumVersion,
+  checkCurriculumReadiness,
   createCurriculumDraft,
   getCurriculumVersion,
   getCurriculumVersions,
@@ -204,9 +205,10 @@ async function previewSavedVersion(event: MouseEvent) {
   busy.value = true;
   clearMessages();
   try {
-    const result = await validateCurriculumVersion(selected.value.id);
-    validation.value = result;
-    if (!result.isValid) return;
+    const result = await checkCurriculumReadiness(selected.value.id);
+    validation.value = result.draft.isValid ? result.publication : result.draft;
+    if (!result.draft.isValid) return;
+    if (!result.publication.isValid) notice.value = 'Draft preview only. Linguistic review and publication checks remain open.';
     const detail = await getCurriculumVersion(selected.value.id);
     emit('preview', detail.lesson, opener);
   } catch (caught) {
@@ -426,7 +428,7 @@ function formatDate(value: string | null): string {
     <label class="package-import">Course for new drafts
       <select v-model="draftCourse" :disabled="busy || uploading"><option v-for="course in courses.filter(c => !['msa', 'quranic'].includes(c.id))" :key="course.id" :value="course.id">{{ course.name }}</option></select>
     </label>
-    <p>French and Khmer packages use schema 2: targetText, pronunciationHelp, exact authored segments for Khmer, and a contentReview record with factual linguistic review, cleared rights and sourceLanguages mapping each source locator to its language tag. Engineering fixtures cannot publish.</p>
+    <p>French and Khmer drafts use schema 2: targetText, pronunciationHelp, exact authored segments for Khmer, and sourceLanguages mapping each source locator to its language tag. Pending review and rights permit private preview; accepted linguistic review and cleared rights are required for approval. Engineering fixtures cannot publish.</p>
     <label class="package-import"
       >Import a lesson package as a draft
       <input

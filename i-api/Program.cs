@@ -219,7 +219,7 @@ app.MapGet("/api/health", () => Results.Ok(new
 {
     status = "healthy",
     service = "ismi-api",
-    features = new[] { "typed-recall-v1", "multi-language-v1" },
+    features = new[] { "typed-recall-v1", "multi-language-v1", "private-draft-preview-v1" },
     revision = typeof(LessonResponse).Assembly
         .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
         .Cast<System.Reflection.AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,
@@ -609,6 +609,19 @@ curriculumAdmin.MapPost("/versions/{versionId:long}/validate", async Task<IResul
     {
         return CurriculumError(exception);
     }
+});
+
+curriculumAdmin.MapPost("/versions/{versionId:long}/readiness", async Task<IResult> (
+    long versionId,
+    HttpContext context,
+    IAntiforgery antiforgery,
+    CurriculumPublishingService publishing,
+    CancellationToken cancellationToken) =>
+{
+    var antiforgeryError = await ValidateAntiforgeryAsync(context, antiforgery);
+    if (antiforgeryError is not null) return antiforgeryError;
+    try { return Results.Ok(await publishing.ReadinessAsync(versionId, CurriculumActor(context), cancellationToken)); }
+    catch (CurriculumWorkflowException exception) { return CurriculumError(exception); }
 });
 
 curriculumAdmin.MapPost("/versions/{versionId:long}/approve", async Task<IResult> (

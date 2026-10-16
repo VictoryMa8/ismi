@@ -1,0 +1,742 @@
+{
+  "lesson": {
+    "id": "khmer-meet-01-04",
+    "trackId": "khmer",
+    "schemaVersion": 2,
+    "title": "Ask for help understanding",
+    "scenario": "In a noisy room you miss Sam’s name. Ask for help, read the repeated line, then respond. No listening is required in this text candidate.",
+    "estimatedMinutes": 5,
+    "version": "draft",
+    "unitId": "khmer-meet-01",
+    "unitTitle": "Meet someone and keep the exchange going",
+    "courseOrder": 4,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": false,
+    "contentReview": {
+      "languageTag": "km-KH",
+      "variety": "cambodian-phnom-penh",
+      "helpConvention": "Ismi readable draft help v0; provisional, not IPA or approved romanization",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "criticalIssues": [
+        "No fluent Khmer reviewer designated; all wording, accepted choices, address and cultural notes need review.",
+        "Reference access is not reuse clearance; source selection and publication rights await owner review.",
+        "Readable pronunciation help is provisional; modern script compositions and historical repair patterns need verification.",
+        "No reviewed human model audio, sound modules, real-device/AT or observed learning evidence."
+      ],
+      "sourceLanguages": {
+        "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm": "km-KH",
+        "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm": "km-KH",
+        "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/": "km-KH",
+        "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf": "km-KH",
+        "internal:khmer/meet-01/authoring-v1": "km-KH"
+      }
+    },
+    "introduction": {
+      "goal": "Ask for repetition or slower speech, then respond.",
+      "dialogue": [
+        {
+          "speaker": "Sam",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយម្តងទៀត។",
+            "pronunciationHelp": "som niyeay mdong tiet",
+            "meaning": "Please say it again.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Sam",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយយឺតៗ។",
+            "pronunciationHelp": "som niyeay yeut yeut",
+            "meaning": "Please speak slowly.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Sam",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សូមនិយាយម្តងទៀត។",
+          "pronunciationHelp": "som niyeay mdong tiet",
+          "meaning": "Please say it again.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សូមនិយាយយឺតៗ។",
+          "pronunciationHelp": "som niyeay yeut yeut",
+          "meaning": "Please speak slowly.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អរគុណ",
+          "pronunciationHelp": "aw-kun",
+          "meaning": "Thank you.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "A request to repeat asks for the words again; a speed request asks for a slower delivery. After clarification, respond to the actual information. These requests need contemporary script, pronunciation and politeness review before use as teaching models.",
+      "dialectNote": "Target model: contemporary Cambodian Khmer with a Phnom Penh reference. This candidate has no verified model speaker. Same-age peer address is provisional; do not generalize it to older relatives or formal settings.",
+      "recordingNote": "Unreviewed text draft. No human model audio is supplied. Device speech, if available, is only a preview and does not validate the pronunciation help.",
+      "sourceLocators": [
+        "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+        "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+        "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+        "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+        "internal:khmer/meet-01/authoring-v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Ask to hear it again",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយម្តងទៀត។",
+            "pronunciationHelp": "som niyeay mdong tiet",
+            "meaning": "Please say it again.",
+            "audioUrl": null
+          },
+          "note": "Use the repetition request when you missed the words. It is distinct from a request to change speed. The script/help is an original modern candidate informed by a historical pattern, pending fluent review.",
+          "recallCue": "You missed a name. Ask the person to say it again.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "សូមនិយាយម្តងទៀត។",
+              "pronunciationHelp": "som niyeay mdong tiet",
+              "meaning": "Please say it again."
+            }
+          ]
+        },
+        {
+          "title": "Ask for a slower exchange",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយយឺតៗ។",
+            "pronunciationHelp": "som niyeay yeut yeut",
+            "meaning": "Please speak slowly.",
+            "audioUrl": null
+          },
+          "note": "Use the speed request when the words came too quickly. This modern script/help candidate needs fluent review; the historical reference does not approve it.",
+          "recallCue": "You heard the words but the pace was too fast. Ask for slower speech.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "សូមនិយាយយឺតៗ។",
+              "pronunciationHelp": "som niyeay yeut yeut",
+              "meaning": "Please speak slowly."
+            }
+          ]
+        },
+        {
+          "title": "Thank someone",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "audioUrl": null
+          },
+          "note": "Use this after someone helps you. It acknowledges help rather than asking for new information.",
+          "recallCue": "Someone repeats their name for you. Thank them.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "អរគុណ",
+              "pronunciationHelp": "aw-kun",
+              "meaning": "Thank you."
+            }
+          ]
+        }
+      ],
+      "scriptSupport": {
+        "title": "Optional script practice",
+        "note": "Compare these whole expressions with the dialogue. Try recognizing a familiar expression before revealing its help. These are draft reading examples, not a decoding or pronunciation assessment.",
+        "teachingCardIndexes": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "vocabulary": [
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "សូមនិយាយម្តងទៀត។",
+        "pronunciationHelp": "som niyeay mdong tiet",
+        "meaning": "Please say it again.",
+        "id": "repeat",
+        "senseId": "meet-repeat",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "Use the repetition request when you missed the words. It is distinct from a request to change speed. The script/help is an original modern candidate informed by a historical pattern, pending fluent review.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "សូមនិយាយយឺតៗ។",
+        "pronunciationHelp": "som niyeay yeut yeut",
+        "meaning": "Please speak slowly.",
+        "id": "slow",
+        "senseId": "meet-slow",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "Use the speed request when the words came too quickly. This modern script/help candidate needs fluent review; the historical reference does not approve it.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "អរគុណ",
+        "pronunciationHelp": "aw-kun",
+        "meaning": "Thank you.",
+        "id": "thanks",
+        "senseId": "meet-thanks",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "Use this after someone helps you. It acknowledges help rather than asking for new information.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 2
+      }
+    ],
+    "steps": [
+      {
+        "id": "repair-1",
+        "instruction": "You missed Sam’s name. Ask to hear it again.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំឈ្មោះ Sam។",
+          "pronunciationHelp": "khnhom chhmoh Sam",
+          "meaning": "My name is Sam.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយម្តងទៀត។",
+            "pronunciationHelp": "som niyeay mdong tiet",
+            "meaning": "Please say it again.",
+            "id": "a",
+            "segments": [
+              "សូម",
+              "និយាយ",
+              "ម្តងទៀត",
+              "។"
+            ],
+            "rationale": "The requested response is “Please say it again.” in this situation. Use the repetition request when you missed the words. It is distinct from a request to change speed. The script/help is an original modern candidate informed by a historical pattern, pending fluent review."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយយឺតៗ។",
+            "pronunciationHelp": "som niyeay yeut yeut",
+            "meaning": "Please speak slowly.",
+            "id": "b",
+            "segments": [
+              "សូម",
+              "និយាយ",
+              "យឺតៗ",
+              "។"
+            ],
+            "rationale": "This says “Please speak slowly.” It does not supply the response requested here: “Please say it again.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "c",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "This says “Thank you.” It does not supply the response requested here: “Please say it again.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Please say it again.” in this situation. Use the repetition request when you missed the words. It is distinct from a request to change speed. The script/help is an original modern candidate informed by a historical pattern, pending fluent review.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You missed a name. Ask the person to say it again."
+        }
+      },
+      {
+        "id": "repair-2",
+        "instruction": "The person is speaking too fast. Ask them to slow down.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកមកពីណា?",
+          "pronunciationHelp": "neak mok pii naa?",
+          "meaning": "Where are you from?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយម្តងទៀត។",
+            "pronunciationHelp": "som niyeay mdong tiet",
+            "meaning": "Please say it again.",
+            "id": "a",
+            "segments": [
+              "សូម",
+              "និយាយ",
+              "ម្តងទៀត",
+              "។"
+            ],
+            "rationale": "This says “Please say it again.” It does not supply the response requested here: “Please speak slowly.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "id": "b",
+            "segments": [
+              "អ្នក",
+              "ឈ្មោះ",
+              "អី",
+              "?"
+            ],
+            "rationale": "This says “What is your name?” It does not supply the response requested here: “Please speak slowly.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយយឺតៗ។",
+            "pronunciationHelp": "som niyeay yeut yeut",
+            "meaning": "Please speak slowly.",
+            "id": "c",
+            "segments": [
+              "សូម",
+              "និយាយ",
+              "យឺតៗ",
+              "។"
+            ],
+            "rationale": "The requested response is “Please speak slowly.” in this situation. Use the speed request when the words came too quickly. This modern script/help candidate needs fluent review; the historical reference does not approve it."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Please speak slowly.” in this situation. Use the speed request when the words came too quickly. This modern script/help candidate needs fluent review; the historical reference does not approve it.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You heard the words but the pace was too fast. Ask for slower speech."
+        }
+      },
+      {
+        "id": "repair-3",
+        "instruction": "Sam repeats their name to help you. Thank them.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំឈ្មោះ Sam។",
+          "pronunciationHelp": "khnhom chhmoh Sam",
+          "meaning": "My name is Sam.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "id": "a",
+            "segments": [
+              "អ្នក",
+              "មកពី",
+              "ណា",
+              "?"
+            ],
+            "rationale": "This says “Where are you from?” It does not supply the response requested here: “Thank you.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "b",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "The requested response is “Thank you.” in this situation. Use this after someone helps you. It acknowledges help rather than asking for new information."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយម្តងទៀត។",
+            "pronunciationHelp": "som niyeay mdong tiet",
+            "meaning": "Please say it again.",
+            "id": "c",
+            "segments": [
+              "សូម",
+              "និយាយ",
+              "ម្តងទៀត",
+              "។"
+            ],
+            "rationale": "This says “Please say it again.” It does not supply the response requested here: “Thank you.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Thank you.” in this situation. Use this after someone helps you. It acknowledges help rather than asking for new information.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Someone repeats their name for you. Thank them."
+        }
+      },
+      {
+        "id": "repair-4",
+        "instruction": "The question has now been clarified: it asks for your name. You are Alex. Answer it.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អ្នកឈ្មោះអី?",
+          "pronunciationHelp": "neak chhmoh ey?",
+          "meaning": "What is your name?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Alex។",
+            "pronunciationHelp": "khnhom chhmoh Alex",
+            "meaning": "My name is Alex.",
+            "id": "a",
+            "segments": [
+              "ខ្ញុំ",
+              "ឈ្មោះ",
+              " Alex",
+              "។"
+            ],
+            "rationale": "The requested response is “My name is Alex.” in this situation. Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំមកពីអាមេរិក។",
+            "pronunciationHelp": "khnhom mok pii aa-me-rik",
+            "meaning": "I am from America.",
+            "id": "b",
+            "segments": [
+              "ខ្ញុំ",
+              "មកពី",
+              "អាមេរិក",
+              "។"
+            ],
+            "rationale": "This says “I am from America.” It does not supply the response requested here: “My name is Alex.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយយឺតៗ។",
+            "pronunciationHelp": "som niyeay yeut yeut",
+            "meaning": "Please speak slowly.",
+            "id": "c",
+            "segments": [
+              "សូម",
+              "និយាយ",
+              "យឺតៗ",
+              "។"
+            ],
+            "rationale": "This says “Please speak slowly.” It does not supply the response requested here: “My name is Alex.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “My name is Alex.” in this situation. Alex is the name assigned in this practice scene. Replace the name when speaking for yourself; the app only checks the authored choices.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You are playing Alex. Say what your name is."
+        }
+      },
+      {
+        "id": "repair-5",
+        "instruction": "A chair scrapes across the floor while the name is said. Request the words again.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំឈ្មោះ Sam។",
+          "pronunciationHelp": "khnhom chhmoh Sam",
+          "meaning": "My name is Sam.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "a",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "This says “Thank you.” It does not supply the response requested here: “Please say it again.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "id": "b",
+            "segments": [
+              "អ្នក",
+              "មកពី",
+              "ណា",
+              "?"
+            ],
+            "rationale": "This says “Where are you from?” It does not supply the response requested here: “Please say it again.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយម្តងទៀត។",
+            "pronunciationHelp": "som niyeay mdong tiet",
+            "meaning": "Please say it again.",
+            "id": "c",
+            "segments": [
+              "សូម",
+              "និយាយ",
+              "ម្តងទៀត",
+              "។"
+            ],
+            "rationale": "The requested response is “Please say it again.” in this situation. Use the repetition request when you missed the words. It is distinct from a request to change speed. The script/help is an original modern candidate informed by a historical pattern, pending fluent review."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Please say it again.” in this situation. Use the repetition request when you missed the words. It is distinct from a request to change speed. The script/help is an original modern candidate informed by a historical pattern, pending fluent review.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You missed a name. Ask the person to say it again."
+        }
+      },
+      {
+        "id": "repair-6",
+        "instruction": "At a later table a different person is speaking too fast. Ask specifically for a change of pace.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ខ្ញុំឈ្មោះ Alex។",
+          "pronunciationHelp": "khnhom chhmoh Alex",
+          "meaning": "My name is Alex.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយម្តងទៀត។",
+            "pronunciationHelp": "som niyeay mdong tiet",
+            "meaning": "Please say it again.",
+            "id": "a",
+            "segments": [
+              "សូម",
+              "និយាយ",
+              "ម្តងទៀត",
+              "។"
+            ],
+            "rationale": "This says “Please say it again.” It does not supply the response requested here: “Please speak slowly.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមនិយាយយឺតៗ។",
+            "pronunciationHelp": "som niyeay yeut yeut",
+            "meaning": "Please speak slowly.",
+            "id": "b",
+            "segments": [
+              "សូម",
+              "និយាយ",
+              "យឺតៗ",
+              "។"
+            ],
+            "rationale": "The requested response is “Please speak slowly.” in this situation. Use the speed request when the words came too quickly. This modern script/help candidate needs fluent review; the historical reference does not approve it."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "id": "c",
+            "segments": [
+              "អ្នក",
+              "ឈ្មោះ",
+              "អី",
+              "?"
+            ],
+            "rationale": "This says “What is your name?” It does not supply the response requested here: “Please speak slowly.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Please speak slowly.” in this situation. Use the speed request when the words came too quickly. This modern script/help candidate needs fluent review; the historical reference does not approve it.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You heard the words but the pace was too fast. Ask for slower speech."
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "teaching-reference",
+      "title": "NIU SEAsite Khmer: Unit 1 useful words",
+      "locator": "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+      "rights": "Reference only. No redistribution licence established; no source audio, images, dialogue or teaching prose is bundled. Publication rights review pending.",
+      "notes": "Lexical/reference support for greeting, thanks, excuse me and speaking/understanding. Source spellings are retained in the research note; lesson combinations and readable help below are original AI-assisted candidates, not source quotations or linguistic review."
+    },
+    {
+      "sourceType": "grammar-reference",
+      "title": "NIU SEAsite Khmer: Unit 1 grammar",
+      "locator": "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+      "rights": "Reference only; no commercial content reuse grant established. No source lessons/media copied. Rights disposition remains pending.",
+      "notes": "Reference for first-person form, same-age address and name question. Some legacy-page spellings appear anomalous; do not treat the page as a canonical text. Original lesson script and contextual address choices require fluent review."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "Vathanak Sok, Basic Khmer (2022), 1.1 informal conversation",
+      "locator": "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+      "rights": "CC BY-NC 4.0 except otherwise noted. Reference only; no commercial adaptation/distribution permission established. No source dialogue, prose, video or audio is bundled.",
+      "notes": "Reference for name-giving and peer origin patterns. Ismi uses original situations, assigned names, script compositions and provisional readable help. Neither the source nor its licence approves these candidates for publication."
+    },
+    {
+      "sourceType": "historical-reference",
+      "title": "FSI Cambodian Basic Course Volume 1, Noss and Proum (1966), printed pp. 6 and 9",
+      "locator": "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+      "rights": "Historical US Department of State publication; institutional origin verified via ERIC ED041276. Exact commercial text/audio rights are not attested here. No scan or audio redistributed. Publication clearance pending.",
+      "notes": "Phonemic request-for-repetition and slower-repetition patterns on PDF pages 10 and 13. Modern Khmer script and readable help in the draft are new compositions requiring review, not a transcription claimed to appear in the scan."
+    },
+    {
+      "sourceType": "authoring-record",
+      "title": "Ismi F26 first-unit AI-assisted draft record",
+      "locator": "internal:khmer/meet-01/authoring-v1",
+      "rights": "Original AI-assisted dialogue arrangement, scenarios and explanations for private review. Does not clear external reference rights or constitute owner publication approval.",
+      "notes": "October 16 authorization: draft now, fluent Khmer review before publication. No actual reviewer or human recording. Reference model target: contemporary Cambodian Khmer, Phnom Penh; not verified speaker evidence."
+    }
+  ]
+}

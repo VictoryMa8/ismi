@@ -1,0 +1,758 @@
+{
+  "lesson": {
+    "id": "khmer-meet-01-01",
+    "trackId": "khmer",
+    "schemaVersion": 2,
+    "title": "Greet someone",
+    "scenario": "Your partner introduces you to a friend of a similar age at their home. Greet each other, introduce yourselves, then thank the host for welcoming you.",
+    "estimatedMinutes": 5,
+    "version": "draft",
+    "unitId": "khmer-meet-01",
+    "unitTitle": "Meet someone and keep the exchange going",
+    "courseOrder": 1,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": false,
+    "contentReview": {
+      "languageTag": "km-KH",
+      "variety": "cambodian-phnom-penh",
+      "helpConvention": "Ismi readable draft help v0; provisional, not IPA or approved romanization",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "criticalIssues": [
+        "No fluent Khmer reviewer designated; all wording, accepted choices, address and cultural notes need review.",
+        "Reference access is not reuse clearance; source selection and publication rights await owner review.",
+        "Readable pronunciation help is provisional; modern script compositions and historical repair patterns need verification.",
+        "No reviewed human model audio, sound modules, real-device/AT or observed learning evidence."
+      ],
+      "sourceLanguages": {
+        "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm": "km-KH",
+        "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm": "km-KH",
+        "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/": "km-KH",
+        "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf": "km-KH",
+        "internal:khmer/meet-01/authoring-v1": "km-KH"
+      }
+    },
+    "introduction": {
+      "goal": "Greet a peer and thank them for their welcome.",
+      "dialogue": [
+        {
+          "speaker": "Host",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សួស្ដី",
+            "pronunciationHelp": "sua-sdey",
+            "meaning": "Hello.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Guest",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សួស្ដី",
+            "pronunciationHelp": "sua-sdey",
+            "meaning": "Hello.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Host",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Sam។",
+            "pronunciationHelp": "khnhom chhmoh Sam",
+            "meaning": "My name is Sam.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Guest",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ខ្ញុំឈ្មោះ Alex។",
+            "pronunciationHelp": "khnhom chhmoh Alex",
+            "meaning": "My name is Alex.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Guest",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សួស្ដី",
+          "pronunciationHelp": "sua-sdey",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "អរគុណ",
+          "pronunciationHelp": "aw-kun",
+          "meaning": "Thank you.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សូមទោស",
+          "pronunciationHelp": "som-toh",
+          "meaning": "Excuse me / sorry.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "ជំរាបសួរ",
+          "pronunciationHelp": "jom-riab-sua",
+          "meaning": "Hello (formal greeting).",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Keep the greeting, thank-you and attention-getter attached to their situations. The formal greeting is a recognition contrast; this casual scene does not require it.",
+      "dialectNote": "Target model: contemporary Cambodian Khmer with a Phnom Penh reference. This candidate has no verified model speaker. Same-age peer address is provisional; do not generalize it to older relatives or formal settings.",
+      "recordingNote": "Unreviewed text draft. No human model audio is supplied. Device speech, if available, is only a preview and does not validate the pronunciation help.",
+      "sourceLocators": [
+        "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+        "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+        "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+        "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+        "internal:khmer/meet-01/authoring-v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Greet a peer",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សួស្ដី",
+            "pronunciationHelp": "sua-sdey",
+            "meaning": "Hello.",
+            "audioUrl": null
+          },
+          "note": "Use this candidate for a casual meeting between adults of similar age. Review the greeting and setting together; this is not a universal address rule.",
+          "recallCue": "You meet a friend of your partner. Offer a casual hello.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "សួស្ដី",
+              "pronunciationHelp": "sua-sdey",
+              "meaning": "Hello."
+            }
+          ]
+        },
+        {
+          "title": "Thank someone",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "audioUrl": null
+          },
+          "note": "Use this after someone helps you. It acknowledges help rather than asking for new information.",
+          "recallCue": "Someone repeats their name for you. Thank them.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "អរគុណ",
+              "pronunciationHelp": "aw-kun",
+              "meaning": "Thank you."
+            }
+          ]
+        },
+        {
+          "title": "Get someone’s attention",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមទោស",
+            "pronunciationHelp": "som-toh",
+            "meaning": "Excuse me / sorry.",
+            "audioUrl": null
+          },
+          "note": "This candidate marks an apology or excuse me. Review the situation and intonation before recording it; it does not itself ask for repetition.",
+          "recallCue": "Politely get someone’s attention before asking for help.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "សូមទោស",
+              "pronunciationHelp": "som-toh",
+              "meaning": "Excuse me / sorry."
+            }
+          ]
+        },
+        {
+          "title": "Recognize a formal greeting",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ជំរាបសួរ",
+            "pronunciationHelp": "jom-riab-sua",
+            "meaning": "Hello (formal greeting).",
+            "audioUrl": null
+          },
+          "note": "Keep the formal greeting distinct from the casual scene. A fluent reviewer must confirm when it fits; recognition here is not a cultural etiquette assessment.",
+          "recallCue": "You need to recognize the formal greeting from this lesson.",
+          "sourceLocators": [
+            "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+            "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+            "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+            "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+            "internal:khmer/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "ជំរាបសួរ",
+              "pronunciationHelp": "jom-riab-sua",
+              "meaning": "Hello (formal greeting)."
+            }
+          ]
+        }
+      ],
+      "scriptSupport": {
+        "title": "Optional script practice",
+        "note": "Compare these whole expressions with the dialogue. Try recognizing a familiar expression before revealing its help. These are draft reading examples, not a decoding or pronunciation assessment.",
+        "teachingCardIndexes": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "vocabulary": [
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "សួស្ដី",
+        "pronunciationHelp": "sua-sdey",
+        "meaning": "Hello.",
+        "id": "hello",
+        "senseId": "meet-hello",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "Use this candidate for a casual meeting between adults of similar age. Review the greeting and setting together; this is not a universal address rule.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "អរគុណ",
+        "pronunciationHelp": "aw-kun",
+        "meaning": "Thank you.",
+        "id": "thanks",
+        "senseId": "meet-thanks",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "Use this after someone helps you. It acknowledges help rather than asking for new information.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "សូមទោស",
+        "pronunciationHelp": "som-toh",
+        "meaning": "Excuse me / sorry.",
+        "id": "sorry",
+        "senseId": "meet-sorry",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "same-age-peer-candidate",
+        "forms": [],
+        "note": "This candidate marks an apology or excuse me. Review the situation and intonation before recording it; it does not itself ask for repetition.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "ជំរាបសួរ",
+        "pronunciationHelp": "jom-riab-sua",
+        "meaning": "Hello (formal greeting).",
+        "id": "formal",
+        "senseId": "meet-formal",
+        "kind": "expression",
+        "dialect": "cambodian-phnom-penh",
+        "register": "formal-greeting-candidate",
+        "forms": [],
+        "note": "Keep the formal greeting distinct from the casual scene. A fluent reviewer must confirm when it fits; recognition here is not a cultural etiquette assessment.",
+        "sourceLocators": [
+          "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+          "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+          "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+          "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+          "internal:khmer/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 3
+      }
+    ],
+    "steps": [
+      {
+        "id": "greet-1",
+        "instruction": "Your peer has just greeted you. Return the casual greeting taught in this scene.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សួស្ដី",
+          "pronunciationHelp": "sua-sdey",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សួស្ដី",
+            "pronunciationHelp": "sua-sdey",
+            "meaning": "Hello.",
+            "id": "a",
+            "segments": [
+              "សួស្ដី"
+            ],
+            "rationale": "The requested response is “Hello.” in this situation. Use this candidate for a casual meeting between adults of similar age. Review the greeting and setting together; this is not a universal address rule."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "b",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "This says “Thank you.” It does not supply the response requested here: “Hello.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមទោស",
+            "pronunciationHelp": "som-toh",
+            "meaning": "Excuse me / sorry.",
+            "id": "c",
+            "segments": [
+              "សូមទោស"
+            ],
+            "rationale": "This says “Excuse me / sorry.” It does not supply the response requested here: “Hello.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Hello.” in this situation. Use this candidate for a casual meeting between adults of similar age. Review the greeting and setting together; this is not a universal address rule.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You meet a friend of your partner. Offer a casual hello."
+        }
+      },
+      {
+        "id": "greet-2",
+        "instruction": "Your host helped you join the conversation. Thank them.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សួស្ដី",
+          "pronunciationHelp": "sua-sdey",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "id": "a",
+            "segments": [
+              "អ្នក",
+              "ឈ្មោះ",
+              "អី",
+              "?"
+            ],
+            "rationale": "This says “What is your name?” It does not supply the response requested here: “Thank you.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមទោស",
+            "pronunciationHelp": "som-toh",
+            "meaning": "Excuse me / sorry.",
+            "id": "b",
+            "segments": [
+              "សូមទោស"
+            ],
+            "rationale": "This says “Excuse me / sorry.” It does not supply the response requested here: “Thank you.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "c",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "The requested response is “Thank you.” in this situation. Use this after someone helps you. It acknowledges help rather than asking for new information."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Thank you.” in this situation. Use this after someone helps you. It acknowledges help rather than asking for new information.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Someone repeats their name for you. Thank them."
+        }
+      },
+      {
+        "id": "greet-3",
+        "instruction": "You need to get someone’s attention before your question. Choose the attention-getter.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សួស្ដី",
+          "pronunciationHelp": "sua-sdey",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "id": "a",
+            "segments": [
+              "អ្នក",
+              "មកពី",
+              "ណា",
+              "?"
+            ],
+            "rationale": "This says “Where are you from?” It does not supply the response requested here: “Excuse me / sorry.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមទោស",
+            "pronunciationHelp": "som-toh",
+            "meaning": "Excuse me / sorry.",
+            "id": "b",
+            "segments": [
+              "សូមទោស"
+            ],
+            "rationale": "The requested response is “Excuse me / sorry.” in this situation. This candidate marks an apology or excuse me. Review the situation and intonation before recording it; it does not itself ask for repetition."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "c",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "This says “Thank you.” It does not supply the response requested here: “Excuse me / sorry.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Excuse me / sorry.” in this situation. This candidate marks an apology or excuse me. Review the situation and intonation before recording it; it does not itself ask for repetition.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Politely get someone’s attention before asking for help."
+        }
+      },
+      {
+        "id": "greet-4",
+        "instruction": "You are reading a note labeled “formal greeting.” Select the matching expression, rather than a thank-you or an apology.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សួស្ដី",
+          "pronunciationHelp": "sua-sdey",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ជំរាបសួរ",
+            "pronunciationHelp": "jom-riab-sua",
+            "meaning": "Hello (formal greeting).",
+            "id": "a",
+            "segments": [
+              "ជំរាបសួរ"
+            ],
+            "rationale": "The requested response is “Hello (formal greeting).” in this situation. Keep the formal greeting distinct from the casual scene. A fluent reviewer must confirm when it fits; recognition here is not a cultural etiquette assessment."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "b",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "This says “Thank you.” It does not supply the response requested here: “Hello (formal greeting).” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមទោស",
+            "pronunciationHelp": "som-toh",
+            "meaning": "Excuse me / sorry.",
+            "id": "c",
+            "segments": [
+              "សូមទោស"
+            ],
+            "rationale": "This says “Excuse me / sorry.” It does not supply the response requested here: “Hello (formal greeting).” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Hello (formal greeting).” in this situation. Keep the formal greeting distinct from the casual scene. A fluent reviewer must confirm when it fits; recognition here is not a cultural etiquette assessment.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "You need to recognize the formal greeting from this lesson."
+        }
+      },
+      {
+        "id": "greet-5",
+        "instruction": "At the end of the welcome, the host helps with your coat. Acknowledge that help.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សួស្ដី",
+          "pronunciationHelp": "sua-sdey",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកឈ្មោះអី?",
+            "pronunciationHelp": "neak chhmoh ey?",
+            "meaning": "What is your name?",
+            "id": "a",
+            "segments": [
+              "អ្នក",
+              "ឈ្មោះ",
+              "អី",
+              "?"
+            ],
+            "rationale": "This says “What is your name?” It does not supply the response requested here: “Thank you.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "ជំរាបសួរ",
+            "pronunciationHelp": "jom-riab-sua",
+            "meaning": "Hello (formal greeting).",
+            "id": "b",
+            "segments": [
+              "ជំរាបសួរ"
+            ],
+            "rationale": "This says “Hello (formal greeting).” It does not supply the response requested here: “Thank you.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "c",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "The requested response is “Thank you.” in this situation. Use this after someone helps you. It acknowledges help rather than asking for new information."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Thank you.” in this situation. Use this after someone helps you. It acknowledges help rather than asking for new information.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Someone repeats their name for you. Thank them."
+        }
+      },
+      {
+        "id": "greet-6",
+        "instruction": "In the hallway, get a person’s attention before a question. Choose the expression that does that.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "សួស្ដី",
+          "pronunciationHelp": "sua-sdey",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អ្នកមកពីណា?",
+            "pronunciationHelp": "neak mok pii naa?",
+            "meaning": "Where are you from?",
+            "id": "a",
+            "segments": [
+              "អ្នក",
+              "មកពី",
+              "ណា",
+              "?"
+            ],
+            "rationale": "This says “Where are you from?” It does not supply the response requested here: “Excuse me / sorry.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "សូមទោស",
+            "pronunciationHelp": "som-toh",
+            "meaning": "Excuse me / sorry.",
+            "id": "b",
+            "segments": [
+              "សូមទោស"
+            ],
+            "rationale": "The requested response is “Excuse me / sorry.” in this situation. This candidate marks an apology or excuse me. Review the situation and intonation before recording it; it does not itself ask for repetition."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "អរគុណ",
+            "pronunciationHelp": "aw-kun",
+            "meaning": "Thank you.",
+            "id": "c",
+            "segments": [
+              "អរគុណ"
+            ],
+            "rationale": "This says “Thank you.” It does not supply the response requested here: “Excuse me / sorry.” It may fit a different situation; it is not being rejected as universally incorrect Khmer."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "The requested response is “Excuse me / sorry.” in this situation. This candidate marks an apology or excuse me. Review the situation and intonation before recording it; it does not itself ask for repetition.",
+          "incorrectTitle": "Look at the requested response.",
+          "incorrectExplanation": "Compare the requested meaning with the meaning of your selected response.",
+          "retryHint": "Politely get someone’s attention before asking for help."
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "teaching-reference",
+      "title": "NIU SEAsite Khmer: Unit 1 useful words",
+      "locator": "https://seasite.niu.edu/khmer/conversation/unit1/usefulwords1.htm",
+      "rights": "Reference only. No redistribution licence established; no source audio, images, dialogue or teaching prose is bundled. Publication rights review pending.",
+      "notes": "Lexical/reference support for greeting, thanks, excuse me and speaking/understanding. Source spellings are retained in the research note; lesson combinations and readable help below are original AI-assisted candidates, not source quotations or linguistic review."
+    },
+    {
+      "sourceType": "grammar-reference",
+      "title": "NIU SEAsite Khmer: Unit 1 grammar",
+      "locator": "https://seasite.niu.edu/khmer/conversation/unit1/grammar1/Grammar1.htm",
+      "rights": "Reference only; no commercial content reuse grant established. No source lessons/media copied. Rights disposition remains pending.",
+      "notes": "Reference for first-person form, same-age address and name question. Some legacy-page spellings appear anomalous; do not treat the page as a canonical text. Original lesson script and contextual address choices require fluent review."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "Vathanak Sok, Basic Khmer (2022), 1.1 informal conversation",
+      "locator": "https://openbooks.lib.msu.edu/basickhmer/chapter/1-1-informal-conversation/",
+      "rights": "CC BY-NC 4.0 except otherwise noted. Reference only; no commercial adaptation/distribution permission established. No source dialogue, prose, video or audio is bundled.",
+      "notes": "Reference for name-giving and peer origin patterns. Ismi uses original situations, assigned names, script compositions and provisional readable help. Neither the source nor its licence approves these candidates for publication."
+    },
+    {
+      "sourceType": "historical-reference",
+      "title": "FSI Cambodian Basic Course Volume 1, Noss and Proum (1966), printed pp. 6 and 9",
+      "locator": "https://fsi-language-courses-media.nyc3.cdn.digitaloceanspaces.com/languages/Cambodian/Basic/Volume%201/Fsi-CambodianBasicCourse-Volume1-StudentText.pdf",
+      "rights": "Historical US Department of State publication; institutional origin verified via ERIC ED041276. Exact commercial text/audio rights are not attested here. No scan or audio redistributed. Publication clearance pending.",
+      "notes": "Phonemic request-for-repetition and slower-repetition patterns on PDF pages 10 and 13. Modern Khmer script and readable help in the draft are new compositions requiring review, not a transcription claimed to appear in the scan."
+    },
+    {
+      "sourceType": "authoring-record",
+      "title": "Ismi F26 first-unit AI-assisted draft record",
+      "locator": "internal:khmer/meet-01/authoring-v1",
+      "rights": "Original AI-assisted dialogue arrangement, scenarios and explanations for private review. Does not clear external reference rights or constitute owner publication approval.",
+      "notes": "October 16 authorization: draft now, fluent Khmer review before publication. No actual reviewer or human recording. Reference model target: contemporary Cambodian Khmer, Phnom Penh; not verified speaker evidence."
+    }
+  ]
+}
