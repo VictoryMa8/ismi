@@ -1,5 +1,11 @@
 # Multi-language foundation (F24)
 
+**October 16 delivery:** application `f515f43` is pushed and deployed to the existing
+web/API preview. [Rollout and preservation evidence](../releases/2026-10-16-multi-language.md).
+The local-candidate history below remains evidence of preparation; real first-unit,
+human AT/pilot, Safari offline and beta/content decisions remain open.
+
+
 Implementation and verification note · October 15, 2026. Current completion status
 and remaining acceptance gates belong to [ROADMAP.md](../../ROADMAP.md#f24-multi-language-foundation-and-parallel-study).
 The owner authorized the entirety of F24, approved the recommended queue policy,

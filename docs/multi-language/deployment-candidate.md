@@ -2,7 +2,7 @@
 
 The owner subsequently authorized pushing and deploying this application work on
 October 16. The candidate below records the earlier local preparation; actual
-rollout evidence belongs to the dated release note linked from ROADMAP.md.
+rollout evidence is recorded in the [October 16 release note](../releases/2026-10-16-multi-language.md).
 
 Prepared October 15, 2026. This is a local application candidate, not a rollout or
 curriculum release. It includes the shared working checkout, including the separately
