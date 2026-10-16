@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 15, 2026 · **Start here for current feature status.**
+Updated October 16, 2026 · **Start here for current feature status.**
 
 This is the single current plan. [AGENTS.md](AGENTS.md) holds product constraints;
 [the planning workflow](docs/planning-workflow.md) explains how agents maintain
@@ -8,7 +8,12 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**F27.1 — Complete locally; release authorized October 15:** shared 48 px arrow-and-label return controls, explicit destinations and keyboard/offline checks. The frontend-only release excludes unrelated local course work. [Behavior and verification](docs/mobile-back-navigation.md).
+**F27.1 — Complete and deployed October 16:** shared 48 px arrow-and-label return
+controls, explicit destinations and keyboard/offline support. Application `5875e6d`
+is pushed; Vercel is Ready on the existing development URL. Isolated build and focused
+checks pass, with one cultural-refresh retry. Unrelated local course work is excluded;
+no API or curriculum change. [Behavior](docs/mobile-back-navigation.md),
+[rollout evidence](docs/releases/2026-10-16-back-navigation.md).
 
 **F17.6 — Complete and deployed October 13:** three Everyday written-recall can-do cards,
 versioned attempt/help/date evidence, targeted practice and an optional outcome
@@ -186,7 +191,7 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F25](#f25-french-course) | French course | Planned · definition decisions | Proposed twelve-week course; select variety, depth and review route |
 | [F26](#f26-khmer-course) | Khmer course | Planned · definition decisions | Proposed twelve-week course; select variety, script/help and review route |
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
-| [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · release authorized | Isolated frontend verification and Vercel push/deploy |
+| [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
 Needs decision = a named choice prevents the next step; Needs input = external
@@ -1534,8 +1539,8 @@ and F24.5/F24.6 for full release. Early/full stages have separate evidence manif
 
 #### F27.1 Mobile-friendly back navigation
 
-**Status:** Done locally — owner authorized implementation October 15, 2026;
-bounded completion criteria met; separate from delivered F27.
+
+**Status:** Done and deployed October 16, 2026 — implemented October 15; separate from delivered F27.
 **Outcome:** page-back controls are recognizable, comfortable to tap and consistently
 placed rather than appearing as plain underlined anchor text.
 **Scope:** audit every page/sheet with a return action, including Back to landing,
@@ -1550,7 +1555,7 @@ handlers. Targets are at least 48×48 px with wrapping labels, focus and forced-
 support. Account adds a Today return. Curriculum retains its underlying page and
 restores opener focus. Recall queues Escape during evidence saves and prevents late
 feedback focus after closure. No new lesson-resume policy is introduced.
-**Next:** owner authorized push/deployment October 15; verify the isolated F27.1 release and existing Vercel target.
+**Next:** none for this scope; real-device/AT beta evidence remains under F18.
 **Done when:** every applicable back action uses the shared treatment and visible
 destination; small screens/enlarged text avoid clipping and crowded adjacent controls.
 Direct/deep-linked entry has a reliable in-app destination rather than blindly
@@ -1559,15 +1564,16 @@ routes work; lesson exit/resume and explicit landing return remain available.
 Nested pages return to the correct parent and preserve supported context/filters;
 RTL teaching text does not reverse the surrounding English navigation unexpectedly.
 **Depends on:** F07/F27 and existing routes; no Khmer content/provider dependency.
-**Evidence:** [implementation, previews and verification](docs/mobile-back-navigation.md).
-Production build passes; eight existing landing-return checks pass and the original
-recall keyboard-return scenario passes three consecutive runs after its timing fix.
-Direct inspection at 320/390/1280 px confirms targets, keyboard/history, 200% text,
-forced colors, offline reload/Practice/landing and owner-console focus preservation.
-Initial broader run was 50/53; found display/focus defects are corrected. Subsequent
-wider checks encounter old hero/“Primary track” text expectations after concurrent
-course edits, so no fully green shared-checkout suite is claimed.
-**Delivery:** owner-authorized frontend release in preparation; no API or curriculum change. Real AT release evidence remains F18; unrelated course edits stay local.
+**Evidence:** [behavior, previews and verification](docs/mobile-back-navigation.md),
+[October 16 rollout](docs/releases/2026-10-16-back-navigation.md). The isolated
+production build passes. Focused browser run: 52/53 passed; the one cultural-refresh
+check passed when rerun alone. All return/lesson/preview/glossary/review/recall checks
+passed. Additional 320/390/1280 px touch, 200% text, focus/history, offline and console
+checks pass; the original recall keyboard scenario also passed three consecutive runs.
+**Delivery:** application `5875e6d` pushed to `main`; Vercel deployment
+`dpl_BkpLCeiZ5TfK2j6DNahM5ibeCLDJ` is Ready and assigned to the existing development
+URL `https://ismi-arabic.vercel.app`. Release source matches the verified isolated
+snapshot. No API deployment or curriculum publication; unrelated course edits stay local.
 
 ## Selected future implementation order
 
@@ -1595,7 +1601,11 @@ committed without agreed scope, content/reviewer availability and measured first
 
 ## Recent planning changes
 
-- **October 15, 2026 F27.1:** shared mobile-friendly return controls and keyboard exit fixes are implemented; owner authorized push/deployment. Verify the isolated frontend release; no API or curriculum change. [Evidence](docs/mobile-back-navigation.md).
+- **October 16, 2026 F27.1:** application `5875e6d` is pushed/deployed on the existing
+  Vercel development site (Ready; alias confirmed). The scoped frontend release
+  preserves unrelated local course work. Build and all focused checks pass across
+  the initial run and one cultural-refresh retry; mobile/desktop/offline and console
+  returns are verified locally. No API/content change. [Rollout](docs/releases/2026-10-16-back-navigation.md).
 
 - **October 15, 2026 F21:** owner authorized implementation, selected broader Arabic
   and Monday UTC. Catalog/owner console and learner/offline scopes are built locally;

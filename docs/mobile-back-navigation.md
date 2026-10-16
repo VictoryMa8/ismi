@@ -93,5 +93,9 @@ test processes. Direct geometry, 200% text, keyboard/history, offline and consol
 Account focus checks also pass at 320/390/1280 px. Updated previews were inspected.
 This is scoped release evidence, not a claim that the entire mixed checkout passed.
 
-Commit and Vercel status will be recorded after the authorized push. Real-device/AT
-and beta gates remain unchanged.
+Application commit `5875e6d` is pushed to `main`. Vercel deployment
+`dpl_BkpLCeiZ5TfK2j6DNahM5ibeCLDJ` is Ready with the existing development alias
+[ismi-arabic.vercel.app](https://ismi-arabic.vercel.app) assigned. See the
+[October 16 rollout record](releases/2026-10-16-back-navigation.md).
+Verification of delivery uses Vercel deployment metadata and alias assignment;
+a hosted browser walkthrough is not claimed. Real-device/AT and beta gates remain unchanged.
