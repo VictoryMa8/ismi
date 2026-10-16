@@ -47,7 +47,7 @@ for (const width of [320, 390, 768, 1280]) {
     await expect(account).toHaveAttribute('aria-current', 'page')
     await expect(page.locator('#main-content')).toBeFocused()
     await expect(page.getByLabel('Email', { exact: true })).toBeVisible()
-    const selector = await page.getByLabel('Primary track', { exact: true }).boundingBox()
+    const selector = await page.getByLabel('Primary course', { exact: true }).boundingBox()
     const save = await page.getByRole('button', { name: 'Save study settings', exact: true }).boundingBox()
     expect(save!.y - selector!.y - selector!.height).toBeGreaterThanOrEqual(16)
     if (width === 390) await page.screenshot({ path: testInfo.outputPath('account.png'), scale: 'css' })

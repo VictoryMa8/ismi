@@ -61,3 +61,8 @@ export function makeReviewQueue(turns: ReviewTurn[], kind: ReviewKind, limit = 6
 export function checkpointKey(scope: string, unitId: string, lessons: LessonResponse[]): string {
   return JSON.stringify(['checkpoint', scope, unitId, lessons.map(lesson => [lesson.id, lesson.version]).sort()])
 }
+
+// Preserve legacy Arabic checkpoint IDs while giving new courses their own unit namespace.
+export function reviewUnitId(lesson: { trackId?: string; unitId: string }): string {
+  return !lesson.trackId || lesson.trackId === 'levantine' ? lesson.unitId : `${lesson.trackId}:${lesson.unitId}`
+}

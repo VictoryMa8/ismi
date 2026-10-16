@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import { textAttributes } from './courses';
 import { uploadRecording } from './api';
 import type {
   CurriculumSource,
@@ -54,9 +55,10 @@ async function upload(index: number, event: Event) {
     const { audioUrl } = await uploadRecording(file);
     step.prompt.audioUrl = audioUrl;
     step.prompt.recording = {
-      transcript: step.prompt.arabic,
+      transcript: step.prompt.targetText ?? step.prompt.arabic,
       speaker: '',
-      dialect: 'palestinian-urban',
+      dialect: current.trackId === 'levantine' ? 'palestinian-urban' : current.contentReview?.variety ?? '',
+      ...(current.trackId !== 'levantine' ? { languageTag: current.contentReview?.languageTag ?? '' } : {}),
       sourceLocator: audioUrl,
       reviewNotes: '',
     };
@@ -123,18 +125,18 @@ function remove(index: number) {
             @input="update(index, 'speaker', $event)"
         /></label>
         <label
-          >Dialect<select
+          >Dialect / variety<select
             :value="step.prompt.recording.dialect"
             @change="update(index, 'dialect', $event)"
           >
-            <option value="palestinian-urban">Urban Palestinian</option>
-            <option value="jordanian">Jordanian variant</option>
+            <option v-if="lesson?.trackId !== 'levantine'" :value="lesson?.contentReview?.variety ?? ''">{{ lesson?.contentReview?.variety || 'Specify content review variety first' }}</option>
+            <option v-if="lesson?.trackId === 'levantine'" value="palestinian-urban">Urban Palestinian</option>
+            <option v-if="lesson?.trackId === 'levantine'" value="jordanian">Jordanian variant</option>
           </select></label
         >
         <label class="wide"
-          >Arabic transcript<textarea
-            lang="ar"
-            dir="rtl"
+          >Transcript<textarea
+            v-bind="textAttributes(lesson?.trackId)"
             :value="step.prompt.recording.transcript"
             @input="update(index, 'transcript', $event)"
           ></textarea>
@@ -159,8 +161,7 @@ function remove(index: number) {
         Remove recording from step
       </button>
       <p v-if="!step.prompt.audioUrl">
-        No recording attached. Learners receive the labeled device-voice
-        preview.
+        No recording attached. Learners can use a labeled device-voice preview when a matching voice is available, or read the transcript.
       </p>
     </fieldset>
     <div
@@ -175,7 +176,7 @@ function remove(index: number) {
         :src="step.prompt.audioUrl!"
         :aria-label="`Recording preview for ${step.id}`"
       ></audio>
-      <p lang="ar" dir="rtl">{{ step.prompt.recording?.transcript }}</p>
+      <p v-bind="textAttributes(lesson?.trackId)">{{ step.prompt.recording?.transcript }}</p>
     </div>
   </section>
 </template>

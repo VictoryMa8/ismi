@@ -8,7 +8,7 @@ export type StudyActivity = {
 export type QuestTask = {
   id: string; kind: ActivityKind; label: string; lessonId?: string; unitId?: string; due?: boolean; completedBy?: string
 }
-export type ReviewAvailability = { ready: boolean; due: boolean; mixed: boolean; dueCount?: number; mistakeCount?: number; checkpoints: { id: string; title: string }[] }
+export type ReviewAvailability = { dueByCourse?: Record<string, number>; ready: boolean; due: boolean; mixed: boolean; dueCount?: number; mistakeCount?: number; checkpoints: { id: string; title: string }[] }
 export const emptyReviewAvailability = (): ReviewAvailability => ({ ready: false, due: false, mixed: false, dueCount: 0, mistakeCount: 0, checkpoints: [] })
 export type HabitState = {
   version: 1; timezone: string; questsEnabled: boolean; streakEnabled: boolean;

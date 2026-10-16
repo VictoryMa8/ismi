@@ -1,17 +1,18 @@
+import type { TrackId } from './studyPlan'
 import type { LessonResponse, LessonStep } from './types'
 
 export const placementVersion = 1
 export type PlacementQuestion = { lessonId: string; title: string; version: string; sources: string[]; dialogue: NonNullable<LessonResponse['introduction']>['dialogue']; step: LessonStep }
 export type PlacementAnswer = { lessonId: string; version: string; stepId: string; answerId: string; correct: boolean; help: boolean; sources: string[] }
 export type PlacementResult = {
-  policyVersion: number; trackId: 'levantine'; completedAt: string; skipped: boolean
+  policyVersion: number; trackId: TrackId; completedAt: string; skipped: boolean
   readingSupport: boolean; soundSupport: boolean; answers: PlacementAnswer[]
   recommendation?: { lessonId: string; title: string; version: string }
 }
 
 // Select only published packages supplied by the catalog; fixtures are not placement content.
-export function placementQuestions(packages: LessonResponse[]): PlacementQuestion[] {
-  return packages.filter(p => p.trackId === 'levantine' && p.reviewStatus !== 'demonstrative'
+export function placementQuestions(packages: LessonResponse[], courseId: TrackId = 'levantine'): PlacementQuestion[] {
+  return packages.filter(p => p.trackId === courseId && !p.contentReview?.engineeringFixture && p.reviewStatus !== 'demonstrative'
     && p.introduction?.sourceLocators.length)
     .sort((a, b) => a.courseOrder - b.courseOrder || a.id.localeCompare(b.id)).slice(0, 3)
     .flatMap(p => p.steps.filter(step => step.answers.length >= 2
@@ -31,4 +32,4 @@ export function placementRecommendation(questions: PlacementQuestion[], answers:
   const q = firstNeedingPractice ?? questions.at(-1)
   return q ? { lessonId: q.lessonId, title: q.title, version: q.version } : undefined
 }
-export function placementStorageKey(scope: string) { return `placement-v1:${scope}:levantine` }
+export function placementStorageKey(scope: string, courseId: TrackId = 'levantine') { return `placement-v1:${scope}:${courseId}` }

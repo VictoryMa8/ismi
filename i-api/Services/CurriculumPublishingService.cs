@@ -110,7 +110,7 @@ public sealed class CurriculumPublishingService(
     }
 
     public async Task<IReadOnlyList<LessonDefinition>> ListPublishedLessonsAsync(
-        string trackId,
+        string? trackId,
         CancellationToken cancellationToken = default)
     {
         var content = await database.CurriculumVersions
@@ -121,7 +121,7 @@ public sealed class CurriculumPublishingService(
 
         return content
             .Select(Deserialize)
-            .Where(lesson => string.Equals(lesson.TrackId, trackId, StringComparison.OrdinalIgnoreCase))
+            .Where(lesson => trackId is null || string.Equals(lesson.TrackId, trackId, StringComparison.OrdinalIgnoreCase))
             .OrderBy(lesson => lesson.UnitId, StringComparer.OrdinalIgnoreCase)
             .ThenBy(lesson => lesson.CourseOrder)
             .ThenBy(lesson => lesson.Id, StringComparer.OrdinalIgnoreCase)
@@ -184,6 +184,11 @@ public sealed class CurriculumPublishingService(
             throw new CurriculumWorkflowException("draft_exists", "Finish or update the existing draft for this lesson first.");
         }
 
+        var priorContent = await database.CurriculumVersions.AsNoTracking()
+            .Where(v => v.LessonId == lessonId).Select(v => v.ContentJson).ToListAsync(cancellationToken);
+        if (priorContent.Select(Deserialize).Any(l => l.TrackId != request.Lesson.TrackId))
+            throw new CurriculumWorkflowException("course_immutable", "A lesson ID must retain its course across versions.");
+
         var nextVersion = (await database.CurriculumVersions
             .Where(version => version.LessonId == lessonId)
             .MaxAsync(version => (int?)version.VersionNumber, cancellationToken) ?? 0) + 1;
@@ -228,6 +233,9 @@ public sealed class CurriculumPublishingService(
         {
             throw new CurriculumWorkflowException("lesson_id_immutable", "A draft's lesson ID cannot be changed.");
         }
+
+        if (Deserialize(record.ContentJson).TrackId != request.Lesson.TrackId)
+            throw new CurriculumWorkflowException("course_immutable", "A lesson ID must retain its course across versions.");
 
         record.ContentJson = Serialize(request.Lesson with
         {
@@ -337,6 +345,21 @@ public sealed class CurriculumPublishingService(
         return ToDetail(record);
     }
 
+    public async Task<CurriculumVersionDetail> WithdrawAsync(long versionId, string reason, string actor,
+        CancellationToken cancellationToken = default)
+    {
+        if (string.IsNullOrWhiteSpace(reason) || reason.Length > 2000)
+            throw new CurriculumWorkflowException("withdrawal_reason_required", "Give a withdrawal reason of 1–2000 characters.");
+        await using var transaction = await database.Database.BeginTransactionAsync(cancellationToken);
+        var record = await LoadAsync(versionId, cancellationToken);
+        RequireStatus(record, CurriculumStatuses.Published, "Only the current published version can be withdrawn.");
+        record.Status = CurriculumStatuses.Withdrawn;
+        record.AuditEvents.Add(Audit("withdrawn", actor, DateTime.UtcNow, reason.Trim()));
+        await database.SaveChangesAsync(cancellationToken);
+        await transaction.CommitAsync(cancellationToken);
+        return ToDetail(record);
+    }
+
     public async Task<CurriculumVersionDetail> RollbackAsync(
         string lessonId,
         long targetVersionId,
@@ -348,7 +371,7 @@ public sealed class CurriculumPublishingService(
             .Include(version => version.Sources)
             .Include(version => version.AuditEvents)
             .Where(version => version.LessonId == lessonId
-                && (version.Id == targetVersionId || version.Status == CurriculumStatuses.Published))
+                && (version.Id == targetVersionId || version.Status == CurriculumStatuses.Published || version.Status == CurriculumStatuses.Withdrawn))
             .ToListAsync(cancellationToken);
         var target = versions.SingleOrDefault(version => version.Id == targetVersionId)
             ?? throw NotFound();
@@ -358,7 +381,10 @@ public sealed class CurriculumPublishingService(
         }
 
         var current = versions.SingleOrDefault(version => version.Status == CurriculumStatuses.Published)
+            ?? versions.Where(version => version.Status == CurriculumStatuses.Withdrawn).OrderByDescending(v => v.VersionNumber).FirstOrDefault()
             ?? throw new CurriculumWorkflowException("published_version_missing", "There is no current published version to roll back.");
+        var validation = validator.Validate(Deserialize(target.ContentJson), target.Sources.Select(ToSource).ToList());
+        if (!validation.IsValid) throw new CurriculumValidationException(validation.Errors);
         var now = DateTime.UtcNow;
         current.Status = CurriculumStatuses.Superseded;
         current.AuditEvents.Add(Audit("rolled_back", actor, now, $"Replaced by rollback to version {target.VersionNumber}."));

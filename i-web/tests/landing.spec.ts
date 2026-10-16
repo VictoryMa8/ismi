@@ -13,7 +13,7 @@ for (const width of [320, 390, 768, 1440]) {
     page.on('request', request => { if (request.url().includes('/api/')) apiRequests.push(request.url()) })
     await page.goto('/')
     await expect(page.getByRole('heading', { level: 1 })).toHaveText('Speak with the people you love.')
-    await expect(page.locator('.hero-description')).toContainText('Learn Arabic for free through everyday conversations.')
+    await expect(page.locator('.hero-description')).toContainText('Learn through everyday conversations.')
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= Math.ceil(visualViewport?.width ?? innerWidth))).toBeTruthy()
     for (const portrait of await page.locator('.character-portrait').all()) {
       const size = await portrait.boundingBox()
@@ -28,7 +28,7 @@ for (const width of [320, 390, 768, 1440]) {
     expect(heroFrame).toEqual({ border: '0px', radius: '50%', outline: 'none', shadow: 'none' });
     await page.locator('.hero-art').screenshot({ path: testInfo.outputPath(`hero-oval-${width}.png`) })
     await page.screenshot({ path: testInfo.outputPath(`landing-${width}.png`), fullPage: true })
-    expect(apiRequests).toEqual([])
+    expect(apiRequests.every(url => url.endsWith('/api/courses'))).toBeTruthy()
     await page.locator('.hero-copy').getByRole('link', { name: 'Try out the app' }).click()
     await expect(page).toHaveURL(/#\/today$/)
     const dialog = page.getByRole('dialog', { name: 'Welcome to Ismi' })

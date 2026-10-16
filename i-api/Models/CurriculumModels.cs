@@ -6,6 +6,7 @@ public static class CurriculumStatuses
     public const string Approved = "approved";
     public const string Published = "published";
     public const string Superseded = "superseded";
+    public const string Withdrawn = "withdrawn";
 }
 
 public sealed record CurriculumSourceInput(
@@ -55,3 +56,5 @@ public sealed record CurriculumValidationResult(
     IReadOnlyList<string> Errors);
 
 public sealed record CurriculumRollbackRequest(long TargetVersionId);
+
+public sealed record CurriculumWithdrawalRequest(string Reason);

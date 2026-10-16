@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, ref } from 'vue';
+import { computed, nextTick, ref, watch } from 'vue';
 import {
   ArrowLeft,
   ChevronRight,
@@ -7,6 +7,8 @@ import {
   MessageCircle,
   RotateCcw,
 } from '@lucide/vue';
+import type { TeachingCheckpoint } from './lessonSessions';
+import { textAttributes } from './courses';
 import type { LessonResponse, LessonTeachingCard } from './types';
 import LessonTransition from './LessonTransition.vue';
 import LessonStages from './LessonStages.vue';
@@ -15,8 +17,8 @@ import CharacterCast from './CharacterCast.vue';
 import CharacterLabel from './CharacterLabel.vue';
 import { lessonScene } from './characters';
 
-const props = defineProps<{ lesson: LessonResponse; review: boolean; startCardIndex?: number }>();
-const emit = defineEmits<{ done: [] }>();
+const props = defineProps<{ lesson: LessonResponse; review: boolean; startCardIndex?: number; checkpoint?: TeachingCheckpoint }>();
+const emit = defineEmits<{ done: []; checkpoint: [value: TeachingCheckpoint] }>();
 const stage = ref<'scene' | 'learn' | 'recall' | 'pattern'>('scene');
 const index = ref(0);
 const revealed = ref(false);
@@ -59,6 +61,10 @@ if (props.startCardIndex !== undefined && props.startCardIndex >= 0 && props.sta
   index.value = props.startCardIndex;
   stage.value = 'learn';
 }
+if (props.checkpoint && props.checkpoint.index >= 0 && props.checkpoint.index < cards.value.length) {
+  stage.value = props.checkpoint.stage; index.value = props.checkpoint.index; revealed.value = props.checkpoint.revealed;
+}
+watch([stage, index, revealed], () => emit('checkpoint', { stage: stage.value, index: index.value, revealed: revealed.value }));
 const card = computed(() => cards.value[index.value]!);
 const patternNotes = computed(() =>
   props.lesson.introduction
@@ -117,6 +123,13 @@ async function back() {
       </button>
     </div>
     <LessonScroll>
+      <details v-if="lesson.contentReview && stage === 'scene'" class="content-review-record">
+        <summary>Course and review record</summary>
+        <p>{{ lesson.contentReview.languageTag }} · {{ lesson.contentReview.variety }} · {{ lesson.version }}</p>
+        <p>Review credit: {{ lesson.contentReview.reviewer }} · {{ lesson.contentReview.reviewDisposition }}</p>
+        <p>Pronunciation help: {{ lesson.contentReview.helpConvention }}. Rights: {{ lesson.contentReview.rightsDisposition }}.</p>
+        <p v-if="lesson.contentReview.engineeringFixture">Engineering fixture · not approved curriculum.</p>
+      </details>
       <LessonTransition @after-enter="focusHeading">
         <div :key="`${stage}-${index}-${revealed}`" class="teaching-page">
           <template v-if="stage === 'scene'">
@@ -154,7 +167,7 @@ async function back() {
                   expression="attentive"
                 />
                 <strong v-else>{{ turn.speaker }}</strong>
-                <p lang="ar" dir="rtl">{{ turn.line.arabic }}</p>
+                <p v-bind="textAttributes(lesson.trackId)">{{ turn.line.arabic }}</p>
                 <p class="phrase-transliteration" dir="ltr">
                   {{ turn.line.arabizi }}
                 </p>
@@ -179,7 +192,7 @@ async function back() {
               {{ card.recallCue || card.phrase.meaning }}
             </p>
             <div v-if="stage === 'learn' || revealed" class="phrase-spotlight">
-              <p class="spotlight-arabic" lang="ar" dir="rtl">
+              <p class="spotlight-arabic" v-bind="textAttributes(lesson.trackId)">
                 {{ card.phrase.arabic }}
               </p>
               <p class="phrase-transliteration" dir="ltr">
@@ -193,7 +206,7 @@ async function back() {
               aria-label="Phrase building blocks"
             >
               <div v-for="(chunk, n) in card.chunks" :key="n">
-                <dt lang="ar" dir="rtl">{{ chunk.arabic }}</dt>
+                <dt v-bind="textAttributes(lesson.trackId)">{{ chunk.arabic }}</dt>
                 <dd>
                   <span dir="ltr">{{ chunk.arabizi }}</span
                   ><strong>{{ chunk.meaning }}</strong>

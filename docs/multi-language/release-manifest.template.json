@@ -1,0 +1,33 @@
+{
+  "manifestVersion": 1,
+  "feature": "F24",
+  "kind": "unapproved-release-template",
+  "webArtifactSha256": null,
+  "apiArtifactSha256": null,
+  "sourceRevision": null,
+  "sourceTreeManifestSha256": null,
+  "settingsPolicy": "parallel-v1",
+  "databaseSchemaChange": false,
+  "indexedDbVersion": 3,
+  "publishedCourseCandidates": [],
+  "existingPublicationBaseline": [],
+  "hostedDatabaseBackupReference": null,
+  "hostedAssetsAndCookieKeyBackupReference": null,
+  "approvedBrowserDeviceMatrix": [],
+  "humanAccessibilityEvidence": [],
+  "observedPilotEvidence": [],
+  "titleReviewDecision": {
+    "option": "A",
+    "decision": "Retain Ismi/اسمي pending Khmer linguistic review",
+    "approvedBy": "owner",
+    "approvedOn": "2026-10-15",
+    "scope": "title only",
+    "khmerFormAdopted": false
+  },
+  "ownerCodeRolloutApproval": null,
+  "ownerExactContentApprovals": [],
+  "betaExpansionDecision": null,
+  "rollbackBaseline": null,
+  "liveVerification": [],
+  "withdrawalRehearsal": null
+}

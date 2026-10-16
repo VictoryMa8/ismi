@@ -210,7 +210,7 @@ public sealed class CurriculumApiTests : IAsyncLifetime
             new { });
         Assert.Equal(HttpStatusCode.BadRequest, approve.StatusCode);
         var body = await approve.Content.ReadAsStringAsync();
-        Assert.Contains("only Levantine", body, StringComparison.OrdinalIgnoreCase);
+        Assert.Contains("MSA and Quranic content remain gated", body, StringComparison.OrdinalIgnoreCase);
     }
 
     [Fact]
@@ -684,6 +684,82 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         var resolve = await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/recall-reports/{report.Id}/resolve", new RecallResolutionRequest("Keep as uncertain; no published changes."));
         resolve.EnsureSuccessStatusCode();
         Assert.Equal("resolved", (await resolve.Content.ReadFromJsonAsync<RecallReviewCase>())!.Status);
+    }
+
+    [Theory]
+    [InlineData("french", "fr", "ab cd", "ab ", "cd")]
+    [InlineData("khmer", "km", "កិខ", "កិ", "ខ")]
+    public async Task NewCourseProfilePreservesNeutralTextPublicationRollbackAndProgress(
+        string courseId, string tag, string text, string segment1, string segment2)
+    {
+        using var owner = CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        using var guest = CreateClient();
+        var seed = (await guest.GetFromJsonAsync<LessonResponse>("/api/lessons/levantine-day-01"))!;
+        var before = System.Text.Json.JsonSerializer.Serialize(seed);
+        var step = seed.Steps[0] with {
+            Prompt = new LessonPrompt(null!, null!, "Engineering test only", null, TargetText: text, PronunciationHelp: "test"),
+            Answers = seed.Steps[0].Answers.Select((a, i) => a with { Arabic = null!, Arabizi = null!,
+                TargetText = text + (i == 0 ? "" : "x"), PronunciationHelp = "test", Rationale = "Synthetic test rationale",
+                Segments = i == 0 ? new[] { segment1, segment2 } : new[] { text + "x" } }).ToArray()
+        };
+        var lesson = seed with { Id = $"test-{courseId}", TrackId = courseId, SchemaVersion = 2,
+            UnitId = "shared-test-unit", Steps = [step],
+            ContentReview = new(tag, "test-variety", "test-convention", "test harness", "accepted", "cleared", [], SourceLanguages: new Dictionary<string, string> { ["test:review"] = tag }) };
+        CurriculumSourceInput[] sources = [new("linguistic-review", "Synthetic test record", "test:review", "Test data only", "No actual linguistic review claimed")];
+        using var scope = _factory.Services.CreateScope();
+        var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
+        Assert.True(validator.Validate(lesson, sources).IsValid);
+        Assert.False(validator.Validate(lesson, [sources[0] with { Locator = null! }]).IsValid);
+        foreach (var review in new[] { lesson.ContentReview with { LanguageTag = "ar" },
+            lesson.ContentReview with { LanguageTag = null! }, lesson.ContentReview with { SourceLanguages = new Dictionary<string, string> { ["test:review"] = "ar" } }, lesson.ContentReview with { EngineeringFixture = true },
+            lesson.ContentReview with { RightsDisposition = "pending" }, lesson.ContentReview with { CriticalIssues = ["open defect"] },
+            lesson.ContentReview with { ReviewDisposition = "pending" } })
+            Assert.False(validator.Validate(lesson with { ContentReview = review }, sources).IsValid);
+        Assert.False(validator.Validate(lesson with { SchemaVersion = 1 }, sources).IsValid);
+        Assert.False(validator.Validate(lesson with { Steps = [step with { Prompt = step.Prompt with { Arabic = "different" } }] }, sources).IsValid);
+        if (courseId == "khmer") Assert.False(validator.Validate(lesson with { Steps = [step with {
+            Answers = step.Answers.Select(a => a with { Segments = ["wrong"] }).ToArray() }] }, sources).IsValid);
+        var draftResponse = await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/admin/curriculum/drafts", new CurriculumDraftRequest(lesson, sources));
+        draftResponse.EnsureSuccessStatusCode();
+        var draft = (await draftResponse.Content.ReadFromJsonAsync<CurriculumVersionDetail>())!;
+        Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{lesson.Id}")).StatusCode);
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/approve", new { })).EnsureSuccessStatusCode();
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/publish", new { })).EnsureSuccessStatusCode();
+        var published = (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{lesson.Id}"))!;
+        Assert.Equal(text, published.Steps[0].Prompt.TargetText);
+        Assert.Equal(new[] { segment1, segment2 }, published.Steps[0].Answers[0].Segments);
+        var dashboard = (await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
+        Assert.Contains(dashboard.DailyPlan.Lessons, l => l.TrackId == courseId && l.Id == lesson.Id);
+        Assert.Equal(0, dashboard.Tracks.Single(t => t.Id == courseId).ProgressPercent);
+        var completion = new LessonCompletionRequest(Guid.NewGuid().ToString(), DateTimeOffset.UtcNow);
+        (await SendWithCsrfAsync(guest, HttpMethod.Post, $"/api/lessons/{lesson.Id}/completions", completion)).EnsureSuccessStatusCode();
+        var repeated = await SendWithCsrfAsync(guest, HttpMethod.Post, $"/api/lessons/{lesson.Id}/completions", completion);
+        Assert.True((await repeated.Content.ReadFromJsonAsync<LessonCompletionResponse>())!.AlreadyRecorded);
+        dashboard = (await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
+        Assert.Equal(100, dashboard.Tracks.Single(t => t.Id == courseId).ProgressPercent);
+        Assert.Equal(0, dashboard.Tracks.Single(t => t.Id == "levantine").ProgressPercent);
+        var revision = await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/admin/curriculum/drafts", new CurriculumDraftRequest(lesson with { Title = "Revised test" }, sources));
+        var v2 = (await revision.Content.ReadFromJsonAsync<CurriculumVersionDetail>())!;
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{v2.Id}/approve", new { })).EnsureSuccessStatusCode();
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{v2.Id}/publish", new { })).EnsureSuccessStatusCode();
+        Assert.Equal(HttpStatusCode.Unauthorized, (await SendWithCsrfAsync(guest, HttpMethod.Post, $"/api/admin/curriculum/versions/{v2.Id}/withdraw", new CurriculumWithdrawalRequest("Test"))).StatusCode);
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{v2.Id}/withdraw", new CurriculumWithdrawalRequest("Synthetic withdrawal rehearsal"))).EnsureSuccessStatusCode();
+        Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{lesson.Id}")).StatusCode);
+        Assert.DoesNotContain((await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!.DailyPlan.Lessons, l => l.Id == lesson.Id);
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/lessons/{lesson.Id}/rollback", new CurriculumRollbackRequest(draft.Id))).EnsureSuccessStatusCode();
+        Assert.Equal(published, (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{lesson.Id}"))!, new LessonJsonComparer());
+        var moved = await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/admin/curriculum/drafts", new CurriculumDraftRequest(lesson with { TrackId = "levantine" }, sources));
+        Assert.Equal(HttpStatusCode.Conflict, moved.StatusCode);
+        Assert.Equal(before, System.Text.Json.JsonSerializer.Serialize(await guest.GetFromJsonAsync<LessonResponse>("/api/lessons/levantine-day-01")));
+        var preferences = new StudyPreferences(5, ["levantine", "msa", "quranic", "french", "khmer"], courseId);
+        (await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/study-settings", new SaveStudySettingsRequest(preferences, 0))).EnsureSuccessStatusCode();
+        Assert.Equal(5, (await owner.GetFromJsonAsync<StudySettingsResponse>("/api/study-settings"))!.Preferences.SelectedTrackIds.Count);
+    }
+    private sealed class LessonJsonComparer : IEqualityComparer<LessonResponse>
+    {
+        public bool Equals(LessonResponse? x, LessonResponse? y) => System.Text.Json.JsonSerializer.Serialize(x) == System.Text.Json.JsonSerializer.Serialize(y);
+        public int GetHashCode(LessonResponse obj) => obj.Id.GetHashCode();
     }
 
     private HttpClient CreateClient() =>

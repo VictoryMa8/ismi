@@ -24,12 +24,12 @@ export default defineConfig({
     },
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['ismi-mark.svg', 'characters/v1/*.webp', 'characters/v2/*.webp'],
+      includeAssets: ['ismi-mark.svg', 'characters/v1/*.webp', 'characters/v2/*.webp', 'fonts/*.ttf', 'fonts/*-OFL.txt'],
       workbox: { globIgnores: ['landing/**', 'og.png'] },
       manifest: {
-        name: 'Ismi — Arabic for the conversations that matter',
+        name: 'Ismi — Speak with the people you love',
         short_name: 'Ismi',
-        description: 'Practice Palestinian Levantine Arabic with downloaded lessons and optional accounts.',
+        description: 'Learn through everyday conversations. Start with Palestinian Arabic and explore course availability. Download core lessons for offline study.',
         theme_color: '#fafbf9',
         background_color: '#fafbf9',
         display: 'standalone',

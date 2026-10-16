@@ -219,7 +219,7 @@ app.MapGet("/api/health", () => Results.Ok(new
 {
     status = "healthy",
     service = "ismi-api",
-    features = new[] { "typed-recall-v1" },
+    features = new[] { "typed-recall-v1", "multi-language-v1" },
     revision = typeof(LessonResponse).Assembly
         .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
         .Cast<System.Reflection.AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,
@@ -352,6 +352,15 @@ app.MapPost("/api/study-settings", async Task<IResult> (
     return Results.Ok(await settings.GetAsync(user.Id, cancellationToken));
 }).RequireAuthorization();
 
+app.MapGet("/api/courses", async (CurriculumPublishingService publishing, CancellationToken cancellationToken) =>
+{
+    var lessons = await publishing.ListPublishedLessonsAsync(null, cancellationToken);
+    return Results.Ok(CourseCatalog.All.Select(course => new {
+        course, publishedLessonCount = lessons.Count(l => l.Response.TrackId == course.Id),
+        availability = lessons.Any(l => l.Response.TrackId == course.Id) ? "available" : "planned"
+    }));
+});
+
 app.MapGet("/api/dashboard", async (
     HttpContext context,
     SeedCurriculum curriculum,
@@ -363,7 +372,7 @@ app.MapGet("/api/dashboard", async (
 {
     var user = await userManager.GetUserAsync(context.User);
     var publishedLessons = await publishing.ListPublishedLessonsAsync(
-        "levantine",
+        null,
         cancellationToken);
     var dashboard = user is null
         ? guestProgress.GetDashboard(GuestId(context), curriculum, publishedLessons)
@@ -443,7 +452,7 @@ app.MapPost("/api/lessons/{lessonId}/completions", async Task<IResult> (
 
     var user = await userManager.GetUserAsync(context.User);
     var publishedLessons = await curriculum.ListPublishedLessonsAsync(
-        "levantine",
+        null,
         cancellationToken);
     if (user is null)
     {
@@ -626,6 +635,16 @@ curriculumAdmin.MapPost("/versions/{versionId:long}/publish", async Task<IResult
     if (antiforgeryError is not null) return antiforgeryError;
     return await CurriculumCommandAsync(
         () => publishing.PublishAsync(versionId, CurriculumActor(context), cancellationToken));
+});
+
+curriculumAdmin.MapPost("/versions/{versionId:long}/withdraw", async Task<IResult> (
+    long versionId, CurriculumWithdrawalRequest request, HttpContext context, IAntiforgery antiforgery,
+    CurriculumPublishingService publishing, CancellationToken cancellationToken) =>
+{
+    var csrfError = await ValidateAntiforgeryAsync(context, antiforgery);
+    if (csrfError is not null) return csrfError;
+    return await CurriculumCommandAsync(() => publishing.WithdrawAsync(versionId, request.Reason,
+        CurriculumActor(context), cancellationToken));
 });
 
 curriculumAdmin.MapPost("/lessons/{lessonId}/rollback", async Task<IResult> (

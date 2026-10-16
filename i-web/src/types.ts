@@ -1,3 +1,4 @@
+export type TargetText = { targetText?: string; pronunciationHelp?: string }
 export type DashboardResponse = {
   learner: {
     displayName: string
@@ -48,12 +49,13 @@ export type CourseLessonSummary = {
 export type LessonRecording = {
   transcript: string
   speaker: string
-  dialect: 'palestinian-urban' | 'jordanian'
+  dialect: string
+  languageTag?: string
   sourceLocator: string
   reviewNotes: string
 }
 
-export type LessonPrompt = {
+export type LessonPrompt = TargetText & {
   arabic: string
   arabizi: string
   meaning: string
@@ -61,7 +63,7 @@ export type LessonPrompt = {
   recording?: LessonRecording | null
 }
 
-export type LessonPhraseChunk = { arabic: string; arabizi: string; meaning: string }
+export type LessonPhraseChunk = TargetText & { arabic: string; arabizi: string; meaning: string }
 export type LessonCast = { registryVersion: string; characterIds: string[] }
 export type CharacterRoles = {
   speakerId?: string | null; addresseeId?: string | null
@@ -84,7 +86,8 @@ export type LessonIntroduction = {
   sourceLocators: string[]
 }
 
-export type LessonAnswer = {
+export type LessonAnswer = TargetText & {
+  segments?: string[]
   rationale?: string
   id: string
   arabic: string
@@ -110,7 +113,7 @@ export type LessonStep = {
   evaluation: LessonEvaluation
 }
 
-export type LessonVocabulary = {
+export type LessonVocabulary = TargetText & {
   id: string; senseId: string; kind: 'word' | 'expression'
   arabic: string; arabizi: string; meaning: string
   dialect: string; register: string; forms: string[]; note: string
@@ -118,6 +121,8 @@ export type LessonVocabulary = {
 }
 
 export type LessonResponse = {
+  schemaVersion?: number
+  contentReview?: { languageTag: string; variety: string; helpConvention: string; reviewer: string; reviewDisposition: string; rightsDisposition: string; criticalIssues: string[]; engineeringFixture?: boolean; sourceLanguages?: Record<string, string> }
   recall?: RecallTarget[] | null
   vocabulary?: LessonVocabulary[] | null
   characters?: LessonCast | null
@@ -192,7 +197,7 @@ export type CurriculumVersionSummary = {
   lessonId: string
   title: string
   versionNumber: number
-  status: 'new' | 'draft' | 'approved' | 'published' | 'superseded'
+  status: 'new' | 'draft' | 'approved' | 'published' | 'superseded' | 'withdrawn'
   createdAtUtc: string
   createdBy: string
   publishedAtUtc: string | null
@@ -209,7 +214,7 @@ export type CurriculumAuditEntry = {
 export type CurriculumVersionDetail = {
   id: number
   versionNumber: number
-  status: 'new' | 'draft' | 'approved' | 'published' | 'superseded'
+  status: 'new' | 'draft' | 'approved' | 'published' | 'superseded' | 'withdrawn'
   lesson: LessonResponse
   sources: CurriculumSource[]
   audit: CurriculumAuditEntry[]

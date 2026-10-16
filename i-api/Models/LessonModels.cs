@@ -18,7 +18,9 @@ public sealed record LessonResponse(
     [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
     IReadOnlyList<LessonVocabulary>? Vocabulary = null,
     [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-    IReadOnlyList<RecallTarget>? Recall = null);
+    IReadOnlyList<RecallTarget>? Recall = null,
+    int SchemaVersion = 1,
+    CourseContentReview? ContentReview = null);
 
 public sealed record LessonCast(string RegistryVersion, IReadOnlyList<string> CharacterIds);
 public sealed record CharacterRoles(string? SpeakerId = null, string? AddresseeId = null,
@@ -37,7 +39,8 @@ public sealed record LessonIntroduction(
 public sealed record LessonTeachingCard(string Title, LessonPrompt Phrase, string Note, IReadOnlyList<LessonPhraseChunk> Chunks,
     string? RecallCue = null, IReadOnlyList<string>? SourceLocators = null,
     string? SpeakerId = null, string? AddresseeId = null);
-public sealed record LessonPhraseChunk(string Arabic, string Arabizi, string Meaning);
+public sealed record LessonPhraseChunk(string Arabic, string Arabizi, string Meaning,
+    string? TargetText = null, string? PronunciationHelp = null);
 
 public sealed record DialogueTurn(string Speaker, LessonPrompt Line, string? SpeakerId = null, string? AddresseeId = null);
 
@@ -54,21 +57,24 @@ public sealed record LessonPrompt(
     string Arabizi,
     string Meaning,
     string? AudioUrl,
-    LessonRecording? Recording = null);
+    LessonRecording? Recording = null,
+    string? TargetText = null, string? PronunciationHelp = null);
 
 public sealed record LessonRecording(
     string Transcript,
     string Speaker,
     string Dialect,
     string SourceLocator,
-    string ReviewNotes);
+    string ReviewNotes, string? LanguageTag = null);
 
 public sealed record LessonAnswer(
     string Id,
     string Arabic,
     string Arabizi,
     string Meaning,
-    string? Rationale = null);
+    string? Rationale = null,
+    string? TargetText = null, string? PronunciationHelp = null,
+    IReadOnlyList<string>? Segments = null);
 
 public sealed record LessonEvaluation(
     string CorrectAnswerId,
@@ -113,7 +119,7 @@ public sealed record LessonDefinition(LessonResponse Response)
 public sealed record LessonVocabulary(string Id, string SenseId, string Kind,
     string Arabic, string Arabizi, string Meaning, string Dialect, string Register,
     IReadOnlyList<string> Forms, string Note, IReadOnlyList<string> SourceLocators,
-    int TeachingCardIndex);
+    int TeachingCardIndex, string? TargetText = null, string? PronunciationHelp = null);
 
 // Authored production practice travels through the same immutable publication gate.
 public sealed record RecallTarget(string Id, string Intent, string Dialect, string Register,

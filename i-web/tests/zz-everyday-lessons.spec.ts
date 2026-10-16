@@ -34,7 +34,7 @@ async function complete(page: Page, dialog: Locator, lesson: LessonResponse, wro
         const tokens = dialog.locator('.word-bank .word-tile:not(:disabled)')
         for (let tokenIndex = 0; tokenIndex < await tokens.count(); tokenIndex++) {
           const token = tokens.nth(tokenIndex)
-          if (await token.locator('[lang="ar"]').textContent() === word) {
+          if (await token.locator('[lang|="ar"]').textContent() === word) {
             await token.focus(); await page.keyboard.press('Enter'); break
           }
         }
@@ -92,7 +92,7 @@ test('all authored lessons preview, then published test copies complete offline 
     await expect(dialog.getByRole('list', { name: 'Dialogue transcript' }).getByRole('listitem')).toHaveCount(6)
     await expect(dialog.locator('.dialogue-transcript .character-label')).toHaveCount(6)
     expect(await dialog.locator('.character-portrait img').first().evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBeTruthy()
-    await expect(dialog.locator('[lang="ar"][dir="rtl"]').first()).toBeVisible()
+    await expect(dialog.locator('[lang|="ar"][dir="rtl"]').first()).toBeVisible()
     expect(await dialog.evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBeTruthy()
     await expect(dialog.getByText(pack.lesson.introduction!.dialogue[0]!.line.meaning, { exact: true }).first()).toBeVisible()
     if (pack.lesson.courseOrder === 1) await page.screenshot({ path: testInfo.outputPath('lesson-01-dialogue.png') })

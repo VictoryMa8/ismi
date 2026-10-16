@@ -79,7 +79,7 @@ test('teaching supports recall, bounded phrase assembly, optional translations a
   let attemptRequests = 0
   page.on('request', request => { if (request.url().includes('/attempts')) attemptRequests++ })
   for (const word of target.arabic.split(/\s+/).reverse()) {
-    await dialog.locator('.word-bank .word-tile:not(:disabled)').filter({ has: page.locator('[lang="ar"]', { hasText: word }) }).first().click()
+    await dialog.locator('.word-bank .word-tile:not(:disabled)').filter({ has: page.locator('[lang|="ar"]', { hasText: word }) }).first().click()
   }
   await expect(dialog.getByRole('button', { name: 'Check answer' })).toBeEnabled()
   await dialog.getByRole('button', { name: 'Check answer' }).click()
@@ -89,7 +89,7 @@ test('teaching supports recall, bounded phrase assembly, optional translations a
   await dialog.getByRole('button', { name: 'Try again' }).click()
   await expect(dialog.locator('.built-phrase .word-tile')).toHaveCount(0)
   for (const word of target.arabic.split(/\s+/)) {
-    const tile = dialog.locator('.word-bank .word-tile').filter({ has: page.locator('[lang="ar"]', { hasText: word }) }).first()
+    const tile = dialog.locator('.word-bank .word-tile').filter({ has: page.locator('[lang|="ar"]', { hasText: word }) }).first()
     await tile.focus(); await page.keyboard.press('Enter')
   }
   await expect(dialog.getByRole('button', { name: 'Check answer' })).toBeEnabled()
@@ -104,7 +104,7 @@ test('teaching supports recall, bounded phrase assembly, optional translations a
   await dialog.locator('.word-bank .word-tile:not(:disabled)').first().click()
   await dialog.getByRole('button', { name: 'Check answer' }).click()
   await expect(dialog.locator('.feedback-panel')).toBeFocused()
-  await expect(dialog.locator('.feedback-model [lang="ar"]')).toHaveText(target.arabic)
+  await expect(dialog.locator('.feedback-model [lang|="ar"]')).toHaveText(target.arabic)
   await page.setViewportSize({ width: 320, height: 740 })
   expect(await dialog.evaluate(el => el.scrollWidth <= el.clientWidth + 1)).toBeTruthy()
   await page.screenshot({ path: testInfo.outputPath('assembled-response-320.png') })

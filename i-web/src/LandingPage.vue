@@ -13,6 +13,25 @@ import {
 import CharacterPortrait from './CharacterPortrait.vue';
 import { benefits, faqs } from './landing/content';
 import './landing/landing.css';
+import { courses } from './courses';
+const availableCourses = ref<string[]>([]);
+onMounted(async () => {
+  try {
+    const response = await fetch('/api/courses');
+    if (response.ok) {
+      const catalog = await response.json() as Array<{ course: { id: string }; publishedLessonCount: number }>;
+      availableCourses.value = catalog.filter(c => c.publishedLessonCount > 0).map(c => c.course.id);
+    }
+  } catch { /* Planned/unknown availability never enables a false course claim. */ }
+});
+async function enterCourse(id: string) {
+  try {
+    const { getDeviceSnapshot, saveDeviceSnapshot } = await import('./offline');
+    const scope = await getDeviceSnapshot<string>('review-scope') ?? 'guest';
+    await saveDeviceSnapshot(`viewed-course-v1:${scope}`, id);
+  } catch { /* The selector remains available inside the app. */ }
+  window.location.hash = '/courses';
+}
 const menuOpen = ref(false);
 const returning = ref(false);
 onMounted(() => {
@@ -53,7 +72,7 @@ onMounted(() => {
           @keydown.esc="menuOpen = false"
         >
           <a href="#how-it-works" @click="menuOpen = false">How it works</a
-          ><a href="#arabic-tracks" @click="menuOpen = false">Arabic tracks</a
+          ><a href="#languages" @click="menuOpen = false">Languages</a
           ><a href="#faq" @click="menuOpen = false">FAQ</a>
           <a
             :href="returning ? '#/today' : '#/account'"
@@ -77,9 +96,9 @@ onMounted(() => {
               people you <em>love.</em>
             </h1>
             <p class="hero-description">
-              Learn Arabic for free through everyday conversations. Get to know
-              useful phrases, understand grammar, master speaking with people,
-              and get help whenever you need it.
+              Learn through everyday conversations. Build useful phrases and
+              understand how they work, with help whenever you need it.
+              Rooted in Palestinian Arabic, with room for more languages.
             </p>
             <div class="landing-actions">
               <a
@@ -276,47 +295,22 @@ onMounted(() => {
           </div>
         </section>
         <section
-          id="arabic-tracks"
+          id="languages"
           class="landing-tracks"
           aria-labelledby="tracks-title"
         >
           <div class="landing-wrap">
-            <div class="landing-section-heading">
-              <h2 id="tracks-title">
-                Understand Arabic<br />from everyday speech, to the news, to the
-                Quran.
-              </h2>
-            </div>
+            <span id="arabic-tracks" aria-hidden="true"></span>
+            <div class="landing-section-heading"><h2 id="tracks-title">Languages</h2><p>Arabic is our flagship, rooted in Palestinian everyday life. Understand Arabic from conversation to Quran as its courses grow.</p></div>
             <div class="tracks-grid">
-              <article class="track-featured">
-                <div class="track-top">
-                  <span class="landing-tag">Current focus</span
-                  ><span lang="ar" dir="rtl">أهلاً</span>
-                </div>
-                <h3>Palestinian Levantine</h3>
-                <p>
-                  The Arabic of everyday conversations. Learn to check in, share
-                  your day and make plans with the people in your life.
-                </p>
-                <div class="track-bottom">
-                  Urban Palestinian <span>Jordanian variants labeled</span>
-                </div>
-              </article>
-              <article>
-                <span class="track-planned">Planned</span>
-                <h3>Modern Standard Arabic</h3>
-                <p>
-                  The formal Arabic of writing and news. Build reading and
-                  listening comprehension.
-                </p>
-              </article>
-              <article>
-                <span class="track-planned">Planned</span>
-                <h3>Quranic Arabic</h3>
-                <p>
-                  Read and understand core vocabulary and direct meaning. A
-                  comprehension-first track, with a respectful approach.
-                </p>
+              <article v-for="course in courses" :key="course.id" :class="{ 'track-featured': course.id === 'levantine', 'track-khmer': course.id === 'khmer' }">
+                <span class="track-planned">{{ availableCourses.includes(course.id) ? 'Published lessons available' : 'Planned' }}</span>
+                <h3>{{ course.name }}</h3>
+                <p v-if="course.id === 'levantine'">Urban Palestinian Arabic for everyday conversations. Jordanian variants are labeled.</p>
+                <p v-else-if="course.id === 'msa'">Formal Arabic for reading and listening, including learner-adapted news.</p>
+                <p v-else-if="course.id === 'quranic'">Core vocabulary and direct meaning, with a respectful, comprehension-first approach.</p>
+                <p v-else>Everyday conversations and relationships. Course scope, sources and review are being prepared.</p>
+                <a class="landing-outline-button" href="#/courses" @click.prevent="enterCourse(course.id)">{{ availableCourses.includes(course.id) ? 'View course' : 'View course status' }}<ArrowRight :size="17" /></a>
               </article>
             </div>
           </div>

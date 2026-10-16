@@ -3,9 +3,9 @@ namespace Ismi.Api.Models;
 public sealed record StudyPreferences(int GoalMinutes, IReadOnlyList<string> SelectedTrackIds, string PrimaryTrack)
 {
     public static StudyPreferences Default => new(15, ["levantine"], "levantine");
-    public static readonly string[] TrackIds = ["levantine", "msa", "quranic"];
+    public static readonly string[] TrackIds = CourseCatalog.All.Select(c => c.Id).ToArray();
     public bool IsValid() => GoalMinutes is 5 or 10 or 15 or 30
-        && SelectedTrackIds is { Count: > 0 and <= 3 }
+        && SelectedTrackIds is { Count: > 0 and <= 5 }
         && SelectedTrackIds.All(id => TrackIds.Contains(id))
         && SelectedTrackIds.Distinct().Count() == SelectedTrackIds.Count
         && SelectedTrackIds.Contains(PrimaryTrack);

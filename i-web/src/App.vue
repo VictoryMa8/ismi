@@ -9,7 +9,6 @@ import {
   Headphones,
   Home,
   MessageCircle,
-  Newspaper,
   RotateCcw,
   Search,
   Trophy,
@@ -26,7 +25,11 @@ import { useLearningHabits } from './useLearningHabits';
 import { emptyReviewAvailability, streakSummary, type QuestTask, type StudyActivity } from './learningHabits';
 import LoadingWords from './LoadingWords.vue';
 import PlacementCheck from './PlacementCheck.vue';
-import { buildStudyPlan } from './studyPlan';
+import { buildStudyPlan, type TrackId } from './studyPlan';
+import { courses, courseFor, textAttributes, readableLesson } from './courses';
+import { loadStartedLesson, storeStartedLesson, type StartedLesson, type TeachingCheckpoint } from './lessonSessions';
+import CourseSwitcher from './CourseSwitcher.vue';
+import { ApiRequestError } from './api';
 import { useStudySettings } from './useStudySettings';
 import LessonTeaching from './LessonTeaching.vue';
 import PhraseBuilder from './PhraseBuilder.vue';
@@ -63,11 +66,13 @@ import {
   getCachedDashboard,
   getCachedLesson,
   getCachedLessonCount,
+  removeCachedLesson,
   getPendingCompletions,
   queueCompletion,
   removePendingCompletion,
   getDeviceSnapshot,
   saveDeviceSnapshot,
+  updateDeviceSnapshot,
   saveReviewAttempt,
 } from './offline';
 import type {
@@ -115,6 +120,10 @@ let lessonOpener: HTMLElement | null = null;
 let lessonSession = 0;
 let lessonActivityId = '';
 let lessonActivityScope = 'guest';
+const teachingCheckpoint = ref<TeachingCheckpoint>();
+const savedPieces = ref<string[]>([]);
+const resumableLessonId = ref<string>();
+let restoringLesson = false;
 const selectedAnswer = ref<string | null>(null);
 const attemptFeedback = ref<LessonAttemptResponse | null>(null);
 const apiLive = ref(false);
@@ -254,14 +263,14 @@ const buildSuggested = computed(() =>
           a.id.toLowerCase() ===
           currentStep.value?.evaluation.correctAnswerId.toLowerCase(),
       )
-      ?.arabic.trim()
-      .includes(' '),
+      && (lesson.value.trackId === 'khmer' ? Boolean(currentStep.value.answers.find(a => a.id === currentStep.value?.evaluation.correctAnswerId)?.segments?.length) : currentStep.value.answers.find(a => a.id === currentStep.value?.evaluation.correctAnswerId)?.arabic.trim().includes(' ')),
   ),
 );
 function resetPracticeSupport() {
   stepAttemptCount = 0;
   practiceHelpUsed.value = false;
   buildComplete.value = false;
+  savedPieces.value = [];
   showEnglishHelp.value = false;
   showAnswerMeanings.value = false;
   responseMode.value = buildSuggested.value ? 'build' : 'recall';
@@ -277,12 +286,64 @@ async function showChoices() {
 const currentStep = computed(
   () => lesson.value?.steps[currentStepIndex.value] ?? null,
 );
-const studyPlan = computed(() => buildStudyPlan(studySettings.preferences.value, dashboard.value.dailyPlan.lessons));
+const viewedCourse = ref<TrackId>('levantine');
+const viewedReady = ref(false);
+const lastCourses = ref<Record<string, string>>({});
+const courseStorageError = ref('');
+const activeCourse = computed(() => courseFor(viewedCourse.value));
+const lessonCourse = computed(() => courseFor(lesson.value?.trackId));
+const activeLessons = computed(() => dashboardScope.value === reviewScope.value
+  ? dashboard.value.dailyPlan.lessons.filter(item => (item.trackId ?? 'levantine') === viewedCourse.value) : []);
+let courseGeneration = 0;
+watch(reviewScope, async scope => {
+  const token = ++courseGeneration;
+  viewedReady.value = false;
+  viewedCourse.value = 'levantine';
+  lastCourses.value = {};
+  try {
+    const [saved, previous] = await Promise.all([getDeviceSnapshot<TrackId>(`viewed-course-v1:${scope}`),
+      getDeviceSnapshot<Record<string, string>>(`viewed-language-courses-v1:${scope}`)]);
+    if (token !== courseGeneration) return;
+    lastCourses.value = previous ?? {};
+    if (courses.some(c => c.id === saved)) viewedCourse.value = saved!;
+  } catch { courseStorageError.value = 'Course selection cannot be saved on this device.'; }
+  if (token === courseGeneration) viewedReady.value = true;
+}, { immediate: true });
+async function switchViewedCourse(id: string) {
+  if (!courses.some(c => c.id === id)) return;
+  stopPromptAudio();
+  viewedCourse.value = id as TrackId;
+  const scope = reviewScope.value;
+  lastCourses.value = { ...lastCourses.value, [courseFor(id).languageId]: id };
+  try {
+    await saveDeviceSnapshot(`viewed-course-v1:${scope}`, id);
+    await saveDeviceSnapshot(`viewed-language-courses-v1:${scope}`, lastCourses.value);
+  }
+  catch { courseStorageError.value = 'Course selection cannot be saved on this device.'; }
+}
+watch(reviewScope, () => {
+  if (lessonOpen.value) closeLesson();
+  lesson.value = null;
+  resumableLessonId.value = undefined;
+});
+const plannedReview = ref<InstanceType<typeof ReviewPractice> | null>(null);
+const dueByCourse = ref<Record<string, number>>({});
+const planReviewAvailability = ref(emptyReviewAvailability());
+const studyDay = computed(() => new Date(habitNow.value).toISOString().slice(0, 10));
+const dailyReviewSessions = ref<string[]>([]);
+const dailyReviewMinutes = computed(() => dailyReviewSessions.value.length * 5);
+watch([reviewScope, studyDay], async ([scope, day]) => {
+  dailyReviewSessions.value = [];
+  try {
+    const sessions = await getDeviceSnapshot<string[]>(`daily-review-time-v1:${scope}:${day}`);
+    if (scope === reviewScope.value && day === studyDay.value) dailyReviewSessions.value = sessions ?? [];
+  } catch { /* In-memory sessions still count for this visit. */ }
+}, { immediate: true });
+const studyPlan = computed(() => buildStudyPlan(studySettings.preferences.value, dashboard.value.dailyPlan.lessons, studyDay.value, dueByCourse.value, dailyReviewMinutes.value));
 const todayReviewLessons = computed(() => dashboard.value.dailyPlan.lessons.filter(item =>
   studySettings.preferences.value.selectedTrackIds.some(id => id === (item.trackId ?? 'levantine')),
 ));
-const hubReviewLessons = computed(() => page.value.startsWith('practice')
-  ? dashboard.value.dailyPlan.lessons : todayReviewLessons.value);
+const hubReviewLessons = computed(() => activeLessons.value);
 const streak = computed(() => streakSummary(learningHabits.state.value, habitNow.value));
 const questsDone = computed(() => learningHabits.state.value.tasks.filter(task => task.completedBy).length);
 const dailyGoal = computed(() => studySettings.preferences.value.goalMinutes);
@@ -290,13 +351,15 @@ const questLessons = computed(() => dashboardScope.value === reviewScope.value
   ? todayReviewLessons.value.filter(item => apiLive.value || offlineQuestLessonIds.value.includes(item.id)) : []);
 watch(reviewScope, scope => {
   learningHabits.load(scope);
+  dueByCourse.value = {};
+  planReviewAvailability.value = emptyReviewAvailability();
   questReviewAvailability.value = emptyReviewAvailability();
   offlineQuestLessonIds.value = [];
 }, { immediate: true });
 watch(() => [learningHabits.state.value.questsEnabled, studySettings.preferences.value,
-  questLessons.value, questReviewAvailability.value, habitNow.value, studySettings.busy.value, page.value] as const, () => {
+  questLessons.value, planReviewAvailability.value, habitNow.value, studySettings.busy.value, page.value] as const, () => {
   if (studyPageAvailable.value && !studySettings.busy.value)
-    learningHabits.plan(studySettings.preferences.value, questLessons.value, questReviewAvailability.value);
+    learningHabits.plan(studySettings.preferences.value, questLessons.value, planReviewAvailability.value);
 }, { deep: true });
 function updateHabitClock() {
   habitNow.value = Date.now();
@@ -307,10 +370,18 @@ function handleHabitStorage(event: StorageEvent) {
 }
 function creditStudyActivity(activity: StudyActivity, scope: string) {
   learningHabits.credit(activity, scope);
+  if (activity.kind !== 'lesson' && scope === reviewScope.value && activity.completedAt.slice(0, 10) === studyDay.value) {
+    if (!dailyReviewSessions.value.includes(activity.id)) dailyReviewSessions.value.push(activity.id);
+    const day = studyDay.value;
+    void updateDeviceSnapshot<string[]>(`daily-review-time-v1:${scope}:${day}`, saved => [...new Set([...(saved ?? []), activity.id])])
+      .then(() => getDeviceSnapshot<string[]>(`daily-review-time-v1:${scope}:${day}`))
+      .then(saved => { if (scope === reviewScope.value && day === studyDay.value) dailyReviewSessions.value = saved ?? dailyReviewSessions.value; })
+      .catch(() => { /* Current-session minutes remain visible when storage is unavailable. */ });
+  }
 }
 async function startQuest(task: QuestTask) {
   if (task.kind === 'lesson') await startLesson(task.lessonId);
-  else await questReview.value?.start(task.kind === 'checkpoint' ? 'checkpoint' : task.due ? 'due' : 'mixed', task.unitId);
+  else await plannedReview.value?.start(task.kind === 'checkpoint' ? 'checkpoint' : task.due ? 'due' : 'mixed', task.unitId);
 }
 async function refreshOfflineQuestLessons() {
   const scope = reviewScope.value;
@@ -321,16 +392,17 @@ async function refreshOfflineQuestLessons() {
   if (scope === reviewScope.value) offlineQuestLessonIds.value = ids;
 }
 const dailyCompleted = computed(() => Math.min(dailyGoal.value,
-  dashboard.value.dailyPlan.studyMinutesToday ?? dashboard.value.dailyPlan.completedMinutes));
-const nextStudyLesson = computed(() => studyPlan.value.queue[0] ?? dashboard.value.dailyPlan.lessons.find(
-  item => studySettings.preferences.value.selectedTrackIds.includes((item.trackId ?? 'levantine') as 'levantine' | 'msa' | 'quranic') && !item.isCompleted,
-) ?? dashboard.value.dailyPlan.lessons.filter(
-  item => studySettings.preferences.value.selectedTrackIds.includes((item.trackId ?? 'levantine') as 'levantine' | 'msa' | 'quranic'),
-).at(-1));
-const nextStudyTrack = computed(() => dashboard.value.tracks.find(track => track.id === (nextStudyLesson.value?.trackId ?? 'levantine')));
+  (dashboard.value.dailyPlan.studyMinutesToday ?? dashboard.value.dailyPlan.completedMinutes) + dailyReviewMinutes.value));
+const nextStudyLesson = computed(() => {
+  if (!studySettings.preferences.value.selectedTrackIds.includes(viewedCourse.value)) return undefined;
+  const scheduled = studyPlan.value.queue.find(item => (item.trackId ?? 'levantine') === viewedCourse.value);
+  if (scheduled) return scheduled;
+  return dailyCompleted.value >= dailyGoal.value ? activeLessons.value.find(item => !item.isCompleted) ?? activeLessons.value.at(-1) : undefined;
+});
+const nextStudyTrack = computed(() => ({ name: activeCourse.value.name }));
 const isCorrect = computed(() => attemptFeedback.value?.isCorrect ?? false);
 const selectedArabicVoice = computed(() => {
-  const exactLocalePreferences = ['ar-PS', 'ar-JO', 'ar-LB', 'ar-IL'];
+  const exactLocalePreferences = lessonCourse.value.id === 'levantine' ? ['ar-PS', 'ar-JO', 'ar-LB', 'ar-IL'] : [lessonCourse.value.audioLocale];
 
   for (const locale of exactLocalePreferences) {
     const match = speechVoices.value.find(
@@ -344,7 +416,7 @@ const selectedArabicVoice = computed(() => {
 
   return (
     speechVoices.value.find((voice) =>
-      voice.lang.toLowerCase().startsWith('ar'),
+      voice.lang.toLowerCase().split('-')[0] === lessonCourse.value.tag.split('-')[0],
     ) ?? null
   );
 });
@@ -352,18 +424,18 @@ const currentPromptIsPlaying = computed(
   () => speakingPromptId.value === currentStep.value?.id,
 );
 const canPlayCurrentPrompt = computed(
-  () => Boolean(currentStep.value?.prompt.audioUrl) || speechSupported.value,
+  () => Boolean(currentStep.value?.prompt.audioUrl) || (speechSupported.value && Boolean(selectedArabicVoice.value)),
 );
 const audioButtonLabel = computed(() => {
-  if (currentPromptIsPlaying.value) return 'Stop Arabic audio';
+  if (currentPromptIsPlaying.value) return `Stop ${lessonCourse.value.languageName} audio`;
   if (currentStep.value?.prompt.audioUrl)
-    return 'Play the recorded Arabic prompt';
+    return `Play the recorded ${lessonCourse.value.languageName} prompt`;
   if (!speechSupported.value)
     return 'Device speech is not supported in this browser';
   if (selectedArabicVoice.value) {
-    return `Play Arabic using the ${selectedArabicVoice.value.name} device voice`;
+    return `Play ${lessonCourse.value.languageName} using the ${selectedArabicVoice.value.name} device voice`;
   }
-  return 'Play Arabic using the browser-selected device voice';
+  return `No ${lessonCourse.value.languageName} device voice available; read the transcript`;
 });
 const deviceVoiceDescription = computed(() => {
   if (!speechSupported.value)
@@ -371,7 +443,7 @@ const deviceVoiceDescription = computed(() => {
   if (selectedArabicVoice.value) {
     return `Device voice preview · ${selectedArabicVoice.value.name} (${selectedArabicVoice.value.lang})`;
   }
-  return 'Device voice preview · browser-selected Arabic voice';
+  return `No ${lessonCourse.value.languageName} device voice available. Read the transcript and continue.`;
 });
 const progressPercent = computed(() =>
   Math.min(
@@ -391,7 +463,7 @@ const courseUnits = computed(() => {
       lessons: DashboardResponse['dailyPlan']['lessons'];
     }
   >();
-  for (const item of dashboard.value.dailyPlan.lessons) {
+  for (const item of activeLessons.value) {
     if (!units.has(item.unitId))
       units.set(item.unitId, {
         id: item.unitId,
@@ -404,11 +476,11 @@ const courseUnits = computed(() => {
 });
 const completedCourseLessons = computed(
   () =>
-    dashboard.value.dailyPlan.lessons.filter((item) => item.isCompleted).length,
+    activeLessons.value.filter((item) => item.isCompleted).length,
 );
 const courseProgressLabel = computed(
   () =>
-    `${completedCourseLessons.value} of ${dashboard.value.dailyPlan.lessons.length} lessons complete`,
+    `${completedCourseLessons.value} of ${activeLessons.value.length} lessons complete`,
 );
 const syncStatus = computed(() => {
   if (pendingSyncCount.value > 0) {
@@ -654,7 +726,7 @@ async function playPromptAudio() {
   }
 
   const utterance = new SpeechSynthesisUtterance(step.prompt.arabic);
-  utterance.lang = selectedArabicVoice.value?.lang ?? 'ar-JO';
+  utterance.lang = selectedArabicVoice.value?.lang ?? lessonCourse.value.audioLocale;
   utterance.rate = 0.9;
   if (selectedArabicVoice.value) utterance.voice = selectedArabicVoice.value;
   utterance.addEventListener('end', finishPlayback, { once: true });
@@ -766,23 +838,13 @@ async function markLessonCompletedLocally(lessonId: string, completedToday = tru
     completed.completedToday = completedToday;
     completed.isCurrent = false;
   }
-  const next =
-    dashboard.value.dailyPlan.lessons.find((item) => !item.isCompleted) ??
-    dashboard.value.dailyPlan.lessons.at(-1);
-  if (next) {
-    next.isCurrent = true;
-    dashboard.value.dailyPlan.nextLessonId = next.id;
-    const track = dashboard.value.tracks.find(
-      (item) => item.id === dashboard.value.dailyPlan.primaryTrack,
-    );
-    if (track) {
-      track.currentLessonTitle = next.title;
-      track.label = next.unitTitle;
-      track.plannedMinutes = next.estimatedMinutes;
-      track.progressPercent = Math.round(
-        (completedCourseLessons.value * 100) /
-          dashboard.value.dailyPlan.lessons.length,
-      );
+  for (const track of dashboard.value.tracks) {
+    const items = dashboard.value.dailyPlan.lessons.filter(item => (item.trackId ?? 'levantine') === track.id);
+    const next = items.find(item => !item.isCompleted) ?? items.at(-1);
+    for (const item of items) item.isCurrent = item.id === next?.id;
+    if (next) {
+      track.currentLessonTitle = next.title; track.label = next.unitTitle; track.plannedMinutes = next.estimatedMinutes;
+      track.progressPercent = Math.round(items.filter(item => item.isCompleted).length * 100 / items.length);
     }
   }
   try {
@@ -839,6 +901,8 @@ async function syncPendingCompletions() {
 }
 
 async function previewLesson(draft: LessonResponse, opener: HTMLElement) {
+  teachingCheckpoint.value = undefined;
+  savedPieces.value = [];
   glossaryCardIndex.value = undefined;
   lessonSession++;
   checkingAnswer.value = false;
@@ -848,7 +912,7 @@ async function previewLesson(draft: LessonResponse, opener: HTMLElement) {
   practiceMode.value = false;
   teachingWasCompleted.value = false;
   showEnglishHelp.value = false;
-  lesson.value = draft;
+  lesson.value = readableLesson(draft);
   lessonOpen.value = true;
   introductionOpen.value = true;
   selectedAnswer.value = null;
@@ -869,7 +933,36 @@ async function openGlossaryLesson(id: string, cardIndex: number) {
   await startLesson(id, true, cardIndex);
 }
 
+async function saveStartedLesson() {
+  if (!lesson.value || previewMode.value || lessonLoading.value || restoringLesson) return;
+  const scope = lessonActivityScope;
+  const state: StartedLesson | null = lessonFinished.value ? null : {
+    lessonId: lesson.value.id, version: lesson.value.version, stepIndex: currentStepIndex.value,
+    introductionOpen: introductionOpen.value, teachingWasCompleted: teachingWasCompleted.value,
+    practiceMode: practiceMode.value, responseMode: responseMode.value, selectedAnswer: selectedAnswer.value,
+    feedback: attemptFeedback.value, help: showEnglishHelp.value, answerHelp: showAnswerMeanings.value,
+    practiceHelpUsed: practiceHelpUsed.value, retryCount: retryCount.value, buildComplete: buildComplete.value,
+    pieces: savedPieces.value, teaching: teachingCheckpoint.value, responses: sessionResponses.value,
+  };
+  try { await storeStartedLesson(scope, lesson.value.trackId, state); }
+  catch { /* An open lesson remains usable when device storage is unavailable. */ }
+}
+watch([currentStepIndex, introductionOpen, responseMode, selectedAnswer, attemptFeedback, showEnglishHelp,
+  showAnswerMeanings, teachingCheckpoint, savedPieces, lessonFinished], () => {
+  if (lessonOpen.value && !restoringLesson) void saveStartedLesson();
+}, { deep: true });
+watch([viewedCourse, reviewScope, reviewHistoryRevision], async () => {
+  const scope = reviewScope.value, course = viewedCourse.value;
+  try {
+    const saved = await loadStartedLesson(scope, course);
+    if (scope === reviewScope.value && course === viewedCourse.value) resumableLessonId.value = saved?.lessonId;
+  } catch { resumableLessonId.value = undefined; }
+}, { immediate: true });
+
 async function startLesson(requestedId?: string, practiceOnly = false, cardIndex?: number) {
+  restoringLesson = true;
+  teachingCheckpoint.value = undefined;
+  savedPieces.value = [];
   glossaryCardIndex.value = cardIndex;
   const session = ++lessonSession;
   lessonActivityId = crypto.randomUUID();
@@ -909,8 +1002,14 @@ async function startLesson(requestedId?: string, practiceOnly = false, cardIndex
     } catch {
       // Keep the live lesson available even if device storage is blocked.
     }
-  } catch {
+  } catch (error) {
     if (session !== lessonSession) return;
+    if (error instanceof ApiRequestError && [403, 404, 410].includes(error.status)) {
+      lesson.value = null;
+      try { await removeCachedLesson(lessonId); } catch { /* Do not serve withdrawn content. */ }
+      lessonError.value = 'This lesson is no longer available.';
+      return;
+    }
     apiLive.value = false;
     try {
       const cached = (await getCachedLesson(lessonId)) ?? null;
@@ -928,12 +1027,30 @@ async function startLesson(requestedId?: string, practiceOnly = false, cardIndex
     lessonLoading.value = false;
     introductionOpen.value = Boolean(lesson.value);
     resetPracticeSupport();
+    if (lesson.value && cardIndex === undefined && !practiceOnly) {
+      try {
+        const saved = await loadStartedLesson(reviewScope.value, lesson.value.trackId);
+        if (session !== lessonSession) return;
+        if (saved?.lessonId === lesson.value.id && saved.version === lesson.value.version && lesson.value.steps[saved.stepIndex]) {
+          currentStepIndex.value = saved.stepIndex; introductionOpen.value = saved.introductionOpen;
+          teachingWasCompleted.value = saved.teachingWasCompleted; practiceMode.value = saved.practiceMode;
+          responseMode.value = saved.responseMode; selectedAnswer.value = saved.selectedAnswer;
+          attemptFeedback.value = saved.feedback; showEnglishHelp.value = saved.help; showAnswerMeanings.value = saved.answerHelp;
+          practiceHelpUsed.value = saved.practiceHelpUsed; retryCount.value = saved.retryCount;
+          savedPieces.value = saved.pieces ?? []; buildComplete.value = saved.buildComplete;
+          teachingCheckpoint.value = saved.teaching; sessionResponses.value = saved.responses;
+        }
+      } catch { /* Resume is optional if storage is unavailable. */ }
+    }
+    restoringLesson = false;
     await nextTick();
     lessonCloseButton.value?.focus();
   }
 }
 
 function closeLesson() {
+  void saveStartedLesson();
+  resumableLessonId.value = !lessonFinished.value ? lesson.value?.id : undefined;
   lessonSession++;
   checkingAnswer.value = false;
   stopPromptAudio();
@@ -1003,7 +1120,7 @@ async function checkAnswer() {
       correctAnswerId: currentStep.value.evaluation.correctAnswerId,
       feedbackTitle: 'Compare the phrase order',
       explanation:
-        'For this reconstruction, use the order shown in the lesson model below. This checks only the supplied phrase, not every possible Arabic response.',
+        'For this reconstruction, use the order shown in the lesson model below. This checks only the supplied phrase, not every possible response.',
       retryHint:
         'Choose Try again to rebuild the phrase. Response choices are available for help on the retry.',
     };
@@ -1043,6 +1160,7 @@ async function checkAnswer() {
 }
 
 async function retryAnswer() {
+  savedPieces.value = [];
   retryCount.value++;
   buildComplete.value = false;
   selectedAnswer.value = null;
@@ -1251,6 +1369,12 @@ async function finishLesson() {
 
       <BackControl class="landing-return mobile-landing-return" href="#">Back to landing page</BackControl>
 
+      <CourseSwitcher :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
+      <button v-if="resumableLessonId && activeLessons.some(l => l.id === resumableLessonId)" type="button" class="secondary-action resume-course" @click="startLesson(resumableLessonId)">Resume {{ activeCourse.name }} lesson</button>
+      <p v-if="courseStorageError" role="status">{{ courseStorageError }}</p>
+      <section v-if="studyPageAvailable && !activeLessons.length && page !== 'account'" class="course-empty" role="status">
+        <h2>{{ activeCourse.name }}</h2><p>Lessons not yet available. Your saved progress and daily study settings are unchanged.</p>
+      </section>
       <p v-if="downloadError" role="status">{{ downloadError }}</p>
 
       <LoadingWords v-if="dashboardLoading && page !== 'practice-culture'" :compact="!initialDashboardLoading" />
@@ -1265,7 +1389,7 @@ async function finishLesson() {
         <section class="welcome-row" aria-labelledby="today-heading">
           <div>
             <h1 id="today-heading">
-              Marhaba, {{ dashboard.learner.displayName }}.
+              {{ activeCourse.languageId === 'arabic' ? 'Marhaba' : 'Welcome' }}, {{ dashboard.learner.displayName }}.
             </h1>
           </div>
 
@@ -1317,7 +1441,7 @@ async function finishLesson() {
         <section v-if="nextStudyLesson" class="section-block" aria-labelledby="next-heading">
           <div class="section-heading">
             <div>
-              <h2 id="next-heading">Next lesson</h2>
+              <h2 id="next-heading">{{ dailyCompleted >= dailyGoal ? 'Keep practicing' : 'Next lesson' }}</h2>
             </div>
             <span class="time-chip"
               >{{ nextStudyLesson?.estimatedMinutes ?? 0 }} min</span
@@ -1399,24 +1523,28 @@ async function finishLesson() {
             <li v-for="item in studyPlan.queue.slice(1)" :key="item.id"><button type="button" class="guest-action" @click="startLesson(item.id)">{{ item.title }} · {{ item.estimatedMinutes }} min</button></li>
           </ol>
           <p v-if="!studyPlan.queue.length">{{ dailyCompleted >= dailyGoal ? 'Daily goal complete. Practice is always available.' : 'No new lessons are available for this plan. You can still explore courses and practice.' }}</p>
+          <p v-if="studyPlan.overrunMinutes">Whole lessons take this plan {{ studyPlan.overrunMinutes }} min beyond your goal.</p>
+          <p v-for="allocation in studyPlan.allocations.filter(a => a.reviewMinutes)" :key="allocation.id"><button class="secondary-action" @click="plannedReview?.start('due', undefined, allocation.id)">Review {{ allocation.name }} first · {{ allocation.reviewMinutes }} min</button></p>
           <details class="plan-details">
-            <summary>Study time by track</summary>
+            <summary>Study time by course</summary>
           <ul class="study-allocations">
             <li v-for="allocation in studyPlan.allocations" :key="allocation.id">
               <strong>{{ allocation.name }}</strong> · {{ allocation.minutes }} min
+              <span v-if="allocation.omitted"> · Not scheduled today; manual study available</span>
+              <span v-if="allocation.reviewMinutes"> · Due review first</span>
               <span v-if="!allocation.available"> · Lessons not yet available</span>
             </li>
           </ul>
           </details>
         </section>
 
-        <a class="page-link culture-today-link" href="#/practice/culture"><Clapperboard :size="18" aria-hidden="true" /> Watch &amp; listen</a>
+        <a v-if="activeCourse.languageId === 'arabic'" class="page-link culture-today-link" href="#/practice/culture"><Clapperboard :size="18" aria-hidden="true" /> Watch &amp; listen</a>
       </template>
 
       <template v-if="page === 'courses' && studyPageAvailable">
         <header class="page-heading">
           <h1>Courses</h1>
-          <p class="review-status-note">{{ courseProgressLabel }}</p>
+          <p class="review-status-note"><span>{{ activeCourse.name }}</span> · <span>{{ courseProgressLabel }}</span></p>
           <p
             v-if="!apiLive || pendingSyncCount > 0"
             class="review-status-note"
@@ -1432,7 +1560,7 @@ async function finishLesson() {
             :aria-label="unit.title"
           >
             <h2>{{ unit.title }}</h2>
-            <ol class="course-path" aria-label="Levantine course path">
+            <ol class="course-path" :aria-label="`${activeCourse.id === 'levantine' ? 'Levantine' : activeCourse.name} course path`">
               <li
                 v-for="item in unit.lessons"
                 :key="item.id"
@@ -1494,38 +1622,9 @@ async function finishLesson() {
           </div>
 
           <div class="track-grid">
-            <article class="track-card msa-card">
-              <div class="track-card-icon">
-                <Newspaper :size="22" aria-hidden="true" />
-              </div>
-              <div class="track-card-copy">
-                <h3>Modern Standard Arabic</h3>
-              </div>
-              <button
-                type="button"
-                class="round-action"
-                aria-label="MSA lessons are not yet available"
-                disabled
-              >
-                <ChevronRight :size="20" aria-hidden="true" />
-              </button>
-            </article>
-
-            <article class="track-card quran-card">
-              <div class="track-card-icon">
-                <BookOpen :size="22" aria-hidden="true" />
-              </div>
-              <div class="track-card-copy">
-                <h3>Quranic Arabic</h3>
-              </div>
-              <button
-                type="button"
-                class="round-action"
-                aria-label="Quranic Arabic lessons are not yet available"
-                disabled
-              >
-                <ChevronRight :size="20" aria-hidden="true" />
-              </button>
+            <article v-for="course in courses.filter(c => !dashboard.dailyPlan.lessons.some(l => l.trackId === c.id))" :key="course.id" class="track-card">
+              <div class="track-card-copy"><h3>{{ course.name }}</h3><p>Planned · Lessons not yet available</p></div>
+              <button class="secondary-action" @click="switchViewedCourse(course.id)">View status</button>
             </article>
           </div>
         </section>
@@ -1536,19 +1635,20 @@ async function finishLesson() {
           <h1>Practice</h1>
         </header>
         <div id="practice-hub" class="feature-grid">
-          <a class="feature-tile accent-ink tile-culture" href="#/practice/culture">
+          <a v-if="activeCourse.languageId === 'arabic'" class="feature-tile accent-ink tile-culture" href="#/practice/culture">
             <span class="feature-badge" aria-hidden="true"><Clapperboard :size="18" /></span>
             <span class="feature-copy"><strong>Watch &amp; listen</strong><small>Weekly Arabic picks</small></span>
           </a>
-          <a class="feature-tile accent-green tile-lessons" href="#/practice/lessons" :aria-label="`Lesson practice, ${dashboard.dailyPlan.lessons.length} lessons`">
+          <a class="feature-tile accent-green tile-lessons" href="#/practice/lessons" :aria-label="`Lesson practice, ${activeLessons.length} lessons`">
             <span class="feature-badge" aria-hidden="true"><Headphones :size="18" /></span>
-            <span class="feature-copy"><strong>Lesson practice</strong><small>{{ dashboard.dailyPlan.lessons.length }} lessons</small></span>
-            <span class="feature-count">{{ dashboard.dailyPlan.lessons.length }}</span>
+            <span class="feature-copy"><strong>Lesson practice</strong><small>{{ activeLessons.length }} lessons</small></span>
+            <span class="feature-count">{{ activeLessons.length }}</span>
           </a>
         </div>
         <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
       </template>
-      <CulturalPicks v-if="page === 'practice-culture'" :edition-id="culturalEditionId" />
+      <p v-if="page === 'practice-culture' && viewedReady && activeCourse.languageId !== 'arabic'">Watch &amp; listen currently covers Arabic. Switch to an Arabic course to view its collections.</p>
+      <CulturalPicks v-if="page === 'practice-culture' && viewedReady && activeCourse.languageId === 'arabic'" :edition-id="culturalEditionId" />
       <template v-if="practiceChild && studyPageAvailable">
         <BackControl class="page-back" href="#/practice">Back to Practice</BackControl>
         <header class="page-heading"><h1>{{ pageTitle }}</h1></header>
@@ -1557,7 +1657,7 @@ async function finishLesson() {
         <div v-if="page === 'practice-recall'" id="practice-recall"></div>
         <section v-if="page === 'practice-lessons'" class="practice-list" aria-label="Practice lessons">
           <button
-            v-for="item in dashboard.dailyPlan.lessons"
+            v-for="item in activeLessons"
             :key="item.id"
             class="practice-item"
             type="button"
@@ -1570,19 +1670,23 @@ async function finishLesson() {
             >
             <ChevronRight :size="18" aria-hidden="true" />
           </button>
-          <p v-if="!dashboard.dailyPlan.lessons.length">
+          <p v-if="!activeLessons.length">
             Lessons will appear here when your course is available. Connect to
             download your first lessons.
           </p>
         </section>
       </template>
       <template v-if="page === 'progress' && studyPageAvailable">
-        <header class="page-heading"><h1>Progress</h1></header>
+        <header class="page-heading"><h1>Progress</h1><p><span>{{ activeCourse.name }}</span> · <span>{{ courseProgressLabel }}</span></p></header>
         <LearningHabits section="streak" :state="learningHabits.state.value" :now="habitNow" :error="learningHabits.error.value" @toggle="learningHabits.toggle" />
         <LearningHabits section="quests" :state="learningHabits.state.value" :now="habitNow" :error="''" :review-ready="questReviewAvailability.ready" @toggle="learningHabits.toggle" @start="startQuest" />
         <div id="progress-cando"></div>
         <LearningHabits section="rules" :state="learningHabits.state.value" :now="habitNow" error="" />
       </template>
+      <ReviewPractice v-if="studyPageAvailable" ref="plannedReview" view="hidden" :scope="reviewScope"
+        :history-revision="reviewHistoryRevision" :lessons="todayReviewLessons"
+        @availability="value => { dueByCourse = value.dueByCourse ?? {}; planReviewAvailability = value; }"
+        @open-change="reviewOpen = $event" @prompt-playback="reviewAudioPlaying = $event" @activity-complete="creditStudyActivity" />
       <ReviewPractice
         v-if="studyPageAvailable"
         ref="questReview"
@@ -1599,14 +1703,14 @@ async function finishLesson() {
         v-if="studyPageAvailable"
         :view="recallView"
         :scope="reviewScope"
-        :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []"
+        :lessons="activeLessons"
         :history-revision="reviewHistoryRevision"
         @open-change="reviewOpen = $event"
       />
       <template v-if="page === 'words' && studyPageAvailable">
         <LearnedWords
           :scope="reviewScope"
-          :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []"
+          :lessons="activeLessons"
           :suspended="lessonOpen || reviewOpen"
           @open-lesson="openGlossaryLesson"
           @prompt-playback="reviewAudioPlaying = $event"
@@ -1633,12 +1737,12 @@ async function finishLesson() {
         </header>
 
         <StudySettings
-          :preferences="studySettings.preferences.value" :busy="studySettings.busy.value"
+          :available-course-ids="dashboard.dailyPlan.lessons.map(l => l.trackId ?? 'levantine')" :preferences="studySettings.preferences.value" :busy="studySettings.busy.value"
           :message="studySettings.message.value" :conflict="Boolean(studySettings.conflict.value)"
           @save="async value => { await studySettings.save(value); await cacheUpcomingLessons(); }"
           @resolve="studySettings.resolve"
         />
-        <PlacementCheck :scope="reviewScope" :selected-track-ids="studySettings.preferences.value.selectedTrackIds"
+        <PlacementCheck :key="viewedCourse" :course-id="viewedCourse" :scope="reviewScope" :selected-track-ids="studySettings.preferences.value.selectedTrackIds"
           :lessons="dashboardScope === reviewScope ? dashboard.dailyPlan.lessons : []" @open-lesson="id => startLesson(id)" />
         <template v-if="authSession.isAuthenticated">
           <div class="account-profile">
@@ -1762,7 +1866,10 @@ async function finishLesson() {
             </button>
           </form>
 
-          <BackControl :disabled="accountSubmitting || studySettings.busy.value" @click="closeAccount">
+          <BackControl
+            :disabled="accountSubmitting || studySettings.busy.value"
+            @click="closeAccount"
+          >
             Continue as guest
           </BackControl>
           <p class="account-privacy">
@@ -1773,7 +1880,7 @@ async function finishLesson() {
           <SoundToggle />
           <div>
             <strong>Interface sounds</strong>
-            <p>Arabic playback stays on.</p>
+            <p>Lesson audio stays on.</p>
           </div>
         </section>
       </section>
@@ -1843,7 +1950,7 @@ async function finishLesson() {
               role="alert"
             >
               <WifiOff :size="28" aria-hidden="true" />
-              <strong>Lesson unavailable offline</strong>
+              <strong>Lesson unavailable</strong>
               <p>{{ lessonError }}</p>
             </div>
 
@@ -1861,7 +1968,7 @@ async function finishLesson() {
               <div v-if="completionSummary.total" class="completion-recap">
                 <details v-if="completionSummary.phrases.length" class="practiced-responses">
                   <summary>Practiced responses</summary>
-                  <ul><li v-for="(answer, index) in completionSummary.phrases" :key="index"><bdi lang="ar" dir="rtl">{{ answer?.arabic }}</bdi><span>{{ answer?.meaning }}</span></li></ul>
+                  <ul><li v-for="(answer, index) in completionSummary.phrases" :key="index"><bdi v-bind="textAttributes(lesson?.trackId)">{{ answer?.arabic }}</bdi><span>{{ answer?.meaning }}</span></li></ul>
                 </details>
                 <p>{{ completionSummary.firstCorrect }} of {{ completionSummary.total }} responses correct on the first attempt</p>
                 <p>Help used in {{ completionSummary.helped }} of {{ completionSummary.total }} turns</p>
@@ -1892,7 +1999,10 @@ async function finishLesson() {
             >
               Try again
             </button>
-            <BackControl v-else @click="closeLesson">
+            <BackControl
+              v-else
+              @click="closeLesson"
+            >
               {{
                 previewMode
                   ? 'Back to curriculum'
@@ -1912,6 +2022,7 @@ async function finishLesson() {
             Owner preview · {{ lesson.version }} · no progress saved
           </p>
           <LessonTeaching
+            :checkpoint="teachingCheckpoint" @checkpoint="teachingCheckpoint = $event"
             v-if="introductionOpen"
             :key="lesson.version"
             :lesson="lesson"
@@ -1934,6 +2045,7 @@ async function finishLesson() {
                 class="text-button"
                 type="button"
                 @click="
+                  teachingCheckpoint = undefined;
                   introductionOpen = true;
                   stopPromptAudio();
                 "
@@ -1974,7 +2086,7 @@ async function finishLesson() {
                       <Volume2 :size="21" aria-hidden="true" />
                     </button>
                     <div>
-                      <p class="arabic-prompt" lang="ar" dir="rtl">
+                      <p class="arabic-prompt" v-bind="textAttributes(lesson?.trackId)">
                         {{ currentStep.prompt.arabic }}
                       </p>
                       <p class="arabizi-prompt">
@@ -2006,12 +2118,12 @@ async function finishLesson() {
                           {{
                             currentStep.prompt.recording.dialect === 'jordanian'
                               ? 'Jordanian variant'
-                              : 'Urban Palestinian'
+                              : lesson?.trackId === 'levantine' ? 'Urban Palestinian' : currentStep.prompt.recording.dialect
                           }}
                         </p>
                         <details class="recording-details">
                           <summary>Recording transcript and source</summary>
-                          <p lang="ar" dir="rtl">
+                          <p v-bind="textAttributes(lesson?.trackId)">
                             {{ currentStep.prompt.recording.transcript }}
                           </p>
                           <p>
@@ -2048,7 +2160,7 @@ async function finishLesson() {
                   <template v-else-if="responseMode === 'build'">
                     <PhraseBuilder
                       :key="`${currentStep.id}-${retryCount}`"
-                      :step="currentStep"
+                      :step="currentStep" :course-id="lesson?.trackId" :initial-pieces="savedPieces" @progress="savedPieces = $event"
                       :disabled="Boolean(attemptFeedback) || checkingAnswer"
                       @select="
                         (id, complete) => {
@@ -2094,7 +2206,7 @@ async function finishLesson() {
                         answer.id.toUpperCase()
                       }}</span>
                       <span class="answer-copy">
-                        <span class="answer-arabic" lang="ar" dir="rtl">{{
+                        <span class="answer-arabic" v-bind="textAttributes(lesson?.trackId)">{{
                           answer.arabic
                         }}</span>
                         <span class="answer-arabizi">{{ answer.arabizi }}</span>
@@ -2146,7 +2258,7 @@ async function finishLesson() {
                       {{ attemptFeedback.feedbackTitle }}</strong
                     >
                     <div class="feedback-model" v-if="responseMode === 'build'">
-                      <p lang="ar" dir="rtl">
+                      <p v-bind="textAttributes(lesson?.trackId)">
                         {{
                           currentStep.answers.find(
                             (a) => a.id === attemptFeedback?.correctAnswerId,

@@ -2058,3 +2058,21 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 .culture-audit li { margin: 12px 0; }
 @media (max-width: 700px) { .culture-admin-layout { grid-template-columns: 1fr; } .culture-card { padding-inline: 16px; } .culture-card-heading { margin-inline: -16px; padding-inline: 16px; } }
 @media (forced-colors: active) { .culture-card-heading { border-bottom: 1px solid CanvasText; } .culture-card { border-color: CanvasText; } }
+
+
+/* Locally bundled OFL font; precached with the app for deterministic offline text. */
+@font-face { font-family: "Ismi Khmer"; src: url('/fonts/NotoSansKhmer.ttf') format('truetype'); font-style: normal; font-weight: 100 900; font-display: swap; }
+[data-script="khmer"] { font-family: "Ismi Khmer", sans-serif !important; line-height: 1.9 !important; letter-spacing: normal !important; word-break: normal; overflow-wrap: anywhere; padding-block: .15em; }
+[data-script="latin"] { font-family: inherit; line-height: 1.55; text-align: start; }
+[data-script] { unicode-bidi: isolate; }
+.course-empty { padding: 1.25rem; border: 2px solid #174b91; border-radius: 1rem; background: white; }
+.course-empty h2 { margin-top: 0; }
+
+@media (max-width: 900px) {
+  .mobile-header { margin-bottom: 8px; }
+  .welcome-row { margin-bottom: 12px; }
+  .status-strip { margin-bottom: 12px; }
+  .status-strip .feature-tile { min-height: 80px; padding: 8px; gap: 6px; }
+}
+
+.status-strip + .section-block { margin-top: 16px; }

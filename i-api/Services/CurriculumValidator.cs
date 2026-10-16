@@ -12,14 +12,17 @@ public sealed class CurriculumValidator(RecordingStore recordings)
         if (!HasReadableShape(lesson, sources))
             return new(false, ["The package has missing or null lesson, step, answer, dialogue, or source fields."]);
 
+        CourseContentCompatibility.ValidateProfile(lesson, sources, errors);
+        lesson = CourseContentCompatibility.Readable(lesson);
+        var needsPronunciationHelp = lesson.TrackId != "french" || lesson.ContentReview?.HelpConvention != "none";
         CharacterRegistry.Validate(lesson, errors);
         RecallValidator.Validate(lesson, sources, errors);
 
         Required(errors, lesson.Id, "Lesson ID is required.");
         if (lesson.Id.Length > 100) errors.Add("Lesson ID cannot exceed 100 characters.");
-        if (!string.Equals(lesson.TrackId, "levantine", StringComparison.OrdinalIgnoreCase))
+        if (lesson.TrackId is not ("levantine" or "french" or "khmer"))
         {
-            errors.Add("This checkpoint can publish only Levantine lessons. MSA and Quranic content remain gated.");
+            errors.Add("MSA and Quranic content remain gated; use a supported course profile.");
         }
 
         Required(errors, lesson.Title, "Lesson title is required.");
@@ -45,8 +48,8 @@ public sealed class CurriculumValidator(RecordingStore recordings)
             var label = string.IsNullOrWhiteSpace(step.Id) ? $"Step {index + 1}" : $"Step '{step.Id}'";
             Required(errors, step.Id, $"{label} needs an ID.");
             Required(errors, step.Instruction, $"{label} needs an instruction.");
-            Required(errors, step.Prompt.Arabic, $"{label} needs an Arabic prompt.");
-            Required(errors, step.Prompt.Arabizi, $"{label} needs Arabizi/transliteration.");
+            Required(errors, step.Prompt.Arabic, $"{label} needs target-language text.");
+            if (needsPronunciationHelp) Required(errors, step.Prompt.Arabizi, $"{label} needs pronunciation help.");
             Required(errors, step.Prompt.Meaning, $"{label} needs an English meaning.");
 
             if (step.Prompt.AudioUrl is not null || step.Prompt.Recording is not null)
@@ -58,12 +61,14 @@ public sealed class CurriculumValidator(RecordingStore recordings)
                     errors.Add($"{label} needs recording metadata and provenance.");
                 else
                 {
+                    if (lesson.TrackId != "levantine" && recording.LanguageTag != lesson.ContentReview?.LanguageTag)
+                        errors.Add($"{label}'s recording language must match the content review language.");
                     Required(errors, recording.Transcript, $"{label} needs a recording transcript.");
                     if (recording.Transcript != step.Prompt.Arabic)
                         errors.Add($"{label}'s transcript must match the Arabic prompt exactly.");
                     Required(errors, recording.Speaker, $"{label} needs a speaker credit or pseudonym.");
                     Required(errors, recording.ReviewNotes, $"{label} needs recording review notes.");
-                    if (recording.Dialect is not ("palestinian-urban" or "jordanian"))
+                    if (lesson.TrackId == "levantine" ? recording.Dialect is not ("palestinian-urban" or "jordanian") : recording.Dialect != lesson.ContentReview?.Variety)
                         errors.Add($"{label} needs a Palestinian urban or Jordanian dialect label.");
                     if (string.IsNullOrWhiteSpace(recording.SourceLocator) || !sources.Any(source =>
                         source.SourceType == "recording" && source.Locator == recording.SourceLocator &&
@@ -77,8 +82,8 @@ public sealed class CurriculumValidator(RecordingStore recordings)
             foreach (var answer in step.Answers)
             {
                 Required(errors, answer.Id, $"Every answer in {label} needs an ID.");
-                Required(errors, answer.Arabic, $"Answer '{answer.Id}' in {label} needs Arabic text.");
-                Required(errors, answer.Arabizi, $"Answer '{answer.Id}' in {label} needs Arabizi/transliteration.");
+                Required(errors, answer.Arabic, $"Answer '{answer.Id}' in {label} needs target-language text.");
+                if (needsPronunciationHelp) Required(errors, answer.Arabizi, $"Answer '{answer.Id}' in {label} needs pronunciation help.");
                 Required(errors, answer.Meaning, $"Answer '{answer.Id}' in {label} needs an English meaning.");
             }
 
@@ -112,8 +117,8 @@ public sealed class CurriculumValidator(RecordingStore recordings)
             }
             foreach (var line in introduction.Dialogue.Select(turn => turn.Line).Concat(introduction.Expressions))
             {
-                Required(errors, line.Arabic, "Dialogue and expressions need Arabic.");
-                Required(errors, line.Arabizi, "Dialogue and expressions need transliteration.");
+                Required(errors, line.Arabic, "Dialogue and expressions need target-language text.");
+                if (needsPronunciationHelp) Required(errors, line.Arabizi, "Dialogue and expressions need transliteration.");
                 Required(errors, line.Meaning, "Dialogue and expressions need English meaning.");
             }
             if (introduction.TeachingCards is { } cards)
@@ -123,8 +128,8 @@ public sealed class CurriculumValidator(RecordingStore recordings)
                 {
                     Required(errors, card.Title, "Teaching cards need a title.");
                     Required(errors, card.Note, "Teaching cards need a contextual teaching explanation.");
-                    Required(errors, card.Phrase.Arabic, "Teaching cards need an Arabic phrase.");
-                    Required(errors, card.Phrase.Arabizi, "Teaching cards need transliteration.");
+                    Required(errors, card.Phrase.Arabic, "Teaching cards need a target-language phrase.");
+                    if (needsPronunciationHelp) Required(errors, card.Phrase.Arabizi, "Teaching cards need transliteration.");
                     Required(errors, card.Phrase.Meaning, "Teaching cards need an English meaning.");
                     if (card.RecallCue is not null) Required(errors, card.RecallCue, "Recall cues cannot be blank.");
                     if (card.SourceLocators is { } cardSources)
@@ -139,8 +144,8 @@ public sealed class CurriculumValidator(RecordingStore recordings)
                     if (card.Chunks.Count == 0) errors.Add("Teaching cards need phrase building blocks.");
                     foreach (var chunk in card.Chunks)
                     {
-                        Required(errors, chunk.Arabic, "Phrase blocks need Arabic.");
-                        Required(errors, chunk.Arabizi, "Phrase blocks need transliteration.");
+                        Required(errors, chunk.Arabic, "Phrase blocks need target-language text.");
+                        if (needsPronunciationHelp) Required(errors, chunk.Arabizi, "Phrase blocks need transliteration.");
                         Required(errors, chunk.Meaning, "Phrase blocks need contextual meaning.");
                     }
                 }
@@ -162,11 +167,12 @@ public sealed class CurriculumValidator(RecordingStore recordings)
             DuplicateErrors(errors, vocabulary.Select(entry => entry.Id + ":" + entry.SenseId), "vocabulary sense");
             foreach (var entry in vocabulary)
             {
-                foreach (var field in new[] { entry.Id, entry.SenseId, entry.Arabic, entry.Arabizi,
+                foreach (var field in new[] { entry.Id, entry.SenseId, entry.Arabic,
                     entry.Meaning, entry.Dialect, entry.Register, entry.Note })
                     Required(errors, field, "Vocabulary requires stable IDs, text, dialect/register and context notes.");
+                if (needsPronunciationHelp) Required(errors, entry.Arabizi, "Vocabulary needs pronunciation help.");
                 if (entry.Kind is not ("word" or "expression")) errors.Add("Vocabulary kind must be word or expression.");
-                if (entry.Dialect is not ("palestinian-urban" or "jordanian")) errors.Add("Vocabulary needs an explicit supported dialect.");
+                if (lesson.TrackId == "levantine" ? entry.Dialect is not ("palestinian-urban" or "jordanian") : entry.Dialect != lesson.ContentReview?.Variety) errors.Add("Vocabulary needs an explicit supported dialect.");
                 if (entry.SourceLocators.Count == 0 || entry.SourceLocators.Any(locator =>
                     string.IsNullOrWhiteSpace(locator) || !sources.Any(source => source.Locator == locator)))
                     errors.Add("Vocabulary must link to supplied provenance sources.");

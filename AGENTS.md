@@ -20,6 +20,8 @@ Ismi is a web-first language learning product inspired by Duolingo, with Arabic 
 
 Users may study one course or several languages/courses in parallel, with separate progress. On October 12, 2026 the owner authorized expanding the roadmap to French, Khmer and parallel language study. This authorizes planning, not implementation or release of the new courses. Previously authorized Arabic implementation remains in scope. Continue to resolve open product decisions explicitly before they become architecture or policy commitments.
 
+On October 15, 2026 the owner requested a fuller Khmer implementation plan, including a shared landing-page and wording overhaul in preparation for French, eventual Portuguese and further languages. Retain Ismi's Arabic/Palestinian roots while making the shared app welcoming across languages. Cambodian flag-inspired red and blue can join the existing palette. The owner subsequently authorized the entirety of F24 foundation/presentation implementation on October 15, including a deployment candidate. This does not approve F25/F26 curriculum authoring/publication, deployment, beta expansion or Portuguese course scope/variety. See F26/F24.7 in ROADMAP.md and docs/khmer-course-and-brand-expansion.md.
+
 ## Primary audience and promise
 
 - First users are false beginners who already know enough Arabic for basic questions or directions.
@@ -29,7 +31,7 @@ Users may study one course or several languages/courses in parallel, with separa
 - Launch as an invite-only English-language beta without a broad geographic availability promise.
 - Product tone is warm, mature, relationship-centered, and lightly playful in ordinary practice. Quranic lessons use a restrained and respectful tone.
 - Lead with the emotional promise: **"Speak with the people you love."**
-- Supporting promise: **"Understand Arabic from conversation to Quran."**
+- Arabic supporting promise: **"Understand Arabic from conversation to Quran."** Keep this in Arabic-specific contexts as the shared product expands.
 - The long-term aspiration is fluency, but short-term outcomes must remain measurable and realistic.
 
 ## Settled product decisions
@@ -199,7 +201,7 @@ Do not include billing, a social network, or a live-news content operation in th
 
 ## Open decisions
 
-- French and Khmer course varieties, initial depth/outcomes, content/audio sources and linguistic review arrangements; parallel-language allocation/rotation policy and whether either course joins the first-100 beta.
+- French and Khmer course varieties, initial depth/outcomes, content/audio sources and linguistic review arrangements; whether either course joins the first-100 beta. The F24 queue policy was approved October 15: whole sessions, about 60% primary when useful, rotating secondary courses, due review first within each allocation, visible overruns/omissions and manual access.
 - Final approved Quran translation, word-level, morphology, and recitation resource IDs and written permissions.
 - Subscription pricing, trials, family plans, and regional pricing.
 - External authentication providers, production account recovery/email delivery, analytics, and detailed data-retention periods.
@@ -216,8 +218,12 @@ Work directly on `main`. Do not create Codex branches, other feature branches, o
 
 Use `npm run api` and `npm run web` from the repository root in two separate terminals for local development. The API uses `dotnet watch`; the frontend uses Vite. Ctrl+C stops only that terminal's server. `dotnet watch` is the default when starting the API directly as well. Do not restore a combined launcher unless the owner asks for one.
 
-Preserve the owner's edited landing page wording. Do not rewrite or add promotional copy unless explicitly requested. Landing entry now opens the real app with a skippable three-card welcome, shown once per browser after completion or dismissal; the old isolated sample is retired. Keep an explicit landing-page return link available on mobile and desktop, and size character portraits through `--portrait-size` so flex layout cannot distort their square sprite cells.
+The owner authorized the F24.7 multi-language wording overhaul on October 15, retaining the relationship promise and visible Arabic/Palestinian identity. Keep shared copy factual about published availability and course-specific copy precise. Do not add unrelated promotional copy. Landing entry now opens the real app with a skippable three-card welcome, shown once per browser after completion or dismissal; the old isolated sample is retired. Keep an explicit landing-page return link available on mobile and desktop, and size character portraits through `--portrait-size` so flex layout cannot distort their square sprite cells.
 
 The owner prefers richer green, red and gold surfaces over pastel fills. Keep the landing hero image oval and border-free; do not add decorative bubbles behind it. Reload starts at the top, clearing landing section hashes on reload while preserving learner routes. Explicit section navigation and shared section links still scroll to their targets.
+
+For the planned multi-language identity, red/blue Cambodian-inspired accents may accompany the existing green/red/gold/charcoal/white surfaces. Preserve recognizable Palestinian/Arabic branding, keep course accents distinct from correctness/error states, and identify courses with names as well as color. Exact tokens and assets remain design work; do not infer a required replacement of the wordmark, characters or hero.
+
+The owner selected title option A on October 15: retain Ismi/اسمي until a Khmer rendering is linguistically reviewed. The follow-up establishes these UX preferences: explore an English/Arabic/Khmer brand title with a reviewed Khmer rendering; make page-back controls visibly actionable and comfortable on mobile rather than plain underlined text; and expose an obvious labeled language/course switcher once Khmer is implemented. Preserve separate course progress and started lessons; changing the viewed course must not silently change the primary course or daily allocation. Current implementation and authorization status belongs to F24.7/F24.8/F27.1 in ROADMAP.md.
 
 Treat the settled decisions above as constraints. Investigate facts instead of asking the user for information available in the repository or reliable primary sources. Put unresolved product decisions to the user with a recommended answer. Do not silently broaden scope or treat an aspiration such as "fluency" as a measurable release criterion.

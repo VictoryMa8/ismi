@@ -11,7 +11,7 @@ const index = ref(0);
 const cards = [
   {
     title: 'Start with a conversation',
-    text: 'Meet Fattoush and Knafeh. Learn the phrases, then try your response.',
+    text: 'Learn useful phrases, then try your response. Our Arabic course starts with Fattoush and Knafeh.',
     icon: MessageCircle,
   },
   {
@@ -100,7 +100,12 @@ onBeforeUnmount(() => {
       <p id="welcome-card-text">{{ card.text }}</p>
     </section>
     <footer class="welcome-actions">
-      <BackControl v-if="index > 0" @click="move(-1)">Back</BackControl>
+      <BackControl
+        v-if="index > 0"
+        @click="move(-1)"
+      >
+        Back
+      </BackControl>
       <span v-else />
       <button
         v-if="index < 2"

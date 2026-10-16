@@ -8,6 +8,7 @@ import {
   watch,
 } from 'vue';
 import { Check, ChevronRight, Flag, RotateCcw } from '@lucide/vue';
+import { textAttributes } from './courses';
 import { ApiRequestError, getLesson } from './api';
 import {
   cacheLesson,
@@ -23,6 +24,7 @@ import { reviewDueAt } from './reviewSchedule';
 import { evaluateOffline } from './evaluation';
 import {
   checkpointKey,
+  reviewUnitId,
   makeReviewQueue,
   reviewTurns,
   scheduledReviewContexts,
@@ -126,13 +128,13 @@ const units = computed(() => {
     { id: string; title: string; lessons: CourseLessonSummary[] }
   >();
   for (const lesson of props.lessons) {
-    if (!map.has(lesson.unitId))
-      map.set(lesson.unitId, {
-        id: lesson.unitId,
+    if (!map.has(reviewUnitId(lesson)))
+      map.set(reviewUnitId(lesson), {
+        id: reviewUnitId(lesson),
         title: lesson.unitTitle,
         lessons: [],
       });
-    map.get(lesson.unitId)!.lessons.push(lesson);
+    map.get(reviewUnitId(lesson))!.lessons.push(lesson);
   }
   return [...map.values()].map((unit) => ({
     ...unit,
@@ -144,6 +146,8 @@ const units = computed(() => {
 });
 watch(() => [loading.value, dueCount.value, turns.value.length, units.value] as const, () => {
   emit('availability', {
+    dueByCourse: loading.value ? {} : Object.fromEntries([...new Set(packages.value.map(p => p.trackId))].map(id =>
+      [id, makeReviewQueue(scheduledTurns.value.filter(t => t.lesson.trackId === id), 'due', Number.MAX_SAFE_INTEGER, now.value).length])),
     ready: !loading.value, due: !loading.value && dueCount.value > 0,
     mixed: !loading.value && turns.value.length > 0,
     dueCount: loading.value ? 0 : dueCount.value,
@@ -202,7 +206,7 @@ async function refresh() {
       }
     }
     if (token !== generation) return;
-    if (lesson?.trackId === 'levantine') available.push(lesson);
+    if (lesson) available.push(lesson);
     else missing++;
   }
   if (token !== generation) return;
@@ -215,7 +219,7 @@ async function refresh() {
         checkpointKey(
           props.scope,
           unit.id,
-          available.filter((lesson) => lesson.unitId === unit.id),
+          available.filter((lesson) => reviewUnitId(lesson) === unit.id),
         ),
       );
       if (token !== generation) return;
@@ -290,15 +294,15 @@ function resetTurn() {
   helped.value = false;
 }
 
-async function start(nextKind: ReviewKind, unitId?: string) {
+async function start(nextKind: ReviewKind, unitId?: string, courseId?: string) {
   if (loading.value || saving.value) return;
   const unit = units.value.find((unit) => unit.id === unitId);
   if (nextKind === 'checkpoint' && (!unit?.complete || !unit.available)) return;
   const candidates = unitId
-    ? turns.value.filter((turn) => turn.lesson.unitId === unitId)
+    ? turns.value.filter((turn) => reviewUnitId(turn.lesson) === unitId)
     : nextKind === 'due' ? scheduledTurns.value : turns.value;
   updateClock();
-  const selected = makeReviewQueue(candidates, nextKind, 6, now.value);
+  const selected = makeReviewQueue(candidates.filter(t => !courseId || t.lesson.trackId === courseId), nextKind, 6, now.value);
   if (!selected.length) return;
   opener = document.activeElement as HTMLElement;
   kind.value = nextKind;
@@ -313,7 +317,7 @@ async function start(nextKind: ReviewKind, unitId?: string) {
     ? checkpointKey(
         props.scope,
         unitId,
-        packages.value.filter((lesson) => lesson.unitId === unitId),
+        packages.value.filter((lesson) => reviewUnitId(lesson) === unitId),
       )
     : '';
   open.value = true;
@@ -390,7 +394,7 @@ async function check() {
         correctAnswerId: current.step.evaluation.correctAnswerId,
         feedbackTitle: 'Compare the phrase order',
         explanation:
-          'This checks the supplied phrase order. Other natural Arabic responses are not evaluated.',
+          'This checks the supplied phrase order. Other natural responses are not evaluated.',
         retryHint: current.step.evaluation.retryHint,
       };
   attempts.value++;
@@ -447,7 +451,7 @@ async function advance() {
   try {
     if (kind.value === 'checkpoint') {
       await saveDeviceSnapshot(resultKey.value, result);
-      const unitId = queue.value[0]?.lesson.unitId;
+      const unitId = queue.value[0] ? reviewUnitId(queue.value[0].lesson) : undefined;
       if (unitId) results.value[unitId] = result;
     }
     history.value = await getReviewHistory(props.scope);
@@ -460,7 +464,7 @@ async function advance() {
   finished.value = true;
   emit('activity-complete', {
     id: sessionId, kind: kind.value === 'checkpoint' ? 'checkpoint' : 'review',
-    completedAt: result.completedAt, unitId: kind.value === 'checkpoint' ? queue.value[0]?.lesson.unitId : undefined,
+    completedAt: result.completedAt, unitId: kind.value === 'checkpoint' && queue.value[0] ? reviewUnitId(queue.value[0].lesson) : undefined,
     due: kind.value === 'due',
   }, sessionScope);
   playUiSound('complete');
@@ -479,6 +483,7 @@ watch(open, (value) => emit('open-change', value));
 watch(
   () => [
     props.scope,
+    props.view,
     props.historyRevision,
     props.lessons
       .map((lesson) => `${lesson.id}:${lesson.isCompleted}`)
@@ -673,7 +678,7 @@ defineExpose({ start });
                 />
                 <div class="scenario-panel">
                   <div>
-                    <p class="arabic-prompt" lang="ar" dir="rtl">
+                    <p class="arabic-prompt" v-bind="textAttributes(turn?.lesson.trackId)">
                       {{ turn.step.prompt.arabic }}
                     </p>
                     <p class="arabizi-prompt">{{ turn.step.prompt.arabizi }}</p>
@@ -715,10 +720,10 @@ defineExpose({ start });
                         {{
                           turn.step.prompt.recording.dialect === 'jordanian'
                             ? 'Jordanian variant'
-                            : 'Urban Palestinian'
+                            : turn.lesson.trackId === 'levantine' ? 'Urban Palestinian' : turn.step.prompt.recording.dialect
                         }}
                       </p>
-                      <p lang="ar" dir="rtl">
+                      <p v-bind="textAttributes(turn?.lesson.trackId)">
                         {{ turn.step.prompt.recording.transcript }}
                       </p>
                       <p>
@@ -741,7 +746,7 @@ defineExpose({ start });
                 <template v-else-if="mode === 'build'">
                   <PhraseBuilder
                     :key="`${turn.lesson.id}-${turn.step.id}-${retries}`"
-                    :step="turn.step"
+                    :step="turn.step" :course-id="turn.lesson.trackId"
                     :disabled="Boolean(feedback) || saving"
                     @select="
                       (id, complete) => {
@@ -783,7 +788,7 @@ defineExpose({ start });
                     @click="answerId = answer.id"
                   >
                     <span class="answer-copy"
-                      ><span class="answer-arabic" lang="ar" dir="rtl">{{
+                      ><span class="answer-arabic" v-bind="textAttributes(turn?.lesson.trackId)">{{
                         answer.arabic
                       }}</span
                       ><span class="answer-arabizi">{{ answer.arabizi }}</span
@@ -832,13 +837,13 @@ defineExpose({ start });
                   <strong>{{ feedback.feedbackTitle }}</strong>
                   <p v-if="!feedback.isCorrect && answerId">
                     Your response:
-                    <span lang="ar" dir="rtl">{{
+                    <span v-bind="textAttributes(turn?.lesson.trackId)">{{
                       turn.step.answers.find((answer) => answer.id === answerId)
                         ?.arabic
                     }}</span>
                   </p>
                   <div class="feedback-model">
-                    <p lang="ar" dir="rtl">{{ model?.arabic }}</p>
+                    <p v-bind="textAttributes(turn?.lesson.trackId)">{{ model?.arabic }}</p>
                     <p>{{ model?.arabizi }}</p>
                     <p>{{ model?.meaning }}</p>
                   </div>
@@ -853,7 +858,7 @@ defineExpose({ start });
                 >
                   <summary>Previous mistake</summary>
                   <p v-if="turn.history.answerId">
-                    <span lang="ar" dir="rtl">{{
+                    <span v-bind="textAttributes(turn?.lesson.trackId)">{{
                       turn.step.answers.find(
                         (answer) => answer.id === turn.history?.answerId,
                       )?.arabic
@@ -879,7 +884,12 @@ defineExpose({ start });
             </LessonTransition>
           </LessonScroll>
           <footer class="lesson-actions" aria-label="Review navigation">
-            <BackControl v-if="finished" @click="close">Back to practice</BackControl>
+            <BackControl
+              v-if="finished"
+              @click="close"
+            >
+              Back to practice
+            </BackControl>
             <template v-else-if="mode === 'recall'">
               <button
                 class="primary-action"

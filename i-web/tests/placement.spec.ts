@@ -21,7 +21,7 @@ async function begin(page: Page) {
 async function finish(page: Page, withHelp = false, wrongFirst = false) {
   for (let i = 0; i < questions.length; i++) {
     const q = questions[i]!
-    if (withHelp && i === 0) await region(page).getByRole('button', { name: 'Show transliteration and meanings' }).click()
+    if (withHelp && i === 0) await region(page).getByRole('button', { name: 'Show pronunciation help and meanings' }).click()
     const answerIndex = q.step.answers.findIndex(a => wrongFirst && i === 0 ? a.id !== q.step.evaluation.correctAnswerId : a.id === q.step.evaluation.correctAnswerId)
     await region(page).getByRole('radio').nth(answerIndex).focus()
     await page.keyboard.press('Space')
@@ -101,5 +101,8 @@ test('withdrawn content cannot shorten assessment; other tracks remain unavailab
   await page.getByRole('checkbox', { name: /Modern Standard Arabic/ }).check()
   await page.getByRole('checkbox', { name: /Quranic Arabic/ }).check()
   await page.getByRole('button', { name: 'Save study settings', exact: true }).click()
-  await expect(region(page).getByText('Placement and reading/sound modules not yet available.', { exact: true })).toHaveCount(2)
+  for (const id of ['msa', 'quranic']) {
+    await page.getByLabel('Language / course Switch').selectOption(id)
+    await expect(region(page).getByText('Placement and reading/sound modules not yet available.', { exact: true })).toHaveCount(1)
+  }
 })

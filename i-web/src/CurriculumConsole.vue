@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
+import { courses, type CourseId } from './courses';
 import RecordingEditor from './RecordingEditor.vue';
 import RecallReports from './RecallReports.vue';
 import CharacterMapping from './CharacterMapping.vue';
@@ -24,6 +25,7 @@ import {
   getCurriculumVersions,
   publishCurriculumVersion,
   rollbackCurriculumVersion,
+  withdrawCurriculumVersion,
   updateCurriculumDraft,
   validateCurriculumVersion,
 } from './api';
@@ -40,6 +42,8 @@ const emit = defineEmits<{
   preview: [lesson: LessonResponse, opener: HTMLElement];
 }>();
 
+const withdrawalReason = ref('');
+const draftCourse = ref<CourseId>('levantine');
 const versions = ref<CurriculumVersionSummary[]>([]);
 const consoleSection = ref<'lessons' | 'media'>('lessons');
 const selected = ref<CurriculumVersionDetail | null>(null);
@@ -105,9 +109,9 @@ function setSelected(detail: CurriculumVersionDetail) {
 
 function startNewLesson() {
   const lesson: LessonResponse = {
-    id: 'levantine-',
-    trackId: 'levantine',
-    title: 'New Levantine lesson',
+    id: `${draftCourse.value}-`,
+    trackId: draftCourse.value,
+    title: `New ${courses.find(c => c.id === draftCourse.value)!.name} lesson`,
     scenario: 'Describe the real-life scenario.',
     estimatedMinutes: 6,
     version: 'draft',
@@ -138,6 +142,16 @@ function startNewLesson() {
       },
     ],
   };
+  if (draftCourse.value !== 'levantine') {
+    lesson.schemaVersion = 2;
+    lesson.unitId = `${draftCourse.value}-unit-01`; lesson.unitTitle = 'First unit';
+    lesson.contentReview = { languageTag: courses.find(c => c.id === draftCourse.value)!.tag,
+      variety: '', helpConvention: '', reviewer: '', reviewDisposition: 'pending', rightsDisposition: 'pending', criticalIssues: [], sourceLanguages: {} };
+    for (const step of lesson.steps) {
+      Object.assign(step.prompt, { targetText: '', pronunciationHelp: '' });
+      for (const answer of step.answers) Object.assign(answer, { targetText: '', pronunciationHelp: '', rationale: '', ...(draftCourse.value === 'khmer' ? { segments: [] } : {}) });
+    }
+  }
   selected.value = {
     id: 0,
     versionNumber: 0,
@@ -295,6 +309,17 @@ async function publish() {
   }
 }
 
+async function withdraw() {
+  if (!selected.value || !withdrawalReason.value.trim()) return;
+  busy.value = true; clearMessages();
+  try {
+    const detail = await withdrawCurriculumVersion(selected.value.id, withdrawalReason.value);
+    await loadVersions(detail.id); withdrawalReason.value = '';
+    notice.value = 'Withdrawn from online study and new downloads. Existing offline copies cannot be revoked until reconnection.';
+  } catch (caught) { error.value = messageFor(caught); }
+  finally { busy.value = false; }
+}
+
 async function rollback() {
   if (!selected.value) return;
   const confirmed = window.confirm(
@@ -369,7 +394,7 @@ function formatDate(value: string | null): string {
         <span class="section-kicker">Internal · publication control</span>
         <h1>Curriculum console</h1>
         <p v-if="consoleSection === 'lessons'">
-          Draft, validate, approve, and publish source-linked Levantine lessons.
+          Draft, validate, approve, and publish source-linked course lessons.
         </p>
         <p v-else>Review and publish weekly Arabic media collections.</p>
       </div>
@@ -398,6 +423,10 @@ function formatDate(value: string | null): string {
 
     <RecallReports />
 
+    <label class="package-import">Course for new drafts
+      <select v-model="draftCourse" :disabled="busy || uploading"><option v-for="course in courses.filter(c => !['msa', 'quranic'].includes(c.id))" :key="course.id" :value="course.id">{{ course.name }}</option></select>
+    </label>
+    <p>French and Khmer packages use schema 2: targetText, pronunciationHelp, exact authored segments for Khmer, and a contentReview record with factual linguistic review, cleared rights and sourceLanguages mapping each source locator to its language tag. Engineering fixtures cannot publish.</p>
     <label class="package-import"
       >Import a lesson package as a draft
       <input
@@ -466,6 +495,10 @@ function formatDate(value: string | null): string {
           Select a version or create a lesson.
         </div>
         <template v-else>
+          <form v-if="selected.status === 'published'" class="editor-section" @submit.prevent="withdraw">
+            <label>Withdrawal reason<input v-model="withdrawalReason" maxlength="2000" :disabled="busy" required /></label>
+            <button class="secondary-action" type="submit" :disabled="busy || !withdrawalReason.trim()">Withdraw published version</button>
+          </form>
           <div class="editor-heading">
             <div>
               <span class="status-badge" :class="selectedStatus">{{

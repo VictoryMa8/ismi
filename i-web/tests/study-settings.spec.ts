@@ -7,20 +7,38 @@ function lesson(id: string, trackId: string, minutes = 5, completedToday = false
     isCompleted: completedToday, completedToday, isCurrent: false, reviewStatus: 'demonstrative' }
 }
 
-test('allocation preserves totals, primary priority, whole lessons and per-track completions', () => {
+test('whole-session queue respects courses, unavailable content, rotation and due review', () => {
+  const ids = ['levantine', 'msa', 'quranic', 'french', 'khmer'] as const
+  const lessons = ids.flatMap(id => [lesson(`${id}-1`, id), lesson(`${id}-2`, id), lesson(`${id}-3`, id)])
   for (const goalMinutes of [5, 10, 15, 30]) {
-    for (const selectedTrackIds of [['levantine'], ['levantine', 'msa'], ['levantine', 'msa', 'quranic']] as StudyPreferences['selectedTrackIds'][]) {
-      const plan = buildStudyPlan({ goalMinutes, selectedTrackIds, primaryTrack: 'levantine' }, [])
-      expect(plan.allocations.reduce((sum, a) => sum + a.minutes, 0)).toBe(goalMinutes)
-      expect(plan.allocations[0]!.minutes).toBeGreaterThanOrEqual(plan.allocations.at(-1)!.minutes)
-      expect(plan.queue).toEqual([])
+    for (let count = 1; count <= 5; count++) {
+      const selectedTrackIds = ids.slice(0, count)
+      const preferences = { goalMinutes, selectedTrackIds, primaryTrack: 'levantine' } as StudyPreferences
+      const seen = new Set<string>()
+      for (let day = 1; day <= 20; day++) {
+        const date = `2026-10-${String(day).padStart(2, '0')}`
+        const plan = buildStudyPlan(preferences, lessons, date)
+        expect(plan).toEqual(buildStudyPlan(preferences, lessons, date))
+        expect(new Set(plan.queue.map(l => l.id)).size).toBe(plan.queue.length)
+        expect(plan.tasks.every(t => selectedTrackIds.includes(t.courseId))).toBeTruthy()
+        expect(plan.plannedMinutes).toBeLessThanOrEqual(goalMinutes)
+        plan.tasks.forEach(t => seen.add(t.courseId))
+      }
+      expect([...seen].sort()).toEqual([...selectedTrackIds].sort())
     }
   }
-  const plan = buildStudyPlan({ goalMinutes: 15, selectedTrackIds: ['levantine', 'msa', 'quranic'], primaryTrack: 'msa' },
-    [lesson('l1', 'levantine'), lesson('m1', 'msa', 5, true), lesson('m2', 'msa', 6), lesson('m3', 'msa')])
-  expect(plan.allocations.map(a => a.minutes)).toEqual([9, 3, 3])
-  expect(plan.queue.map(l => l.id)).toEqual(['m2', 'l1'])
-  expect(plan.allocations[2]!.available).toBe(false)
+  const p: StudyPreferences = { goalMinutes: 15, selectedTrackIds: ['levantine', 'khmer'], primaryTrack: 'levantine' }
+  const plan = buildStudyPlan(p, lessons, '2026-10-15', { levantine: 7, khmer: 3 })
+  const afterReview = buildStudyPlan(p, lessons, '2026-10-15', {}, 5)
+  expect(afterReview.plannedMinutes).toBeLessThanOrEqual(10)
+  expect(plan.tasks[0]!.kind).toBe('review')
+  expect(plan.tasks.filter(t => t.courseId === 'khmer')[0]!.kind).toBe('review')
+  expect(buildStudyPlan(p, [], '2026-10-15').tasks).toEqual([])
+  const overrun = buildStudyPlan({ ...p, goalMinutes: 5, selectedTrackIds: ['levantine'] }, [lesson('long', 'levantine', 7)], '2026-10-15')
+  expect(overrun.overrunMinutes).toBe(2)
+  expect(overrun.queue[0]!.estimatedMinutes).toBe(7)
+  const completed = buildStudyPlan(p, lessons.map(l => ({ ...l, isCompleted: true, completedToday: true })), '2026-10-15')
+  expect(completed.tasks).toEqual([])
 })
 
 async function saveGoal(page: Page, minutes: number) {
@@ -41,20 +59,20 @@ test('guest settings work offline, keep unavailable tracks honest and preserve c
   await context.setOffline(true)
   await page.getByRole('checkbox', { name: /Modern Standard Arabic/ }).check()
   await page.getByRole('checkbox', { name: /Quranic Arabic/ }).check()
-  await page.getByLabel('Primary track', { exact: true }).selectOption('quranic')
+  await page.getByLabel('Primary course', { exact: true }).selectOption('quranic')
   await page.getByRole('button', { name: 'Save study settings' }).click()
   await expect(page.getByRole('button', { name: 'Save study settings', exact: true })).toBeEnabled()
   await expect(page.getByText('Saved on this device.', { exact: true })).toBeVisible()
   await page.reload()
   await expect(page.getByLabel('30 min', { exact: true })).toBeChecked()
-  await expect(page.getByLabel('Primary track', { exact: true })).toHaveValue('quranic')
+  await expect(page.getByLabel('Primary course', { exact: true })).toHaveValue('quranic')
   expect(await page.locator('body').evaluate(el => el.scrollWidth <= window.innerWidth)).toBeTruthy()
   await page.screenshot({ path: testInfo.outputPath('study-settings-mobile.png'), fullPage: true })
   await page.getByRole('link', { name: 'Today', exact: true }).click()
   const plan = page.getByRole('region', { name: 'Your plan' })
-  await plan.getByText('Study time by track', { exact: true }).click()
-  await expect(plan).toContainText('Quranic Arabic · 18 min')
-  await expect(plan).toContainText('Palestinian Levantine · 6 min')
+  await plan.getByText('Study time by course', { exact: true }).click()
+  await expect(plan).toContainText('Quranic Arabic · 0 min')
+  await expect(plan).toContainText('Palestinian Levantine · 33 min')
   // Today now surfaces the next lesson directly rather than duplicating a queue.
   await expect(page.getByRole('button', { name: /Continue in Levantine/ })).toBeVisible()
   await page.getByRole('link', { name: 'Edit study settings' }).click()

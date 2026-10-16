@@ -50,6 +50,7 @@ test('console recording publication downloads audio and plays after offline relo
     await page.getByRole('button', { name: 'Publish', exact: true }).click()
     await expect(page.getByText('Published. Learners now receive this version from the API.')).toBeVisible()
     await page.getByRole('button', { name: 'Back to learner app' }).click()
+    await page.getByRole('link', { name: 'Today', exact: true }).first().click()
     await page.setViewportSize({ width: 393, height: 851 })
     await page.reload()
     await expect.poll(() => page.evaluate(async () => {
@@ -78,7 +79,7 @@ test('console recording publication downloads audio and plays after offline relo
     await finishTeaching(page, page.getByRole('dialog'))
     await expect(page.getByText('Recorded · Transport test fixture · Urban Palestinian')).toBeVisible()
     await page.getByText('Recording transcript and source').click()
-    await expect(page.locator('details p[lang="ar"]')).toBeVisible()
+    await expect(page.locator('details p[lang|="ar"]')).toBeVisible()
     expect(await page.locator('.scenario-panel > div').evaluate(element => element.scrollWidth <= element.clientWidth)).toBe(true)
     await page.screenshot({ path: testInfo.outputPath('recording-offline.png') })
     // Observe the actual media element; no playback stub. The source must be a local blob.

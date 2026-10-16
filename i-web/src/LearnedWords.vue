@@ -3,6 +3,7 @@ import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { ApiRequestError, getLesson } from './api'
 import { cacheLesson, getCachedLesson, recordingPlaybackUrl, removeCachedLesson } from './offline'
 import { glossaryCaution, learnedVocabulary, matchesGlossary, vocabularyForLesson, type GlossaryEntry } from './glossary'
+import { textAttributes } from './courses'
 import { studyTracks } from './studyPlan'
 import type { CourseLessonSummary, LessonResponse } from './types'
 
@@ -121,8 +122,8 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
     <h1 id="learned-words-title">Learned words</h1>
     <p>Words and expressions from completed lessons. Completion does not mean mastery.</p>
     <div class="glossary-filters">
-      <label class="glossary-search">Search words<input v-model="query" type="search" placeholder="Arabic, English or transliteration" dir="auto" /></label>
-      <label>Track<select v-model="track"><option value="">All tracks</option><option v-for="item in studyTracks" :key="item.id" :value="item.id">{{ item.name }}</option></select></label>
+      <label class="glossary-search">Search words<input v-model="query" type="search" placeholder="Word, English or pronunciation help" dir="auto" /></label>
+      <label>Course<select v-model="track"><option value="">All courses</option><option v-for="item in studyTracks" :key="item.id" :value="item.id">{{ item.name }}</option></select></label>
       <label>Dialect<select v-model="dialect"><option value="">All dialects</option><option v-for="id in dialects" :key="id" :value="id">{{ dialectName(id) }}</option></select></label>
       <label>Type<select v-model="kind"><option value="">Words and expressions</option><option value="word">Words</option><option value="expression">Expressions</option></select></label>
     </div>
@@ -133,7 +134,7 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
       <p v-else-if="!filtered.length">No matching words. Try another search or filter.</p>
       <ul class="glossary-list">
         <li v-for="entry in visible" :key="entryKey(entry)" class="glossary-entry">
-          <p class="glossary-arabic" lang="ar" dir="rtl">{{ entry.arabic }}</p>
+          <p class="glossary-arabic" v-bind="textAttributes(entry.trackId)">{{ entry.arabic }}</p>
           <p dir="ltr">{{ entry.arabizi }}</p>
           <p>{{ entry.meaning }}</p>
           <small>{{ trackName(entry.trackId) }} · {{ dialectName(entry.dialect) }} · {{ entry.register }} · {{ entry.kind }}</small>

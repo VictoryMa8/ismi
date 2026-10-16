@@ -105,8 +105,8 @@ public sealed class SeedCurriculum
         IReadOnlySet<string>? completedTodayIds = null)
     {
         var ordered = publishedLessons
-            .Where(lesson => string.Equals(lesson.Response.TrackId, "levantine", StringComparison.OrdinalIgnoreCase))
-            .OrderBy(lesson => lesson.Response.UnitId, StringComparer.OrdinalIgnoreCase)
+            .OrderBy(lesson => Array.IndexOf(StudyPreferences.TrackIds, lesson.Response.TrackId))
+            .ThenBy(lesson => lesson.Response.UnitId, StringComparer.OrdinalIgnoreCase)
             .ThenBy(lesson => lesson.Response.CourseOrder)
             .ThenBy(lesson => lesson.Response.Id, StringComparer.OrdinalIgnoreCase)
             .ToList();
@@ -127,7 +127,7 @@ public sealed class SeedCurriculum
             lesson.Response.EstimatedMinutes,
             lesson.Response.ReviewStatus,
             completedLessonIds.Contains(lesson.Response.Id),
-            string.Equals(lesson.Response.Id, next.Response.Id, StringComparison.OrdinalIgnoreCase),
+            string.Equals(lesson.Response.Id, (ordered.FirstOrDefault(l => l.Response.TrackId == lesson.Response.TrackId && !completedLessonIds.Contains(l.Response.Id)) ?? ordered.Last(l => l.Response.TrackId == lesson.Response.TrackId)).Response.Id, StringComparison.OrdinalIgnoreCase),
             lesson.Response.Characters,
             lesson.Response.TrackId,
             completedTodayIds?.Contains(lesson.Response.Id) ?? false))
@@ -143,18 +143,14 @@ public sealed class SeedCurriculum
                 courseLessons,
                 completedMinutesToday,
                 DateTime.UtcNow.ToString("yyyy-MM-dd")),
-            [
-                new TrackProgress(
-                    "levantine",
-                    "Palestinian Levantine",
-                    next.Response.UnitTitle,
-                    next.Response.Title,
-                    next.Response.EstimatedMinutes,
-                    (int)Math.Round(completedCount * 100d / ordered.Count),
-                    true),
-                new TrackProgress("msa", "Modern Standard Arabic", "Coming later", "MSA pilot not yet published", 0, 0, false),
-                new TrackProgress("quranic", "Quranic Arabic", "Coming later", "Quranic pilot not yet published", 0, 0, false)
-            ],
+            CourseCatalog.All.Select(course => {
+                var items = courseLessons.Where(l => l.TrackId == course.Id).ToArray();
+                var current = items.FirstOrDefault(l => !l.IsCompleted) ?? items.LastOrDefault();
+                return new TrackProgress(course.Id, course.Name, current?.UnitTitle ?? "Coming later",
+                    current?.Title ?? "Lessons not yet published", current?.EstimatedMinutes ?? 0,
+                    items.Length == 0 ? 0 : (int)Math.Round(items.Count(l => l.IsCompleted) * 100d / items.Length),
+                    course.Id == "levantine");
+            }).ToArray(),
             new WordConnection("يَوْم", "yōm", "yawm", "day"));
     }
 

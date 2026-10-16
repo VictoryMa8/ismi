@@ -1,3 +1,4 @@
+import { readableLesson } from './courses'
 import { nextReviewSchedule, type ReviewSchedule } from './reviewSchedule'
 import { renameCharacterContent } from './characters'
 import type { DashboardResponse, LessonResponse, PendingCompletion } from './types'
@@ -116,7 +117,7 @@ export async function recordingPlaybackUrl(url: string): Promise<string> {
 }
 
 export function getCachedLesson(lessonId: string): Promise<LessonResponse | undefined> {
-  return useStore<LessonResponse | undefined>(lessonStore, 'readonly', store => store.get(lessonId)).then(renameCharacterContent)
+  return useStore<LessonResponse | undefined>(lessonStore, 'readonly', store => store.get(lessonId)).then(renameCharacterContent).then(lesson => lesson ? readableLesson(lesson) : undefined)
 }
 
 export function removeCachedLesson(lessonId: string): Promise<undefined> {

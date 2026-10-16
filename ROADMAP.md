@@ -37,12 +37,22 @@ exact payload/source/audit matching, data/asset preservation and enabled live Pr
 entry are verified. [Behavior](docs/recall-and-recombine.md),
 [rollout evidence](docs/releases/2026-10-13-recall.md).
 
-**October 12 scope expansion — F24–F26 planned:** the owner added French, Khmer
+**October 12 scope expansion — F25/F26 planned; F24 authorized October 15:** the owner added French, Khmer
 and parallel language study to Ismi's roadmap. Arabic remains the flagship.
 The full plans below include a shared foundation and separate proposed twelve-week
-courses, with child tasks, outcomes and release gates. Implementation is unstarted;
-course depth/varieties, scheduling policy, review arrangements and inclusion in the
-first-100 beta remain explicit decisions. Existing Arabic commitments are retained.
+courses, with child tasks, outcomes and release gates. The owner subsequently authorized
+all F24 foundation/presentation implementation and a deployment candidate, and approved
+its queue policy. F25/F26 content, course depth/varieties, review arrangements and
+first-100 beta inclusion remain separate decisions. Existing Arabic commitments are retained.
+
+**October 15 Khmer plan expansion — F26 / F24.7:** the owner requested a fuller
+Khmer implementation path and a shared landing/wording overhaul that prepares Ismi
+for French, eventual Portuguese and further languages. Keep the relationship promise
+and visible Arabic/Palestinian roots; add Cambodian-inspired red/blue accents.
+Follow-up scope: explore an English/Arabic/Khmer brand title (F24.7), make Arabic–Khmer
+switching obvious (F24.8), and improve page-back controls for mobile (F27.1).
+[First-unit milestones, landing, copy and identity plan](docs/khmer-course-and-brand-expansion.md).
+Khmer curriculum and release remain planned; F24 shared application work is now authorized and implemented locally.
 
 **F21 — Application deployed October 15:** weekly YouTube video + film + song
 collections now have a versioned owner console, Monday UTC delivery, learner/archive
@@ -187,9 +197,11 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F22](#f22-recall-and-recombine) | Recall and recombine | Done · deployed/published | Three targets/six situations live; broader AT/device and outcome evidence remains F18 |
 | [F23](#f23-recurring-mini-stories) | Recurring mini-stories | Planned | Start F23.1, then scope a linked three-episode text arc |
 | [F23.1](#f231-first-text-episode) | First text episode | Planned | One reviewed episode, two comprehension checks and a response |
-| [F24](#f24-multi-language-foundation-and-parallel-study) | Multi-language foundation and parallel study | Planned | Define compatible language/course records; agree queue policy |
+| [F24](#f24-multi-language-foundation-and-parallel-study) | Multi-language foundation and parallel study | Active · local application candidate | Reviewed first units, real device/AT/pilot evidence and authorized rollout remain |
+| [F24.7](#f247-multi-language-wording-landing-and-visual-identity) | Multi-language wording, landing and visual identity | Active · local application | Shared copy, Languages and Khmer colors implemented; title A approved; real AT remains |
+| [F24.8](#f248-prominent-language-and-course-switching) | Prominent language and course switching | Active · local application | Selector/state/offline flows verified with fixtures; approved units/observed task remain |
 | [F25](#f25-french-course) | French course | Planned · definition decisions | Proposed twelve-week course; select variety, depth and review route |
-| [F26](#f26-khmer-course) | Khmer course | Planned · definition decisions | Proposed twelve-week course; select variety, script/help and review route |
+| [F26](#f26-khmer-course) | Khmer course | Planned · expanded October 15 | Agree definition/review route; one-lesson integration → first unit, with F24.7 entry/wording |
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 | [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
 
@@ -379,6 +391,11 @@ remain unchanged. The follow-up was verified locally and by deployment metadata;
 no automated live visual pass is claimed.
 
 ### F07 Landing page and app welcome
+
+**Planned extension:** F07's delivered scope stays Done. The owner-requested
+multi-language landing/wording/identity overhaul is tracked in
+[F24.7](#f247-multi-language-wording-landing-and-visual-identity), with current
+copy/art preserved until that implementation; no landing change occurred here.
 
 **October 11 owner refinement:** Done and deployed — border-free oval hero with both
 faces visible. Build and four responsive landing/welcome checks pass; mobile/desktop
@@ -1135,119 +1152,200 @@ listening editions need separately scoped F09 recordings/transcripts.
 
 ### F24 Multi-language foundation and parallel study
 
-**Status:** Planned — owner authorized roadmap expansion October 12, 2026.
+**Status:** Active — owner authorized the entirety of F24 implementation October 15, 2026. The local software candidate is implemented; first-unit, real AT/input, observed-pilot and release gates remain.
 **Outcome:** learners study Arabic, French and Khmer singly or in parallel in the
 same English-language app. Arabic retains distinct Levantine/MSA/Quranic courses;
 each course has separate placement, progress, review and content safeguards.
+Shared course metadata, wording and visual identity also accommodate eventual
+Portuguese and further languages without promising their curricula or release.
 Reuse F01/F02/F03/F05/F10/F15.1/F20 rather than rebuilding delivered features.
-**Next:** F24.1 compatibility design, followed by agreement on F24.3 scheduling
-before implementing the queue. Recommend shared foundation → first French unit →
-first Khmer unit → mixed-language pilot → remaining course units. Prototype Khmer
-rendering early. This sequence does not supersede the owner's selected Arabic
-engagement order, F19 authorization or deferred F18.1 rehearsal.
-**Done when:** all six children pass; both first-unit packages work alongside Arabic
+**Next:** obtain reviewed F25.2/F26.2 first-unit packages and agree the expansion
+device/pilot setup. Supplemental WebKit offline reload hits an internal engine error;
+real Safari offline support remains unverified. Human screen-reader/input and observed learning evidence, exact content approval and a
+separate rollout/beta decision remain. Do not resume deferred F18.1 or author new
+courses under this foundation authorization.
+**Done when:** all eight children pass; both first-unit packages work alongside Arabic
 with correct language presentation and course accounting; old Arabic publications,
 downloads, identities and pending progress survive the upgrade; supported-browser,
 offline and real accessibility evidence is recorded. F24 does not complete the full
 F25/F26 courses or the original Arabic beta gates.
 **Depends on:** existing foundations; F25.2/F26.2 packages for complete-flow checks;
 agreed queue policy and supported-browser/device matrix.
-**Evidence:** [checkout assessment](docs/multi-language-feasibility.md),
-[existing settings](docs/personal-study-settings.md). No expansion implementation,
-migration, browser or learner evidence yet; link it here as work proceeds.
-**Delivery:** local planning only; no new code, migration, publication or deployment.
+**Evidence:** API 39/39 and final focused Chromium 18/18 pass; earlier full Chromium 114/115 exposed the now-fixed recall Escape defect. WebKit 10/16 retains an offline engine error. [Implementation, policy and verification](docs/multi-language/README.md),
+[pilot protocol](docs/multi-language/pilot-protocol.md),
+[release template](docs/multi-language/release-manifest.template.json),
+[title options](docs/multi-language/brand-options.html). Existing Arabic IDs, publications,
+download records and scoped pending completions remain compatible. The owner approved
+whole-session allocation/secondary rotation and requested a deployment candidate.
+**Delivery:** owner authorized push and deployment October 16. Release of the existing
+web/API preview is in progress; [candidate and recovery](docs/multi-language/deployment-candidate.md).
+Real course publication, human pilot and beta expansion remain separate.
 
 #### F24.1 Language and course records with compatibility
 
-**Status:** Planned.
+**Status:** Done locally — additive compatibility and identity preservation implemented.
 **Scope:** stable language/course IDs, language tags, script direction, font,
 pronunciation-help type, audio locale and published-content availability. Recommend
 one Arabic language with three courses, plus distinct French and Khmer courses.
 Version target-text/help fields to replace Arabic-only naming without rewriting
 immutable Arabic publications or losing old downloads and queued completions.
-**Next:** map API/package/client/IndexedDB/settings records; specify an additive
-migration and recovery procedure, preserving current lesson/version identifiers.
+**Next:** None for the local compatibility slice; use the recovery procedure before an authorized rollout. Hosted preservation/live recovery belongs to F24.6.
+
 **Done when:** old/new packages and offline caches load; settings/guest/account
 isolation survive; pending completions retain their meaning and remain idempotent;
 upgrade/recovery checks pass against a preserved copy of existing state.
 **Depends on:** F01/F02/F03/F15.1/F20; production database choice remains unresolved.
+**Evidence:** [implementation and verification](docs/multi-language/README.md).
+**Delivery:** local application only; no new course publication or deployment.
 
 #### F24.2 Language-aware learner presentation
 
-**Status:** Planned.
+**Status:** Active — course-aware software implemented; real device/AT and approved model-audio evidence remain.
 **Scope:** course-driven direction, language tags, fonts, help, audio controls,
 teaching, exercises, reviews, glossary and placement. Availability follows actual
 published packages. Retain the fixed lesson frame, free help/retries and mute choice.
-**Next:** inventory Arabic assumptions; use clearly labeled French/Khmer fixtures
-while preserving owner landing wording. Do not advertise fixtures as courses.
+**Next:** Agree and run the real-device/input/screen-reader matrix with approved first-unit text/audio; specifically verify Safari offline reload/reconnection after the WebKit internal-error diagnostic. Keep French/Khmer planned until their publication gates pass.
+
 **Done when:** Arabic RTL and French/Khmer LTR work without clipped text or broken
 focus; downloaded fonts/audio work offline; missing model/device voices have honest
 fallbacks; switching courses preserves a started lesson's language/state. Keyboard,
 screen-reader and non-listening/non-speaking paths support core study.
 **Depends on:** F24.1; language-specific checks in F25.3/F26.3.
+**Evidence:** [implementation and verification](docs/multi-language/README.md).
+**Delivery:** local application only; no new course publication or deployment.
 
 #### F24.3 Parallel study settings and daily queue
 
-**Status:** Needs decision — allocation and secondary-course rotation policy.
+**Status:** Done locally — owner approved the recommended policy October 15; whole-session queue implemented.
 **Scope:** select courses, choose a primary course and retain 5/10/15/30-minute total
 goals; allocate due review/new learning independently and persist guest/account
 choices with existing offline conflict handling. No combined proficiency score.
-**Recommendation:** retain the primary-course concept; rotate secondary courses
-across days when the budget cannot fit useful whole micro-lessons. Keep the current
-60% split where useful; agree rounding, rotation, due-review overflow and whole-lesson
-overruns explicitly. Show courses omitted today and keep manual study available.
-**Next:** agree deterministic examples for 1–5 courses and all goals, including
-5 minutes across five courses, unavailable content, overdue review and goal changes.
+**Approved policy:** whole sessions, roughly 60% primary when useful, UTC-date
+secondary rotation (three primary/two secondary slots per five days for a five-minute
+goal), one bounded due-review session first within each allocation, visible whole-lesson
+overruns and omitted/unavailable courses, plus unrestricted manual study. [Examples](docs/multi-language/README.md#queue-policy-approved-october-15).
+**Next:** None for the agreed software policy. Monitor first-unit/pilot findings before changing the policy; no cross-device review-history sync is claimed.
+
 **Done when:** agreed examples pass online/offline with stable ordering, bounded
 rotation so no course starves, no silent substitution/duplicate rewards and visible
 overruns; removing/re-adding a course preserves its history and started lessons.
 **Depends on:** F24.1/F15.1/F10. Cross-device review-history sync is a separate scope.
+**Evidence:** [implementation and verification](docs/multi-language/README.md).
+**Delivery:** local application only; no new course publication or deployment.
 
 #### F24.4 Multi-language curriculum console and validation
 
-**Status:** Planned.
+**Status:** Done locally — course profiles, console workflow, withdrawal and rollback implemented.
 **Scope:** per-language draft/import/source/audio checks, review dispositions, owner
 approval, publication, rollback and audit. Reject mismatched language/audio/segment
 records and unresolved critical linguistic or rights defects. Retain Quran integrity
 and MSA/Quranic publication gates until their own controls exist; enabling French
 and Khmer must not bypass those gates or establish expert-review claims.
-**Next:** specify validator profiles and source/rights/reviewer fields for F25/F26;
-coordinate with F22 typed-response work without making its future evaluator universal.
+**Next:** Use actual source/review definitions and owner approvals when F25/F26 candidates exist. No engineering fixture or unreviewed new-language content is published.
+
 **Done when:** valid drafts pass their profiles; invalid/unauthorized publication
 fails; rollback restores exact releases; public/download endpoints serve only
 approved versions with factual source/reviewer status and accepted-answer rationale.
 **Depends on:** F24.1/F03 and agreed course source/review definitions.
+**Evidence:** [implementation and verification](docs/multi-language/README.md).
+**Delivery:** local application only; no new course publication or deployment.
 
 #### F24.5 Mixed-language verification and pilot
 
-**Status:** Planned.
+**Status:** Active — automated mixed-language checks implemented; observed pilot not run.
 **Scope:** Arabic + French + Khmer settings, placement, lessons, glossary, due review,
 download, offline reload/completion and reconnection. Cover identity isolation,
 interrupted downloads, withdrawals, stale packages and switching; verify actual
 mobile text/input, keyboard and screen-reader behavior.
-**Next:** agree devices/browsers, participant setup and observation rubric when first
-units exist. New-language participant contact is a separate owner action.
+**Next:** Agree expansion devices/participants/rubric and provide reviewed first units with model audio. Execute the linked protocol; real AT and human learning evidence remain required.
+
 **Done when:** meaningful API/browser checks and real-device evidence pass; a small
 observed mixed-language pilot records versions, immediate/delayed retrieval, help,
 attempt counts and fix/retest dispositions. Access/progress blockers prevent release.
 Do not resume owner-deferred F18.1 without authorization.
 **Depends on:** F24.1–F24.4, first-unit text/audio/support under F25/F26 and pilot setup.
+**Evidence:** [implementation and verification](docs/multi-language/README.md).
+**Delivery:** local application only; no new course publication or deployment.
 
 #### F24.6 Expansion release decision and delivery
 
-**Status:** Needs decision — pilot/beta inclusion and release order.
+**Status:** Active — local deployment candidate prepared; rollout and beta decisions remain gated.
 **Scope:** truthful course depth/variety/review/provenance display, versioned release
-manifests, rollback, hosted verification and correction/support handling. No automatic
-landing-copy rewrite, billing, interface localization or paid hosting/provider signup.
+manifests, rollback, hosted verification and correction/support handling. Landing
+and shared copy changes are explicitly scoped in F24.7; no billing, interface
+localization or paid hosting/provider signup is included.
 **Recommendation:** verify both first units internally, then run a small language
 pilot before deciding whether either joins the first-100 Arabic beta. Retain original
 Arabic gates; keep unavailable courses factual until approved publication.
-**Next:** owner selects cohort/release boundary using pilot evidence. Code rollout
-and exact curriculum approval/publication remain separate authorized actions.
+**Next:** Review the local candidate and exact final verification record. Authorize rollout separately; decide cohort/beta inclusion after actual pilot evidence.
+
 **Done when:** authorized rollout records web/API/content versions, preservation of
 existing data/caches, live study/offline checks and a withdrawal/rollback rehearsal;
 no unverified outcome, CEFR-level or reviewer claims appear publicly.
-**Depends on:** F24.5 and approved per-language release scope; F18 if beta is widened.
+**Depends on:** F24.5, F24.7, F24.8 and approved per-language release scope; F18 if beta is widened.
+**Evidence:** [implementation and verification](docs/multi-language/README.md), [candidate and recovery](docs/multi-language/deployment-candidate.md).
+**Delivery:** local application only; no new course publication or deployment.
+
+#### F24.7 Multi-language wording, landing and visual identity
+
+**Status:** Active — shared copy, landing Languages section and Khmer accents implemented locally.
+**Outcome:** Ismi welcomes Khmer and future-language learners through shared English
+copy and course discovery while retaining its Arabic flagship and Palestinian roots.
+**Scope:** landing hero support, Languages section, course statuses/examples/FAQ,
+course-aware welcome, settings, help/audio, placement, glossary/progress, accessible
+names, errors/empty states, console messages and search/social/PWA descriptions.
+Retain Ismi and “Speak with the people you love”; keep Arabic/Quran messaging in
+Arabic contexts. Add Cambodian-inspired red/blue surfaces beside the existing
+green/red/gold/charcoal/white, with course accents separate from feedback semantics.
+Retain oval border-free hero, current characters, concise copy and stable lesson UX.
+Design for French and eventual Portuguese without advertising unpublished courses.
+Explore a three-script brand title: English / Arabic / Khmer. Retain the existing
+Ismi/اسمي identity and review the Khmer rendering before use; exact spelling,
+transliteration/translation choice and responsive arrangement remain design work.
+**Next:** Run real screen-reader/mobile checks. The owner selected title A (current Ismi/اسمي) October 15; no Khmer form is adopted before linguistic review.
+
+**Done when:** shared wording works without Arabic prerequisites; Arabic-specific
+labels remain precise; Khmer entry reaches its actual course or factual planned
+state; metadata and installed-app copy agree; old section links, returning entry,
+welcome preferences and Arabic study survive. Contrast, keyboard/screen-reader,
+enlarged-text and mobile/desktop checks pass; colors never act as the only signal.
+No fixture, future Portuguese course, audio/review status or outcome is overstated.
+The title exploration has an owner-reviewed outcome; any adopted Khmer form is
+linguistically checked, readable at mobile widths, correctly shaped and accessible
+alongside RTL Arabic/LTR English. Keep a compact Ismi title for constrained metadata.
+**Depends on:** F07/F17.3 baseline; F24.1/.2/.4 course metadata/presentation/availability;
+approved Khmer example/content before showing that example or enabling study entry.
+**Evidence:** [implementation and verification](docs/multi-language/README.md), [title options](docs/multi-language/brand-options.html), [original design context](docs/khmer-course-and-brand-expansion.md).
+**Delivery:** local application only; no new course publication or deployment.
+
+#### F24.8 Prominent language and course switching
+
+**Status:** Active — prominent selector, course filtering and scoped resume implemented locally.
+**Outcome:** learners immediately see which language/course is active and how to
+switch between Arabic and Khmer without visiting Account or hunting through Courses.
+**Scope:** a persistent, labeled selector in the mobile app header and desktop
+header/sidebar, with the current language and course plus an explicit “Switch” cue.
+Recommend two taps from a main page: open selector → choose Arabic or Khmer.
+Arabic retains its separate Palestinian Levantine/MSA/Quranic courses; restore the
+last usable course within that language, with clear choices for the others.
+Future French/Portuguese entries use the same selector when actually available.
+**Next:** Validate discoverability with approved first-unit candidates in the observed pilot and real AT/device matrix. Actual Khmer entry remains planned until content is published.
+
+**Done when:** switching is apparent on Today, Courses, Practice, Progress and Words;
+the selected course drives each page's content, help/audio labels, review and progress.
+Arabic ↔ Khmer takes at most two taps for already available courses from a main page;
+the selection survives reload and offline use of downloaded content. A started lesson
+keeps its course/state: switching never relabels it or loses work, and resume is clear.
+Separate placement, progress, pending completions and account/guest scope survive.
+Switching the viewed course does not silently change the primary course or daily
+allocation. Planned/undownloaded courses show factual states and cannot fall back
+silently to Arabic. Labels, focus, touch targets, keyboard/screen-reader operation
+and small-screen layouts pass; an observed first-unit task checks discoverability.
+**Depends on:** F24.1/.2 metadata/presentation, F24.3 settings integration, F24.4
+availability, F25/F26 published candidates and F24.5 verification. Khmer integration
+does not depend on French publication; enable each language as it becomes available.
+**Evidence:** [implementation and verification](docs/multi-language/README.md), [title options](docs/multi-language/brand-options.html), [original design context](docs/khmer-course-and-brand-expansion.md).
+**Delivery:** local application only; no new course publication or deployment.
 
 ### F25 French course
 
@@ -1383,7 +1481,8 @@ audio and F24.5/F24.6 for full release. These stages do not form a dependency cy
 
 ### F26 Khmer course
 
-**Status:** Planned — owner requested a full roadmap plan October 12, 2026.
+**Status:** Planned — October 12 course plan expanded October 15 with implementation
+milestones, first-unit briefs and F24.7 landing/wording/identity dependencies.
 **Outcome:** English-taught Khmer for adult beginners/false beginners communicating
 with partners, family and friends. Conversation and gradual script learning support
 each other; optional pronunciation help remains available without requiring reading
@@ -1400,16 +1499,22 @@ of taught words in script. At twelve units, complete a five-minute guided social
 scenario and read short taught-topic messages with optional help. Define the exact
 reading inventory/help in the rubric; promise neither unrestricted literacy nor
 proficiency certification. Distinguish conversation/listening/reading evidence.
-**Next:** F26.1 definition/source/review choices, then first-unit/script support design.
-Prototype Khmer rendering/input/segments alongside French's first unit so technical
-issues are discovered before committing to full-course authoring.
+**Next:** F26.1 definition/source/review choices, then one complete Khmer lesson
+through import, study, download, offline completion and reconnect beside Arabic.
+Prepare five first-unit lessons and script/audio support, with F24.7's landing and
+course-aware wording/identity. Prototype rendering/input/segments early; a completed
+French course is not a prerequisite. Use first-unit findings before bulk authoring.
 **Done when:** all six children pass; agreed units and script/sound modules are
 source-linked, validated, linguistically reviewed, owner-approved and published;
 audio, baseline guided speaking, offline/accessibility and observed outcomes pass.
+The shared landing and course entry meet F24.7, with honest availability and Khmer
+presentation while Arabic/Palestinian branding remains visible; F24.8 makes
+Arabic–Khmer switching prominent and preserves independent course state.
 First-unit or script-rendering success does not complete this parent.
 **Depends on:** F24, approved sources/audio rights, named Khmer linguistic review
 route and separately approved speech/AI setup for automated feedback.
 **Evidence:** [inspection](docs/multi-language-feasibility.md),
+[expanded milestones, first-unit briefs and shared brand/copy plan](docs/khmer-course-and-brand-expansion.md),
 [Unicode segmentation guidance](https://www.unicode.org/reports/tr29/#Word_Boundaries)
 and [W3C draft Khmer layout gap analysis](https://www.w3.org/TR/khmr-gap/).
 Unicode identifies tailored word/line-boundary needs; the W3C draft is a browser-check
@@ -1455,6 +1560,8 @@ review route are agreed; uncertain linguistic/cultural claims are excluded.
 **Scope:** five authored greeting/introduction/repair lessons, contextual recall,
 varied review and checkpoint; separate source-linked script, help, meaning, accepted
 answers and audio. Do not mechanically translate the French lesson sequence.
+The [five lesson briefs](docs/khmer-course-and-brand-expansion.md#first-unit-meet-someone-and-keep-the-exchange-going)
+cover greeting, names, personal details, communication repair and an integrated exchange.
 **Next:** draft from approved sources; record linguistic dispositions and owner
 wording approval before publication. Use early pilot findings before full authoring.
 **Done when:** packages/authored segments pass F24.4; address/register/help and
@@ -1524,7 +1631,7 @@ observed tasks support factual outcomes; exact owner-authorized publications and
 rollout include rollback, withdrawal and support handling. Rendered script or one
 successful participant is not proof of literacy or general course effectiveness.
 **Depends on:** F26.2/F26.3 and first-unit F26.5 audio for early pilot; F26.4/full audio
-and F24.5/F24.6 for full release. Early/full stages have separate evidence manifests.
+and F24.5/F24.6/F24.7/F24.8 for full release. Early/full stages have separate evidence manifests.
 
 ### F27 Feature discoverability and navigation
 
@@ -1594,18 +1701,38 @@ new implementation task. Existing F09 recordings/F11 guided speaking remain open
 The new language roadmap has its own dependency order: **F24 foundation → F25/F26
 first units and support → mixed-language pilot → remaining units → release decision**.
 It does not replace the selected Arabic engagement order above. No relative priority
-between these workstreams or new implementation start is inferred from adding plans.
+between these workstreams was inferred from adding plans. The owner subsequently
+authorized the entirety of F24 on October 15; F25/F26 authoring remains separate.
 Course definition/source work can proceed independently when authorized; full course
 authoring should follow the respective first-unit evidence. No completion dates are
 committed without agreed scope, content/reviewer availability and measured first-unit effort.
+F24.7 shared landing/wording/identity can be designed alongside the first units;
+enabled course entry and public claims must follow actual approved availability.
+Portuguese is eventual expansion direction, not a new implemented course or beta commitment.
 
 ## Recent planning changes
+
+- **October 15, 2026 F24:** owner authorized all eight children, approved the whole-session
+  queue/secondary rotation policy and requested a deployment candidate. Shared course
+  records/schema compatibility, presentation, selector/resume, console validation/
+  withdrawal and multilingual landing are implemented locally. [Behavior and verification](docs/multi-language/README.md).
+  Parent remains Active: reviewed first units, real AT/input, observed pilot and
+  separately authorized rollout/beta decisions remain. The owner selected title A
+  (current Ismi/اسمي pending Khmer linguistic review).
 
 - **October 16, 2026 F27.1:** application `5875e6d` is pushed/deployed on the existing
   Vercel development site (Ready; alias confirmed). The scoped frontend release
   preserves unrelated local course work. Build and all focused checks pass across
   the initial run and one cultural-refresh retry; mobile/desktop/offline and console
   returns are verified locally. No API/content change. [Rollout](docs/releases/2026-10-16-back-navigation.md).
+
+- **October 15, 2026 F26 / F24.7 / F24.8 / F27.1:** expanded Khmer into concrete integration and
+  first-unit milestones; added the shared landing, wording and visual-identity
+  scope for Khmer, French and eventual Portuguese. Retain Arabic/Palestinian roots
+  and the relationship promise; permit Khmer red/blue accents. [Plan and copy inventory](docs/khmer-course-and-brand-expansion.md).
+  Follow-up adds a three-script title exploration, prominent Arabic–Khmer switching
+  and consistent mobile-friendly back controls with measurable acceptance criteria.
+  Local planning only; no product implementation, publication or deployment.
 
 - **October 15, 2026 F21:** owner authorized implementation, selected broader Arabic
   and Monday UTC. Catalog/owner console and learner/offline scopes are built locally;
@@ -1620,11 +1747,6 @@ committed without agreed scope, content/reviewer availability and measured first
   owner-checked. Requested larger lesson/home portraits are deployed as `9b585a2`;
   production build and 12 existing character/layout/Today/completion checks pass.
   Vercel Ready and stable alias confirmed. [Evidence](docs/characters/app-art-v2/README.md#october-15-portrait-size-refinement).
-
-- **October 15, 2026 F27:** Done and deployed (`3d87ff4`, Vercel Ready). The full Playwright suite (100) and API tests (32) pass. Courses “Review and checkpoint” now opens `#/practice/checkpoints`. The recall browser spec runs last as `zzzz-recall.spec.ts` because its published lessons change later specs. The Playwright API server raises the auth rate limit; production keeps 10 per minute. [Verification](docs/feature-navigation.md#verification).
-
-- **October 14, 2026 F27:** owner authorized feature discoverability. Five tabs (Account moves to the header), a Practice tile hub, a Progress page, restrained feature colors, and weekly quests/streak on by default for new learners. Existing saved habit states stay as stored. [Plan](docs/feature-navigation.md).
-
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

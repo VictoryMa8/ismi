@@ -162,6 +162,8 @@ test('keyboard focus, model assistance, Arabic layout and guest/account separati
   await dialog.getByRole('button', { name: 'Check response' }).click()
   await expect(dialog.getByText('Help used before the first response.')).toBeVisible()
   expect(await dialog.evaluate(e => e.scrollWidth <= e.clientWidth + 1)).toBeTruthy()
+  // Browsers can blur a submit control as it becomes disabled during evidence save.
+  await page.evaluate(() => { if (document.activeElement instanceof HTMLElement) document.activeElement.blur() })
   await page.keyboard.press('Escape')
   await expect(start).toBeFocused()
   expect((await evidence(page))[0]!.firstHelped).toBe(true)
@@ -194,7 +196,11 @@ test('concurrent tabs retain both attempt records without advancing the schedule
   await Promise.all([page.getByRole('button', { name: 'Start typed recall' }).click(), second.getByRole('button', { name: 'Start typed recall' }).click()])
   for (const tab of [page, second]) await tab.getByLabel('Your response').fill('ah biddi artah shwayy')
   await Promise.all([page.getByRole('button', { name: 'Check response' }).click(), second.getByRole('button', { name: 'Check response' }).click()])
-  for (const tab of [page, second]) await expect(tab.getByText('That fits.', { exact: true })).toBeVisible()
+  for (const tab of [page, second]) {
+    await expect(tab.getByText('That fits.', { exact: true })).toBeVisible()
+    // Feedback appears before the async evidence/history transaction finishes.
+    await expect(tab.getByRole('button', { name: 'Try again', exact: true })).toBeEnabled()
+  }
   const records = await evidence(page)
   expect(records).toHaveLength(2)
   expect(records.every(r => r.firstResult === 'accepted')).toBe(true)

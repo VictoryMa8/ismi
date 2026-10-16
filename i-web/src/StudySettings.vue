@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { studyTracks, type StudyPreferences, type TrackId } from './studyPlan'
-const props = defineProps<{ preferences: StudyPreferences; busy: boolean; message: string; conflict: boolean }>()
+const props = defineProps<{ preferences: StudyPreferences; busy: boolean; message: string; conflict: boolean; availableCourseIds?: string[] }>()
 const emit = defineEmits<{ save: [value: StudyPreferences]; resolve: [keepLocal: boolean] }>()
 const draft = ref<StudyPreferences>({ ...props.preferences, selectedTrackIds: [...props.preferences.selectedTrackIds] })
 watch(() => props.preferences, value => { draft.value = { ...value, selectedTrackIds: [...value.selectedTrackIds] } }, { deep: true })
@@ -27,19 +27,19 @@ function toggle(id: TrackId, checked: boolean) {
         </div>
       </fieldset>
       <fieldset :disabled="busy">
-        <legend>Tracks</legend>
+        <legend>Courses</legend>
         <label v-for="track in studyTracks" :key="track.id" class="study-track-option">
           <input type="checkbox" :checked="draft.selectedTrackIds.includes(track.id)" @change="toggle(track.id, ($event.target as HTMLInputElement).checked)" />
-          <span>{{ track.name }}<small v-if="track.id !== 'levantine'">Lessons not yet available</small></span>
+          <span>{{ track.name }}<small v-if="!availableCourseIds?.includes(track.id)">Lessons not yet available</small></span>
         </label>
       </fieldset>
       <div class="primary-track-select">
-        <label for="primary-study-track">Primary track</label>
+        <label for="primary-study-track">Primary course</label>
         <select id="primary-study-track" v-model="draft.primaryTrack" :disabled="busy || !selected.length">
           <option v-for="track in selected" :key="track.id" :value="track.id">{{ track.name }}</option>
         </select>
       </div>
-      <p v-if="!selected.length" role="alert">Select at least one track.</p>
+      <p v-if="!selected.length" role="alert">Select at least one course.</p>
       <button class="primary-action" type="submit" :disabled="busy || !selected.length || conflict">{{ busy ? 'Saving…' : 'Save study settings' }}</button>
     </form>
     <p v-if="message" class="settings-status" role="status">{{ message }}</p>

@@ -167,3 +167,7 @@
 .landing-final a.landing-button { background: #fffdf8; color: #07654b; border-color: #fffdf8; }
 .landing-final a.landing-button:hover { background: #fff3d5; }
 @media (max-width: 760px) { .landing-nav.is-open { background: #fffdf8; } }
+
+.landing-page .track-khmer { border-top: .4rem solid #174b91; border-bottom: .4rem solid #ab193b; background: white; color: #172c45; }
+.landing-page .track-khmer .landing-outline-button { color: #174b91; border-color: #174b91; }
+#arabic-tracks { display: block; scroll-margin-top: 6rem; }

@@ -1,5 +1,10 @@
 # French, Khmer and parallel language study
 
+Subsequent authorization: the owner requested all F24 implementation and a deployment
+candidate on October 15. See [implementation and verification](multi-language/README.md)
+and the current roadmap. This original planning/assessment text does not itself
+approve F25/F26 course authoring, content publication or deployment.
+
 Assessment October 12, 2026. The owner subsequently authorized expanding the product
 roadmap to French, Khmer and parallel language study. The current plans are F24–F26
 in [ROADMAP.md](../ROADMAP.md#f24-multi-language-foundation-and-parallel-study).

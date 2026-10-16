@@ -1,3 +1,4 @@
+import { readableLesson } from './courses'
 import type { StudySettings } from './studyPlan'
 import type { CulturalCatalog, PublicCulturalEdition, CulturalDetail, CulturalEdition, CulturalSummary } from './culture'
 import { renameCharacterContent } from './characters'
@@ -134,7 +135,7 @@ export function getDashboard(): Promise<DashboardResponse> {
 }
 
 export function getLesson(lessonId: string): Promise<LessonResponse> {
-  return request<LessonResponse>(`/api/lessons/${lessonId}`).then(renameCharacterContent)
+  return request<LessonResponse>(`/api/lessons/${lessonId}`).then(renameCharacterContent).then(readableLesson)
 }
 
 export function submitLessonAttempt(
@@ -168,9 +169,11 @@ export function getCurriculumVersion(versionId: number): Promise<CurriculumVersi
 }
 
 async function ensureRecallSupport(lesson: LessonResponse): Promise<void> {
-  if (!lesson.recall?.length) return
+  if (!lesson.recall?.length && lesson.schemaVersion !== 2) return
   const health = await request<{ features?: string[] }>('/api/health')
-  if (!health.features?.includes('typed-recall-v1'))
+  if (lesson.schemaVersion === 2 && !health.features?.includes('multi-language-v1'))
+    throw new ApiRequestError('Deploy the API with multi-language support before importing or saving schema-2 content.', 409)
+  if (lesson.recall?.length && !health.features?.includes('typed-recall-v1'))
     throw new ApiRequestError('Deploy the API with recall support before importing or saving recall content.', 409)
 }
 
@@ -261,4 +264,8 @@ export function getRecallReports(): Promise<RecallReviewCase[]> {
 }
 export function resolveRecallReport(id: string, resolution: string): Promise<RecallReviewCase> {
   return request(`/api/admin/curriculum/recall-reports/${id}/resolve`, { method: 'POST', body: JSON.stringify({ resolution }) })
+}
+
+export function withdrawCurriculumVersion(versionId: number, reason: string): Promise<CurriculumVersionDetail> {
+  return request(`/api/admin/curriculum/versions/${versionId}/withdraw`, { method: 'POST', body: JSON.stringify({ reason }) })
 }
