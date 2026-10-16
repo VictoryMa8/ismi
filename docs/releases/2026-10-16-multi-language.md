@@ -100,3 +100,11 @@ Reviewed first units, real device/input/screen-reader and mixed-language learnin
 evidence, real Safari offline support, exact content approvals and beta inclusion
 remain open. F24 stays Active. No paid host, provider, account or monitoring change
 is introduced; a runtime error scan and real-device release audit are not claimed.
+
+## Notice spacing follow-up
+
+Frontend `a7f8f4a` adds a 24 px gap below the unavailable-course card. Production
+build and direct 320/1280 px layout checks pass without horizontal overflow.
+Deployment `dpl_BDnrVdY7vZ3475Cg4dxoCK4ySd7v` is Ready, stable aliases assigned;
+the live desktop gap measures 24 px after refreshing the cached PWA. API and
+curriculum remain unchanged.

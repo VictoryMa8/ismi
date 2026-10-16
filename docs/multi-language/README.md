@@ -234,3 +234,7 @@ heading has a clear gap. This applies to every unavailable course. Direct browse
 measurements at 320 and 1280 px both show 24 px separation and no horizontal
 overflow; the production TypeScript/Vite/PWA build passes. This is a CSS-only
 follow-up; no API, settings or curriculum change is needed.
+
+Frontend `a7f8f4a` is pushed and deployed October 16. Vercel deployment
+`dpl_BDnrVdY7vZ3475Cg4dxoCK4ySd7v` is Ready on the existing stable alias.
+The live desktop page measures the same 24 px gap after its PWA reload.
