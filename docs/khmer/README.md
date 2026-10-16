@@ -121,3 +121,12 @@ draft import, publication, provider signup, participant contact or beta expansio
 is included in this release.
 F26 remains Active for exact review/source/help/reading decisions, human audio,
 script/sound modules, observed first-unit/device evidence and then units 2–12.
+
+## October 16 application delivery
+
+Owner-authorized application `57b7898` is pushed/deployed to the existing web/API
+development preview. Vercel is Ready; exact API revision, 15 hosted table hashes,
+13 published payloads and recording/key preservation pass. Live browser checks
+confirm new console guidance and planned Khmer state after refreshing the cached
+PWA. No hosted draft import or curriculum publication.
+[Rollout and recovery](../releases/2026-10-16-khmer-drafts.md).

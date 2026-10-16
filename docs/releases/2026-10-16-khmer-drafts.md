@@ -40,9 +40,58 @@ the exact assembly, revision and persistent assets.
 
 ## Rollout status
 
-Preparing the clean application commit and API-before-web rollout. Exact revision,
-backup path, provider deployment status and post-rollout evidence will be recorded
-once verified. An authorized rollout is not yet a claim of live availability.
+Application `57b789802faf08a36a866d5734b136f04e935aba` is pushed to `main` and
+both application targets are verified.
+
+### API
+
+`npm run deploy:api` rebuilt the clean commit in Release mode, installed it before
+the frontend push and verified health revision
+`1.0.0+57b789802faf08a36a866d5734b136f04e935aba`, the installed assembly, SQLite
+integrity, recordings and cookie keys. Retained application/SQLite recovery path:
+`/home/ismi/ismi/deployments/20261016-060118-57b789802faf`.
+
+The post-rollout aggregate snapshot is
+`/private/tmp/ismi-f26-hosted-after.json`. It compares exactly with the preflight:
+all 15 table counts/logical hashes, all 13 published lesson/version/payload hashes,
+all recording/key hashes and zero Khmer records. Existing learner data and Arabic
+publications are preserved; no local database or candidate draft was uploaded.
+The script's healthy exact revision is the API verification evidence; browser
+navigation to an API URL is not treated as a JSON/proxy check because the installed
+PWA navigation fallback can show the landing page for that navigation.
+
+### Frontend
+
+The push created Vercel deployment `dpl_6tAXD26TPGuE3JpdQr2fBP6ejR6R`,
+[ismi-dyqfhgt7l-victorys-projects-c1cb4594.vercel.app](https://ismi-dyqfhgt7l-victorys-projects-c1cb4594.vercel.app).
+CLI inspection confirms **Ready**, exact application commit `57b7898`, and the
+existing `ismi-arabic.vercel.app` and `ismi-ruby.vercel.app` aliases. The provider
+calls this Git target `production`; it remains Ismi's free development preview,
+not the invite-only beta release.
+
+Live browser verification on the stable alias confirms:
+
+- Today loads existing signed-in study state and the saved Arabic resume control.
+- The owner console displays the new pending-review/private-preview guidance.
+- Selecting Khmer shows “Lessons not yet available” and factual planned status.
+- Returning to Arabic restores its course context/resume entry.
+- No browser console errors are captured during the checks. This is a limited
+  browser check, not a provider runtime-log scan or real-device/AT pass.
+
+The existing PWA initially displayed cached pre-release console guidance. A reload
+after deployment activation loaded the new guidance successfully. No storage was
+cleared and no lesson completion, content mutation, approval or settings change
+was submitted. The viewed course was restored to Arabic. Review all private Khmer
+candidates locally; they have not been imported into the hosted console.
+
+### Recovery
+
+The preceding API application is `f515f43`; the preceding frontend source is
+`127a56c` (documentation on top of the notice-spacing release). API `old/` and
+`before/ismi.db` are retained under the recovery directory above. Roll application
+files back separately from persistent learner data. There are no new database
+tables or content migrations in this release; do not overwrite the live DB to
+undo an application rollout.
 
 ## Remaining course gates
 

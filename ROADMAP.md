@@ -15,8 +15,9 @@ help. Five unreviewed first-unit candidates are imported locally as draft record
 and source-rights research. API 40/40 and 11 distinct focused browser checks pass
 across runs. All 13 existing local published payloads are preserved. Fluent review,
 source/help/inventory approval, human audio and first-unit/device evidence precede
-publication and units 2–12. Owner authorized push/deployment October 16; application
-rollout is in progress, with no hosted draft import or curriculum publication.
+publication and units 2–12. Application `57b7898` is pushed/deployed October 16;
+Vercel Ready, exact API revision and all hosted data/assets are verified. No hosted
+draft import or curriculum publication. [Rollout](docs/releases/2026-10-16-khmer-drafts.md).
 [Candidate and evidence](docs/khmer/README.md).
 
 **F24 — Application deployed October 16:** multi-language foundation, course selector,
@@ -1551,11 +1552,13 @@ reference, not curriculum authority. [First-unit implementation/evidence](docs/k
 [packages/review sheets](content/khmer/meet-01/README.md),
 [source/rights register](docs/research/khmer-course-sources.md). No human recordings,
 committed reviewer or learner outcome evidence exists.
-**Delivery:** push/deployment authorized October 16; application rollout in progress.
-Five local v1 draft records 27–31 remain unpublished; no hosted import is included.
-API 40/40, build and 11 distinct focused browser checks pass across runs; all 13
-existing local published payloads compare exactly. [Rollout](docs/releases/2026-10-16-khmer-drafts.md).
-Parent remains Active; full scope and remaining review/audio/pilot gates are unchanged.
+**Delivery:** application `57b7898` pushed/deployed October 16 to the existing
+web/API development preview. Vercel Ready, exact API revision, 15 hosted table hashes,
+13 published payloads and assets preserved; live console guidance and course states
+verified. Five local v1 drafts (27–31) remain unpublished; zero hosted Khmer records.
+API 40/40, build and 11 distinct focused browser checks pass across runs.
+[Rollout/recovery](docs/releases/2026-10-16-khmer-drafts.md). Parent remains Active
+for review/audio/pilot and remaining course criteria.
 
 **Proposed unit sequence:** Khmer wording, grammar, pronunciation, address and
 cultural notes require approved sources/reviewer validation before lesson drafting.
@@ -1772,8 +1775,10 @@ Portuguese is eventual expansion direction, not a new implemented course or beta
   truthful pending review/rights, private preview and optional script support.
   API 40/40, build and 11 distinct focused browser checks pass across runs; all
   13 local published payloads preserved. [Evidence](docs/khmer/README.md).
-  Owner subsequently authorized push/deployment; application rollout in progress.
-  Reviewer/audio/pilot and units 2–12 remain; no hosted draft import or publication.
+  Owner-authorized application `57b7898` is pushed/deployed: Vercel Ready, exact API
+  revision and all 15 hosted table hashes/13 published payloads/assets preserved.
+  [Rollout](docs/releases/2026-10-16-khmer-drafts.md). Reviewer/audio/pilot and units
+  2–12 remain; no hosted draft import or publication.
 
 - **October 16, 2026 F24:** owner authorized push/deployment. Application `f515f43`
   is deployed to the existing web/API preview, with exact revision, all 15 hosted
