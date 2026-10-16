@@ -39,6 +39,7 @@ import LessonScroll from './LessonScroll.vue';
 import LessonTransition from './LessonTransition.vue';
 import PhraseBuilder from './PhraseBuilder.vue';
 import SoundToggle from './SoundToggle.vue';
+import BackControl from './BackControl.vue';
 import CharacterCue from './CharacterCue.vue';
 import { playUiSound } from './uiSounds';
 import type { ReviewAvailability, StudyActivity } from './learningHabits';
@@ -878,14 +879,7 @@ defineExpose({ start });
             </LessonTransition>
           </LessonScroll>
           <footer class="lesson-actions" aria-label="Review navigation">
-            <button
-              v-if="finished"
-              class="primary-action"
-              type="button"
-              @click="close"
-            >
-              Back to practice
-            </button>
+            <BackControl v-if="finished" @click="close">Back to practice</BackControl>
             <template v-else-if="mode === 'recall'">
               <button
                 class="primary-action"

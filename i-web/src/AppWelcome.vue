@@ -2,6 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import { ArrowRight, BookOpen, MessageCircle, Compass } from '@lucide/vue';
 import CharacterPortrait from './CharacterPortrait.vue';
+import BackControl from './BackControl.vue';
 
 const emit = defineEmits<{ close: [] }>();
 const dialog = ref<HTMLDialogElement | null>(null);
@@ -99,14 +100,7 @@ onBeforeUnmount(() => {
       <p id="welcome-card-text">{{ card.text }}</p>
     </section>
     <footer class="welcome-actions">
-      <button
-        v-if="index > 0"
-        type="button"
-        class="welcome-back"
-        @click="move(-1)"
-      >
-        Back
-      </button>
+      <BackControl v-if="index > 0" @click="move(-1)">Back</BackControl>
       <span v-else />
       <button
         v-if="index < 2"
@@ -153,8 +147,7 @@ onBeforeUnmount(() => {
   font-size: 0.8125rem;
   font-weight: 700;
 }
-.welcome-skip,
-.welcome-back {
+.welcome-skip {
   border: 0;
   background: transparent;
   color: #3b5348;

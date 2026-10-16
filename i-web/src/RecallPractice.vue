@@ -9,6 +9,7 @@ import type { CourseLessonSummary, LessonResponse } from './types'
 import LessonScroll from './LessonScroll.vue'
 import LessonTransition from './LessonTransition.vue'
 import SoundToggle from './SoundToggle.vue'
+import BackControl from './BackControl.vue'
 import { playUiSound } from './uiSounds'
 import { reviewDueAt } from './reviewSchedule'
 import CanDoProgress from './CanDoProgress.vue'
@@ -50,6 +51,7 @@ const field = ref<HTMLTextAreaElement | null>(null)
 const closeButton = ref<HTMLButtonElement | null>(null)
 let opener: HTMLElement | null = null
 let returnFocusScope: string | null = null
+let closeRequested = false
 let generation = 0
 let sessionScope = ''
 const independent = ref(0)
@@ -117,6 +119,7 @@ async function start(lessonId?: string, targetId?: string) {
   if (loading.value || busy.value || !available.value.length) return
   opener = document.activeElement as HTMLElement
   returnFocusScope = null
+  closeRequested = false
   sessionScope = props.scope
   queue.value = lessonId ? available.value.filter(t => t.lesson.id === lessonId && t.target.id === targetId) : available.value.slice(0, 6)
   if (!queue.value.length) return
@@ -127,25 +130,37 @@ async function start(lessonId?: string, targetId?: string) {
   await nextTick(); closeButton.value?.focus()
 }
 async function close() {
-  if (busy.value) return
+  // Escape can arrive as feedback appears, before its evidence has finished saving.
+  // Complete that save, then honor the exit instead of dropping the key press.
+  if (busy.value) { closeRequested = true; return }
+  closeRequested = false
   open.value = false; answer.value = ''; reportExplanation.value = ''; queue.value = []; evidence.value = null
   returnFocusScope = props.scope
   document.body.style.overflow = ''; await refresh(); await nextTick()
   await restoreOpenerFocus()
+  // The parent may remove inert after this child settles its async refresh.
+  requestAnimationFrame(() => void restoreOpenerFocus())
 }
 async function restoreOpenerFocus() {
   if (returnFocusScope !== props.scope || open.value || loading.value || busy.value) return
   await nextTick()
   if (returnFocusScope !== props.scope || open.value || loading.value || busy.value) return
-  returnFocusScope = null
   // A newer refresh may supersede close()'s refresh. Restore only when that
   // refresh settles, and do not steal focus if the learner has already moved on.
   const active = document.activeElement
-  if (active !== document.body && active?.id !== 'main-content') return
-  if (opener?.isConnected && !opener.matches(':disabled')) opener.focus()
+  if (active === opener) { returnFocusScope = null; return }
+  if (active !== document.body && active?.id !== 'main-content') { returnFocusScope = null; return }
+  if (opener?.isConnected && !opener.matches(':disabled') && !opener.closest('[inert]')) {
+    opener.focus()
+    if (document.activeElement === opener) returnFocusScope = null
+  }
 }
-watch([loading, busy], () => void restoreOpenerFocus())
+watch([loading, busy], () => {
+  if (closeRequested && !busy.value && open.value) void close()
+  else void restoreOpenerFocus()
+})
 function focusHeading() {
+  if (!open.value) return
   const content = heading.value?.closest<HTMLElement>('.lesson-content')
   if (content) content.scrollTop = 0
   heading.value?.focus({ preventScroll: true })
@@ -240,17 +255,26 @@ async function online() {
 watch(open, value => emit('open-change', value))
 watch(() => props.scope, () => {
   returnFocusScope = null
+  closeRequested = false
   generation++; open.value = false; document.body.style.overflow = ''; answer.value = ''; queue.value = []; evidence.value = null
   pending.value = []; packages.value = []; savedEvidence.value = []; savedHistory.value = []; void refresh()
 })
 watch(() => [props.lessons, props.historyRevision], () => void refresh())
+function escapeRecall(event: KeyboardEvent) {
+  // A disabled submit control can temporarily leave focus on body while evidence
+  // saves. Escape must still reach the open modal during that interval.
+  if (open.value && event.key === 'Escape' && !event.defaultPrevented && !event.isComposing) {
+    event.preventDefault()
+    void close()
+  }
+}
 function visibility() { if (document.visibilityState === 'visible') { now.value = Date.now(); void refresh() } }
 onMounted(() => {
-  void refresh(); window.addEventListener('online', online); document.addEventListener('visibilitychange', visibility)
+  void refresh(); window.addEventListener('online', online); document.addEventListener('visibilitychange', visibility); document.addEventListener('keydown', escapeRecall)
   clock = setInterval(() => { now.value = Date.now() }, 60_000)
 })
 onBeforeUnmount(() => {
-  generation++; window.removeEventListener('online', online); document.removeEventListener('visibilitychange', visibility)
+  generation++; window.removeEventListener('online', online); document.removeEventListener('visibilitychange', visibility); document.removeEventListener('keydown', escapeRecall)
   if (clock) clearInterval(clock)
   if (open.value) document.body.style.overflow = ''
 })
@@ -281,7 +305,7 @@ onBeforeUnmount(() => {
   </Teleport>
   <Teleport to="body">
     <div v-if="open" class="lesson-overlay" @click.self="close">
-      <section ref="dialog" class="lesson-sheet" role="dialog" aria-modal="true" aria-labelledby="recall-title" @keydown.esc="close" @keydown="trap">
+      <section ref="dialog" class="lesson-sheet" role="dialog" aria-modal="true" aria-labelledby="recall-title" @keydown="trap">
         <header class="lesson-sheet-header">
           <h2 id="recall-title">Recall and recombine</h2>
           <div class="lesson-header-controls"><SoundToggle /><button ref="closeButton" class="close-button" :disabled="busy" aria-label="Close recall" @click="close">×</button></div>
@@ -293,7 +317,7 @@ onBeforeUnmount(() => {
               <h3 ref="heading" tabindex="-1">Recall complete</h3>
               <p>{{ independent }} of {{ total }} first answers matched without help.</p>
               <p>Written recall on this device. This does not assess speaking.</p>
-              <button class="primary-action" @click="close">Back to practice</button>
+              <BackControl @click="close">Back to practice</BackControl>
             </div>
             <div v-else-if="turn" :key="`${turn.lesson.id}:${turn.variant.id}`" class="practice-page recall-page" :data-recall-target="turn.target.id" :data-recall-variant="turn.variant.id">
               <p class="review-origin">{{ turn.lesson.title }}</p>

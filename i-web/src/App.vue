@@ -38,6 +38,7 @@ import ReviewPractice from './ReviewPractice.vue';
 import RecallPractice from './RecallPractice.vue';
 import LearnedWords from './LearnedWords.vue';
 import CulturalPicks from './CulturalPicks.vue';
+import BackControl from './BackControl.vue';
 import CharacterCast from './CharacterCast.vue';
 import CharacterCue from './CharacterCue.vue';
 import CharacterPortrait from './CharacterPortrait.vue';
@@ -193,6 +194,7 @@ async function handlePageChange() {
     ?.focus({ preventScroll: true });
 }
 const consoleOpen = ref(false);
+let consoleOpener: HTMLElement | null = null;
 const accountMode = ref<'login' | 'register'>('login');
 const accountSubmitting = ref(false);
 const accountError = ref<string | null>(null);
@@ -514,8 +516,14 @@ function closeAccount() {
 }
 
 function openCurriculumConsole() {
-  navigate('today');
+  consoleOpener = document.activeElement as HTMLElement | null;
   consoleOpen.value = true;
+}
+
+async function closeCurriculumConsole() {
+  consoleOpen.value = false;
+  await nextTick();
+  (consoleOpener?.isConnected ? consoleOpener : document.querySelector<HTMLElement>('#main-content'))?.focus({ preventScroll: true });
 }
 
 function selectAccountMode(mode: 'login' | 'register') {
@@ -1208,7 +1216,7 @@ async function finishLesson() {
           <UserRound :size="21" aria-hidden="true" />
           <span>Account</span>
         </a>
-        <a class="landing-return" href="#">Back to landing page</a>
+        <BackControl class="landing-return" href="#">Back to landing page</BackControl>
         <div class="sound-preference">
           <SoundToggle /><span>Interface sounds</span>
         </div>
@@ -1241,9 +1249,7 @@ async function finishLesson() {
         </div>
       </header>
 
-      <a class="landing-return mobile-landing-return" href="#"
-        >Back to landing page</a
-      >
+      <BackControl class="landing-return mobile-landing-return" href="#">Back to landing page</BackControl>
 
       <p v-if="downloadError" role="status">{{ downloadError }}</p>
 
@@ -1544,7 +1550,7 @@ async function finishLesson() {
       </template>
       <CulturalPicks v-if="page === 'practice-culture'" :edition-id="culturalEditionId" />
       <template v-if="practiceChild && studyPageAvailable">
-        <a class="page-link" href="#/practice">Back to Practice</a>
+        <BackControl class="page-back" href="#/practice">Back to Practice</BackControl>
         <header class="page-heading"><h1>{{ pageTitle }}</h1></header>
         <div v-if="page === 'practice-review'" id="practice-review"></div>
         <div v-if="page === 'practice-checkpoints'" id="practice-checkpoints"></div>
@@ -1611,6 +1617,7 @@ async function finishLesson() {
         class="account-sheet account-page"
         aria-labelledby="account-title"
       >
+        <BackControl class="page-back" href="#/today">Back to Today</BackControl>
         <header class="account-sheet-header">
           <div>
             <h1 id="account-title">
@@ -1656,9 +1663,9 @@ async function finishLesson() {
             >
               {{ accountSubmitting ? 'Signing out…' : 'Sign out' }}
             </button>
-            <button class="primary-action" type="button" @click="closeAccount">
+            <BackControl @click="closeAccount" :disabled="accountSubmitting || studySettings.busy.value">
               Continue learning
-            </button>
+            </BackControl>
           </div>
           <button
             v-if="authSession.canManageCurriculum"
@@ -1755,14 +1762,9 @@ async function finishLesson() {
             </button>
           </form>
 
-          <button
-            class="guest-action"
-            type="button"
-            :disabled="accountSubmitting || studySettings.busy.value"
-            @click="closeAccount"
-          >
+          <BackControl :disabled="accountSubmitting || studySettings.busy.value" @click="closeAccount">
             Continue as guest
-          </button>
+          </BackControl>
           <p class="account-privacy">
             Sign in to sync progress across devices.
           </p>
@@ -1890,12 +1892,7 @@ async function finishLesson() {
             >
               Try again
             </button>
-            <button
-              v-else
-              class="primary-action"
-              type="button"
-              @click="closeLesson"
-            >
+            <BackControl v-else @click="closeLesson">
               {{
                 previewMode
                   ? 'Back to curriculum'
@@ -1907,7 +1904,7 @@ async function finishLesson() {
                         ? 'Back to practice'
                         : 'Back to today'
               }}
-            </button>
+            </BackControl>
           </footer>
         </div>
         <template v-else-if="lesson && currentStep">
@@ -2228,7 +2225,7 @@ async function finishLesson() {
   <CurriculumConsole
     v-if="consoleOpen"
     :inert="lessonOpen"
-    @close="consoleOpen = false"
+    @close="closeCurriculumConsole"
     @preview="previewLesson"
   />
 </template>

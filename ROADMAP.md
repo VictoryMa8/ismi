@@ -8,6 +8,8 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
+**F27.1 — Complete locally; release authorized October 15:** shared 48 px arrow-and-label return controls, explicit destinations and keyboard/offline checks. The frontend-only release excludes unrelated local course work. [Behavior and verification](docs/mobile-back-navigation.md).
+
 **F17.6 — Complete and deployed October 13:** three Everyday written-recall can-do cards,
 versioned attempt/help/date evidence, targeted practice and an optional outcome
 achievement use the owner-approved independent / distinct-situation / 24-hour
@@ -184,6 +186,7 @@ sources, permissions and linguistic/audio review are needed before publication.
 | [F25](#f25-french-course) | French course | Planned · definition decisions | Proposed twelve-week course; select variety, depth and review route |
 | [F26](#f26-khmer-course) | Khmer course | Planned · definition decisions | Proposed twelve-week course; select variety, script/help and review route |
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
+| [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · release authorized | Isolated frontend verification and Vercel push/deploy |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
 Needs decision = a named choice prevents the next step; Needs input = external
@@ -1529,6 +1532,43 @@ and F24.5/F24.6 for full release. Early/full stages have separate evidence manif
 **Evidence:** [behavior and verification](docs/feature-navigation.md). October 15: full Playwright suite 100 passed; API tests 32 passed.
 **Delivery:** frontend `3d87ff4` pushed to `main` and Vercel Ready October 15; API not redeployed.
 
+#### F27.1 Mobile-friendly back navigation
+
+**Status:** Done locally — owner authorized implementation October 15, 2026;
+bounded completion criteria met; separate from delivered F27.
+**Outcome:** page-back controls are recognizable, comfortable to tap and consistently
+placed rather than appearing as plain underlined anchor text.
+**Scope:** audit every page/sheet with a return action, including Back to landing,
+Practice subpages, cultural archive/detail, Words/context, Account and curriculum
+views. Use a shared leading chevron/arrow and concise destination label with a
+button-like surface or outline, generous spacing and at least a 44×44 CSS-pixel
+target. Preserve links for navigation and buttons for actions/dialog dismissal.
+**Implemented:** shared `BackControl.vue` across landing returns, Practice/cultural
+pages, Account returns, lesson/review/recall completion, owner console and welcome
+card navigation. Anchors retain explicit destinations; action buttons retain their
+handlers. Targets are at least 48×48 px with wrapping labels, focus and forced-colors
+support. Account adds a Today return. Curriculum retains its underlying page and
+restores opener focus. Recall queues Escape during evidence saves and prevents late
+feedback focus after closure. No new lesson-resume policy is introduced.
+**Next:** owner authorized push/deployment October 15; verify the isolated F27.1 release and existing Vercel target.
+**Done when:** every applicable back action uses the shared treatment and visible
+destination; small screens/enlarged text avoid clipping and crowded adjacent controls.
+Direct/deep-linked entry has a reliable in-app destination rather than blindly
+calling browser history. Normal browser back/history, keyboard/focus and offline
+routes work; lesson exit/resume and explicit landing return remain available.
+Nested pages return to the correct parent and preserve supported context/filters;
+RTL teaching text does not reverse the surrounding English navigation unexpectedly.
+**Depends on:** F07/F27 and existing routes; no Khmer content/provider dependency.
+**Evidence:** [implementation, previews and verification](docs/mobile-back-navigation.md).
+Production build passes; eight existing landing-return checks pass and the original
+recall keyboard-return scenario passes three consecutive runs after its timing fix.
+Direct inspection at 320/390/1280 px confirms targets, keyboard/history, 200% text,
+forced colors, offline reload/Practice/landing and owner-console focus preservation.
+Initial broader run was 50/53; found display/focus defects are corrected. Subsequent
+wider checks encounter old hero/“Primary track” text expectations after concurrent
+course edits, so no fully green shared-checkout suite is claimed.
+**Delivery:** owner-authorized frontend release in preparation; no API or curriculum change. Real AT release evidence remains F18; unrelated course edits stay local.
+
 ## Selected future implementation order
 
 The owner selected research priorities **1, 2, 4, 5 and 6** on October 12:
@@ -1555,6 +1595,8 @@ committed without agreed scope, content/reviewer availability and measured first
 
 ## Recent planning changes
 
+- **October 15, 2026 F27.1:** shared mobile-friendly return controls and keyboard exit fixes are implemented; owner authorized push/deployment. Verify the isolated frontend release; no API or curriculum change. [Evidence](docs/mobile-back-navigation.md).
+
 - **October 15, 2026 F21:** owner authorized implementation, selected broader Arabic
   and Monday UTC. Catalog/owner console and learner/offline scopes are built locally;
   four research drafts imported with explicit blocking media checks. Build/37 API
@@ -1573,13 +1615,6 @@ committed without agreed scope, content/reviewer availability and measured first
 
 - **October 14, 2026 F27:** owner authorized feature discoverability. Five tabs (Account moves to the header), a Practice tile hub, a Progress page, restrained feature colors, and weekly quests/streak on by default for new learners. Existing saved habit states stay as stored. [Plan](docs/feature-navigation.md).
 
-
-- **October 13, 2026 F17.6:** owner authorized implementation and approved the
-  independent first-response / distinct-situation / 24-hour due-review policy. Three
-  can-do cards and an optional versioned outcome achievement are complete/deployed;
-  build and 18 distinct focused/regression checks pass. `7b80136` is pushed/Vercel Ready;
-  live Practice/cards/policy/reload verified. [Rollout](docs/releases/2026-10-13-can-do.md).
-  [Behavior and verification](docs/can-do-progress.md).
 
 Keep this log short (latest five meaningful changes). Put detailed evidence in the
 linked feature notes; keep private learner observations outside Git.

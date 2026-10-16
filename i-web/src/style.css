@@ -1909,9 +1909,10 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 .character-mapping dd { margin: 4px 0; }
 @media (max-width: 380px) { .course-path .character-cast.compact { display: none; } }
 
-.landing-return { display: inline-flex; align-items: center; min-height: 44px; color: var(--teal-dark); font-size: 13px; font-weight: 600; text-underline-offset: 4px; margin-bottom: 12px; }
-.mobile-landing-return { display: none; }
-@media (max-width: 900px) { .mobile-landing-return { display: inline-flex; margin: 0 0 14px; } }
+.page-back { margin-bottom: 18px; }
+.landing-return { margin-bottom: 12px; }
+.main-content > .back-control.mobile-landing-return { display: none; }
+@media (max-width: 900px) { .main-content > .back-control.mobile-landing-return { display: inline-flex; margin: 0 0 14px; } }
 
 .study-allocations { padding-left: 1.25rem; line-height: 1.8; }
 .study-queue { padding-left: 1.5rem; }

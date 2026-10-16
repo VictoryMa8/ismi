@@ -4,8 +4,8 @@ import RecordingEditor from './RecordingEditor.vue';
 import RecallReports from './RecallReports.vue';
 import CharacterMapping from './CharacterMapping.vue';
 import CulturalMediaConsole from './CulturalMediaConsole.vue';
+import BackControl from './BackControl.vue';
 import {
-  ArrowLeft,
   CheckCircle2,
   ClipboardCheck,
   FilePlus2,
@@ -53,6 +53,7 @@ const dirty = computed(
     savedSnapshot.value !== JSON.stringify([lessonJson.value, sources.value]),
 );
 const loading = ref(true);
+const consoleHeader = ref<HTMLElement | null>(null);
 const error = ref<string | null>(null);
 const notice = ref<string | null>(null);
 const validation = ref<CurriculumValidationResult | null>(null);
@@ -62,7 +63,10 @@ const canEdit = computed(
 );
 const selectedStatus = computed(() => selected.value?.status ?? 'new');
 
-onMounted(loadVersions);
+onMounted(() => {
+  consoleHeader.value?.querySelector<HTMLButtonElement>('.back-control')?.focus();
+  void loadVersions();
+});
 
 async function loadVersions(preferredId?: number) {
   loading.value = true;
@@ -360,7 +364,7 @@ function formatDate(value: string | null): string {
 
 <template>
   <div class="console-shell">
-    <header class="console-header">
+    <header ref="consoleHeader" class="console-header">
       <div>
         <span class="section-kicker">Internal · publication control</span>
         <h1>Curriculum console</h1>
@@ -369,9 +373,7 @@ function formatDate(value: string | null): string {
         </p>
         <p v-else>Review and publish weekly Arabic media collections.</p>
       </div>
-      <button class="secondary-action" type="button" @click="$emit('close')">
-        <ArrowLeft :size="18" aria-hidden="true" /> Back to learner app
-      </button>
+      <BackControl @click="$emit('close')">Back to learner app</BackControl>
     </header>
 
     <nav class="culture-admin-toolbar" aria-label="Console sections">

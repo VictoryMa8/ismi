@@ -4,6 +4,7 @@ import { ApiRequestError, getCulturalCatalog, getCulturalEdition } from './api'
 import { getDeviceSnapshot, saveDeviceSnapshot } from './offline'
 import { editionDate, validCulturalCatalog, validPublicEdition, type CulturalCatalog, type PublicCulturalEdition } from './culture'
 import CulturalMediaCards from './CulturalMediaCards.vue'
+import BackControl from './BackControl.vue'
 const props = defineProps<{ editionId: string | null }>()
 const snapshotKey = 'cultural-catalog-v1'
 const catalog = ref<CulturalCatalog | null>(null), detail = ref<PublicCulturalEdition | null>(null)
@@ -95,7 +96,7 @@ onBeforeUnmount(() => { generation++; window.removeEventListener('online', conne
 </script>
 <template>
   <section class="culture-page" aria-labelledby="culture-heading" :aria-busy="busy">
-    <a class="page-link" :href="editionId ? '#/practice/culture' : '#/practice'">{{ editionId ? 'Back to latest picks' : 'Back to Practice' }}</a>
+    <BackControl class="page-back" :href="editionId ? '#/practice/culture' : '#/practice'">{{ editionId ? 'Back to latest picks' : 'Back to Practice' }}</BackControl>
     <header class="culture-page-heading"><h1 id="culture-heading">Watch &amp; listen</h1><button class="guest-action" type="button" :disabled="busy || !connected" @click="refresh">Refresh picks</button></header>
     <p v-if="busy && !catalog" role="status">Loading picks…</p>
     <p v-if="offline && catalog" class="culture-saved" role="status">Saved picks · playback needs internet. Last refreshed {{ editionDate(catalog.serverTimeUtc) }}.</p>
