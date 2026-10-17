@@ -64,8 +64,47 @@ starting-point assessment. No beta, fluency, literacy or expert-review claim is 
 
 ## Rollout
 
-API/web rollout and publication are in progress. The application goes live before
-publishing hosted versions, so learners receive the notice-aware UI. Publication
-will use the owner console, retain exact versions and record post-rollout data,
-asset and public-feed evidence here. A hosted data snapshot before rollout is
-`/private/tmp/ismi-khmer-preview-predeploy.json`; it contains aggregate hashes only.
+Application **`30ea724f37395e543a960a3cb27fea2c0d753cdd`** is pushed/deployed to
+both existing development targets. The API was installed first; exact-revision
+health, assembly, SQLite integrity, recordings and cookie keys pass. Vercel deployment
+**`dpl_7Yntnfd4MAVkkNJxHxsfK5mL897a`** is Ready, serving
+[the existing alias](https://ismi-arabic.vercel.app) from
+[the immutable deployment](https://ismi-cvcgtbfp7-victorys-projects-c1cb4594.vercel.app).
+The notice-aware frontend was Ready before publication. The cached PWA was refreshed
+before using its new console action.
+
+All five hosted records **24–28** are now **published v1**, public version strings
+`curriculum-khmer-meet-01-01-v1` through `curriculum-khmer-meet-01-05-v1`.
+Each passed **Approve text-only preview**, then **Publish**, through the signed-in
+owner console. [Exact packages, versions and audit timestamps](../../content/khmer/meet-01/publication.json)
+record actual owner approval/publication without exposing the actor identity.
+The audit is October 17 UTC, still October 16 America/Chicago.
+
+Read-only hosted verification confirms all authored payload fields and source records
+match the pinned originals, except workflow version and the added notice. Pending
+review/rights, empty reviewer and unresolved issue lists remain intact. There are
+**18** published lessons: the prior **13 Arabic** payloads compare exactly, plus
+these five. Only CurriculumVersions and CurriculumAuditEvents changed; all **13**
+other table hashes, including accounts/progress and sources, are unchanged. Recordings
+and cookie keys are identical; SQLite integrity is `ok`.
+
+Live learner verification after refresh: Khmer is available in the labeled selector;
+Courses displays all five with the global and per-lesson notice; Greet someone opens
+with its persistent notice and actual Khmer dialogue. Arabic view is restored with
+its existing 3/13 completions and resumable lesson. No live lesson was completed,
+no study goal or primary allocation was changed. Download/offline completion/reconnect
+and withdrawal/rollback were verified in the disposable automated database, not by
+altering the owner's live progress or withdrawing these live lessons.
+
+API rollback retains the previous application and SQLite backup at
+`/home/ismi/ismi/deployments/20261017-004736-30ea724f3739`. For content recovery, use
+owner withdrawal/rollback controls; do not replace the whole database over newer
+learner progress. A future host that disables the explicit preview flag excludes
+these lessons from public serving. Restoring a pre-notice frontend while leaving
+these preview publications exposed would lose the required learner labels; withdraw
+the previews first if rolling back the notice-aware application.
+
+Private aggregate snapshots: `/private/tmp/ismi-khmer-preview-predeploy.json`,
+`ismi-khmer-preview-postdeploy.json` (identical) and `ismi-khmer-preview-published.json`.
+No secrets or learner rows are included in the committed evidence. Documentation-only
+follow-up commits do not require another API deployment; runtime revision stays `30ea724`.

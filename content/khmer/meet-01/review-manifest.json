@@ -3,7 +3,7 @@
   "feature": "F26",
   "unitId": "khmer-meet-01",
   "date": "2026-10-16",
-  "status": "unreviewed-text-preview-authorized",
+  "status": "unreviewed-text-preview-published",
   "ownerDecisions": {
     "variety": "cambodian-phnom-penh",
     "targetUnits": 12,
@@ -16,7 +16,7 @@
   "pronunciationHelp": "provisional-v0",
   "humanModelAudio": "missing",
   "ownerWordingApproval": "pending",
-  "publication": "owner-authorized exact five as unreviewed text-only development previews; rollout in progress",
+  "publication": "five hosted v1 unreviewed text-only development previews published October 16; see publication.json for exact versions and audit",
   "packages": [
     {
       "lessonId": "khmer-meet-01-01",

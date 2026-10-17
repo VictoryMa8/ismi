@@ -1,0 +1,195 @@
+{
+  "date": "2026-10-16 America/Chicago; audit timestamps UTC",
+  "target": "https://ismi-arabic.vercel.app",
+  "api": "https://ismi.alwaysdata.net",
+  "state": "five published unreviewed text-only development-preview lessons",
+  "applicationCommit": "30ea724f37395e543a960a3cb27fea2c0d753cdd",
+  "entries": [
+    {
+      "recordId": 24,
+      "lessonId": "khmer-meet-01-01",
+      "versionNumber": 1,
+      "publicVersion": "curriculum-khmer-meet-01-01-v1",
+      "status": "published",
+      "packageSha256": "2224bd136e0fcdda1ec04ce15994bf9ebdd57bba5decdabd653acfaf47c127b3",
+      "authoredPayloadAndSourcesMatch": true,
+      "actualOwnerApprovedAndPublished": true,
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "reviewerDesignated": false,
+      "humanModelAudio": "missing",
+      "notice": {
+        "releaseId": "khmer-meet-01-text-preview-2026-10-16",
+        "label": "Unreviewed \u00b7 text-only preview",
+        "details": "AI-assisted draft. Khmer wording, pronunciation help and source rights remain unreviewed. No human audio."
+      },
+      "audit": [
+        {
+          "action": "created",
+          "atUtc": "2026-10-16 08:38:15.7805303"
+        },
+        {
+          "action": "validated",
+          "atUtc": "2026-10-16 09:05:26.9170449"
+        },
+        {
+          "action": "approved-text-preview",
+          "atUtc": "2026-10-17 00:50:23.6385052"
+        },
+        {
+          "action": "published",
+          "atUtc": "2026-10-17 00:50:28.9312549"
+        }
+      ]
+    },
+    {
+      "recordId": 25,
+      "lessonId": "khmer-meet-01-02",
+      "versionNumber": 1,
+      "publicVersion": "curriculum-khmer-meet-01-02-v1",
+      "status": "published",
+      "packageSha256": "dbdd9898c8ae7a195fc415bf29a2afc8f259ca35358ffa34039ac1b14b6f6eff",
+      "authoredPayloadAndSourcesMatch": true,
+      "actualOwnerApprovedAndPublished": true,
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "reviewerDesignated": false,
+      "humanModelAudio": "missing",
+      "notice": {
+        "releaseId": "khmer-meet-01-text-preview-2026-10-16",
+        "label": "Unreviewed \u00b7 text-only preview",
+        "details": "AI-assisted draft. Khmer wording, pronunciation help and source rights remain unreviewed. No human audio."
+      },
+      "audit": [
+        {
+          "action": "created",
+          "atUtc": "2026-10-16 08:38:35.055731"
+        },
+        {
+          "action": "approved-text-preview",
+          "atUtc": "2026-10-17 00:50:36.4415504"
+        },
+        {
+          "action": "published",
+          "atUtc": "2026-10-17 00:50:37.4418464"
+        }
+      ]
+    },
+    {
+      "recordId": 26,
+      "lessonId": "khmer-meet-01-03",
+      "versionNumber": 1,
+      "publicVersion": "curriculum-khmer-meet-01-03-v1",
+      "status": "published",
+      "packageSha256": "eb1f2cf47d2ef65f31707d53548f1aa32f1768ff4583fce8f4671be34ab803e9",
+      "authoredPayloadAndSourcesMatch": true,
+      "actualOwnerApprovedAndPublished": true,
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "reviewerDesignated": false,
+      "humanModelAudio": "missing",
+      "notice": {
+        "releaseId": "khmer-meet-01-text-preview-2026-10-16",
+        "label": "Unreviewed \u00b7 text-only preview",
+        "details": "AI-assisted draft. Khmer wording, pronunciation help and source rights remain unreviewed. No human audio."
+      },
+      "audit": [
+        {
+          "action": "created",
+          "atUtc": "2026-10-16 08:38:36.5455674"
+        },
+        {
+          "action": "validated",
+          "atUtc": "2026-10-16 09:05:02.650314"
+        },
+        {
+          "action": "approved-text-preview",
+          "atUtc": "2026-10-17 00:50:39.0064282"
+        },
+        {
+          "action": "published",
+          "atUtc": "2026-10-17 00:50:39.9503062"
+        }
+      ]
+    },
+    {
+      "recordId": 27,
+      "lessonId": "khmer-meet-01-04",
+      "versionNumber": 1,
+      "publicVersion": "curriculum-khmer-meet-01-04-v1",
+      "status": "published",
+      "packageSha256": "4365ee17b61b0f3d89e958b41021c46768cc52e13beb9d8e5ec89b1b07c2625a",
+      "authoredPayloadAndSourcesMatch": true,
+      "actualOwnerApprovedAndPublished": true,
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "reviewerDesignated": false,
+      "humanModelAudio": "missing",
+      "notice": {
+        "releaseId": "khmer-meet-01-text-preview-2026-10-16",
+        "label": "Unreviewed \u00b7 text-only preview",
+        "details": "AI-assisted draft. Khmer wording, pronunciation help and source rights remain unreviewed. No human audio."
+      },
+      "audit": [
+        {
+          "action": "created",
+          "atUtc": "2026-10-16 08:38:37.9837058"
+        },
+        {
+          "action": "approved-text-preview",
+          "atUtc": "2026-10-17 00:50:41.34632"
+        },
+        {
+          "action": "published",
+          "atUtc": "2026-10-17 00:50:42.2104398"
+        }
+      ]
+    },
+    {
+      "recordId": 28,
+      "lessonId": "khmer-meet-01-05",
+      "versionNumber": 1,
+      "publicVersion": "curriculum-khmer-meet-01-05-v1",
+      "status": "published",
+      "packageSha256": "76d79aeae71bba70feb0a485f67ccda203da303ed805a9f18bdc49384ea74209",
+      "authoredPayloadAndSourcesMatch": true,
+      "actualOwnerApprovedAndPublished": true,
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "reviewerDesignated": false,
+      "humanModelAudio": "missing",
+      "notice": {
+        "releaseId": "khmer-meet-01-text-preview-2026-10-16",
+        "label": "Unreviewed \u00b7 text-only preview",
+        "details": "AI-assisted draft. Khmer wording, pronunciation help and source rights remain unreviewed. No human audio."
+      },
+      "audit": [
+        {
+          "action": "created",
+          "atUtc": "2026-10-16 08:38:39.4370505"
+        },
+        {
+          "action": "validated",
+          "atUtc": "2026-10-16 08:38:49.4420289"
+        },
+        {
+          "action": "approved-text-preview",
+          "atUtc": "2026-10-17 00:50:43.7013361"
+        },
+        {
+          "action": "published",
+          "atUtc": "2026-10-17 00:50:45.2816747"
+        }
+      ]
+    }
+  ],
+  "existingPublishedArabicPayloadsPreserved": 13,
+  "unchangedTableCount": 13,
+  "changedTables": [
+    "CurriculumAuditEvents",
+    "CurriculumVersions"
+  ],
+  "learnerAccountsProgressSourcesRecordingsAndKeysPreserved": true,
+  "sqliteIntegrity": "ok",
+  "publishedKhmerLessons": 5
+}

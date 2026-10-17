@@ -1,11 +1,12 @@
 # Meet someone and keep the exchange going
 
-F26.2/F26.3 · October 16, 2026 · **Five unpublished, unreviewed candidates.**
+F26.2/F26.3 · October 16, 2026 · **Five published unreviewed text-only development previews.**
 
 The owner authorized drafts and selected contemporary Cambodian Khmer with a
 Phnom Penh reference model, twelve units/sixty lessons, and conversation-first
 study with optional script help. The review route is draft preparation now and a
-designated fluent Khmer reviewer before publication. These candidates do not
+designated fluent Khmer reviewer before full reviewed publication. The owner later
+authorized the exact five-preview exception documented below. These candidates do not
 establish a source-approved foundation, current Phnom Penh speech, cleared rights,
 reviewed pronunciation or a completed first unit.
 
@@ -53,8 +54,8 @@ independent decoding, sound assessment or proof of literacy.
 Khmer segmentation is authored, preserves source text exactly, and never inserts
 spaces through whitespace tokenization. Arabic/French course rendering and existing
 publications retain their established behavior. The existing course-scoped starting
-check can use approved published lessons later; these private drafts are excluded
-from placement, the daily queue, download feeds and learner progress.
+check can use approved published lessons later; the published unreviewed previews remain excluded
+from placement, while core study, downloads and separate Khmer progress are available.
 
 ## Build, import and review
 
@@ -86,7 +87,8 @@ actual import evidence when present; a copied JSON file alone is not a DB import
 Run `npm run api` and `npm run web` in separate terminals. Sign in as the configured
 approver, open Account → Curriculum, select a candidate and use **Preview saved
 version**. The console shows the publication blockers while allowing private draft
-preview. Approval, publication and rollback still use the complete release gate.
+preview. Ordinary approval/publication/rollback use the full release gate. The exact five
+text-only previews have the separately authorized scoped path described below.
 A loaded preview works without a network but is never stored as a downloadable
 lesson or credited as learner progress; reconnect to open another saved draft.
 
@@ -97,12 +99,22 @@ recordings, actual mobile/input/VoiceOver or TalkBack checks and immediate/delay
 learner evidence remain. The first-unit pilot protocol is in
 [docs/khmer/README.md](../../../docs/khmer/README.md). Finalize the first unit before
 units 2–12 authoring. Do not fill 55 remaining lessons with unchecked translations.
-Publication, hosted rollout and beta inclusion remain separate owner decisions.
+The exact five-preview publication/rollout is complete; full release and beta inclusion
+remain separate owner decisions.
 
-## Hosted preparation after the publication request
+## Published text-only development preview
 
-The owner subsequently requested publication. All five exact candidates are now
-private drafts in the hosted console; [hosted-import.json](hosted-import.json) records
-the verified IDs/hashes. Current validation still requires actual review and rights
-dispositions. An explicit exception to the earlier fluent-review-before-publication
-rule is pending the owner’s answer; these lessons have not been published.
+The owner explicitly authorized **“Publish these five as unreviewed text-only preview
+lessons.”** Hosted records **24–28** are now **published v1** through the owner console,
+with the new exact-package preview approval followed by publication. Application
+`30ea724` is deployed to the existing web/API preview, Vercel Ready. Local draft
+records 27–31 remain unchanged.
+
+[publication.json](publication.json) records exact version strings, raw original file
+hashes and real approval/publication audit timestamps. Authored fields and sources
+match the originals; only the workflow version and generated notice differ. Review
+and rights remain pending, the reviewer is empty and human audio remains missing.
+The learner sees **Unreviewed · text-only preview**, including downloaded content.
+All 13 Arabic publications, existing learner/source data and assets are preserved.
+[Implementation, verification and recovery](../../../docs/khmer/text-preview-publication.md).
+The earlier [hosted-import.json](hosted-import.json) is historical preparation evidence.

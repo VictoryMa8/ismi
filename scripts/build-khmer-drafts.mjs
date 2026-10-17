@@ -88,11 +88,11 @@ for (const [index, pack] of packages.entries()) {
   outputs.set(`${stem}-review.md`, review)
 }
 const manifest = {
-  schemaVersion: 1, feature: 'F26', unitId: 'khmer-meet-01', date: '2026-10-16', status: 'unreviewed-text-preview-authorized',
+  schemaVersion: 1, feature: 'F26', unitId: 'khmer-meet-01', date: '2026-10-16', status: 'unreviewed-text-preview-published',
   ownerDecisions: { variety, targetUnits: 12, newLessonsPerUnit: 5, optionalScript: true,
     route: 'Owner authorized exact five unreviewed text-only development-preview lessons October 16; review required for full curriculum/beta.' },
   sourceApproval: 'pending', linguisticReview: 'pending', pronunciationHelp: 'provisional-v0',
-  humanModelAudio: 'missing', ownerWordingApproval: 'pending', publication: 'owner-authorized exact five as unreviewed text-only development previews; rollout in progress',
+  humanModelAudio: 'missing', ownerWordingApproval: 'pending', publication: 'five hosted v1 unreviewed text-only development previews published October 16; see publication.json for exact versions and audit',
   packages: packages.map((p, i) => { const file = `${String(i + 1).padStart(2, '0')}-lesson.json`; return {
     lessonId: p.lesson.id, file, sha256: createHash('sha256').update(outputs.get(file)).digest('hex'),
     dialogueTurns: p.lesson.introduction.dialogue.length, teachingCards: p.lesson.introduction.teachingCards.length,
@@ -125,4 +125,4 @@ for (const [name, contents] of outputs) {
     if (existing !== contents) throw new Error(`${name} differs; run node scripts/build-khmer-drafts.mjs`)
   } else await writeFile(join(directory, name), contents)
 }
-console.log(`${check ? 'Verified' : 'Built'} ${packages.length} unpublished Khmer draft packages, readable reviews and manifest.`)
+console.log(`${check ? 'Verified' : 'Built'} ${packages.length} original unreviewed Khmer candidate packages, readable reviews and manifest.`)

@@ -7,14 +7,17 @@ F26 · October 16, 2026. Current statuses are in [ROADMAP.md](../../ROADMAP.md#f
 Owner decisions: contemporary Cambodian Khmer with a Phnom Penh reference model;
 twelve units/sixty new lessons; adults learning for partners, family and friends;
 English instruction; conversation first with optional script help. Prepare drafts
-now and designate a fluent reviewer before publication. Exact pronunciation help,
+now and designate a fluent reviewer before full reviewed publication. The owner
+subsequently authorized the exact five as unreviewed text-only development previews;
+[their publication is complete](text-preview-publication.md). Exact pronunciation help,
 reading inventory, approved source foundation, reviewers, recordings, providers and
 beta inclusion are not silently settled by these choices.
 
 The [first-unit candidate](../../content/khmer/meet-01/README.md) contains five
 source-linked, AI-assisted draft packages, readable review sheets and a pinned
 manifest. It is a review object, not a reviewed language model. The manifest's
-sourceApproval/review/audio/publication fields remain pending/missing. The
+sourceApproval/review/audio fields remain pending/missing; the publication manifest
+separately records the explicit text-preview exception. The
 [primary-source research](../research/khmer-course-sources.md) records both useful
 references and limits, including MSU's noncommercial licence, unresolved NIU reuse
 and historical FSI script/contemporary-usage gaps.
@@ -133,21 +136,18 @@ PWA. No hosted draft import or curriculum publication.
 
 ## October 16 publication request and hosted preparation
 
-After application deployment, the owner requested lesson publication. The earlier
-explicit rule still requires a fluent reviewer before publication; the owner explicitly approved these five as labeled unreviewed text-only
-development-preview lessons. [Scoped exception and publication](text-preview-publication.md)
-records implementation and delivery. No accepted review or cleared-rights attestation has
-been invented, and no publication has occurred.
+After application deployment, the owner explicitly approved these five as labeled
+unreviewed text-only development-preview lessons. **All five are now published v1**,
+hosted records 24–28. [Exact versions/audit](../../content/khmer/meet-01/publication.json)
+and [policy, checks and recovery](text-preview-publication.md) record the release.
+Application `30ea724` is deployed; Vercel Ready and exact API revision verified.
 
-All five exact packages were uploaded through the authenticated hosted owner console
-as private v1 drafts. [Hosted import evidence](../../content/khmer/meet-01/hosted-import.json)
-records the exact version IDs and package hashes. Hosted validation reports three
-issues: actual reviewer missing; accepted review/cleared rights with resolved
-critical issues missing; factual linguistic-review source missing. This is a
-content/policy dependency, not missing publication authorization.
-
-The owner-approved scoped exception retains pending review/rights and
-missing-audio facts, identify all five exact candidate versions, visibly label their
-experimental text-only status, preserve the ordinary review path for other content,
-and retains beta/audio/AT/learner-evidence gates. It does not forge reviewer metadata
-or mark unresolved issues resolved to satisfy the current validator.
+The initial hosted import and ordinary validation correctly exposed missing actual
+review, rights and linguistic-review-source records. The implemented exact-package
+preview path honors the owner's subsequent exception without inventing those records.
+Pending review/rights and no human audio remain visible. All 13 Arabic publications,
+learner/source tables and assets are preserved. API 41/41, build and 10 focused browser
+checks pass, including published preview download/offline completion/reconnection in
+a disposable database. Live course/lesson labels pass. Earlier local-only results
+above remain dated evidence, not a claim that hosted content is still unpublished.
+F26 remains Active for review/audio/real-device/AT/Safari/pilot and units 2–12.
