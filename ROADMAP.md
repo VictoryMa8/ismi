@@ -8,14 +8,15 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**F28 — Application implemented October 16:** owner authorized implementation,
+**F28 — Application deployed October 16:** owner authorized implementation,
 push and deployment, then accepted private Khmer/French packs pending decisions and
 review, playback without microphone and unscored repeat-aloud practice. Practice /
 Courses / placement links, letter/forms/words, safe target markers, four activities,
 versioned local evidence/resume, atomic verified downloads and the gated owner
 console are implemented. All 47 API tests, build, 12 alphabet browser checks and
-21 navigation/course/palette/placement regressions pass. Release candidate is ready for the
-existing development previews. **No real alphabet packs are published**; F28 stays
+21 navigation/course/palette/placement regressions pass. Application `5bbf861` is
+pushed/deployed; Vercel Ready, exact API revision and live mobile entry/switching pass.
+All 16 existing table hashes/assets are preserved; the new alphabet table is empty. **No real alphabet packs are published**; F28 stays
 Active for all five reviewed inventories/examples/human-audio packs and real
 AT/device/Safari evidence. [Behavior](docs/alphabet-explorer.md),
 [rollout](docs/releases/2026-10-16-alphabet.md).
@@ -171,7 +172,8 @@ with distinct gold completion/goal markers and factual session recaps. Build and
 19 targeted browser checks pass; [behavior and verification](docs/learner-satisfaction.md).
 Sound audition and optional recall pacing remain proposals.
 
-**Now:** the learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
+**Now:** F28’s shared alphabet application is deployed with no real pack publication;
+reviewed inventories/examples/human audio and device/AT evidence remain open. The learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. F17.7 weekly quests/forgiving habits
 are complete and live-verified. F17.6 can-do cards/achievement are complete and deployed. F21 application `4545fea` is deployed, retaining F22's content. The first unit
 has three Everyday v3 and four v2 publications, with current art and verified
@@ -254,7 +256,7 @@ release and bulk authoring of units 2–12.
 | [F26](#f26-khmer-course) | Khmer course | Active · five previews live | F26.2.1 Done: five unreviewed text-only v1 lessons published; full review/audio/pilot and units 2–12 remain |
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 | [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
-| [F28](#f28-alphabet-explorer) | Alphabet explorer | Active · application verified | Deploy candidate; reviewed full packs, language decisions and real device/AT/Safari evidence remain |
+| [F28](#f28-alphabet-explorer) | Alphabet explorer | Active · application deployed | Reviewed full packs, language decisions and real device/AT/Safari evidence remain |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
 Needs decision = a named choice prevents the next step; Needs input = external
@@ -1816,7 +1818,7 @@ snapshot. No API deployment or curriculum publication; unrelated course edits st
 
 ### F28 Alphabet explorer
 
-**Status:** Active · application implemented October 16, 2026. Owner authorized
+**Status:** Active · application deployed October 16, 2026. Owner authorized
 implementation, push and deployment, then accepted private Khmer/French packs
 pending decisions/review, no microphone, unscored repeat-aloud and local evidence.
 **Outcome:** learners can explore letter appearance, hear names and contextual
@@ -1827,7 +1829,7 @@ forms while retaining separate Levantine/MSA/Quranic examples, audio and evidenc
 and forms with Unicode-safe target markers, four practice types, separate versioned
 local evidence/resume, verified atomic audio/font downloads, availability/withdrawal
 reconciliation and owner-only versioned validate/approve/publish/rollback/audit flow.
-**Next:** deploy the verified application candidate, then obtain exact inventories,
+**Next:** obtain exact inventories,
 language/help/review/source/rights decisions and human recordings before approving
 real packs. MSA/Quranic publication remains blocked pending track-specific controls.
 **Done when:** F28.1–F28.6 pass, including full agreed basic inventories in all five
@@ -1840,12 +1842,14 @@ Supports F15/F25.3/F26.3 without completing their wider placement/module criteri
 **Evidence:** [implementation, contract and remaining gates](docs/alphabet-explorer.md),
 [original design](docs/alphabet-explorer-plan.md). All 47 API tests, production build,
 12 alphabet browser checks and 21 navigation/course/palette/placement regressions pass.
-**Delivery:** local verified candidate; authorized commit/push/API/web deployment
-pending. No real alphabet pack or curriculum approval/publication.
+**Delivery:** application `5bbf861` pushed/deployed to the existing API and Vercel
+preview; Ready/exact revision/live mobile checks pass and all existing hosted tables/
+assets are preserved. [Recovery/evidence](docs/releases/2026-10-16-alphabet.md).
+No real alphabet pack or curriculum approval/publication.
 
 #### F28.1 Shared explorer, content model and gates
 
-**Status:** Active · application implementation authorized October 16.
+**Status:** Active · application deployed; real content/access evidence remains.
 **Scope:** grid/detail UX, versioned inventory/course packs, validation, owner console,
 public manifests and authorized recording access; reuse shared course metadata.
 **Next:** shared application is implemented/tested; accept actual inventory/form/content decisions and reviewed evidence before pack approval.
@@ -1855,14 +1859,15 @@ drafts/assets remain private and source/review/rights gates are enforced with au
 
 ##### F28.1.1 Shared application candidate
 
-**Status:** Done · local verified candidate, October 16.
+**Status:** Done · application deployed October 16.
 **Scope:** shared explorer/owner contract, four activities, device-local versioned
 history/resume and atomic verified offline downloads, independent of content acceptance.
 **Done when:** actual API-to-browser fixture checks prove privacy/workflow, exact
 text, activities, identity/course separation, offline replacement and withdrawal.
 **Evidence:** all 47 API tests, build, 12 alphabet browser checks and 21 focused
 regressions pass; [behavior and limits](docs/alphabet-explorer.md).
-**Delivery:** authorized API/frontend rollout pending; no real pack publication.
+**Delivery:** `5bbf861` pushed/deployed; live entry/API/privacy pass and hosted data
+preservation is verified. [Rollout](docs/releases/2026-10-16-alphabet.md). No real pack publication.
 Parent F28.1/F28.5/F28.6 remain open for accepted content and real device/AT/Safari checks.
 
 #### F28.2 Arabic explorer packs
@@ -1900,7 +1905,7 @@ supports F25.3. [Pack gates](docs/alphabet-explorer-plan.md).
 
 #### F28.5 Practice, downloads and separate evidence
 
-**Status:** Active · application implementation authorized October 16.
+**Status:** Active · application deployed; real content/access evidence remains.
 **Scope:** shape/listening recognition, word spotting, unscored repeat-aloud practice,
 complete offline packs and per-identity/course/version evidence.
 **Next:** application behavior passes synthetic API/browser checks; verify complete real packs and supported real browsers after content acceptance.
@@ -1911,10 +1916,10 @@ and primary allocation stay independent. Listening/self-check results are distin
 
 #### F28.6 Accessibility, verification and authorized delivery
 
-**Status:** Active · application implementation authorized October 16.
+**Status:** Active · application deployed; real content/access evidence remains.
 **Scope:** per-pack content/access/offline checks, real device/AT evidence and separately
 authorized publication/deployment with recovery records.
-**Next:** deploy the verified candidate; then collect real device/AT/Safari and per-pack content/audio evidence. Automated local checks are linked above.
+**Next:** collect real device/AT/Safari and per-pack content/audio evidence. Application delivery and automated checks pass; linked above.
 **Done when:** small screens/enlarged text, keyboard/focus, mixed direction, actual
 AT, supported-browser offline/reconnection and content privacy/withdrawal checks
 pass; exact approved content and any authorized releases have linked evidence.
@@ -1953,8 +1958,8 @@ Portuguese is eventual expansion direction, not a new implemented course or beta
 
 F28 implementation, push and deployment were subsequently authorized October 16.
 The owner accepted the recommended first-version defaults and private Khmer/French
-packs pending choices/review. Shared application is implemented. Remaining order: shared contract/private Arabic–Khmer slice →
-practice/offline → reviewed complete Levantine/Khmer packs → separately gated
+packs pending choices/review. Shared application/practice/offline is deployed.
+Remaining order: reviewed complete Levantine/Khmer packs → separately gated
 MSA/Quranic/French packs → per-pack verification and any authorized delivery.
 [Alphabet explorer plan](docs/alphabet-explorer-plan.md).
 
@@ -1963,8 +1968,10 @@ MSA/Quranic/French packs → per-pack verification and any authorized delivery.
 - **October 16, 2026 F28:** owner authorized implementation/push/deploy and accepted
   the recommended defaults. Shared explorer, console gates, four activities, local
   evidence/resume and verified offline packs are implemented. API 47/47, build,
-  12 alphabet and 21 regression browser checks pass. Deployment candidate ready;
-  full reviewed content/audio and real device/AT/Safari evidence remain. No real
+  12 alphabet and 21 regression browser checks pass. Application `5bbf861` is
+  pushed/deployed; Vercel Ready, API exact revision/live entry and all existing
+  hosted table/asset preservation pass. Full reviewed content/audio and real
+  device/AT/Safari evidence remain. No real
   alphabet pack publication. [Implementation](docs/alphabet-explorer.md),
   [rollout](docs/releases/2026-10-16-alphabet.md).
 

@@ -5,7 +5,7 @@ accepted the planned defaults: reviewed playback and unscored repeat-aloud pract
 no microphone access, device-local evidence, and private Khmer/French packs until
 inventory/help/variety choices and fluent review are recorded.
 
-**The application is implemented. F28 as a whole remains Active.** No real alphabet
+**The application is implemented and deployed as `5bbf861`. F28 as a whole remains Active.** No real alphabet
 pack has been authored, reviewed, imported, approved or published by this task.
 All five learner contexts show their actual unavailable state. Full reviewed basic
 inventories, 2–3 words per basic letter, cleared human recordings and real device/AT
@@ -114,7 +114,7 @@ do not count as a current complete pack. Storage errors are visible.
   concurrent writes, version/hash changes, recording access, withdrawal/rollback,
   and immutable approved inventory versions.
 - Vue/TypeScript/Vite/PWA production build passes.
-- All **12 alphabet Chromium browser checks** pass: real API manifests/console,
+- All **12 alphabet Chromium browser checks** pass across final runs: real API manifests/console,
   search/forms/word text and target overlays, first/help/retry evidence, all four
   activities with actual playback of synthetic test WAVs, mixed sets, complete
   download/offline reload, failed update retaining old bytes, known withdrawal,
