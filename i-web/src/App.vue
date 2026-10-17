@@ -8,7 +8,6 @@ import {
   Flame,
   Headphones,
   Home,
-  MessageCircle,
   RotateCcw,
   Search,
   Trophy,
@@ -1299,7 +1298,7 @@ async function finishLesson() {
     >Skip to main content</a
   >
 
-  <div class="app-shell" :inert="lessonOpen || consoleOpen || reviewOpen">
+  <div class="app-shell" :data-course="activeCourse.id" :inert="lessonOpen || consoleOpen || reviewOpen">
     <aside class="side-nav" aria-label="Primary navigation">
       <a class="brand" href="#" aria-label="Ismi landing page">
         <img
@@ -1462,9 +1461,12 @@ async function finishLesson() {
           </div>
 
           <article class="primary-lesson-card">
-            <div class="track-label levantine-label hero-track-label">
-              <MessageCircle :size="17" aria-hidden="true" />
-              <span>{{ nextStudyTrack?.name ?? 'Palestinian Levantine' }}</span>
+            <div class="track-label hero-track-label">
+              <span class="hero-bubble" v-bind="textAttributes(activeCourse.id)">{{ activeCourse.nativeName }}</span>
+              <span class="hero-track-copy">
+                <span>{{ activeCourse.languageName }}</span>
+                <small v-if="activeCourse.name !== activeCourse.languageName">{{ nextStudyTrack.name }}</small>
+              </span>
             </div>
             <div class="lesson-details">
               <CharacterCast

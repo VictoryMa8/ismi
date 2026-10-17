@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs'
 import { expect, test, type Page } from '@playwright/test'
 import { placementQuestions, placementRecommendation, placementStorageKey, type PlacementAnswer } from '../src/placement'
 import type { LessonResponse } from '../src/types'
+import { chooseCourse } from './courseSwitcher'
 const packages: LessonResponse[] = [1, 2, 3].map(n => JSON.parse(readFileSync(new URL(`../../content/levantine/everyday-01/revisions/pilot-release/0${n}-lesson.json`, import.meta.url), 'utf8')).lesson)
 const questions = placementQuestions(packages)
 async function fixture(page: Page) {
@@ -102,7 +103,7 @@ test('withdrawn content cannot shorten assessment; other tracks remain unavailab
   await page.getByRole('checkbox', { name: /Quranic Arabic/ }).check()
   await page.getByRole('button', { name: 'Save study settings', exact: true }).click()
   for (const id of ['msa', 'quranic']) {
-    await page.getByLabel('Language / course Switch').selectOption(id)
+    await chooseCourse(page, id)
     await expect(region(page).getByText('Placement and reading/sound modules not yet available.', { exact: true })).toHaveCount(1)
   }
 })

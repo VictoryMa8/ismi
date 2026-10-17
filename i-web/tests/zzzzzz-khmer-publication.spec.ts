@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { expect, test, type Page } from '@playwright/test'
 import { finishTeaching, responseChoices } from './lesson-helpers'
+import { chooseCourse } from './courseSwitcher'
 import { placementQuestions } from '../src/placement'
 import type { LessonResponse } from '../src/types'
 const packs = [1, 2, 3, 4, 5].map(n => JSON.parse(readFileSync(new URL(`../../content/khmer/meet-01/0${n}-lesson.json`, import.meta.url), 'utf8'))) as { lesson: LessonResponse; sources: unknown[] }[]
@@ -42,7 +43,7 @@ test('owner publishes exact unreviewed text previews; labels, offline completion
   expect(catalog.find((c: { course: { id: string } }) => c.course.id === 'khmer').unreviewedPreviewLessonCount).toBe(5)
   await page.getByRole('button', { name: 'Back to learner app' }).click()
   await page.reload()
-  await page.getByLabel('Language / course Switch').selectOption('khmer')
+  await chooseCourse(page, 'khmer')
   await page.getByRole('link', { name: 'Courses', exact: true }).click()
   await expect(page.locator('.publication-notice')).toContainText('Unreviewed · text-only preview')
   await expect(page.getByRole('button', { name: /^Open / })).toHaveCount(5)

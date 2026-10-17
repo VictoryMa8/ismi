@@ -1386,7 +1386,7 @@ Recommend two taps from a main page: open selector → choose Arabic or Khmer.
 Arabic retains its separate Palestinian Levantine/MSA/Quranic courses; restore the
 last usable course within that language, with clear choices for the others.
 Future French/Portuguese entries use the same selector when actually available.
-**Next:** observed discoverability and real AT/device checks remain. F24.8.1 switching/teaching-resume, shared characters and language palette fixes are deployed; five Khmer previews are published under F26.2.1.
+**Next:** observed discoverability and real AT/device checks remain. F24.8.1 switching/teaching-resume, shared characters and language palette fixes are deployed; five Khmer previews are published under F26.2.1. F24.8.2 colored banner/picker, course colors and Study card language bubble are done and pushed.
 
 **Done when:** switching is apparent on Today, Courses, Practice, Progress and Words;
 the selected course drives each page's content, help/audio labels, review and progress.
@@ -1424,6 +1424,27 @@ under F24.5/F24.8.
 Live repeated Arabic/Khmer switching, manual Today entry, loaded shared guides, all
 five course entries and distinct landing colors pass. No API/content publication change.
 **Evidence:** [behavior and verification](docs/multi-language/switching-and-identity.md).
+
+##### F24.8.2 Course identity banner, colors and culture card
+
+**Status:** Done — owner reviewed and authorized push/deploy October 17.
+**Scope:** owner request to make the active language apparent: a playful colored
+banner and tile picker replace the plain selector; each course has a color identity
+(landing palettes, separate from feedback colors, always named); the Study card shows
+a prominent speech bubble with the language's own name plus language/course. Original
+offline culture artwork (olive trees, mashrabiya, eight-point star, Eiffel Tower,
+Angkor Wat) appears in the picker tiles only; after review, the owner removed the
+in-card artwork and its caption.
+**Done when:** every page shows the viewed course in its color with name; any
+available course is two taps away; keyboard/Escape/focus and reduced motion work;
+320/390/1280 px layouts fit; existing switching/offline checks pass.
+**Verification:** typecheck, build and 45 of 46 focused checks pass. The remaining
+check passes alone; in the batch it hits an existing duplicate-owner registration
+between specs. Two `satisfaction` failures pre-date this change (clean `HEAD` fails
+them too); Continue moved slightly up (≈710 px vs 715 px at `HEAD`). After the
+in-card artwork was removed, typecheck, build and 39 focused checks pass.
+**Next:** none for this bounded change. Real AT/device checks remain under F24.5/F24.8.
+**Evidence:** [behavior and verification](docs/multi-language/switching-and-identity.md#october-16-course-identity-banner-and-culture-card-f2482).
 
 ### F25 French course
 
@@ -1994,6 +2015,12 @@ MSA/Quranic/French packs → per-pack verification and any authorized delivery.
 
 ## Recent planning changes
 
+- **October 16, 2026 F24.8.2:** owner requested a more apparent active language.
+  The colored banner/tile picker, per-course colors, a prominent speech-bubble
+  language band are done; culture art stays in the picker only, at owner request.
+  Build and focused checks pass. Owner authorized push/deploy October 17.
+  [Evidence](docs/multi-language/switching-and-identity.md#october-16-course-identity-banner-and-culture-card-f2482).
+
 - **October 16, 2026 F28:** shared application and five owner-requested inventory-only
   previews are deployed as `ab2d456`, all v1 with honest unreviewed/text-only labels.
   API 49/49, build, 18 focused browser checks, live HTTP/checksums and all unrelated
@@ -2031,9 +2058,3 @@ MSA/Quranic/French packs → per-pack verification and any authorized delivery.
   selector/planned Khmer/Arabic lesson entry verified. [Rollout](docs/releases/2026-10-16-multi-language.md).
   Title A and queue policy are approved. F24 stays Active for reviewed units,
   real device/AT/pilot, Safari offline and beta/content decisions.
-
-- **October 16, 2026 F27.1:** application `5875e6d` is pushed/deployed on the existing
-  Vercel development site (Ready; alias confirmed). The scoped frontend release
-  preserves unrelated local course work. Build and all focused checks pass across
-  the initial run and one cultural-refresh retry; mobile/desktop/offline and console
-  returns are verified locally. No API/content change. [Rollout](docs/releases/2026-10-16-back-navigation.md).

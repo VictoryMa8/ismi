@@ -4,6 +4,7 @@ import { placementQuestions, placementStorageKey } from '../src/placement'
 import { learnedVocabulary } from '../src/glossary'
 import type { DashboardResponse, LessonResponse } from '../src/types'
 import { finishTeaching, responseChoices } from './lesson-helpers'
+import { chooseCourse, courseSwitch, expectViewedCourse } from './courseSwitcher'
 
 // Synthetic transport/rendering fixtures. No curriculum, linguistic or review claims.
 function fixture(courseId: 'french' | 'khmer', n = 1): LessonResponse {
@@ -72,10 +73,7 @@ async function install(page: Page, completedKhmer = false) {
   return { packs, disconnect: () => { disconnected = true }, reconnect: () => { disconnected = false } }
 }
 
-async function switchCourse(page: Page, id: string) {
-  await expect(page.getByLabel('Language / course Switch')).toBeEnabled()
-  await page.getByLabel('Language / course Switch').selectOption(id)
-}
+const switchCourse = chooseCourse
 
 test('neutral schema preserves exact Khmer segments and legacy Arabic; course placement/glossary stay separate', async ({ request }) => {
   const old = await (await request.get('/api/lessons/levantine-day-01')).json()
@@ -93,7 +91,7 @@ test('neutral schema preserves exact Khmer segments and legacy Arabic; course pl
   expect(placementStorageKey('guest', 'khmer')).not.toBe(placementStorageKey('guest', 'french'))
   expect(learnedVocabulary([readableLesson(fr), adapted]).map(v => v.trackId).sort()).toEqual(['french', 'khmer'])
   const registry = await (await request.get('/api/courses')).json()
-  expect(registry.map((entry: { course: object }) => entry.course)).toEqual(courses.map(({ accent: _accent, ...metadata }) => metadata))
+  expect(registry.map((entry: { course: object }) => entry.course)).toEqual(courses.map(({ accent: _accent, nativeName: _nativeName, ...metadata }) => metadata))
 })
 
 for (const width of [320, 1280]) test(`course switching filters all pages and survives offline reload at ${width}px`, async ({ page, context }, info) => {
@@ -134,11 +132,11 @@ for (const width of [320, 1280]) test(`course switching filters all pages and su
   }
   for (const route of ['Today', 'Practice', 'Progress', 'Words']) {
     await page.getByRole('link', { name: route, exact: true }).first().click()
-    await expect(page.getByLabel('Language / course Switch')).toHaveValue('khmer')
+    await expectViewedCourse(page, 'khmer')
   }
   await page.getByRole('link', { name: 'Courses', exact: true }).first().click()
   disconnect(); await context.setOffline(true); await page.reload()
-  await expect(page.getByLabel('Language / course Switch')).toHaveValue('khmer')
+  await expectViewedCourse(page, 'khmer')
   await page.getByRole('button', { name: 'Resume Khmer lesson', exact: true }).click()
   await expect(dialog.locator('.practice-page:not([inert])')).toHaveAttribute('data-step-id', 'step-2')
   await responseChoices(dialog)
@@ -167,7 +165,7 @@ test('unavailable courses never substitute Arabic and keep factual empty states'
   await expect(page.getByRole('status').filter({ has: page.getByRole('heading', { name: 'Khmer', exact: true }) })).toContainText('Lessons not yet available')
   await expect(page.locator('.primary-lesson-card')).toHaveCount(0)
   await page.reload()
-  await expect(page.getByLabel('Language / course Switch')).toHaveValue('khmer')
+  await expectViewedCourse(page, 'khmer')
   await page.getByRole('link', { name: 'Courses', exact: true }).first().click()
   await expect(page.locator('.course-path')).toHaveCount(0)
 })
@@ -315,7 +313,7 @@ test('Today retains manual lessons and shared guides when switching outside the 
   disconnect()
   await context.setOffline(true)
   await page.reload()
-  await expect(page.getByLabel('Language / course Switch')).toHaveValue('french')
+  await expectViewedCourse(page, 'french')
   await expect(page.getByRole('button', { name: 'Open french engineering 1', exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'Resume French lesson', exact: true }).click()
   await expect(dialog.getByRole('button', { name: 'Try from memory', exact: true })).toBeVisible()
@@ -327,9 +325,9 @@ test('course selection waits for startup data instead of accepting a choice that
   const ready = new Promise<void>(resolve => { release = resolve })
   await page.route('**/api/dashboard', async route => { await ready; await route.continue() })
   await page.goto('/#/today')
-  await expect(page.getByLabel('Language / course Switch')).toBeDisabled()
+  await expect(courseSwitch(page)).toBeDisabled()
   release()
-  await expect(page.getByLabel('Language / course Switch')).toBeEnabled()
+  await expect(courseSwitch(page)).toBeEnabled()
   await switchCourse(page, 'french')
   await expect(page.getByRole('status').filter({ has: page.getByRole('heading', { name: 'French', exact: true }) })).toBeVisible()
   await switchCourse(page, 'levantine')

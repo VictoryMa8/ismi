@@ -75,3 +75,46 @@ The API remains at `30ea724`; no database, source, publication or asset upload w
 required. Prior immutable frontend deployments remain available for application
 rollback. Documentation follow-up commits do not change runtime behavior. Real
 AT/device/Safari and observed learning/pilot evidence remain separate release gates.
+
+## October 16 course identity banner and culture card (F24.8.2)
+
+The owner asked for the active language to be more apparent: a more prominent,
+playful top banner than a plain dropdown, a color tied to each language, a more
+visible speech bubble and language on the Study card, and a piece of culture in
+the card.
+
+- **Course colors.** `[data-course]` tokens in `i-web/src/style.css` follow the
+  landing palettes: Levantine green with red, MSA gold with charcoal, Quranic
+  charcoal with gold, French blue with red, Khmer red with blue (Cambodian flag
+  inspired). The app shell carries the viewed course, and the side-nav stripe and
+  mobile active tab adopt it. These colors are separate from the green/red used
+  for correct/retry feedback, and every use also shows the course by name.
+- **Banner and picker** (`CourseSwitcher.vue`). A colored banner shows a
+  speech bubble with the language's own name (العربية, ខ្មែរ, Français), “Studying
+  <language>”, the course/preview status and a flag-inspired stripe. **Switch** opens
+  a disclosure with colored language tiles (each with a small culture motif) and
+  always-visible Arabic course chips. Any available course is two taps away. The
+  current choice uses `aria-pressed` plus a check mark. Escape, outside click
+  and moving focus away close it, and Escape returns focus to **Switch**. Reduced
+  motion removes the bubble pop/picker motion. The native `<select>` is retired;
+  browser tests use `tests/courseSwitcher.ts`.
+- **Study card.** The band shows a white speech bubble with the language's own name,
+  then the language and course, on the course colors.
+- **Culture artwork.** Original inline-SVG scenes (`CultureScene.vue`, offline,
+  decorative to assistive technology) appear only in the picker tiles: olive trees
+  (Levantine), a mashrabiya window (MSA), an eight-point star pattern (Quranic,
+  restrained), the Eiffel Tower (French) and Angkor Wat with a sugar palm (Khmer).
+  The owner reviewed an in-card version with captions and asked for both to be
+  removed from the lesson card.
+- Language names are standard endonyms (CLDR). Khmer `ខ្មែរ` is the language name,
+  not a brand-title rendering, so the F24.7 title decision is unchanged.
+
+**Verification (local, October 16):** `vue-tsc`, production build and 45 of 46
+focused Chromium checks pass (multi-language, alphabet, placement, alphabet preview,
+Khmer publication, palettes, navigation, settings, feedback). The remaining
+`curriculum-preview` check passes alone. In the batch it hits an existing
+duplicate-owner registration from earlier specs. Full suite: 136 passed, 3
+failed. Two `satisfaction` checks also fail on a clean `HEAD` export. Continue sits
+715 px down against a 650 px budget at HEAD, and the goal-complete label differs.
+This change measures about 710 px at 390 px width. 320/390 px layouts have no horizontal overflow.
+After removing the card artwork, typecheck, build and 39 focused checks pass again.

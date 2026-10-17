@@ -1760,21 +1760,30 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 .section-kicker { color: var(--teal-dark); }
 .daily-progress { grid-template-columns: auto minmax(0, 1fr); border: 0; border-radius: 16px; background: #d1eedc; }
 .progress-fill, .lesson-step-progress > span { background: linear-gradient(90deg, var(--teal-dark), #13a774); }
-.primary-lesson-card { position: relative; border: 0; border-radius: 22px; color: white; background: #076447; box-shadow: 0 10px 28px #075b401a; }
+.primary-lesson-card { position: relative; overflow: hidden; border: 0; border-radius: 22px; color: var(--course-ink); background: var(--course-surface); box-shadow: 0 10px 28px #1a2b241f; }
 .primary-lesson-card::before { content: none; }
-.hero-track-label { display: flex; align-items: center; gap: 10px; padding: 16px 24px; color: white; background: #bd293b; border-radius: 0; }
+.hero-track-label { display: flex; align-items: center; gap: 14px; padding: 14px 24px 16px; color: var(--course-band-ink); background: var(--course-band); border-radius: 0; font-size: 16px; font-weight: 750; letter-spacing: 0; text-transform: none; }
 .hero-track-label svg { flex-shrink: 0; }
+.hero-bubble { position: relative; flex-shrink: 0; padding: 6px 14px !important; border-radius: 16px 16px 16px 5px; color: var(--course-text); background: white; font-size: 22px; font-weight: 700; line-height: 1.25 !important; }
+.hero-bubble::after { content: ''; position: absolute; left: 6px; bottom: -7px; border: 7px solid transparent; border-top-color: white; border-left-color: white; border-bottom: 0; }
+.hero-track-copy { display: grid; min-width: 0; line-height: 1.25; }
+.hero-track-copy small { font-size: 13px; font-weight: 600; opacity: .9; }
 .primary-lesson-card .lesson-details { position: relative; padding: 26px; }
-.primary-lesson-card .lesson-details h3 { color: white; margin-top: 0; font-size: clamp(26px, 4vw, 32px); }
-.primary-lesson-card .lesson-details > p { color: #e3f5eb; }
-.primary-lesson-card .lesson-details .review-status-note { color: #d6eee2; }
-.primary-lesson-card .primary-action { color: #19392b; background: white; box-shadow: 0 4px 0 #c5e3d2; }
-.primary-lesson-card .primary-action:hover:not(:disabled) { background: #f1faf5; box-shadow: 0 5px 0 #c5e3d2; }
-.primary-lesson-card .primary-action:active:not(:disabled) { box-shadow: 0 1px 0 #c5e3d2; }
-.primary-lesson-card .primary-action:focus-visible { outline-color: white; }
-.lesson-about { margin-top: 22px; font-size: 12px; color: #d6eee2; }
+.primary-lesson-card .lesson-details h3 { color: var(--course-ink); margin-top: 0; font-size: clamp(26px, 4vw, 32px); }
+.primary-lesson-card .lesson-details > p { color: var(--course-ink); }
+.primary-lesson-card .lesson-details .review-status-note { color: var(--course-ink); }
+.primary-lesson-card .primary-action { color: var(--course-text); background: white; box-shadow: 0 4px 0 #00000030; }
+.primary-lesson-card .primary-action:hover:not(:disabled) { background: #fbfbf8; box-shadow: 0 5px 0 #00000030; }
+.primary-lesson-card .primary-action:active:not(:disabled) { box-shadow: 0 1px 0 #00000030; }
+.primary-lesson-card .primary-action:focus-visible { outline-color: var(--course-ink); }
+.lesson-about { margin-top: 22px; font-size: 12px; color: var(--course-ink); opacity: .92; }
 .lesson-about summary { width: fit-content; cursor: pointer; padding: 8px 0; }
-.lesson-about summary:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+.lesson-about summary:focus-visible { outline: 2px solid var(--course-ink); outline-offset: 4px; }
+@media (max-width: 520px) {
+  .hero-track-label { gap: 12px; padding: 10px 20px 12px; font-size: 15px; }
+  .hero-bubble { padding: 3px 12px !important; font-size: 19px; }
+  .primary-lesson-card .lesson-details .character-cast.compact .character-portrait { --portrait-size: 52px; }
+}
 .lesson-about p { margin: 8px 0 0; font-size: 12px; }
 .primary-lesson-card .lesson-details .primary-action { margin-top: 14px; }
 .primary-action { background: var(--teal); border-radius: 13px; box-shadow: 0 4px 0 #066444, 0 7px 16px #087f5914; transition: background 180ms ease, transform 180ms ease, box-shadow 180ms ease; }
@@ -2087,3 +2096,27 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 .account-guest {
   margin-top: 16px;
 }
+
+/* Course identity colors. Kept apart from correct/retry feedback colors; every use also names the course. */
+:root, [data-course="levantine"] {
+  --course-surface: #076447; --course-ink: #fff; --course-band: #bd293b; --course-band-ink: #fff; --course-text: #076447;
+  --course-stripe: linear-gradient(90deg, #16120f 0 25%, #fff 25% 50%, #13a774 50% 75%, #ce3341 75%);
+}
+[data-course="msa"] {
+  --course-surface: #e8b442; --course-ink: #26352f; --course-band: #26352f; --course-band-ink: #fff8e6; --course-text: #7a4f0c;
+  --course-stripe: linear-gradient(90deg, #26352f 0 30%, #fff4d6 30% 70%, #936015 70%);
+}
+[data-course="quranic"] {
+  --course-surface: #293832; --course-ink: #fffdf8; --course-band: #c49b46; --course-band-ink: #1d2924; --course-text: #293832;
+  --course-stripe: linear-gradient(90deg, #c49b46 0 50%, #8a6a2a 50%);
+}
+[data-course="french"] {
+  --course-surface: #174b91; --course-ink: #fff; --course-band: #bd293b; --course-band-ink: #fff; --course-text: #174b91;
+  --course-stripe: linear-gradient(90deg, #0f3a78 0 33%, #fff 33% 66%, #ce3341 66%);
+}
+[data-course="khmer"] {
+  --course-surface: #a51f40; --course-ink: #fff; --course-band: #174b91; --course-band-ink: #fff; --course-text: #a51f40;
+  --course-stripe: linear-gradient(90deg, #174b91 0 25%, #a51f40 25% 75%, #174b91 75%);
+}
+.app-shell .side-nav::before { background: var(--course-stripe); }
+@media (max-width: 900px) { .app-shell .bottom-nav a.active { color: var(--course-text); } }

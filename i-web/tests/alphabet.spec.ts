@@ -2,6 +2,7 @@ import { expect, test, type APIRequestContext, type Page } from '@playwright/tes
 import { readFileSync } from 'node:fs'
 import type { AlphabetDetail, AlphabetDraftPack, AlphabetEvidence, AlphabetPack } from '../src/alphabet'
 import type { CourseId } from '../src/courses'
+import { chooseCourse, courseSwitch } from './courseSwitcher'
 
 // Test fixtures never enter a normal/hosted database. Synthetic review and silence only exercise gates/transport.
 const pack = (course = 'levantine'): AlphabetDraftPack => ({ ...JSON.parse(readFileSync(new URL(`../../i-tests/Fixtures/alphabet-${course}.json`, import.meta.url), 'utf8')), engineeringFixture: false })
@@ -29,8 +30,8 @@ test.beforeAll(async({request})=>{await owner(request); for(const course of ['le
 
 test('unavailable packs and direct routes are honest and accessible',async({page})=>{
   await page.route('**/api/alphabet',r=>r.fulfill({json:{schemaVersion:1,courses:['levantine','msa','quranic','french','khmer'].map(courseId=>({courseId,packId:null,version:null,contentHash:null})),withdrawnIds:[]}}))
-  await page.goto('/#/practice/alphabet'); await expect(page.getByRole('heading',{name:'No alphabet pack published yet'})).toBeVisible(); await expect(page.getByLabel('Language / course')).toBeVisible()
-  await page.getByLabel('Language / course').selectOption('quranic'); await expect(page.locator('.alphabet-course')).toHaveText('Quranic Arabic')
+  await page.goto('/#/practice/alphabet'); await expect(page.getByRole('heading',{name:'No alphabet pack published yet'})).toBeVisible(); await expect(courseSwitch(page)).toBeVisible()
+  await chooseCourse(page, 'quranic'); await expect(page.locator('.alphabet-course')).toHaveText('Quranic Arabic')
   await page.getByRole('link',{name:'Back to Practice',exact:true}).click(); await expect(page.locator('.tile-alphabet')).toBeVisible()
   await page.getByRole('link',{name:'Courses',exact:true}).last().click(); await expect(page.getByRole('link',{name:/Alphabet · Quranic Arabic/})).toBeVisible()
 })
@@ -60,9 +61,9 @@ test('complete download supports offline reload, model audio and four activities
 test('course switching preserves separate browsing and unfinished practice without changing allocation',async({page})=>{
   await openLetter(page); const before=(await snapshots(page)).filter(s=>s.key.includes('study-settings')||s.key.includes('started-lesson'))
   await page.getByRole('button',{name:'Practice this letter'}).click(); await checkShape(page); await expect.poll(async()=>((await snapshots(page)).find(s=>s.key==='alphabet-session-v1:guest:levantine')?.value as {feedback?:string})?.feedback).toBe('Synthetic reviewed explanation.'); await page.reload(); await expect(page.getByRole('button',{name:'Resume alphabet practice'})).toBeVisible()
-  await page.getByLabel('Language / course').selectOption('khmer'); await expect(page.locator('.alphabet-letter')).toHaveCount(2); await page.locator('.alphabet-letter').nth(1).click(); await expect(page.locator('.alphabet-hero')).toHaveText('ខ')
-  await page.getByLabel('Language / course').selectOption('levantine'); await expect(page.locator('.alphabet-hero')).toHaveText('ب'); await page.getByRole('button',{name:'Resume alphabet practice'}).click(); await expect(page.getByRole('dialog').getByRole('status')).toContainText('Accepted.'); await page.getByRole('dialog').getByRole('button',{name:'Close practice'}).click()
-  await page.getByLabel('Language / course').selectOption('khmer'); await expect(page.locator('.alphabet-hero')).toHaveText('ខ')
+  await chooseCourse(page, 'khmer'); await expect(page.locator('.alphabet-letter')).toHaveCount(2); await page.locator('.alphabet-letter').nth(1).click(); await expect(page.locator('.alphabet-hero')).toHaveText('ខ')
+  await chooseCourse(page, 'levantine'); await expect(page.locator('.alphabet-hero')).toHaveText('ب'); await page.getByRole('button',{name:'Resume alphabet practice'}).click(); await expect(page.getByRole('dialog').getByRole('status')).toContainText('Accepted.'); await page.getByRole('dialog').getByRole('button',{name:'Close practice'}).click()
+  await chooseCourse(page, 'khmer'); await expect(page.locator('.alphabet-hero')).toHaveText('ខ')
   expect((await snapshots(page)).filter(s=>s.key.includes('study-settings')||s.key.includes('started-lesson'))).toEqual(before)
 })
 
@@ -98,7 +99,7 @@ test('known withdrawal removes downloaded text and audio but retains historical 
 })
 
 for(const course of ['levantine','khmer','french'] as CourseId[]) test(`${course} exact text, mobile enlarged layout, keyboard and dialog scroll`,async({page})=>{
-  await page.setViewportSize({width:320,height:700}); await page.goto('/#/practice/alphabet'); await page.getByLabel('Language / course').selectOption(course); await expect(page.locator('.alphabet-letter')).toHaveCount(2)
+  await page.setViewportSize({width:320,height:700}); await page.goto('/#/practice/alphabet'); await chooseCourse(page, course); await expect(page.locator('.alphabet-letter')).toHaveCount(2)
   await page.addStyleTag({content:'html { font-size: 24px !important; }'}); const first=page.locator('.alphabet-letter').first(); await first.focus(); await page.keyboard.press('Enter'); await expect(page.locator('.alphabet-hero')).toBeVisible(); await expect(page.locator('.alphabet-detail h2')).toBeFocused()
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBeTruthy(); await page.getByRole('button',{name:'Practice this letter'}).click(); const d=page.getByRole('dialog'); const height=await d.evaluate(e=>e.getBoundingClientRect().height); await d.getByRole('button',{name:'Show explanation'}).click(); expect(await d.evaluate(e=>e.getBoundingClientRect().height)).toBe(height)
   await page.screenshot({path:`/tmp/ismi-alphabet-${course}-320.png`}); await page.keyboard.press('Escape'); await expect(page.getByRole('button',{name:'Practice this letter'})).toBeFocused()
