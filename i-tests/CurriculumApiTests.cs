@@ -475,6 +475,46 @@ public sealed class CurriculumApiTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task SyntheticAudioSurvivesDraftPreviewAndCannotPublishWithPendingRights()
+    {
+        using var owner = CreateClient();
+        using var learner = CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        var csrf = await owner.GetFromJsonAsync<CsrfToken>("/api/auth/csrf");
+        owner.DefaultRequestHeaders.Add("X-CSRF-TOKEN", csrf!.Token);
+        var bytes = RecordingTests.Wave();
+        var upload = await owner.PostAsync("/api/admin/curriculum/recordings", new ByteArrayContent(bytes));
+        var url = (await upload.Content.ReadFromJsonAsync<RecordingUpload>())!.AudioUrl;
+        owner.DefaultRequestHeaders.Remove("X-CSRF-TOKEN");
+        var versions = (await owner.GetFromJsonAsync<List<CurriculumVersionSummary>>("/api/admin/curriculum/versions"))!;
+        var detail = (await owner.GetFromJsonAsync<CurriculumVersionDetail>($"/api/admin/curriculum/versions/{versions.First().Id}"))!;
+        var step = detail.Lesson.Steps[0];
+        var ssml = $"<speak xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"ar-JO\"><voice name=\"test-voice\">{System.Security.SecurityElement.Escape(step.Prompt.Arabic)}</voice></speak>";
+        var synthesis = new SyntheticAudioProvenance("Test provider", "test-voice", "ar-JO", "test fixture", DateTimeOffset.UtcNow,
+            ssml, Convert.ToHexStringLower(System.Security.Cryptography.SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(ssml))),
+            url[16..^4], "accepted-fallback", "Synthetic transport fixture only.", "pending");
+        var recording = new LessonRecording(step.Prompt.Arabic, "test-voice", "jordanian", url, "Synthetic fixture, not human or native review.", "ar-JO", "synthetic", synthesis);
+        var lesson = detail.Lesson with { Id = "synthetic-draft-test", Introduction = null, Recall = null, Vocabulary = null, ReviewStatus = "demonstrative",
+            Steps = [step with { Prompt = step.Prompt with { AudioUrl = url, Recording = recording } }] };
+        CurriculumSourceInput[] sources = [new("recording", "Synthetic transport fixture", url, "Pending rights acceptance; not cleared.", "No real provider rights inferred.")];
+        var response = await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/admin/curriculum/drafts", new CurriculumDraftRequest(lesson, sources));
+        response.EnsureSuccessStatusCode();
+        var draft = (await response.Content.ReadFromJsonAsync<CurriculumVersionDetail>())!;
+        Assert.Equal(recording, draft.Lesson.Steps[0].Prompt.Recording);
+        var readinessResponse = await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/readiness", new { });
+        var readiness = (await readinessResponse.Content.ReadFromJsonAsync<CurriculumReadinessResult>())!;
+        Assert.True(readiness.Draft.IsValid, string.Join("; ", readiness.Draft.Errors));
+        Assert.False(readiness.Publication.IsValid);
+        Assert.Contains(readiness.Publication.Errors, e => e.Contains("synthetic playback"));
+        Assert.Equal(bytes, await owner.GetByteArrayAsync(url));
+        Assert.Equal(HttpStatusCode.NotFound, (await learner.GetAsync(url)).StatusCode);
+        Assert.Equal(HttpStatusCode.NotFound, (await learner.GetAsync("/api/lessons/synthetic-draft-test")).StatusCode);
+        Assert.Equal(HttpStatusCode.BadRequest, (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/approve", new { })).StatusCode);
+        var saved = (await owner.GetFromJsonAsync<CurriculumVersionDetail>($"/api/admin/curriculum/versions/{draft.Id}"))!;
+        Assert.Equal(recording, saved.Lesson.Steps[0].Prompt.Recording);
+    }
+
+    [Fact]
     public async Task RecordingsRequireOwnerCsrfProvenanceAndPublication()
     {
         using var owner = CreateClient();

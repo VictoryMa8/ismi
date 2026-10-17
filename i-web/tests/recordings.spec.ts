@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto'
 import { finishTeaching, responseChoices } from './lesson-helpers'
 import { expect, test } from '@playwright/test'
 
@@ -11,7 +12,8 @@ function silentWave() {
   return bytes
 }
 
-test('console recording publication downloads audio and plays after offline reload', async ({ page, context }, testInfo) => {
+for (const origin of ['human', 'synthetic'] as const) {
+test(`${origin} console recording downloads audio and plays after offline reload`, async ({ page, context }, testInfo) => {
   const csrf = await (await page.request.get('/api/auth/csrf')).json()
   const registration = await page.request.post('/api/auth/register', {
     headers: { 'X-CSRF-TOKEN': csrf.token },
@@ -32,7 +34,7 @@ test('console recording publication downloads audio and plays after offline relo
     await page.goto('/#/today')
     await page.getByRole('complementary', { name: 'Primary navigation' }).getByRole('link', { name: 'Account', exact: true }).click()
     await page.getByRole('button', { name: 'Open curriculum console' }).click()
-    await page.getByRole('complementary', { name: 'Curriculum versions' }).getByRole('button', { name: /Answer a friend’s check-in/ }).click()
+    await page.getByRole('complementary', { name: 'Curriculum versions' }).getByRole('button', { name: /Answer a friend’s check-in published/ }).click()
     await page.getByRole('button', { name: 'New draft from selected' }).click()
     await expect(page.getByRole('button', { name: 'Save draft' })).toBeVisible()
     await page.getByLabel(/Upload recording for/).setInputFiles({ name: 'transport-fixture.wav', mimeType: 'audio/wav', buffer: silentWave() })
@@ -40,6 +42,23 @@ test('console recording publication downloads audio and plays after offline relo
     await page.getByLabel('Speaker', { exact: true }).fill('Transport test fixture')
     await page.getByLabel('Review notes').fill('Silent test fixture only; not curriculum or reviewed speech.')
     await page.getByLabel('Rights / permission').last().fill('Generated test signal. Playback and offline distribution permitted.')
+    if (origin === 'synthetic') {
+      const editor = page.getByLabel('Structured lesson JSON')
+      const lesson = JSON.parse(await editor.inputValue())
+      const prompt = lesson.steps[0].prompt
+      const ssml = `<speak xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="ar-JO"><voice name="test-voice">${prompt.arabic}</voice></speak>`
+      prompt.recording.origin = 'synthetic'
+      prompt.recording.synthesis = {
+        provider: 'Test provider', voice: 'test-voice', locale: 'ar-JO', modelRevision: 'test fixture',
+        generatedAt: new Date().toISOString(), ssml, ssmlSha256: createHash('sha256').update(ssml).digest('hex'),
+        audioSha256: createHash('sha256').update(silentWave()).digest('hex'),
+        reviewDisposition: 'accepted-fallback', ownerReview: 'Transport test only; no real linguistic review.',
+        rightsStatus: 'cleared', rightsEvidence: 'Test-only generated signal; not real Azure rights clearance.',
+      }
+      await editor.fill(JSON.stringify(lesson, null, 2))
+      await expect(page.getByLabel('Audio origin')).toHaveValue('synthetic')
+      await expect(page.getByLabel('Synthetic provenance JSON')).toBeVisible()
+    }
     await expect(page.getByRole('button', { name: 'Approve', exact: true })).toBeDisabled()
     await page.getByRole('heading', { name: 'Prompt recordings' }).scrollIntoViewIfNeeded()
     await page.screenshot({ path: testInfo.outputPath('recording-console.png') })
@@ -77,7 +96,7 @@ test('console recording publication downloads audio and plays after offline relo
     await page.reload()
     await page.getByRole('button', { name: /Continue in Levantine/i }).click()
     await finishTeaching(page, page.getByRole('dialog'))
-    await expect(page.getByText('Recorded · Transport test fixture · Urban Palestinian')).toBeVisible()
+    await expect(page.getByText(origin === 'synthetic' ? 'AI-generated audio · Test provider · test-voice · ar-JO voice · pronunciation not independently verified' : 'Recorded · Transport test fixture · Urban Palestinian')).toBeVisible()
     await page.getByText('Recording transcript and source').click()
     await expect(page.locator('details p[lang|="ar"]')).toBeVisible()
     expect(await page.locator('.scenario-panel > div').evaluate(element => element.scrollWidth <= element.clientWidth)).toBe(true)
@@ -92,7 +111,7 @@ test('console recording publication downloads audio and plays after offline relo
         return audio
       } as typeof Audio
     })
-    await page.getByRole('button', { name: 'Play the recorded Arabic prompt' }).click()
+    await page.getByRole('button', { name: origin === 'synthetic' ? 'Play AI-generated Arabic prompt' : 'Play the recorded Arabic prompt' }).click()
     await expect.poll(() => page.evaluate(() => {
       const audio = (window as unknown as { testAudio: HTMLAudioElement }).testAudio
       return audio?.src.startsWith('blob:') && audio.currentTime > 0
@@ -108,8 +127,8 @@ test('console recording publication downloads audio and plays after offline relo
     await page.getByRole('button', { name: 'Mixed review' }).click()
     const review = page.getByRole('dialog', { name: 'Mixed review' })
     await review.getByText('Recording transcript and source', { exact: true }).click()
-    await expect(review.getByText('Recorded · Transport test fixture · Urban Palestinian')).toBeVisible()
-    await review.getByRole('button', { name: 'Play recorded prompt' }).click()
+    await expect(review.getByText(origin === 'synthetic' ? 'AI-generated audio · Test provider · test-voice · ar-JO voice · pronunciation not independently verified' : 'Recorded · Transport test fixture · Urban Palestinian')).toBeVisible()
+    await review.getByRole('button', { name: origin === 'synthetic' ? 'Play AI-generated prompt' : 'Play recorded prompt' }).click()
     await expect.poll(() => page.evaluate(() => {
       const audio = (window as unknown as { testAudio: HTMLAudioElement }).testAudio
       return audio?.src.startsWith('blob:') && audio.currentTime > 0
@@ -124,6 +143,8 @@ test('console recording publication downloads audio and plays after offline relo
     })
   }
 })
+
+}
 
 for (const failure of ['missing', 'corrupt'] as const) {
   test(`a ${failure} recording preserves the previous offline lesson package`, async ({ page }) => {

@@ -1,0 +1,579 @@
+{
+  "date": "2026-10-17",
+  "status": "owner-reviewed-partial-pronunciation-success",
+  "authorization": "Owner authorized the proposed bounded correction experiment on October 17.",
+  "tierEvidence": "Safari resource overview rechecked before correction generation: Free / Active.",
+  "source": "azure-audition-2026-10-17.json",
+  "scope": "Two problem phrases, two Jordanian voices, four methods: plain normal, vowels normal, vowels slow, IPA normal. Original displayed lesson text unchanged.",
+  "genderTarget": "Pinned e01-06 script specifies Biddak tirtah; owner earlier referred to biddik. No curriculum gender change adopted.",
+  "clips": [
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-SanaNeural",
+        "method": "phonemes-normal",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaCandidate": "ʃuː ʕaːmle",
+        "requestFile": "ar-JO-SanaNeural-e01-04-phonemes-normal.ssml",
+        "ssmlSha256": "126920d687641b61fdea897ef8a79ea331e7aef793602b906ae37e91909da1e3"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:21.691451+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "phrase ending defect reported; exact voice not specified",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "5411c81e982804e2fffcfc6bb870775cea55e8f97030a87d3d99ddd2c6f5082c",
+        "durationSeconds": 1.5920833333333333,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-SanaNeural",
+        "method": "plain-normal",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-SanaNeural-e01-04-plain-normal.ssml",
+        "ssmlSha256": "1d85c3958c8e57b3f6734ce2863ff1bda847415db7675ce4105dc85e9867d9f2"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:14.910192+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "614c6b522766caaab0d56dae6946c2c80d2aa45093ef0eaf43a700252504160c",
+        "durationSeconds": 1.8815416666666667,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-SanaNeural",
+        "method": "vowels-normal",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شُو عَامْلِة؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-SanaNeural-e01-04-vowels-normal.ssml",
+        "ssmlSha256": "b4d637575d07b2cf44ec7fa3fc46b33860170b1e76986303e5c898d021ccb59a"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:17.271821+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "068669b26a1a1a42a709e3b0047111f81be16e3a7ed37edc2aa0c6be1cf58a08",
+        "durationSeconds": 1.8420416666666666,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-SanaNeural",
+        "method": "vowels-slow",
+        "rate": "-20%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شُو عَامْلِة؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-SanaNeural-e01-04-vowels-slow.ssml",
+        "ssmlSha256": "64e4a2d553543f0bda00991b10d70e3dd8adc6dc111c2c875355626e0cc3d89f"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:19.376639+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "b70f4da1264e3470b53dea49f6983a346252957830e74d89c67e9b809d27774e",
+        "durationSeconds": 2.3025416666666665,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-06",
+        "voice": "ar-JO-SanaNeural",
+        "method": "phonemes-normal",
+        "rate": "0%",
+        "transcript": "بدك ترتاح؟",
+        "sourceArabizi": "Biddak tirtāḥ?",
+        "target": "biddak tirtāḥ",
+        "synthesisText": "بدك ترتاح؟",
+        "ipaCandidate": "bidːak tirtaːħ",
+        "requestFile": "ar-JO-SanaNeural-e01-06-phonemes-normal.ssml",
+        "ssmlSha256": "3d7611f2f9237515bacaf4cc1f11657dc75b51e3ae7cd3fffefc1894aa98b8e5"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:22.150494+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "phrase pronunciation accepted; exact voice not selected",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "7c5d1ada05688c087b809807809c361d18b0a98d224abb3f442003aec65513ba",
+        "durationSeconds": 2.105208333333333,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-06",
+        "voice": "ar-JO-SanaNeural",
+        "method": "plain-normal",
+        "rate": "0%",
+        "transcript": "بدك ترتاح؟",
+        "sourceArabizi": "Biddak tirtāḥ?",
+        "target": "biddak tirtāḥ",
+        "synthesisText": "بدك ترتاح؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-SanaNeural-e01-06-plain-normal.ssml",
+        "ssmlSha256": "c2efab22b4bf78534dc33834505ee2d3a770037e6df4010377ce98d235600861"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:15.459276+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "1e3fcc09321a86f53c58f9e9146465111e90d60136020a7222b1b731ff8cce5b",
+        "durationSeconds": 2.1841666666666666,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-06",
+        "voice": "ar-JO-SanaNeural",
+        "method": "vowels-normal",
+        "rate": "0%",
+        "transcript": "بدك ترتاح؟",
+        "sourceArabizi": "Biddak tirtāḥ?",
+        "target": "biddak tirtāḥ",
+        "synthesisText": "بِدَّك تِرْتَاح؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-SanaNeural-e01-06-vowels-normal.ssml",
+        "ssmlSha256": "261b1bdb86b0adbbc63524647bc96203b2f382626af9d49cd483c711ecf2fa86"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:17.754408+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "36d7b6791b0d0872eb033b8041c4954751298ab5c697af72546e234d6471c442",
+        "durationSeconds": 2.27625,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-06",
+        "voice": "ar-JO-SanaNeural",
+        "method": "vowels-slow",
+        "rate": "-20%",
+        "transcript": "بدك ترتاح؟",
+        "sourceArabizi": "Biddak tirtāḥ?",
+        "target": "biddak tirtāḥ",
+        "synthesisText": "بِدَّك تِرْتَاح؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-SanaNeural-e01-06-vowels-slow.ssml",
+        "ssmlSha256": "e5512d95c8355c45e58d35f641170f0373f9b78df8d2e7e0e70d64bdea427fa9"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:19.900006+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "acbd88d749d9923cbc3b409c1115abc582cafa102048f9857e381c696e3ac6e5",
+        "durationSeconds": 2.8452916666666668,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "phonemes-normal",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaCandidate": "ʃuː ʕaːmle",
+        "requestFile": "ar-JO-TaimNeural-e01-04-phonemes-normal.ssml",
+        "ssmlSha256": "7789b3ac5ac931618b39476c8bdc23906e46baecd724685b43b52a972381454b"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:22.754132+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "phrase ending defect reported; exact voice not specified",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "0aa48634523b81d89166d1674edd8911104757e74aa99f6bb312de59eff0a2d4",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "plain-normal",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-TaimNeural-e01-04-plain-normal.ssml",
+        "ssmlSha256": "34a68d3cd73cecb476fd905be703aa5f6d2b6308c59adf295484246275621ff8"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:16.058061+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "570a014961a7b4a62f7a167de36bcb2d44b5c9b9d4cb48526f73814ba03ad160",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "vowels-normal",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شُو عَامْلِة؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-TaimNeural-e01-04-vowels-normal.ssml",
+        "ssmlSha256": "629c2968e792e23b687e8780ecfd295e7a14af3d425d3e707c1ccc169cc418e4"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:18.331354+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "2e73b50fc6c19289ee5d434a202081ed59d017004d5ea66328ee32075e27bb58",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "vowels-slow",
+        "rate": "-20%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شُو عَامْلِة؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-TaimNeural-e01-04-vowels-slow.ssml",
+        "ssmlSha256": "cddd16606589d3904616d2e590c404e210155c44ba6454c2a5ae94e0f9e73919"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:20.554756+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "4778af13952d7a7ec29be168b0f14be8acb4dc832ccb643024b83693ae511138",
+        "durationSeconds": 2.064375,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-06",
+        "voice": "ar-JO-TaimNeural",
+        "method": "phonemes-normal",
+        "rate": "0%",
+        "transcript": "بدك ترتاح؟",
+        "sourceArabizi": "Biddak tirtāḥ?",
+        "target": "biddak tirtāḥ",
+        "synthesisText": "بدك ترتاح؟",
+        "ipaCandidate": "bidːak tirtaːħ",
+        "requestFile": "ar-JO-TaimNeural-e01-06-phonemes-normal.ssml",
+        "ssmlSha256": "5a3a995f108691c1a8b0877e0f4ca64c40b391b987dcb3c9af2094ef89ee14cd"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:23.278892+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "phrase pronunciation accepted; exact voice not selected",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "289a46766f38a959df1fe01e17062e959c281ef2a6f9c6d8f3095e42de9d5085",
+        "durationSeconds": 1.85,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-06",
+        "voice": "ar-JO-TaimNeural",
+        "method": "plain-normal",
+        "rate": "0%",
+        "transcript": "بدك ترتاح؟",
+        "sourceArabizi": "Biddak tirtāḥ?",
+        "target": "biddak tirtāḥ",
+        "synthesisText": "بدك ترتاح؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-TaimNeural-e01-06-plain-normal.ssml",
+        "ssmlSha256": "4cdac4ac5a0e18f6bd859ab37014e626cda176132de6043f28f42a4c967323ae"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:16.691626+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "b48c81d20704b09b248b3152212a8b91ac003d9d179a42dae6621dc55ba1386b",
+        "durationSeconds": 1.8625,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-06",
+        "voice": "ar-JO-TaimNeural",
+        "method": "vowels-normal",
+        "rate": "0%",
+        "transcript": "بدك ترتاح؟",
+        "sourceArabizi": "Biddak tirtāḥ?",
+        "target": "biddak tirtāḥ",
+        "synthesisText": "بِدَّك تِرْتَاح؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-TaimNeural-e01-06-vowels-normal.ssml",
+        "ssmlSha256": "16ee371a776384bc7efafcba192d468dbf2fa1197899cde8d6bf389166f42924"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:18.871379+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "cf7e6dc1eff9b7df987f4b58e342b865d13efaad05f6708bc89fed4bf7c3a2e9",
+        "durationSeconds": 1.95,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-06",
+        "voice": "ar-JO-TaimNeural",
+        "method": "vowels-slow",
+        "rate": "-20%",
+        "transcript": "بدك ترتاح؟",
+        "sourceArabizi": "Biddak tirtāḥ?",
+        "target": "biddak tirtāḥ",
+        "synthesisText": "بِدَّك تِرْتَاح؟",
+        "ipaCandidate": null,
+        "requestFile": "ar-JO-TaimNeural-e01-06-vowels-slow.ssml",
+        "ssmlSha256": "4e061f9ce165c3b2be02294bf6642156490581455335789cf1a495893b227aad"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:43:21.070870+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "ac2b8fa61c4e62ce4c0af9b54936283c651b31d80c6ecbc500139c979ef313ee",
+        "durationSeconds": 2.4375,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    }
+  ],
+  "review": "Owner accepts biddak tirtah pronunciation and prefers phonemes; shu amle ending remains defective. Exact per-voice clip selection remains unconfirmed.",
+  "ownerReview": {
+    "date": "2026-10-17",
+    "preferredMethod": "phonemes-normal",
+    "biddakTirtah": "Owner says perfect; retain existing files unchanged.",
+    "shuAmle": "Owner hears shoo am; full ending remains unacceptable.",
+    "voiceSelection": "Unspecified; phrase/method feedback does not identify an exact accepted voice/hash."
+  }
+}

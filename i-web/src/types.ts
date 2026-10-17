@@ -48,12 +48,21 @@ export type CourseLessonSummary = {
 }
 
 export type LessonRecording = {
+  origin?: 'human' | 'synthetic' | null
+  synthesis?: SyntheticAudioProvenance | null
   transcript: string
   speaker: string
   dialect: string
   languageTag?: string
   sourceLocator: string
   reviewNotes: string
+}
+
+export type SyntheticAudioProvenance = {
+  provider: string; voice: string; locale: string; modelRevision: string
+  generatedAt: string; ssml: string; ssmlSha256: string; audioSha256: string
+  reviewDisposition: 'pending' | 'accepted' | 'accepted-fallback'
+  ownerReview: string; rightsStatus: 'pending' | 'cleared'; rightsEvidence?: string | null
 }
 
 export type LessonPrompt = TargetText & {

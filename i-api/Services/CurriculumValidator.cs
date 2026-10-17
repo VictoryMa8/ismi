@@ -74,6 +74,7 @@ public sealed class CurriculumValidator(RecordingStore recordings, KhmerTextPrev
                     errors.Add($"{label} needs recording metadata and provenance.");
                 else
                 {
+                    SyntheticAudioValidator.Validate(recording, step.Prompt.AudioUrl, forPublication, label, errors);
                     if (lesson.TrackId != "levantine" && recording.LanguageTag != lesson.ContentReview?.LanguageTag)
                         errors.Add($"{label}'s recording language must match the content review language.");
                     Required(errors, recording.Transcript, $"{label} needs a recording transcript.");

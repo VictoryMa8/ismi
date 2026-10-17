@@ -1,0 +1,277 @@
+{
+  "date": "2026-10-17",
+  "scope": "Male amle only: three IPA cluster diagnostics, then three synthesis-only spelling aliases. No biddak regeneration or learner text changes.",
+  "ownerFeedback": "Male word-open-e closest, but heard as shoo amel instead of shoo amle; not accepted.",
+  "referenceSha256": "172d17714c93e8fc5105580d877dc7724eaf84662cfff1a25b561dea3e4124c5",
+  "status": "owner-selected-alias-B-for-continuation",
+  "diagnostic": "IPA cluster variants have only approximately 0.00035 relative PCM RMS difference to the closest reference with identical frame count; do not claim useful phoneme control. Alias candidates differ substantially at waveform level; audible correctness still unverified.",
+  "metrics": [
+    {
+      "method": "continuous-ml",
+      "frames": 43680,
+      "relativePcmRmsDifferenceToClosestReference": 0.00035122413630047863
+    },
+    {
+      "method": "final-e-long",
+      "frames": 43680,
+      "relativePcmRmsDifferenceToClosestReference": 0.0003461141658305787
+    },
+    {
+      "method": "ml-onset",
+      "frames": 43680,
+      "relativePcmRmsDifferenceToClosestReference": 0.0003464796167456555
+    },
+    {
+      "method": "alias-final-h",
+      "frames": 43680,
+      "relativePcmRmsDifferenceToClosestReference": 1.7999989686763505
+    },
+    {
+      "method": "alias-final-i",
+      "frames": 43680,
+      "relativePcmRmsDifferenceToClosestReference": 1.7974883014715135
+    },
+    {
+      "method": "alias-final-ih",
+      "frames": 43680,
+      "relativePcmRmsDifferenceToClosestReference": 1.8344214386385498
+    }
+  ],
+  "clips": [
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "continuous-ml",
+        "label": "Continuous m–l · no internal syllable boundary",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": [
+          "ʃuː",
+          "ˈʕaːmlɛ"
+        ],
+        "requestFile": "ar-JO-TaimNeural-e01-04-continuous-ml.ssml",
+        "ssmlSha256": "f5946b5310d4a6ed203b690f60ec6d33384adf3afa7a6faed86ff4be1daa5dcd"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:56:21.807074+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "69102d3ae5bd4c81a3b55ebcc302097f6f4c5f4c2f2fee5b17caa866ca91ce0b",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "final-e-long",
+        "label": "Longer final e · diagnostic, may sound exaggerated",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": [
+          "ʃuː",
+          "ˈʕaːmlɛː"
+        ],
+        "requestFile": "ar-JO-TaimNeural-e01-04-final-e-long.ssml",
+        "ssmlSha256": "62a55f0611f9c2c47b7f00703bf4ba142c11169ed47a50b3ec078e7ecf3560ee"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:56:22.907123+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "c0d7d36e5cc860019caecc2d1b369859882bcd6fbc04494f7580de4b94844993",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "ml-onset",
+        "label": "Group m–l with the final vowel",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": [
+          "ʃuː",
+          "ˈʕaː.mlɛ"
+        ],
+        "requestFile": "ar-JO-TaimNeural-e01-04-ml-onset.ssml",
+        "ssmlSha256": "a05056b1140b4d74a9f1546ab14138bc2ce6830389a70bde878d45c9245a65c1"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:56:22.372736+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "3e6644548257daebc3267f9311e408c5f9bfac0a91407b887f6f158adb2af54c",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "alias-final-h",
+        "label": "Spelling hint B · final e approximation",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": null,
+        "synthesisAlias": "عَامْلِه",
+        "requestFile": "ar-JO-TaimNeural-e01-04-alias-final-h.ssml",
+        "ssmlSha256": "af44d845717ddf875043cf8c92bad45400324029d758fee4b97d43b26e936fe7"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:57:27.514818+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "selected for continued audition by owner: closest, not bad; we can continue",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "ee25726e346fd7b3997b04df7074ab6c2eacacf080f78a045cbc6a5196a2b1cc",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "alias-final-i",
+        "label": "Spelling hint A · final vowel after l",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": null,
+        "synthesisAlias": "عَامْلِي",
+        "requestFile": "ar-JO-TaimNeural-e01-04-alias-final-i.ssml",
+        "ssmlSha256": "5c819227910141444cdcfb28cdbbd0f282867dbc19a2e5cd917343d49d9c7f49"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:57:27.000339+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "6dab5da4cabdf001f8518aa600a0fb4767cb6b49c4e263dd9c28b453d960603e",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "alias-final-ih",
+        "label": "Spelling hint C · stronger ending",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": null,
+        "synthesisAlias": "عَامْلِيه",
+        "requestFile": "ar-JO-TaimNeural-e01-04-alias-final-ih.ssml",
+        "ssmlSha256": "e559cd2de7f3a069c4a43cd9e3726faed87b2a50654ef228e1fe70d10e5f291e"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:57:28.039645+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "33f91fa54aaf25245134f43071430589c01cf45e261de0da35a419d72765ea2e",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    }
+  ],
+  "ownerSelection": {
+    "date": "2026-10-17",
+    "voice": "ar-JO-TaimNeural",
+    "method": "alias-final-h",
+    "outputSha256": "ee25726e346fd7b3997b04df7074ab6c2eacacf080f78a045cbc6a5196a2b1cc",
+    "scope": "Selected audition candidate; no expert review or publication approval. Owner directs continuation."
+  }
+}

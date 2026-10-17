@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import RecordingAttribution from './RecordingAttribution.vue';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import {
   BookOpen,
@@ -439,7 +440,7 @@ const audioButtonLabel = computed(() => {
   if (lesson.value?.publicationNotice) return 'Text-only preview · audio unavailable';
   if (currentPromptIsPlaying.value) return `Stop ${lessonCourse.value.languageName} audio`;
   if (currentStep.value?.prompt.audioUrl)
-    return `Play the recorded ${lessonCourse.value.languageName} prompt`;
+    return currentStep.value?.prompt.recording?.origin === 'synthetic' ? `Play AI-generated ${lessonCourse.value.languageName} prompt` : `Play the recorded ${lessonCourse.value.languageName} prompt`;
   if (!speechSupported.value)
     return 'Device speech is not supported in this browser';
   if (selectedArabicVoice.value) {
@@ -2156,13 +2157,7 @@ async function finishLesson() {
                       </button>
                       <template v-if="currentStep.prompt.recording">
                         <p class="audio-source-note">
-                          Recorded ·
-                          {{ currentStep.prompt.recording.speaker }} ·
-                          {{
-                            currentStep.prompt.recording.dialect === 'jordanian'
-                              ? 'Jordanian variant'
-                              : lesson?.trackId === 'levantine' ? 'Urban Palestinian' : currentStep.prompt.recording.dialect
-                          }}
+                          <RecordingAttribution :recording="currentStep.prompt.recording" :track-id="lesson?.trackId" />
                         </p>
                         <details class="recording-details">
                           <summary>Recording transcript and source</summary>

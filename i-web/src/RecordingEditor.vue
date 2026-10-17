@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue';
 import { textAttributes } from './courses';
 import { uploadRecording } from './api';
+import RecordingAttribution from './RecordingAttribution.vue';
 import type {
   CurriculumSource,
   LessonRecording,
@@ -38,6 +39,19 @@ function update(index: number, field: keyof LessonRecording, event: Event) {
   emit('update:modelValue', JSON.stringify(current, null, 2));
 }
 
+function updateSynthesis(index: number, event: Event) {
+  const current = lesson.value;
+  const recording = current?.steps[index]?.prompt.recording;
+  if (!current || !recording) return;
+  try {
+    const value = JSON.parse((event.target as HTMLTextAreaElement).value);
+    if (!value || typeof value !== 'object' || Array.isArray(value)) throw new Error();
+    recording.synthesis = value;
+    emit('update:modelValue', JSON.stringify(current, null, 2));
+    message.value = 'Synthetic provenance updated locally. Save and check draft readiness.';
+  } catch { message.value = 'Synthetic provenance must be a JSON object.'; }
+}
+
 async function upload(index: number, event: Event) {
   const input = event.target as HTMLInputElement;
   const file = input.files?.[0];
@@ -55,6 +69,7 @@ async function upload(index: number, event: Event) {
     const { audioUrl } = await uploadRecording(file);
     step.prompt.audioUrl = audioUrl;
     step.prompt.recording = {
+      ...(step.prompt.recording?.origin === 'synthetic' ? { origin: 'synthetic', synthesis: step.prompt.recording.synthesis } : {}),
       transcript: step.prompt.targetText ?? step.prompt.arabic,
       speaker: '',
       dialect: current.trackId === 'levantine' ? 'palestinian-urban' : current.contentReview?.variety ?? '',
@@ -99,7 +114,8 @@ function remove(index: number) {
     <p>
       Upload 16-bit PCM WAV files, mono or stereo, 8–48 kHz, up to 10 MB each.
       Listen and check the transcript before approval. Use a speaker credit or
-      agreed pseudonym.
+      agreed pseudonym for human recordings. Synthetic audio needs explicit origin,
+      generation provenance, listening review and redistribution-rights evidence.
     </p>
     <p v-if="message" role="status">{{ message }}</p>
     <p v-if="!lesson">Fix the lesson JSON to edit recordings.</p>
@@ -119,8 +135,17 @@ function remove(index: number) {
         />
       </label>
       <template v-if="step.prompt.recording">
+        <p class="wide"><RecordingAttribution :recording="step.prompt.recording" /></p>
+        <label>Audio origin<select :value="step.prompt.recording.origin ?? 'human'" @change="update(index, 'origin', $event)">
+          <option value="human">Human recording</option>
+          <option value="synthetic">AI-generated audio</option>
+        </select></label>
+        <label v-if="step.prompt.recording.origin === 'synthetic'" class="wide">Synthetic provenance JSON
+          <textarea :value="JSON.stringify(step.prompt.recording.synthesis ?? {}, null, 2)" @change="updateSynthesis(index, $event)"></textarea>
+        </label>
+        <p v-if="step.prompt.recording.origin === 'synthetic'" class="wide">Listening: {{ step.prompt.recording.synthesis?.reviewDisposition ?? 'missing' }} · Rights: {{ step.prompt.recording.synthesis?.rightsStatus ?? 'missing' }}. Pending rights can be saved in a draft; approval and publication remain blocked.</p>
         <label
-          >Speaker<input
+          >{{ step.prompt.recording.origin === 'synthetic' ? 'Voice credit' : 'Speaker' }}<input
             :value="step.prompt.recording.speaker"
             @input="update(index, 'speaker', $event)"
         /></label>

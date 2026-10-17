@@ -1,0 +1,574 @@
+{
+  "lessonId": "levantine-everyday-01-01",
+  "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+  "status": "owner-selected-local-draft-assets",
+  "origin": "synthetic",
+  "provider": "Microsoft Azure Speech",
+  "voice": "ar-JO-TaimNeural",
+  "voiceLocale": "ar-JO",
+  "date": "2026-10-17",
+  "promptCoverage": "8/8 lesson-one prompts; 8/56 first-unit prompts only",
+  "modelRevision": "not exposed",
+  "mappings": [
+    {
+      "stepId": "e01-01",
+      "canonicalAudioStep": "e01-01",
+      "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "transcript": "شو عامل؟",
+      "arabizi": "Shū ʿāmel?",
+      "meaning": "How are you doing? (casual check-in to Knafeh)",
+      "characters": {
+        "speakerId": "fattoush",
+        "addresseeId": "knafeh",
+        "responseSpeakerId": "knafeh",
+        "responseAddresseeId": "fattoush"
+      },
+      "asset": "800b9578a18d5718b6026b3139e4b107bc98ab3f547a217002b826e6e7ffca0e.wav",
+      "sourceArtifact": "azure-lesson-one-v1/ar-JO-TaimNeural-e01-01-draft.json",
+      "output": {
+        "sha256": "800b9578a18d5718b6026b3139e4b107bc98ab3f547a217002b826e6e7ffca0e",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      },
+      "synthesis": {
+        "provider": "Microsoft Azure Speech",
+        "region": "eastus",
+        "tier": "F0",
+        "tierVerifiedAt": "2026-10-17",
+        "packageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+        "request": {
+          "stepId": "e01-01",
+          "voice": "ar-JO-TaimNeural",
+          "method": "synthesis-alias-draft",
+          "rate": "0%",
+          "transcript": "شو عامل؟",
+          "sourceArabizi": "Shū ʿāmel?",
+          "meaning": "How are you doing? (casual check-in to Knafeh)",
+          "characters": {
+            "speakerId": "fattoush",
+            "addresseeId": "knafeh",
+            "responseSpeakerId": "knafeh",
+            "responseAddresseeId": "fattoush"
+          },
+          "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+          "aliasWords": [
+            [
+              "شو",
+              "شُو"
+            ],
+            [
+              "عامل",
+              "عَامِل"
+            ]
+          ],
+          "requestFile": "ar-JO-TaimNeural-e01-01-draft.ssml",
+          "ssmlSha256": "3d0dd047d62401200b6f67e82752a74b3c6ad911b3c652007053684c7b3d99f8"
+        },
+        "outputFormat": "riff-24khz-16bit-mono-pcm",
+        "modelRevision": "not exposed",
+        "requestedAt": "2026-10-17T22:00:48.828548+00:00",
+        "status": "generated-unreviewed",
+        "review": {
+          "ownerListening": "pending",
+          "linguisticAcceptance": "unreviewed"
+        },
+        "output": {
+          "sha256": "800b9578a18d5718b6026b3139e4b107bc98ab3f547a217002b826e6e7ffca0e",
+          "durationSeconds": 1.82,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        }
+      },
+      "ownerAcceptedForDraft": true,
+      "ownerReview": "owner: everything else pretty good",
+      "linguisticReview": "not established",
+      "rightsReview": "pending before publication"
+    },
+    {
+      "stepId": "e01-02",
+      "canonicalAudioStep": "e01-02",
+      "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "transcript": "أنا منيحة.",
+      "arabizi": "Ana mnīḥa.",
+      "meaning": "I’m well. (Fattoush speaking)",
+      "characters": {
+        "speakerId": "fattoush",
+        "addresseeId": "knafeh",
+        "responseSpeakerId": "fattoush",
+        "responseAddresseeId": "knafeh"
+      },
+      "asset": "cda46d37f5c5e4a5a266cfa65deac76f64b106498b30500430b7dd5a6014b84e.wav",
+      "sourceArtifact": "azure-polish-v1/ar-JO-TaimNeural-e01-02-female-lighter.json",
+      "output": {
+        "sha256": "cda46d37f5c5e4a5a266cfa65deac76f64b106498b30500430b7dd5a6014b84e",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      },
+      "synthesis": {
+        "provider": "Microsoft Azure Speech",
+        "region": "eastus",
+        "tier": "F0",
+        "tierVerifiedAt": "2026-10-17",
+        "packageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+        "request": {
+          "stepId": "e01-02",
+          "voice": "ar-JO-TaimNeural",
+          "method": "female-lighter",
+          "rate": "+15%",
+          "transcript": "أنا منيحة.",
+          "sourceArabizi": "Ana mnīḥa.",
+          "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+          "characters": {
+            "speakerId": "fattoush",
+            "addresseeId": "knafeh",
+            "responseSpeakerId": "fattoush",
+            "responseAddresseeId": "knafeh"
+          },
+          "synthesisAlias": "مْنِيحَا",
+          "requestFile": "ar-JO-TaimNeural-e01-02-female-lighter.ssml",
+          "ssmlSha256": "daa4fddc4f7e0949e282ac0bf65cc84d95b2c9bb8a295f0d2d01da0209d8f00b"
+        },
+        "outputFormat": "riff-24khz-16bit-mono-pcm",
+        "modelRevision": "not exposed",
+        "requestedAt": "2026-10-17T22:04:55.618402+00:00",
+        "status": "generated-unreviewed",
+        "review": {
+          "ownerListening": "pending",
+          "linguisticAcceptance": "unreviewed"
+        },
+        "output": {
+          "sha256": "cda46d37f5c5e4a5a266cfa65deac76f64b106498b30500430b7dd5a6014b84e",
+          "durationSeconds": 1.82,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        }
+      },
+      "ownerAcceptedForDraft": true,
+      "ownerReview": "owner allows female lighter as fallback; heavier m remains acknowledged",
+      "linguisticReview": "not established",
+      "rightsReview": "pending before publication"
+    },
+    {
+      "stepId": "e01-03",
+      "canonicalAudioStep": "e01-03",
+      "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "transcript": "فتوش",
+      "arabizi": "Fattoush",
+      "meaning": "Fattoush",
+      "characters": {
+        "speakerId": null,
+        "addresseeId": null,
+        "responseSpeakerId": "knafeh",
+        "responseAddresseeId": "fattoush"
+      },
+      "asset": "fb3caace7936721af42a087eb251b35304e2d8adc913f6b08c9d7e1086b5c124.wav",
+      "sourceArtifact": "azure-lesson-one-v1/ar-JO-TaimNeural-e01-03-draft.json",
+      "output": {
+        "sha256": "fb3caace7936721af42a087eb251b35304e2d8adc913f6b08c9d7e1086b5c124",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      },
+      "synthesis": {
+        "provider": "Microsoft Azure Speech",
+        "region": "eastus",
+        "tier": "F0",
+        "tierVerifiedAt": "2026-10-17",
+        "packageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+        "request": {
+          "stepId": "e01-03",
+          "voice": "ar-JO-TaimNeural",
+          "method": "synthesis-alias-draft",
+          "rate": "0%",
+          "transcript": "فتوش",
+          "sourceArabizi": "Fattoush",
+          "meaning": "Fattoush",
+          "characters": {
+            "speakerId": null,
+            "addresseeId": null,
+            "responseSpeakerId": "knafeh",
+            "responseAddresseeId": "fattoush"
+          },
+          "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+          "aliasWords": [
+            [
+              "فتوش",
+              "فَتُّوش"
+            ]
+          ],
+          "requestFile": "ar-JO-TaimNeural-e01-03-draft.ssml",
+          "ssmlSha256": "c049aa985c7f0ce3bcf1e80671e8fb3536d131a0d96b35d8177fd6fa97a62400"
+        },
+        "outputFormat": "riff-24khz-16bit-mono-pcm",
+        "modelRevision": "not exposed",
+        "requestedAt": "2026-10-17T22:00:49.817559+00:00",
+        "status": "generated-unreviewed",
+        "review": {
+          "ownerListening": "pending",
+          "linguisticAcceptance": "unreviewed"
+        },
+        "output": {
+          "sha256": "fb3caace7936721af42a087eb251b35304e2d8adc913f6b08c9d7e1086b5c124",
+          "durationSeconds": 1.82,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        }
+      },
+      "ownerAcceptedForDraft": true,
+      "ownerReview": "owner: everything else pretty good",
+      "linguisticReview": "not established",
+      "rightsReview": "pending before publication"
+    },
+    {
+      "stepId": "e01-04",
+      "canonicalAudioStep": "e01-04",
+      "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "transcript": "شو عاملة؟",
+      "arabizi": "Shū ʿāmle?",
+      "meaning": "How are you doing? (casual check-in to Fattoush)",
+      "characters": {
+        "speakerId": "knafeh",
+        "addresseeId": "fattoush",
+        "responseSpeakerId": "fattoush",
+        "responseAddresseeId": "knafeh"
+      },
+      "asset": "ee25726e346fd7b3997b04df7074ab6c2eacacf080f78a045cbc6a5196a2b1cc.wav",
+      "sourceArtifact": "azure-alias-v1/ar-JO-TaimNeural-e01-04-alias-final-h.json",
+      "output": {
+        "sha256": "ee25726e346fd7b3997b04df7074ab6c2eacacf080f78a045cbc6a5196a2b1cc",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      },
+      "synthesis": {
+        "provider": "Microsoft Azure Speech",
+        "region": "eastus",
+        "tier": "F0",
+        "tierVerifiedAt": "2026-10-17",
+        "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+        "request": {
+          "stepId": "e01-04",
+          "voice": "ar-JO-TaimNeural",
+          "method": "alias-final-h",
+          "label": "Spelling hint B · final e approximation",
+          "rate": "0%",
+          "transcript": "شو عاملة؟",
+          "sourceArabizi": "Shū ʿāmle?",
+          "target": "shū ʿāmle",
+          "synthesisText": "شو عاملة؟",
+          "ipaWords": null,
+          "synthesisAlias": "عَامْلِه",
+          "requestFile": "ar-JO-TaimNeural-e01-04-alias-final-h.ssml",
+          "ssmlSha256": "af44d845717ddf875043cf8c92bad45400324029d758fee4b97d43b26e936fe7"
+        },
+        "outputFormat": "riff-24khz-16bit-mono-pcm",
+        "modelRevision": "not exposed",
+        "requestedAt": "2026-10-17T21:57:27.514818+00:00",
+        "status": "generated-unreviewed",
+        "review": {
+          "ownerListening": "selected for continued audition by owner: closest, not bad; we can continue",
+          "linguisticAcceptance": "unreviewed"
+        },
+        "output": {
+          "sha256": "ee25726e346fd7b3997b04df7074ab6c2eacacf080f78a045cbc6a5196a2b1cc",
+          "durationSeconds": 1.82,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        }
+      },
+      "ownerAcceptedForDraft": true,
+      "ownerReview": "owner selected spelling hint B; closest, not bad",
+      "linguisticReview": "not established",
+      "rightsReview": "pending before publication"
+    },
+    {
+      "stepId": "e01-05",
+      "canonicalAudioStep": "e01-01",
+      "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "transcript": "شو عامل؟",
+      "arabizi": "Shū ʿāmel?",
+      "meaning": "How are you doing? (casual check-in to Knafeh)",
+      "characters": {
+        "speakerId": "fattoush",
+        "addresseeId": "knafeh",
+        "responseSpeakerId": "knafeh",
+        "responseAddresseeId": "fattoush"
+      },
+      "asset": "800b9578a18d5718b6026b3139e4b107bc98ab3f547a217002b826e6e7ffca0e.wav",
+      "sourceArtifact": "azure-lesson-one-v1/ar-JO-TaimNeural-e01-01-draft.json",
+      "output": {
+        "sha256": "800b9578a18d5718b6026b3139e4b107bc98ab3f547a217002b826e6e7ffca0e",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      },
+      "synthesis": {
+        "provider": "Microsoft Azure Speech",
+        "region": "eastus",
+        "tier": "F0",
+        "tierVerifiedAt": "2026-10-17",
+        "packageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+        "request": {
+          "stepId": "e01-01",
+          "voice": "ar-JO-TaimNeural",
+          "method": "synthesis-alias-draft",
+          "rate": "0%",
+          "transcript": "شو عامل؟",
+          "sourceArabizi": "Shū ʿāmel?",
+          "meaning": "How are you doing? (casual check-in to Knafeh)",
+          "characters": {
+            "speakerId": "fattoush",
+            "addresseeId": "knafeh",
+            "responseSpeakerId": "knafeh",
+            "responseAddresseeId": "fattoush"
+          },
+          "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+          "aliasWords": [
+            [
+              "شو",
+              "شُو"
+            ],
+            [
+              "عامل",
+              "عَامِل"
+            ]
+          ],
+          "requestFile": "ar-JO-TaimNeural-e01-01-draft.ssml",
+          "ssmlSha256": "3d0dd047d62401200b6f67e82752a74b3c6ad911b3c652007053684c7b3d99f8"
+        },
+        "outputFormat": "riff-24khz-16bit-mono-pcm",
+        "modelRevision": "not exposed",
+        "requestedAt": "2026-10-17T22:00:48.828548+00:00",
+        "status": "generated-unreviewed",
+        "review": {
+          "ownerListening": "pending",
+          "linguisticAcceptance": "unreviewed"
+        },
+        "output": {
+          "sha256": "800b9578a18d5718b6026b3139e4b107bc98ab3f547a217002b826e6e7ffca0e",
+          "durationSeconds": 1.82,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        }
+      },
+      "ownerAcceptedForDraft": true,
+      "ownerReview": "owner: everything else pretty good",
+      "linguisticReview": "not established",
+      "rightsReview": "pending before publication"
+    },
+    {
+      "stepId": "e01-06",
+      "canonicalAudioStep": "e01-06",
+      "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "transcript": "بدك ترتاح؟",
+      "arabizi": "Biddak tirtāḥ?",
+      "meaning": "Do you want to rest? (to Knafeh)",
+      "characters": {
+        "speakerId": "fattoush",
+        "addresseeId": "knafeh",
+        "responseSpeakerId": "knafeh",
+        "responseAddresseeId": "fattoush"
+      },
+      "asset": "289a46766f38a959df1fe01e17062e959c281ef2a6f9c6d8f3095e42de9d5085.wav",
+      "sourceArtifact": "azure-correction-v1/ar-JO-TaimNeural-e01-06-phonemes-normal.json",
+      "output": {
+        "sha256": "289a46766f38a959df1fe01e17062e959c281ef2a6f9c6d8f3095e42de9d5085",
+        "durationSeconds": 1.85,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      },
+      "synthesis": {
+        "provider": "Microsoft Azure Speech",
+        "region": "eastus",
+        "tier": "F0",
+        "tierVerifiedAt": "2026-10-17",
+        "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+        "request": {
+          "stepId": "e01-06",
+          "voice": "ar-JO-TaimNeural",
+          "method": "phonemes-normal",
+          "rate": "0%",
+          "transcript": "بدك ترتاح؟",
+          "sourceArabizi": "Biddak tirtāḥ?",
+          "target": "biddak tirtāḥ",
+          "synthesisText": "بدك ترتاح؟",
+          "ipaCandidate": "bidːak tirtaːħ",
+          "requestFile": "ar-JO-TaimNeural-e01-06-phonemes-normal.ssml",
+          "ssmlSha256": "5a3a995f108691c1a8b0877e0f4ca64c40b391b987dcb3c9af2094ef89ee14cd"
+        },
+        "outputFormat": "riff-24khz-16bit-mono-pcm",
+        "modelRevision": "not exposed",
+        "requestedAt": "2026-10-17T21:43:23.278892+00:00",
+        "status": "generated-unreviewed",
+        "review": {
+          "ownerListening": "phrase pronunciation accepted; exact voice not selected",
+          "linguisticAcceptance": "unreviewed"
+        },
+        "output": {
+          "sha256": "289a46766f38a959df1fe01e17062e959c281ef2a6f9c6d8f3095e42de9d5085",
+          "durationSeconds": 1.85,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        }
+      },
+      "ownerAcceptedForDraft": true,
+      "ownerReview": "owner: biddak perfect; current male clip included in everything else pretty good",
+      "linguisticReview": "not established",
+      "rightsReview": "pending before publication"
+    },
+    {
+      "stepId": "e01-07",
+      "canonicalAudioStep": "e01-04",
+      "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "transcript": "شو عاملة؟",
+      "arabizi": "Shū ʿāmle?",
+      "meaning": "How are you doing? (casual check-in to Fattoush)",
+      "characters": {
+        "speakerId": "knafeh",
+        "addresseeId": "fattoush",
+        "responseSpeakerId": "fattoush",
+        "responseAddresseeId": "knafeh"
+      },
+      "asset": "ee25726e346fd7b3997b04df7074ab6c2eacacf080f78a045cbc6a5196a2b1cc.wav",
+      "sourceArtifact": "azure-alias-v1/ar-JO-TaimNeural-e01-04-alias-final-h.json",
+      "output": {
+        "sha256": "ee25726e346fd7b3997b04df7074ab6c2eacacf080f78a045cbc6a5196a2b1cc",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      },
+      "synthesis": {
+        "provider": "Microsoft Azure Speech",
+        "region": "eastus",
+        "tier": "F0",
+        "tierVerifiedAt": "2026-10-17",
+        "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+        "request": {
+          "stepId": "e01-04",
+          "voice": "ar-JO-TaimNeural",
+          "method": "alias-final-h",
+          "label": "Spelling hint B · final e approximation",
+          "rate": "0%",
+          "transcript": "شو عاملة؟",
+          "sourceArabizi": "Shū ʿāmle?",
+          "target": "shū ʿāmle",
+          "synthesisText": "شو عاملة؟",
+          "ipaWords": null,
+          "synthesisAlias": "عَامْلِه",
+          "requestFile": "ar-JO-TaimNeural-e01-04-alias-final-h.ssml",
+          "ssmlSha256": "af44d845717ddf875043cf8c92bad45400324029d758fee4b97d43b26e936fe7"
+        },
+        "outputFormat": "riff-24khz-16bit-mono-pcm",
+        "modelRevision": "not exposed",
+        "requestedAt": "2026-10-17T21:57:27.514818+00:00",
+        "status": "generated-unreviewed",
+        "review": {
+          "ownerListening": "selected for continued audition by owner: closest, not bad; we can continue",
+          "linguisticAcceptance": "unreviewed"
+        },
+        "output": {
+          "sha256": "ee25726e346fd7b3997b04df7074ab6c2eacacf080f78a045cbc6a5196a2b1cc",
+          "durationSeconds": 1.82,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        }
+      },
+      "ownerAcceptedForDraft": true,
+      "ownerReview": "owner selected spelling hint B; closest, not bad",
+      "linguisticReview": "not established",
+      "rightsReview": "pending before publication"
+    },
+    {
+      "stepId": "e01-08",
+      "canonicalAudioStep": "e01-08",
+      "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "transcript": "أنا منيح.",
+      "arabizi": "Ana mnīḥ.",
+      "meaning": "I’m well. (Knafeh speaking)",
+      "characters": {
+        "speakerId": "knafeh",
+        "addresseeId": "fattoush",
+        "responseSpeakerId": "knafeh",
+        "responseAddresseeId": "fattoush"
+      },
+      "asset": "5b5fecdf9ee3ff92140230e063c1dfc884690774711c82bd7a200c05fd9550e7.wav",
+      "sourceArtifact": "azure-polish-v1/ar-JO-TaimNeural-e01-08-male-lighter.json",
+      "output": {
+        "sha256": "5b5fecdf9ee3ff92140230e063c1dfc884690774711c82bd7a200c05fd9550e7",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      },
+      "synthesis": {
+        "provider": "Microsoft Azure Speech",
+        "region": "eastus",
+        "tier": "F0",
+        "tierVerifiedAt": "2026-10-17",
+        "packageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+        "request": {
+          "stepId": "e01-08",
+          "voice": "ar-JO-TaimNeural",
+          "method": "male-lighter",
+          "rate": "+15%",
+          "transcript": "أنا منيح.",
+          "sourceArabizi": "Ana mnīḥ.",
+          "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+          "characters": {
+            "speakerId": "knafeh",
+            "addresseeId": "fattoush",
+            "responseSpeakerId": "knafeh",
+            "responseAddresseeId": "fattoush"
+          },
+          "synthesisAlias": "مْنِيح",
+          "requestFile": "ar-JO-TaimNeural-e01-08-male-lighter.ssml",
+          "ssmlSha256": "31aafecc48b70db69a3682a78f718ce18e926167973aa232e83a560531d89d81"
+        },
+        "outputFormat": "riff-24khz-16bit-mono-pcm",
+        "modelRevision": "not exposed",
+        "requestedAt": "2026-10-17T22:04:56.090635+00:00",
+        "status": "generated-unreviewed",
+        "review": {
+          "ownerListening": "pending",
+          "linguisticAcceptance": "unreviewed"
+        },
+        "output": {
+          "sha256": "5b5fecdf9ee3ff92140230e063c1dfc884690774711c82bd7a200c05fd9550e7",
+          "durationSeconds": 1.82,
+          "sampleRate": 24000,
+          "channels": 1,
+          "format": "PCM_16"
+        }
+      },
+      "ownerAcceptedForDraft": true,
+      "ownerReview": "owner: male lighter is perfect",
+      "linguisticReview": "not established",
+      "rightsReview": "pending before publication"
+    }
+  ],
+  "boundaries": "Not an application import payload. Synthetic provenance schema and console draft integration remain required. No publication, native review, verified Palestinian pronunciation, human-audio coverage or rights clearance inferred. Female lighter is an accepted fallback with heavier m acknowledged.",
+  "verification": {
+    "date": "2026-10-17",
+    "selectedWavHashes": "8/8 mappings verified",
+    "uniqueWavs": 6,
+    "zipEntries": 8,
+    "offlineArchive": "All relative audio references resolve to ZIP assets, manifest round-trips and every WAV hash passes; browser offline app download not claimed.",
+    "zipSha256": "92a5c5f36e4cb7ff909ff58309d0250c6541f0550dc7ce02776b2fd33475a57c"
+  }
+}

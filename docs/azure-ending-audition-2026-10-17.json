@@ -1,0 +1,244 @@
+{
+  "date": "2026-10-17",
+  "scope": "Six amle-only per-word IPA probes; two voices, syllables/stress/open-final-e variants. Existing biddak audio unchanged.",
+  "status": "reviewed-no-accepted-ending",
+  "previousReview": "Owner prefers phonemes: biddak tirtah perfect, shu amle heard as shoo am. Exact voice unspecified.",
+  "hypothesis": "Per-word phoneme elements with explicit syllable boundaries/stress may restore the ending. Not a verified cause or quality claim.",
+  "clips": [
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-SanaNeural",
+        "method": "word-open-e",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": [
+          "ʃuː",
+          "ˈʕaːm.lɛ"
+        ],
+        "requestFile": "ar-JO-SanaNeural-e01-04-word-open-e.ssml",
+        "ssmlSha256": "6256241ad9f0513d920d668f37195522bd71a1dcc6ac1fb8e7db6901ab47444c"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:52:14.060525+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "f6658aeb02bbf35c63bc651c3574a8c6e2562dbc2c0124720305370dc4dc0873",
+        "durationSeconds": 1.8199583333333333,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-SanaNeural",
+        "method": "word-stress",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": [
+          "ʃuː",
+          "ˈʕaːm.le"
+        ],
+        "requestFile": "ar-JO-SanaNeural-e01-04-word-stress.ssml",
+        "ssmlSha256": "cec8a6660fdc9a426e5abbfaa74f4bac599f3249916fc978c7f1d363f1397a58"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:52:13.578920+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "22b339eb393f9a8646f37d2fc9d9ca3a7481667adf5773e61124afc18ffd453a",
+        "durationSeconds": 1.8199583333333333,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-SanaNeural",
+        "method": "word-syllables",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": [
+          "ʃuː",
+          "ʕaːm.le"
+        ],
+        "requestFile": "ar-JO-SanaNeural-e01-04-word-syllables.ssml",
+        "ssmlSha256": "afba7027c43e81de25261a39e5fb43e89c18b029bbf8ddfd3356a023f4366a79"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:52:13.141888+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "8cc070eb813e3e1c23a65e2afa7e2ec2ea02159ddc22212ed5482c3d361e9a1f",
+        "durationSeconds": 1.8199583333333333,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "word-open-e",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": [
+          "ʃuː",
+          "ˈʕaːm.lɛ"
+        ],
+        "requestFile": "ar-JO-TaimNeural-e01-04-word-open-e.ssml",
+        "ssmlSha256": "2ca18eab06fdd2039e23c2b432daa55a636cd1852976a6dbf770dc0ffa983a3c"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:52:15.581199+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "closest but not accepted: vowel heard before l instead of after",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "172d17714c93e8fc5105580d877dc7724eaf84662cfff1a25b561dea3e4124c5",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "word-stress",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": [
+          "ʃuː",
+          "ˈʕaːm.le"
+        ],
+        "requestFile": "ar-JO-TaimNeural-e01-04-word-stress.ssml",
+        "ssmlSha256": "311ecea5caee59c1204b9dc844a7a92f8e11d2a8bac4875a6ecf02e00357815f"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:52:15.072098+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "6ece69b9e5b6174d6b12c9c6eec96cce438a32f319e783ebdabb4f8ae899eebd",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "voice": "ar-JO-TaimNeural",
+        "method": "word-syllables",
+        "rate": "0%",
+        "transcript": "شو عاملة؟",
+        "sourceArabizi": "Shū ʿāmle?",
+        "target": "shū ʿāmle",
+        "synthesisText": "شو عاملة؟",
+        "ipaWords": [
+          "ʃuː",
+          "ʕaːm.le"
+        ],
+        "requestFile": "ar-JO-TaimNeural-e01-04-word-syllables.ssml",
+        "ssmlSha256": "4d90cc7bc8a1e216b1270c126d2eff397b152489e1f5ceda145f46e294497e92"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:52:14.504374+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "24166b6ef6e85b959952af747e57873c9bbe0c490f362216b1f589a613a49584",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    }
+  ],
+  "ownerReview": {
+    "date": "2026-10-17",
+    "closestVoice": "ar-JO-TaimNeural",
+    "closestMethod": "word-open-e",
+    "disposition": "Closest, not accepted: owner hears shoo amel instead of shoo amle. Other variants remain iffy.",
+    "closestOutputSha256": "172d17714c93e8fc5105580d877dc7724eaf84662cfff1a25b561dea3e4124c5"
+  }
+}

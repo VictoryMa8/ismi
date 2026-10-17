@@ -1,0 +1,176 @@
+{
+  "date": "2026-10-17",
+  "scope": "Three e01-02 feminine-ending repairs plus one optional e01-08 lighter-word candidate.",
+  "status": "owner-selected-male-lighter-female-lighter-fallback",
+  "review": "Owner accepts other lesson-one clips as pretty good; e01-02 needs feminine a. Existing e01-08 remains acceptable if optional change is not better.",
+  "textBoundary": "Unchanged current approved source; single ana. Final alif exists only in synthesis alias.",
+  "timingBoundary": "Lighter candidates increase word rate by 15 percent; no m-only duration guarantee.",
+  "clips": [
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "request": {
+        "stepId": "e01-02",
+        "voice": "ar-JO-TaimNeural",
+        "method": "female-final-a",
+        "rate": "0%",
+        "transcript": "أنا منيحة.",
+        "sourceArabizi": "Ana mnīḥa.",
+        "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        },
+        "synthesisAlias": "مْنِيحَا",
+        "requestFile": "ar-JO-TaimNeural-e01-02-female-final-a.ssml",
+        "ssmlSha256": "be8e55eb8b2d43e68a34af58be0fe4e55d2a2d9f273cc946342cf3327eff5cdd"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T22:04:54.626443+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "5f968c1fd9f21c95cb4fd4b514338899ef848807c77f422b183a8f5e75280518",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "request": {
+        "stepId": "e01-02",
+        "voice": "ar-JO-TaimNeural",
+        "method": "female-lighter",
+        "rate": "+15%",
+        "transcript": "أنا منيحة.",
+        "sourceArabizi": "Ana mnīḥa.",
+        "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        },
+        "synthesisAlias": "مْنِيحَا",
+        "requestFile": "ar-JO-TaimNeural-e01-02-female-lighter.ssml",
+        "ssmlSha256": "daa4fddc4f7e0949e282ac0bf65cc84d95b2c9bb8a295f0d2d01da0209d8f00b"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T22:04:55.618402+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "selected fallback; heavier m acknowledged",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "cda46d37f5c5e4a5a266cfa65deac76f64b106498b30500430b7dd5a6014b84e",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "request": {
+        "stepId": "e01-02",
+        "voice": "ar-JO-TaimNeural",
+        "method": "female-unmarked-a",
+        "rate": "0%",
+        "transcript": "أنا منيحة.",
+        "sourceArabizi": "Ana mnīḥa.",
+        "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "fattoush",
+          "responseAddresseeId": "knafeh"
+        },
+        "synthesisAlias": "منيحا",
+        "requestFile": "ar-JO-TaimNeural-e01-02-female-unmarked-a.ssml",
+        "ssmlSha256": "1b8152e1ea82a30b2f0441692822a1fe570c069997dab5ff6eaa4dba84c4f833"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T22:04:55.106066+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "pending",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "35eb24766fb0a7b1b45f33d0caf6958c9fd91b8b4570e57608dfff904e53847b",
+        "durationSeconds": 1.875,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+      "request": {
+        "stepId": "e01-08",
+        "voice": "ar-JO-TaimNeural",
+        "method": "male-lighter",
+        "rate": "+15%",
+        "transcript": "أنا منيح.",
+        "sourceArabizi": "Ana mnīḥ.",
+        "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+        "characters": {
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        },
+        "synthesisAlias": "مْنِيح",
+        "requestFile": "ar-JO-TaimNeural-e01-08-male-lighter.ssml",
+        "ssmlSha256": "31aafecc48b70db69a3682a78f718ce18e926167973aa232e83a560531d89d81"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T22:04:56.090635+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "selected: perfect",
+        "linguisticAcceptance": "unreviewed"
+      },
+      "output": {
+        "sha256": "5b5fecdf9ee3ff92140230e063c1dfc884690774711c82bd7a200c05fd9550e7",
+        "durationSeconds": 1.82,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    }
+  ],
+  "ownerReview": {
+    "date": "2026-10-17",
+    "maleLighter": "perfect; selected",
+    "femaleLighter": "accepted fallback; owner would prefer same lighter m but allows continuation if unavailable",
+    "limits": "No claim that female onset is perfected or that an isolated m duration adjustment was achieved."
+  }
+}

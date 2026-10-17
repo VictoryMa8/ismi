@@ -1,0 +1,228 @@
+{
+  "date": "2026-10-17",
+  "provider": "Microsoft Azure Speech",
+  "resourceName": "ismi-f19-audition",
+  "resourceGroup": "ismi-f19-audition",
+  "region": "eastus",
+  "tier": "F0",
+  "tierEvidence": "Safari Azure post-deployment inventory: F0 / Succeeded; overview: Free / Active",
+  "status": "audition-unsuitable-pronunciation-errors",
+  "clips": [
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-01",
+        "transcript": "شو عامل؟",
+        "speakerRole": "fattoush",
+        "addresseeRole": "knafeh",
+        "voice": "ar-JO-SanaNeural",
+        "locale": "ar-JO",
+        "rate": "-20%",
+        "requestFile": "ar-JO-SanaNeural-e01-01.ssml",
+        "ssmlSha256": "57837a11d96ee703765edddac393963bca18e47cc6d807ec0e64a84b399c274e"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:32:53.255681+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "batch reviewed; not accepted for integration",
+        "palestinianPronunciation": "unverified",
+        "voiceSpecificDisposition": "not specified by owner"
+      },
+      "output": {
+        "sha256": "94893b92218ae7a66c4fe88acb795b792b5b48d0cb279f9f50fff5e25c38cbf3",
+        "durationSeconds": 2.467,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "transcript": "شو عاملة؟",
+        "speakerRole": "knafeh",
+        "addresseeRole": "fattoush",
+        "voice": "ar-JO-SanaNeural",
+        "locale": "ar-JO",
+        "rate": "-20%",
+        "requestFile": "ar-JO-SanaNeural-e01-04.ssml",
+        "ssmlSha256": "8f8cd1b0828f0a2e24920427ec5427435d4eb1bbb27aebe63b85dc1bc60ed0d3"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:32:53.807336+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "batch reviewed; not accepted for integration",
+        "palestinianPronunciation": "unverified",
+        "voiceSpecificDisposition": "not specified by owner"
+      },
+      "output": {
+        "sha256": "78b3482e35de636741cfd50f6eb16ce181ff809179d4e3a7fd04ebc63983ef09",
+        "durationSeconds": 2.351916666666667,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-06",
+        "transcript": "بدك ترتاح؟",
+        "speakerRole": "fattoush",
+        "addresseeRole": "knafeh",
+        "voice": "ar-JO-SanaNeural",
+        "locale": "ar-JO",
+        "rate": "-20%",
+        "requestFile": "ar-JO-SanaNeural-e01-06.ssml",
+        "ssmlSha256": "a2c80099ce594eb7d0631006a7efc89ec51a7ff38713aaa009bd69628cd284e8"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:32:54.332987+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "batch reviewed; not accepted for integration",
+        "palestinianPronunciation": "unverified",
+        "voiceSpecificDisposition": "not specified by owner"
+      },
+      "output": {
+        "sha256": "5c2426c33df68fab493d8596c7a3ab3ab9e7818d623f2bc40b0aab4de0471591",
+        "durationSeconds": 2.730166666666667,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-01",
+        "transcript": "شو عامل؟",
+        "speakerRole": "fattoush",
+        "addresseeRole": "knafeh",
+        "voice": "ar-JO-TaimNeural",
+        "locale": "ar-JO",
+        "rate": "-20%",
+        "requestFile": "ar-JO-TaimNeural-e01-01.ssml",
+        "ssmlSha256": "4c4698f3caf6bc501921cff9c62122d477fd0642680ccc020dba5f3bc03ac4d6"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:32:54.902538+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "batch reviewed; not accepted for integration",
+        "palestinianPronunciation": "unverified",
+        "voiceSpecificDisposition": "not specified by owner"
+      },
+      "output": {
+        "sha256": "e7e38d792dfb916826c0a1eeb1869fb3612188a07ecbd4724d1aae98bb83d6bc",
+        "durationSeconds": 2.140625,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-04",
+        "transcript": "شو عاملة؟",
+        "speakerRole": "knafeh",
+        "addresseeRole": "fattoush",
+        "voice": "ar-JO-TaimNeural",
+        "locale": "ar-JO",
+        "rate": "-20%",
+        "requestFile": "ar-JO-TaimNeural-e01-04.ssml",
+        "ssmlSha256": "84a55df3a9266070721e3cf8c53e4d9ebaa447e9ad0b568fd3d65753b61bdb63"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:32:55.513876+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "batch reviewed; not accepted for integration",
+        "palestinianPronunciation": "unverified",
+        "voiceSpecificDisposition": "not specified by owner"
+      },
+      "output": {
+        "sha256": "c205c21d487bddec6904dd93160bbdd84d51effaa383dc9b61ff15049b6ad27e",
+        "durationSeconds": 2.140625,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    },
+    {
+      "provider": "Microsoft Azure Speech",
+      "region": "eastus",
+      "tier": "F0",
+      "tierVerifiedAt": "2026-10-17",
+      "packageSha256": "3fed30fbc3ad6f65355f4ce889e65e1a3e10f248a18b913d5e4544675d96fef1",
+      "request": {
+        "stepId": "e01-06",
+        "transcript": "بدك ترتاح؟",
+        "speakerRole": "fattoush",
+        "addresseeRole": "knafeh",
+        "voice": "ar-JO-TaimNeural",
+        "locale": "ar-JO",
+        "rate": "-20%",
+        "requestFile": "ar-JO-TaimNeural-e01-06.ssml",
+        "ssmlSha256": "ddf7415f3cf41eb671365bbbc040dba337321b09b27f6348b77705e8ed23b973"
+      },
+      "outputFormat": "riff-24khz-16bit-mono-pcm",
+      "modelRevision": "not exposed",
+      "requestedAt": "2026-10-17T21:32:56.062840+00:00",
+      "status": "generated-unreviewed",
+      "review": {
+        "ownerListening": "batch reviewed; not accepted for integration",
+        "palestinianPronunciation": "unverified",
+        "voiceSpecificDisposition": "not specified by owner"
+      },
+      "output": {
+        "sha256": "b78d7d5d81682d2e1ba0802319fe06f4cb1454c1409703d8feb080ee8c5d203d",
+        "durationSeconds": 2.328125,
+        "sampleRate": 24000,
+        "channels": 1,
+        "format": "PCM_16"
+      }
+    }
+  ],
+  "limits": "Local unpublished audition; owner reports material pronunciation errors; no clips accepted, no integration, full batch or publication.",
+  "ownerReview": {
+    "date": "2026-10-17",
+    "disposition": "Not accepted for lesson integration",
+    "summary": "Owner reports material word-pronunciation errors: feminine shoo amle sounds like amela; biddik sounds like bedke. Pleasant overall sound does not constitute acceptance.",
+    "voiceAttribution": "Owner did not identify which voice(s); do not infer per-voice acceptance or rejection.",
+    "affectedStepIds": [
+      "e01-04",
+      "e01-06"
+    ],
+    "acceptedClips": []
+  }
+}

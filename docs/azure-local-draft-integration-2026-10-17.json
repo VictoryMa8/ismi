@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-17",
+  "scope": "F19 local synthetic provenance and console draft integration; no publication/deployment.",
+  "sourcePackageSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+  "draftExportSha256": "b41f057b36ff61fbe8ac173536e93f90b2d6f1aa756d6b689fe30981dd0687bb",
+  "localImport": {
+    "database": "isolated tools/azure-speech/.cache/f19-preview.db",
+    "recordId": 7,
+    "version": 1,
+    "status": "draft",
+    "lessonId": "levantine-everyday-01-01",
+    "readiness": {
+      "draft": {
+        "isValid": true,
+        "errors": []
+      },
+      "publication": {
+        "isValid": false,
+        "errors": [
+          "Step 'e01-01' needs cleared synthetic playback and offline redistribution rights before approval/publication.",
+          "Step 'e01-02' needs cleared synthetic playback and offline redistribution rights before approval/publication.",
+          "Step 'e01-03' needs cleared synthetic playback and offline redistribution rights before approval/publication.",
+          "Step 'e01-04' needs cleared synthetic playback and offline redistribution rights before approval/publication.",
+          "Step 'e01-05' needs cleared synthetic playback and offline redistribution rights before approval/publication.",
+          "Step 'e01-06' needs cleared synthetic playback and offline redistribution rights before approval/publication.",
+          "Step 'e01-07' needs cleared synthetic playback and offline redistribution rights before approval/publication.",
+          "Step 'e01-08' needs cleared synthetic playback and offline redistribution rights before approval/publication."
+        ]
+      }
+    },
+    "publishedSetPreserved": true,
+    "selectedPromptMappings": 8,
+    "application": "local working tree only; not deployed",
+    "publication": "none"
+  },
+  "contentPreservation": "All language, answers, rationales, recall targets, vocabulary and authored character mappings unchanged. Only exercise audio fields, the factual recording-status note and draft version differ; original sources preserved.",
+  "automated": {
+    "apiTests": 55,
+    "pythonAuditionTests": 14,
+    "browserFlows": [
+      "saved draft private preview completes without progress/cache writes",
+      "legacy human audio console publication/offline reload/playback/stop (disposable fixture DB)",
+      "synthetic audio labels/metadata/offline reload/playback/stop (disposable fixture DB)",
+      "missing asset preserves previous offline download",
+      "corrupt asset preserves previous offline download"
+    ],
+    "frontendBuild": "passed",
+    "recordingsHarnessNote": "Initial synthetic run encountered ambiguous published/superseded test locator; fixed to select published baseline and rerun passed."
+  },
+  "realAssetBrowser": "Signed into isolated local fixture account, opened record 7 saved draft, walked seven teaching cards, reached 1 of 8 practice prompts, observed AI-generated provider/voice/locale label and selected real Azure clip entered Stop Arabic audio state.",
+  "limits": "No real-device/AT/Safari offline evidence. Real selected assets remain owner-only draft; offline playback regression uses generated transport fixtures, not publication of owner audio. Provider redistribution-rights acceptance remains pending."
+}

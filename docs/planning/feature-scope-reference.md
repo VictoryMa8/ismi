@@ -573,6 +573,75 @@ generator checks and offline resume verification. Owner confirms the revision
 retains pronunciation errors; no clips accepted or native review established. Full-batch/provenance integration remains.
 
 Supporting references: [Azure preparation](../../tools/azure-speech/README.md).
+October 17 evidence: F0 resource created and post-deployment tier verified in
+Safari; bounded [Azure runner](../../tools/azure-speech/synthesize.py) and seven
+[offline checks](../../tools/azure-speech/test_audition.py). Six real clips generated
+with [exact hashes/provenance](../../docs/azure-audition-2026-10-17.json); local browser
+playback entered the playing state. Owner listening reports material pronunciation
+errors in feminine “amle” and “biddik”; no clips accepted for integration. Exact
+voice attribution was not supplied. The next audio direction remains unresolved.
+Mocked test WAVs are separate fixtures. Credentials and actual clips remain local.
+Owner subsequently authorized the correction experiment: sixteen new clips for
+the two problem phrases, both voices, plain normal/vowels normal/vowels slow/IPA
+normal. [Correction provenance and hashes](../../docs/azure-correction-audition-2026-10-17.json)
+and [bounded runner](../../tools/azure-speech/correct.py) preserve synthesis hints
+separately from the unchanged source text. Nine offline checks pass; real phoneme
+requests succeeded and a phoneme clip entered browser playback. All correction
+clips await owner listening acceptance; biddak/biddik target reconciliation is flagged.
+Subsequent owner feedback accepts the **biddak tirtāḥ** phoneme pronunciation
+(voice unspecified) but hears **shū ʿāmle** as **shoo am**. Six additional
+[per-word IPA ending probes](../../docs/azure-ending-audition-2026-10-17.json)
+were generated using [the bounded ending runner](../../tools/azure-speech/endings.py).
+Ten offline checks pass. New amle clips await listening; existing biddak WAVs
+are preserved, with no inferred exact voice selection or publication authority.
+Owner next selected male **word-open-e** as closest but still heard **amel**.
+[Cluster/alias evidence](../../docs/azure-cluster-audition-2026-10-17.json) records
+three nearly identical IPA cluster probes followed by three materially different
+synthesis-only spelling aliases from [the male-only runner](../../tools/azure-speech/cluster.py).
+Twelve offline checks pass. Alias candidates await listening; no amle clip is accepted.
+Owner subsequently selected male **Spelling hint B / final e approximation** for
+continued audition. [Eight current-source lesson-one draft mappings](../../docs/azure-lesson-one-audition-2026-10-17.json)
+pin the F22 approved recall package, preserve selected amle and existing male biddak
+audio, and add four new unique male clips using [the bounded lesson runner](../../tools/azure-speech/lesson_batch.py).
+Thirteen offline checks and all eight local mapping/file hashes pass. New clips and
+exact biddak voice selection await owner review; no final character voice assignment,
+app integration, full-unit generation, publication or deployment is inferred.
+Owner subsequently called all other current clips pretty good but rejected e01-02's
+missing feminine ending; optional lighter m in e01-08 was requested with explicit
+permission to keep its original. [Four repair/polish candidates](../../docs/azure-polish-audition-2026-10-17.json)
+from [the bounded runner](../../tools/azure-speech/polish.py) preserve all source text
+and previous assets. Fourteen offline checks pass. E01-02 repair selection remains
+required; whole-word +15% rate is an optional experiment, not m-only duration control.
+Owner then selected **male lighter** and allowed **female lighter** as fallback.
+[The exact selected eight-mapping asset package](../../docs/azure-selected-lesson-one-2026-10-17.json)
+and [offline selection exporter](../../tools/azure-speech/selected_package.py) preserve
+six unique WAVs, all source text/roles and qualified owner listening acceptance.
+Eight selected mapping hashes and ZIP-relative assets pass; this does not establish
+PWA offline behavior. Application synthetic provenance/console integration and
+playback/offline gates remain required; assets are not imported as human recordings.
+No publication, redistribution-rights acceptance, native review or F09 human-audio
+completion is inferred from the selected draft package.
+Owner then authorized local app/console integration. The original bounded local
+contract is satisfied: [synthetic metadata/validation, labels and private draft](../../docs/f19-synthetic-audio.md)
+with [exact integration evidence](../../docs/azure-local-draft-integration-2026-10-17.json).
+Eight selected mappings/six WAVs are saved through normal owner endpoints in an
+isolated local database; draft validation passes and rights errors block approval.
+55 API tests, 14 Python checks, frontend build and five focused browser flows pass.
+Actual selected audio plays in the saved preview; real-device/AT gates remain F18.
+
+#### F19.1 Synthetic audio rights and preview release
+
+**Contract:** verify applicable exact Azure resource/terms and evidence permitting
+playback/offline redistribution; retain honest voice, model, listening and rights
+provenance. Obtain owner acceptance and explicit exact release authority before
+committing/pushing/deploying/publishing where required. Preserve target database,
+existing publications/assets and rollback evidence; use ordinary console gates.
+Complete only after the authorized application and exact audio package are delivered
+and target playback/download/rollback checks pass. A selected local draft or successful
+test-only publication cannot satisfy this release contract. No beta inclusion,
+Palestinian native review or F09 human-audio completion follows.
+
+**Evidence:** [F19 local candidate and pending rights](../../docs/f19-synthetic-audio.md).
 
 ### F20 Learned-word glossary
 

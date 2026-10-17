@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import RecordingAttribution from './RecordingAttribution.vue';
 import {
   computed,
   nextTick,
@@ -710,7 +711,7 @@ defineExpose({ start });
                       data-ui-sound="silent"
                       @click="playAudio"
                     >
-                      Play recorded prompt
+                      {{ turn.step.prompt.recording?.origin === 'synthetic' ? 'Play AI-generated prompt' : 'Play recorded prompt' }}
                     </button>
                     <details
                       v-if="turn.step.prompt.recording"
@@ -718,12 +719,7 @@ defineExpose({ start });
                     >
                       <summary>Recording transcript and source</summary>
                       <p>
-                        Recorded · {{ turn.step.prompt.recording.speaker }} ·
-                        {{
-                          turn.step.prompt.recording.dialect === 'jordanian'
-                            ? 'Jordanian variant'
-                            : turn.lesson.trackId === 'levantine' ? 'Urban Palestinian' : turn.step.prompt.recording.dialect
-                        }}
+                        <RecordingAttribution :recording="turn.step.prompt.recording" :track-id="turn.lesson.trackId" />
                       </p>
                       <p v-bind="textAttributes(turn?.lesson.trackId)">
                         {{ turn.step.prompt.recording.transcript }}

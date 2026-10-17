@@ -75,7 +75,17 @@ public sealed record LessonRecording(
     string Speaker,
     string Dialect,
     string SourceLocator,
-    string ReviewNotes, string? LanguageTag = null);
+    string ReviewNotes, string? LanguageTag = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    string? Origin = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    SyntheticAudioProvenance? Synthesis = null);
+
+public sealed record SyntheticAudioProvenance(
+    string Provider, string Voice, string Locale, string ModelRevision,
+    DateTimeOffset GeneratedAt, string Ssml, string SsmlSha256, string AudioSha256,
+    string ReviewDisposition, string OwnerReview, string RightsStatus,
+    string? RightsEvidence = null);
 
 public sealed record LessonAnswer(
     string Id,

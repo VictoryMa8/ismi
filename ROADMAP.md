@@ -128,9 +128,9 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F19.1 · Synthetic audio rights and preview release](#f191-synthetic-audio-rights-and-preview-release) | Owner: choose written permission for exact F0 clips or explicitly authorize a paid generation route. Agent: finish the authorized code rollout; audio approval remains blocked. |
 | [F09 · Reviewed Levantine recordings](#f09-reviewed-levantine-recordings) | Owner: supply/select permitted recordings and reviewer for an exact prompt batch. Agent: reconcile script/package hashes before upload. |
 | [F14 · Quranic course](#f14-quranic-course) | Owner: approve exact resource IDs/permissions. Agent: scope integrity and track-specific review/publication controls. |
-| [F19 · Chatterbox phrase audio](#f19-chatterbox-phrase-audio) | Owner: finish free-account enrollment. Agent: verify F0 resource, then run only the authorized three-phrase/two-voice audition. |
 | [F26.5 · Khmer model audio and guided speaking](#f265-khmer-model-audio-and-guided-speaking) | Reviewer: accept scripts. Owner: arrange permitted recordings and provider/privacy decisions; agent verifies actual Khmer feedback/offline behavior. |
 | [F30 · Alphabet content acceptance and release](#f30-alphabet-content-acceptance-and-release) | Owner: designate reviewers. Agent: disposition exact inventories/help/examples/rights, scope MSA/Quranic controls, then collect authorized access/release evidence. |
 
@@ -183,6 +183,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F19 · Chatterbox phrase audio](#f19-chatterbox-phrase-audio) | Local synthetic-audio contract complete; eight selected mappings integrated into an isolated private console draft. F19.1 retains rights/release. |
 | [F01 · Core study and offline progress](#f01-core-study-and-offline-progress) | Bounded scope delivered; deployed. |
 | [F02 · Guest and account baseline](#f02-guest-and-account-baseline) | Bounded scope delivered; deployed. |
 | [F03 · Levantine curriculum console](#f03-levantine-curriculum-console) | Bounded scope delivered; deployed. |
@@ -574,14 +575,25 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F19 Chatterbox phrase audio
 
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete for bounded local synthetic provenance/console draft scope; content — Eight exact owner-selected draft mappings, female lighter accepted fallback; verification — 55 API tests, 14 Python checks, frontend build and five focused browser flows pass; real chosen clip plays in saved draft preview. Real-device/AT gates remain F18.
+- **Delivery:** Application — Local/uncommitted; content publication — Eight mappings/six WAVs in isolated local draft record 7 v1; no approval, publication or deployment.
+- **Scope:** Reproducible synthetic workflow, provenance/labels, eight accepted draft prompt mappings and focused playback/offline validation; original bounded contract, not human-audio or release completion.
+- **Next action:** None in this local implementation scope; F19.1 owns rights acceptance and authorized rollout, F09 owns reviewed human audio.
+- **Authorization:** Owner authorized local F19 implementation, F0 synthesis, selected clips/fallback and console integration October 17. No paid resource, full-unit synthesis, deployment, publication or rights acceptance inferred.
+- **Completion gate / evidence:** [Contract and linked evidence](docs/planning/feature-scope-reference.md#f19-chatterbox-phrase-audio); [local implementation and verification](docs/f19-synthetic-audio.md).
+- **Dependencies:** F22 approved lesson-one source; preserved F08/F09.1 audition lineage; normal console gates. F09 and F18 remain independent.
+
+#### F19.1 Synthetic audio rights and preview release
+
 - **Work state:** Input needed.
-- **Readiness:** Implementation — Partial; content — Unaccepted samples; verification — Partial.
-- **Delivery:** Application — Tooling committed; samples local; content publication — No audio integrated.
-- **Scope:** Interim synthetic-audio audition: Chatterbox rejected; six Azure requests prepared, no accepted clips.
-- **Next action:** Owner: finish free-account enrollment. Agent: verify F0 resource, then run only the authorized three-phrase/two-voice audition.
-- **Authorization:** Azure F0 audition only; no paid resource, full batch, integration or audio publication authorized.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f19-chatterbox-phrase-audio).
-- **Dependencies:** F08 approved text; F09.1 prompt IDs; usable local runtime and model; permissioned reference material if required. F18.1 remains deferred. No paid service or hiring is included, and F09's eventual human-audio requirement is unchanged.
+- **Readiness:** Implementation — F19 candidate complete; content — Selected F0 outputs lack publication-rights evidence under verified paid-tier-only terms; verification — Local checks and hosting access pass, code rollout pending.
+- **Delivery:** Application — Authorized release candidate, local/uncommitted; content publication — Private local draft only; F0 rights gate blocks publication.
+- **Scope:** Exact synthetic-resource rights acceptance and separately authorized application/audio rollout to the existing development preview; no beta/human-audio claim.
+- **Next action:** Owner: choose written permission for exact F0 clips or explicitly authorize a paid generation route. Agent: finish the authorized code rollout; audio approval remains blocked.
+- **Authorization:** Owner requested push and publication October 17: existing-host application rollout and exact content release authorized if gates pass. Paid resources/spending and rights waiver are not authorized.
+- **Completion gate / evidence:** [Rights/release contract](docs/planning/feature-scope-reference.md#f191-synthetic-audio-rights-and-preview-release).
+- **Dependencies:** F19 selected hashes and current-source package; normal console approval/publication and target preservation checks.
 
 ### F20 Learned-word glossary
 
@@ -1129,6 +1141,10 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **October 17 — F19:** bounded local synthetic workflow complete: eight selected
+  prompt mappings in an isolated private console draft; API/build/browser checks
+  pass. Owner now authorized push/publication; code rollout is prepared, but verified
+  paid-tier-only Azure output-use terms block publication of the F0 clips.
 - **October 17, 2026 — roadmap structure:** replaced generic Active/Done grouping
   with independent work state, implementation/content/verification readiness,
   application/publication delivery, explicit actor/authorization and linked contracts
@@ -1140,5 +1156,3 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **October 17 — F27.2:** scannable plan/progress UI deployed, 33 focused checks pass.
 - **October 17 — F24.8.2:** course identity banner/picker and Study language bubble
   deployed with owner-selected colors; real AT/discoverability remains F24.5/F24.8.
-- **October 16 — F26.2.1:** five exact unreviewed text-only Khmer previews published;
-  F26's full course/review/audio/pilot criteria remain unchanged.
