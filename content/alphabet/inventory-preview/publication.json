@@ -1,0 +1,244 @@
+{
+  "clientDate": "2026-10-16",
+  "target": "existing development preview; not beta",
+  "applicationCommit": "ab2d456ec5144e5272e4bcd70b88af91b42b6151",
+  "apiRevision": "1.0.0+ab2d456ec5144e5272e4bcd70b88af91b42b6151",
+  "frontendDeploymentId": "dpl_BeLEtmh8Vf2SLgYmP5EKiEGV1mdT",
+  "frontendUrl": "https://ismi-fuu2m1xtk-victorys-projects-c1cb4594.vercel.app",
+  "stableUrl": "https://ismi-arabic.vercel.app/#/practice/alphabet",
+  "publicationRoute": "existing owner-authorized SSH operator; same pinned approval/publication/audit service; no browser session",
+  "normalReviewGatePassed": false,
+  "humanAudioClips": 0,
+  "wordExamples": 0,
+  "gradedActivities": 0,
+  "unrelatedTablesPreserved": 16,
+  "recordingsAndCookieKeysPreserved": true,
+  "sqliteIntegrity": "ok",
+  "packs": [
+    {
+      "allHumanRecordingFlagsFalse": true,
+      "audit": [
+        {
+          "action": "draft-saved",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:43.4141432Z",
+          "reason": "",
+          "version": 1
+        },
+        {
+          "action": "approve-text-preview",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:43.4236362Z",
+          "reason": "Owner requested these inventory-only previews despite absent review/audio; no linguistic acceptance.",
+          "version": 1
+        },
+        {
+          "action": "publish",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:43.4327528Z",
+          "reason": "Owner-authorized development text preview.",
+          "version": 1
+        }
+      ],
+      "basicEntries": 26,
+      "courseId": "french",
+      "entries": 26,
+      "id": "french-alphabet",
+      "inventoryReviewer": "",
+      "privateContentHash": "e8946ca8d1841a77c8100c15797a1eb39b2ee0a2b61e11ab152113ecdb58e9a0",
+      "publishedAtUtc": "2026-10-17T03:32:43.432751Z",
+      "reviewer": "",
+      "revision": 3,
+      "sourceAcceptancePending": true,
+      "textPreview": true,
+      "version": 1,
+      "packageSha256": "1672160b79be7d5f7a43deafceb509ecc4173bf7c7f134e6bbcba6b0226cce4b",
+      "publicContentHash": "93116ff163abfd4f0a865386b6069fccf00dac4ff08eebb08bc1a12e82e20f86",
+      "notice": {
+        "id": "alphabet-inventory-text-preview-2026-10-16",
+        "title": "Unreviewed · text-only preview",
+        "detail": "Character shapes and Unicode technical names only. Linguistic review, pronunciation, word examples and exercises are pending. No human audio. Not reviewed course completion or beta content."
+      }
+    },
+    {
+      "allHumanRecordingFlagsFalse": true,
+      "audit": [
+        {
+          "action": "draft-saved",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:43.3751163Z",
+          "reason": "",
+          "version": 1
+        },
+        {
+          "action": "approve-text-preview",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:43.3868373Z",
+          "reason": "Owner requested these inventory-only previews despite absent review/audio; no linguistic acceptance.",
+          "version": 1
+        },
+        {
+          "action": "publish",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:43.3978822Z",
+          "reason": "Owner-authorized development text preview.",
+          "version": 1
+        }
+      ],
+      "basicEntries": 33,
+      "courseId": "khmer",
+      "entries": 35,
+      "id": "khmer-alphabet",
+      "inventoryReviewer": "",
+      "privateContentHash": "eb69c9c011da02ef2212e4c6bf297bc25341b412cd89b25244c1edbaa6b49ee6",
+      "publishedAtUtc": "2026-10-17T03:32:43.3978802Z",
+      "reviewer": "",
+      "revision": 3,
+      "sourceAcceptancePending": true,
+      "textPreview": true,
+      "version": 1,
+      "packageSha256": "f92d2926e94e2508fabe9e7428fe7f5cc2c0e1e0a992c479d6ada524e9c56ba9",
+      "publicContentHash": "e551c22efe42f515944c56ef70ddf6e2f4b45b9886cd3265d1ed7948e4288019",
+      "notice": {
+        "id": "alphabet-inventory-text-preview-2026-10-16",
+        "title": "Unreviewed · text-only preview",
+        "detail": "Character shapes and Unicode technical names only. Linguistic review, pronunciation, word examples and exercises are pending. No human audio. Not reviewed course completion or beta content."
+      }
+    },
+    {
+      "allHumanRecordingFlagsFalse": true,
+      "audit": [
+        {
+          "action": "draft-saved",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:42.4202725Z",
+          "reason": "",
+          "version": 1
+        },
+        {
+          "action": "approve-text-preview",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:42.5403748Z",
+          "reason": "Owner requested these inventory-only previews despite absent review/audio; no linguistic acceptance.",
+          "version": 1
+        },
+        {
+          "action": "publish",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:42.5660667Z",
+          "reason": "Owner-authorized development text preview.",
+          "version": 1
+        }
+      ],
+      "basicEntries": 28,
+      "courseId": "levantine",
+      "entries": 28,
+      "id": "levantine-alphabet",
+      "inventoryReviewer": "",
+      "privateContentHash": "1662cad413bdbe4468fa1c62f7c375e9976d776b54e1f0409b5d2730cae3337a",
+      "publishedAtUtc": "2026-10-17T03:32:42.5660043Z",
+      "reviewer": "",
+      "revision": 3,
+      "sourceAcceptancePending": true,
+      "textPreview": true,
+      "version": 1,
+      "packageSha256": "97cc6af7645489f369090410238ab93c015ef6cc89f38a788ad5f455081ae163",
+      "publicContentHash": "53222a20abaa3bc652c723494d3386d2f9c51e0466e00d07ed5083fea0ce9190",
+      "notice": {
+        "id": "alphabet-inventory-text-preview-2026-10-16",
+        "title": "Unreviewed · text-only preview",
+        "detail": "Character shapes and Unicode technical names only. Linguistic review, pronunciation, word examples and exercises are pending. No human audio. Not reviewed course completion or beta content."
+      }
+    },
+    {
+      "allHumanRecordingFlagsFalse": true,
+      "audit": [
+        {
+          "action": "draft-saved",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:42.6154973Z",
+          "reason": "",
+          "version": 1
+        },
+        {
+          "action": "approve-text-preview",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:42.6456935Z",
+          "reason": "Owner requested these inventory-only previews despite absent review/audio; no linguistic acceptance.",
+          "version": 1
+        },
+        {
+          "action": "publish",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:42.6609903Z",
+          "reason": "Owner-authorized development text preview.",
+          "version": 1
+        }
+      ],
+      "basicEntries": 28,
+      "courseId": "msa",
+      "entries": 28,
+      "id": "msa-alphabet",
+      "inventoryReviewer": "",
+      "privateContentHash": "d224821e67d995315ae573a4f912563a238d957286ce1a0e7b9adf8a94eb91da",
+      "publishedAtUtc": "2026-10-17T03:32:42.6609883Z",
+      "reviewer": "",
+      "revision": 3,
+      "sourceAcceptancePending": true,
+      "textPreview": true,
+      "version": 1,
+      "packageSha256": "0f2927a7ede48210695c1c9f0931e5c30b134b33166d62ecebfab49aba3cd6d1",
+      "publicContentHash": "567924f8f265dfa9b3e3ecf2f02f563a2db5ccc32272d6a1623941553ebda3a0",
+      "notice": {
+        "id": "alphabet-inventory-text-preview-2026-10-16",
+        "title": "Unreviewed · text-only preview",
+        "detail": "Character shapes and Unicode technical names only. Linguistic review, pronunciation, word examples and exercises are pending. No human audio. Not reviewed course completion or beta content."
+      }
+    },
+    {
+      "allHumanRecordingFlagsFalse": true,
+      "audit": [
+        {
+          "action": "draft-saved",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:42.6929894Z",
+          "reason": "",
+          "version": 1
+        },
+        {
+          "action": "approve-text-preview",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:42.707894Z",
+          "reason": "Owner requested these inventory-only previews despite absent review/audio; no linguistic acceptance.",
+          "version": 1
+        },
+        {
+          "action": "publish",
+          "actor": "owner-authorized operator CLI; inventory preview exception 2026-10-16",
+          "atUtc": "2026-10-17T03:32:42.722886Z",
+          "reason": "Owner-authorized development text preview.",
+          "version": 1
+        }
+      ],
+      "basicEntries": 28,
+      "courseId": "quranic",
+      "entries": 28,
+      "id": "quranic-alphabet",
+      "inventoryReviewer": "",
+      "privateContentHash": "564b7a50835c0c5f772d6cd00f1a52c46839db12aba50af8ef9187a1a00577d8",
+      "publishedAtUtc": "2026-10-17T03:32:42.7228837Z",
+      "reviewer": "",
+      "revision": 3,
+      "sourceAcceptancePending": true,
+      "textPreview": true,
+      "version": 1,
+      "packageSha256": "a2fd40e2399833882adc3ddcffa53fffb1b486fce5db4faa8a99d98e8c28871c",
+      "publicContentHash": "2a4b5af52188adcd4d579e9ec1a7803e3138d403f89a3f2516213c862fb291fe",
+      "notice": {
+        "id": "alphabet-inventory-text-preview-2026-10-16",
+        "title": "Unreviewed · text-only preview",
+        "detail": "Character shapes and Unicode technical names only. Linguistic review, pronunciation, word examples and exercises are pending. No human audio. Not reviewed course completion or beta content."
+      }
+    }
+  ]
+}

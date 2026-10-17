@@ -71,3 +71,49 @@ removing history or unrelated content. Do not run both commands at once.
 
 Application commit, hosted publication IDs/versions/hashes/audits, HTTP verification
 and aggregate data preservation are recorded below after the actual rollout.
+
+## Published and verified
+
+Application `ab2d456ec5144e5272e4bcd70b88af91b42b6151` is pushed/deployed. The API
+reports exact revision `1.0.0+ab2d456ec5144e5272e4bcd70b88af91b42b6151` and feature
+`alphabet-text-preview-v1`. Vercel deployment `dpl_BeLEtmh8Vf2SLgYmP5EKiEGV1mdT`,
+[ismi-fuu2m1xtk-victorys-projects-c1cb4594.vercel.app](https://ismi-fuu2m1xtk-victorys-projects-c1cb4594.vercel.app),
+is Ready with the existing stable aliases. The frontend labels were deployed before
+content publication. API recovery directory:
+`/home/ismi/ismi/deployments/20261017-032803-ab2d456ec514` (UTC name).
+
+The exact hosted alphabet records are **french-alphabet, khmer-alphabet,
+levantine-alphabet, msa-alphabet and quranic-alphabet**, each **v1**, revision **3**,
+with draft-save → approve-text-preview → publish audits. No linguistic reviewer is
+recorded. Each retains empty review evidence, false human-recording flags and pending
+source-acceptance fields. No human audio or accepted review was fabricated.
+[Exact package/public/private hashes, timestamps and audits](../content/alphabet/inventory-preview/publication.json).
+
+The initial operator attempt used SSH's default .NET 8 and stopped before managed
+application startup or any publication. Read-only HTTP inspection confirmed an
+empty catalog. Using the host's already-installed
+`/usr/alwaysdata/dotnet/10.0.10/dotnet` completed the publication successfully. No
+software was installed, browser session accessed, account created or credential changed.
+
+Anonymous HTTP through the stable frontend's API proxy verifies all five v1 packs,
+exact entry counts, the persistent unreviewed/text-only notice, full Unicode license,
+zero audio URLs/examples/graded activities, and absence of private review/audit fields.
+The actual frontend checksum function independently verifies all five live manifests
+against both their own and catalog hashes. Private read-only evidence:
+`/private/tmp/ismi-alphabet-public-http.json`,
+`/private/tmp/ismi-alphabet-live-manifests.json` and
+`/private/tmp/ismi-alphabet-publication-result.json`. These are HTTP/manifest checks,
+not a claimed live authenticated-browser or physical-device pass.
+
+Before/after aggregate snapshots `/private/tmp/ismi-alphabet-preview-before.json`
+and `/private/tmp/ismi-alphabet-preview-after.json` show **only AlphabetPacks changed**:
+zero rows became five. All **16 unrelated table counts/logical hashes**, recordings
+and cookie-key hashes match exactly, and SQLite integrity is `ok`. Existing published
+lessons, sources and learner records are preserved.
+
+F28.1.2 is Done. The parent F28 remains Active for reviewed language-specific names,
+help/inventories/forms in authentic words, 2–3 sourced examples per basic letter,
+reviewed exercises and human recordings, plus real device/AT/Safari evidence. This
+preview does not expand the first-100 beta or relax other content gates. Withdraw
+these records with the current service before reverting to an older application
+that cannot display their preview notice; do not overwrite the learner database.

@@ -8,25 +8,18 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**F28 — Inventory previews authorized October 16:** the owner requested publication
-despite absent reviewers/audio. Exact five inventory-only text previews are prepared;
-49 API tests, build and 18 focused alphabet/preview browser checks pass. Labels,
-source/license display and text-only downloads are ready; hosted publication follows
-deployment under F28.1.2. [Publication scope and rollout](docs/alphabet-inventory-publication.md).
-
-The F28 application was deployed October 16: the owner authorized implementation,
-push and deployment, then accepted private Khmer/French packs pending decisions and
-review, playback without microphone and unscored repeat-aloud practice. Practice /
-Courses / placement links, letter/forms/words, safe target markers, four activities,
-versioned local evidence/resume, atomic verified downloads and the gated owner
-console are implemented. All 47 API tests, build, 12 alphabet browser checks and
-21 navigation/course/palette/placement regressions pass. Application `5bbf861` is
-pushed/deployed; Vercel Ready, exact API revision and live mobile entry/switching pass.
-The original rollout preserved all 16 existing table hashes/assets and added an
-empty alphabet table. Inventory-preview publication is now authorized separately; F28 stays
-Active for all five reviewed inventories/examples/human-audio packs and real
-AT/device/Safari evidence. [Behavior](docs/alphabet-explorer.md),
-[rollout](docs/releases/2026-10-16-alphabet.md).
+**F28 — Five inventory previews published October 16:** following the owner's
+“just publish them” direction after notification of absent review/audio, the exact
+five Arabic-context/Khmer/French inventories are public as **unreviewed text-only
+previews**, all **v1**. They contain character forms and technical Unicode names;
+word examples, graded exercises and human audio remain absent. Application `ab2d456`
+is pushed/deployed, Vercel Ready and exact API revision verified. All 49 API tests,
+build and 18 focused alphabet/preview browser checks pass. Anonymous public manifests
+and frontend checksum verification pass. Only the alphabet table changed; all 16
+unrelated table hashes and persistent assets are preserved. **F28.1.2 is Done**;
+F28 stays Active for full reviewed packs, human audio and real device/AT/Safari gates.
+[Publication/audits/recovery](docs/alphabet-inventory-publication.md),
+[application](docs/alphabet-explorer.md).
 
 **F24.8.1 — Done and deployed October 16:** owner reported lessons disappearing on language
 switches and requested Fattoush/Knafeh across languages plus distinct landing palettes.
@@ -179,8 +172,8 @@ with distinct gold completion/goal markers and factual session recaps. Build and
 19 targeted browser checks pass; [behavior and verification](docs/learner-satisfaction.md).
 Sound audition and optional recall pacing remain proposals.
 
-**Now:** F28’s shared alphabet application is deployed with no real pack publication;
-reviewed inventories/examples/human audio and device/AT evidence remain open. The learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
+**Now:** F28’s shared alphabet application and five inventory-only text previews are deployed;
+reviewed full packs/examples/human audio and device/AT evidence remain open. The learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. F17.7 weekly quests/forgiving habits
 are complete and live-verified. F17.6 can-do cards/achievement are complete and deployed. F21 application `4545fea` is deployed, retaining F22's content. The first unit
 has three Everyday v3 and four v2 publications, with current art and verified
@@ -263,7 +256,7 @@ release and bulk authoring of units 2–12.
 | [F26](#f26-khmer-course) | Khmer course | Active · five previews live | F26.2.1 Done: five unreviewed text-only v1 lessons published; full review/audio/pilot and units 2–12 remain |
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 | [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
-| [F28](#f28-alphabet-explorer) | Alphabet explorer | Active · application deployed | Reviewed full packs, language decisions and real device/AT/Safari evidence remain |
+| [F28](#f28-alphabet-explorer) | Alphabet explorer | Active · five inventory previews published | Reviewed full packs, examples/human audio and real device/AT/Safari evidence remain |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
 Needs decision = a named choice prevents the next step; Needs input = external
@@ -1843,21 +1836,17 @@ real packs. MSA/Quranic publication remains blocked pending track-specific contr
 course contexts, applicable forms, separate name/sound treatment, cleared examples
 and recordings, reviewed answer explanations, accessible practice and deterministic
 offline behavior. Synthetic test fixtures and an unavailable-content deployment do
-not complete F28. No real alphabet content is authored or published by this release.
+not complete F28. The inventory-only previews under F28.1.2 do not satisfy those full-pack criteria.
 **Depends on:** F24/F27/F03; F09/F13/F14/F25.1/F25.5/F26.1/F26.5 for content/audio.
 Supports F15/F25.3/F26.3 without completing their wider placement/module criteria.
 **Evidence:** [implementation, contract and remaining gates](docs/alphabet-explorer.md),
 [original design](docs/alphabet-explorer-plan.md). All 47 API tests, production build,
 12 alphabet browser checks and 21 navigation/course/palette/placement regressions pass.
-**Delivery:** application `5bbf861` pushed/deployed to the existing API and Vercel
-preview; Ready/exact revision/live mobile checks pass and all existing hosted tables/
-assets are preserved. [Recovery/evidence](docs/releases/2026-10-16-alphabet.md).
-No real alphabet pack or curriculum approval/publication.
-**Publication follow-up October 16:** after the initial reviewed-only choice and
-notification of missing reviewers/audio, the owner directed “just publish them.”
-F28.1.2 now covers the exact five inventory-only previews; normal full-pack gates
-remain. Source-linked proposals/candidates are prepared; no review or audio record
-is fabricated. [Scope and delivery](docs/alphabet-inventory-publication.md).
+**Delivery:** application `ab2d456` pushed/deployed to the existing API/Vercel
+preview. Five pinned inventory-only records are published as v1 under the explicit
+unreviewed/text-only exception. Public labels/checksums pass and all unrelated hosted
+data/assets are preserved. [Exact records/recovery](docs/alphabet-inventory-publication.md).
+No reviewed full pack or human-audio publication is claimed.
 
 #### F28.1 Shared explorer, content model and gates
 
@@ -1884,18 +1873,20 @@ Parent F28.1/F28.5/F28.6 remain open for accepted content and real device/AT/Saf
 
 ##### F28.1.2 Inventory-only preview publication
 
-**Status:** Active · exact five previews authorized October 16.
+**Status:** Done · five v1 previews published October 16.
 **Scope:** publish the five pinned Arabic-context/Khmer/French inventories as
 unreviewed text-only previews, without fabricated review, audio, words or grades.
 **Authorization:** owner said “just publish them” after being informed reviewers and
 recordings were absent; this supersedes the earlier reviewed-only selection for
 these exact development previews. Normal full-pack and beta gates stay in place.
-**Next:** verify/deploy the exact preview policy and labels, then publish through
-the audited owner-authorized operator service and verify hosted preservation.
+**Next:** normal reviewed full packs and human audio remain with the parent; do
+not broaden the exact preview exception to changed text or beta content.
 **Done when:** exact five v1 manifests and unreviewed/no-audio labels are public,
 missing controls remain unavailable, downloads pass and unrelated data is preserved.
 **Evidence:** [candidate files, policy, checks and rollout](docs/alphabet-inventory-publication.md).
-**Delivery:** local candidates and verified policy; deployment/publication pending.
+**Delivery:** `ab2d456` pushed/deployed; all five exact IDs are published as v1,
+revision 3. Public notices/checksums and preservation of all 16 unrelated tables/
+assets pass. [Exact hashes/audits](content/alphabet/inventory-preview/publication.json).
 
 #### F28.2 Arabic explorer packs
 
@@ -1992,15 +1983,13 @@ MSA/Quranic/French packs → per-pack verification and any authorized delivery.
 
 ## Recent planning changes
 
-- **October 16, 2026 F28:** owner authorized implementation/push/deploy and accepted
-  the recommended defaults. Shared explorer, console gates, four activities, local
-  evidence/resume and verified offline packs are implemented. API 47/47, build,
-  12 alphabet and 21 regression browser checks pass. Application `5bbf861` is
-  pushed/deployed; Vercel Ready, API exact revision/live entry and all existing
-  hosted table/asset preservation pass. Full reviewed content/audio and real
-  device/AT/Safari evidence remain. No real
-  alphabet pack publication. [Implementation](docs/alphabet-explorer.md),
-  [rollout](docs/releases/2026-10-16-alphabet.md).
+- **October 16, 2026 F28:** shared application and five owner-requested inventory-only
+  previews are deployed as `ab2d456`, all v1 with honest unreviewed/text-only labels.
+  API 49/49, build, 18 focused browser checks, live HTTP/checksums and all unrelated
+  table/asset preservation pass. F28.1.2 Done; reviewed word/sound packs and actual
+  human/device/AT/Safari evidence remain with the parent.
+  [Publication](docs/alphabet-inventory-publication.md),
+  [exact audits](content/alphabet/inventory-preview/publication.json).
 
 - **October 16, 2026 F24.8.1:** owner reported disappearing lessons during language
   switches, confirmed Fattoush/Knafeh across languages and requested distinct landing

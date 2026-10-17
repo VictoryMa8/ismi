@@ -5,9 +5,11 @@ accepted the planned defaults: reviewed playback and unscored repeat-aloud pract
 no microphone access, device-local evidence, and private Khmer/French packs until
 inventory/help/variety choices and fluent review are recorded.
 
-**The application is implemented and deployed as `5bbf861`. F28 as a whole remains Active.** No real alphabet
-pack has been authored, reviewed, imported, approved or published by this task.
-All five learner contexts show their actual unavailable state. Full reviewed basic
+**The application is implemented and deployed; F28 as a whole remains Active.**
+The original `5bbf861` rollout contained no alphabet publication. The subsequent
+owner-authorized `ab2d456` release publishes five inventory-only previews, explicitly
+unreviewed and text-only. [Exact scope, audits and recovery](alphabet-inventory-publication.md).
+No reviewed word/sound pack or human audio is claimed. Full reviewed basic
 inventories, 2–3 words per basic letter, cleared human recordings and real device/AT
 and Safari offline evidence remain required. Deployment does not imply content
 publication, beta readiness or completion of F15/F25/F26 reading modules.
@@ -78,8 +80,9 @@ and audit history. Saving approved content creates a new draft and leaves the
 existing publication intact. Engineering fixtures cannot be approved or published.
 Empty drafts are saveable; they cannot pass review or become learner packs.
 
-MSA and Quranic publication remains blocked until their track-specific source and
-integrity controls exist. This implementation neither generates scripture nor
+Normal full-pack MSA and Quranic publication remains blocked until their
+track-specific source and integrity controls exist. The separate exact inventory-only
+preview exception contains no canonical Quran text or word/exercise curriculum. This implementation neither generates scripture nor
 relaxes the five-exact-lesson Khmer exception. French variety and Khmer exact
 inventory/help/reviewer remain explicit decisions, followed by actual source/audio
 clearance and human acceptance. Fields record evidence; they cannot manufacture it.
