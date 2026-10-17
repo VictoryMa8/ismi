@@ -1,0 +1,388 @@
+{
+  "id": "french-test-alphabet",
+  "courseId": "french",
+  "title": "Synthetic alphabet fixture",
+  "variety": "Synthetic test variety",
+  "helpConvention": "Synthetic test convention",
+  "inventory": {
+    "id": "french-basic",
+    "version": 1,
+    "basicEntryIds": [
+      "letter-1",
+      "letter-2"
+    ],
+    "entries": [
+      {
+        "id": "letter-1",
+        "category": "basic",
+        "text": "A",
+        "forms": [
+          {
+            "label": "In context",
+            "text": "AA",
+            "note": "Synthetic form demonstration, not a linguistic claim."
+          }
+        ]
+      },
+      {
+        "id": "letter-2",
+        "category": "basic",
+        "text": "É",
+        "forms": [
+          {
+            "label": "In context",
+            "text": "ÉÉ",
+            "note": "Synthetic form demonstration, not a linguistic claim."
+          }
+        ]
+      }
+    ],
+    "reviewer": "Synthetic test reviewer",
+    "reviewEvidence": "PRIVATE test-only inventory"
+  },
+  "entries": [
+    {
+      "id": "letter-1",
+      "name": "Test letter 1",
+      "help": "Test help",
+      "note": "Synthetic entry, not linguistic content.",
+      "soundContext": "Synthetic syllable context",
+      "sourceIds": [
+        "test-source"
+      ],
+      "nameAudio": {
+        "url": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav",
+        "transcript": "Test letter 1",
+        "speaker": "Synthetic test speaker",
+        "variety": "Synthetic test variety",
+        "reviewer": "Synthetic test reviewer",
+        "reviewEvidence": "PRIVATE synthetic review; no real linguistic acceptance",
+        "rightsEvidence": "PRIVATE synthetic rights; no real clearance",
+        "humanRecording": true,
+        "offlineCleared": true
+      },
+      "soundAudio": {
+        "url": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav",
+        "transcript": "A",
+        "speaker": "Synthetic test speaker",
+        "variety": "Synthetic test variety",
+        "reviewer": "Synthetic test reviewer",
+        "reviewEvidence": "PRIVATE synthetic review; no real linguistic acceptance",
+        "rightsEvidence": "PRIVATE synthetic rights; no real clearance",
+        "humanRecording": true,
+        "offlineCleared": true
+      },
+      "examples": [
+        {
+          "id": "word-1-1",
+          "text": "A",
+          "meaning": "Synthetic word 1-1",
+          "help": "Test help",
+          "target": "A",
+          "occurrences": [
+            0
+          ],
+          "note": "Synthetic example, not course content.",
+          "sourceIds": [
+            "test-source"
+          ],
+          "audio": {
+            "url": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav",
+            "transcript": "A",
+            "speaker": "Synthetic test speaker",
+            "variety": "Synthetic test variety",
+            "reviewer": "Synthetic test reviewer",
+            "reviewEvidence": "PRIVATE synthetic review; no real linguistic acceptance",
+            "rightsEvidence": "PRIVATE synthetic rights; no real clearance",
+            "humanRecording": true,
+            "offlineCleared": true
+          }
+        },
+        {
+          "id": "word-1-2",
+          "text": "AA",
+          "meaning": "Synthetic word 1-2",
+          "help": "Test help",
+          "target": "A",
+          "occurrences": [
+            0,
+            1
+          ],
+          "note": "Synthetic example, not course content.",
+          "sourceIds": [
+            "test-source"
+          ],
+          "audio": {
+            "url": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav",
+            "transcript": "AA",
+            "speaker": "Synthetic test speaker",
+            "variety": "Synthetic test variety",
+            "reviewer": "Synthetic test reviewer",
+            "reviewEvidence": "PRIVATE synthetic review; no real linguistic acceptance",
+            "rightsEvidence": "PRIVATE synthetic rights; no real clearance",
+            "humanRecording": true,
+            "offlineCleared": true
+          }
+        }
+      ],
+      "activities": [
+        {
+          "id": "letter-1-shape",
+          "kind": "shape",
+          "prompt": "Synthetic shape prompt",
+          "choices": [
+            {
+              "id": "match",
+              "text": "A"
+            },
+            {
+              "id": "other",
+              "text": "É"
+            }
+          ],
+          "acceptedIds": [
+            "match"
+          ],
+          "explanation": "Synthetic reviewed explanation.",
+          "rationale": "Synthetic accepted-answer rationale.",
+          "exampleId": null,
+          "audioUrl": null
+        },
+        {
+          "id": "letter-1-listening",
+          "kind": "listening",
+          "prompt": "Synthetic listening prompt",
+          "choices": [
+            {
+              "id": "match",
+              "text": "A"
+            },
+            {
+              "id": "other",
+              "text": "É"
+            }
+          ],
+          "acceptedIds": [
+            "match"
+          ],
+          "explanation": "Synthetic reviewed explanation.",
+          "rationale": "Synthetic accepted-answer rationale.",
+          "exampleId": null,
+          "audioUrl": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav"
+        },
+        {
+          "id": "letter-1-spot",
+          "kind": "spot",
+          "prompt": "Synthetic spot prompt",
+          "choices": [
+            {
+              "id": "match",
+              "text": "A"
+            },
+            {
+              "id": "other",
+              "text": "É"
+            }
+          ],
+          "acceptedIds": [
+            "match"
+          ],
+          "explanation": "Synthetic reviewed explanation.",
+          "rationale": "Synthetic accepted-answer rationale.",
+          "exampleId": "word-1-1",
+          "audioUrl": null
+        },
+        {
+          "id": "letter-1-repeat",
+          "kind": "repeat",
+          "prompt": "Synthetic repeat prompt",
+          "choices": [],
+          "acceptedIds": [],
+          "explanation": "Synthetic reviewed explanation.",
+          "rationale": "Synthetic accepted-answer rationale.",
+          "exampleId": null,
+          "audioUrl": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav"
+        }
+      ]
+    },
+    {
+      "id": "letter-2",
+      "name": "Test letter 2",
+      "help": "Test help",
+      "note": "Synthetic entry, not linguistic content.",
+      "soundContext": "Synthetic syllable context",
+      "sourceIds": [
+        "test-source"
+      ],
+      "nameAudio": {
+        "url": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav",
+        "transcript": "Test letter 2",
+        "speaker": "Synthetic test speaker",
+        "variety": "Synthetic test variety",
+        "reviewer": "Synthetic test reviewer",
+        "reviewEvidence": "PRIVATE synthetic review; no real linguistic acceptance",
+        "rightsEvidence": "PRIVATE synthetic rights; no real clearance",
+        "humanRecording": true,
+        "offlineCleared": true
+      },
+      "soundAudio": {
+        "url": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav",
+        "transcript": "É",
+        "speaker": "Synthetic test speaker",
+        "variety": "Synthetic test variety",
+        "reviewer": "Synthetic test reviewer",
+        "reviewEvidence": "PRIVATE synthetic review; no real linguistic acceptance",
+        "rightsEvidence": "PRIVATE synthetic rights; no real clearance",
+        "humanRecording": true,
+        "offlineCleared": true
+      },
+      "examples": [
+        {
+          "id": "word-2-1",
+          "text": "É",
+          "meaning": "Synthetic word 2-1",
+          "help": "Test help",
+          "target": "É",
+          "occurrences": [
+            0
+          ],
+          "note": "Synthetic example, not course content.",
+          "sourceIds": [
+            "test-source"
+          ],
+          "audio": {
+            "url": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav",
+            "transcript": "É",
+            "speaker": "Synthetic test speaker",
+            "variety": "Synthetic test variety",
+            "reviewer": "Synthetic test reviewer",
+            "reviewEvidence": "PRIVATE synthetic review; no real linguistic acceptance",
+            "rightsEvidence": "PRIVATE synthetic rights; no real clearance",
+            "humanRecording": true,
+            "offlineCleared": true
+          }
+        },
+        {
+          "id": "word-2-2",
+          "text": "ÉÉ",
+          "meaning": "Synthetic word 2-2",
+          "help": "Test help",
+          "target": "É",
+          "occurrences": [
+            0,
+            1
+          ],
+          "note": "Synthetic example, not course content.",
+          "sourceIds": [
+            "test-source"
+          ],
+          "audio": {
+            "url": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav",
+            "transcript": "ÉÉ",
+            "speaker": "Synthetic test speaker",
+            "variety": "Synthetic test variety",
+            "reviewer": "Synthetic test reviewer",
+            "reviewEvidence": "PRIVATE synthetic review; no real linguistic acceptance",
+            "rightsEvidence": "PRIVATE synthetic rights; no real clearance",
+            "humanRecording": true,
+            "offlineCleared": true
+          }
+        }
+      ],
+      "activities": [
+        {
+          "id": "letter-2-shape",
+          "kind": "shape",
+          "prompt": "Synthetic shape prompt",
+          "choices": [
+            {
+              "id": "match",
+              "text": "É"
+            },
+            {
+              "id": "other",
+              "text": "A"
+            }
+          ],
+          "acceptedIds": [
+            "match"
+          ],
+          "explanation": "Synthetic reviewed explanation.",
+          "rationale": "Synthetic accepted-answer rationale.",
+          "exampleId": null,
+          "audioUrl": null
+        },
+        {
+          "id": "letter-2-listening",
+          "kind": "listening",
+          "prompt": "Synthetic listening prompt",
+          "choices": [
+            {
+              "id": "match",
+              "text": "É"
+            },
+            {
+              "id": "other",
+              "text": "A"
+            }
+          ],
+          "acceptedIds": [
+            "match"
+          ],
+          "explanation": "Synthetic reviewed explanation.",
+          "rationale": "Synthetic accepted-answer rationale.",
+          "exampleId": null,
+          "audioUrl": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav"
+        },
+        {
+          "id": "letter-2-spot",
+          "kind": "spot",
+          "prompt": "Synthetic spot prompt",
+          "choices": [
+            {
+              "id": "match",
+              "text": "É"
+            },
+            {
+              "id": "other",
+              "text": "A"
+            }
+          ],
+          "acceptedIds": [
+            "match"
+          ],
+          "explanation": "Synthetic reviewed explanation.",
+          "rationale": "Synthetic accepted-answer rationale.",
+          "exampleId": "word-2-1",
+          "audioUrl": null
+        },
+        {
+          "id": "letter-2-repeat",
+          "kind": "repeat",
+          "prompt": "Synthetic repeat prompt",
+          "choices": [],
+          "acceptedIds": [],
+          "explanation": "Synthetic reviewed explanation.",
+          "rationale": "Synthetic accepted-answer rationale.",
+          "exampleId": null,
+          "audioUrl": "/api/recordings/0000000000000000000000000000000000000000000000000000000000000000.wav"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "test-source",
+      "citation": "Synthetic test citation",
+      "locator": "Synthetic test locator",
+      "version": "test-1",
+      "rightsEvidence": "PRIVATE synthetic rights",
+      "textCleared": true,
+      "adaptationCleared": true,
+      "offlineCleared": true
+    }
+  ],
+  "reviewer": "Synthetic test reviewer",
+  "reviewEvidence": "PRIVATE synthetic review",
+  "engineeringFixture": true
+}

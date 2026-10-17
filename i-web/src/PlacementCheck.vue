@@ -193,6 +193,7 @@ onBeforeUnmount(() => { generation++ })
             <button v-if="recommendationAvailable" class="primary-action" @click="emit('open-lesson', result.recommendation!.lessonId)">Open suggested lesson</button>
             <p v-else>The suggested lesson is unavailable. Explore Courses or retry when connected.</p>
             <p v-if="result.readingSupport">Recommended support: script and reading. Bootcamp lessons not yet available; use pronunciation help and lesson help.</p>
+            <a v-if="result.readingSupport || result.soundSupport" class="page-link" href="#/practice/alphabet">Explore alphabet availability</a>
             <p v-if="result.soundSupport">Recommended support: course sounds. Sound bootcamp not yet available; pronunciation has not been assessed.</p>
             <p v-if="result.recommendation"><small>Based on {{ result.recommendation.version }}. Retry after content changes.</small></p>
           </template>

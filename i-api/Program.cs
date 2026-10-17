@@ -149,6 +149,8 @@ builder.Services.AddSingleton<CurriculumAccessService>();
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddSingleton<CulturalMediaValidator>();
 builder.Services.AddScoped<CulturalMediaService>();
+builder.Services.AddSingleton<AlphabetValidator>();
+builder.Services.AddScoped<AlphabetService>();
 
 var app = builder.Build();
 
@@ -160,6 +162,7 @@ await using (var scope = app.Services.CreateAsyncScope())
     await StudySettingsService.EnsureSchemaAsync(database);
     await RecallReportService.EnsureSchemaAsync(database);
     await CulturalMediaService.EnsureSchemaAsync(database);
+    await AlphabetService.EnsureSchemaAsync(database);
     var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
     var seed = scope.ServiceProvider.GetRequiredService<SeedCurriculum>();
     await publishing.EnsureSeededAsync(seed.GetInitialLessons());
@@ -215,12 +218,13 @@ app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapCulturalMedia();
+app.MapAlphabet();
 
 app.MapGet("/api/health", () => Results.Ok(new
 {
     status = "healthy",
     service = "ismi-api",
-    features = new[] { "typed-recall-v1", "multi-language-v1", "private-draft-preview-v1", "khmer-text-preview-v1" },
+    features = new[] { "typed-recall-v1", "multi-language-v1", "private-draft-preview-v1", "khmer-text-preview-v1", "alphabet-v1" },
     revision = typeof(LessonResponse).Assembly
         .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
         .Cast<System.Reflection.AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,
@@ -506,14 +510,15 @@ curriculumAdmin.MapPost("/recall-reports/{id}/resolve", async Task<IResult> (
 // Draft assets can be previewed by the owner; only published assets reach learners.
 app.MapGet("/api/recordings/{file}", async Task<IResult> (
     string file, HttpContext context, RecordingStore recordings,
-    CurriculumPublishingService publishing, UserManager<ApplicationUser> users,
+    CurriculumPublishingService publishing, AlphabetService alphabet, UserManager<ApplicationUser> users,
     CurriculumAccessService access, CancellationToken cancellationToken) =>
 {
     var url = "/api/recordings/" + file;
     var path = recordings.Find(url);
     if (path is null) return Results.NotFound();
     if (!access.CanManage(await users.GetUserAsync(context.User)) &&
-        !await publishing.IsPublishedRecordingAsync(url, cancellationToken)) return Results.NotFound();
+        !await publishing.IsPublishedRecordingAsync(url, cancellationToken) &&
+        !await alphabet.RecordingPublishedAsync(url, cancellationToken)) return Results.NotFound();
     context.Response.Headers.CacheControl = "private, no-store";
     context.Response.Headers["X-Content-Type-Options"] = "nosniff";
     return Results.File(path, "audio/wav", enableRangeProcessing: true);

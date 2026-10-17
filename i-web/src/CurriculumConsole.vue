@@ -5,6 +5,7 @@ import RecordingEditor from './RecordingEditor.vue';
 import RecallReports from './RecallReports.vue';
 import CharacterMapping from './CharacterMapping.vue';
 import CulturalMediaConsole from './CulturalMediaConsole.vue';
+import AlphabetConsole from './AlphabetConsole.vue';
 import BackControl from './BackControl.vue';
 import {
   CheckCircle2,
@@ -47,7 +48,7 @@ const emit = defineEmits<{
 const withdrawalReason = ref('');
 const draftCourse = ref<CourseId>('levantine');
 const versions = ref<CurriculumVersionSummary[]>([]);
-const consoleSection = ref<'lessons' | 'media'>('lessons');
+const consoleSection = ref<'lessons' | 'media' | 'alphabet'>('lessons');
 const selected = ref<CurriculumVersionDetail | null>(null);
 const lessonJson = ref('');
 const sources = ref<CurriculumSource[]>([]);
@@ -418,8 +419,10 @@ function formatDate(value: string | null): string {
     <nav class="culture-admin-toolbar" aria-label="Console sections">
       <button type="button" class="secondary-action" :aria-pressed="consoleSection === 'lessons'" @click="consoleSection = 'lessons'">Lessons</button>
       <button type="button" class="secondary-action" :aria-pressed="consoleSection === 'media'" @click="consoleSection = 'media'">Watch &amp; listen</button>
+      <button type="button" class="secondary-action" :aria-pressed="consoleSection === 'alphabet'" @click="consoleSection = 'alphabet'">Alphabet</button>
     </nav>
-    <CulturalMediaConsole v-if="consoleSection === 'media'" />
+    <AlphabetConsole v-if="consoleSection === 'alphabet'" />
+    <CulturalMediaConsole v-else-if="consoleSection === 'media'" />
     <template v-else>
     <div class="console-safety-note">
       <ShieldCheck :size="22" aria-hidden="true" />

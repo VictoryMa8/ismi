@@ -8,6 +8,18 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
+**F28 — Application implemented October 16:** owner authorized implementation,
+push and deployment, then accepted private Khmer/French packs pending decisions and
+review, playback without microphone and unscored repeat-aloud practice. Practice /
+Courses / placement links, letter/forms/words, safe target markers, four activities,
+versioned local evidence/resume, atomic verified downloads and the gated owner
+console are implemented. All 47 API tests, build, 12 alphabet browser checks and
+21 navigation/course/palette/placement regressions pass. Release candidate is ready for the
+existing development previews. **No real alphabet packs are published**; F28 stays
+Active for all five reviewed inventories/examples/human-audio packs and real
+AT/device/Safari evidence. [Behavior](docs/alphabet-explorer.md),
+[rollout](docs/releases/2026-10-16-alphabet.md).
+
 **F24.8.1 — Done and deployed October 16:** owner reported lessons disappearing on language
 switches and requested Fattoush/Knafeh across languages plus distinct landing palettes.
 Scope: keep manual lesson entry visible for the viewed course without changing daily
@@ -242,6 +254,7 @@ release and bulk authoring of units 2–12.
 | [F26](#f26-khmer-course) | Khmer course | Active · five previews live | F26.2.1 Done: five unreviewed text-only v1 lessons published; full review/audio/pilot and units 2–12 remain |
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 | [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
+| [F28](#f28-alphabet-explorer) | Alphabet explorer | Active · application verified | Deploy candidate; reviewed full packs, language decisions and real device/AT/Safari evidence remain |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
 Needs decision = a named choice prevents the next step; Needs input = external
@@ -639,8 +652,9 @@ or beta inclusion is inferred from the planning authorization.
 and short skippable track-specific placement with bootcamp recommendations.
 **Status:** Active — F15.1 settings/queue and F15.2 bounded Levantine starting check
 are complete. Reading/sound support preferences are self-reported; modules remain open.
-**Next:** scope source-linked reading/sound bootcamp content and the remaining
-track-specific assessments. F15.2 is not a calibrated proficiency assessment or
+**Next:** use [F28](#f28-alphabet-explorer) for the proposed shared letter/form/sound
+explorer; scope remaining reading modules and track-specific assessments separately.
+F15.2 is not a calibrated proficiency assessment or
 evidence of pronunciation/decoding ability; it does not complete F15.
 **Done when:** selected goals/tracks drive the queue and persist as agreed; per-track
 placement and applicable reading/sound modules work without a combined Arabic score.
@@ -1491,6 +1505,8 @@ audio-ready, approved and published states are reported separately.
 **Scope:** short skippable placement from approved content, optional spelling/sound
 modules, accent input/help and readable phrase/word chunks. Pronunciation notes are
 authored/source-linked; any IPA help is optional rather than an entry requirement.
+The planned [F28.4](#f284-french-explorer-pack) supplies the alphabet explorer;
+it does not complete the wider starting check or authorize French authoring.
 **Next:** define reading/listening/response samples and conservative starting-point
 policy; select reviewed sound targets with the language reviewer.
 **Done when:** skip/retry and accessible alternatives work; accents/apostrophes and
@@ -1684,6 +1700,8 @@ expressions; phonics/sound modules, agreed inventory and real input/AT remain op
 actual lesson words. Reviewed modules cover consonant/vowel patterns, signs and
 syllable combinations without an alphabet memorization gate. Separate reading,
 listening and support-choice evidence; never infer pronunciation from text answers.
+The planned [F28.3](#f283-khmer-explorer-pack) supplies individual-letter and
+combination exploration; existing expression cards do not fulfill that scope.
 **Next:** reviewer selects exact consonant/vowel/sound modules, inventory and help
 rules; verify real device input/selection/AT and approved audio offline. Draft
 script examples pass keyboard, 320/1440 px and 200% text checks using the existing
@@ -1796,6 +1814,113 @@ checks pass; the original recall keyboard scenario also passed three consecutive
 URL `https://ismi-arabic.vercel.app`. Release source matches the verified isolated
 snapshot. No API deployment or curriculum publication; unrelated course edits stay local.
 
+### F28 Alphabet explorer
+
+**Status:** Active · application implemented October 16, 2026. Owner authorized
+implementation, push and deployment, then accepted private Khmer/French packs
+pending decisions/review, no microphone, unscored repeat-aloud and local evidence.
+**Outcome:** learners can explore letter appearance, hear names and contextual
+sounds, practice recognition/repeat-aloud production, and study two or three useful
+example words per basic letter in Arabic, Khmer and French. Arabic shares script
+forms while retaining separate Levantine/MSA/Quranic examples, audio and evidence.
+**Implemented:** Practice/Courses/placement entry, search/grid/detail, exact words
+and forms with Unicode-safe target markers, four practice types, separate versioned
+local evidence/resume, verified atomic audio/font downloads, availability/withdrawal
+reconciliation and owner-only versioned validate/approve/publish/rollback/audit flow.
+**Next:** deploy the verified application candidate, then obtain exact inventories,
+language/help/review/source/rights decisions and human recordings before approving
+real packs. MSA/Quranic publication remains blocked pending track-specific controls.
+**Done when:** F28.1–F28.6 pass, including full agreed basic inventories in all five
+course contexts, applicable forms, separate name/sound treatment, cleared examples
+and recordings, reviewed answer explanations, accessible practice and deterministic
+offline behavior. Synthetic test fixtures and an unavailable-content deployment do
+not complete F28. No real alphabet content is authored or published by this release.
+**Depends on:** F24/F27/F03; F09/F13/F14/F25.1/F25.5/F26.1/F26.5 for content/audio.
+Supports F15/F25.3/F26.3 without completing their wider placement/module criteria.
+**Evidence:** [implementation, contract and remaining gates](docs/alphabet-explorer.md),
+[original design](docs/alphabet-explorer-plan.md). All 47 API tests, production build,
+12 alphabet browser checks and 21 navigation/course/palette/placement regressions pass.
+**Delivery:** local verified candidate; authorized commit/push/API/web deployment
+pending. No real alphabet pack or curriculum approval/publication.
+
+#### F28.1 Shared explorer, content model and gates
+
+**Status:** Active · application implementation authorized October 16.
+**Scope:** grid/detail UX, versioned inventory/course packs, validation, owner console,
+public manifests and authorized recording access; reuse shared course metadata.
+**Next:** shared application is implemented/tested; accept actual inventory/form/content decisions and reviewed evidence before pack approval.
+**Done when:** forms, context-dependent sounds and unavailable packs render honestly;
+drafts/assets remain private and source/review/rights gates are enforced with audits.
+**Depends on:** F24/F27/F03; [design and acceptance detail](docs/alphabet-explorer-plan.md).
+
+##### F28.1.1 Shared application candidate
+
+**Status:** Done · local verified candidate, October 16.
+**Scope:** shared explorer/owner contract, four activities, device-local versioned
+history/resume and atomic verified offline downloads, independent of content acceptance.
+**Done when:** actual API-to-browser fixture checks prove privacy/workflow, exact
+text, activities, identity/course separation, offline replacement and withdrawal.
+**Evidence:** all 47 API tests, build, 12 alphabet browser checks and 21 focused
+regressions pass; [behavior and limits](docs/alphabet-explorer.md).
+**Delivery:** authorized API/frontend rollout pending; no real pack publication.
+Parent F28.1/F28.5/F28.6 remain open for accepted content and real device/AT/Safari checks.
+
+#### F28.2 Arabic explorer packs
+
+**Status:** Planned.
+**Scope:** shared script forms and three separate Levantine/MSA/Quranic teaching packs.
+**Next:** pin basic letters/support inventory and exact course examples/audio sources.
+**Done when:** each pack meets agreed coverage, applicable joining forms, names/sounds,
+2–3 cleared words per basic letter and reviewed clips/rationales; Quran text remains
+unchanged and track-specific review/rights/publication restrictions are enforced.
+**Depends on:** F28.1, F09/F13/F14; [pack gates](docs/alphabet-explorer-plan.md).
+
+#### F28.3 Khmer explorer pack
+
+**Status:** Planned.
+**Scope:** consonants, series, vowels/signs and common subscript combinations tied
+to familiar words, without a mandatory alphabet prerequisite.
+**Next:** fluent reviewer selects exact inventory/help; record text/audio rights separately.
+**Done when:** full agreed coverage has accepted forms, contextual sounds, examples,
+recordings and rationales; combining text/highlights preserve the approved strings.
+**Depends on:** F28.1, F26.1 and applicable F26.5 recording decisions;
+supports F26.3. [Pack gates](docs/alphabet-explorer-plan.md).
+The exact-five F26.2.1 preview exception does not cover these new records.
+
+#### F28.4 French explorer pack
+
+**Status:** Planned.
+**Scope:** upper/lowercase letters plus separately grouped accents/cedilla/ligatures
+and selected common sound/spelling combinations.
+**Next:** resolve F25.1 variety/review route and pin inventory, words and audio rights.
+**Done when:** full agreed coverage distinguishes names, contextual sounds and silent
+letters with accepted examples/audio/rationales and exact accent-preserving text.
+**Depends on:** F28.1, F25.1 and applicable F25.5 recording decisions;
+supports F25.3. [Pack gates](docs/alphabet-explorer-plan.md).
+
+#### F28.5 Practice, downloads and separate evidence
+
+**Status:** Active · application implementation authorized October 16.
+**Scope:** shape/listening recognition, word spotting, unscored repeat-aloud practice,
+complete offline packs and per-identity/course/version evidence.
+**Next:** application behavior passes synthetic API/browser checks; verify complete real packs and supported real browsers after content acceptance.
+**Done when:** offline reload/practice and identity separation pass; incomplete updates
+retain prior complete packs; audio stops on switches; viewed course, started lessons
+and primary allocation stay independent. Listening/self-check results are distinct.
+**Depends on:** F28.1 plus each ready content pack; [gates](docs/alphabet-explorer-plan.md).
+
+#### F28.6 Accessibility, verification and authorized delivery
+
+**Status:** Active · application implementation authorized October 16.
+**Scope:** per-pack content/access/offline checks, real device/AT evidence and separately
+authorized publication/deployment with recovery records.
+**Next:** deploy the verified candidate; then collect real device/AT/Safari and per-pack content/audio evidence. Automated local checks are linked above.
+**Done when:** small screens/enlarged text, keyboard/focus, mixed direction, actual
+AT, supported-browser offline/reconnection and content privacy/withdrawal checks
+pass; exact approved content and any authorized releases have linked evidence.
+**Depends on:** F28.1/F28.5 and each affected pack; [matrix](docs/alphabet-explorer-plan.md).
+Ready packs can proceed separately; unfinished packs leave the parent open.
+
 ## Selected future implementation order
 
 The owner selected research priorities **1, 2, 4, 5 and 6** on October 12:
@@ -1826,7 +1951,22 @@ F24.7 shared landing/wording/identity can be designed alongside the first units;
 enabled course entry and public claims must follow actual approved availability.
 Portuguese is eventual expansion direction, not a new implemented course or beta commitment.
 
+F28 implementation, push and deployment were subsequently authorized October 16.
+The owner accepted the recommended first-version defaults and private Khmer/French
+packs pending choices/review. Shared application is implemented. Remaining order: shared contract/private Arabic–Khmer slice →
+practice/offline → reviewed complete Levantine/Khmer packs → separately gated
+MSA/Quranic/French packs → per-pack verification and any authorized delivery.
+[Alphabet explorer plan](docs/alphabet-explorer-plan.md).
+
 ## Recent planning changes
+
+- **October 16, 2026 F28:** owner authorized implementation/push/deploy and accepted
+  the recommended defaults. Shared explorer, console gates, four activities, local
+  evidence/resume and verified offline packs are implemented. API 47/47, build,
+  12 alphabet and 21 regression browser checks pass. Deployment candidate ready;
+  full reviewed content/audio and real device/AT/Safari evidence remain. No real
+  alphabet pack publication. [Implementation](docs/alphabet-explorer.md),
+  [rollout](docs/releases/2026-10-16-alphabet.md).
 
 - **October 16, 2026 F24.8.1:** owner reported disappearing lessons during language
   switches, confirmed Fattoush/Knafeh across languages and requested distinct landing
@@ -1863,11 +2003,3 @@ Portuguese is eventual expansion direction, not a new implemented course or beta
   preserves unrelated local course work. Build and all focused checks pass across
   the initial run and one cultural-refresh retry; mobile/desktop/offline and console
   returns are verified locally. No API/content change. [Rollout](docs/releases/2026-10-16-back-navigation.md).
-
-- **October 15, 2026 F26 / F24.7 / F24.8 / F27.1:** expanded Khmer into concrete integration and
-  first-unit milestones; added the shared landing, wording and visual-identity
-  scope for Khmer, French and eventual Portuguese. Retain Arabic/Palestinian roots
-  and the relationship promise; permit Khmer red/blue accents. [Plan and copy inventory](docs/khmer-course-and-brand-expansion.md).
-  Follow-up adds a three-script title exploration, prominent Arabic–Khmer switching
-  and consistent mobile-friendly back controls with measurable acceptance criteria.
-  Local planning only; no product implementation, publication or deployment.

@@ -42,6 +42,7 @@ import ReviewPractice from './ReviewPractice.vue';
 import RecallPractice from './RecallPractice.vue';
 import LearnedWords from './LearnedWords.vue';
 import CulturalPicks from './CulturalPicks.vue';
+import AlphabetExplorer from './AlphabetExplorer.vue';
 import BackControl from './BackControl.vue';
 import CharacterCast from './CharacterCast.vue';
 import CharacterCue from './CharacterCue.vue';
@@ -96,6 +97,7 @@ const previewMode = ref(false);
 const practiceMode = ref(false);
 const reviewOpen = ref(false);
 const reviewAudioPlaying = ref(false);
+const alphabetAudioPlaying = ref(false);
 const reviewScope = ref('guest');
 const dashboardScope = ref('');
 const startupLoading = ref(true);
@@ -151,17 +153,17 @@ const completionSummary = computed(() => {
   };
 });
 const pendingSyncCount = ref(0);
-type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'practice-culture' | 'progress' | 'words' | 'account';
+type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'practice-culture' | 'practice-alphabet' | 'progress' | 'words' | 'account';
 const pageNames: Record<string, PageName> = {
   today: 'today', courses: 'courses', practice: 'practice', 'practice/review': 'practice-review',
   'practice/checkpoints': 'practice-checkpoints', 'practice/recall': 'practice-recall', 'practice/lessons': 'practice-lessons',
-  'practice/culture': 'practice-culture',
+  'practice/culture': 'practice-culture', 'practice/alphabet': 'practice-alphabet',
   progress: 'progress', words: 'words', account: 'account',
 };
 const pageTitles: Record<PageName, string> = {
   today: 'Today', courses: 'Courses', practice: 'Practice', 'practice-review': 'Review',
   'practice-checkpoints': 'Checkpoints', 'practice-recall': 'Recall', 'practice-lessons': 'Lesson practice',
-  'practice-culture': 'Watch & listen',
+  'practice-culture': 'Watch & listen', 'practice-alphabet': 'Alphabet',
   progress: 'Progress', words: 'Learned words', account: 'Account',
 };
 const navigation = [
@@ -174,6 +176,7 @@ const navigation = [
 function readPage(): PageName {
   const path = window.location.hash.replace(/^#\/?/, '').toLowerCase();
   if (/^practice\/culture(?:\/[a-z0-9][a-z0-9-]{0,79})?$/.test(path)) return 'practice-culture';
+  if (/^practice\/alphabet(?:\/[a-z0-9][a-z0-9-]{0,79})?$/.test(path)) return 'practice-alphabet';
   return pageNames[path] ?? 'today';
 }
 const page = ref<PageName>(readPage());
@@ -182,7 +185,7 @@ const primaryPage = computed(() => page.value.startsWith('practice') ? 'practice
 const pageTitle = computed(() => pageTitles[page.value]);
 const reviewView = computed(() => page.value === 'practice' ? 'tiles' : page.value === 'practice-review' ? 'review' : page.value === 'practice-checkpoints' ? 'checkpoints' : 'hidden');
 const recallView = computed(() => page.value === 'practice' ? 'tile' : page.value === 'practice-recall' ? 'recall' : page.value === 'progress' ? 'can-do' : 'hidden');
-const practiceChild = computed(() => page.value.startsWith('practice-') && page.value !== 'practice-culture');
+const practiceChild = computed(() => page.value.startsWith('practice-') && page.value !== 'practice-culture' && page.value !== 'practice-alphabet');
 function navigate(destination: PageName) {
   window.location.hash = `/${Object.keys(pageNames).find(path => pageNames[path] === destination) ?? destination}`;
 }
@@ -507,7 +510,7 @@ onMounted(async () => {
     /* Study works without localStorage. */
   }
   removeUiSounds = installUiSounds(
-    () => speakingPromptId.value !== null || reviewAudioPlaying.value,
+    () => speakingPromptId.value !== null || reviewAudioPlaying.value || alphabetAudioPlaying.value,
   );
   window.addEventListener('online', handleOnline);
   window.addEventListener('hashchange', handlePageChange);
@@ -1377,17 +1380,17 @@ async function finishLesson() {
 
       <BackControl class="landing-return mobile-landing-return" href="#">Back to landing page</BackControl>
 
-      <CourseSwitcher :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || !studyPageAvailable || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
+      <CourseSwitcher :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || (!studyPageAvailable && page !== 'practice-alphabet') || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
       <PublicationNotice :notice="activeLessons.find(l => l.publicationNotice)?.publicationNotice" />
       <button v-if="resumableLessonId && activeLessons.some(l => l.id === resumableLessonId)" type="button" class="secondary-action resume-course" @click="startLesson(resumableLessonId)">Resume {{ activeCourse.name }} lesson</button>
       <p v-if="courseStorageError" role="status">{{ courseStorageError }}</p>
-      <section v-if="studyPageAvailable && !activeLessons.length && page !== 'account'" class="course-empty" role="status">
+      <section v-if="studyPageAvailable && !activeLessons.length && page !== 'account' && page !== 'practice-alphabet'" class="course-empty" role="status">
         <h2>{{ activeCourse.name }}</h2><p>Lessons not yet available. Your saved progress and daily study settings are unchanged.</p>
       </section>
       <p v-if="downloadError" role="status">{{ downloadError }}</p>
 
-      <LoadingWords v-if="dashboardLoading && page !== 'practice-culture'" :compact="!initialDashboardLoading" />
-      <section v-else-if="dashboardUnavailable && page !== 'account' && page !== 'practice-culture'" class="dashboard-error" aria-labelledby="dashboard-error-heading">
+      <LoadingWords v-if="dashboardLoading && page !== 'practice-culture' && page !== 'practice-alphabet'" :compact="!initialDashboardLoading" />
+      <section v-else-if="dashboardUnavailable && page !== 'account' && page !== 'practice-culture' && page !== 'practice-alphabet'" class="dashboard-error" aria-labelledby="dashboard-error-heading">
         <WifiOff :size="28" aria-hidden="true" />
         <h1 id="dashboard-error-heading">Your study plan couldn’t load</h1>
         <p>Reconnect and try again. No saved plan is available on this device.</p>
@@ -1563,6 +1566,7 @@ async function finishLesson() {
             {{ syncStatus }}
           </p>
         </header>
+        <a class="page-link" href="#/practice/alphabet"><BookOpen :size="18" aria-hidden="true" /> Alphabet · {{ activeCourse.name }}</a>
         <div class="course-units">
           <section
             v-for="unit in courseUnits"
@@ -1646,6 +1650,9 @@ async function finishLesson() {
           <h1>Practice</h1>
         </header>
         <div id="practice-hub" class="feature-grid">
+          <a class="feature-tile accent-gold tile-alphabet" href="#/practice/alphabet">
+            <span class="feature-badge" aria-hidden="true"><BookOpen :size="26" /></span><span class="feature-copy"><strong>Alphabet</strong><small>{{ activeCourse.name }}</small></span>
+          </a>
           <a v-if="activeCourse.languageId === 'arabic'" class="feature-tile accent-ink tile-culture" href="#/practice/culture">
             <span class="feature-badge" aria-hidden="true"><Clapperboard :size="18" /></span>
             <span class="feature-copy"><strong>Watch &amp; listen</strong><small>Weekly Arabic picks</small></span>
@@ -1658,6 +1665,7 @@ async function finishLesson() {
         </div>
         <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
       </template>
+      <AlphabetExplorer v-if="page === 'practice-alphabet' && viewedReady" :course-id="viewedCourse" :scope="reviewScope" :suspended="lessonOpen || reviewOpen || consoleOpen" @audio="alphabetAudioPlaying = $event" />
       <p v-if="page === 'practice-culture' && viewedReady && activeCourse.languageId !== 'arabic'">Watch &amp; listen currently covers Arabic. Switch to an Arabic course to view its collections.</p>
       <CulturalPicks v-if="page === 'practice-culture' && viewedReady && activeCourse.languageId === 'arabic'" :edition-id="culturalEditionId" />
       <template v-if="practiceChild && studyPageAvailable">
