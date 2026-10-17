@@ -50,9 +50,23 @@ allocation policy.
 
 ## Delivery
 
-The owner authorized commit/push October 17 after local verification. Push to
-`main` uses the existing Vercel Git deployment for the development preview.
-Delivery verification is pending; no API/database change or curriculum publication.
+The owner authorized commit/push October 17 after local verification.
+
+- Application commit: `242187688f8a118af0277246322af79aba13c2dd`, pushed to
+  `origin/main` from the verified checkout.
+- Existing Vercel project `ismi`, team `victorys-projects-c1cb4594`, Git target
+  `production` (the project's existing development preview, not a beta release).
+- Deployment `dpl_G9PUrs9bkRs9XYar5xTTE9nKP264` is **Ready**, verified via the
+  authenticated Vercel CLI October 17. Deployment metadata matches the exact
+  application SHA and `main` branch. The connector's scope error was bypassed
+  using the CLI's existing authorized account.
+- The Ready deployment has `ismi-arabic.vercel.app` and `ismi-ruby.vercel.app`
+  assigned. Deployment URL:
+  <https://ismi-e0vqx5b3e-victorys-projects-c1cb4594.vercel.app>.
+- Verification covers local browser behavior and hosted deployment status/aliases;
+  no new live browser acceptance claim is made.
+- No API deployment, database change or curriculum publication. The previous
+  frontend commit `8f5536e` remains available for rollback.
 
 Implementation: [Today plan](../i-web/src/App.vue),
 [plan styles](../i-web/src/style.css), [can-do rows](../i-web/src/CanDoProgress.vue).

@@ -8,12 +8,12 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**F27.2 — Done locally October 17:** the owner-reported text-heavy Today plan and
+**F27.2 — Done and deployed October 17:** the owner-reported text-heavy Today plan and
 Progress targets now use compact lesson/target rows, clear next actions and
 on-demand evidence. Empty recall directs learners to lessons instead of disabled
 buttons. Production build and all 33 focused browser checks pass; mobile/desktop
-renders inspected. Owner authorized push October 17; delivery verification pending.
-No curriculum change.
+renders inspected. Frontend `2421876` is pushed to `main` and Vercel Ready on
+the existing development URL. No API/database or curriculum change.
 [Behavior and verification](docs/scannable-plan-and-progress.md).
 
 **F28 — Five inventory previews published October 16:** following the owner's
@@ -264,7 +264,7 @@ release and bulk authoring of units 2–12.
 | [F26](#f26-khmer-course) | Khmer course | Active · five previews live | F26.2.1 Done: five unreviewed text-only v1 lessons published; full review/audio/pilot and units 2–12 remain |
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 | [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
-| [F27.2](#f272-scannable-study-plan-and-can-do-progress) | Scannable study plan and can-do progress | Done · push authorized | Build and 33 checks pass; verify Git/Vercel delivery |
+| [F27.2](#f272-scannable-study-plan-and-can-do-progress) | Scannable study plan and can-do progress | Done · deployed | Frontend `2421876` Vercel Ready; build and 33 checks pass |
 | [F28](#f28-alphabet-explorer) | Alphabet explorer | Active · five inventory previews published | Reviewed full packs, examples/human audio and real device/AT/Safari evidence remain |
 | [F29](#f29-privacy-policy-and-beta-version) | Privacy policy and beta version | Done · local | Public `#/privacy` page and Beta 0.0.1 label; not yet committed/deployed |
 
@@ -1849,22 +1849,23 @@ snapshot. No API deployment or curriculum publication; unrelated course edits st
 
 #### F27.2 Scannable study plan and can-do progress
 
-**Status:** Done locally October 17, 2026 — owner-authorized UX fix for the
+**Status:** Done and deployed October 17, 2026 — owner-authorized UX fix for the
 text-heavy Today plan and Progress cards.
 **Scope:** compact lesson rows with clear actions/time/course; concise availability
 and progress states; evidence and policy details remain accessible on demand.
 **Done when:** both sections provide an obvious next step, unavailable recall has a
 working course entry instead of disabled actions, and mobile/desktop, keyboard,
 enlarged-text, lesson entry and existing evidence/preference behavior pass checks.
-**Next:** owner authorized push October 17; commit/push and verify the frontend deployment.
+**Next:** none for this bounded scope; real-device/AT beta gates remain under F18.
 **Depends on:** F15.1/F24.3 study queue, F17.6 written recall and F27 navigation.
 **Evidence:** production build and all 33 focused Chromium checks pass;
 320/390/1280 px, enlarged text, keyboard, online/offline, course switching,
 identity/preferences and versioned recall behavior verified. Mobile/desktop
 renders inspected. [Behavior and verification](docs/scannable-plan-and-progress.md).
-**Delivery:** owner authorized commit/push to `main` October 17. Existing Vercel
-Git deployment will update the development preview; delivery verification pending.
-No API/database or curriculum changes.
+**Delivery:** owner-authorized frontend `2421876` pushed to `main`; Vercel deployment
+`dpl_G9PUrs9bkRs9XYar5xTTE9nKP264` is Ready and assigned to
+`https://ismi-arabic.vercel.app`, verified October 17. No API/database or
+curriculum changes. [Delivery evidence](docs/scannable-plan-and-progress.md#delivery).
 
 ### F28 Alphabet explorer
 
@@ -2046,8 +2047,9 @@ MSA/Quranic/French packs → per-pack verification and any authorized delivery.
 - **October 17, 2026 F27.2:** Today plan and can-do progress redesigned around
   compact rows, clear next actions and expandable detail. Unavailable recall
   links to lessons without disabled controls. Build and all 33 focused checks
-  pass; mobile/desktop renders inspected. Owner authorized push October 17;
-  delivery verification pending. No curriculum change. [Evidence](docs/scannable-plan-and-progress.md).
+  pass; mobile/desktop renders inspected. Owner-authorized frontend `2421876`
+  pushed to `main` and Vercel Ready on the existing development URL. No
+  API/database or curriculum change. [Evidence](docs/scannable-plan-and-progress.md).
 
 - **October 16, 2026 F24.8.2:** owner requested a more apparent active language.
   The colored banner/tile picker, per-course colors, a prominent speech-bubble
