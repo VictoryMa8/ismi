@@ -8,13 +8,14 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**F24.8.1 — Implemented October 16, rollout in progress:** owner reported lessons disappearing on language
+**F24.8.1 — Done and deployed October 16:** owner reported lessons disappearing on language
 switches and requested Fattoush/Knafeh across languages plus distinct landing palettes.
 Scope: keep manual lesson entry visible for the viewed course without changing daily
 allocation; retain explicit character roles and provide shared guides when absent;
 replace positional landing color rules with explicit course palettes. Build and all
 23 focused browser checks pass, including teaching resume/offline and mobile/desktop
-contrast. No curriculum text or publication change.
+contrast. Frontend `0623273` is Vercel Ready; live switching, all five Khmer entries,
+shared guides and landing palettes pass. No curriculum text or publication change.
 [Behavior and delivery](docs/multi-language/switching-and-identity.md).
 
 **F26 — Five previews published October 16:** the owner selected Cambodian Khmer/
@@ -1368,7 +1369,7 @@ Recommend two taps from a main page: open selector → choose Arabic or Khmer.
 Arabic retains its separate Palestinian Levantine/MSA/Quranic courses; restore the
 last usable course within that language, with clear choices for the others.
 Future French/Portuguese entries use the same selector when actually available.
-**Next:** F24.8.1 fixes course-switch/manual-entry and teaching-resume issues, shared characters and language palettes. Five Khmer previews are published under F26.2.1; observed discoverability and real AT/device checks remain.
+**Next:** observed discoverability and real AT/device checks remain. F24.8.1 switching/teaching-resume, shared characters and language palette fixes are deployed; five Khmer previews are published under F26.2.1.
 
 **Done when:** switching is apparent on Today, Courses, Practice, Progress and Words;
 the selected course drives each page's content, help/audio labels, review and progress.
@@ -1388,7 +1389,7 @@ does not depend on French publication; enable each language as it becomes availa
 
 ##### F24.8.1 Switching continuity and shared presentation
 
-**Status:** Done locally — owner-requested fixes implemented October 16; frontend rollout in progress.
+**Status:** Done — implemented and deployed October 16.
 **Scope:** Today retains manual entry to published lessons outside daily allocation;
 startup selection and saved teaching positions cannot be overwritten by loading races;
 Fattoush/Knafeh remain shared guides without changing authored participant roles;
@@ -1400,7 +1401,11 @@ checks pass; deployed behavior is recorded separately from local checks.
 repeated switching, teaching/practice/offline resume, settings independence, existing
 authored character roles and actual five-package Khmer publication flow. 320/1280 px
 palettes pass text/control contrast and layout checks. Package regeneration/diff pass.
-**Next:** deploy and verify the frontend. No API/content publication change is required.
+**Next:** none for this bounded fix. Real AT/device and observed pilot checks remain
+under F24.5/F24.8.
+**Delivery:** frontend `0623273` pushed; Vercel Ready on the existing development alias.
+Live repeated Arabic/Khmer switching, manual Today entry, loaded shared guides, all
+five course entries and distinct landing colors pass. No API/content publication change.
 **Evidence:** [behavior and verification](docs/multi-language/switching-and-identity.md).
 
 ### F25 French course
@@ -1825,7 +1830,8 @@ Portuguese is eventual expansion direction, not a new implemented course or beta
 
 - **October 16, 2026 F24.8.1:** owner reported disappearing lessons during language
   switches, confirmed Fattoush/Knafeh across languages and requested distinct landing
-  colors. Authorized bounded switching/teaching-resume and presentation fixes;
+  colors. Bounded fixes are deployed as `0623273`; build and all 23 focused browser
+  checks pass. Live switching, five Khmer entries, shared guides and colors verified;
   [evidence](docs/multi-language/switching-and-identity.md). No curriculum text change.
 
 - **October 16, 2026 F26:** owner authorized implementation and selected Cambodian/

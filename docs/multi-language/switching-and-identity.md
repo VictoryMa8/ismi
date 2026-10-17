@@ -54,7 +54,24 @@ The full focused suite passed after that fix. No broader application regression,
 human assistive-technology or real Safari pass is claimed.
 
 `node scripts/build-khmer-drafts.mjs --check` and `git diff --check` pass. Local
-landing colors were visually inspected in the browser. Frontend rollout/live checks
-follow; the API remains at its existing revision. The flow is browser selector →
+landing colors were visually inspected in the browser. Live rollout evidence follows;
+the API remains at its existing revision. The flow is browser selector →
 existing dashboard summaries/public lesson API → scoped cached session → rendered
 course/lesson. There is no API/schema migration or curriculum publication.
+
+
+Frontend **`0623273a5c1991efa241c920f7942cd79ff2d9ec`** is pushed/deployed. Vercel
+**`dpl_34C5YtE41NjznJtz1ib498ocM61c`** is Ready at
+[the immutable deployment](https://ismi-o706hxb5l-victorys-projects-c1cb4594.vercel.app),
+assigned to [the existing development alias](https://ismi-arabic.vercel.app).
+The existing PWA was refreshed to activate the new shell. Live repeated Arabic →
+Khmer → Arabic → Khmer switching retains the Khmer Today lesson entry outside its
+daily allocation. Both shared-guide images load. Courses still offers all **five**
+Khmer lessons. Landing shows the five exact new palette identities, with Khmer's
+text-preview availability and pending-review/no-audio facts intact. The app is left
+on Khmer Today; no live lesson was completed and no study setting was edited.
+
+The API remains at `30ea724`; no database, source, publication or asset upload was
+required. Prior immutable frontend deployments remain available for application
+rollback. Documentation follow-up commits do not change runtime behavior. Real
+AT/device/Safari and observed learning/pilot evidence remain separate release gates.
