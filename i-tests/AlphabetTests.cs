@@ -6,6 +6,7 @@ using Ismi.Api.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Ismi.Api.Tests;
 public sealed class AlphabetTests : IDisposable
@@ -84,6 +85,39 @@ public sealed class AlphabetTests : IDisposable
         d=await Save(c,changed,d.Revision); Assert.Equal(HttpStatusCode.BadRequest,(await Cmd(c,d,"approve")).StatusCode);
         d=await Save(c,changed with { Inventory=changed.Inventory with { Version=2 } },d.Revision);
         d=await Command(c,d,"approve"); Assert.Equal("approved",d.State.Versions.Last().Status);
+    }
+    [Fact] public async Task ExactInventoryPreviewExceptionPreservesNormalGatesAndReviewTruth() {
+        using var enabled=factory.WithWebHostBuilder(b=>b.ConfigureAppConfiguration((_,config)=>config.AddInMemoryCollection(new Dictionary<string,string?> { ["Curriculum:AllowAlphabetTextPreview"]="true" })));
+        using var c=enabled.CreateClient(new() { HandleCookies=true,AllowAutoRedirect=false });
+        (await Post(c,"/api/auth/register",new { displayName="Owner",email="alphabet-owner@example.test",password="Test-password-123!" })).EnsureSuccessStatusCode();
+        var policy=new AlphabetTextPreviewPolicy(new ConfigurationBuilder().AddInMemoryCollection(new Dictionary<string,string?> { ["Curriculum:AllowAlphabetTextPreview"]="true" }).Build());
+        foreach(var p in policy.ExactPackages()) {
+            Assert.True(policy.IsAuthorized(p)); Assert.False(policy.IsAuthorized(p with { Title=p.Title+" changed" }));
+            var d=await Save(c,p); Assert.Equal(HttpStatusCode.BadRequest,(await Cmd(c,d,"approve")).StatusCode);
+            d=await Command(c,d,"approve-text-preview"); Assert.Equal("approved-text-preview",d.State.Versions[0].Status);
+            d=await Command(c,d,"publish"); var pub=await c.GetFromJsonAsync<AlphabetPublicPack>($"/api/alphabet/packs/{p.Id}");
+            Assert.Equal(AlphabetTextPreviewPolicy.Notice,pub!.PublicationNotice); Assert.Contains("UNICODE LICENSE V3",pub.LicenseText);
+            Assert.Empty(d.State.Versions[0].Pack.Reviewer); Assert.All(d.State.Versions[0].Pack.Sources,source=>Assert.False(source.TextCleared));
+            Assert.All(pub.Entries,e=>{Assert.Empty(e.NameAudio.Url);Assert.Empty(e.SoundAudio.Url);Assert.Empty(e.Examples);Assert.Empty(e.Activities);});
+            Assert.DoesNotContain(d.State.Audit,a=>a.Action=="approve");
+            d=await Save(c,p with { Title="Changed text" },d.Revision); Assert.Equal(HttpStatusCode.BadRequest,(await Cmd(c,d,"approve-text-preview")).StatusCode);
+            Assert.Equal(1,(await c.GetFromJsonAsync<AlphabetPublicPack>($"/api/alphabet/packs/{p.Id}"))!.Version);
+        }
+        using var disabled=Client(); Assert.Equal(HttpStatusCode.NotFound,(await disabled.GetAsync("/api/alphabet/packs/levantine-alphabet")).StatusCode);
+        Assert.All((await disabled.GetFromJsonAsync<AlphabetCatalog>("/api/alphabet"))!.Courses,c=>Assert.Null(c.PackId));
+    }
+    [Fact] public async Task OperatorPublicationUsesPinnedAuditFlowAndDoesNotOverwriteChangedPacks() {
+        using var enabled=factory.WithWebHostBuilder(b=>b.ConfigureAppConfiguration((_,config)=>config.AddInMemoryCollection(new Dictionary<string,string?> { ["Curriculum:AllowAlphabetTextPreview"]="true" })));
+        using var c=enabled.CreateClient();
+        using var scope=enabled.Services.CreateScope(); var service=scope.ServiceProvider.GetRequiredService<AlphabetService>();
+        var published=await service.PublishExactTextPreviewsAsync("synthetic operator test",CancellationToken.None); Assert.Equal(5,published.Length);
+        Assert.All(published,d=>{Assert.Equal(1,d.State.PublishedVersion);Assert.Equal(new[]{"draft-saved","approve-text-preview","publish"},d.State.Audit.Select(a=>a.Action));});
+        var repeated=await service.PublishExactTextPreviewsAsync("synthetic operator test",CancellationToken.None); Assert.All(repeated,d=>Assert.Equal(3,d.Revision));
+        var first=published[0]; await service.SaveAsync(new(first.State.Versions[0].Pack with { Title="Changed private candidate" },first.Revision),"test",CancellationToken.None);
+        await Assert.ThrowsAsync<AlphabetException>(()=>service.PublishExactTextPreviewsAsync("test",CancellationToken.None));
+        Assert.Equal(5,(await c.GetFromJsonAsync<AlphabetCatalog>("/api/alphabet"))!.Courses.Count(c=>c.PackId is not null));
+        Assert.Equal(5,(await service.WithdrawExactTextPreviewsAsync("test withdrawal",CancellationToken.None)).Length);
+        Assert.All((await c.GetFromJsonAsync<AlphabetCatalog>("/api/alphabet"))!.Courses,c=>Assert.Null(c.PackId));
     }
     [Fact] public void UnicodeTargetsAndCoverageAreExactAndAllActivitiesNeedRationales() {
         var v=new AlphabetValidator(); var p=Fixture() with { EngineeringFixture=false }; Assert.True(v.Validate(p).IsValid);

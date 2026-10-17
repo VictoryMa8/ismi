@@ -20,7 +20,7 @@ public static class AlphabetEndpoints
             Secure(c, csrf, () => s.SaveAsync(request, Actor(c), ct)));
         admin.MapPost("/packs/{id}/validate", (string id, AlphabetCommand request, AlphabetService s, HttpContext c, IAntiforgery csrf, CancellationToken ct) =>
             Secure(c, csrf, () => s.ValidateAsync(id, request.Version, ct)));
-        foreach (var command in new[] { "approve", "publish", "withdraw", "rollback" })
+        foreach (var command in new[] { "approve", "publish", "withdraw", "rollback", "approve-text-preview" })
         { var action = command; admin.MapPost($"/packs/{{id}}/{action}", (string id, AlphabetCommand request, AlphabetService s, HttpContext c, IAntiforgery csrf, CancellationToken ct) =>
             Secure(c, csrf, () => s.CommandAsync(id, action, request, Actor(c), ct))); }
     }

@@ -1,0 +1,1749 @@
+{
+  "id": "quranic-alphabet",
+  "courseId": "quranic",
+  "title": "Alphabet — unreviewed inventory proposal",
+  "variety": "Quranic script support; no canonical text or interpretation",
+  "helpConvention": "",
+  "inventory": {
+    "id": "arabic-inventory-proposal",
+    "version": 1,
+    "basicEntryIds": [
+      "u0627",
+      "u0628",
+      "u062a",
+      "u062b",
+      "u062c",
+      "u062d",
+      "u062e",
+      "u062f",
+      "u0630",
+      "u0631",
+      "u0632",
+      "u0633",
+      "u0634",
+      "u0635",
+      "u0636",
+      "u0637",
+      "u0638",
+      "u0639",
+      "u063a",
+      "u0641",
+      "u0642",
+      "u0643",
+      "u0644",
+      "u0645",
+      "u0646",
+      "u0647",
+      "u0648",
+      "u064a"
+    ],
+    "entries": [
+      {
+        "id": "u0627",
+        "category": "basic",
+        "text": "ا",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ا",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=R."
+          },
+          {
+            "label": "Final",
+            "text": "‍ا",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0628",
+        "category": "basic",
+        "text": "ب",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ب",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ب‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ب‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ب",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u062a",
+        "category": "basic",
+        "text": "ت",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ت",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ت‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ت‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ت",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u062b",
+        "category": "basic",
+        "text": "ث",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ث",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ث‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ث‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ث",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u062c",
+        "category": "basic",
+        "text": "ج",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ج",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ج‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ج‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ج",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u062d",
+        "category": "basic",
+        "text": "ح",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ح",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ح‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ح‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ح",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u062e",
+        "category": "basic",
+        "text": "خ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "خ",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "خ‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍خ‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍خ",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u062f",
+        "category": "basic",
+        "text": "د",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "د",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=R."
+          },
+          {
+            "label": "Final",
+            "text": "‍د",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0630",
+        "category": "basic",
+        "text": "ذ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ذ",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=R."
+          },
+          {
+            "label": "Final",
+            "text": "‍ذ",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0631",
+        "category": "basic",
+        "text": "ر",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ر",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=R."
+          },
+          {
+            "label": "Final",
+            "text": "‍ر",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0632",
+        "category": "basic",
+        "text": "ز",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ز",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=R."
+          },
+          {
+            "label": "Final",
+            "text": "‍ز",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0633",
+        "category": "basic",
+        "text": "س",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "س",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "س‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍س‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍س",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0634",
+        "category": "basic",
+        "text": "ش",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ش",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ش‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ش‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ش",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0635",
+        "category": "basic",
+        "text": "ص",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ص",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ص‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ص‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ص",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0636",
+        "category": "basic",
+        "text": "ض",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ض",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ض‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ض‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ض",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0637",
+        "category": "basic",
+        "text": "ط",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ط",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ط‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ط‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ط",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0638",
+        "category": "basic",
+        "text": "ظ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ظ",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ظ‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ظ‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ظ",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0639",
+        "category": "basic",
+        "text": "ع",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ع",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ع‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ع‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ع",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u063a",
+        "category": "basic",
+        "text": "غ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "غ",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "غ‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍غ‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍غ",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0641",
+        "category": "basic",
+        "text": "ف",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ف",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ف‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ف‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ف",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0642",
+        "category": "basic",
+        "text": "ق",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ق",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ق‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ق‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ق",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0643",
+        "category": "basic",
+        "text": "ك",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ك",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ك‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ك‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ك",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0644",
+        "category": "basic",
+        "text": "ل",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ل",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ل‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ل‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ل",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0645",
+        "category": "basic",
+        "text": "م",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "م",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "م‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍م‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍م",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0646",
+        "category": "basic",
+        "text": "ن",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ن",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ن‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ن‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ن",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0647",
+        "category": "basic",
+        "text": "ه",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ه",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ه‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ه‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ه",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u0648",
+        "category": "basic",
+        "text": "و",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "و",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=R."
+          },
+          {
+            "label": "Final",
+            "text": "‍و",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      },
+      {
+        "id": "u064a",
+        "category": "basic",
+        "text": "ي",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ي",
+            "note": "Technical character demonstration; linguistic review pending. Unicode Joining_Type=D."
+          },
+          {
+            "label": "Initial",
+            "text": "ي‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Medial",
+            "text": "‍ي‍",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          },
+          {
+            "label": "Final",
+            "text": "‍ي",
+            "note": "Joiner shaping probe, not a word; review with authentic words before publication."
+          }
+        ]
+      }
+    ],
+    "reviewer": "",
+    "reviewEvidence": ""
+  },
+  "entries": [
+    {
+      "id": "u0627",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER ALEF. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0628",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER BEH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u062a",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER TEH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u062b",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER THEH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u062c",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER JEEM. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u062d",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER HAH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u062e",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER KHAH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u062f",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER DAL. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0630",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER THAL. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0631",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER REH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0632",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER ZAIN. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0633",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER SEEN. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0634",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER SHEEN. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0635",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER SAD. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0636",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER DAD. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0637",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER TAH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0638",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER ZAH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0639",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER AIN. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u063a",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER GHAIN. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0641",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER FEH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0642",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER QAF. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0643",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER KAF. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0644",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER LAM. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0645",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER MEEM. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0646",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER NOON. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0647",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER HEH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0648",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER WAW. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u064a",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: ARABIC LETTER YEH. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17",
+        "arabic-shaping-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "ucd-17",
+      "citation": "Unicode Character Database 17.0.0 — character identifiers and case mappings only",
+      "locator": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+      "version": "17.0.0",
+      "rightsEvidence": "Unicode License V3 and source hashes attached in ../sources; curriculum/source acceptance pending.",
+      "textCleared": false,
+      "adaptationCleared": false,
+      "offlineCleared": false
+    },
+    {
+      "id": "arabic-shaping-17",
+      "citation": "Unicode ArabicShaping 17.0.0 — Joining_Type data only",
+      "locator": "https://www.unicode.org/Public/17.0.0/ucd/ArabicShaping.txt",
+      "version": "17.0.0",
+      "rightsEvidence": "Unicode License V3 and source hashes attached in ../sources; curriculum/source acceptance pending.",
+      "textCleared": false,
+      "adaptationCleared": false,
+      "offlineCleared": false
+    }
+  ],
+  "reviewer": "",
+  "reviewEvidence": "",
+  "engineeringFixture": false,
+  "fonts": []
+}

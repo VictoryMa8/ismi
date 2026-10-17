@@ -1,0 +1,32 @@
+[
+  {
+    "file": "UnicodeData-17.0.0.txt",
+    "url": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+    "sha256": "2e1efc1dcb59c575eedf5ccae60f95229f706ee6d031835247d843c11d96470c",
+    "retrievedAtUtc": "2026-10-17T03:16:13.862284+00:00",
+    "clientDate": "2026-10-16",
+    "use": "Technical character/shaping data only; not linguistic review or audio rights.",
+    "fullSourceRetainedPrivately": "/private/tmp/UnicodeData-17.0.0.txt",
+    "excerptFile": "UnicodeData-17.0.0.selected.txt",
+    "excerptSha256": "c64c1f806d4d8bb598b52e3ef585000b5484c18073534f1f263c59f43fa666ae"
+  },
+  {
+    "file": "ArabicShaping-17.0.0.txt",
+    "url": "https://www.unicode.org/Public/17.0.0/ucd/ArabicShaping.txt",
+    "sha256": "39afa01e680e27d0fd10b67a9b27be13fbaa3d0efecfb5be45991de9a0d267d0",
+    "retrievedAtUtc": "2026-10-17T03:16:14.060113+00:00",
+    "clientDate": "2026-10-16",
+    "use": "Technical character/shaping data only; not linguistic review or audio rights.",
+    "fullSourceRetainedPrivately": "/private/tmp/ArabicShaping-17.0.0.txt",
+    "excerptFile": "ArabicShaping-17.0.0.selected.txt",
+    "excerptSha256": "3e7bbd8c7747cdd3100932f1bb5a80a374a91db7d4e02fedc16ef7ed51b3188a"
+  },
+  {
+    "file": "UNICODE-LICENSE-V3.txt",
+    "url": "https://www.unicode.org/license.txt",
+    "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+    "retrievedAtUtc": "2026-10-17T03:16:14.240351+00:00",
+    "clientDate": "2026-10-16",
+    "use": "Technical character/shaping data only; not linguistic review or audio rights."
+  }
+]

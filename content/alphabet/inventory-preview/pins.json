@@ -1,0 +1,42 @@
+[
+  {
+    "courseId": "levantine",
+    "packId": "levantine-alphabet",
+    "file": "levantine.pack.json",
+    "sha256": "97cc6af7645489f369090410238ab93c015ef6cc89f38a788ad5f455081ae163",
+    "basicEntries": 28,
+    "totalEntries": 28
+  },
+  {
+    "courseId": "msa",
+    "packId": "msa-alphabet",
+    "file": "msa.pack.json",
+    "sha256": "0f2927a7ede48210695c1c9f0931e5c30b134b33166d62ecebfab49aba3cd6d1",
+    "basicEntries": 28,
+    "totalEntries": 28
+  },
+  {
+    "courseId": "quranic",
+    "packId": "quranic-alphabet",
+    "file": "quranic.pack.json",
+    "sha256": "a2fd40e2399833882adc3ddcffa53fffb1b486fce5db4faa8a99d98e8c28871c",
+    "basicEntries": 28,
+    "totalEntries": 28
+  },
+  {
+    "courseId": "khmer",
+    "packId": "khmer-alphabet",
+    "file": "khmer.pack.json",
+    "sha256": "f92d2926e94e2508fabe9e7428fe7f5cc2c0e1e0a992c479d6ada524e9c56ba9",
+    "basicEntries": 33,
+    "totalEntries": 35
+  },
+  {
+    "courseId": "french",
+    "packId": "french-alphabet",
+    "file": "french.pack.json",
+    "sha256": "1672160b79be7d5f7a43deafceb509ecc4173bf7c7f134e6bbcba6b0226cce4b",
+    "basicEntries": 26,
+    "totalEntries": 26
+  }
+]

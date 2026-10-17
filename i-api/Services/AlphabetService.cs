@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ismi.Api.Services;
 public sealed class AlphabetException(string message, int status = 409) : Exception(message) { public int Status { get; } = status; }
-public sealed class AlphabetService(IsmiDbContext db, AlphabetValidator validator, RecordingStore recordings, TimeProvider clock)
+public sealed class AlphabetService(IsmiDbContext db, AlphabetValidator validator, RecordingStore recordings, TimeProvider clock, AlphabetTextPreviewPolicy previews)
 {
     private static readonly JsonSerializerOptions Json = new(JsonSerializerDefaults.Web) { Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
     private static string Serialize<T>(T o) => JsonSerializer.Serialize(o, Json);
@@ -65,6 +65,8 @@ public sealed class AlphabetService(IsmiDbContext db, AlphabetValidator validato
     }
     private static AlphabetVersion Version(AlphabetState s, int n) => s.Versions.FirstOrDefault(v => v.Number == n) ?? throw new AlphabetException("That version is unavailable.", 404);
     public static IEnumerable<AlphabetClip> Clips(AlphabetPack p) => p.Entries.SelectMany(e => new[] { e.NameAudio, e.SoundAudio }.Concat(e.Examples.Select(w => w.Audio)));
+    public Task<AlphabetValidation> ValidateTextPreviewAsync(AlphabetPack p) => Task.FromResult(
+        new AlphabetValidation(previews.IsAuthorized(p), previews.IsAuthorized(p) ? [] : ["Only the exact five owner-authorized inventory-only packages may use the development text-preview exception."]));
     private async Task<AlphabetValidation> Validate(AlphabetVersion v, CancellationToken ct)
     {
         var result = validator.Validate(v.Pack); var errors = result.Errors.ToList();
@@ -88,15 +90,18 @@ public sealed class AlphabetService(IsmiDbContext db, AlphabetValidator validato
     {
         if (request.Reason is null || request.Reason.Length > 1000) throw new AlphabetException("Use a brief command reason.", 400);
         var r = await Find(id, ct); Expected(r, request.ExpectedRevision); var s = State(r); var v = Version(s, request.Version);
-        if (action is "approve" or "publish" or "rollback")
-        { var check = await Validate(v, ct); if (!check.IsValid) throw new AlphabetException(string.Join(" ", check.Errors), 400); }
+        if (action is "approve" or "publish" or "rollback" or "approve-text-preview")
+        { var check = (action == "approve-text-preview" || v.TextPreview && action != "approve") ? await ValidateTextPreviewAsync(v.Pack) : await Validate(v, ct); if (!check.IsValid) throw new AlphabetException(string.Join(" ", check.Errors), 400); }
         switch (action)
         {
+            case "approve-text-preview":
+                if (v.Status != "draft") throw new AlphabetException("Approve a saved exact text-preview draft.");
+                s = s with { Versions = s.Versions.Select(x => x.Number == v.Number ? x with { Status = "approved-text-preview", ApprovedBy = actor, TextPreview = true } : x).ToArray() }; break;
             case "approve":
                 if (v.Status != "draft") throw new AlphabetException("Approve a saved draft.");
                 s = s with { Versions = s.Versions.Select(x => x.Number == v.Number ? x with { Status = "approved", ApprovedBy = actor } : x).ToArray() }; break;
             case "publish": case "rollback":
-                if (v.ApprovedBy is null || (action == "publish" ? v.Status != "approved" : v.PublishedAtUtc is null)) throw new AlphabetException("Publish an approved version, or restore a previously published one.");
+                if (v.ApprovedBy is null || (action == "publish" ? v.Status != (v.TextPreview ? "approved-text-preview" : "approved") : v.PublishedAtUtc is null)) throw new AlphabetException("Publish an approved version, or restore a previously published one.");
                 s = s with { PublishedVersion = v.Number, Versions = s.Versions.Select(x => x.Number == v.Number
                     ? x with { Status = "published", PublishedAtUtc = x.PublishedAtUtc ?? clock.GetUtcNow().UtcDateTime }
                     : x.Status == "published" ? x with { Status = "superseded" } : x).ToArray() }; break;
@@ -117,21 +122,60 @@ public sealed class AlphabetService(IsmiDbContext db, AlphabetValidator validato
                 PublicClip(e.NameAudio), PublicClip(e.SoundAudio), e.Examples.Select(w => new AlphabetPublicExample(w.Id, w.Text,
                     w.Meaning, w.Help, w.Target, w.Occurrences, w.Note, w.SourceIds, PublicClip(w.Audio))).ToArray(), e.Activities)).ToArray(),
             p.Sources.Select(s => new AlphabetPublicSource(s.Id, s.Citation, s.Locator, s.Version)).ToArray(),
-            p.Fonts ?? []);
+            p.Fonts ?? [], v.TextPreview ? AlphabetTextPreviewPolicy.Notice : null, v.TextPreview ? AlphabetTextPreviewPolicy.LicenseText : null);
         // Clients verify the exact projected payload, excluding its own hash field.
         return result with { ContentHash = Hash(result) };
     }
     public async Task<AlphabetPublicPack?> PublicAsync(string id, CancellationToken ct)
     {
         var r = await db.AlphabetPacks.AsNoTracking().SingleOrDefaultAsync(r => r.Id == id, ct);
-        if (r is null) return null; var s = State(r); return s.PublishedVersion is int n ? Public(Version(s, n)) : null;
+        if (r is null) return null; var s = State(r); return s.PublishedVersion is int n && (!Version(s, n).TextPreview || previews.Enabled) ? Public(Version(s, n)) : null;
     }
     public async Task<AlphabetCatalog> CatalogAsync(CancellationToken ct)
     {
         var rows = await db.AlphabetPacks.AsNoTracking().ToListAsync(ct);
-        var published = rows.Select(State).Where(s => s.PublishedVersion is not null).Select(s => Public(Version(s, s.PublishedVersion!.Value))).ToArray();
+        var published = rows.Select(State).Where(s => s.PublishedVersion is not null).Where(s => !Version(s, s.PublishedVersion!.Value).TextPreview || previews.Enabled).Select(s => Public(Version(s, s.PublishedVersion!.Value))).ToArray();
         return new(1, CourseCatalog.All.Select(c => { var p = published.FirstOrDefault(p => p.CourseId == c.Id); return new AlphabetCatalogItem(c.Id, p?.Id, p?.Version, p?.ContentHash); }).ToArray(),
             rows.Where(r => State(r).PublishedVersion is null && State(r).Versions.Any(v => v.PublishedAtUtc is not null)).Select(r => r.Id).ToArray());
+    }
+    public async Task<AlphabetDetail[]> PublishExactTextPreviewsAsync(string actor, CancellationToken ct)
+    {
+        var packages = previews.ExactPackages();
+        if (!previews.Enabled || packages.Any(p => !previews.IsAuthorized(p))) throw new AlphabetException("The exact development preview exception is disabled.",400);
+        // Inspect all existing rows first. Never overwrite a changed or unrelated course pack.
+        var rows = await db.AlphabetPacks.AsNoTracking().ToListAsync(ct);
+        foreach (var p in packages)
+        {
+            var row = rows.FirstOrDefault(r => r.CourseId == p.CourseId);
+            if (row is not null && (row.Id != p.Id || State(row).Versions.Any(v => !previews.IsAuthorized(v.Pack))))
+                throw new AlphabetException("An existing alphabet pack differs from the authorized preview. No replacement was performed.");
+        }
+        var result = new List<AlphabetDetail>();
+        foreach (var p in packages)
+        {
+            var existing = await db.AlphabetPacks.AsNoTracking().SingleOrDefaultAsync(r => r.Id == p.Id,ct);
+            var d = existing is null ? await SaveAsync(new(p),actor,ct) : Detail(existing);
+            if (d.State.PublishedVersion is int current && d.State.Versions.Single(v=>v.Number==current).TextPreview) { result.Add(d); continue; }
+            var v = d.State.Versions.Last();
+            if (v.Status == "draft") d = await CommandAsync(p.Id,"approve-text-preview",new(d.Revision,v.Number,"Owner requested these inventory-only previews despite absent review/audio; no linguistic acceptance."),actor,ct);
+            if (d.State.Versions.Last().Status == "approved-text-preview") d = await CommandAsync(p.Id,"publish",new(d.Revision,v.Number,"Owner-authorized development text preview."),actor,ct);
+            else if (v.PublishedAtUtc is not null) d = await CommandAsync(p.Id,"rollback",new(d.Revision,v.Number,"Owner-authorized preview restoration."),actor,ct);
+            result.Add(d);
+        }
+        return result.ToArray();
+    }
+    public async Task<AlphabetDetail[]> WithdrawExactTextPreviewsAsync(string actor, CancellationToken ct)
+    {
+        var results = new List<AlphabetDetail>();
+        foreach (var p in previews.ExactPackages())
+        {
+            var r = await db.AlphabetPacks.AsNoTracking().SingleOrDefaultAsync(r=>r.Id==p.Id,ct);
+            if (r is null) continue;
+            var s = State(r);
+            if (s.PublishedVersion is int n && Version(s,n).TextPreview)
+                results.Add(await CommandAsync(p.Id,"withdraw",new(r.Revision,n,"Owner operator withdrawal of inventory-only text preview."),actor,ct));
+        }
+        return results.ToArray();
     }
     public async Task<bool> RecordingPublishedAsync(string url, CancellationToken ct) =>
         (await db.AlphabetPacks.AsNoTracking().ToListAsync(ct)).Select(State).Any(s => s.PublishedVersion is int n && Clips(Version(s, n).Pack).Any(c => c.Url == url));

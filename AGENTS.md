@@ -37,6 +37,17 @@ linguistic/source-rights records and the lack of human audio. This is not review
 rights clearance, beta inclusion or approval of other lessons/changed text. Preserve
 the normal review path and all beta gates; do not fabricate accepted review records.
 
+On October 16, after the F28 application deployment, the owner requested publication
+and ultimately directed “just publish them” after being informed that review and
+human audio were absent. This authorizes the exact five F28 inventory-only text
+previews in `content/alphabet/inventory-preview`, identified by pinned package hashes,
+on the existing development preview. Label them **unreviewed, text-only**; preserve
+missing linguistic/source acceptance and human audio honestly. They contain character
+forms and technical identifiers, no canonical Quran text, word curriculum or graded
+activities. This does not approve changed/additional packs, MSA/Quranic lessons,
+reviewed/sound-ready claims or beta inclusion. The normal full-pack review/audio path
+remains the target.
+
 ## Primary audience and promise
 
 - First users are false beginners who already know enough Arabic for basic questions or directions.

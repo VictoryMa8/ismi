@@ -134,3 +134,27 @@ these were corrected. Final checks above pass. Real VoiceOver/TalkBack, physical
 Safari offline/reconnection and actual linguistic/audio quality remain unverified.
 
 [Application rollout and recovery](releases/2026-10-16-alphabet.md).
+
+## Publication follow-up — October 16
+
+The owner requested publication after the application rollout. A fresh read-only
+inspection confirms **zero real local alphabet packs** (the default local owner DB
+has no alphabet table yet) and **zero hosted AlphabetPacks rows**, with hosted SQLite
+integrity `ok`. Aggregate evidence is private at
+`/private/tmp/ismi-f28-publication-check.json`. There are no saved real drafts to
+validate, approve or publish. Synthetic test fixtures are not publication candidates.
+No hosted content, approval record, source or audio was changed.
+
+The initial release choice was put to the owner: author packs for the existing reviewed
+content/human-audio route, or prepare clearly labeled unreviewed text-only previews
+under an explicit new exception. A general publication request does not itself
+supply missing content/audio or fabricated review/rights evidence. The earlier
+five-exact-Khmer-lesson exception remains scoped to those lessons. This audit is
+recorded locally; application deployment and published curriculum remain unchanged.
+
+
+The owner subsequently directed publication despite the absence of human reviewers
+and recordings. That latest instruction authorizes the separately scoped exact
+[unreviewed inventory-only preview publication](alphabet-inventory-publication.md),
+without changing the normal reviewed/audio full-pack target. The initial zero-pack
+audit above describes the state before this follow-up, not a current publication claim.

@@ -1,0 +1,1387 @@
+{
+  "id": "french-alphabet",
+  "courseId": "french",
+  "title": "Alphabet — unreviewed inventory proposal",
+  "variety": "",
+  "helpConvention": "",
+  "inventory": {
+    "id": "latin-inventory-proposal",
+    "version": 1,
+    "basicEntryIds": [
+      "u0041",
+      "u0042",
+      "u0043",
+      "u0044",
+      "u0045",
+      "u0046",
+      "u0047",
+      "u0048",
+      "u0049",
+      "u004a",
+      "u004b",
+      "u004c",
+      "u004d",
+      "u004e",
+      "u004f",
+      "u0050",
+      "u0051",
+      "u0052",
+      "u0053",
+      "u0054",
+      "u0055",
+      "u0056",
+      "u0057",
+      "u0058",
+      "u0059",
+      "u005a"
+    ],
+    "entries": [
+      {
+        "id": "u0041",
+        "category": "basic",
+        "text": "A",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "A",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "a",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0042",
+        "category": "basic",
+        "text": "B",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "B",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "b",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0043",
+        "category": "basic",
+        "text": "C",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "C",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "c",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0044",
+        "category": "basic",
+        "text": "D",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "D",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "d",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0045",
+        "category": "basic",
+        "text": "E",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "E",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "e",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0046",
+        "category": "basic",
+        "text": "F",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "F",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "f",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0047",
+        "category": "basic",
+        "text": "G",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "G",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "g",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0048",
+        "category": "basic",
+        "text": "H",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "H",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "h",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0049",
+        "category": "basic",
+        "text": "I",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "I",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "i",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u004a",
+        "category": "basic",
+        "text": "J",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "J",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "j",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u004b",
+        "category": "basic",
+        "text": "K",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "K",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "k",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u004c",
+        "category": "basic",
+        "text": "L",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "L",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "l",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u004d",
+        "category": "basic",
+        "text": "M",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "M",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "m",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u004e",
+        "category": "basic",
+        "text": "N",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "N",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "n",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u004f",
+        "category": "basic",
+        "text": "O",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "O",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "o",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0050",
+        "category": "basic",
+        "text": "P",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "P",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "p",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0051",
+        "category": "basic",
+        "text": "Q",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "Q",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "q",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0052",
+        "category": "basic",
+        "text": "R",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "R",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "r",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0053",
+        "category": "basic",
+        "text": "S",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "S",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "s",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0054",
+        "category": "basic",
+        "text": "T",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "T",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "t",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0055",
+        "category": "basic",
+        "text": "U",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "U",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "u",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0056",
+        "category": "basic",
+        "text": "V",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "V",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "v",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0057",
+        "category": "basic",
+        "text": "W",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "W",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "w",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0058",
+        "category": "basic",
+        "text": "X",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "X",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "x",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u0059",
+        "category": "basic",
+        "text": "Y",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "Y",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "y",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      },
+      {
+        "id": "u005a",
+        "category": "basic",
+        "text": "Z",
+        "forms": [
+          {
+            "label": "Uppercase",
+            "text": "Z",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          },
+          {
+            "label": "Lowercase",
+            "text": "z",
+            "note": "Unicode case mapping; French teaching name/sounds not yet authored."
+          }
+        ]
+      }
+    ],
+    "reviewer": "",
+    "reviewEvidence": ""
+  },
+  "entries": [
+    {
+      "id": "u0041",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER A. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0042",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER B. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0043",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER C. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0044",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER D. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0045",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER E. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0046",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER F. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0047",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER G. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0048",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER H. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0049",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER I. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u004a",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER J. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u004b",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER K. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u004c",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER L. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u004d",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER M. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u004e",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER N. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u004f",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER O. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0050",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER P. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0051",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER Q. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0052",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER R. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0053",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER S. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0054",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER T. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0055",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER U. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0056",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER V. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0057",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER W. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0058",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER X. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u0059",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER Y. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u005a",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: LATIN CAPITAL LETTER Z. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "ucd-17",
+      "citation": "Unicode Character Database 17.0.0 — character identifiers and case mappings only",
+      "locator": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+      "version": "17.0.0",
+      "rightsEvidence": "Unicode License V3 and source hashes attached in ../sources; curriculum/source acceptance pending.",
+      "textCleared": false,
+      "adaptationCleared": false,
+      "offlineCleared": false
+    }
+  ],
+  "reviewer": "",
+  "reviewEvidence": "",
+  "engineeringFixture": false,
+  "fonts": []
+}

@@ -8,7 +8,13 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
-**F28 — Application deployed October 16:** owner authorized implementation,
+**F28 — Inventory previews authorized October 16:** the owner requested publication
+despite absent reviewers/audio. Exact five inventory-only text previews are prepared;
+49 API tests, build and 18 focused alphabet/preview browser checks pass. Labels,
+source/license display and text-only downloads are ready; hosted publication follows
+deployment under F28.1.2. [Publication scope and rollout](docs/alphabet-inventory-publication.md).
+
+The F28 application was deployed October 16: the owner authorized implementation,
 push and deployment, then accepted private Khmer/French packs pending decisions and
 review, playback without microphone and unscored repeat-aloud practice. Practice /
 Courses / placement links, letter/forms/words, safe target markers, four activities,
@@ -16,7 +22,8 @@ versioned local evidence/resume, atomic verified downloads and the gated owner
 console are implemented. All 47 API tests, build, 12 alphabet browser checks and
 21 navigation/course/palette/placement regressions pass. Application `5bbf861` is
 pushed/deployed; Vercel Ready, exact API revision and live mobile entry/switching pass.
-All 16 existing table hashes/assets are preserved; the new alphabet table is empty. **No real alphabet packs are published**; F28 stays
+The original rollout preserved all 16 existing table hashes/assets and added an
+empty alphabet table. Inventory-preview publication is now authorized separately; F28 stays
 Active for all five reviewed inventories/examples/human-audio packs and real
 AT/device/Safari evidence. [Behavior](docs/alphabet-explorer.md),
 [rollout](docs/releases/2026-10-16-alphabet.md).
@@ -1846,6 +1853,11 @@ Supports F15/F25.3/F26.3 without completing their wider placement/module criteri
 preview; Ready/exact revision/live mobile checks pass and all existing hosted tables/
 assets are preserved. [Recovery/evidence](docs/releases/2026-10-16-alphabet.md).
 No real alphabet pack or curriculum approval/publication.
+**Publication follow-up October 16:** after the initial reviewed-only choice and
+notification of missing reviewers/audio, the owner directed “just publish them.”
+F28.1.2 now covers the exact five inventory-only previews; normal full-pack gates
+remain. Source-linked proposals/candidates are prepared; no review or audio record
+is fabricated. [Scope and delivery](docs/alphabet-inventory-publication.md).
 
 #### F28.1 Shared explorer, content model and gates
 
@@ -1869,6 +1881,21 @@ regressions pass; [behavior and limits](docs/alphabet-explorer.md).
 **Delivery:** `5bbf861` pushed/deployed; live entry/API/privacy pass and hosted data
 preservation is verified. [Rollout](docs/releases/2026-10-16-alphabet.md). No real pack publication.
 Parent F28.1/F28.5/F28.6 remain open for accepted content and real device/AT/Safari checks.
+
+##### F28.1.2 Inventory-only preview publication
+
+**Status:** Active · exact five previews authorized October 16.
+**Scope:** publish the five pinned Arabic-context/Khmer/French inventories as
+unreviewed text-only previews, without fabricated review, audio, words or grades.
+**Authorization:** owner said “just publish them” after being informed reviewers and
+recordings were absent; this supersedes the earlier reviewed-only selection for
+these exact development previews. Normal full-pack and beta gates stay in place.
+**Next:** verify/deploy the exact preview policy and labels, then publish through
+the audited owner-authorized operator service and verify hosted preservation.
+**Done when:** exact five v1 manifests and unreviewed/no-audio labels are public,
+missing controls remain unavailable, downloads pass and unrelated data is preserved.
+**Evidence:** [candidate files, policy, checks and rollout](docs/alphabet-inventory-publication.md).
+**Delivery:** local candidates and verified policy; deployment/publication pending.
 
 #### F28.2 Arabic explorer packs
 

@@ -151,6 +151,7 @@ builder.Services.AddSingleton<CulturalMediaValidator>();
 builder.Services.AddScoped<CulturalMediaService>();
 builder.Services.AddSingleton<AlphabetValidator>();
 builder.Services.AddScoped<AlphabetService>();
+builder.Services.AddSingleton<AlphabetTextPreviewPolicy>();
 
 var app = builder.Build();
 
@@ -166,6 +167,19 @@ await using (var scope = app.Services.CreateAsyncScope())
     var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
     var seed = scope.ServiceProvider.GetRequiredService<SeedCurriculum>();
     await publishing.EnsureSeededAsync(seed.GetInitialLessons());
+    if (builder.Configuration.GetValue<bool>("publish-alphabet-text-previews") || builder.Configuration.GetValue<bool>("withdraw-alphabet-text-previews"))
+    {
+        try {
+            var alphabet = scope.ServiceProvider.GetRequiredService<AlphabetService>();
+            var withdraw = builder.Configuration.GetValue<bool>("withdraw-alphabet-text-previews");
+            if (withdraw && builder.Configuration.GetValue<bool>("publish-alphabet-text-previews")) throw new InvalidOperationException("Choose publication or withdrawal.");
+            var actor = "owner-authorized operator CLI; inventory preview exception 2026-10-16";
+            var records = withdraw ? await alphabet.WithdrawExactTextPreviewsAsync(actor,CancellationToken.None) : await alphabet.PublishExactTextPreviewsAsync(actor,CancellationToken.None);
+            foreach (var d in records)
+                Console.WriteLine($"{d.Id}: {(withdraw ? "withdrawn" : "published text-preview v"+d.State.PublishedVersion)}; no linguistic review or human audio.");
+        } catch (Exception e) when (e is AlphabetException or InvalidOperationException) { Console.Error.WriteLine($"Alphabet preview publication stopped: {e.Message}"); Environment.ExitCode=1; }
+        return;
+    }
     if (builder.Configuration["import-culture"] is { Length: > 0 } culturePath)
     {
         var service = scope.ServiceProvider.GetRequiredService<CulturalMediaService>();
@@ -224,7 +238,7 @@ app.MapGet("/api/health", () => Results.Ok(new
 {
     status = "healthy",
     service = "ismi-api",
-    features = new[] { "typed-recall-v1", "multi-language-v1", "private-draft-preview-v1", "khmer-text-preview-v1", "alphabet-v1" },
+    features = new[] { "typed-recall-v1", "multi-language-v1", "private-draft-preview-v1", "khmer-text-preview-v1", "alphabet-v1", "alphabet-text-preview-v1" },
     revision = typeof(LessonResponse).Assembly
         .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
         .Cast<System.Reflection.AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,

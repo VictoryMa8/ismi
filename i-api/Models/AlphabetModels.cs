@@ -25,7 +25,7 @@ public sealed record AlphabetCommand(long ExpectedRevision, int Version, string 
 public sealed record AlphabetValidation(bool IsValid, string[] Errors);
 public sealed record AlphabetAudit(string Action, int Version, string Actor, DateTime AtUtc, string Reason);
 public sealed record AlphabetVersion(int Number, string Status, AlphabetPack Pack, string Hash,
-    string? ApprovedBy, DateTime? PublishedAtUtc);
+    string? ApprovedBy, DateTime? PublishedAtUtc, bool TextPreview = false);
 public sealed record AlphabetState(AlphabetVersion[] Versions, int? PublishedVersion, AlphabetAudit[] Audit);
 public sealed record AlphabetDetail(string Id, long Revision, AlphabetState State);
 public sealed record AlphabetSummary(string Id, string CourseId, string Title, long Revision, int LatestVersion, string Status, int? PublishedVersion);
@@ -39,8 +39,9 @@ public sealed record AlphabetPublicEntry(string Id, string Name, string Help, st
     AlphabetPublicExample[] Examples, AlphabetActivity[] Activities);
 public sealed record AlphabetPublicSource(string Id, string Citation, string Locator, string Version);
 public sealed record AlphabetFont(string Url, string Hash);
+public sealed record AlphabetPublicationNotice(string Id, string Title, string Detail);
 public sealed record AlphabetPublicPack(string Id, string CourseId, int Version, string ContentHash, string Title,
     string Variety, string HelpConvention, string InventoryId, int InventoryVersion, string[] BasicEntryIds,
-    AlphabetScriptEntry[] ScriptEntries, AlphabetPublicEntry[] Entries, AlphabetPublicSource[] Sources, AlphabetFont[] Fonts);
+    AlphabetScriptEntry[] ScriptEntries, AlphabetPublicEntry[] Entries, AlphabetPublicSource[] Sources, AlphabetFont[] Fonts, AlphabetPublicationNotice? PublicationNotice = null, string? LicenseText = null);
 public sealed record AlphabetCatalogItem(string CourseId, string? PackId, int? Version, string? ContentHash);
 public sealed record AlphabetCatalog(int SchemaVersion, AlphabetCatalogItem[] Courses, string[] WithdrawnIds);

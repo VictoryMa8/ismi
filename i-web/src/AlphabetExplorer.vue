@@ -46,6 +46,7 @@ const entry = computed(() => pack.value?.entries.find(e => e.id === entryId.valu
 const scriptEntry = computed(() => pack.value?.scriptEntries.find(e => e.id === entryId.value))
 const filtered = computed(() => pack.value?.scriptEntries.filter(e => (!category.value || e.category === category.value) &&
   [e.text, pack.value?.entries.find(t => t.id === e.id)?.name, pack.value?.entries.find(t => t.id === e.id)?.help].some(v => v?.toLocaleLowerCase().includes(search.value.toLocaleLowerCase()))) ?? [])
+const hasPractice = computed(() => Boolean(pack.value?.entries.some(e => e.activities.length)))
 const categories = computed(() => [...new Set(pack.value?.scriptEntries.map(e => e.category) ?? [])])
 const current = computed(() => practice.value[activityIndex.value])
 const practiceEntry = computed(() => pack.value?.entries.find(e => e.id === current.value?.entryId))
@@ -60,6 +61,7 @@ function stopAudio() {
 async function play(url: string) {
   stopAudio(); const token = playback; emit('audio', true); playingUrl.value = url
   try {
+    if (!url) return
     const source = await alphabetPlayback(url)
     if (token !== playback) { if (source.startsWith('blob:')) URL.revokeObjectURL(source); return }
     if (source.startsWith('blob:')) objectUrl = source
@@ -136,7 +138,7 @@ async function download() {
   try {
     await downloadAlphabet(p)
     if (token !== epoch) return
-    downloaded.value = p; status.value = 'Downloaded · text, practice and all model recordings.'
+    downloaded.value = p; status.value = p.publicationNotice ? 'Downloaded · text and forms.' : 'Downloaded · text, practice and all model recordings.'
   } catch (caught) { if (token === epoch) error.value = `Alphabet download failed. Previous download retained. ${caught instanceof Error ? caught.message : ''}` }
   finally { saving.value = false }
 }
@@ -230,16 +232,17 @@ onBeforeUnmount(() => { epoch++; closePractice(true); document.removeEventListen
     <div v-if="!busy && !pack" class="alphabet-empty">
       <BookOpen :size="36" aria-hidden="true" /><h2>No alphabet pack published yet</h2>
       <p>Letters, examples and human recordings will appear after review and publication.</p>
-      <a href="#/courses" class="back-control">Browse courses</a>
+      <BackControl href="#/courses">Browse courses</BackControl>
     </div>
     <template v-if="pack">
+      <p v-if="pack.publicationNotice" class="alphabet-notice"><strong>{{ pack.publicationNotice.title }}</strong><br />{{ pack.publicationNotice.detail }}</p>
       <div class="alphabet-toolbar">
         <span>{{ pack.variety }} · Version {{ pack.version }}</span>
         <button v-if="!previewPack" type="button" class="primary-action" :disabled="saving || currentDownloaded" @click="download"><Download :size="18" aria-hidden="true" />{{ saving ? 'Downloading…' : currentDownloaded ? 'Downloaded' : 'Download alphabet' }}</button>
         <button v-if="downloaded && !previewPack" type="button" class="secondary-action" :disabled="saving" @click="remove">Remove download</button>
       </div>
       <p v-if="downloaded && !currentDownloaded">Version {{ downloaded.version }} is saved offline. Download this version to replace it.</p>
-      <p v-if="!previewPack" class="alphabet-evidence-note">Practice history stays on this device for this learner and course. Recognition and self-checks do not assess pronunciation.</p>
+      <p v-if="!previewPack && hasPractice" class="alphabet-evidence-note">Practice history stays on this device for this learner and course. Recognition and self-checks do not assess pronunciation.</p>
       <button v-if="savedPractice" type="button" class="secondary-action" @click="resumePractice">Resume alphabet practice</button>
       <p v-if="currentHistory.length">{{ currentHistory.length }} practice activities recorded for this version.</p>
       <template v-if="!entry">
@@ -247,7 +250,7 @@ onBeforeUnmount(() => { epoch++; closePractice(true); document.removeEventListen
           <label><Search :size="16" aria-hidden="true" /> Find a letter<input v-model="search" type="search" placeholder="Character, name or pronunciation help" /></label>
           <label>Group<select v-model="category"><option value="">All groups</option><option v-for="c in categories" :key="c">{{ c }}</option></select></label>
         </div>
-        <button type="button" class="primary-action" @click="begin(true)">Mixed practice</button>
+        <button v-if="hasPractice" type="button" class="primary-action" @click="begin(true)">Mixed practice</button>
         <p>{{ pack.basicEntryIds.length }} basic entries · {{ pack.scriptEntries.length - pack.basicEntryIds.length }} supporting entries</p>
         <div class="alphabet-grid" aria-label="Letters">
           <button v-for="s in filtered" :key="s.id" type="button" class="alphabet-letter" @click="select(s.id)">
@@ -260,13 +263,13 @@ onBeforeUnmount(() => { epoch++; closePractice(true); document.removeEventListen
         <BackControl @click="select(null)">Back to letters</BackControl>
         <div class="alphabet-letter-title"><span class="alphabet-hero" v-bind="textAttributes(courseId)">{{ scriptEntry?.text }}</span><div><h2 ref="letterHeading" tabindex="-1">{{ entry.name }}</h2><p>{{ entry.help }}</p></div></div>
         <p>{{ entry.note }}</p>
-        <div class="alphabet-actions"><button type="button" class="secondary-action" data-ui-sound="silent" @click="play(entry.nameAudio.url)"><Volume2 :size="18" aria-hidden="true" />Play name</button><button type="button" class="secondary-action" data-ui-sound="silent" @click="play(entry.soundAudio.url)"><Volume2 :size="18" aria-hidden="true" />Play sound</button><button v-if="playingUrl" type="button" class="secondary-action" data-ui-sound="silent" @click="stopAudio">Stop audio</button></div>
-        <p><strong>Sound context:</strong> {{ entry.soundContext }}</p><p>Sound transcript: <span v-bind="textAttributes(courseId)">{{ entry.soundAudio.transcript }}</span></p>
+        <div class="alphabet-actions" v-if="entry.nameAudio.url || entry.soundAudio.url"><button v-if="entry.nameAudio.url" type="button" class="secondary-action" data-ui-sound="silent" @click="play(entry.nameAudio.url)"><Volume2 :size="18" aria-hidden="true" />Play name</button><button v-if="entry.soundAudio.url" type="button" class="secondary-action" data-ui-sound="silent" @click="play(entry.soundAudio.url)"><Volume2 :size="18" aria-hidden="true" />Play sound</button><button v-if="playingUrl" type="button" class="secondary-action" data-ui-sound="silent" @click="stopAudio">Stop audio</button></div>
+        <p v-if="entry.soundContext"><strong>Sound context:</strong> {{ entry.soundContext }}</p><p v-if="entry.soundAudio.transcript">Sound transcript: <span v-bind="textAttributes(courseId)">{{ entry.soundAudio.transcript }}</span></p>
         <div class="alphabet-forms"><div v-for="f in scriptEntry?.forms" :key="f.label"><strong>{{ f.label }}</strong><span v-bind="textAttributes(courseId)">{{ f.text }}</span><small>{{ f.note }}</small></div></div>
-        <h3>Words</h3>
+        <h3 v-if="entry.examples.length">Words</h3>
         <div class="alphabet-examples"><article v-for="w in entry.examples" :key="w.id"><p class="alphabet-word" v-bind="textAttributes(courseId)"><AlphabetWord :text="w.text" :target="w.target" :occurrences="w.occurrences" /></p><p><strong>{{ w.meaning }}</strong></p><p>{{ w.help }}</p><p>Find <bdi v-bind="textAttributes(courseId)">{{ w.target }}</bdi> · {{ w.occurrences.length }} {{ w.occurrences.length === 1 ? 'occurrence' : 'occurrences' }}.</p><p>{{ w.note }}</p><button type="button" class="secondary-action" data-ui-sound="silent" :aria-label="`Play word: ${w.meaning}`" @click="play(w.audio.url)"><Volume2 :size="18" aria-hidden="true" />Play word</button></article></div>
-        <button type="button" class="primary-action" @click="begin()">Practice this letter</button>
-        <details><summary>Sources and version</summary><p>{{ pack.inventoryId }} v{{ pack.inventoryVersion }} · {{ pack.helpConvention }}</p><ul><li v-for="s in pack.sources.filter(s => entry?.sourceIds.includes(s.id) || entry?.examples.some(w => w.sourceIds.includes(s.id)))" :key="s.id">{{ s.citation }} · {{ s.locator }} · {{ s.version }}</li></ul></details>
+        <button v-if="entry.activities.length" type="button" class="primary-action" @click="begin()">Practice this letter</button>
+        <details><summary>Sources and version</summary><p>{{ pack.inventoryId }} v{{ pack.inventoryVersion }} · {{ pack.helpConvention }}</p><ul><li v-for="s in pack.sources.filter(s => entry?.sourceIds.includes(s.id) || entry?.examples.some(w => w.sourceIds.includes(s.id)))" :key="s.id">{{ s.citation }} · {{ s.locator }} · {{ s.version }}</li></ul><details v-if="pack.licenseText"><summary>Unicode license</summary><pre class="alphabet-license">{{ pack.licenseText }}</pre></details></details>
       </article>
     </template>
     <dialog ref="dialog" class="alphabet-practice" aria-labelledby="alphabet-practice-title" @cancel.prevent="closePractice()">
@@ -300,6 +303,7 @@ onBeforeUnmount(() => { epoch++; closePractice(true); document.removeEventListen
 .alphabet-explorer button { min-height:48px; } .alphabet-explorer p,.alphabet-explorer li { line-height:1.7; overflow-wrap:anywhere; }
 .alphabet-empty { border:1px solid #c2d3c8; border-top:5px solid #17684e; padding:2rem; border-radius:18px; background:#fff; margin:1.5rem 0; }
 .alphabet-empty svg { color:#17684e; } .alphabet-error { color:#8f2929; font-weight:650; } .alphabet-notice { background:#f4d16f; color:#352a12; padding:1rem; border-radius:12px; }
+.alphabet-license { white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; font-size:.8rem; }
 .alphabet-evidence-note { color:#4b5a52; font-size:.9rem; }
 .alphabet-filters { display:flex; flex-wrap:wrap; gap:1rem; margin:1.5rem 0; }
 .alphabet-filters label { display:flex; flex:1 1 180px; flex-wrap:wrap; align-items:center; gap:.5rem; font-weight:650; }

@@ -1,0 +1,1649 @@
+{
+  "id": "khmer-alphabet",
+  "courseId": "khmer",
+  "title": "Alphabet — unreviewed inventory proposal",
+  "variety": "Contemporary Cambodian Khmer; Phnom Penh reference",
+  "helpConvention": "",
+  "inventory": {
+    "id": "khmer-inventory-proposal",
+    "version": 1,
+    "basicEntryIds": [],
+    "entries": [
+      {
+        "id": "u1780",
+        "category": "candidate-consonant",
+        "text": "ក",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ក",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1781",
+        "category": "candidate-consonant",
+        "text": "ខ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ខ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1782",
+        "category": "candidate-consonant",
+        "text": "គ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "គ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1783",
+        "category": "candidate-consonant",
+        "text": "ឃ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ឃ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1784",
+        "category": "candidate-consonant",
+        "text": "ង",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ង",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1785",
+        "category": "candidate-consonant",
+        "text": "ច",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ច",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1786",
+        "category": "candidate-consonant",
+        "text": "ឆ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ឆ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1787",
+        "category": "candidate-consonant",
+        "text": "ជ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ជ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1788",
+        "category": "candidate-consonant",
+        "text": "ឈ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ឈ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1789",
+        "category": "candidate-consonant",
+        "text": "ញ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ញ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u178a",
+        "category": "candidate-consonant",
+        "text": "ដ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ដ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u178b",
+        "category": "candidate-consonant",
+        "text": "ឋ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ឋ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u178c",
+        "category": "candidate-consonant",
+        "text": "ឌ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ឌ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u178d",
+        "category": "candidate-consonant",
+        "text": "ឍ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ឍ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u178e",
+        "category": "candidate-consonant",
+        "text": "ណ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ណ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u178f",
+        "category": "candidate-consonant",
+        "text": "ត",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ត",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1790",
+        "category": "candidate-consonant",
+        "text": "ថ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ថ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1791",
+        "category": "candidate-consonant",
+        "text": "ទ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ទ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1792",
+        "category": "candidate-consonant",
+        "text": "ធ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ធ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1793",
+        "category": "candidate-consonant",
+        "text": "ន",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ន",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1794",
+        "category": "candidate-consonant",
+        "text": "ប",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ប",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1795",
+        "category": "candidate-consonant",
+        "text": "ផ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ផ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1796",
+        "category": "candidate-consonant",
+        "text": "ព",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ព",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1797",
+        "category": "candidate-consonant",
+        "text": "ភ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ភ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1798",
+        "category": "candidate-consonant",
+        "text": "ម",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ម",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u1799",
+        "category": "candidate-consonant",
+        "text": "យ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "យ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u179a",
+        "category": "candidate-consonant",
+        "text": "រ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "រ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u179b",
+        "category": "candidate-consonant",
+        "text": "ល",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ល",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u179c",
+        "category": "candidate-consonant",
+        "text": "វ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "វ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u179d",
+        "category": "candidate-consonant",
+        "text": "ឝ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ឝ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u179e",
+        "category": "candidate-consonant",
+        "text": "ឞ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ឞ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u179f",
+        "category": "candidate-consonant",
+        "text": "ស",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ស",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u17a0",
+        "category": "candidate-consonant",
+        "text": "ហ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ហ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u17a1",
+        "category": "candidate-consonant",
+        "text": "ឡ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "ឡ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      },
+      {
+        "id": "u17a2",
+        "category": "candidate-consonant",
+        "text": "អ",
+        "forms": [
+          {
+            "label": "Isolated",
+            "text": "អ",
+            "note": "Technical character demonstration; linguistic review pending."
+          }
+        ]
+      }
+    ],
+    "reviewer": "",
+    "reviewEvidence": ""
+  },
+  "entries": [
+    {
+      "id": "u1780",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER KA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1781",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER KHA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1782",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER KO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1783",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER KHO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1784",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER NGO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1785",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER CA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1786",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER CHA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1787",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER CO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1788",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER CHO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1789",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER NYO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u178a",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER DA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u178b",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER TTHA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u178c",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER DO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u178d",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER TTHO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u178e",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER NNO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u178f",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER TA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1790",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER THA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1791",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER TO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1792",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER THO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1793",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER NO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1794",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER BA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1795",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER PHA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1796",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER PO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1797",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER PHO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1798",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER MO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u1799",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER YO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u179a",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER RO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u179b",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER LO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u179c",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER VO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u179d",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER SHA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u179e",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER SSO. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u179f",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER SA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u17a0",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER HA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u17a1",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER LA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    },
+    {
+      "id": "u17a2",
+      "name": "",
+      "help": "",
+      "note": "Technical source label: KHMER LETTER QA. This is not a reviewed learner letter name. Names, contextual sounds, examples, explanations and audio remain unauthored.",
+      "soundContext": "",
+      "sourceIds": [
+        "ucd-17"
+      ],
+      "nameAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "soundAudio": {
+        "url": "",
+        "transcript": "",
+        "speaker": "",
+        "variety": "",
+        "reviewer": "",
+        "reviewEvidence": "",
+        "rightsEvidence": "",
+        "humanRecording": false,
+        "offlineCleared": false
+      },
+      "examples": [],
+      "activities": []
+    }
+  ],
+  "sources": [
+    {
+      "id": "ucd-17",
+      "citation": "Unicode Character Database 17.0.0 — character identifiers and case mappings only",
+      "locator": "https://www.unicode.org/Public/17.0.0/ucd/UnicodeData.txt",
+      "version": "17.0.0",
+      "rightsEvidence": "Unicode License V3 and source hashes attached in ../sources; curriculum/source acceptance pending.",
+      "textCleared": false,
+      "adaptationCleared": false,
+      "offlineCleared": false
+    }
+  ],
+  "reviewer": "",
+  "reviewEvidence": "",
+  "engineeringFixture": false,
+  "fonts": [
+    {
+      "url": "/fonts/NotoSansKhmer.ttf",
+      "hash": "f37a8431a0c5d5ed2f81a767417546aca576a81fb7eff9c924d46aecf828f2ca"
+    }
+  ]
+}
