@@ -1,2091 +1,1144 @@
 # Ismi roadmap
 
-Updated October 17, 2026 · **Start here for current feature status.**
+Updated October 17, 2026 · **Single source of current feature state and next work.**
 
-This is the single current plan. [AGENTS.md](AGENTS.md) holds product constraints;
-[the planning workflow](docs/planning-workflow.md) explains how agents maintain
-this file. Older plans provide design context, not current priority or permission.
+## Agent entry
 
-## At a glance
+1. Match the owner's request to a stable ID in the [work queues](#work-queues).
+2. Read that ID's [feature record](#feature-records), linked contract/evidence and
+   actual checkout. Check `git status`; work on `main`, preserving local changes.
+3. Use **Authorization** and **Next action**, not work state alone, to decide what
+   you may do. A recommendation is not permission to implement, publish, deploy,
+   spend or contact people. Existing owner authorization persists.
+4. Update the record and its queue together. [Maintenance rules](docs/planning-workflow.md)
+   define the schema; [AGENTS.md](AGENTS.md) holds durable product constraints.
+   Run `python3 scripts/check-roadmap.py` before finishing roadmap edits.
 
-**F27.2 — Done and deployed October 17:** the owner-reported text-heavy Today plan and
-Progress targets now use compact lesson/target rows, clear next actions and
-on-demand evidence. Empty recall directs learners to lessons instead of disabled
-buttons. Production build and all 33 focused browser checks pass; mobile/desktop
-renders inspected. Frontend `2421876` is pushed to `main` and Vercel Ready on
-the existing development URL. No API/database or curriculum change.
-[Behavior and verification](docs/scannable-plan-and-progress.md).
+A request to audit or reorganize this file authorizes documentation work only.
+Never rebuild a delivered layer just because its parent is unfinished. Never close
+an umbrella because some children are complete. No percentages or averaged readiness.
 
-**F28 — Done October 17 for the owner-revised text-only scope:** explicit audio-free
-mode and five full unreviewed draft packs are complete. Application `fdd5c5f`
-is pushed/deployed to the existing API/Vercel development previews. 143 basic entries,
-132 support entries, 434 examples/demonstrations and 550 visual activities; all 51 API
-tests, build and 24 alphabet browser checks pass. Vercel Ready; exact API revision,
-all 17 hosted table/asset hashes and five pinned public preview manifests verified. Existing five exact v1 inventory-only previews retain their October 16
-publication; no new publication. Review/rights/access/release evidence moves to F30,
-human recordings to F09. [Scope and evidence](docs/alphabet-text-only-completion.md).
+## How to read state
 
-**F24.8.1 — Done and deployed October 16:** owner reported lessons disappearing on language
-switches and requested Fattoush/Knafeh across languages plus distinct landing palettes.
-Scope: keep manual lesson entry visible for the viewed course without changing daily
-allocation; retain explicit character roles and provide shared guides when absent;
-replace positional landing color rules with explicit course palettes. Build and all
-23 focused browser checks pass, including teaching resume/offline and mobile/desktop
-contrast. Frontend `0623273` is Vercel Ready; live switching, all five Khmer entries,
-shared guides and landing palettes pass. No curriculum text or publication change.
-[Behavior and delivery](docs/multi-language/switching-and-identity.md).
+**Work state** identifies the main next gate. **Readiness** records independent facts:
+implementation, content and verification. **Delivery** records application and content
+separately. All must be read together; none implies beta readiness or expert review.
 
-**F26 — Five previews published October 16:** the owner selected Cambodian Khmer/
-Phnom Penh, twelve units/sixty lessons and conversation-first optional script help,
-then explicitly authorized these five as **unreviewed, text-only development previews**.
-Application `30ea724` is pushed/deployed; Vercel Ready and exact API revision verified.
-Hosted records **24–28**, all **v1**, are published through the owner console, with
-pending review/rights, no reviewer and no human audio retained. Live course/lesson
-labels pass. All 13 Arabic publications, learner data, sources and assets are preserved.
-API **41/41**, build and **10** focused browser checks pass, including downloaded
-Khmer offline completion/reconnection in a disposable database. **F26.2.1 is Done**;
-F26 remains Active for fluent review/source/help/inventory decisions, human audio,
-real device/AT/Safari/pilot evidence and units 2–12.
-[Publication and recovery](docs/khmer/text-preview-publication.md),
-[exact versions/audit](content/khmer/meet-01/publication.json),
-[candidate evidence](docs/khmer/README.md).
+| Work state | Meaning | Agent response |
+| --- | --- | --- |
+| Partial | Some implementation/authoring exists; defined scope remains | Identify the missing child or bounded deliverable before coding |
+| Review pending | Inspectable drafts exist; exact acceptance is missing | Prepare/resolve review items; do not fabricate approval |
+| Input needed | Assets, permission, reviewer or external account access is missing | Name the exact input/actor; continue independent authorized work |
+| Decision needed | A consequential product/provider/policy choice is unresolved | Investigate facts; present a recommendation to the owner |
+| Verification pending | Software/protocol exists; required field or release evidence is missing | Run only authorized checks; distinguish automation from human evidence |
+| Planned | Defined work has not begun | Check authorization and dependencies before implementation |
+| Delivery pending | Accepted implementation awaits its authorized rollout | Verify the candidate and exact deployment/publication authority |
+| Deferred | Owner explicitly paused this scope | Do not resume without the owner's instruction |
+| Complete | This bounded contract is satisfied | Preserve it; track extensions/release gates under their owning IDs |
 
-**F24 — Application deployed October 16:** multi-language foundation, course selector,
-independent state, approved parallel queue, console safeguards and shared wording
-are pushed/deployed as `f515f43`. Live selection/Arabic entry and hosted data
-preservation pass. French remains planned; Khmer now has five unreviewed text-only preview publications
-under the explicit F26.2.1 exception, described above.
-Parent stays Active for reviewed first units, real device/AT/pilot evidence, Safari
-offline verification and beta/content decisions. [Behavior](docs/multi-language/README.md),
-[rollout](docs/releases/2026-10-16-multi-language.md).
+Implementation can be complete while content is draft and delivery is absent.
+Content can be published under an **unreviewed preview exception** while review,
+rights and audio remain missing. Automated checks do not imply real-device,
+VoiceOver/TalkBack, Safari offline, human-audio or learner-outcome acceptance.
+“Authored” means structurally prepared; “Approved” means recorded owner acceptance,
+not native-expert review. “N/A” means that layer is outside the bounded scope.
+“Not run” or “unverified” is missing evidence, not a recorded failure.
 
-**F27.1 — Complete and deployed October 16:** shared 48 px arrow-and-label return
-controls, explicit destinations and keyboard/offline support. Application `5875e6d`
-is pushed; Vercel is Ready on the existing development URL. Isolated build and focused
-checks pass, with one cultural-refresh retry. Unrelated local course work is excluded;
-no API or curriculum change. [Behavior](docs/mobile-back-navigation.md),
-[rollout evidence](docs/releases/2026-10-16-back-navigation.md).
+## Partly complete features at a glance
 
-**F17.6 — Complete and deployed October 13:** three Everyday written-recall can-do cards,
-versioned attempt/help/date evidence, targeted practice and an optional outcome
-achievement use the owner-approved independent / distinct-situation / 24-hour
-due-review policy. Offline persistence, identity separation and content revisions/
-withdrawal are verified. Application release `7b80136` is pushed/Vercel Ready; live
-Practice cards, policy, mobile layout and reload are verified. [Behavior](docs/can-do-progress.md),
-[rollout evidence](docs/releases/2026-10-13-can-do.md).
+| Feature | Implementation | Content | Missing evidence / next gate | Application / publication |
+| --- | --- | --- | --- | --- |
+| F12 Levantine expansion | Partial course | Follow-on unit drafted; twelve-week depth absent | Exact draft review, speaker dispositions, remaining authoring | Shared app deployed / new drafts private |
+| F15 study plan/placement | Settings and Levantine check complete | Remaining reading/sound modules absent | Scope other-track assessments and accepted modules | Delivered slices deployed |
+| F17 learning support | Habits/can-do/UI complete | Grammar/reference slice not authored | Bound grammar, reminder and XP work before implementing | Selected children deployed |
+| F21 cultural media | Complete | Four research editions awaiting acceptance | Real media/editorial checks, AT, exact publication | App deployed / media unpublished |
+| F24 multi-language foundation | Complete | Reviewed French/Khmer first units still required | Real input/AT/Safari offline and observed mixed-language pilot | App deployed / expansion release gated |
+| F26 Khmer course | Shared app complete; course partial | Five of sixty lessons drafted and preview-published | Review/source/help decisions, 55 lessons, audio/modules/pilot | App deployed / five unreviewed text previews |
+| F28 alphabet | Complete under revised text-only contract | Five full packs authored, unreviewed | No remaining F28 gate; human/source/access/release is F30 | App deployed / full drafts unpublished |
 
-**F20.1 — Complete and deployed October 13:** Account form controls/status now have
-consistent spacing and mobile daily goals use equal columns. Learned words lives
-on `#/words`, linked from Practice. Build and all 27 distinct focused/regression
-checks pass across runs; live route, 56 existing entries, return link and Account
-layout verified. [Behavior and delivery](docs/learned-word-glossary.md#october-13-page-and-account-spacing--f201).
+These rows summarize the records; they do not change contracts or create permission.
 
-**F22 — Complete and deployed October 13:** typed Arabic/Arabizi recall,
-first/help/retry evidence, reserved later situations and owner review reports are
-implemented. The owner-approved Everyday 1/3/6 revisions are published as v3 through
-console gates. Frontend/API application release `6419f84` is deployed; healthy API,
-exact payload/source/audit matching, data/asset preservation and enabled live Practice
-entry are verified. [Behavior](docs/recall-and-recombine.md),
-[rollout evidence](docs/releases/2026-10-13-recall.md).
+## Current delivery baseline
 
-**October 12 scope expansion — F25 planned; F26 authorized October 16; F24 authorized October 15:** the owner added French, Khmer
-and parallel language study to Ismi's roadmap. Arabic remains the flagship.
-The full plans below include a shared foundation and separate proposed twelve-week
-courses, with child tasks, outcomes and release gates. The owner subsequently authorized
-all F24 foundation/presentation implementation and a deployment candidate, and approved
-its queue policy. F26 draft implementation and definition defaults were authorized
-October 16; exact review/source/audio and first-100 beta inclusion remain open.
-F25 definition/authoring remain separate. Existing Arabic commitments are retained.
+This is a reconciliation of repository/release evidence, **not a new live audit**.
 
-**October 15 Khmer plan expansion — F26 / F24.7:** the owner requested a fuller
-Khmer implementation path and a shared landing/wording overhaul that prepares Ismi
-for French, eventual Portuguese and further languages. Keep the relationship promise
-and visible Arabic/Palestinian roots; add Cambodian-inspired red/blue accents.
-Follow-up scope: explore an English/Arabic/Khmer brand title (F24.7), make Arabic–Khmer
-switching obvious (F24.8), and improve page-back controls for mobile (F27.1).
-[First-unit milestones, landing, copy and identity plan](docs/khmer-course-and-brand-expansion.md).
-F26 now has five owner-authorized unreviewed text-only preview publications; full release remains gated. F24
-shared application work is implemented and deployed.
+| Layer | Latest recorded state | Evidence / limit |
+| --- | --- | --- |
+| Frontend application | `2d73626` Ready on existing Vercel development aliases October 17; application source `fdd5c5f` | [F28 rollout](docs/alphabet-text-only-completion.md#authorized-rollout--october-17) |
+| ASP.NET API | Healthy exact `fdd5c5f` revision October 17 on existing alwaysdata preview | Same rollout; all 17 table hashes and persistent assets preserved |
+| Levantine Everyday | Lessons 1/3/6 v3; other four v2 in recorded hosted release | [F22 versions/audits](docs/releases/2026-10-13-recall.md); not a fresh DB query |
+| Khmer lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F26.2.1 audit](content/khmer/meet-01/publication.json); no human audio/accepted linguistic review |
+| Alphabet | Five exact v1 inventory-only previews; full five text-only draft packs remain unpublished | [F28 scope](docs/alphabet-text-only-completion.md); F30 acceptance/release remains |
+| Cultural media | Application deployed; four local research editions, hosted catalog empty at last verification | [F21 release](docs/releases/2026-10-15-cultural-media.md) |
+| Beta | Not released; invitation/pilot/content/access/provider gates remain | F18; no French/Khmer beta inclusion inferred |
 
-**F21 — Application deployed October 15:** weekly YouTube video + film + song
-collections now have a versioned owner console, Monday UTC delivery, learner/archive
-pages, offline metadata and availability/rollback controls. The owner chose broader
-Arabic with explicit dialect/register labels. Four research drafts are imported
-locally; no actual media is approved/published. Build, 37 API tests and final 21
-focused browser checks pass; initial broad run was 106/107 with a recall focus race
-subsequently fixed. [Behavior and evidence](docs/cultural-watch-listen.md).
-Frontend/API application `4545fea` is pushed/deployed; live page/owner console and
-hosted data preservation are verified. Real media/access/editorial, AT and content
-publication remain open. [Rollout evidence](docs/releases/2026-10-15-cultural-media.md).
+Local DB record numbers and hosted record numbers are different namespaces. Always
+inspect the actual target before a new publication claim; historical IDs are evidence,
+not a deployment command. UI availability is not curriculum completion.
 
-**October 12 planned additions:** the owner selected research priorities 1, 2, 4,
-5 and 6 for future implementation: F22 recall/recombine, F23 mini-stories,
-F17.5 phrase anatomy/grammar, F17.6 can-do progress and F17.7 weekly quests/forgiving
-habits. [Expanded scopes and completion criteria](docs/learning-engagement-plan.md).
-F22 was subsequently authorized, completed and deployed. F23/F17.5 remain Planned.
-F17.6/F17.7 are implemented/deployed. The original planning
-selection did not itself authorize release.
+## Priority and authorization boundaries
 
-**F17.7 — Complete and deployed October 12:** optional goal-sized weekly quests and
-independent forgiving streaks use the owner-selected Monday/timezone/two-grace-day
-policy. Production build and 29 targeted checks pass;
-[behavior and verification](docs/weekly-learning-habits.md). Release `5aec0ec` is
-pushed/deployed, with live controls, published-path order and persistence verified;
-[rollout evidence](docs/releases/2026-10-12-weekly-habits.md).
+- Preserve the owner's selected engagement order: remaining **F23 → F17.5**;
+  F22/F17.6/F17.7 are already delivered. Selection was research/planning, not new
+  implementation/publication authority. [Original scopes](docs/learning-engagement-plan.md).
+- Arabic content: review F12.1/F12.2 candidates before further release; F09 real
+  recordings remain distinct from F19's narrowly authorized free-tier audition.
+- Multi-language: F24 software is deployed. Accepted F25/F26 first units and actual
+  device/pilot evidence precede bulk course/release decisions. F26 draft work is
+  authorized; F25 full-course definition/authoring remains unresolved. F28's
+  Metropolitan French choice applies only to its alphabet pack.
+- F18.1 remains owner-deferred. No participant/reviewer contact, hiring, spending,
+  provider enrollment, beta expansion or changed preview publication follows from
+  reorganizing or reprioritizing this roadmap.
+- F28 is complete under the owner's explicit text-only scope revision. Human/source
+  acceptance, track controls and real access/release evidence remain F30; real audio
+  remains with F09/F25.5/F26.5 as applicable. No other parent was narrowed here.
 
-**F17.4 — Complete and deployed October 12:** source-linked loading word reel with
-pause and reduced motion. Build and nine targeted checks pass;
-[behavior and preview](docs/loading-word-reel.md). Live loader and readiness transition verified.
+These are dependency lanes, not a new total priority order or a schedule. When a
+lane's next step needs input, choose independent work only within existing authority.
 
-**October 13 earlier rollout:** F17.6 frontend `7b80136` is deployed with verified
-live Practice/cards/policy/reload. [F17.6 rollout](docs/releases/2026-10-13-can-do.md).
-F22 API application release `6419f84` remains deployed and its exact owner-approved
-packages are published as v3. Live Practice
-is enabled for eligible completed lessons; prior v2 versions and application/database
-rollback are retained. [Rollout evidence](docs/releases/2026-10-13-recall.md).
-Earlier [weekly-habits rollout](docs/releases/2026-10-12-weekly-habits.md),
-[word reel](docs/releases/2026-10-12-word-reel.md),
-[copy/oval](docs/releases/2026-10-11-copy-cleanup.md) and
-[placement](docs/releases/2026-10-11.md) evidence remains applicable.
+## Work queues
 
-**F15.2 — Complete and deployed October 11:** optional six-question Levantine starting-point
-check now works with published lessons, device-scoped results, offline downloads
-and support preferences. [Behavior and verification](docs/placement-starting-point.md).
-Reading/sound bootcamp content and MSA/Quranic assessments remain open under F15.
+Each ID appears once below, grouped by its main next gate. Parent and child states
+are independent. Detailed records below carry the full readiness/delivery distinction.
+The next-action text names the actor; use the record before taking action.
 
-**F15.1 — Complete October 4:** personal study settings now drive a daily queue,
-with guest persistence, durable account preferences and offline conflict handling.
-[Implementation and verification](docs/personal-study-settings.md).
-Placement and bootcamp content remain open under F15.
+### Partial
 
-**F12.1 — Draft unit complete October 4:** three source-linked lessons for
-“Make a plan together” are validated and imported locally as draft records 24–26.
-Owner wording review/publication is next; the twelve-week F12 target stays open.
-See [packages and verification](content/levantine/plans-02/README.md).
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F06.1 · Character art redesign](#f061-character-art-redesign) | Owner: decide whether to authorize the remaining profile/turnaround production; no current app call site needs it. |
+| [F12 · Levantine course expansion](#f12-levantine-course-expansion) | Owner: review F12.1 drafts. Agent: bound the next batch only after review; do not equate three drafts with twelve weeks. |
+| [F15 · Personal study plan and placement](#f15-personal-study-plan-and-placement) | Agent: scope remaining track-specific assessments/modules; reuse delivered F28 text-only explorer, with F30/F09 review/audio boundaries. |
+| [F17 · Learning support and gamification](#f17-learning-support-and-gamification) | Owner/agent: bound F17.5 and separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints. |
+| [F18 · Invite-only beta readiness](#f18-invite-only-beta-readiness) | Agent: split remaining invite enforcement, reports/quarantine and operations into bounded tasks. Owner: resume F18.1 only explicitly. |
+| [F26 · Khmer course](#f26-khmer-course) | Owner: designate review route and source/help/reading dispositions. Agent: finish first-unit acceptance/pilot before bulk units 2–12. |
+| [F26.3 · Khmer script, sounds, input and starting check](#f263-khmer-script-sounds-input-and-starting-check) | Reviewer: select inventory/help and sound modules. Agent: integrate accepted modules and actual device checks; reuse F28/F30 rather than duplicate explorer. |
 
-**F10 — Complete October 7 locally:** owner-approved scheduled review now appears
-in Today and Practice, with deterministic offline intervals and version handling.
-[Policy and verification](docs/scheduled-review.md). Code release `89a6537` is pushed and deployed to Vercel; live review opening verified.
+### Review pending
 
-**F20 — Complete and deployed October 9:** learned-word search/filter in Practice, with
-source-linked teaching contexts, synced account inclusion and offline persistence.
-[Behavior and verification](docs/learned-word-glossary.md). Live glossary and existing account inclusion verified; [rollout record](docs/releases/2026-10-09.md).
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F12.2 · Transliteration and pronunciation audit](#f122-transliteration-and-pronunciation-audit) | Owner: review exact corrections. Agent: record source/model dispositions and reconcile existing local drafts before integration. |
+| [F21 · Cultural watch and listen recommendations](#f21-cultural-watch-and-listen-recommendations) | Agent: resolve F21.1 source/access/runtime gaps; owner reviews exact editions; F21.5 retains real AT/release checks. |
+| [F21.1 · Curation and first four collections](#f211-curation-and-first-four-collections) | Agent: verify precise runtime/edition, playback, region/access/support and editorial suitability; owner records dispositions. |
+| [F26.2 · Khmer first unit](#f262-khmer-first-unit) | Reviewer/owner: disposition exact phrases/answers/segments/sources; agent reconciles changes before any new approval/publication. |
 
-**F17.1 — First slice complete and deployed October 11:** Today prioritizes Continue,
-with distinct gold completion/goal markers and factual session recaps. Build and
-19 targeted browser checks pass; [behavior and verification](docs/learner-satisfaction.md).
-Sound audition and optional recall pacing remain proposals.
+### Input needed
 
-**Now:** F28 is Done for text-only implementation and full unreviewed drafts;
-application `fdd5c5f` is pushed/deployed, with drafts unpublished.
-The existing shared application/five inventory-only previews are deployed; F30 tracks
-content acceptance/access/release and F09 human recordings. The learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
-characters, and landing/welcome are implemented. F17.7 weekly quests/forgiving habits
-are complete and live-verified. F17.6 can-do cards/achievement are complete and deployed. F21 application `4545fea` is deployed, retaining F22's content. The first unit
-has three Everyday v3 and four v2 publications, with current art and verified
-content/source records. F08 is complete.
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F09 · Reviewed Levantine recordings](#f09-reviewed-levantine-recordings) | Owner: supply/select permitted recordings and reviewer for an exact prompt batch. Agent: reconcile script/package hashes before upload. |
+| [F14 · Quranic course](#f14-quranic-course) | Owner: approve exact resource IDs/permissions. Agent: scope integrity and track-specific review/publication controls. |
+| [F19 · Chatterbox phrase audio](#f19-chatterbox-phrase-audio) | Owner: finish free-account enrollment. Agent: verify F0 resource, then run only the authorized three-phrase/two-voice audition. |
+| [F26.5 · Khmer model audio and guided speaking](#f265-khmer-model-audio-and-guided-speaking) | Reviewer: accept scripts. Owner: arrange permitted recordings and provider/privacy decisions; agent verifies actual Khmer feedback/offline behavior. |
+| [F30 · Alphabet content acceptance and release](#f30-alphabet-content-acceptance-and-release) | Owner: designate reviewers. Agent: disposition exact inventories/help/examples/rights, scope MSA/Quranic controls, then collect authorized access/release evidence. |
 
-**F19 — Azure F0 alternative audition authorized.** Both Chatterbox variants
-retained pronunciation errors and remain unaccepted. The owner selected a free-tier
-Azure audition on October 3: the same three phrases in Jordanian Sana/Taim voices.
-Six exact-text SSML requests are [prepared](tools/azure-speech/README.md); the signed-in
-account has no subscription. Owner free-account enrollment and F0 resource
-verification are needed before generation. No Azure audio
-or quality improvement is claimed yet. F10 scheduled review is complete and deployed.
+### Decision needed
 
-The owner deferred real-device preflight and the learner rehearsal (F18.1) until after
-more implementation. F19 is an interim synthetic-audio slice; F09's real-speaker
-recordings and all beta evidence requirements remain open. The existing eight-prompt
-batch provides the initial text; [v2 release evidence](docs/pilot/release-2026-10-03/README.md)
-remains the published baseline.
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F11 · Guided speaking](#f11-guided-speaking) | Owner: select a first scenario and provider/privacy setup. Agent: scope the selected branch and failure/text alternatives. |
+| [F16 · Account recovery and deletion](#f16-account-recovery-and-deletion) | Owner: decide email delivery, hosting constraints and deletion/retention requirements; then agent scopes flows. |
+| [F25 · French course](#f25-french-course) | Owner: decide full course definition, depth/outcomes and review route through F25.1 before first-unit drafting. |
+| [F25.1 · French definition, sources and review route](#f251-french-definition-sources-and-review-route) | Owner/agent: settle course definition and resource dispositions; do not inherit F28 alphabet-only variety approval as full course approval. |
+| [F26.1 · Khmer definition, sources and review route](#f261-khmer-definition-sources-and-review-route) | Owner/reviewer: accept source/rights, help v0, eight-expression inventory and observed-outcome rubric. |
 
-**Waiting on:** owner Azure free-account enrollment (signed in, but no subscription),
-verified F0 access and then owner listening review. No paid services authorized.
-Real recordings, live speech-provider choices, Quran permissions
-and beta evidence remain separate dependencies.
-For French, course-definition decisions precede authoring. Khmer's five text-only
-previews are published under F26.2.1. A fluent reviewer, exact source/help/inventory
-dispositions, permissions and linguistic/audio evidence remain before a full reviewed
-release and bulk authoring of units 2–12.
+### Verification pending
 
-| ID | Feature / bounded scope | Status | Next action or limit |
-| --- | --- | --- | --- |
-| [F19](#f19-chatterbox-phrase-audio) | Chatterbox phrase audio | Active · Azure audition | Six requests prepared; activate free account, then verify F0 |
-| [F01](#f01-core-study-and-offline-progress) | Core study and offline progress | Done | Broader browser/accessibility checks belong to F18 |
-| [F02](#f02-guest-and-account-baseline) | Guest and account baseline | Done | Recovery/deletion belong to F16 |
-| [F03](#f03-levantine-curriculum-console) | Levantine curriculum console | Done | Broader content operations remain in F13/F14/F18 |
-| [F04](#f04-first-unit-guided-teaching-packages) | First-unit guided teaching packages | Done | Authored packages; publication belongs to F08 |
-| [F05](#f05-manual-review-and-checkpoints) | Manual review and checkpoints | Done | Scheduling belongs to F10; history stays on device |
-| [F06](#f06-recurring-character-support) | Recurring character support | Done | Portrait behavior retained; current artwork is F06.1.1 |
-| [F06.1](#f061-character-art-redesign) | Character art redesign | Active · art deployed | F06.1.1 complete; broader profile/turnaround views remain |
-| [F06.1.1](#f0611-selected-art-integration) | Selected art integration | Done · deployed | Larger lesson/home portraits deployed October 15; 12 focused checks pass |
-| [F07](#f07-landing-page-and-app-welcome) | Landing page and app welcome | Done | Deployed; invitation gate belongs to F18 |
-| [F08](#f08-first-unit-revision-release) | First-unit revision release | Done | All seven hosted v2 lessons and 52 source records verified |
-| [F09](#f09-reviewed-levantine-recordings) | Reviewed Levantine recordings | Needs input | Actual recordings, permissions and review |
-| [F09.1](#f091-first-recording-batch-preparation) | First recording batch preparation | Done | Eight exact prompts prepared; no real recordings yet |
-| [F10](#f10-scheduled-review) | Scheduled review | Done · deployed | Approved 1/3/7/14-day policy; history stays on device |
-| [F11](#f11-guided-speaking) | Guided speaking | Needs decision | Choose a first scenario and provider/privacy setup |
-| [F12](#f12-levantine-course-expansion) | Levantine course expansion | Active · drafts ready | Review F12.1; remaining twelve-week curriculum stays open |
-| [F12.1](#f121-make-a-plan-together) | Make a plan together | Done · local drafts | Three lessons validated/imported; owner review/publication pending |
-| [F12.2](#f122-transliteration-and-pronunciation-audit) | Transliteration and pronunciation audit | Active · correction drafts validated | Review exact lessons 3/5/7 candidates; speaker/model evidence remains |
-| [F13](#f13-msa-course) | MSA course | Planned | Define first unit and extend publication support |
-| [F14](#f14-quranic-course) | Quranic course | Needs input | Approved source IDs/rights and integrity controls |
-| [F15](#f15-personal-study-plan-and-placement) | Personal study plan and placement | Active · Levantine starting check done | Scope reviewed bootcamp content and remaining track assessments |
-| [F15.2](#f152-placement-starting-point) | Placement starting point | Done · deployed | Published-content Levantine check; bootcamps/other tracks remain open |
-| [F15.1](#f151-personal-study-settings) | Personal study settings | Done · pushed | Goals/tracks drive queue; guest/account offline persistence verified |
-| [F16](#f16-account-recovery-and-deletion) | Account recovery and deletion | Needs decision | Set delivery, hosting and retention requirements |
-| [F17](#f17-learning-support-and-gamification) | Learning support and gamification | Planned | F17.6/F17.7 deployed; F17.5, reminders and XP remain open |
-| [F17.1](#f171-learner-satisfaction) | Learner satisfaction | Done · deployed first slice | Today/color/completion verified; sound audition and optional timer remain proposals |
-| [F17.2](#f172-dashboard-loading-feedback) | Dashboard loading feedback | Done · deployed | Startup/refresh, cached offline and retry verified; hero edge removed |
-| [F17.3](#f173-interface-copy-cleanup) | Interface copy cleanup | Done · deployed | Redundant subtitles/quips removed; build and 31 targeted checks pass |
-| [F17.4](#f174-loading-word-reel) | Loading word reel | Done · deployed | Six exact glossary samples; pause/reduced motion verified |
-| [F17.5](#f175-phrase-anatomy-and-grammar-reference) | Phrase anatomy and grammar reference | Planned | Map six phrases to two patterns and three sourced usage notes |
-| [F17.6](#f176-can-do-progress-and-outcome-achievements) | Can-do progress and outcome achievements | Done · deployed | Approved policy/cards/achievement; live Practice/reload verified |
-| [F17.7](#f177-weekly-learning-quests-and-forgiving-habits) | Weekly learning quests and forgiving habits | Done · deployed | F27 changes new-learner default to on; saved off states stay off |
-| [F18](#f18-invite-only-beta-readiness) | Invite-only beta readiness | Needs input | Rehearsal deferred; full beta gates remain open |
-| [F18.1](#f181-first-unit-observed-rehearsal) | First-unit observed rehearsal | On hold | Owner deferred testing until after more implementation |
-| [F20.1](#f201-learned-words-page-and-account-spacing) | Learned words page and Account spacing | Done · deployed | Separate glossary route and Account gaps verified on Vercel |
-| [F20](#f20-learned-word-glossary) | Learned-word glossary | Done · deployed | Live existing-account glossary verified; offline/search checks pass |
-| [F21](#f21-cultural-watch-and-listen-recommendations) | Cultural watch/listen recommendations | Active · application deployed | Media/access/AT review and exact owner publication remain |
-| [F21.1](#f211-curation-and-first-four-collections) | Curation and first four collections | Active · four research drafts | Resolve playback/runtime/access/support and editorial gaps |
-| [F21.2](#f212-media-catalog-and-publication-console) | Media catalog and publication console | Done · deployed | Owner-only versioned workflow, Monday UTC selection and audit verified |
-| [F21.3](#f213-learner-collections-and-offline-metadata) | Learner collections and offline metadata | Done · deployed | Three cards/archive, safe links and atomic offline snapshots verified |
-| [F21.4](#f214-availability-upkeep-and-corrections) | Availability upkeep and corrections | Active · software verified | Rehearse a real editorial check/replacement cycle after F21.1 |
-| [F21.5](#f215-verification-and-authorized-release) | Verification and authorized release | Active · application deployed | Real media/AT checks and owner publication remain |
-| [F22](#f22-recall-and-recombine) | Recall and recombine | Done · deployed/published | Three targets/six situations live; broader AT/device and outcome evidence remains F18 |
-| [F23](#f23-recurring-mini-stories) | Recurring mini-stories | Planned | Start F23.1, then scope a linked three-episode text arc |
-| [F23.1](#f231-first-text-episode) | First text episode | Planned | One reviewed episode, two comprehension checks and a response |
-| [F24](#f24-multi-language-foundation-and-parallel-study) | Multi-language foundation and parallel study | Active · application deployed | Reviewed first units, real device/AT/pilot, Safari offline and beta/content decisions remain |
-| [F24.7](#f247-multi-language-wording-landing-and-visual-identity) | Multi-language wording, landing and visual identity | Active · application deployed | Shared copy, Languages and Khmer colors deployed; title A approved; real AT remains |
-| [F24.8](#f248-prominent-language-and-course-switching) | Prominent language and course switching | Active · application deployed | Selector live; offline flows verified with fixtures; approved units/observed task remain |
-| [F25](#f25-french-course) | French course | Planned · definition decisions | Proposed twelve-week course; select variety, depth and review route |
-| [F26](#f26-khmer-course) | Khmer course | Active · five previews live | F26.2.1 Done: five unreviewed text-only v1 lessons published; full review/audio/pilot and units 2–12 remain |
-| [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
-| [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
-| [F27.2](#f272-scannable-study-plan-and-can-do-progress) | Scannable study plan and can-do progress | Done · deployed | Frontend `2421876` Vercel Ready; build and 33 checks pass |
-| [F28](#f28-alphabet-explorer) | Alphabet explorer | Done · application deployed; full drafts unpublished | Review/release/access in F30; recordings in F09; existing v1 previews unchanged |
-| [F30](#f30-alphabet-content-acceptance-and-release) | Alphabet acceptance and release | Planned | Exact human/source acceptance, track controls and device/AT/Safari evidence |
-| [F29](#f29-privacy-policy-and-beta-version) | Privacy policy and beta version | Done · local | Public `#/privacy` page and Beta 0.0.1 label; not yet committed/deployed |
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F21.4 · Availability upkeep and corrections](#f214-availability-upkeep-and-corrections) | Agent/owner: execute one real unavailable-item/replacement/recheck cycle once F21.1 content is accepted. |
+| [F21.5 · Verification and authorized release](#f215-verification-and-authorized-release) | Agent/owner: finish real media checks and AT; publish only exact approved revisions; application rollout already verified. |
+| [F24 · Multi-language foundation and parallel study](#f24-multi-language-foundation-and-parallel-study) | Owner/agent: agree real device/pilot setup and accepted first-unit inputs; verify Safari offline. Do not rebuild settings/selector/console. |
+| [F24.2 · Language-aware learner presentation](#f242-language-aware-learner-presentation) | Owner/agent: run actual input/screen-reader/device checks with accepted first-unit text/audio; verify Safari reload/reconnection. |
+| [F24.5 · Mixed-language verification and pilot](#f245-mixed-language-verification-and-pilot) | Owner: agree devices/participants/rubric. Agent: execute protocol when reviewed first units/audio are available; F18.1 stays deferred. |
+| [F24.6 · Expansion release decision and delivery](#f246-expansion-release-decision-and-delivery) | Agent: complete content-specific device/offline/recovery evidence after F24.5; owner decides exact release/cohort/beta inclusion. |
+| [F24.7 · Multi-language wording, landing and visual identity](#f247-multi-language-wording-landing-and-visual-identity) | Owner/agent: perform real screen-reader/mobile checks. A Khmer brand rendering is not adopted without linguistic acceptance. |
+| [F24.8 · Prominent language and course switching](#f248-prominent-language-and-course-switching) | Owner/agent: run an observed switching/discoverability task and actual device/AT checks; preserve independent primary allocation. |
+| [F26.6 · Khmer pilot, publication and release evidence](#f266-khmer-pilot-publication-and-release-evidence) | Owner: agree rubric/setup/participation after F26.1. Agent: record immediate/delayed evidence and fix/retest before scaling. |
 
-**Status key:** Planned = unstarted; Active = authorized work in progress;
-Needs decision = a named choice prevents the next step; Needs input = external
-assets, approval or evidence are missing; Done = the stated scope is implemented
-and has completion evidence. Use On hold for an explicit owner deferral and
-Cancelled for explicitly removed scope (retain its ID and reason). IDs identify
-features, not priority; recommendations can change without renumbering.
-F19 now proceeds with the owner-authorized Azure F0 audition; remaining rows retain ID order, not execution order.
-Priority is not a schedule or blanket publication/deployment authorization.
+### Planned
 
-## Delivery and evidence
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F13 · MSA course](#f13-msa-course) | Owner/agent: define first unit, source/audio permissions and a bounded console-control extension. |
+| [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Agent after implementation authorization: map phrases/patterns/notes to exact approved sources and console metadata. |
+| [F23 · Recurring mini-stories](#f23-recurring-mini-stories) | Owner: authorize a bounded first episode. Agent then outlines arc and F23.1, without queue/accounting policy assumptions. |
+| [F23.1 · First text episode](#f231-first-text-episode) | Agent after authorization: choose unit, roles, target/source records and console scope. Today integration needs an explicit accounting rule. |
+| [F25.2 · French first unit](#f252-french-first-unit) | Owner/agent: After F25.1 and authoring authorization, draft/validate a bounded first unit. |
+| [F25.3 · French starting check, sounds and text support](#f253-french-starting-check-sounds-and-text-support) | Owner/agent: After F25.1/first-unit inputs, define samples, conservative placement and accessible alternatives. |
+| [F25.4 · French remaining units and reference material](#f254-french-remaining-units-and-reference-material) | Owner/agent: Use reviewed first-unit/pilot findings before bounded unit batches. |
+| [F25.5 · French model audio and guided speaking](#f255-french-model-audio-and-guided-speaking) | Owner/agent: Prepare scripts/rights from accepted text; owner/provider decisions precede integration or spending. |
+| [F25.6 · French pilot, publication and release evidence](#f256-french-pilot-publication-and-release-evidence) | Owner/agent: Agree rubric/setup after F25.1; observe first-unit use before course-scale authoring. |
+| [F26.4 · Khmer remaining units and reference material](#f264-khmer-remaining-units-and-reference-material) | Agent after first-unit review/pilot: revise sequence and author source-backed bounded batches. |
 
-- **F21 application, October 15:** `4545fea` frontend/API deployed and live-verified;
-  existing hosted data/assets preserved. Media catalog remains empty; four local
-  research drafts are unpublished. [Rollout](docs/releases/2026-10-15-cultural-media.md).
+### Deferred
 
-- **Implementation:** Done rows describe the bounded scopes in this checkout.
-  F27 navigation frontend `3d87ff4` is pushed and Vercel Ready October 15; live bundle includes the new routes. API not redeployed (rate-limit change is test-only).
-  F17.6 frontend application release `7b80136` is pushed/Vercel Ready October 13;
-  live Practice/cards/policy/reload verified. [F17.6 rollout](docs/releases/2026-10-13-can-do.md).
-  F22 frontend/API application release `6419f84` is deployed October 13; three
-  exact approved revisions are published v3 and live Practice is enabled.
-  [F22 rollout](docs/releases/2026-10-13-recall.md).
-  Earlier [weekly-habits rollout evidence](docs/releases/2026-10-12-weekly-habits.md) remains applicable.
-  Earlier [word-reel rollout evidence](docs/releases/2026-10-12-word-reel.md) remains applicable.
-  Earlier [copy/oval rollout evidence](docs/releases/2026-10-11-copy-cleanup.md) remains applicable.
-  Earlier [loading/hero rollout evidence](docs/releases/2026-10-11-loading.md) remains applicable.
-  Earlier [satisfaction rollout evidence](docs/releases/2026-10-11-satisfaction.md) remains applicable.
-  Earlier [placement rollout evidence](docs/releases/2026-10-11.md) remains applicable.
-  Earlier API release `662d17c` was verified October 9;
-  [historical API rollout evidence](docs/releases/2026-10-09.md).
-  F10 frontend release `89a6537` is pushed and verified deployed; see the
-  [October 7 release record](docs/releases/2026-10-07.md).
-  Code release `5fead73` is committed and pushed; the API is verified deployed.
-  [October 4 rollout record](docs/releases/2026-10-04.md) records the frontend verification limit.
-- **Curriculum:** October 3 hosted release published all seven Everyday revisions as
-  v2 through normal console gates. All seven public payloads and 52 source records
-  match the approved packages; prior v1 records remain superseded for restoration.
-  October 13 F22 supersedes Everyday 1/3/6 with approved v3 revisions; the other
-  four Everyday lessons remain v2. [Current audit evidence](docs/releases/2026-10-13-recall.md).
-  Local state differs: lesson 1 v4 was already published and lessons 2–7 remain drafts.
-  [Release, audit and preservation evidence](docs/pilot/release-2026-10-03/README.md).
-- **Hosting:** Vercel plus alwaysdata development preview. October 9 rollout
-  preserved all application table/recording/key hashes and passed health/dashboard
-  and live glossary checks. The October 4 API rollout
-  preserved existing data and thirteen publications: seven Everyday v2 lessons and
-  six fixtures. October 4 frontend deployment is confirmed Ready by October 9 Vercel history inspection;
-  the current October 9 frontend is also Ready and live-verified.
-- **Verification basis:** October 4 preflight passed the production frontend build,
-  27 API tests, all 44 standard browser tests and Release API publish. These are
-  local checks; real screen-reader, learner-outcome and supported-browser evidence
-  remains open. No fresh hosted inspection is claimed by the October 7 planning update.
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F18.1 · First-unit observed rehearsal](#f181-first-unit-observed-rehearsal) | Owner: explicitly resume and arrange participation. Agent then reconciles task versions against current F22 publications before device preflight. |
 
-## Completed scopes
+### Complete
+
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F01 · Core study and offline progress](#f01-core-study-and-offline-progress) | Bounded scope delivered; deployed. |
+| [F02 · Guest and account baseline](#f02-guest-and-account-baseline) | Bounded scope delivered; deployed. |
+| [F03 · Levantine curriculum console](#f03-levantine-curriculum-console) | Bounded scope delivered; deployed. |
+| [F04 · First-unit guided teaching packages](#f04-first-unit-guided-teaching-packages) | Superseded by F08/F22 releases |
+| [F05 · Manual review and checkpoints](#f05-manual-review-and-checkpoints) | Bounded scope delivered; deployed. |
+| [F06 · Recurring character support](#f06-recurring-character-support) | Bounded scope delivered; deployed. |
+| [F06.1.1 · Selected art integration](#f0611-selected-art-integration) | No curriculum change |
+| [F07 · Landing page and app welcome](#f07-landing-page-and-app-welcome) | Bounded scope delivered; deployed. |
+| [F08 · First-unit revision release](#f08-first-unit-revision-release) | Published; F22 supersedes lessons 1/3/6 |
+| [F09.1 · First recording batch preparation](#f091-first-recording-batch-preparation) | Unpublished scripts |
+| [F10 · Scheduled review](#f10-scheduled-review) | Bounded scope delivered; deployed. |
+| [F12.1 · Make a plan together](#f121-make-a-plan-together) | Local unapproved drafts |
+| [F15.1 · Personal study settings](#f151-personal-study-settings) | Bounded scope delivered; deployed via f24 foundation. |
+| [F15.2 · Placement starting point](#f152-placement-starting-point) | Bounded scope delivered; deployed. |
+| [F17.1 · Learner satisfaction](#f171-learner-satisfaction) | Bounded scope delivered; deployed. |
+| [F17.2 · Dashboard loading feedback](#f172-dashboard-loading-feedback) | Bounded scope delivered; deployed. |
+| [F17.3 · Interface copy cleanup](#f173-interface-copy-cleanup) | Bounded scope delivered; deployed. |
+| [F17.4 · Loading word reel](#f174-loading-word-reel) | Bounded scope delivered; deployed. |
+| [F17.6 · Can-do progress and outcome achievements](#f176-can-do-progress-and-outcome-achievements) | Bounded scope delivered; deployed. |
+| [F17.7 · Weekly learning quests and forgiving habits](#f177-weekly-learning-quests-and-forgiving-habits) | Bounded scope delivered; deployed. |
+| [F20 · Learned-word glossary](#f20-learned-word-glossary) | Uses existing lesson publications |
+| [F20.1 · Learned words page and Account spacing](#f201-learned-words-page-and-account-spacing) | Bounded scope delivered; deployed. |
+| [F21.2 · Media catalog and publication console](#f212-media-catalog-and-publication-console) | Catalog empty |
+| [F21.3 · Learner collections and offline metadata](#f213-learner-collections-and-offline-metadata) | Catalog empty |
+| [F22 · Recall and recombine](#f22-recall-and-recombine) | Everyday 1/3/6 v3 published |
+| [F24.1 · Language and course records with compatibility](#f241-language-and-course-records-with-compatibility) | Bounded scope delivered; deployed. |
+| [F24.3 · Parallel study settings and daily queue](#f243-parallel-study-settings-and-daily-queue) | Bounded scope delivered; deployed. |
+| [F24.4 · Multi-language curriculum console and validation](#f244-multi-language-curriculum-console-and-validation) | Normal gates plus exact F26.2.1 exception |
+| [F24.8.1 · Switching continuity and shared presentation](#f2481-switching-continuity-and-shared-presentation) | Bounded scope delivered; deployed. |
+| [F24.8.2 · Course identity banner, colors and culture card](#f2482-course-identity-banner-colors-and-culture-card) | Bounded scope delivered; deployed. |
+| [F26.2.1 · Owner-authorized text-only development preview](#f2621-owner-authorized-text-only-development-preview) | Five v1 previews published |
+| [F27 · Feature discoverability and navigation](#f27-feature-discoverability-and-navigation) | Bounded scope delivered; deployed. |
+| [F27.1 · Mobile-friendly back navigation](#f271-mobile-friendly-back-navigation) | Bounded scope delivered; deployed. |
+| [F27.2 · Scannable study plan and can-do progress](#f272-scannable-study-plan-and-can-do-progress) | Bounded scope delivered; deployed. |
+| [F28 · Alphabet explorer](#f28-alphabet-explorer) | Five old inventory previews; full drafts unpublished |
+| [F28.1 · Shared explorer, content model and gates](#f281-shared-explorer-content-model-and-gates) | Existing exact inventory previews |
+| [F28.1.1 · Shared application candidate](#f2811-shared-application-candidate) | Bounded scope delivered; deployed. |
+| [F28.1.2 · Inventory-only preview publication](#f2812-inventory-only-preview-publication) | Five v1 inventory previews published |
+| [F28.2 · Arabic explorer draft packs](#f282-arabic-explorer-draft-packs) | Unpublished draft files |
+| [F28.3 · Khmer explorer draft pack](#f283-khmer-explorer-draft-pack) | Unpublished draft files |
+| [F28.4 · French explorer draft pack](#f284-french-explorer-draft-pack) | Unpublished draft files |
+| [F28.5 · Practice, downloads and separate evidence](#f285-practice-downloads-and-separate-evidence) | Full drafts unpublished |
+| [F28.6 · Automated access and candidate verification](#f286-automated-access-and-candidate-verification) | Bounded scope delivered; deployed. |
+| [F29 · Privacy policy and beta version](#f29-privacy-policy-and-beta-version) | Bounded scope delivered; included in deployed frontend; route not freshly checked. |
+
+## Feature records
+
+These records own current state. [Scope/acceptance reference](docs/planning/feature-scope-reference.md)
+retains detailed contracts, policies and supporting evidence; it does not own status,
+priority, next actions or authorization. Feature notes retain detailed test/release
+history. Readiness here is reconciled October 17 from those records and the checkout,
+not a fresh execution of every feature's tests or inspection of each database.
 
 ### F01 Core study and offline progress
 
-**Scope delivered:** Today/Courses/Practice/Account, structured evaluation,
-explanations/free retries, fixed lesson frame, optional help, reduced motion and
-local muted sound controls. Complete lesson/audio downloads, offline reload and
-completion, and idempotent queued reconnection preserve progress.
-
-**Evidence:** [client](i-web/src/App.vue), [offline storage](i-web/src/offline.ts),
-[course-loop checks](i-web/tests/course-loop.spec.ts), [layout checks](i-web/tests/lesson-layout.spec.ts).
-Prior results are in the [implementation history](docs/next-stage-handoff.md).
-This does not establish full accessibility/browser support or spontaneous speaking.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Core study, free explanations/retries, offline downloads/completion and queued progress sync.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f01-core-study-and-offline-progress).
 
 ### F02 Guest and account baseline
 
-**Scope delivered:** guest entry; registration/login/logout; HttpOnly cookie
-sessions; durable SQLite account progression, with guest isolation.
-
-**Evidence:** [API](i-api/Program.cs), [account progression](i-api/Services/AccountProgressService.cs),
-[account tests](i-tests/AccountApiTests.cs), [runtime instructions](README.md#run-locally).
-Recovery, confirmation, deletion and external identity are outside this baseline.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Guest entry, cookie accounts and durable course progress; lifecycle extensions are F16.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f02-guest-and-account-baseline).
 
 ### F03 Levantine curriculum console
 
-**Scope delivered:** owner-gated drafts, source records, deterministic validation,
-approval, publication, rollback and audit history; public endpoints serve published
-versions. Source-bearing WAV upload and verified offline playback are supported.
-
-**Evidence:** [console](i-web/src/CurriculumConsole.vue),
-[publishing service](i-api/Services/CurriculumPublishingService.cs),
-[curriculum tests](i-tests/CurriculumApiTests.cs), [recording checks](i-web/tests/recordings.spec.ts).
-MSA/Quranic publication is intentionally blocked; no real audio ships.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Owner curriculum workflow and recording transport for Levantine; MSA/Quranic gates retained.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f03-levantine-curriculum-console).
 
 ### F04 First-unit guided teaching packages
 
-**Scope delivered:** seven source-linked Everyday conversations packages with
-43 explicit phrase cards, context-based recall before reveal, concise explanations
-and contextual practice. Historical packages and publication snapshots are preserved.
-
-**Evidence:** [packages and manifest](content/levantine/everyday-01/revisions/guided-teaching/README.md),
-[teaching checks](i-web/tests/lesson-teaching.spec.ts),
-[seven-lesson checks](i-web/tests/zz-everyday-lessons.spec.ts).
-Done means authored/validated, not approved, published, timed with learners or expert-reviewed.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Authored; verification — Automated.
+- **Delivery:** Application — Committed; content publication — Superseded by F08/F22 releases.
+- **Scope:** Seven Everyday guided-teaching packages with 43 phrase cards.
+- **Next action:** None for authoring; current publication lineage is F08/F22, not the original package snapshot.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f04-first-unit-guided-teaching-packages).
 
 ### F05 Manual review and checkpoints
 
-**Scope delivered:** mixed published-context review, mistake explanations, free
-retries and completed-unit checkpoints with recall before reveal and help/first-answer
-reporting. Versioned guest/account-scoped history works offline on the current device.
-It neither awards duplicate completions nor claims mastery.
-
-**Evidence:** [behavior and recorded verification](docs/review-and-checkpoints.md),
-[queue](i-web/src/review.ts), [review checks](i-web/tests/review.spec.ts).
-Scheduled intervals and cross-device review-history sync were not implemented.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Manual context review/checkpoints with versioned device-local history; scheduling is F10.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f05-manual-review-and-checkpoints).
 
 ### F06 Recurring character support
 
-**Scope delivered:** Fattoush/Knafeh portraits, explicit authored participant roles,
-shared lesson/review rendering, console mapping inspection, offline assets and
-fallbacks. Compatibility handles older names without rewriting stored publications.
-
-**Evidence:** [character guide](docs/characters/character-guide.md),
-[metadata packages](content/levantine/everyday-01/revisions/characters/README.md),
-[character checks](i-web/tests/zx-characters.spec.ts), [rename tests](i-tests/CharacterRenameTests.cs).
-Narrative expansion and final art/package approval are outside this implementation scope.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Recurring characters, explicit roles, offline portraits and legacy compatibility.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f06-recurring-character-support).
 
 ### F06.1 Character art redesign
 
-**Status:** Active — selected art deployed October 14 under F06.1.1; the broader
-profile/turnaround scope remains unmade. The owner selected
-the least-detailed cartoon treatment, specified Knafeh as a lighter-skinned Palestinian
-Arab man with straight hair and no facial hair, then authorized use in the app.
-The October 8 rejection of custom SVG-path character studies still applies.
-**Current scope delivered:** review sample, seven matching app portrait states,
-coffee/planning scenes and local integration with mobile/desktop, failure fallback,
-decorative accessibility and real offline checks. The owner subsequently authorized
-commit, push and deployment; `03bc3b8` reached Vercel Ready and the owner confirmed
-the live artwork October 15. Portrait-size follow-up `9b585a2` is deployed and Ready.
-Curriculum publication
-is outside this artwork release.
-**Outcome:** distinctive Fattoush/Knafeh designs with consistent, intentionally drawn
-expressions; F06's working portrait system remains complete.
-**Current result:** generated OpenAI image_gen raster art, explicitly attributed as
-such. `characters/v2/` preserves original v1 assets. Known v1/v2 cast metadata uses
-the selected v2 presentation without rewriting stored source records. PNG sources,
-exact prompts/hashes and conversion/layout sources are supplied; character artwork
-has no layered illustrator originals. Earlier CC0 Open Peeps and rejected studies
-remain historical; no new third-party or Canva premium assets were used.
-**Next:** profile/turnaround views remain from the broader design target; no current
-app call site requires them. Further asset production/human illustration handoff
-remain separate authorization scopes. The selected app artwork rollout and its
-requested size refinement use the existing frontend workflow. No commission/contact/spending.
-**Done when:** owner approves the designs; editable sources, authorship/rights and hashes
-are recorded; neutral/attentive/encouraging/profile views remain consistent and legible;
-mobile/desktop, fallback and offline rendering pass with unchanged written roles.
-**Evidence:** [revised sample, provenance, size assessment and Canva link](docs/characters/fattoush-expressive-02/README.md),
-[app integration, sources and verification](docs/characters/app-art-v2/README.md),
-[earlier Open Peeps sample](docs/characters/canva-sample-2026-10-13.md),
-[historical assessment](docs/characters/redesign-direction-2026-10-08.md).
-**Delivery:** review sample saved separately in Canva; selected v2 app art/code/docs
-were committed/pushed/deployed in `03bc3b8`. Original art is preserved. No content
-publication. Broader real-device/assistive-technology
-release gates remain under F18. Historical review assets were
-committed/pushed in `662d17c`; preserve v1 assets and version future art separately.
+- **Work state:** Partial.
+- **Readiness:** Implementation — Partial; content — Partial; verification — Automated.
+- **Delivery:** Application — Deployed selected art; content publication — No curriculum change.
+- **Scope:** Selected art integrated; broader profile/turnaround deliverables remain.
+- **Next action:** Owner: decide whether to authorize the remaining profile/turnaround production; no current app call site needs it.
+- **Authorization:** Selected art and size refinement delivered; further asset production/handoff is separate scope.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f061-character-art-redesign).
 
 ### F06.1.1 Selected art integration
 
-**Status:** Done — original art deployed October 14 as `03bc3b8`; owner confirmed
-the live result October 15. Larger lesson/home-card portraits are deployed October 15
-as `9b585a2`; production build and 12 focused checks pass.
-**Scope delivered:** neutral/attentive/encouraging portraits for both characters,
-welcoming Fattoush, oval coffee landing hero, relevant planning introductions,
-welcome/console rendering, supported older cast metadata and offline precaching.
-Written roles, recall hiding, retries and fixed lesson frame remain intact.
-**Done when:** selected artwork serves existing app roles, originals remain preserved,
-sources/hashes are recorded, mobile/desktop and image-failure checks pass, and older
-downloaded packages plus every new art file work through a real offline reload.
-All these bounded criteria are met; unused profile/turnaround views stay in F06.1.
-**Evidence:** [implementation, 23 focused browser checks and screenshots](docs/characters/app-art-v2/README.md).
-Production build passes. Thirteen landing/welcome, three lesson-frame and seven
-character checks pass across final runs; all ten v2 assets fetch offline.
-**October 15 size refinement:** lesson and home next-lesson portraits use 64px,
-compact course portraits 44px and completion portraits 72px. Existing larger welcome
-and console previews are retained. Production build and 12 existing focused checks
-pass across the character/layout and Today/completion runs. No new tests or art assets.
-**Next/delivery:** original art release `03bc3b8` reached Vercel Ready (deployment
-`dpl_5dKSPFy9mB8MaTfV4ZwqmcQNFAGA`); owner visually confirmed October 15. Larger
-portraits are pushed/deployed as `9b585a2` (Vercel Ready, deployment
-`dpl_12TFheFLkQm6K5b18sjuZbc7Vi4R`), with the stable alias confirmed. Backend/content
-remain unchanged. The follow-up was verified locally and by deployment metadata;
-no automated live visual pass is claimed.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Approved; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — No curriculum change.
+- **Scope:** Owner-selected v2 portraits/scenes and larger lesson/home portraits.
+- **Next action:** None; preserve source art, prompts/hashes and authored roles.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f0611-selected-art-integration).
 
 ### F07 Landing page and app welcome
 
-**Planned extension:** F07's delivered scope stays Done. The owner-requested
-multi-language landing/wording/identity overhaul is tracked in
-[F24.7](#f247-multi-language-wording-landing-and-visual-identity), with current
-copy/art preserved until that implementation; no landing change occurred here.
-
-**October 11 owner refinement:** Done and deployed — border-free oval hero with both
-faces visible. Build and four responsive landing/welcome checks pass; mobile/desktop
-renders inspected. [Preview and evidence](docs/landing/README.md#current-owner-revision).
-Deployed in `eada137`; [rollout evidence](docs/releases/2026-10-11-copy-cleanup.md).
-
-**Scope delivered:** mobile/desktop landing page with preserved owner copy and
-border-free hero; entry into the real app; once-per-browser skippable three-card
-welcome; explicit return links; stable portrait sizing and reload/section navigation.
-The isolated sample is retired. No invitation form or enforced beta gate exists.
-
-**Evidence:** [current behavior and prior checks](docs/landing/README.md),
-[entry shell](i-web/src/AppShell.vue), [welcome](i-web/src/AppWelcome.vue),
-[landing checks](i-web/tests/landing.spec.ts), [navigation checks](i-web/tests/navigation.spec.ts).
-The implementation notes record a production build, 24 backend tests and 36 distinct
-browser checks across full/focused runs; later owner refinements have targeted coverage.
-The October 2 code release is deployed; live landing, welcome, dashboard and lesson
-loading passed. See the [rollout record](docs/releases/2026-10-02.md).
-**October 11 reconciliation:** owner requested removal of the hero image border.
-Current source/asset and live rendered image already have no border or outline;
-superseded instructions and documentation were corrected. No app code change or
-rollout required. [Inspection evidence](docs/landing/README.md#current-owner-revision).
-
-## Remaining work
-
-Before implementing a broad item below, narrow it to a concrete deliverable with
-observable acceptance checks. Add child IDs such as F12.1 when useful; retain the
-parent's full scope. An authorized child finishing does not complete its parent.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Landing, real-app entry, once-only skippable welcome and return links.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f07-landing-page-and-app-welcome).
 
 ### F08 First-unit revision release
 
-**Status:** Done — October 3, 2026. The owner approved the exact seven-package release
-and existing `ismi-cast-v1` art. All seven were imported, validated, approved and
-published through the hosted console, then verified on the public API.
-**Outcome delivered:** learners receive the approved guided/character revisions,
-including the casual check-in and the two instruction/role corrections.
-**Evidence:** [exact packages and hashes](content/levantine/everyday-01/revisions/pilot-release/review-manifest.json),
-[published IDs/versions and comparison](docs/pilot/release-2026-10-03/hosted-publication.json),
-[console audit evidence](docs/pilot/release-2026-10-03/hosted-audit.json).
-All seven serve `curriculum-levantine-everyday-01-0N-v2` (N = 1–7);
-7/7 public payloads and 52/52 source records match the approved packages.
-**Delivery:** live on the alwaysdata API through the Vercel development preview;
-existing code release `26f8242` unchanged. Prior v1 records remain superseded with
-console restoration available. No fresh full hosted database backup obtained.
-Local draft state is separate; documentation/tests were committed and pushed in `5fead73`.
-**Next:** F19 synthetic phrase audio. F18.1 is owner-deferred; F09 real recordings remain separate.
-Publication does not establish native-expert review or beta readiness.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Approved; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Published; F22 supersedes lessons 1/3/6.
+- **Scope:** Exact seven Everyday v2 revisions approved/published; three later superseded by F22 v3.
+- **Next action:** None for this release; use current version lineage before preparing any revision.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f08-first-unit-revision-release).
 
 ### F09 Reviewed Levantine recordings
 
-**Outcome:** core prompts use permitted, human-reviewed real speaker audio.
-**Next:** obtain actual supplied recordings with permissions; choose an explicit
-lesson/prompt batch before upload. Text-based development can continue meanwhile.
-Pin that batch to the F08-approved wording and prompt IDs; the existing recording
-preparation now links the F09.1 candidate batch and labels v1 scripts historical.
-Final wording approval was received October 3; real assets/permissions/review are
-still missing.
-**Done when:** the selected batch has accurate transcripts, speaker/dialect labels,
-source permission and review evidence; authorized publication and verified offline playback.
-**Depends on:** assets and human review; [recording preparation](docs/pilot/recordings.md).
-F19 is the prioritized interim synthetic-audio task and cannot complete this human-audio scope.
-Silence fixtures and device voice previews cannot complete this item. Partial batches
-must report coverage; the beta needs full core-audio coverage checked under F18.
+- **Work state:** Input needed.
+- **Readiness:** Implementation — Complete transport; content — Scripts only; verification — Partial.
+- **Delivery:** Application — Transport deployed; content publication — No human audio published.
+- **Scope:** Reviewed real-speaker Levantine recordings; first batch has 8/56 proposed prompt coverage, 0/56 reviewed clips.
+- **Next action:** Owner: supply/select permitted recordings and reviewer for an exact prompt batch. Agent: reconcile script/package hashes before upload.
+- **Authorization:** Preparation authorized; no hiring, speaker contact or spending. Publication remains exact-version gated.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f09-reviewed-levantine-recordings).
+- **Dependencies:** assets and human review; [recording preparation](docs/pilot/recordings.md). F19 is the prioritized interim synthetic-audio task and cannot complete this human-audio scope. Silence fixtures and device voice previews cannot complete this item. Partial batches must report coverage; the beta needs full core-audio coverage checked under F18.
 
 ### F09.1 First recording batch preparation
 
-**Status:** Done — October 3. **Scope:** eight lesson-1 prompt transcripts, exact
-step IDs, candidate hash, role/address context, suggested filenames, WAV requirements
-and blank permission/review fields. [Batch and handoff](docs/pilot/release-2026-10-03/recording-batch-01.md)
-and [machine-readable checklist](docs/pilot/release-2026-10-03/recording-batch-01.json).
-**Evidence:** 8/8 transcripts/IDs match the candidate; planned coverage is 8/56
-unit practice prompts, actual reviewed coverage 0/56. No assets, contacts, rights,
-compensation or human review are supplied by preparation. F09 remains open.
-**Next:** wording approved October 3; owner-selected speakers/reviewer supply
-the permitted clips; a package change requires reconciling the batch hash first.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Authored; verification — Automated.
+- **Delivery:** Application — Committed; content publication — Unpublished scripts.
+- **Scope:** Eight exact lesson-1 recording prompts, context and blank permissions/review checklist.
+- **Next action:** Owner: provide speakers/reviewer and permitted clips under F09; preparation itself is complete.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f091-first-recording-batch-preparation).
 
 ### F10 Scheduled review
 
-**Status:** Done — October 7, 2026; implemented, pushed and deployed.
-**Scope delivered:** due review in Today (selected tracks) and Practice, using
-published contexts and existing device-local guest/account history. Up to six
-unique exchanges per session; recall before optional help; manual practice and
-retries remain freely available. Review adds no duplicate completion or mastery claim.
-**Approved policy:** the owner selected 1, 3, 7 and 14 elapsed days. A correct first
-answer without translations/choices advances at the due instant; mistake/help
-resets to one day. Early successful practice and retries do not advance intervals.
-Changed versions restart scheduling; legacy records begin with a one-day interval.
-**Evidence:** [policy, implementation and verification](docs/scheduled-review.md),
-[scheduler](i-web/src/reviewSchedule.ts), [browser checks](i-web/tests/scheduled-review.spec.ts).
-Production frontend build, 27 API tests and all 49 standard browser tests pass;
-11 final focused checks pass after the date-label/context selection refinement.
-Offline reload, due boundaries, help/mistakes, duplicate contexts, version changes,
-withdrawals and identity isolation are covered.
-**Delivery:** code release `89a6537` pushed to `main`; Vercel reports Ready
-and the stable URL serves the new UI. Live published-lesson loading and scheduled
-review opening passed. [Release evidence](docs/releases/2026-10-07.md).
-The API and published curriculum are unchanged.
-**Limits / next:** review history remains on this device, with no notification
-service or cross-device synchronization. Real-device/accessibility
-release evidence remains F18.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Approved 1/3/7/14-day due review, local history and version/withdrawal handling.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f10-scheduled-review).
 
 ### F11 Guided speaking
 
-**Outcome:** a controlled scripted conversation provides useful online feedback.
-**Next decision:** choose a first scenario and speech/AI provider configuration with
-no training on learner data, minimal disclosure and supported deletion.
-**Done when:** authorized branches assess appropriate meaning/intelligibility,
-feedback works, raw recordings are promptly deleted, and text/accessibility alternatives
-and provider failure paths are verified. Baseline practice stays free.
+- **Work state:** Decision needed.
+- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** Controlled scripted conversations with online feedback and privacy-safe voice handling.
+- **Next action:** Owner: select a first scenario and provider/privacy setup. Agent: scope the selected branch and failure/text alternatives.
+- **Authorization:** Provider, scenario, data handling and cost choices unresolved; no external integration/spend inferred.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f11-guided-speaking).
 
 ### F12 Levantine course expansion
 
-**Outcome:** twelve weeks of substantive urban Palestinian content, with useful
-Jordanian variants labeled. **Status:** Active; F12.1 authoring/integration is complete.
-**Next:** owner review of the three F12.1 drafts, followed by separately authorized
-publication and the next bounded content scope. A three-lesson transfer unit is not
-evidence of twelve weeks of curriculum or measured learning outcomes.
-**Done when:** the full target is source-linked, validated, owner-approved/published,
-downloadable and backed by observed timing/recall evidence. Fixtures do not count
-as curriculum depth; guided choices do not prove the thirty-day speaking outcome.
+- **Work state:** Partial.
+- **Readiness:** Implementation — Partial; content — Partial; verification — Partial.
+- **Delivery:** Application — Shared application deployed; content publication — Everyday published; Plans drafts private.
+- **Scope:** Twelve-week Palestinian Levantine curriculum; one follow-on unit drafted, wider depth absent.
+- **Next action:** Owner: review F12.1 drafts. Agent: bound the next batch only after review; do not equate three drafts with twelve weeks.
+- **Authorization:** Arabic work authorized; new bounded authoring/publication follows source and owner-review gates.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f12-levantine-course-expansion).
 
 ### F12.1 Make a plan together
 
-**Status:** Done — October 4, 2026, for draft authoring and local integration.
-**Scope delivered:** three follow-on lessons, course positions 8–10, using established
-first-unit language in new planning/clarification contexts. Eighteen dialogue turns,
-fifteen teaching cards and eighteen contextual practice steps have transliteration,
-optional help, explicit roles, explanations, retry hints and source records.
-**Outcome targeted:** propose a shared activity, ask for missing time, and correct/
-confirm day, time and activity in a guided exchange. This is not observed learner evidence.
-**Completion evidence:** [packages, readable reviews and checks](content/levantine/plans-02/README.md),
-[exact hashes and phrase origins](content/levantine/plans-02/review-manifest.json),
-[local import verification](content/levantine/plans-02/local-import.json).
-Twenty-five API tests pass; the focused mobile Chromium walkthrough, combined
-first-unit/new-unit browser run (2 tests) and production frontend build pass. Validation, draft privacy, publication gate, course ordering,
-offline completion and reconnect persistence are covered. Real-device/accessibility,
-reviewed audio, owner wording review and measured lesson timing remain open.
-**Delivery:** local records 24–26 are unapproved draft v1 and match the authored
-packages. Files/tests were committed and pushed in `5fead73`; drafts were not
-uploaded or published by the code rollout.
-**Next:** owner previews and reviews the three drafts; publication is a separate
-content decision. F12's twelve-week scope and beta gates remain incomplete.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Authored; verification — Automated.
+- **Delivery:** Application — Committed; content publication — Local unapproved drafts.
+- **Scope:** Three Plans lessons, positions 8–10, validated and imported locally.
+- **Next action:** Owner: preview/review exact drafts; approval/publication remains separate under F12.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f121-make-a-plan-together).
 
 ### F12.2 Transliteration and pronunciation audit
 
-**Status:** Active — correction candidates validated October 9 after owner
-authorization. Owner wording review and actual pronunciation evidence remain open.
-**Scope:** inspect unique Arabic/transliteration pairs across the seven current F08
-packages, three F12.1 drafts and seed fixtures; separate dialect usage, transcription
-conventions, text mismatches and actual pronunciation evidence.
-**Findings:** 611 paired objects / 214 unique pairs across ten packages, plus 16
-seed prompt/answer pairs inventoried and text-screened. Palestinian references support
-`مناح / mnāḥ` as the preferred plural; `law` represents /aw/, with pronunciation help
-needed for English readers. Other vowel/model checks require speaker evidence.
-**Current result October 9:** three exact candidates for lessons 3/5/7 correct all
-eight plural pairs and add pronunciation help while retaining law and listener
-endings. Source records, explanations, contextual grading and explicit glossary
-senses are matched; candidate/predecessor hashes and readable field reviews are saved.
-29 API tests pass, including draft validation/import/privacy and history preservation
-in a disposable database. No native/speaker pronunciation approval is claimed.
-**Next:** owner reviews the exact candidates; obtain identified urban Palestinian
-speaker/model dispositions for outstanding pronunciation flags. Reconcile existing
-local drafts before default-database integration; publication remains a separate gate.
-**Done when:** inventory coverage is recorded; each flagged form has a source-backed
-disposition; justified corrections are draft-validated and reviewed; unresolved
-speaker/audio questions are explicit. Text checks alone do not verify pronunciation.
-**Depends on:** approved-source constraints and reviewed Palestinian pronunciation
-for audio claims. Revised package approval/publication and recording-script/hash
-reconciliation are separate gates; preserve published release snapshots.
-**Evidence:** [audit findings](docs/research/levantine-transliteration-audit-2026-10-08.md),
-[correction candidates, reviews and verification](content/levantine/everyday-01/revisions/transliteration-audit/README.md).
-**Delivery:** candidate files/tests committed and pushed in `662d17c`; compatible
-web/API code deployed October 9. Local drafts 20/22/17 preserved; hosted curriculum
-and all persistent-data hashes preserved. No correction import/approval/publication.
+- **Work state:** Review pending.
+- **Readiness:** Implementation — Complete draft tooling; content — Draft; verification — Automated.
+- **Delivery:** Application — Compatible code deployed; content publication — Correction candidates unpublished.
+- **Scope:** Transliteration audit and three exact correction candidates for Everyday lessons 3/5/7.
+- **Next action:** Owner: review exact corrections. Agent: record source/model dispositions and reconcile existing local drafts before integration.
+- **Authorization:** Audit/correction drafting authorized; actual speaker evidence and exact approval/publication remain required.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f122-transliteration-and-pronunciation-audit).
+- **Dependencies:** approved-source constraints and reviewed Palestinian pronunciation for audio claims. Revised package approval/publication and recording-script/hash reconciliation are separate gates; preserve published release snapshots.
 
 ### F13 MSA course
 
-**Outcome:** four weeks of MSA with script/help support and timeless adapted listening.
-**Next:** agree the first unit, source/audio permissions and a console extension scope.
-**Done when:** source-linked course/audio packages pass appropriate validation and
-publication gates, support offline accessible study and have comprehension evidence.
-The current three-track dashboard is not evidence that an MSA course exists.
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
+- **Delivery:** Application — Shared UI only; content publication — No MSA lessons.
+- **Scope:** Four-week MSA course with timeless adapted listening and track-specific publication controls.
+- **Next action:** Owner/agent: define first unit, source/audio permissions and a bounded console-control extension.
+- **Authorization:** Roadmap target; no source/provider choice or publication implied.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f13-msa-course).
 
 ### F14 Quranic course
 
-**Outcome:** four weeks of comprehension-first Quranic study within adopted source boundaries.
-**Next input:** exact approved resource IDs and written permissions; exclude uncertain
-interpretation. See [source research](docs/research/quran-api-research.md).
-**Done when:** unchanged canonical text and separate provenance-bearing translations,
-morphology/audio are integrity-checked; console review/publication controls exist;
-approved lessons and offline/accessibility checks cover the intended direct-meaning outcomes.
-Never generate or silently normalize canonical text, or invent qualified reviewer approval.
+- **Work state:** Input needed.
+- **Readiness:** Implementation — Not started; content — Sources proposed; verification — Not run.
+- **Delivery:** Application — Shared UI only; content publication — No Quranic lessons.
+- **Scope:** Four-week direct-meaning Quranic course with unchanged canonical text and separate provenance layers.
+- **Next action:** Owner: approve exact resource IDs/permissions. Agent: scope integrity and track-specific review/publication controls.
+- **Authorization:** Approved-source boundary applies; no generated/normalized canonical text or invented qualified acceptance.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f14-quranic-course).
 
 ### F15 Personal study plan and placement
 
-**October 12 expansion:** the owner authorized roadmap plans for French/Khmer and
-parallel language study. F24 extends F15.1's multi-track foundation; F25/F26 define
-the new courses. [Inspection evidence](docs/multi-language-feasibility.md).
-F15's remaining Arabic placement/bootcamp scope stays open. No new implementation
-or beta inclusion is inferred from the planning authorization.
-
-**Outcome:** selectable tracks/primary track, 5/10/15/30-minute goals, separate progress,
-and short skippable track-specific placement with bootcamp recommendations.
-**Status:** Active — F15.1 settings/queue and F15.2 bounded Levantine starting check
-are complete. Reading/sound support preferences are self-reported; modules remain open.
-**Next:** use [F28](#f28-alphabet-explorer) for the proposed shared letter/form/sound
-explorer; scope remaining reading modules and track-specific assessments separately.
-F15.2 is not a calibrated proficiency assessment or
-evidence of pronunciation/decoding ability; it does not complete F15.
-**Done when:** selected goals/tracks drive the queue and persist as agreed; per-track
-placement and applicable reading/sound modules work without a combined Arabic score.
+- **Work state:** Partial.
+- **Readiness:** Implementation — Partial; content — Partial; verification — Partial.
+- **Delivery:** Application — Settings/Levantine check deployed; content publication — Other assessments/modules unavailable.
+- **Scope:** Study settings and Levantine starting check delivered; remaining track placement/reading/sound modules absent.
+- **Next action:** Agent: scope remaining track-specific assessments/modules; reuse delivered F28 text-only explorer, with F30/F09 review/audio boundaries.
+- **Authorization:** Existing Arabic scope retained; new assessment/module choices need bounded acceptance criteria.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f15-personal-study-plan-and-placement).
 
 ### F15.1 Personal study settings
 
-**Status:** Done — October 4, 2026.
-**Scope delivered:** guest-accessible Account controls for 5/10/15/30-minute goals,
-selected tracks and a primary track. Guest preferences persist on device; account
-preferences persist in SQLite with revision-checked offline synchronization and
-explicit conflict resolution. Settings/dashboard caches are identity-scoped.
-Today derives a deterministic queue of whole published lessons from the selections;
-unavailable tracks remain labeled and do not receive substitute lessons.
-**Allocation:** initial recommended assumption is 60% primary, rounded up, with the
-remainder split equally in stable track order; no separate owner policy confirmation
-is claimed. One selected track receives the entire goal. Goals never block study.
-**Evidence:** [behavior, persistence and verification](docs/personal-study-settings.md),
-[settings controls](i-web/src/StudySettings.vue), [planner](i-web/src/studyPlan.ts),
-[account service](i-api/Services/StudySettingsService.cs),
-[browser checks](i-web/tests/study-settings.spec.ts). Twenty-seven API tests,
-ten focused browser checks and the production frontend build passed.
-**Delivery:** committed/pushed in `5fead73`; API deployed and verified October 4.
-Frontend deployment triggered; final hosted browser verification remains open.
-**Next:** F15 placement/bootcamp work remains open; F10 scheduled review is complete and deployed.
-Real-device assistive-technology evidence remains part of F18.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed via F24 foundation; content publication — N/A.
+- **Scope:** Goal/primary-course settings and guest/account persistence; allocation superseded by approved F24.3 policy.
+- **Next action:** None; F24.3 is the current parallel queue policy. Do not reimplement the earlier allocation assumption.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f151-personal-study-settings).
 
 ### F15.2 Placement starting point
 
-**Status:** Done — bounded implementation and frontend deployment October 11, 2026.
-**Scope delivered:** optional six-question Levantine check from the first three
-published, source-linked, non-demonstrative lessons, with original dialogue context,
-optional help and existing reviewed answer rationales/explanations. Skip and retry
-remain available. Results and skipped state persist separately for guests/accounts
-on this device, retaining first answers, help, source locators and lesson versions.
-**Recommendation:** earliest sampled lesson needing practice/help; last sampled
-lesson when all six fit without help. This conservative implementation default is
-not a calibrated proficiency scale. No completions, mastery, XP, course locks or
-queue changes. Reading/sound self-reports identify support preferences; reviewed
-bootcamp modules and MSA/Quranic checks remain unavailable.
-**Evidence:** [behavior, policy and checks](docs/placement-starting-point.md),
-[component](i-web/src/PlacementCheck.vue), [selection/policy](i-web/src/placement.ts),
-[browser checks](i-web/tests/placement.spec.ts). Production build, all 29 API tests,
-four final placement checks and eight existing study-settings/navigation checks pass.
-Offline reload/retry, help/wrong-answer recommendations, skip persistence, identity
-isolation, withdrawn-content handling, keyboard and 320px layout covered. Mobile
-question/result renders inspected; real AT and learner calibration remain open.
-**Next:** F15 reviewed bootcamp content and other-track assessments; account results
-remain device-local with no cross-device placement sync.
-**Delivery:** code committed/pushed in `267f98e`; Vercel Ready with the stable alias
-and live published-v2 placement loading verified October 11. API stays at `662d17c`.
-No curriculum publication or database migration.
-[Rollout record](docs/releases/2026-10-11.md).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Optional published-content six-question Levantine starting check; device-local results/support choices.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f152-placement-starting-point).
 
 ### F16 Account recovery and deletion
 
-**Outcome:** confirmation/recovery and account/data deletion are usable for the beta.
-**Next decision:** email delivery, target hosting and precise deletion/retention requirements.
-**Done when:** agreed recovery/confirmation/deletion flows work end to end, including
-relevant progress/provider data and failure paths, with verified privacy behavior.
-External identity remains optional unresolved work, not a condition of F02 completion.
+- **Work state:** Decision needed.
+- **Readiness:** Implementation — Not started; content — N/A; verification — Not run.
+- **Delivery:** Application — None; content publication — N/A.
+- **Scope:** Account confirmation/recovery and data deletion, with defined retention/delivery behavior.
+- **Next action:** Owner: decide email delivery, hosting constraints and deletion/retention requirements; then agent scopes flows.
+- **Authorization:** Provider, retention and external identity choices unresolved; no service signup/spend inferred.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f16-account-recovery-and-deletion).
 
 ### F17 Learning support and gamification
 
-**Outcome:** searchable grammar references, meaningful mastery/achievements/XP,
-optional forgiving streaks and opt-in reminders with categories/quiet hours.
-**Next:** F17.7 weekly quests/forgiving habits are complete and deployed; F17.6
-can-do progress/achievements is complete and deployed. F17.5 phrase anatomy/grammar remains
-planned and needs its consequential rules defined before implementation; reminder delivery and the
-XP economy still need separate bounded tasks. Existing in-lesson explanations are
-delivered under F01/F04; selected children do not complete the full F17 scope.
-**Done when:** agreed subfeatures are usable and verified, reward learning without
-trivial farming, preserve free explanations/retries and honor opt-out/quiet hours.
-No hearts, leagues, guilt or paid streak repair. Billing is outside the beta.
+- **Work state:** Partial.
+- **Readiness:** Implementation — Partial; content — Partial; verification — Partial.
+- **Delivery:** Application — Selected children deployed; content publication — No new grammar-reference content.
+- **Scope:** Learning support umbrella: habits/can-do/UI delivered; grammar, XP economy and reminders remain.
+- **Next action:** Owner/agent: bound F17.5 and separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints.
+- **Authorization:** Selected research priorities are planning; delivered children do not authorize remaining product/provider policies.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f17-learning-support-and-gamification).
 
 ### F17.1 Learner satisfaction
 
-**Status:** Done — bounded Today/color/completion slice implemented October 11.
-Owner authorized F17.1 implementation; the recommended first slice is delivered.
-**Scope delivered:** Continue leads Today; compact daily progress/review and an
-Up next list avoid repeating the primary lesson. Track allocations remain in an
-accessible disclosure. Distinct gold marks completion and daily goals. Lesson
-recaps show actual first-attempt results, help use and practiced responses, with
-existing encouraging portraits and one completion chime. No mastery or spoken
-recall score is inferred; previews/practice do not award daily milestones.
-**Verification:** production build and 19 distinct targeted Chromium checks pass
-across focused runs, covering mobile/desktop, keyboard/doubled text, reduced motion,
-offline completion/reconnection, mute, single completion chime, recording playback,
-fixed lesson layout and character fallbacks. Real assistive-technology/browser
-release gates remain under F18.
-**Next:** gather owner feedback on the deployed first slice. New sound timbres need an audition;
-optional Quick recall and its durations remain separate proposals. F17's broader
-mastery and reminder scope remains open; device-local habits are delivered under F17.7.
-**Evidence:** [implementation and verification](docs/learner-satisfaction.md),
-[original UI findings and proposal](docs/learner-satisfaction-proposal.md).
-**Delivery:** code release `0852fec` pushed/deployed October 11; live Today verified.
-[Rollout evidence](docs/releases/2026-10-11-satisfaction.md). API and curriculum unchanged.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Today/Continue, goal/completion colors and factual lesson recaps; sound auditions/timers excluded.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f171-learner-satisfaction).
 
 ### F17.2 Dashboard loading feedback
 
-**Status:** Done — implemented and deployed October 11.
-**Scope delivered:** visible startup and refresh feedback; no misleading
-empty/guest/offline dashboard during startup; navigation remains available;
-cached offline plans and uncached failure/retry settle correctly. Reduced motion
-preserves status text without spinner movement. The landing hero's rounded picture
-edge was removed at that rollout, with zero border/radius and no outline/shadow; artwork
-and landing wording are preserved. A later F07 owner refinement changes the image
-to a border-free oval, deployed in `eada137`.
-**Evidence:** [behavior and verification](docs/dashboard-loading.md), production
-build and 20 distinct targeted Chromium checks pass across focused runs.
-**Next:** owner feedback; F18 real assistive-technology/browser gates remain open.
-**Delivery:** code release `138a186` pushed/deployed October 11;
-[live verification](docs/releases/2026-10-11-loading.md). API/curriculum unchanged.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Truthful startup/refresh/loading/retry and offline feedback; later oval hero refinement retained.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f172-dashboard-loading-feedback).
 
 ### F17.3 Interface copy cleanup
 
-**Status:** Done — implemented and deployed October 11.
-**Scope delivered:** removed decorative teaching/welcome/completion quips,
-repeated loading explanations, builder/checkpoint subtitles and duplicate
-review/settings status. Useful instructions, answer feedback, provenance,
-privacy and offline/error notices remain. Landing wording is preserved and
-the oval hero is deployed.
-**Evidence:** [exact removals and verification](docs/interface-copy-cleanup.md).
-Production build and 31 targeted Chromium checks pass; loading, teaching and
-completion screenshots inspected. F18 real AT/browser gates remain open.
-**Next:** owner feedback on the deployed copy cleanup.
-**Delivery:** code release `eada137` pushed/deployed October 11;
-[live verification](docs/releases/2026-10-11-copy-cleanup.md). API/curriculum unchanged.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Functional copy cleanup with required instructions/provenance/error notices preserved.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f173-interface-copy-cleanup).
 
 ### F17.4 Loading word reel
 
-**Status:** Done — implemented and deployed October 12.
-**Scope delivered:** green/gold slot-style loader cycles six source-linked
-Levantine words through transliteration → Arabic → meaning. Includes keyboard
-pause/resume, hidden-document pause, a still reduced-motion triplet, separate
-screen-reader loading status and a fixed-height reel. Startup and compact refresh
-remain truthful and never delay ready content.
-**Evidence:** [behavior, source records and verification](docs/loading-word-reel.md),
-production build and nine distinct targeted Chromium checks pass across runs.
-Mobile/enlarged text and real-time Arabic rendering inspected. F18 gates remain open.
-**Next:** owner feedback on the deployed animation.
-**Delivery:** code release `7bb2c22` pushed/deployed October 12;
-[live rollout evidence](docs/releases/2026-10-12-word-reel.md). API/curriculum unchanged.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Six source-linked loading-word samples with pause, reduced motion and no artificial delay.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f174-loading-word-reel).
 
 ### F17.5 Phrase anatomy and grammar reference
 
-**Status:** Planned — owner selected research priority 4 on October 12, 2026.
-**Outcome:** optional phrase explanations connect natural/literal meaning, labeled
-chunk functions, specific culture/register guidance and searchable grammar references.
-Extend F04's existing chunks/notes and F20 context links rather than duplicate them.
-**First scope:** six approved Levantine phrases, two reusable grammar patterns and
-three source-linked situational usage notes; teaching/feedback/reference navigation
-and offline access. Optional colors always have equivalent text labels.
-**Next:** map the selected unit's phrases to source-backed patterns and usage notes;
-prepare the required versioned console metadata and readable owner review.
-**Done when:** all selected records are validated, approved/published and linked from
-their teaching contexts; reference search/back navigation and downloaded access work;
-literal glosses and usage claims are reviewed; keyboard, screen-reader, enlarged
-Arabic and RTL/LTR rendering work without relying on color. Record local/hosted
-verification separately; no expert-review claim without actual evidence.
-**Depends on:** F03/F04/F20, approved sources/content and publication approval.
-**Evidence:** [expanded behavior and checks](docs/learning-engagement-plan.md#f175-phrase-anatomy-and-grammar-reference);
-existing baseline [teaching](i-web/src/LessonTeaching.vue) and [glossary](docs/learned-word-glossary.md).
-**Delivery:** planning only; no new references, content publication or app release.
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** First scope: six phrases, two reusable grammar patterns, three sourced usage notes and searchable offline reference.
+- **Next action:** Agent after implementation authorization: map phrases/patterns/notes to exact approved sources and console metadata.
+- **Authorization:** Research priority selected October 12; implementation/publication not authorized by that selection.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f175-phrase-anatomy-and-grammar-reference).
+- **Dependencies:** F03/F04/F20, approved sources/content and publication approval.
 
 ### F17.6 Can-do progress and outcome achievements
 
-**Status:** Done — bounded first unit, deployed October 13, 2026.
-**Outcome delivered:** three Everyday conversations written-recall cards show state,
-source version/dialect/register, dates, help/retries and historical attempts, with
-per-target practice and an optional outcome achievement. Evidence stays device-local
-and guest/account-separated; typed work does not assess listening or speaking.
-**Approved policy:** an accepted first response without hint/model or retry demonstrates
-independent written recall. Two distinct situations, with the second shown when review
-is due at least 24 elapsed hours after the earlier independent response, demonstrate
-again later. All three targets earn “Everyday responses — demonstrated again later.”
-Deadlines are captured before rescheduling; early repetition/assisted retries/uncertain
-answers cannot earn the achievement. Earlier F22 records without a deadline cannot
-establish the later due-review state; legacy completions supply no can-do evidence.
-**Completion evidence:** production build and 18 distinct policy/recall/scheduled-review
-checks pass across focused runs; includes real typed → offline delayed review →
-achievement, persistence/toggle/concurrent tabs, revisions/withdrawal, keyboard focus,
-320px enlarged text/reduced motion and guest/account isolation. Mobile render inspected.
-**Next/limit:** no remaining work in this local slice. Publication changes are unnecessary;
-frontend deployment `7b80136` is Ready and live-verified. Real assistive-technology/device checks,
-learner calibration and thirty-day outcomes remain F18 work. Cross-device evidence
-sync and additional units/skills require separate scope.
-**Depends on:** F22 metadata/attempts and F10 scheduling, using existing owner-approved
-published packages; no new content, provider or backend migration.
-**Evidence:** [behavior, policy, implementation and verification](docs/can-do-progress.md).
-**Delivery:** application release `7b80136` is pushed on `main`, Vercel Ready and
-live-verified October 13. [Rollout evidence](docs/releases/2026-10-13-can-do.md).
-No new curriculum publication or API update; hosted F22 packages remain unchanged.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Three written-recall can-do cards and optional achievement using accepted distinct/delayed evidence.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f176-can-do-progress-and-outcome-achievements).
+- **Dependencies:** F22 metadata/attempts and F10 scheduling, using existing owner-approved published packages; no new content, provider or backend migration.
 
 ### F17.7 Weekly learning quests and forgiving habits
 
-**Status:** Done — owner-authorized device-local slice implemented October 12, 2026.
-**Outcome:** optional weekly activities mix new learning, due review and available
-story/transfer practice within the existing daily allocation; separately optional
-streaks support returning without guilt or restrictions.
-**Scope delivered:** independent opt-in weekly checklist and forgiving streak controls
-in Account/Today, up to 1/2/3/6 available activities for 5/10/15/30-minute goals,
-simple completion acknowledgment and welcoming restart. Existing lesson, due/mixed
-review and completed-unit checkpoint flows are reused, with cached-only new lesson
-choices offline. No new XP economy or reminder delivery service.
-**Selected policy:** completed lessons, reviews and checkpoints qualify; Monday weeks
-and calendar days use the timezone saved at opt-in. Two free grace days per week,
-unused days expire; goal changes preserve checked tasks and resize the remainder.
-Quests/streaks independently defaulted off on October 12; guest/account history stays on this device.
-On October 14, F27 changes the default for new habit states to on. Saved states are unchanged, and either switch can still be turned off.
-Stable activity IDs prevent retry/reload/reconnection credit duplication.
-**Verification:** production TypeScript/Vite/PWA build and 29 targeted Chromium
-checks pass, including eleven F17.7 checks. Goals, missing content, completed-task
-preservation, partial sessions, Monday/DST/timezone/grace boundaries, returning,
-offline/reload/reconnect, identity isolation and storage errors are covered.
-Keyboard, roles/status labels, doubled text, mobile/desktop and persistent mute
-with reduced motion are verified. Real assistive-technology and supported-browser
-release checks remain under F18; no learner-outcome evidence is inferred.
-**Next:** gather owner feedback on the deployed slice. F22/F23 task types,
-cross-device habit sync and reminder delivery remain separate scopes.
-**Depends on:** F15.1 goals/queue, F05/F10 practice, F17.1 feedback; F22/F23 supply
-optional task types as delivered, not a requirement to invent unavailable activities.
-**Evidence:** [implementation, selected rules and verification](docs/weekly-learning-habits.md),
-[focused checks](i-web/tests/learning-habits.spec.ts),
-[original plan](docs/learning-engagement-plan.md#f177-weekly-learning-quests-and-forgiving-habits).
-**Delivery:** `5aec0ec` committed/pushed and deployed to Vercel; live controls,
-published-path ordering and persistence pass.
-[Rollout evidence](docs/releases/2026-10-12-weekly-habits.md).
-No API/database/content change or curriculum publication.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Goal-sized weekly quests and forgiving streaks, separate opt-outs and device-local history.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f177-weekly-learning-quests-and-forgiving-habits).
+- **Dependencies:** F15.1 goals/queue, F05/F10 practice, F17.1 feedback; F22/F23 supply optional task types as delivered, not a requirement to invent unavailable activities.
 
 ### F18 Invite-only beta readiness
 
-**Outcome:** a free adult English-language invite-only first-100 beta after a smaller pilot.
-**Next:** resume the bounded F18.1 rehearsal when the owner is ready; it is currently
-deferred in favor of implementation. Split invitation enforcement, learner reports/quarantine, accessibility/browser
-verification and beta operations into separately verifiable children. The rehearsal
-does not require completing the full first-100 feature scope in advance.
-**Done when:** AGENTS.md release gates pass; target curriculum/audio/speaking scope
-is delivered; account lifecycle and invitation controls work; content reports create
-versioned review cases with appropriate quarantine/audit handling; real assistive-technology
-and supported-browser offline checks pass; no critical Quran text/provenance/rights/meaning
-defects remain; an observed smaller pilot supports opening the cohort.
-**Evidence to collect:** [pilot kit](docs/pilot/README.md), [preflight](docs/pilot/preflight.md),
-target app/content revisions, issue resolutions and owner release decision.
-Development-preview deployment and automated keyboard tests alone cannot complete this item.
+- **Work state:** Partial.
+- **Readiness:** Implementation — Partial; content — Partial; verification — Partial.
+- **Delivery:** Application — Development preview only; content publication — Beta not released.
+- **Scope:** First-100 adult invite-only beta: curriculum, voice, account lifecycle, invite/report controls and all release evidence.
+- **Next action:** Agent: split remaining invite enforcement, reports/quarantine and operations into bounded tasks. Owner: resume F18.1 only explicitly.
+- **Authorization:** Beta gates unchanged; rehearsal deferred, participant contact/spending/beta opening require their own authority.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f18-invite-only-beta-readiness).
 
 ### F18.1 First-unit observed rehearsal
 
-**Status:** On hold — owner explicitly deferred testing on October 3 to implement
-more features first. Kit alignment and available automated preflight are complete;
-owner selected an adult false beginner on iPhone/Safari. Real-device
-preflight, participant sessions and resulting fix/retest evidence remain open.
-**Outcome:** observe whether a target false beginner can complete the revised unit,
-understand feedback and retrieve expressions without visible choices.
-**Next on resumption:** verify the seven published v2 versions on the intended
-iPhone and complete VoiceOver/touch/offline preflight. The owner arranges two sessions
-and participant agreement to notes. Immediate/delayed recall tasks are already aligned;
-do not run them against old hosted wording. Then fix/retest observed issues.
-**Done when:** both sessions are recorded anonymously against app/content versions;
-actual lesson times, interface versus language help, immediate and delayed recall,
-and offline behavior are reported with attempts/denominators; the top findings have
-fix/retest dispositions and an explicit next-pilot decision. Progress loss or a
-core access blocker prevents widening testing until fixed and retested.
-**Depends on:** F08, intended test setup and owner-arranged participation. Real audio
-can progress under F09; a text rehearsal cannot establish listening/pronunciation
-quality. Owner authorized preparation and evidence-led fixes on October 3; participant
-contact and spending remain separate. The exact F08 content/art approval is complete.
-**Evidence:** [existing pilot kit](docs/pilot/README.md),
-[version-sensitive script](docs/pilot/session-script.md),
-[preflight](docs/pilot/preflight.md), [October 3 checks](docs/pilot/release-2026-10-03/README.md):
-24 API tests, 3 Chromium tests (including all-seven offline flow), 1 WebKit online
-touch unit walkthrough and production build passed. WebKit offline emulation failed
-with a matching upstream report; no Safari offline or real AT pass is inferred.
-One learner supplies formative evidence only;
-F18 and the thirty-day outcomes remain open after this child is complete.
+- **Work state:** Deferred.
+- **Readiness:** Implementation — Protocol ready; content — Published-unit rehearsal kit; verification — Automated preflight only.
+- **Delivery:** Application — No observed rehearsal; content publication — N/A.
+- **Scope:** Owner-deferred iPhone/Safari first-unit rehearsal with immediate/delayed recall and fix/retest evidence.
+- **Next action:** Owner: explicitly resume and arrange participation. Agent then reconciles task versions against current F22 publications before device preflight.
+- **Authorization:** Owner deferred October 3; do not resume testing or contact participants from a priority recommendation.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f181-first-unit-observed-rehearsal).
+- **Dependencies:** F08, intended test setup and owner-arranged participation. Real audio can progress under F09; a text rehearsal cannot establish listening/pronunciation quality. Owner authorized preparation and evidence-led fixes on October 3; participant contact and spending remain separate. The exact F08 content/art approval is complete.
 
 ### F19 Chatterbox phrase audio
 
-**Status:** Active — owner authorized an Azure F0 alternative audition October 3.
-Chatterbox's unsuccessful samples remain preserved. See [Azure preparation](tools/azure-speech/README.md).
-**Outcome:** improve robotic/incorrect device speech with saved,
-reviewable synthetic clips, initially eight exercise prompts in lesson 1.
-**Next:** owner completes free-account enrollment; portal inspection found no
-subscription. Verify an F0 Speech resource, then audition the
-six prepared requests (three phrases, two Jordanian voices, rate -20%). No paid
-resource, full batch, publication or deployment authorized. Zero accepted clips.
-This extends the audition stage to Azure; the local-only Chatterbox plan remains
-historical implementation context. Provider terms and accepted provenance must be
-resolved before any Azure batch integration or publication.
-**Done when:** a reproducible batch workflow (provider/model identified, saved output
-hashes retained), complete synthesis provenance,
-explicit synthetic labeling, eight accepted draft prompt mappings and focused
-playback/offline/validation checks are complete, with actual owner listening review
-recorded. Report unresolved pronunciation verification honestly. Unacceptable or
-unavailable samples leave the scope incomplete; do not equate generation with quality.
-**Depends on:** F08 approved text; F09.1 prompt IDs; usable local runtime and model;
-permissioned reference material if required. F18.1 remains deferred. No paid service
-or hiring is included, and F09's eventual human-audio requirement is unchanged.
-**Evidence:** [local feasibility and audition](docs/chatterbox-audition-2026-10-03.md),
-[measurements/hashes/review](docs/chatterbox-audition-2026-10-03.json),
-[generator/setup](tools/chatterbox/README.md). Six real MPS outputs (three phrases,
-two variants), five passing
-generator checks and offline resume verification. Owner confirms the revision
-retains pronunciation errors; no clips accepted or native review established. Full-batch/provenance integration remains.
-**Delivery:** tooling committed/pushed in `5fead73`; generated samples remain local
-and ignored. No audio integrated into the application or database.
-New audio publication and any code rollout are separate from the already-approved v2 text/art release.
-
-### F20.1 Learned words page and Account spacing
-
-**Status:** Done — implemented, pushed and deployed October 13, 2026.
-**Scope:** move the existing F20 glossary onto its own learner route, linked from
-Practice, preserving search, filters, teaching links, offline and scoped inclusion;
-fix F15.1 Account form spacing, including selector/save/status separation and mobile goals.
-**Done when:** standalone route, return/navigation/reload and existing glossary flows
-pass; settings have clear spacing without mobile overflow; tested code is pushed and
-Ready on the existing Vercel preview.
-**Evidence:** [behavior and verification](docs/learned-word-glossary.md#october-13-page-and-account-spacing--f201),
-[route/navigation checks](i-web/tests/navigation.spec.ts). Final production build and
-all 14 glossary/settings/navigation checks pass, including four viewport widths.
-**Next:** no remaining work in this bounded scope; broader F18 device/AT checks remain separate.
-**Delivery:** application `04a4f4e` pushed to main and Ready on the existing Vercel
-preview; live route, 56 existing entries, return link and Account spacing verified.
-No new curriculum publication or API deployment.
+- **Work state:** Input needed.
+- **Readiness:** Implementation — Partial; content — Unaccepted samples; verification — Partial.
+- **Delivery:** Application — Tooling committed; samples local; content publication — No audio integrated.
+- **Scope:** Interim synthetic-audio audition: Chatterbox rejected; six Azure requests prepared, no accepted clips.
+- **Next action:** Owner: finish free-account enrollment. Agent: verify F0 resource, then run only the authorized three-phrase/two-voice audition.
+- **Authorization:** Azure F0 audition only; no paid resource, full batch, integration or audio publication authorized.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f19-chatterbox-phrase-audio).
+- **Dependencies:** F08 approved text; F09.1 prompt IDs; usable local runtime and model; permissioned reference material if required. F18.1 remains deferred. No paid service or hiring is included, and F09's eventual human-audio requirement is unchanged.
 
 ### F20 Learned-word glossary
 
-**Status:** Done — implemented October 8; pushed/deployed October 9, 2026.
-**Scope delivered:** free learned-word glossary (now a separate page linked from Practice
-under F20.1), populated only by completed
-lessons; Arabic/English/transliteration search, track/dialect/type filters, pagination,
-source references, authored forms/usage notes and links to the exact teaching card.
-Stable vocabulary/sense IDs deduplicate contexts while keeping meanings and variants
-separate. Missing forms/audio are explicit; no mastery or native-review claim.
-**Synchronization:** owner selected existing synced account completions as inclusion.
-Fresh online devices fetch completed packages; guest/account dashboards and pending
-completions remain isolated. Offline search uses scoped progress and downloaded versions;
-word edits, mastery, filters and review history have no new synchronization scope.
-**Content:** 123 distinct word/expression senses copied from 43 approved Everyday
-teaching cards (159 occurrences), with exact text/notes/source matching. Explicit
-vocabulary metadata supports future console-approved packages; demonstrative seeds and
-unpublished Plans drafts are excluded. F12.2 flags are shown without silent corrections.
-**Evidence:** [behavior, source boundary and verification](docs/learned-word-glossary.md),
-[interface](i-web/src/LearnedWords.vue), [model/catalog matching](i-web/src/glossary.ts),
-[browser checks](i-web/tests/glossary.spec.ts),
-[publication checks](i-tests/CurriculumApiTests.cs). Production build and 28 API tests
-pass; six focused glossary checks cover offline completion/reload, identity and
-cross-device inclusion, content changes/withdrawal, audio and keyboard/RTL/LTR layout.
-All 55 distinct browser checks pass across the broad/final focused runs; the
-[feature note](docs/learned-word-glossary.md) records initial timing/rate-limit failures
-and the final 10/10 rerun.
-**Next:** additional reviewed forms/content follow the normal console workflow. F12.2 corrections, real audio and F18 real assistive-technology/
-supported-browser evidence remain separate work.
-**Delivery:** code/catalog committed and pushed in `662d17c`; web/API deployed
-October 9. Live existing-account glossary verified. No new curriculum publication
-or data migration. [Rollout and preservation checks](docs/releases/2026-10-09.md).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Approved source-derived; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Uses existing lesson publications.
+- **Scope:** Learned-word senses/search/context links and synced-account inclusion with offline identity isolation.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f20-learned-word-glossary).
+
+### F20.1 Learned words page and Account spacing
+
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Standalone Words route and Account/mobile-goal spacing; later integrated into five-tab navigation.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f201-learned-words-page-and-account-spacing).
 
 ### F21 Cultural watch and listen recommendations
 
-**Status:** Active — software built and frontend/API deployed October 15; content/release checks remain.
-**Owner-selected scope:** one weekly YouTube video, film and song; broader Arabic
-with individual dialect/register labels; Monday 00:00 UTC editions. Rentals/subscriptions
-are allowed with clear labels, a free companion and no learning requirement.
-**Implemented:** separate versioned media catalog/owner console, atomic exact-revision
-approval/publication, scheduled visibility, archive/direct routes, Practice/Today entries,
-safe publisher links, offline metadata, availability observations/suppression, withdrawal
-and revalidated rollback. No media/player/lyrics rehosting or learning-progress credit.
-**Next:** complete the actual playback/runtime/access/support/editorial review gaps in
-four imported research drafts; verify real AT/devices; obtain exact owner publication
-approval. The authorized application rollout is complete. Broader Arabic media
-does not enable MSA/Quranic lesson publication or expand the beta curriculum promise.
-**Done when:** all five child criteria pass, including real source/media checks,
-owner-approved complete current/past editions, usable failure alternatives and honest
-offline behavior. Draft content/software checks do not establish a completed release.
-**Depends on:** actual permitted resources and human checks; exact owner publication
-approval. No new provider, spending or creator contact is required by this software.
-**Evidence:** [behavior, architecture, validation and verification](docs/cultural-watch-listen.md),
-[content sources and exact review gaps](content/culture/README.md),
-[original detailed plan](docs/cultural-watch-listen-plan.md).
-**Delivery:** application `4545fea` pushed; frontend Vercel Ready and API healthy at
-the exact revision. Live page/owner console, 14 existing table hashes/counts,
-recordings and cookie-key preservation verified. Hosted media catalog is empty.
-[Rollout evidence](docs/releases/2026-10-15-cultural-media.md). Four v1 drafts remain in the local SQLite database;
-all 12 non-media tables retain identical logical row hashes/counts. No actual media
-approval/publication. Application deployment does not complete the content gates. Build and all 37 API tests
-passed; initial browser suite 106/107, then all 21 media/navigation/recall focused checks
-passed after fixing the found recall focus race. No clean 107/107 rerun is claimed.
+- **Work state:** Review pending.
+- **Readiness:** Implementation — Complete; content — Draft; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Hosted media catalog empty.
+- **Scope:** Weekly video/film/song application delivered; four local research editions lack actual media/editorial acceptance.
+- **Next action:** Agent: resolve F21.1 source/access/runtime gaps; owner reviews exact editions; F21.5 retains real AT/release checks.
+- **Authorization:** Application deployed; no real media approval/publication, creator contact or spending inferred.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f21-cultural-watch-and-listen-recommendations).
+- **Dependencies:** actual permitted resources and human checks; exact owner publication approval. No new provider, spending or creator contact is required by this software.
 
 #### F21.1 Curation and first four collections
 
-**Status:** Active — 12 research candidates across four draft editions plus three
-replacement candidates are prepared; all four editions imported locally as v1 drafts.
-**Scope:** four weekly video/film/song sets, separate film free companions and one
-replacement per media type, with sources, labels, original prompts and text alternatives.
-**Next:** resolve exact runtime/edition, playback, region/access/support and editorial
-checks recorded in the source README. Unknown access/runtime deliberately fail approval.
-**Done when:** all 12 primary records and three replacements have verified evidence
-and human review dispositions; missing metadata and suitability decisions are resolved.
-**Depends on:** actual source availability and human review; broader Arabic scope is settled.
-**Evidence/delivery:** [manifest, import and specific gaps](content/culture/README.md).
-No native-expert review, actual approval or publication claimed.
+- **Work state:** Review pending.
+- **Readiness:** Implementation — Complete authoring/import; content — Draft; verification — Partial.
+- **Delivery:** Application — Four editions imported locally; content publication — Unpublished.
+- **Scope:** Twelve primary media candidates and three replacements, with original prompts and access/source gaps.
+- **Next action:** Agent: verify precise runtime/edition, playback, region/access/support and editorial suitability; owner records dispositions.
+- **Authorization:** Research/curation within selected broader-Arabic scope; exact owner publication approval outstanding.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f211-curation-and-first-four-collections).
+- **Dependencies:** actual source availability and human review; broader Arabic scope is settled.
 
 #### F21.2 Media catalog and publication console
 
-**Status:** Done and deployed October 15.
-**Delivered:** additive versioned catalog, owner/CSRF gates, JSON import/edit and preview,
-validation, exact approval/publication, Monday UTC visibility, archive, audit, concurrency,
-withdrawal and revalidated restoration. Entire three-slot editions publish atomically.
-**Next:** none for this software slice; actual collection review/release stays under F21.1/F21.5.
-**Done criteria met:** draft/future data privacy, stale/concurrent mutation protection,
-owner workflow, unsafe/duplicate links, three-slot/free-companion rules and version
-recovery pass API/browser checks. Media records are independent from lesson records.
-**Evidence:** [implementation and verification](docs/cultural-watch-listen.md),
-[service](i-api/Services/CulturalMediaService.cs), [API tests](i-tests/CulturalMediaTests.cs),
-[console](i-web/src/CulturalMediaConsole.vue).
-**Delivery:** `4545fea` frontend/API deployed, additive empty table and live owner
-console verified. No real content publication. [Rollout](docs/releases/2026-10-15-cultural-media.md).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Catalog empty.
+- **Scope:** Versioned media owner console, atomic editions, Monday UTC visibility and audited rollback.
+- **Next action:** None for software; real collection acceptance is F21.1/F21.5.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f212-media-catalog-and-publication-console).
 
 #### F21.3 Learner collections and offline metadata
 
-**Status:** Done and deployed October 15; real AT/device release evidence remains F21.5.
-**Delivered:** Practice tile, compact Today link, three media cards, separate film/
-companion actions, dated archive/direct routes, safe external links and atomic public
-metadata cache with withdrawn-detail reconciliation. Core lessons/progress stay independent.
-**Next:** none for this software slice; verify actual publishers and assistive technology
-before release. Disconnected metadata cannot be remotely revoked.
-**Done criteria met:** 320/390/1280 layouts, 200% text, keyboard links, mixed direction,
-reduced motion, offline reload/retry, empty/malformed states and withdrawal purge pass.
-**Evidence:** [behavior/cache boundaries](docs/cultural-watch-listen.md),
-[learner page](i-web/src/CulturalPicks.vue), [browser checks](i-web/tests/zy-cultural-picks.spec.ts).
-**Delivery:** `4545fea` pushed/Vercel Ready; Practice entry, route, refresh and
-correct empty-catalog state verified against the deployed API. [Evidence](docs/releases/2026-10-15-cultural-media.md).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Catalog empty.
+- **Scope:** Learner media cards/archive, safe publisher links and atomic offline metadata.
+- **Next action:** None for software; real media and AT/device acceptance is F21.5.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f213-learner-collections-and-offline-metadata).
 
 #### F21.4 Availability upkeep and corrections
 
-**Status:** Active — software workflow verified; actual editorial-cycle evidence pending.
-**Delivered:** dated link checks, immediate audited suppression, corrected revisions,
-withdrawal, rollback and reconnect tombstones. Suppression cannot silently substitute
-another work or transfer old URL check evidence to a new destination.
-**Next:** rehearse the real check/replacement cycle after F21.1's source gaps are resolved.
-Optional learner reports remain deferred; no new retention policy is selected.
-**Done when:** a real unavailable-item/replacement/recheck cycle has usable approved
-alternatives and recorded owner handling; upkeep capacity and offline limits are explicit.
-**Depends on:** accepted F21.1 content/replacements; F21.2/F21.3 software is available.
-**Evidence/delivery:** [operations and tested synthetic scenarios](docs/cultural-watch-listen.md).
-Software deployed; no real curation cycle or accepted replacement content yet.
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete; content — Depends on F21.1; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — No accepted replacement cycle.
+- **Scope:** Audited suppression/replacement/upkeep software delivered; real editorial cycle not rehearsed.
+- **Next action:** Agent/owner: execute one real unavailable-item/replacement/recheck cycle once F21.1 content is accepted.
+- **Authorization:** Software delivered; optional learner reports deferred and new retention policies not selected.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f214-availability-upkeep-and-corrections).
+- **Dependencies:** accepted F21.1 content/replacements; F21.2/F21.3 software is available.
 
 #### F21.5 Verification and authorized release
 
-**Status:** Active — local software checks complete; real content/accessibility/release gates open.
-**Next:** inspect actual media/support, run real AT/supported-device checks, complete
-owner review of exact revisions, then publish only with exact approval; the authorized application rollout and preservation
-checks are complete.
-**Done when:** the complete acceptance matrix has real-source/AT evidence, exact first
-edition approval/publication and authorized web/API rollout/preservation/rollback records.
-**Depends on:** F21.1/F21.4 completion and exact owner publication approval; application rollout is authorized.
-**Evidence:** [full flow and exact test results](docs/cultural-watch-listen.md#verification-on-october-15).
-37 API tests passed; 106/107 initial broad browser checks, then 21/21 final focused
-checks after a recall focus-return race fix. Source checks and automated tests differ.
-**Delivery:** frontend/API `4545fea` deployed with hosted preservation and live UI
-checks. No actual content approval/publication. [Rollout evidence](docs/releases/2026-10-15-cultural-media.md).
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete; content — Draft; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Unpublished.
+- **Scope:** Per-source, actual AT/device and first-edition approval/publication/recovery evidence.
+- **Next action:** Agent/owner: finish real media checks and AT; publish only exact approved revisions; application rollout already verified.
+- **Authorization:** Application delivery authorized/completed; exact owner content publication approval still required.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f215-verification-and-authorized-release).
+- **Dependencies:** F21.1/F21.4 completion and exact owner publication approval; application rollout is authorized.
 
 ### F22 Recall and recombine
 
-**Status:** Done — implemented/verified October 12; deployed/published October 13, 2026.
-Owner authorized push/deployment, selected the answer policy and approved the exact
-six-situation package. Hosted API, publication and live Practice availability are verified.
-**Implemented:** source-linked optional recall metadata/validation, typed Arabic/Arabizi
-practice, independent-first/help/retry facts, F10-based due selection with reserved later
-variants, atomic device persistence and version-aware human report cases/console resolution.
-**Policy:** documented NFC/case/space/sentence-punctuation/Arabic-harakat normalization;
-letters and meaningful word differences remain. Unknown answers are Unable to judge;
-raw text is session-only unless voluntarily reported. [Details](docs/recall-and-recombine.md).
-**Current next:** gather feedback on the deployed slice. Broader AT/device and learner-
-outcome evidence remains under F18; additional authored targets need their own approval.
-**Outcome:** learners produce familiar language in changed authored situations before
-assistance, with structured accepted alternatives, explanations and free hints/retries.
-F05/F10's think/say-then-tiles practice remains delivered; this adds captured independent
-typed responses and transfer evidence rather than rebuilding scheduled review.
-**First scope:** one Levantine unit, three communicative targets and six source-linked
-changed-context variants, with one variant per target reserved for a later transfer
-check. Once seen, a variant is labeled repeated practice rather than unseen transfer.
-**Selected content:** Everyday lessons 1/3/6, copied from exact hosted v2 payloads.
-Three targets cover accepting a rest, requesting tea and confirming seven; each has
-an ordinary and reserved later situation. Existing teaching text/sources are preserved.
-[Approved package review](content/levantine/everyday-01/revisions/recall/REVIEW.md).
-**Done when:** all variants/rationales/explanations are validated, approved/published;
-independent first attempts, help and retries remain distinct; accepted alternatives
-and contextual errors follow the agreed policy, plausible uncertainty has a recoverable
-review/report path; downloaded practice/evidence survive reload, identity changes and
-version/withdrawal handling; accessibility and evaluation checks pass. Maintain F10's
-existing intervals; neither tiles nor unassessed speaking become production evidence.
-**Depends on:** F03/F04/F05/F10, published source-linked content and explicit input policy;
-reuse F18's report-case work if available, otherwise scope the minimal review path.
-**Evidence:** [expanded flow, data boundaries and checks](docs/learning-engagement-plan.md#f22-recall-and-recombine);
-existing [review](docs/review-and-checkpoints.md), [schedule](docs/scheduled-review.md)
-and [transfer drafts](content/levantine/plans-02/README.md).
-**Verification:** production build/Release API publish, all 32 API tests, eight F22 browser
-checks, six glossary checks and eleven review/scheduling/console checks pass. Real AT/
-supported-device and learner-outcome evidence remain F18 gates.
-**Delivery:** frontend/API application release `6419f84` deployed; exact approved Everyday
-1/3/6 packages published as hosted v3. Public payloads, 21 sources, audit history,
-account/progress/asset preservation and enabled live Practice are verified October 13.
-[Rollout record](docs/releases/2026-10-13-recall.md). Temporary SSH access was revoked
-and local keys removed. [Programmatic deployment](deploy/README.md) remains available
-after reusable credential setup; the owner selected the old workflow for this release.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Approved; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Everyday 1/3/6 v3 published.
+- **Scope:** Typed contextual recall, independent/help/retry evidence, delayed variants and human answer reports.
+- **Next action:** None for released slice; additional targets need exact review and F18 retains broader human/device/outcome evidence.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f22-recall-and-recombine).
+- **Dependencies:** F03/F04/F05/F10, published source-linked content and explicit input policy; reuse F18's report-case work if available, otherwise scope the minimal review path.
 
 ### F23 Recurring mini-stories
 
-**Status:** Planned — owner selected research priority 2 on October 12, 2026.
-**Outcome:** short connected scenes with Fattoush/Knafeh give learners a reason to
-understand a whole situation and contribute a useful response. Extend F04 opening
-dialogues/F06 roles; F21 external cultural recommendations remain separate.
-**Bounded target:** a linked three-episode Levantine text arc using taught language,
-with source-linked comprehension/response practice and offline delivery. Start with
-F23.1; scope the remaining two episodes after reviewing the first. Audio editions
-are a separate extension dependent on F09, not a gate for the text arc.
-**Next:** outline the arc and begin F23.1 when implementation is authorized.
-**Done when:** all three episodes meet F23.1's publication, practice, offline,
-version/identity and accessibility criteria, preserve a coherent arc and have distinct
-communicative targets. F23.1 completion alone does not complete F23; learning benefit
-needs separate learner evidence.
-**Depends on:** F03/F04/F06 and approved curriculum; F22 for independently graded
-typed responses. Character redesign and external media curation are independent.
-**Evidence:** [expanded narrative scope and checks](docs/learning-engagement-plan.md#f23-recurring-mini-stories).
-**Delivery:** planning only; no stories published or app rollout.
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** Linked three-episode text story arc using taught Levantine language; audio is a separate extension.
+- **Next action:** Owner: authorize a bounded first episode. Agent then outlines arc and F23.1, without queue/accounting policy assumptions.
+- **Authorization:** Research priority selected; implementation/publication not authorized by that selection.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f23-recurring-mini-stories).
+- **Dependencies:** F03/F04/F06 and approved curriculum; F22 for independently graded typed responses. Character redesign and external media curation are independent.
 
 ### F23.1 First text episode
 
-**Status:** Planned — first bounded child of F23.
-**Outcome / scope:** one reviewed Levantine text episode using taught language, a small
-problem/resolution, two comprehension checks and one learner response. Target 2–4
-minutes as an estimate to verify, without a timer. Link from the unit/Practice;
-Today integration requires an explicit daily-goal accounting rule.
-**Next:** outline one selected unit's episode, roles, targets and source records;
-extend console content validation/publication without depending on character redesign.
-**Done when:** approved/published episode, checks and rationales are source-linked;
-help/retry/resume and downloaded text/progress work; version/withdrawal and identity
-handling pass; repeat completion cannot inflate core lessons/minutes; fixed-frame
-mobile/desktop, keyboard, screen-reader and RTL/LTR reading work. A text release makes
-no listening claim; a later audio edition requires F09 accepted recordings/transcripts.
-**Depends on:** F03/F04/F06 and approved curriculum; F22 if the response is independently
-typed/graded, otherwise report assisted evidence honestly. F09 is needed only for audio.
-**Evidence:** [expanded narrative scope and checks](docs/learning-engagement-plan.md#f23-recurring-mini-stories).
-**Delivery:** planning only; no episode, new publication, audio or app rollout.
-**Parent limit:** F23's remaining two text episodes need their own child scopes;
-listening editions need separately scoped F09 recordings/transcripts.
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** One reviewed text episode, two comprehension checks and a response, with offline/version/identity safeguards.
+- **Next action:** Agent after authorization: choose unit, roles, target/source records and console scope. Today integration needs an explicit accounting rule.
+- **Authorization:** First child is scoped but implementation/publication awaits authorization; audio not part of text scope.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f231-first-text-episode).
+- **Dependencies:** F03/F04/F06 and approved curriculum; F22 if the response is independently typed/graded, otherwise report assisted evidence honestly. F09 is needed only for audio.
 
 ### F24 Multi-language foundation and parallel study
 
-**Status:** Active — owner authorized the entirety of F24 implementation October 15, 2026. The software is implemented and deployed; first-unit, real AT/input, observed-pilot and release gates remain.
-**Outcome:** learners study Arabic, French and Khmer singly or in parallel in the
-same English-language app. Arabic retains distinct Levantine/MSA/Quranic courses;
-each course has separate placement, progress, review and content safeguards.
-Shared course metadata, wording and visual identity also accommodate eventual
-Portuguese and further languages without promising their curricula or release.
-Reuse F01/F02/F03/F05/F10/F15.1/F20 rather than rebuilding delivered features.
-**Next:** obtain reviewed F25.2/F26.2 first-unit packages and agree the expansion
-device/pilot setup. Supplemental WebKit offline reload hits an internal engine error;
-real Safari offline support remains unverified. Human screen-reader/input and observed learning evidence, exact content approval and a
-separate beta decision remain. Do not resume deferred F18.1 or author new
-courses under this foundation authorization.
-**Done when:** all eight children pass; both first-unit packages work alongside Arabic
-with correct language presentation and course accounting; old Arabic publications,
-downloads, identities and pending progress survive the upgrade; supported-browser,
-offline and real accessibility evidence is recorded. F24 does not complete the full
-F25/F26 courses or the original Arabic beta gates.
-**Depends on:** existing foundations; F25.2/F26.2 packages for complete-flow checks;
-agreed queue policy and supported-browser/device matrix.
-**Evidence:** API 39/39 and final focused Chromium 18/18 pass; earlier full Chromium 114/115 exposed the now-fixed recall Escape defect. WebKit 10/16 retains an offline engine error. [Implementation, policy and verification](docs/multi-language/README.md),
-[pilot protocol](docs/multi-language/pilot-protocol.md),
-[release template](docs/multi-language/release-manifest.template.json),
-[title options](docs/multi-language/brand-options.html). Existing Arabic IDs, publications,
-download records and scoped pending completions remain compatible. The owner approved
-whole-session allocation/secondary rotation and requested a deployment candidate.
-**Delivery:** owner-authorized application `f515f43` is pushed/deployed October 16 to
-the existing web/API preview. Vercel Ready, exact API revision, all 15 table hashes,
-13 published payloads and assets are verified. [Rollout and recovery](docs/releases/2026-10-16-multi-language.md).
-Real course publication, human pilot and beta expansion remain separate.
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete; content — Partial; verification — Automated; Safari gap.
+- **Delivery:** Application — Deployed; content publication — Khmer exact previews only; French none.
+- **Scope:** Shared multi-language software delivered; accepted first units, actual device/AT/offline and observed pilot remain.
+- **Next action:** Owner/agent: agree real device/pilot setup and accepted first-unit inputs; verify Safari offline. Do not rebuild settings/selector/console.
+- **Authorization:** F24 implementation and app rollout authorized/completed; real course release and beta expansion remain separate.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f24-multi-language-foundation-and-parallel-study).
+- **Dependencies:** existing foundations; F25.2/F26.2 packages for complete-flow checks; agreed queue policy and supported-browser/device matrix.
 
 #### F24.1 Language and course records with compatibility
 
-**Status:** Done · deployed — additive compatibility and identity preservation implemented.
-**Scope:** stable language/course IDs, language tags, script direction, font,
-pronunciation-help type, audio locale and published-content availability. Recommend
-one Arabic language with three courses, plus distinct French and Khmer courses.
-Version target-text/help fields to replace Arabic-only naming without rewriting
-immutable Arabic publications or losing old downloads and queued completions.
-**Next:** None for the local compatibility slice; use the recovery procedure before an authorized rollout. Hosted preservation/live recovery belongs to F24.6.
-
-**Done when:** old/new packages and offline caches load; settings/guest/account
-isolation survive; pending completions retain their meaning and remain idempotent;
-upgrade/recovery checks pass against a preserved copy of existing state.
-**Depends on:** F01/F02/F03/F15.1/F20; production database choice remains unresolved.
-**Evidence:** [implementation and verification](docs/multi-language/README.md).
-**Delivery:** application `f515f43` deployed; no new course publication. [Rollout](docs/releases/2026-10-16-multi-language.md).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Stable language/course identity, package/cache compatibility and legacy Arabic preservation.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f241-language-and-course-records-with-compatibility).
+- **Dependencies:** F01/F02/F03/F15.1/F20; production database choice remains unresolved.
 
 #### F24.2 Language-aware learner presentation
 
-**Status:** Active — course-aware software deployed; real device/AT and approved model-audio evidence remain.
-**Scope:** course-driven direction, language tags, fonts, help, audio controls,
-teaching, exercises, reviews, glossary and placement. Availability follows actual
-published packages. Retain the fixed lesson frame, free help/retries and mute choice.
-**Next:** Agree and run the real-device/input/screen-reader matrix with approved first-unit text/audio; specifically verify Safari offline reload/reconnection after the WebKit internal-error diagnostic. Keep French/Khmer planned until their publication gates pass.
-
-**Done when:** Arabic RTL and French/Khmer LTR work without clipped text or broken
-focus; downloaded fonts/audio work offline; missing model/device voices have honest
-fallbacks; switching courses preserves a started lesson's language/state. Keyboard,
-screen-reader and non-listening/non-speaking paths support core study.
-**Depends on:** F24.1; language-specific checks in F25.3/F26.3.
-**Evidence:** [implementation and verification](docs/multi-language/README.md).
-**Delivery:** application `f515f43` deployed; no new course publication. [Rollout](docs/releases/2026-10-16-multi-language.md).
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete; content — Partial; verification — Automated; Safari gap.
+- **Delivery:** Application — Deployed; content publication — Availability follows publications.
+- **Scope:** Course-aware rendering, script/font/help/audio and scoped lesson resume software delivered.
+- **Next action:** Owner/agent: run actual input/screen-reader/device checks with accepted first-unit text/audio; verify Safari reload/reconnection.
+- **Authorization:** Software delivered; physical/human evidence remains, and exact Khmer preview exceptions do not waive it.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f242-language-aware-learner-presentation).
+- **Dependencies:** F24.1; language-specific checks in F25.3/F26.3.
 
 #### F24.3 Parallel study settings and daily queue
 
-**Status:** Done · deployed — owner approved the recommended policy October 15; whole-session queue implemented.
-**Scope:** select courses, choose a primary course and retain 5/10/15/30-minute total
-goals; allocate due review/new learning independently and persist guest/account
-choices with existing offline conflict handling. No combined proficiency score.
-**Approved policy:** whole sessions, roughly 60% primary when useful, UTC-date
-secondary rotation (three primary/two secondary slots per five days for a five-minute
-goal), one bounded due-review session first within each allocation, visible whole-lesson
-overruns and omitted/unavailable courses, plus unrestricted manual study. [Examples](docs/multi-language/README.md#queue-policy-approved-october-15).
-**Next:** None for the agreed software policy. Monitor first-unit/pilot findings before changing the policy; no cross-device review-history sync is claimed.
-
-**Done when:** agreed examples pass online/offline with stable ordering, bounded
-rotation so no course starves, no silent substitution/duplicate rewards and visible
-overruns; removing/re-adding a course preserves its history and started lessons.
-**Depends on:** F24.1/F15.1/F10. Cross-device review-history sync is a separate scope.
-**Evidence:** [implementation and verification](docs/multi-language/README.md).
-**Delivery:** application `f515f43` deployed; no new course publication. [Rollout](docs/releases/2026-10-16-multi-language.md).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Approved whole-session parallel queue, roughly 60% primary, secondary rotation and due-review allocation.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f243-parallel-study-settings-and-daily-queue).
+- **Dependencies:** F24.1/F15.1/F10. Cross-device review-history sync is a separate scope.
 
 #### F24.4 Multi-language curriculum console and validation
 
-**Status:** Done · deployed — course profiles, console workflow, withdrawal and rollback implemented.
-**Scope:** per-language draft/import/source/audio checks, review dispositions, owner
-approval, publication, rollback and audit. Reject mismatched language/audio/segment
-records and unresolved critical linguistic or rights defects. Retain Quran integrity
-and MSA/Quranic publication gates until their own controls exist; enabling French
-and Khmer must not bypass those gates or establish expert-review claims.
-**Next:** Use actual source/review definitions and owner approvals for further candidates. Engineering fixtures cannot publish. F26.2.1 separately permits only the five exact owner-authorized unreviewed text-only preview packages; normal gates remain for other content.
-
-**Done when:** valid drafts pass their profiles; invalid/unauthorized publication
-fails; rollback restores exact releases; public/download endpoints serve only
-approved versions with factual source/reviewer status and accepted-answer rationale.
-**Depends on:** F24.1/F03 and agreed course source/review definitions.
-**Evidence:** [implementation and verification](docs/multi-language/README.md).
-**Delivery:** application `f515f43` deployed; no new course publication. [Rollout](docs/releases/2026-10-16-multi-language.md).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Normal gates plus exact F26.2.1 exception.
+- **Scope:** Multi-language console profiles, exact validation, owner workflow and versioned withdrawal/rollback.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f244-multi-language-curriculum-console-and-validation).
+- **Dependencies:** F24.1/F03 and agreed course source/review definitions.
 
 #### F24.5 Mixed-language verification and pilot
 
-**Status:** Active — automated mixed-language checks implemented; observed pilot not run.
-**Scope:** Arabic + French + Khmer settings, placement, lessons, glossary, due review,
-download, offline reload/completion and reconnection. Cover identity isolation,
-interrupted downloads, withdrawals, stale packages and switching; verify actual
-mobile text/input, keyboard and screen-reader behavior.
-**Next:** Agree expansion devices/participants/rubric and provide reviewed first units with model audio. Execute the linked protocol; real AT and human learning evidence remain required.
-
-**Done when:** meaningful API/browser checks and real-device evidence pass; a small
-observed mixed-language pilot records versions, immediate/delayed retrieval, help,
-attempt counts and fix/retest dispositions. Access/progress blockers prevent release.
-Do not resume owner-deferred F18.1 without authorization.
-**Depends on:** F24.1–F24.4, first-unit text/audio/support under F25/F26 and pilot setup.
-**Evidence:** [implementation and verification](docs/multi-language/README.md).
-**Delivery:** application `f515f43` deployed; no new course publication. [Rollout](docs/releases/2026-10-16-multi-language.md).
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete test harness; content — Partial; verification — Automated; no observed pilot.
+- **Delivery:** Application — Application deployed; content publication — No expansion pilot release.
+- **Scope:** Mixed-language full flow plus actual input/accessibility and immediate/delayed observed pilot.
+- **Next action:** Owner: agree devices/participants/rubric. Agent: execute protocol when reviewed first units/audio are available; F18.1 stays deferred.
+- **Authorization:** Preparation/software authorized; participant contact, beta expansion and resuming F18.1 not inferred.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f245-mixed-language-verification-and-pilot).
+- **Dependencies:** F24.1–F24.4, first-unit text/audio/support under F25/F26 and pilot setup.
 
 #### F24.6 Expansion release decision and delivery
 
-**Status:** Active — application deployed; real first-unit release and beta decisions remain gated.
-**Scope:** truthful course depth/variety/review/provenance display, versioned release
-manifests, rollback, hosted verification and correction/support handling. Landing
-and shared copy changes are explicitly scoped in F24.7; no billing, interface
-localization or paid hosting/provider signup is included.
-**Recommendation:** verify both first units internally, then run a small language
-pilot before deciding whether either joins the first-100 Arabic beta. Retain original
-Arabic gates; keep unavailable courses factual until approved publication.
-**Next:** Complete real-device/offline and first-unit recovery evidence, then decide exact content/cohort/beta inclusion after the observed pilot. Code rollout is complete.
-
-**Done when:** authorized rollout records web/API/content versions, preservation of
-existing data/caches, live study/offline checks and a withdrawal/rollback rehearsal;
-no unverified outcome, CEFR-level or reviewer claims appear publicly.
-**Depends on:** F24.5, F24.7, F24.8 and approved per-language release scope; F18 if beta is widened.
-**Evidence:** [implementation and verification](docs/multi-language/README.md), [candidate and recovery](docs/multi-language/deployment-candidate.md).
-**Delivery:** application `f515f43` deployed; no new course publication. [Rollout](docs/releases/2026-10-16-multi-language.md).
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete app rollout; content — Partial; verification — Partial.
+- **Delivery:** Application — Deployed; content publication — Expansion release gated.
+- **Scope:** Application delivery complete; real first-unit release, recovery/withdrawal evidence and cohort decisions pending.
+- **Next action:** Agent: complete content-specific device/offline/recovery evidence after F24.5; owner decides exact release/cohort/beta inclusion.
+- **Authorization:** App rollout authorized/completed; new content/cohort/beta decisions remain explicit.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f246-expansion-release-decision-and-delivery).
+- **Dependencies:** F24.5, F24.7, F24.8 and approved per-language release scope; F18 if beta is widened.
 
 #### F24.7 Multi-language wording, landing and visual identity
 
-**Status:** Active — shared copy, landing Languages section and Khmer accents deployed.
-**October 16 follow-up:** owner reported the unavailable-course notice crowding the welcome heading; a 24 px bottom gap is implemented. Production build and direct 320/1280 px checks pass (24 px measured gap, no horizontal overflow); frontend `a7f8f4a` is deployed (Vercel Ready), with the 24 px gap also measured on the live site.
-**Outcome:** Ismi welcomes Khmer and future-language learners through shared English
-copy and course discovery while retaining its Arabic flagship and Palestinian roots.
-**Scope:** landing hero support, Languages section, course statuses/examples/FAQ,
-course-aware welcome, settings, help/audio, placement, glossary/progress, accessible
-names, errors/empty states, console messages and search/social/PWA descriptions.
-Retain Ismi and “Speak with the people you love”; keep Arabic/Quran messaging in
-Arabic contexts. Add Cambodian-inspired red/blue surfaces beside the existing
-green/red/gold/charcoal/white, with course accents separate from feedback semantics.
-Retain oval border-free hero, current characters, concise copy and stable lesson UX.
-Design for French and eventual Portuguese without advertising unpublished courses.
-Explore a three-script brand title: English / Arabic / Khmer. Retain the existing
-Ismi/اسمي identity and review the Khmer rendering before use; exact spelling,
-transliteration/translation choice and responsive arrangement remain design work.
-**Next:** Run real screen-reader/mobile checks. The owner selected title A (current Ismi/اسمي) October 15; no Khmer form is adopted before linguistic review.
-
-**Done when:** shared wording works without Arabic prerequisites; Arabic-specific
-labels remain precise; Khmer entry reaches its actual course or factual planned
-state; metadata and installed-app copy agree; old section links, returning entry,
-welcome preferences and Arabic study survive. Contrast, keyboard/screen-reader,
-enlarged-text and mobile/desktop checks pass; colors never act as the only signal.
-No fixture, future Portuguese course, audio/review status or outcome is overstated.
-The title exploration has an owner-reviewed outcome; any adopted Khmer form is
-linguistically checked, readable at mobile widths, correctly shaped and accessible
-alongside RTL Arabic/LTR English. Keep a compact Ismi title for constrained metadata.
-**Depends on:** F07/F17.3 baseline; F24.1/.2/.4 course metadata/presentation/availability;
-approved Khmer example/content before showing that example or enabling study entry.
-**Evidence:** [implementation and verification](docs/multi-language/README.md), [title options](docs/multi-language/brand-options.html), [original design context](docs/khmer-course-and-brand-expansion.md).
-**Delivery:** application `f515f43` deployed; no new course publication. [Rollout](docs/releases/2026-10-16-multi-language.md).
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete; content — Approved shared copy; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Course availability factual.
+- **Scope:** Shared wording/landing/identity delivered; owner selected existing Ismi/اسمي title; real AT/mobile acceptance outstanding.
+- **Next action:** Owner/agent: perform real screen-reader/mobile checks. A Khmer brand rendering is not adopted without linguistic acceptance.
+- **Authorization:** Shared overhaul authorized/deployed; retain current title A and avoid unapproved Khmer spelling/promises.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f247-multi-language-wording-landing-and-visual-identity).
+- **Dependencies:** F07/F17.3 baseline; F24.1/.2/.4 course metadata/presentation/availability; approved Khmer example/content before showing that example or enabling study entry.
 
 #### F24.8 Prominent language and course switching
 
-**Status:** Active — prominent selector, course filtering and scoped resume deployed.
-**Outcome:** learners immediately see which language/course is active and how to
-switch between Arabic and Khmer without visiting Account or hunting through Courses.
-**Scope:** a persistent, labeled selector in the mobile app header and desktop
-header/sidebar, with the current language and course plus an explicit “Switch” cue.
-Recommend two taps from a main page: open selector → choose Arabic or Khmer.
-Arabic retains its separate Palestinian Levantine/MSA/Quranic courses; restore the
-last usable course within that language, with clear choices for the others.
-Future French/Portuguese entries use the same selector when actually available.
-**Next:** observed discoverability and real AT/device checks remain. F24.8.1 switching/teaching-resume, shared characters and language palette fixes are deployed; five Khmer previews are published under F26.2.1. F24.8.2 colored banner/picker, course colors and Study card language bubble are done and pushed.
-
-**Done when:** switching is apparent on Today, Courses, Practice, Progress and Words;
-the selected course drives each page's content, help/audio labels, review and progress.
-Arabic ↔ Khmer takes at most two taps for already available courses from a main page;
-the selection survives reload and offline use of downloaded content. A started lesson
-keeps its course/state: switching never relabels it or loses work, and resume is clear.
-Separate placement, progress, pending completions and account/guest scope survive.
-Switching the viewed course does not silently change the primary course or daily
-allocation. Planned/undownloaded courses show factual states and cannot fall back
-silently to Arabic. Labels, focus, touch targets, keyboard/screen-reader operation
-and small-screen layouts pass; an observed first-unit task checks discoverability.
-**Depends on:** F24.1/.2 metadata/presentation, F24.3 settings integration, F24.4
-availability, F25/F26 published candidates and F24.5 verification. Khmer integration
-does not depend on French publication; enable each language as it becomes available.
-**Evidence:** [implementation and verification](docs/multi-language/README.md), [title options](docs/multi-language/brand-options.html), [original design context](docs/khmer-course-and-brand-expansion.md).
-**Delivery:** application `f515f43` deployed; no new course publication. [Rollout](docs/releases/2026-10-16-multi-language.md).
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Khmer exact previews available.
+- **Scope:** Prominent course switching, filtering/resume and identity banner delivered; observed discoverability/real AT pending.
+- **Next action:** Owner/agent: run an observed switching/discoverability task and actual device/AT checks; preserve independent primary allocation.
+- **Authorization:** Switching/identity implementation delivered; broader human acceptance remains under F24.5.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f248-prominent-language-and-course-switching).
+- **Dependencies:** F24.1/.2 metadata/presentation, F24.3 settings integration, F24.4 availability, F25/F26 published candidates and F24.5 verification. Khmer integration does not depend on French publication; enable each language as it becomes available.
 
 ##### F24.8.1 Switching continuity and shared presentation
 
-**Status:** Done — implemented and deployed October 16.
-**Scope:** Today retains manual entry to published lessons outside daily allocation;
-startup selection and saved teaching positions cannot be overwritten by loading races;
-Fattoush/Knafeh remain shared guides without changing authored participant roles;
-landing cards use explicit, distinct course palettes with readable text/controls.
-**Done when:** repeated switching, teaching/practice resume, offline reload, primary
-settings independence, authored-role compatibility and mobile/desktop contrast/layout
-checks pass; deployed behavior is recorded separately from local checks.
-**Verification:** production build and all 23 focused Chromium checks pass, including
-repeated switching, teaching/practice/offline resume, settings independence, existing
-authored character roles and actual five-package Khmer publication flow. 320/1280 px
-palettes pass text/control contrast and layout checks. Package regeneration/diff pass.
-**Next:** none for this bounded fix. Real AT/device and observed pilot checks remain
-under F24.5/F24.8.
-**Delivery:** frontend `0623273` pushed; Vercel Ready on the existing development alias.
-Live repeated Arabic/Khmer switching, manual Today entry, loaded shared guides, all
-five course entries and distinct landing colors pass. No API/content publication change.
-**Evidence:** [behavior and verification](docs/multi-language/switching-and-identity.md).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Switching continuity, manual lesson entry, authored/shared character roles and distinct palettes.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f2481-switching-continuity-and-shared-presentation).
 
 ##### F24.8.2 Course identity banner, colors and culture card
 
-**Status:** Done — owner reviewed and authorized push/deploy October 17.
-**Scope:** owner request to make the active language apparent: a playful colored
-banner and tile picker replace the plain selector; each course has a color identity
-(landing palettes, separate from feedback colors, always named); the Study card shows
-a prominent speech bubble with the language's own name plus language/course. Original
-offline culture artwork (olive trees, mashrabiya, eight-point star, Eiffel Tower,
-Angkor Wat) appears in the picker tiles only; after review, the owner removed the
-in-card artwork and its caption.
-**Done when:** every page shows the viewed course in its color with name; any
-available course is two taps away; keyboard/Escape/focus and reduced motion work;
-320/390/1280 px layouts fit; existing switching/offline checks pass.
-**Verification:** typecheck, build and 45 of 46 focused checks pass. The remaining
-check passes alone; in the batch it hits an existing duplicate-owner registration
-between specs. Two `satisfaction` failures pre-date this change (clean `HEAD` fails
-them too); Continue moved slightly up (≈710 px vs 715 px at `HEAD`). After the
-in-card artwork was removed, typecheck, build and 39 focused checks pass.
-**Next:** none for this bounded change. Real AT/device checks remain under F24.5/F24.8.
-**Evidence:** [behavior and verification](docs/multi-language/switching-and-identity.md#october-16-course-identity-banner-and-culture-card-f2482).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Approved; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Owner-selected colored course banner/picker and Study language bubble; culture art remains picker-only.
+- **Next action:** None for bounded UI; real AT/device/discoverability remains F24.5/F24.8.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f2482-course-identity-banner-colors-and-culture-card).
 
 ### F25 French course
 
-**Status:** Planned — owner requested a full roadmap plan October 12, 2026.
-**Outcome:** English-taught, relationship-centered French for adult beginners/false
-beginners, alone or alongside Arabic/Khmer, with free core lessons, explanations,
-review, downloads and baseline guided speaking.
-**Proposed depth:** twelve units/weeks, five new 5–7-minute lessons per unit
-(60 new lessons), plus varied review and one checkpoint per unit. Review/checkpoints
-do not inflate the new-lesson count. Weeks are a suggested study pace, not delivery
-dates or a promise for learners sharing their daily time across languages.
-The depth and outcomes below are recommendations awaiting F25.1 agreement.
-**Proposed outcomes:** at 30 days with 15 minutes devoted to French daily, handle a
-three-minute guided introduction/food/plan exchange, extract four requested facts
-from a slow 45–60-second studied-topic dialogue and write a short invitation/reply.
-At twelve units, complete a five-minute guided social/day-out scenario and understand/
-write short practical messages. Record help and delayed/new-context retrieval;
-completion alone establishes none of these outcomes.
-**Level framework:** selected Pre-A1/A1 communicative descriptors guide tasks; assess
-listening, reading, interaction and writing separately. The
-[Council of Europe CEFR Companion Volume](https://www.coe.int/en/web/common-european-framework-reference-languages/cefr-companion-volume-and-its-language-versions)
-is a planning reference. [Official DELF A1 information](https://www.france-education-international.fr/diplome/delf-tout-public/niveau-a1)
-provides an assessment comparison; no DELF preparation/certification or A1 attainment
-guarantee is promised. References do not grant permission to copy exam/course material.
-**Next:** F25.1 definition/source/review plan, then F25.2 first-unit drafts.
-**Done when:** all six children meet agreed criteria; every agreed unit, explanation,
-accepted-answer record and model recording is source-linked, validated, reviewed,
-owner-approved and published; offline/accessibility, baseline speaking and observed
-outcome checks pass. A first unit or 60 drafted lessons does not complete the parent.
-**Depends on:** F24, approved text/audio rights and named linguistic review route;
-separately approved speech/AI setup for automated feedback.
-**Evidence:** [inspection](docs/multi-language-feasibility.md), reference links above.
-No French packages, recordings, committed reviewers or outcome evidence yet.
-**Delivery:** local planning only; no authoring, code, publication or deployment.
-
-**Proposed unit sequence:** ordering and linguistic targets require source/reviewer
-validation before drafting. These are learning briefs, not approved course content.
-
-| Unit | Scenario and observable task | Language/support focus |
-| --- | --- | --- |
-| 1 | Meet someone: greet, introduce yourself, ask a name and ask for repetition | Greeting/repair phrases, short questions and sound/spelling help |
-| 2 | Talk about people you love: introduce a partner/friend and explain relationships | Pronouns, common être/avoir patterns, articles and basic agreement |
-| 3 | Share food or a café visit: order, state preferences and clarify a request | Polite requests, quantities, food phrases and register |
-| 4 | Make a plan together: propose a day/time, accept/decline and confirm | Days/time, common present forms and questions; month-one checkpoint |
-| 5 | Describe your day: compare routines and ask about someone else's | Useful present forms, frequency, negation and routine patterns |
-| 6 | Find your way: ask for a place, follow directions and confirm | Location, movement, directions and number recognition |
-| 7 | Visit someone's home: describe rooms, offer help and find things | Possession, location, descriptions and situational politeness |
-| 8 | Shop together: ask price/size, compare options and clarify | Numbers, demonstratives, comparisons and agreement in context |
-| 9 | Make upcoming plans: arrange a weekend and change it | Near-future patterns, invitations, weather and short messages |
-| 10 | Share a recent experience: say what happened and ask a follow-up | Selected past-event patterns and sequencing, without exhaustive drills |
-| 11 | Ask for practical help: explain a simple problem and understand the reply | Needs, repair strategies and safe everyday scenarios |
-| 12 | Spend a day together: integrate food, introductions, directions and plans | New-context transfer, practical message exchange and delayed checkpoint |
+- **Work state:** Decision needed.
+- **Readiness:** Implementation — Not started course; content — Not authored course; verification — Not run course.
+- **Delivery:** Application — Shared infrastructure deployed; content publication — No French conversation lessons.
+- **Scope:** Proposed twelve-unit/sixty-lesson French course; F28 alphabet draft does not fulfill course authoring.
+- **Next action:** Owner: decide full course definition, depth/outcomes and review route through F25.1 before first-unit drafting.
+- **Authorization:** French roadmap planning only. Metropolitan French selected for F28 alphabet, not the full F25 course.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f25-french-course).
+- **Dependencies:** Uses delivered F24.1–F24.4 software; course definition/source/review and speech/AI decisions gate course work. Full expansion evidence is coordinated with F24.5/F24.6, not a prerequisite to drafting the first unit.
 
 #### F25.1 French definition, sources and review route
 
-**Status:** Needs decision — variety, depth/outcomes and review arrangements.
-**Recommendation:** contemporary everyday French with a France-based reference
-variety and labeled Canadian/other alternatives where supported; informal/polite
-address follows the situation. Beginner entry includes a skippable false-beginner check.
-**Next:** agree proposed scope/variety; inventory trusted grammar, dictionary and
-pronunciation sources with exact reuse/audio rights. Recommend a named fluent French
-reviewer; no hire, contact or availability is assumed.
-**Done when:** course brief, unit outcomes, assessment rubric, source/rights register
-and review route are agreed; unresolved linguistic claims are excluded.
-**Depends on:** owner definition decisions and verified reference rights/access.
+- **Work state:** Decision needed.
+- **Readiness:** Implementation — Not started; content — Sources proposed; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** French course brief, reference variety/depth, outcomes, sources/rights and named review route.
+- **Next action:** Owner/agent: settle course definition and resource dispositions; do not inherit F28 alphabet-only variety approval as full course approval.
+- **Authorization:** Planning/source investigation only; unresolved full-course choices remain explicit.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f251-french-definition-sources-and-review-route).
+- **Dependencies:** owner definition decisions and verified reference rights/access.
 
 #### F25.2 French first unit
 
-**Status:** Planned.
-**Scope:** five authored introduction/greeting/repair lessons, contextual recall,
-varied review and checkpoint; provenance and rationale for every teaching/answer record.
-**Next:** draft from approved sources, validate and obtain owner wording approval
-before publication; first-unit pilot findings precede full-course authoring.
-**Done when:** complete packages pass F24.4 with recorded linguistic dispositions;
-accessible offline use and changed-context recall can be verified. Text-ready,
-audio-ready, approved and published states are reported separately.
-**Depends on:** F25.1; F24.4 for import/publication; F25.3/F25.5 for full learner delivery.
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** French first unit with reviewed text/answers/source/audio records.
+- **Next action:** Owner/agent: After F25.1 and authoring authorization, draft/validate a bounded first unit.
+- **Authorization:** French planning only; implementation, provider/spend, contact and publication retain separate authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f252-french-first-unit).
+- **Dependencies:** F25.1; F24.4 for import/publication; F25.3/F25.5 for full learner delivery.
 
 #### F25.3 French starting check, sounds and text support
 
-**Status:** Planned.
-**Scope:** short skippable placement from approved content, optional spelling/sound
-modules, accent input/help and readable phrase/word chunks. Pronunciation notes are
-authored/source-linked; any IPA help is optional rather than an entry requirement.
-The planned [F28.4](#f284-french-explorer-pack) supplies the alphabet explorer;
-it does not complete the wider starting check or authorize French authoring.
-**Next:** define reading/listening/response samples and conservative starting-point
-policy; select reviewed sound targets with the language reviewer.
-**Done when:** skip/retry and accessible alternatives work; accents/apostrophes and
-segments render correctly; reviewed answer rules explain when spelling matters
-without changing originals. Results stay course-specific, with no fluency claim.
-**Depends on:** F25.1/F25.2, F24.1/F24.2; result-sync expansion needs its own scope.
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** Skippable French starting check and text/sound support; separate from delivered F28 explorer.
+- **Next action:** Owner/agent: After F25.1/first-unit inputs, define samples, conservative placement and accessible alternatives.
+- **Authorization:** French planning only; implementation, provider/spend, contact and publication retain separate authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f253-french-starting-check-sounds-and-text-support).
+- **Dependencies:** F25.1/F25.2, F24.1/F24.2; result-sync expansion needs its own scope.
 
 #### F25.4 French remaining units and reference material
 
-**Status:** Planned.
-**Scope:** units 2–12 (proposed 55 further lessons), reviews/checkpoints, short searchable
-grammar/use guides and explicit glossary forms/senses tied to teaching contexts.
-**Next:** confirm sequencing using first-unit findings; author in bounded unit batches
-through draft → source validation → linguistic review → owner approval.
-**Done when:** agreed 12-unit/60-lesson manifest has no missing rationale, explanation
-or source records; retrieval is spaced across varied contexts and checkpoints require
-transfer. Draft validation does not establish publication or learner outcomes.
-**Depends on:** F25.1/F25.2 and first-unit pilot under F25.6; F24.4; F25.5 audio.
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** Remaining French units 2–12, reviews/checkpoints, grammar and glossary.
+- **Next action:** Owner/agent: Use reviewed first-unit/pilot findings before bounded unit batches.
+- **Authorization:** French planning only; implementation, provider/spend, contact and publication retain separate authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f254-french-remaining-units-and-reference-material).
+- **Dependencies:** F25.1/F25.2 and first-unit pilot under F25.6; F24.4; F25.5 audio.
 
 #### F25.5 French model audio and guided speaking
 
-**Status:** Planned — speaker/source and provider decisions remain open.
-**Scope:** permitted reviewed model recordings for listening/teaching targets,
-transcripts, speaker/variety labels and exact phrase/version mappings. Recommend
-multiple human speakers; synthetic previews remain labeled and reviewed. Baseline
-speaking uses controlled authored branches, optional record/replay and feedback on
-intent, intelligibility and important sounds, with text alternatives.
-**Next:** prepare first-unit scripts/rights checklist; assess actual French accuracy,
-no-training terms, minimum data, deletion and cost before selecting providers.
-**Done when:** complete agreed audio mappings pass review/playback/offline checks;
-scenario feedback handles uncertainty without authoritative rejection; recordings
-are deleted after feedback and improvement retention requires separate consent.
-If AI feedback is deferred, record the incomplete scope; audio alone does not finish it.
-**Depends on:** approved F25.2/F25.4 text, F24.2/F24.4 and provider/privacy decisions.
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** French human model recordings and guided speaking with validated privacy/feedback.
+- **Next action:** Owner/agent: Prepare scripts/rights from accepted text; owner/provider decisions precede integration or spending.
+- **Authorization:** French planning only; implementation, provider/spend, contact and publication retain separate authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f255-french-model-audio-and-guided-speaking).
+- **Dependencies:** approved F25.2/F25.4 text, F24.2/F24.4 and provider/privacy decisions.
 
 #### F25.6 French pilot, publication and release evidence
 
-**Status:** Planned.
-**Scope:** first-unit pilot, then full-course verification against agreed outcomes,
-versions, immediate/delayed tasks, help used and attempts/denominators.
-**Next:** agree setup/rubric through F25.1; observe first-unit use before widening
-authoring, then review the complete candidate. Participant contact is a separate action.
-**Done when:** offline/reconnection and real accessibility pass; linguistic/audio
-defects have fix/retest dispositions; observed tasks support factual outcome claims;
-owner-authorized publications and rollout record exact versions and rollback evidence.
-A small pilot is formative evidence, not proof of universal A1 attainment.
-**Depends on:** F25.2/F25.3 and first-unit F25.5 audio for initial pilot; F25.4/full
-audio and F24.5/F24.6 for full release. These stages do not form a dependency cycle.
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** French first-unit pilot, then full-course access/offline/outcome and release evidence.
+- **Next action:** Owner/agent: Agree rubric/setup after F25.1; observe first-unit use before course-scale authoring.
+- **Authorization:** French planning only; implementation, provider/spend, contact and publication retain separate authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f256-french-pilot-publication-and-release-evidence).
+- **Dependencies:** Early pilot needs only accepted first-unit F25.2/F25.3 and first-unit F25.5 audio; its findings gate F25.4 bulk authoring. Full release then needs F25.4/full audio and F24.5/F24.6. Do not require the full course before the first-unit pilot.
 
 ### F26 Khmer course
 
-**Status:** Active — owner authorized F26 implementation October 16 and selected the
-recommended Cambodian/Phnom Penh reference, twelve-unit/sixty-lesson target and
-conversation-first optional script pathway. Prepare drafts now; designate a fluent
-Khmer reviewer before full publication. The owner subsequently authorized application
-deployment and explicitly superseded that rule for the exact five first-unit
-unreviewed text-only development previews, now published under F26.2.1.
-No accepted review or cleared-rights attestation is inferred.
-Hiring or provider spend remains unauthorized.
-**Outcome:** English-taught Khmer for adult beginners/false beginners communicating
-with partners, family and friends. Conversation and gradual script learning support
-each other; optional pronunciation help remains available without requiring reading
-mastery before beginning conversation. Keep the same free learning floor.
-**Agreed target depth (October 16):** twelve units/weeks, five new 5–7-minute lessons per unit
-(60 new lessons), plus varied review and one checkpoint per unit. Add a separate
-optional script/sound pathway; exact module count is an F26.1/F26.3 decision.
-Weeks guide study pace, not delivery or a promise under a shared daily budget.
-The exact reading inventory/help and observed outcome rubric still need review;
-these are targets, not demonstrated learner outcomes.
-**Proposed outcomes:** at 30 days with 15 minutes devoted to Khmer daily, handle a
-two-to-three-minute guided greeting/family/food/plan exchange, extract four requested
-facts from a slow 30–45-second studied-topic dialogue and recognize an agreed set
-of taught words in script. At twelve units, complete a five-minute guided social/day-out
-scenario and read short taught-topic messages with optional help. Define the exact
-reading inventory/help in the rubric; promise neither unrestricted literacy nor
-proficiency certification. Distinguish conversation/listening/reading evidence.
-**Next:** designate fluent Khmer review and disposition the five exact first-unit
-candidates, sources/rights, provisional help and eight-expression reading inventory.
-Obtain reviewed human audio; verify real input/AT/Safari offline and the agreed
-first-unit pilot before bulk authoring. Published preview download/offline completion/
-reconnection passes in Chromium automation; real device/AT/Safari and learning evidence
-remain open. French is not a prerequisite.
-**Done when:** all six children pass; agreed units and script/sound modules are
-source-linked, validated, linguistically reviewed, owner-approved and published;
-audio, baseline guided speaking, offline/accessibility and observed outcomes pass.
-The shared landing and course entry meet F24.7, with honest availability and Khmer
-presentation while Arabic/Palestinian branding remains visible; F24.8 makes
-Arabic–Khmer switching prominent and preserves independent course state.
-First-unit or script-rendering success does not complete this parent.
-**Depends on:** F24, approved sources/audio rights, named Khmer linguistic review
-route and separately approved speech/AI setup for automated feedback.
-**Evidence:** [inspection](docs/multi-language-feasibility.md),
-[expanded milestones, first-unit briefs and shared brand/copy plan](docs/khmer-course-and-brand-expansion.md),
-[Unicode segmentation guidance](https://www.unicode.org/reports/tr29/#Word_Boundaries)
-and [W3C draft Khmer layout gap analysis](https://www.w3.org/TR/khmr-gap/).
-Unicode identifies tailored word/line-boundary needs; the W3C draft is a browser-check
-reference, not curriculum authority. [First-unit implementation/evidence](docs/khmer/README.md),
-[packages/review sheets](content/khmer/meet-01/README.md),
-[source/rights register](docs/research/khmer-course-sources.md). No human recordings,
-committed reviewer or learner outcome evidence exists.
-**Delivery:** application `30ea724` pushed/deployed October 16 to the existing
-web/API development preview; Vercel Ready and exact API revision verified. Hosted
-versions 24–28 are all published v1 through owner preview approval/publication.
-All 13 Arabic payloads, learner tables, source records, recordings and keys are
-preserved. Local records 27–31 remain private drafts. API 41/41, production build
-and 10 focused browser checks pass for this release.
-[Publication/recovery](docs/khmer/text-preview-publication.md),
-[exact hosted versions and audit](content/khmer/meet-01/publication.json).
-Parent remains Active for review/audio/pilot and remaining course criteria.
-
-**Proposed unit sequence:** Khmer wording, grammar, pronunciation, address and
-cultural notes require approved sources/reviewer validation before lesson drafting.
-
-| Unit | Scenario and observable task | Language/support focus |
-| --- | --- | --- |
-| 1 | Meet someone: greet, introduce yourself and ask for repetition | Reviewed greeting/repair phrases, address choices and script/help orientation |
-| 2 | Meet family/friends: introduce a person and explain a relationship | Contextual relationship/address terms and statement/question patterns |
-| 3 | Share a meal: request food, state a preference and clarify an order | Polite requests, quantities and food vocabulary |
-| 4 | Make a plan together: propose a time, accept/decline and confirm | Days/time and plan patterns; month-one conversation/listening checkpoint |
-| 5 | Describe your day: exchange simple information about routines | Useful action/time/frequency patterns; reading taught phrases |
-| 6 | Find a place: ask directions and confirm a route | Location/direction phrases, transport and number recognition |
-| 7 | Visit someone's home: find things and offer help | Everyday objects, location and reviewed interaction conventions |
-| 8 | Shop together: ask price/quantity and choose between items | Numbers, quantities, comparisons and misunderstanding repair |
-| 9 | Share a recent experience: describe an event and ask a follow-up | Reviewed time/aspect expressions and sequencing in context |
-| 10 | Make upcoming plans: arrange a visit and change it | Upcoming-time expressions, invitations and short taught-topic messages |
-| 11 | Ask for practical help: describe a problem and understand a reply | Needs, clarification and safe everyday scenarios |
-| 12 | Spend a day together: integrate family, food, directions and plans | New-context transfer, short supported reading and delayed checkpoint |
+- **Work state:** Partial.
+- **Readiness:** Implementation — Partial course; app complete; content — Five drafts; rest unauthored; verification — Automated preview; no pilot.
+- **Delivery:** Application — Deployed; content publication — Five exact unreviewed text previews.
+- **Scope:** Twelve-unit/sixty-lesson Khmer course: five preview lessons exist, 55 lessons and full reading/sound/speaking coverage remain.
+- **Next action:** Owner: designate review route and source/help/reading dispositions. Agent: finish first-unit acceptance/pilot before bulk units 2–12.
+- **Authorization:** Khmer draft implementation authorized; normal review/publication gates remain except exact five F26.2.1 previews. No hire/spend/contact/beta expansion.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f26-khmer-course).
+- **Dependencies:** Uses delivered F24.1–F24.4 software. F26.1 text/source/review decisions gate accepted content; F26.2/F26.3/F26.5 feed the early F26.6 pilot; that pilot precedes F26.4 bulk authoring. Full-course release later coordinates with F24.5/F24.6.
 
 #### F26.1 Khmer definition, sources and review route
 
-**Status:** Active — owner selected recommended variety/depth/conversation-first
-reading direction October 16; exact inventory/help/source approvals and named fluent
-reviewer remain. Draft preparation is authorized while review is pending.
-**Agreed direction:** contemporary Cambodian Khmer with a Phnom Penh-based reference
-model; the actual speaker is not yet identified. Label regional/register differences
-only with evidence.
-Select one consistent learner pronunciation-help convention with a reviewer; do
-not present proposed romanization as authoritative spelling.
-**Next:** name the fluent review route and approve exact source/rights, v0 help and
-reading-inventory dispositions. [Primary-source register](docs/research/khmer-course-sources.md)
-records NIU access without reuse clearance, MSU noncommercial limits and historical
-FSI evidence; none is silently declared an approved commercial curriculum foundation.
-No reviewer hire/contact/availability is assumed.
-**Done when:** course brief, reading inventory, rubric, source/rights register and
-review route are agreed; uncertain linguistic/cultural claims are excluded.
-**Depends on:** owner course-definition decisions and verified source access/rights.
+- **Work state:** Decision needed.
+- **Readiness:** Implementation — Brief prepared; content — Sources/help proposed; verification — Not accepted.
+- **Delivery:** Application — N/A; content publication — N/A.
+- **Scope:** Cambodian/Phnom Penh, twelve-unit and conversation-first choices settled; exact sources/help/inventory/reviewer remain.
+- **Next action:** Owner/reviewer: accept source/rights, help v0, eight-expression inventory and observed-outcome rubric.
+- **Authorization:** Draft preparation authorized; no named reviewer, commercial source acceptance or hiring inferred.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f261-khmer-definition-sources-and-review-route).
+- **Dependencies:** owner course-definition decisions and verified source access/rights.
 
 #### F26.2 Khmer first unit
 
-**Status:** Active — five unreviewed candidates authored; hosted records 24–28
-published as v1 on October 16 under the owner's explicit text-only development-preview
-exception. Exact package/source matches and preservation of Arabic publications,
-learner data and assets pass. F26.2.1 is Done; full first-unit review/audio/pilot remain.
-**Scope:** five authored greeting/introduction/repair lessons, contextual recall,
-varied review and checkpoint; separate source-linked script, help, meaning, accepted
-answers and audio. Do not mechanically translate the French lesson sequence.
-The [five lesson briefs](docs/khmer-course-and-brand-expansion.md#first-unit-meet-someone-and-keep-the-exchange-going)
-cover greeting, names, personal details, communication repair and an integrated exchange.
-**Next:** review [the five candidates](content/khmer/meet-01/README.md), including
-original script/help compositions and contextual answer rationales; disposition exact
-sources, text, segments and human audio before full reviewed release.
-Use first-unit pilot findings before full authoring. Draft software structure passes;
-source approval and linguistic/rights review remain pending.
-**Done when:** packages/authored segments pass F24.4; address/register/help and
-answer rationales are checked; changed-context recall and accessible offline study
-can be verified. Text, audio, approval and publication states remain distinct.
-**Depends on:** F26.1 and F26.3's agreed text/segment rules; F24.4 and F26.5 audio.
+- **Work state:** Review pending.
+- **Readiness:** Implementation — Complete draft flow; content — Draft; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Five exact unreviewed text previews.
+- **Scope:** Five first-unit greeting/introduction/repair candidates with pending linguistic/rights acceptance, audio and pilot.
+- **Next action:** Reviewer/owner: disposition exact phrases/answers/segments/sources; agent reconciles changes before any new approval/publication.
+- **Authorization:** Exact five current previews authorized; changed/new text still requires normal acceptance or a new explicit exception.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f262-khmer-first-unit).
+- **Dependencies:** F26.1 and F26.3's agreed text/segment rules; F24.4 and F26.5 audio.
 
 ##### F26.2.1 Owner-authorized text-only development preview
 
-**Status:** Done — implemented, deployed and all five published October 16.
-**Scope delivered:** exact five on the existing development preview with prominent
-unreviewed/text-only labels; pending review/rights and missing human audio retained.
-Normal gates remain for other/changed content; beta gates are unchanged.
-**Completion evidence:** owner-only, CSRF-protected exact-package approval/publication;
-hosted records 24–28, all v1; live course and lesson labels; automated download,
-offline completion/reconnect, withdrawal/rollback and placement exclusion. All 13
-Arabic payloads, learner/source tables and assets preserved. API 41/41, build and
-10 focused browser checks pass; human AT/Safari/learning evidence is not inferred.
-**Next:** none for this preview publication. Continue F26.1/F26.2 review/audio/pilot.
-**Delivery:** API/web `30ea724` deployed, Vercel Ready; five previews live.
-**Evidence:** [policy, verification and recovery](docs/khmer/text-preview-publication.md),
-[exact versions/audit](content/khmer/meet-01/publication.json).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Unreviewed exception; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Five v1 previews published.
+- **Scope:** Exact five unreviewed text-only development-preview lessons under explicit owner exception.
+- **Next action:** None for exact preview release; review/audio/pilot remains F26.1/F26.2/F26.5/F26.6.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f2621-owner-authorized-text-only-development-preview).
 
 #### F26.3 Khmer script, sounds, input and starting check
 
-**Status:** Active — optional exact-expression script practice implemented October 16,
-with skippable help and no score/gate. The candidate manifest proposes eight taught
-expressions; phonics/sound modules, agreed inventory and real input/AT remain open.
-**Scope:** skippable placement and optional staged script/sound modules linked to
-actual lesson words. Reviewed modules cover consonant/vowel patterns, signs and
-syllable combinations without an alphabet memorization gate. Separate reading,
-listening and support-choice evidence; never infer pronunciation from text answers.
-The planned [F28.3](#f283-khmer-explorer-pack) supplies individual-letter and
-combination exploration; existing expression cards do not fulfill that scope.
-**Next:** reviewer selects exact consonant/vowel/sound modules, inventory and help
-rules; verify real device input/selection/AT and approved audio offline. Draft
-script examples pass keyboard, 320/1440 px and 200% text checks using the existing
-font/lesson frame. Authored answer segments recombine exactly; no whitespace splitting
-or inserted spaces. The existing course-scoped starting check needs published content.
-**Done when:** original text is preserved and segments recombine exactly; combining/
-stacked text is not clipped; help/script work offline at enlarged sizes; input,
-selection and real screen-reader checks pass on agreed devices. Skip/retry and
-alternatives to typing/listening/speaking preserve progress. Placement recommends
-a starting point, not calibrated literacy/pronunciation scores.
-**Depends on:** F26.1 and F24.1/F24.2 for prototype; F26.2 for integrated check/modules.
+- **Work state:** Partial.
+- **Readiness:** Implementation — Partial; content — Proposed inventory; verification — Automated expression checks.
+- **Delivery:** Application — Deployed expression support; content publication — Full modules not published.
+- **Scope:** Optional whole-expression support delivered; accepted phonics/modules, actual input/AT and starting check remain.
+- **Next action:** Reviewer: select inventory/help and sound modules. Agent: integrate accepted modules and actual device checks; reuse F28/F30 rather than duplicate explorer.
+- **Authorization:** Khmer draft implementation authorized; no fabricated reading/listening/proficiency evidence.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f263-khmer-script-sounds-input-and-starting-check).
+- **Dependencies:** F26.1 and F24.1/F24.2 for prototype; F26.2 for integrated check/modules.
 
 #### F26.4 Khmer remaining units and reference material
 
-**Status:** Planned.
-**Scope:** units 2–12 (proposed 55 further lessons), reviews/checkpoints, searchable
-use/grammar guides, glossary senses and progressive supported reading linked to
-F26.3. Script inventory and vocabulary need not mirror French or Arabic.
-**Next:** revise sequence after first-unit findings; author bounded unit batches
-through source validation, linguistic review and owner approval.
-**Done when:** agreed 12-unit/60-lesson manifest and optional modules are complete;
-every answer has rationale/source linkage; help and segments are consistent; spaced
-recall and new-context checkpoints cover taught skills. Drafts, TTS alone and
-recognition drills alone do not establish the completed course or its outcomes.
-**Depends on:** F26.1/F26.2 and first-unit pilot under F26.6; F26.3/F24.4; F26.5 audio.
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — 55 lessons unauthored; verification — Not run.
+- **Delivery:** Application — None; content publication — None.
+- **Scope:** Units 2–12, reviews/checkpoints, references/glossary and progressive reading.
+- **Next action:** Agent after first-unit review/pilot: revise sequence and author source-backed bounded batches.
+- **Authorization:** F26 implementation authorized; bulk authoring remains sequenced behind first-unit review/source/pilot gates.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f264-khmer-remaining-units-and-reference-material).
+- **Dependencies:** F26.1/F26.2 and first-unit pilot under F26.6; F26.3/F24.4; F26.5 audio.
 
 #### F26.5 Khmer model audio and guided speaking
 
-**Status:** Active · preparation only — twelve exact candidate recording scripts and
-three speaking branch briefs are in the [manifest](content/khmer/meet-01/review-manifest.json).
-No human recordings, permissions or provider suitability are established.
-**Scope:** permitted reviewed human model recordings, exact text/version mappings,
-speaker/variety labels and transcripts; recommend multiple speakers. Controlled
-branches and optional record/replay use reviewed responses and intelligibility/
-intent targets, with text alternatives and the free baseline floor.
-**Next:** linguistically approve exact scripts, then obtain speaker consent/rights and
-reviewed recordings. Assess actual Khmer recognition/feedback with reviewed samples
-and explicitly approved privacy/cost terms. Advertised
-support or French/Arabic results do not establish Khmer suitability.
-**Done when:** full agreed audio coverage passes linguistic/playback/offline checks;
-automated feedback is verified for taught scenarios, handles uncertainty and meets
-no-training/minimum-data/deletion rules. Raw recordings are deleted after feedback;
-improvement retention needs separate informed consent. If no acceptable provider
-exists, record the gap and request a bounded fallback/scope decision; self-recording
-does not by itself fulfill automated assessment.
-**Depends on:** approved F26.2/F26.4 text, F24.2/F24.4 and provider/privacy decisions.
+- **Work state:** Input needed.
+- **Readiness:** Implementation — Scripts/branch briefs only; content — Draft; verification — No human audio/provider evidence.
+- **Delivery:** Application — None; content publication — No human audio.
+- **Scope:** Twelve candidate recording scripts/three branch briefs prepared; real recordings and guided feedback absent.
+- **Next action:** Reviewer: accept scripts. Owner: arrange permitted recordings and provider/privacy decisions; agent verifies actual Khmer feedback/offline behavior.
+- **Authorization:** Preparation authorized; no hire, speaker contact, provider spending or unverified support claims.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f265-khmer-model-audio-and-guided-speaking).
+- **Dependencies:** approved F26.2/F26.4 text, F24.2/F24.4 and provider/privacy decisions.
 
 #### F26.6 Khmer pilot, publication and release evidence
 
-**Status:** Active · protocol prepared — [task/rubric and evidence template](docs/khmer/README.md#first-unit-review-and-observation-protocol)
-prepared October 16; no pilot, human AT check or release has run.
-**Scope:** first-unit pilot then full-course verification, with separate conversation,
-listening and taught-script tasks, immediate/delayed retrieval, help and versioned
-attempt counts. Include actual mobile input/shaping/screen-reader and offline checks.
-**Next:** agree setup/rubric through F26.1; resolve early findings before full authoring,
-then assess the complete candidate. Participant contact is a separate action.
-**Done when:** critical linguistic/audio/script/access/progress defects are resolved;
-observed tasks support factual outcomes; exact owner-authorized publications and
-rollout include rollback, withdrawal and support handling. Rendered script or one
-successful participant is not proof of literacy or general course effectiveness.
-**Depends on:** F26.2/F26.3 and first-unit F26.5 audio for early pilot; F26.4/full audio
-and F24.5/F24.6/F24.7/F24.8 for full release. Early/full stages have separate evidence manifests.
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Protocol ready; content — Depends on reviewed unit; verification — No observed pilot.
+- **Delivery:** Application — Preview app deployed; content publication — Full release gated.
+- **Scope:** First-unit pilot before bulk authoring; later full-course real device/AT/offline/outcome and release evidence.
+- **Next action:** Owner: agree rubric/setup/participation after F26.1. Agent: record immediate/delayed evidence and fix/retest before scaling.
+- **Authorization:** Protocol prepared; participant contact, full publication, deployment and beta expansion remain separate.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f266-khmer-pilot-publication-and-release-evidence).
+- **Dependencies:** Early pilot needs accepted F26.2/F26.3 and first-unit F26.5 audio, using delivered F24 software. Findings gate F26.4 bulk authoring. Full release later needs F26.4/full audio and F24.5–F24.8 evidence; do not wait for full-course completion to run the early pilot.
 
 ### F27 Feature discoverability and navigation
 
-**Status:** Done locally — owner authorized October 14, 2026; completion criteria met October 15 in this checkout.
-**Outcome:** learners can reach review, weekly quests, streak, can-do progress and word search without scrolling through long Today or Practice screens. Feature tiles use a restrained green/red/gold/charcoal accent so each feature is recognizable. New learners see weekly quests and the forgiving streak immediately, and can turn either off.
-**Scope:** five bottom tabs (Today, Courses, Practice, Progress, Words). Account moves to the mobile header profile button and the desktop sidebar footer. Practice becomes a short tile hub linking to Review, Checkpoints, Recall and Lesson practice. Progress holds streak, weekly quests, can-do cards and habit switches. Today shows a compact streak / this week / review-due strip. Words is a tab with search at the top. New habit states default both switches on; existing saved states are unchanged.
-**Next:** none; optional live click-through on mobile.
-**Done when:** the five tabs and focused pages work on mobile and desktop; each Practice tile opens its page; the Today strip links to Progress or starts due review; search is one tap from any tab; new guests have both habits on and a saved off state survives reload; keyboard names include counts; color is not the only signal; build and focused checks pass.
-**Depends on:** F05/F10 review, F17.6 can-do, F17.7 habits, F20 glossary.
-**Evidence:** [behavior and verification](docs/feature-navigation.md). October 15: full Playwright suite 100 passed; API tests 32 passed.
-**Delivery:** frontend `3d87ff4` pushed to `main` and Vercel Ready October 15; API not redeployed.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Five learner tabs, short Practice hub, Progress page and default-on habits preserving saved opt-outs.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f27-feature-discoverability-and-navigation).
+- **Dependencies:** F05/F10 review, F17.6 can-do, F17.7 habits, F20 glossary.
 
 #### F27.1 Mobile-friendly back navigation
 
-
-**Status:** Done and deployed October 16, 2026 — implemented October 15; separate from delivered F27.
-**Outcome:** page-back controls are recognizable, comfortable to tap and consistently
-placed rather than appearing as plain underlined anchor text.
-**Scope:** audit every page/sheet with a return action, including Back to landing,
-Practice subpages, cultural archive/detail, Words/context, Account and curriculum
-views. Use a shared leading chevron/arrow and concise destination label with a
-button-like surface or outline, generous spacing and at least a 44×44 CSS-pixel
-target. Preserve links for navigation and buttons for actions/dialog dismissal.
-**Implemented:** shared `BackControl.vue` across landing returns, Practice/cultural
-pages, Account returns, lesson/review/recall completion, owner console and welcome
-card navigation. Anchors retain explicit destinations; action buttons retain their
-handlers. Targets are at least 48×48 px with wrapping labels, focus and forced-colors
-support. Account adds a Today return. Curriculum retains its underlying page and
-restores opener focus. Recall queues Escape during evidence saves and prevents late
-feedback focus after closure. No new lesson-resume policy is introduced.
-**Next:** none for this scope; real-device/AT beta evidence remains under F18.
-**Done when:** every applicable back action uses the shared treatment and visible
-destination; small screens/enlarged text avoid clipping and crowded adjacent controls.
-Direct/deep-linked entry has a reliable in-app destination rather than blindly
-calling browser history. Normal browser back/history, keyboard/focus and offline
-routes work; lesson exit/resume and explicit landing return remain available.
-Nested pages return to the correct parent and preserve supported context/filters;
-RTL teaching text does not reverse the surrounding English navigation unexpectedly.
-**Depends on:** F07/F27 and existing routes; no Khmer content/provider dependency.
-**Evidence:** [behavior, previews and verification](docs/mobile-back-navigation.md),
-[October 16 rollout](docs/releases/2026-10-16-back-navigation.md). The isolated
-production build passes. Focused browser run: 52/53 passed; the one cultural-refresh
-check passed when rerun alone. All return/lesson/preview/glossary/review/recall checks
-passed. Additional 320/390/1280 px touch, 200% text, focus/history, offline and console
-checks pass; the original recall keyboard scenario also passed three consecutive runs.
-**Delivery:** application `5875e6d` pushed to `main`; Vercel deployment
-`dpl_BkpLCeiZ5TfK2j6DNahM5ibeCLDJ` is Ready and assigned to the existing development
-URL `https://ismi-arabic.vercel.app`. Release source matches the verified isolated
-snapshot. No API deployment or curriculum publication; unrelated course edits stay local.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** 48 px shared back controls with explicit destinations, keyboard and offline navigation.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f271-mobile-friendly-back-navigation).
+- **Dependencies:** F07/F27 and existing routes; no Khmer content/provider dependency.
 
 #### F27.2 Scannable study plan and can-do progress
 
-**Status:** Done and deployed October 17, 2026 — owner-authorized UX fix for the
-text-heavy Today plan and Progress cards.
-**Scope:** compact lesson rows with clear actions/time/course; concise availability
-and progress states; evidence and policy details remain accessible on demand.
-**Done when:** both sections provide an obvious next step, unavailable recall has a
-working course entry instead of disabled actions, and mobile/desktop, keyboard,
-enlarged-text, lesson entry and existing evidence/preference behavior pass checks.
-**Next:** none for this bounded scope; real-device/AT beta gates remain under F18.
-**Depends on:** F15.1/F24.3 study queue, F17.6 written recall and F27 navigation.
-**Evidence:** production build and all 33 focused Chromium checks pass;
-320/390/1280 px, enlarged text, keyboard, online/offline, course switching,
-identity/preferences and versioned recall behavior verified. Mobile/desktop
-renders inspected. [Behavior and verification](docs/scannable-plan-and-progress.md).
-**Delivery:** owner-authorized frontend `2421876` pushed to `main`; Vercel deployment
-`dpl_G9PUrs9bkRs9XYar5xTTE9nKP264` is Ready and assigned to
-`https://ismi-arabic.vercel.app`, verified October 17. No API/database or
-curriculum changes. [Delivery evidence](docs/scannable-plan-and-progress.md#delivery).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Scannable Today plan/can-do progress and useful empty recall entry.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f272-scannable-study-plan-and-can-do-progress).
+- **Dependencies:** F15.1/F24.3 study queue, F17.6 written recall and F27 navigation.
 
 ### F28 Alphabet explorer
 
-**Status:** Done · owner-revised text-only implementation and full unreviewed drafts,
-October 17, 2026; application `fdd5c5f` pushed/deployed, full drafts unpublished.
-**Scope decision:** owner excluded human recordings and explicitly selected “finish
-text-only implementation and drafts; track review/release separately.” Metropolitan
-French is the alphabet reference only; F25's wider course definition remains open.
-This supersedes the original sound-ready completion criteria, preserved in the
-[original plan](docs/alphabet-explorer-plan.md). Remaining obligations are F30/F09,
-not waived or represented as completed human evidence.
-**Outcome:** five course contexts have complete proposed text-only draft coverage,
-forms/case pairs, contextual guidance, candidate examples, structured visual practice,
-private console preview, versioned device-local evidence and offline-capable application.
-**Done when:** five bounded unreviewed text-only packs cover their explicit proposed
-inventories, with two or three examples per basic entry, support demonstrations,
-shape/spot activities and rationales; privacy, review/rights gates, downloads/resume,
-Unicode targets and relevant automated/browser checks pass. All criteria met.
-**Evidence:** [implementation, scope, verification and delivery](docs/alphabet-text-only-completion.md),
-[five drafts and exact hashes](content/alphabet/text-only/README.md). All 51 API tests,
-production build and 24 alphabet browser checks pass. 143 basic/132 support entries,
-434 examples/demonstrations and 550 visual activities. Actual review remains absent.
-**Delivery:** application `fdd5c5f` is pushed/deployed to the existing API/Vercel
-previews; Vercel Ready with stable aliases and exact healthy API revision verified.
-All 17 hosted table/asset hashes match and the five pinned v1 public preview hashes
-remain unchanged. Full draft files are committed/importable but have not been imported
-into an owner/hosted DB or published. [October 17 rollout/recovery](docs/alphabet-text-only-completion.md#authorized-rollout--october-17),
-[existing publication audits](docs/alphabet-inventory-publication.md).
-**Next:** F30 acceptance/access/release and F09 recordings proceed as separate work.
-No beta eligibility or sound-ready claim follows from this text-only completion.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Authored; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Five old inventory previews; full drafts unpublished.
+- **Scope:** Owner-revised text-only implementation plus five full unreviewed alphabet draft packs.
+- **Next action:** None for revised scope; F30 retains human/source/access/release obligations, recordings remain F09/F26.5.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f28-alphabet-explorer).
 
 #### F28.1 Shared explorer, content model and gates
 
-**Status:** Done · shared application plus explicit text-only contract.
-**Scope:** grid/detail, versioned manifests, owner workflow, visual-only validation,
-private drafts and public projection; existing audio mode remains supported.
-**Evidence:** [text-only completion](docs/alphabet-text-only-completion.md).
-Text-only mode excludes recordings and sound activities while preserving actual
-review/source/rights/track gates. Existing exact preview pins remain unchanged.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Existing exact inventory previews.
+- **Scope:** Shared explorer, owner workflow and explicit audio-free contract with review/rights gates.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f281-shared-explorer-content-model-and-gates).
 
 ##### F28.1.1 Shared application candidate
 
-**Status:** Done · application deployed October 16.
-**Scope:** shared explorer/owner contract, four activities, device-local versioned
-history/resume and atomic verified offline downloads, independent of content acceptance.
-**Done when:** actual API-to-browser fixture checks prove privacy/workflow, exact
-text, activities, identity/course separation, offline replacement and withdrawal.
-**Evidence:** all 47 API tests, build, 12 alphabet browser checks and 21 focused
-regressions pass; [behavior and limits](docs/alphabet-explorer.md).
-**Delivery:** `5bbf861` pushed/deployed; live entry/API/privacy pass and hosted data
-preservation is verified. [Rollout](docs/releases/2026-10-16-alphabet.md). No real pack publication.
-October 17: parent completion was revised to text-only implementation/drafts;
-remaining acceptance and physical-device checks are tracked in F30.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Shared explorer application, four-activity audio mode, versioned local evidence and verified offline transport.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f2811-shared-application-candidate).
 
 ##### F28.1.2 Inventory-only preview publication
 
-**Status:** Done · five v1 previews published October 16.
-**Scope:** publish the five pinned Arabic-context/Khmer/French inventories as
-unreviewed text-only previews, without fabricated review, audio, words or grades.
-**Authorization:** owner said “just publish them” after being informed reviewers and
-recordings were absent; this supersedes the earlier reviewed-only selection for
-these exact development previews. Normal full-pack and beta gates stay in place.
-**Next:** normal reviewed full packs and human audio are tracked in F30/F09; do
-not broaden the exact preview exception to changed text or beta content.
-**Done when:** exact five v1 manifests and unreviewed/no-audio labels are public,
-missing controls remain unavailable, downloads pass and unrelated data is preserved.
-**Evidence:** [candidate files, policy, checks and rollout](docs/alphabet-inventory-publication.md).
-**Delivery:** `ab2d456` pushed/deployed; all five exact IDs are published as v1,
-revision 3. Public notices/checksums and preservation of all 16 unrelated tables/
-assets pass. [Exact hashes/audits](content/alphabet/inventory-preview/publication.json).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Unreviewed exception; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Five v1 inventory previews published.
+- **Scope:** Five exact pinned inventory-only previews labeled unreviewed/text-only.
+- **Next action:** None for exact release; changed/additional text is outside this exception.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f2812-inventory-only-preview-publication).
 
 #### F28.2 Arabic explorer draft packs
 
-**Status:** Done · unreviewed drafts only.
-**Scope:** shared 28-letter script inventory and 17 support entries in each of
-Levantine/MSA/Quranic contexts, separate contextual guidance, candidate words and
-visual activities. Ordinary Quranic-course decoding examples contain no scripture.
-**Evidence:** [draft coverage/hashes](content/alphabet/text-only/README.md).
-Human acceptance and MSA/Quranic publication controls remain in F30; audio in F09.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Authored; verification — Automated.
+- **Delivery:** Application — Committed; content publication — Unpublished draft files.
+- **Scope:** Three Arabic-context drafts, each 28 basic plus 17 support entries; no canonical Quran text.
+- **Next action:** F30: human/source acceptance and release; authoring scope itself is complete.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f282-arabic-explorer-draft-packs).
 
 #### F28.3 Khmer explorer draft pack
 
-**Status:** Done · unreviewed draft only.
-**Scope:** proposed 33 consonants plus 49 vowel/sign/subscript support entries,
-series notes, examples and visual activities; constructed demonstrations are labeled.
-**Evidence:** [draft coverage/hashes](content/alphabet/text-only/README.md).
-Exact final inventory/help acceptance remains in F30; no mandatory alphabet gate.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Authored; verification — Automated.
+- **Delivery:** Application — Committed; content publication — Unpublished draft files.
+- **Scope:** Khmer alphabet draft: 33 basic plus 49 proposed vowel/sign/subscript support entries.
+- **Next action:** F30: human/source acceptance and release; authoring scope itself is complete.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f283-khmer-explorer-draft-pack).
 
 #### F28.4 French explorer draft pack
 
-**Status:** Done · unreviewed draft only.
-**Scope:** Metropolitan French alphabet reference, 26 case pairs plus 32
-accent/cedilla/ligature/combination/silent-letter support entries, examples and visual
-activities. This does not authorize the F25 conversation curriculum.
-**Evidence:** [draft coverage/hashes](content/alphabet/text-only/README.md).
-Exact linguistic/source acceptance remains in F30; human audio in F09.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Authored; verification — Automated.
+- **Delivery:** Application — Committed; content publication — Unpublished draft files.
+- **Scope:** Metropolitan French alphabet draft: 26 case pairs plus 32 spelling-support entries.
+- **Next action:** F30: human/source acceptance and release; authoring scope itself is complete.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f284-french-explorer-draft-pack).
 
 #### F28.5 Practice, downloads and separate evidence
 
-**Status:** Done · text-only application scope.
-**Scope:** shape/word spotting, verified atomic downloads, offline visual practice,
-per-identity/course/version evidence and resume; full audio mode retains four activities.
-**Evidence:** all 24 focused browser checks pass, including audio-mode regressions,
-text-only offline reload/practice/resume, identity/course boundaries and withdrawal.
-Real draft preview has no saved learner evidence; synthetic accepted fixtures alone
-exercise publication transport. [Limits](docs/alphabet-text-only-completion.md).
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — Full drafts unpublished.
+- **Scope:** Text-only visual practice/offline/resume and separate identity/course/version evidence.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f285-practice-downloads-and-separate-evidence).
 
 #### F28.6 Automated access and candidate verification
 
-**Status:** Done · automated candidate scope; actual device/AT/release moved to F30.
-**Scope:** 320 px/enlarged text, keyboard/focus/Escape, mixed-script exact targets,
-private/full-pack previews, public-content preservation and offline checks.
-**Evidence:** [51 API tests, build and 24 browser checks](docs/alphabet-text-only-completion.md).
-Arabic/Khmer enlarged screenshots visually inspected. No physical device,
-VoiceOver/TalkBack or Safari acceptance claim. The authorized October 17 application
-rollout is verified separately; full drafts remain unpublished.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
+- **Delivery:** Application — Deployed; content publication — N/A.
+- **Scope:** Automated candidate access checks and authorized application rollout; human/device evidence explicitly moved to F30.
+- **Next action:** None in this bounded scope; broader release evidence remains F18.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f286-automated-access-and-candidate-verification).
 
 ### F29 Privacy policy and beta version
 
-**Scope:** a public privacy page at `#/privacy` describing current behavior (guest
-local storage, account fields, essential cookies only, no voice/AI processing yet,
-Vercel/alwaysdata hosting, deletion by request until F16) and a single app version
-sourced from `i-web/package.json` (`0.0.1`), shown as "Beta 0.0.1".
-**Evidence:** linked from the landing footer and Account; production build passes.
-**Limits:** update the policy before F11 speaking, F16 deletion or any analytics
-ship; it is not legal review. Commit/deploy needs owner authorization.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Authored; verification — Automated.
+- **Delivery:** Application — Included in deployed frontend; route not freshly checked; content publication — N/A.
+- **Scope:** Public privacy page and Beta 0.0.1 label; policy is descriptive, not legal review.
+- **Next action:** Before voice/AI, analytics or deletion changes, update policy to match behavior; no new product scope from this documentation audit.
+- **Authorization:** Delivered scope; extensions need their own authorization.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f29-privacy-policy-and-beta-version).
 
 ### F30 Alphabet content acceptance and release
 
-**Status:** Planned · explicit October 17 follow-up split from F28; no human evidence yet.
-**Outcome:** turn F28's unreviewed text-only candidates into accepted, source-cleared
-course-specific packs and verify an authorized release. Sound-ready packs additionally
-require F09 recordings; text-only completion does not claim pronunciation assessment.
-**Next:** designate reviewers and disposition exact proposed inventories/help, words,
-contextual notes, answer rationales and sources. No reviewer contact/hiring or spending
-is authorized. Record acceptance separately for each course and saved version.
-**Done when:** exact accepted coverage/text/rights pass; MSA/Quranic track controls
-exist before their publication; keyboard/enlarged text plus physical-device/actual
-VoiceOver or TalkBack/Safari offline-reconnection evidence pass; any separately
-authorized publication/deployment has exact versions/audits/recovery evidence.
-Existing source/integrity, accessibility and beta gates remain in force. Audio-ready
-claims require actual reviewed human recordings with transcripts/rights through F09.
-**Depends on:** F28, F09/F13/F14 and applicable F25/F26 content decisions.
-**Evidence:** [remaining boundary](docs/alphabet-text-only-completion.md),
-[original full-pack design](docs/alphabet-explorer-plan.md).
-**Delivery:** no newly accepted pack, changed publication or release is claimed.
-The exact-five October 16 unreviewed inventory-only exception does not cover these drafts.
+- **Work state:** Input needed.
+- **Readiness:** Implementation — Partial: track controls absent; content — Full drafts unreviewed; verification — Automated only; real checks missing.
+- **Delivery:** Application — F28 application deployed; content publication — Five inventory previews only.
+- **Scope:** Human/source acceptance and real access/release evidence split from completed text-only F28.
+- **Next action:** Owner: designate reviewers. Agent: disposition exact inventories/help/examples/rights, scope MSA/Quranic controls, then collect authorized access/release evidence.
+- **Authorization:** Follow-up planned, not blanket implementation/contact/publication authority; no review/beta gates waived.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f30-alphabet-content-acceptance-and-release).
+- **Dependencies:** F28, F09/F13/F14 and applicable F25/F26 content decisions.
 
-## Selected future implementation order
+## Recent roadmap changes
 
-The owner selected research priorities **1, 2, 4, 5 and 6** on October 12:
-**F22 → F23 → F17.5 → F17.6 → F17.7**. F17.5 authoring can support F22 sooner;
-F17.6 needs independent F22 evidence, and F17.7 uses approved available activities.
-[Detailed future-agent plan](docs/learning-engagement-plan.md).
-
-F17.7 was subsequently authorized, completed and deployed with explicit owner-selected
-habit policies; F22 is completed, deployed and published; F17.6 is completed/deployed
-under the October 13 authorization and approved evidence rules. F23/F17.5 remain
-Planned, awaiting implementation authorization. Assessment, rewards and provider choices are not silently settled
-by the planning selection. Existing F09/F12/F19 work and the
-owner-deferred F18.1 rehearsal retain their statuses; beta gates remain requirements.
-Research priority **3 (record/replay/compare)** stays unselected research, without a
-new implementation task. Existing F09 recordings/F11 guided speaking remain open.
-
-The new language roadmap has its own dependency order: **F24 foundation → F25/F26
-first units and support → mixed-language pilot → remaining units → release decision**.
-It does not replace the selected Arabic engagement order above. No relative priority
-between these workstreams was inferred from adding plans. The owner subsequently
-authorized the entirety of F24 on October 15 and F26 draft implementation on October
-16. F25 authoring remains separate; Khmer bulk authoring follows reviewed first-unit
-and pilot evidence.
-Course definition/source work can proceed independently when authorized; full course
-authoring should follow the respective first-unit evidence. No completion dates are
-committed without agreed scope, content/reviewer availability and measured first-unit effort.
-F24.7 shared landing/wording/identity can be designed alongside the first units;
-enabled course entry and public claims must follow actual approved availability.
-Portuguese is eventual expansion direction, not a new implemented course or beta commitment.
-
-F28 implementation, push and deployment were subsequently authorized October 16.
-The owner accepted the recommended first-version defaults and private Khmer/French
-packs pending choices/review. Shared application/practice/offline is deployed.
-October 17: F28 text-only implementation/full drafts are Done and application
-`fdd5c5f` is pushed/deployed under the
-owner-revised scope. F30 now tracks accepted packs, track controls, device/AT/Safari
-checks and any separately authorized delivery; F09 retains human recordings.
-[Alphabet explorer plan](docs/alphabet-explorer-plan.md).
-
-## Recent planning changes
-
-- **October 17, 2026 F28/F30:** owner revised completion to text-only implementation
-  and full unreviewed drafts, explicitly splitting human review/release/access evidence.
-  F28 Done; five draft packs, explicit visual-only mode, 51 API tests, build
-  and 24 focused browser checks pass. Metropolitan French selected for alphabet only.
-  F30 retains acceptance/release gates; F09 recordings. Owner-authorized `fdd5c5f`
-  pushed/deployed; API/Vercel Ready, 17 table/asset hashes and five pinned public
-  previews unchanged. Full drafts remain unpublished.
-  [Evidence](docs/alphabet-text-only-completion.md).
-
-- **October 17, 2026 F27.2:** Today plan and can-do progress redesigned around
-  compact rows, clear next actions and expandable detail. Unavailable recall
-  links to lessons without disabled controls. Build and all 33 focused checks
-  pass; mobile/desktop renders inspected. Owner-authorized frontend `2421876`
-  pushed to `main` and Vercel Ready on the existing development URL. No
-  API/database or curriculum change. [Evidence](docs/scannable-plan-and-progress.md).
-
-- **October 16, 2026 F24.8.2:** owner requested a more apparent active language.
-  The colored banner/tile picker, per-course colors, a prominent speech-bubble
-  language band are done; culture art stays in the picker only, at owner request.
-  Build and focused checks pass. Owner authorized push/deploy October 17.
-  [Evidence](docs/multi-language/switching-and-identity.md#october-16-course-identity-banner-and-culture-card-f2482).
-
-- **October 16, 2026 F28:** shared application and five owner-requested inventory-only
-  previews are deployed as `ab2d456`, all v1 with honest unreviewed/text-only labels.
-  API 49/49, build, 18 focused browser checks, live HTTP/checksums and all unrelated
-  table/asset preservation pass. F28.1.2 Done; reviewed word/sound packs and actual
-  human/device/AT/Safari evidence remain with the parent.
-  [Publication](docs/alphabet-inventory-publication.md),
-  [exact audits](content/alphabet/inventory-preview/publication.json).
-
-- **October 16, 2026 F24.8.1:** owner reported disappearing lessons during language
-  switches, confirmed Fattoush/Knafeh across languages and requested distinct landing
-  colors. Bounded fixes are deployed as `0623273`; build and all 23 focused browser
-  checks pass. Live switching, five Khmer entries, shared guides and colors verified;
-  [evidence](docs/multi-language/switching-and-identity.md). No curriculum text change.
+- **October 17, 2026 — roadmap structure:** replaced generic Active/Done grouping
+  with independent work state, implementation/content/verification readiness,
+  application/publication delivery, explicit actor/authorization and linked contracts
+  for every feature/child. Removed repeated chronological release summaries. No
+  product scope, publication, deployment, spending or deferral was newly authorized.
+- **October 17 — F28/F30:** owner explicitly completed F28's text-only application/
+  full-draft scope and split human/source/access/release obligations to F30. App
+  deployed as `fdd5c5f`; exact existing publications and hosted data preserved.
+- **October 17 — F27.2:** scannable plan/progress UI deployed, 33 focused checks pass.
+- **October 17 — F24.8.2:** course identity banner/picker and Study language bubble
+  deployed with owner-selected colors; real AT/discoverability remains F24.5/F24.8.
+- **October 16 — F26.2.1:** five exact unreviewed text-only Khmer previews published;
+  F26's full course/review/audio/pilot criteria remain unchanged.

@@ -1,126 +1,171 @@
 # Maintaining the Ismi roadmap
 
-[ROADMAP.md](../ROADMAP.md) is the only current feature-status and priority document.
-It is ordinary Markdown: readable in Codex or GitHub, editable by the owner or an
-agent. There is no background scheduler, generated dashboard or separate task database.
+[ROADMAP.md](../ROADMAP.md) is the only current source of feature state, priorities,
+next actions, authorization boundaries and delivery. It is ordinary Markdown; no
+scheduler, separate task database or generated status service exists.
 
-## Where information belongs
+## Document responsibilities
 
-| File | Responsibility |
+| File | Owns |
 | --- | --- |
-| [AGENTS.md](../AGENTS.md) | Settled constraints, unresolved product choices and mandatory working rules |
-| [ROADMAP.md](../ROADMAP.md) | Quick view, stable IDs, status, scope, next action, completion criteria, evidence and delivery boundaries |
-| This workflow | How to start, assess completion and update planning |
-| Feature plans and implementation notes | Design detail, provenance, verification and limitations; linked from roadmap records |
-| [next-stage-handoff.md](next-stage-handoff.md) | Frozen historical checkpoints; not a live task queue |
-| [continue-in-another-chat.md](continue-in-another-chat.md) | Reusable entry prompts; no duplicate status inventory |
-| [README.md](../README.md) | Project entry point and current development/hosting instructions |
+| [ROADMAP.md](../ROADMAP.md) | Agent entry, work queues, delivery baseline and one current record per stable feature/child ID |
+| [AGENTS.md](../AGENTS.md) | Durable product constraints, owner preferences and working rules |
+| This workflow | State vocabulary, record schema and maintenance/verification rules |
+| [Feature scope reference](planning/feature-scope-reference.md) | Detailed contracts, policies and links to supporting evidence; **no current work state or next-work authority** |
+| Feature notes / release records | Implementation details, dated test results, exact content/version/hash and rollout/recovery evidence |
+| [Historical handoff](next-stage-handoff.md) / old plans | Frozen context; never current priority, startup commands or permission |
+| [README.md](../README.md) | Setup and runtime/hosting entry points |
 
-Owner instructions and existing authorization take precedence. AGENTS.md defines
-constraints; the roadmap defines current recommended work. Old plans/handoffs cannot
-override either. If records conflict with code, tests or target database/host state,
-inspect evidence and correct the roadmap with the date and scope of the inspection.
-Do not treat older status prose as fresh verification.
+Owner instructions override older documents. A planning update never authorizes
+product implementation, a release, spending, provider choices or contacting people.
+Existing authorization carries forward; do not repeatedly ask for permission already
+given. Work directly on `main` and preserve unrelated local changes.
+
+## Read the next gate, then the independent layers
+
+Every feature and child has a **Work state**, **Readiness**, **Delivery**, **Scope**,
+**Next action**, **Authorization** and **Completion gate / evidence** link.
+Dependencies are explicit when applicable. A state describes the main next gate,
+not every aspect of the feature and not whether an agent is running right now.
+
+| Work state | Apply when |
+| --- | --- |
+| Partial | Some implementation/authoring exists, but defined implementation or authoring scope remains |
+| Review pending | Inspectable candidate content/corrections exist and exact acceptance is the next gate |
+| Input needed | The next step requires specific assets, rights, reviewer, account access or external evidence |
+| Decision needed | A consequential scope, provider, policy or product choice remains unresolved |
+| Verification pending | Relevant software/protocol exists, but required real-world, outcome or release evidence is missing |
+| Planned | Defined work has not begun; dependency and authorization checks still apply |
+| Delivery pending | Accepted implementation awaits its authorized commit/push/deployment or exact publication |
+| Deferred | The owner explicitly paused this scope; record the reason and resumption trigger |
+| Complete | All criteria of this exact bounded contract are satisfied and evidence is linked |
+| Cancelled | The owner explicitly removed the scope; preserve the ID, reason and effects on dependencies |
+
+Do not use generic “Active” or “Needs input” as a substitute for the precise gate.
+Never infer Deferred from difficulty or missing assets. Cancelled/Delivery pending
+queues can be omitted when empty; introduce them when a record needs them.
+
+**Readiness** has three independent dimensions:
+
+- **Implementation:** not started, partial, complete, or a specific prepared slice
+  such as protocol/tooling ready. Say which software/authoring remains.
+- **Content:** not authored, proposed sources, draft, partial, authored, approved,
+  or N/A. Authored is structural completeness. Approved requires recorded exact
+  human acceptance and never implies native-expert review. An unreviewed preview
+  exception remains explicitly unreviewed even after publication.
+- **Verification:** not run, partial, automated, or the precise human/field checks
+  performed. Name unresolved failures separately from checks never run. Dated
+  evidence in a linked note is not a fresh test or a live-host inspection.
+
+**Delivery** names application delivery and content publication separately. State
+local/uncommitted, committed, pushed, deployed, draft-only or exact publications as
+applicable. Different frontend/API revisions are normal; record them independently.
+Do not assume a Git push deployed the API or imported/published draft files.
+
+No percentages, combined readiness scores, or automatic parent roll-ups. A parent
+can be Verification pending while software children are Complete. An authoring child
+can be Complete while its parent awaits review/publication. Full course depth,
+human audio and beta gates stay open until their own criteria pass.
 
 ## Start a task
 
-1. Read AGENTS.md, the roadmap quick view, this workflow and the relevant feature
-   record. Inspect `git status`/diff; preserve existing changes and work on `main`.
-2. Match the request to a stable ID by name or behavior. The owner need not know an
-   ID. Add one only for a distinct new scope; retain IDs across renames/reordering.
-3. Inspect linked implementation/evidence before proposing work. If the requested
-   behavior already satisfies its criteria, report it as done with concrete links.
-4. For authorized implementation, set the bounded task Active and specify observable
-   completion criteria before coding. Break broad items into children (F12.1, F12.2),
-   each with scope, status, next action/decision, criteria and evidence.
-5. Resolve consequential choices explicitly with a recommended answer. Continue
-   independent authorized work. Priority is direction, not new authority to publish,
-   deploy, spend, contact people or choose external providers.
+1. Read the roadmap's agent entry, delivery baseline, relevant work queue and feature
+   record, plus AGENTS.md. Check `git status` and the actual implementation/evidence.
+2. Match the owner's request by ID or behavior. Use current record → linked contract
+   → feature note/source files. Do not infer that a parent state makes delivered
+   software unfinished, or rebuild code from an old plan.
+3. Read **Authorization** and **Next action**. Identify which actor can unblock the
+   next step: agent, owner, reviewer, speaker or provider. Resolve facts available in
+   the repo/primary sources before asking the owner.
+4. For authorized implementation, define a bounded observable deliverable and put
+   that child in Partial while work is underway. A new task can begin as Planned;
+   change it to the actual gate when work starts. Do not mark a broad parent Complete
+   because an initial slice shipped.
+5. Resolve consequential choices explicitly, with a recommendation. Continue useful
+   independent work within authority; never interpret elapsed time as approval.
 
-Existing authorization carries forward. Do not ask again merely because a roadmap
-record previously needed authorization; record the new state instead.
-Planning edits, status audits and recommendation requests do not themselves start
-unrequested product implementation.
+Status/audit/reorganization requests do not start unrequested implementation. Report
+already delivered scope and reconcile stale status instead of rebuilding it.
 
-## Decide whether something is done
+## Record schema
 
-Use the feature's stated scope and observable criteria, then check implementation
-and relevant evidence. Run appropriate checks for changed behavior or an unresolved
-concern; a planning-only edit does not require the application regression suite.
-
-- **Done:** all criteria for the bounded scope are met and evidence is linked.
-  Authored drafts can satisfy an authoring task; publication needs its own scope.
-- **Partial:** keep the parent open and identify exact remaining criteria; mark
-  completed children Done. Do not shrink the original promise to manufacture completion.
-- **Already implemented:** acknowledge that directly and update stale planning.
-  Do not rebuild it because an old plan said “next.” Separate an extension from
-  the delivered baseline (for example F05 manual review versus F10 scheduling).
-- **Unknown:** inspect first. If host/database/equipment access or owner input is
-  missing, record uncertainty and next action without claiming a pass or regression.
-
-For every Done record link implementation plus relevant verification or authored
-manifest/audit evidence. State dates and distinguish today's checks from earlier
-recorded results. Done means the defined deliverable is complete; it does not imply
-committed, deployed, published, expert-reviewed or beta-ready unless those are criteria.
-
-For a rollout, record target, app revision, verification date and result. Frontend,
-backend and curriculum state are separate. Record published lesson IDs/versions and
-audit evidence for a curriculum release. Do not include secrets or learner identities.
-
-## Finish or hand off
-
-Before the final response, update the roadmap in the same task:
-
-1. Reconcile the quick-view row and feature record: status, exact remaining work,
-   next action, dependencies/decisions, completion evidence and any delivery change.
-2. Update Now/Recommended next/Waiting on if affected. Do not leave a completed item
-   recommended as unimplemented work. Mark unfinished work honestly; use On hold
-   only when the owner explicitly defers it.
-3. Refresh the roadmap's Updated date and add a short dated change-log entry for
-   a meaningful change (keep the latest five).
-   Put detailed test results/design history in a linked feature note, not another handoff.
-4. Update AGENTS.md only for changed durable constraints, preferences or working rules;
-   update README only for changed setup/hosting. Keep current feature status in the roadmap.
-5. Report the outcome, relevant ID and remaining limitation. No duplicate “continue”
-   checklist is needed; the next agent starts from these same files.
-
-## Easy owner prompts
-
-- “Show me the roadmap and what's next.” — Read and summarize; do not start a feature.
-- “Move guided speaking ahead of course expansion.” — Reorder recommendations and
-  dependencies; preserve completed IDs and do not begin implementation.
-- “Add [feature] to the roadmap.” — Add a scoped Planned record with recommended
-  criteria; flag conflicts/open decisions without treating a proposal as adopted policy.
-- “Is [feature] already done? Reconcile the roadmap.” — Audit criteria against
-  evidence, report missing parts and update status without rebuilding the feature.
-- “Implement [feature]. Keep the roadmap current.” — Use existing authorization,
-  scope the deliverable, implement, verify and update its record.
-- “Pause [feature]” / “Remove [feature].” — Record an explicit deferral or cancellation
-  and its effect on dependencies; keep historical IDs and explain any settled beta
-   requirement that would also need to change. Use On hold or Cancelled respectively;
-   never silently delete a product commitment.
-- “Refresh the roadmap from the current checkout.” — Audit scoped completion and
-  local evidence. Hosted/publication claims require inspecting the named targets.
-
-## Adding a feature
-
-Use the next unused ID; never recycle a completed or cancelled ID. Add one row to
-the quick-view table with its status and next action, then a matching record below.
-Natural-language feature names work in owner prompts; IDs are only convenient handles.
+Retain stable IDs/headings to preserve links. The next unused top-level ID is F31
+at this revision; check the actual roadmap before assigning it. Add new bounded
+children only for distinct deliverables, without silently changing their parent's
+promise. Every ID needs a queue row and exactly one current record.
 
 ```markdown
-| [F19](#f19-feature-name) | Feature name | Planned | Concrete next action |
+### F31 Example feature
 
-### F19 Feature name
-
-**Outcome:** the learner/owner behavior this delivers; explicit scope boundaries.
-**Next:** one concrete action, or the decision/input needed and a recommendation.
-**Done when:** observable criteria that allow a future agent to verify completion.
-**Depends on:** feature IDs, assets or unresolved choices; “none” if independent.
-**Evidence:** implementation paths and relevant checks/results with dates.
-**Delivery:** local/committed, publication and target deployment state as applicable.
+- **Work state:** Review pending.
+- **Readiness:** Implementation — complete; content — draft; verification — automated, real-device checks missing.
+- **Delivery:** Application — deployed at recorded revision; content publication — unpublished.
+- **Scope:** One concrete deliverable; identify what it does and its limits.
+- **Next action:** Owner/reviewer: accept the exact candidate. Agent: resolve recorded issues and revalidate changed text.
+- **Authorization:** Implementation authorized; exact publication and participant contact remain separate.
+- **Completion gate / evidence:** [Full contract and linked evidence](planning/feature-scope-reference.md#f31-example-feature).
+- **Dependencies:** IDs/inputs required for this bounded scope; none if independent.
 ```
 
-Use the same shape for child records such as F12.1. Replace proposed criteria when
-scope is agreed, preserving the broader parent commitment. Once complete, summarize
-the delivered scope and evidence, with extensions/rollout tracked explicitly.
+From ROADMAP.md the scope reference link is `docs/planning/feature-scope-reference.md`;
+the example above is relative to this workflow. In real records use the correct
+relative path and keep scope links resolvable. Contracts can live in an existing
+feature note if that is clearer; avoid a second current status inventory.
+
+For an unfinished record, **Next action** must name one concrete step/input and its
+actor, rather than “continue,” “finish everything,” or “wait for review.” Include the
+exact missing review/assets/decision/device evidence. Authorization should identify
+permitted work and the remaining publication/provider/contact/spend boundary.
+Complete records say no work remains in that bounded scope and point to the owner
+of any extension/gate; avoid using them as a miscellaneous backlog.
+
+## Evidence and delivery rules
+
+Use the feature's actual observable contract. Keep app deployment, curriculum
+publication, linguistic/source acceptance, human recordings, human accessibility,
+learner evidence and beta eligibility distinct.
+
+- Link implementation plus meaningful checks or exact authored manifests for Complete
+  records. Do not shrink the contract to manufacture completion.
+- If the owner explicitly revises scope, record date/decision and move any retained
+  obligations to named follow-ups. F28/F30 is an explicit exception; it is not
+  authority to narrow other features.
+- Verify the named target/database before making a new hosted/publication claim.
+  Record web/API revisions, exact content IDs/versions, audit/recovery evidence and
+  verification date. Local/hosted DB IDs are separate namespaces.
+- Retain failed/unknown checks honestly. A WebKit engine error is not a Safari pass;
+  automated keyboard checks are not real screen-reader or physical-device evidence.
+- Do not store secrets, voice recordings, learner identities or raw participant
+  observations in Git. Keep private evidence outside the repo; link aggregate results.
+- A roadmap-only change needs document consistency/link checks, not an application
+  regression suite. Run application checks when implementation changed or an actual
+  unresolved concern justifies them.
+
+## Finish a task
+
+1. Update the feature record's state, each readiness layer, delivery, actor/next action,
+   authorization, dependencies and evidence as affected. Preserve unrelated changes.
+2. Move/update its row in the matching work queue. Do not leave it under the old gate.
+   Update the delivery baseline only for verified delivery/content changes.
+3. Reconcile related parent/child dependency wording. Complete children do not close
+   a parent. Reuse delivered foundations rather than treating them as future work.
+4. Update the roadmap date; keep at most five short meaningful change entries. Put
+   detailed tests, release history and designs in linked notes, not the entry section.
+5. Run `python3 scripts/check-roadmap.py` from the repository root to validate unique
+   IDs, queue/record agreement, required fields and local links/anchors. Review the
+   diff separately for retained scope; the checker does not prove factual accuracy.
+   Update the scope reference only when a contract, policy or evidence reference
+   changes. Update AGENTS.md only for durable working/product rules.
+6. Report the completed scope and precise remaining gate. Explicitly distinguish
+   local documentation/code from committed, pushed, deployed and published work.
+
+## Common owner requests
+
+| Request | Action |
+| --- | --- |
+| “What's left for F24?” | Read layers and contract; identify the missing next gates, not merely “Active” |
+| “Overhaul / refresh the roadmap” | Audit/reconcile documentation and evidence; do not implement product work |
+| “Move X ahead of Y” | Change dependency/priority guidance without starting work or issuing release authority |
+| “Implement X” | Reuse existing authority, bound work, implement/verify and maintain all state layers |
+| “Pause / remove X” | Record explicit Deferred/Cancelled reason and dependency effects; retain history/ID |
+| “Push and deploy” | Verify exact candidate and target authority; record app delivery separately from content publication |

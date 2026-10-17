@@ -2,8 +2,8 @@
 
 Ismi is a mobile-first Arabic learning web app for Palestinian Levantine, Modern Standard Arabic, and Quranic Arabic. Learners can study one track or combine all three in one daily plan.
 
-**[Open the roadmap](ROADMAP.md)** for current status, what is done, what needs
-input, and the next recommended work. Agents follow [the planning workflow](docs/planning-workflow.md).
+**[Open the roadmap](ROADMAP.md)** for work queues, separate implementation/content/verification
+states, delivery evidence and the next action for each feature. Agents follow [the planning workflow](docs/planning-workflow.md).
 You can simply ask “Update the roadmap,” “Is this feature already done?” or
 “Implement F10”; feature IDs are optional.
 
