@@ -1923,21 +1923,46 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 .main-content > .back-control.mobile-landing-return { display: none; }
 @media (max-width: 900px) { .main-content > .back-control.mobile-landing-return { display: inline-flex; margin: 0 0 14px; } }
 
-.study-allocations { padding-left: 1.25rem; line-height: 1.8; }
-.study-queue { padding-left: 1.5rem; }
-.study-queue .guest-action { text-align: left; min-height: 44px; padding: .5rem 0; }
-.study-plan .section-heading { flex-wrap: wrap; gap: .75rem; }
-.study-plan a { color: var(--green-dark, #176344); text-underline-offset: .2em; }
+.study-plan { padding: 20px; border: 1px solid var(--line); border-radius: 18px; background: var(--paper); }
+.study-plan .section-heading { align-items: center; flex-wrap: wrap; gap: .5rem 1rem; margin-bottom: 12px; }
+.study-plan .section-heading h2 { margin: 0; }
+.plan-total { margin: 4px 0 0; color: var(--ink-soft); font-size: .85rem; }
+.study-plan a { color: var(--teal-dark); text-underline-offset: .2em; }
+.plan-settings { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; text-decoration: none; font-size: .85rem; font-weight: 650; }
+.plan-settings:hover { background: var(--teal-soft); border-color: var(--teal); }
+.study-queue { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 12px; overflow: clip; }
+.study-queue li + li { border-top: 1px solid var(--line); }
+.plan-lesson { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 76px; padding: 14px; border: 0; background: var(--paper); cursor: pointer; text-align: start; }
+.plan-lesson:hover { background: var(--teal-soft); }
+.plan-lesson:focus-visible { outline: 3px solid var(--teal); outline-offset: -3px; }
+.plan-step { display: grid; place-items: center; flex: 0 0 32px; min-height: 32px; border-radius: 10px; background: var(--teal); color: white; font-size: .85rem; font-weight: 750; }
+.plan-lesson-copy { display: grid; gap: 4px; flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.plan-lesson-copy strong { font-size: .95rem; line-height: 1.4; }
+.plan-lesson-copy > span { color: var(--ink-soft); font-size: .8rem; line-height: 1.5; }
+.plan-lesson > svg { flex-shrink: 0; color: var(--teal-dark); }
+.plan-overrun { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 12px 0; font-size: .8rem; color: var(--ink-soft); }
+.plan-overrun > span { padding: 4px 8px; border-radius: 6px; color: #6c4906; background: var(--gold-soft); font-weight: 750; font-variant-numeric: tabular-nums; }
+.plan-empty { margin: 12px 0; font-size: .9rem; line-height: 1.5; }
+.plan-empty p { margin: 0 0 8px; }
+.plan-empty a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 700; }
+.study-allocations { list-style: none; margin: 0; padding: 0; }
+.study-allocations li { padding: 12px 0; font-size: .85rem; line-height: 1.5; }
+.study-allocations li + li { border-top: 1px solid var(--line); }
+.study-allocations li > span { display: block; margin-top: 4px; color: var(--ink-soft); }
+@media (max-width: 480px) {
+  .study-plan { padding: 16px; }
+  .plan-lesson { gap: 10px; padding: 12px; }
+}
 
 /* F17.1: the next conversation leads Today; gold marks factual completion. */
 .daily-progress.goal-complete { background: var(--gold-soft); }
 .goal-complete .section-kicker { color: #70500c; display: flex; align-items: center; gap: 6px; }
 .goal-complete .progress-fill { background: var(--gold); }
 .progress-fill { transition: width 300ms ease; }
-.plan-details { margin-top: 18px; }
-.plan-details summary { cursor: pointer; padding: 10px 0; font-weight: 700; }
+.plan-details { margin-top: 16px; border-top: 1px solid var(--line); }
+.plan-details summary { cursor: pointer; min-height: 44px; padding: 12px 0; font-size: .85rem; font-weight: 650; }
 .plan-details summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
-.up-next-heading { font-size: 16px; margin: 20px 0 8px; }
+.up-next-heading { font-size: .85rem; margin: 18px 0 10px; color: var(--ink-soft); }
 .completion-recap { width: min(100%, 430px); padding: 14px 18px; border-radius: 14px; background: white; border: 1px solid var(--line); }
 .completion-recap p { margin: 6px 0; line-height: 1.5; }
 .completion-encouragement { display: flex; align-items: center; justify-content: center; gap: 12px; max-width: 430px; }

@@ -243,6 +243,35 @@ async function answerAllRecall(page: Page) {
   await dialog.getByRole('button', { name: 'Back to practice' }).click()
 }
 
+test('can-do empty state offers a working next step and compact, accessible target rows', async ({ page }, testInfo) => {
+  await page.goto('/#/progress')
+  const progress = page.getByRole('region', { name: 'What you can do' })
+  await expect(progress.getByRole('heading', { name: 'Start with a lesson' })).toBeVisible()
+  await expect(progress.getByRole('button')).toHaveCount(0)
+  await expect(progress.getByText('Lesson needed', { exact: true })).toHaveCount(3)
+  await expect(progress.locator('.can-do-evidence')).toHaveCount(0)
+  await expect(progress.locator('details[open]')).toHaveCount(0)
+  for (const width of [390, 1280]) {
+    await page.setViewportSize({ width, height: 900 })
+    expect(await progress.evaluate(el => el.scrollWidth <= el.clientWidth + 1)).toBe(true)
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }))
+    await page.screenshot({ path: testInfo.outputPath(`can-do-empty-${width}.png`), fullPage: true })
+    await progress.screenshot({ path: testInfo.outputPath(`can-do-section-${width}.png`) })
+  }
+  const details = progress.getByText('How progress works', { exact: true })
+  await details.focus()
+  await page.keyboard.press('Enter')
+  await expect(progress.getByText('Try independently.', { exact: true })).toBeVisible()
+  await page.setViewportSize({ width: 320, height: 700 })
+  await page.addStyleTag({ content: 'html { font-size: 200%; }' })
+  expect(await progress.evaluate(el => el.scrollWidth <= el.clientWidth + 1)).toBe(true)
+  const action = progress.getByRole('link', { name: 'Explore lessons' })
+  await action.focus()
+  await page.keyboard.press('Enter')
+  await expect(page).toHaveURL(/#\/courses$/)
+  await expect(page.getByRole('button', { name: /Open Answer a friend/ })).toBeVisible()
+})
+
 test('F17.6 real first responses and offline later review earn one optional, persistent outcome achievement', async ({ page, context }, testInfo) => {
   const start = Date.now()
   await page.clock.setFixedTime(start)
@@ -302,7 +331,8 @@ test('F17.6 real first responses and offline later review earn one optional, per
   await page.reload()
   await expect(progress.locator('[data-can-do="rest-a-little"]')).toContainText('Not yet practiced')
   await expect(progress.locator('[data-can-do="rest-a-little"]')).toContainText('does not mean you lost ability')
-  await expect(progress.locator('[data-can-do="request-tea"] button')).toBeDisabled()
+  await expect(progress.locator('[data-can-do="request-tea"] button')).toHaveCount(0)
+  await expect(progress.getByRole('link', { name: 'Explore lessons' })).toBeVisible()
   await expect(achievements).toContainText('Historical achievement')
   expect((await snapshots(page)).find(s => s.key === 'can-do-v1:guest')!.value.achievements).toHaveLength(1)
   await progress.locator('[data-can-do="request-tea"]').getByText('Attempts and sources', { exact: true }).click()

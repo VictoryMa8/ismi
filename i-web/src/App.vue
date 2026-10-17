@@ -10,6 +10,7 @@ import {
   Home,
   RotateCcw,
   Search,
+  Settings2,
   Trophy,
   UserPlus,
   UserRound,
@@ -406,6 +407,7 @@ const nextStudyLesson = computed(() => {
 });
 const manualCourseStudy = computed(() => Boolean(nextStudyLesson.value
   && !studyPlan.value.queue.some(item => item.id === nextStudyLesson.value!.id)));
+const upcomingPlanLessons = computed(() => studyPlan.value.queue.filter(item => item.id !== nextStudyLesson.value?.id));
 const nextStudyTrack = computed(() => ({ name: activeCourse.value.name }));
 const isCorrect = computed(() => attemptFeedback.value?.isCorrect ?? false);
 const selectedArabicVoice = computed(() => {
@@ -1533,22 +1535,35 @@ async function finishLesson() {
         </section>
 
         <section class="study-plan section-block" aria-labelledby="study-plan-heading">
-          <div class="section-heading"><h2 id="study-plan-heading">Your plan</h2><a href="#/account">Edit study settings</a></div>
-          <h3 v-if="studyPlan.queue.length > 1" class="up-next-heading">Up next</h3>
-          <ol v-if="studyPlan.queue.length > 1" class="study-queue" aria-label="Today’s lesson queue">
-            <li v-for="item in studyPlan.queue.slice(1)" :key="item.id"><button type="button" class="guest-action" @click="startLesson(item.id)">{{ item.title }} · {{ item.estimatedMinutes }} min</button></li>
+          <div class="section-heading">
+            <div><h2 id="study-plan-heading">Your plan</h2><p class="plan-total">{{ studyPlan.plannedMinutes }} min planned</p></div>
+            <a class="plan-settings" href="#/account" aria-label="Edit study settings"><Settings2 :size="17" aria-hidden="true" /> Settings</a>
+          </div>
+          <h3 v-if="upcomingPlanLessons.length" class="up-next-heading">Up next</h3>
+          <ol v-if="upcomingPlanLessons.length" class="study-queue" aria-label="Today’s lesson queue">
+            <li v-for="(item, index) in upcomingPlanLessons" :key="item.id">
+              <button type="button" class="plan-lesson" :aria-label="`Open ${item.title} · ${item.estimatedMinutes} min`" @click="startLesson(item.id)">
+                <span class="plan-step" aria-hidden="true">{{ index + 1 }}</span>
+                <span class="plan-lesson-copy"><strong>{{ item.title }}</strong><span>{{ courseFor(item.trackId).name }} · {{ item.estimatedMinutes }} min</span></span>
+                <ChevronRight :size="20" aria-hidden="true" />
+              </button>
+            </li>
           </ol>
-          <p v-if="!studyPlan.queue.length">{{ dailyCompleted >= dailyGoal ? 'Daily goal complete. Practice is always available.' : 'No new lessons are available for this plan. You can still explore courses and practice.' }}</p>
-          <p v-if="studyPlan.overrunMinutes">Whole lessons take this plan {{ studyPlan.overrunMinutes }} min beyond your goal.</p>
+          <p v-else-if="studyPlan.queue.length" class="plan-empty">Your next lesson is ready above.</p>
+          <div v-else class="plan-empty">
+            <p>{{ dailyCompleted >= dailyGoal ? 'Daily goal complete. Practice is always available.' : 'No new lessons are available for this plan.' }}</p>
+            <a :href="dailyCompleted >= dailyGoal ? '#/practice' : '#/courses'">{{ dailyCompleted >= dailyGoal ? 'Open practice' : 'Explore courses' }} <ChevronRight :size="16" aria-hidden="true" /></a>
+          </div>
+          <p v-if="studyPlan.overrunMinutes" class="plan-overrun"><span>+{{ studyPlan.overrunMinutes }} min</span> to finish whole lessons</p>
           <p v-for="allocation in studyPlan.allocations.filter(a => a.reviewMinutes)" :key="allocation.id"><button class="secondary-action" @click="plannedReview?.start('due', undefined, allocation.id)">Review {{ allocation.name }} first · {{ allocation.reviewMinutes }} min</button></p>
           <details class="plan-details">
             <summary>Study time by course</summary>
           <ul class="study-allocations">
             <li v-for="allocation in studyPlan.allocations" :key="allocation.id">
-              <strong>{{ allocation.name }}</strong> · {{ allocation.minutes }} min
-              <span v-if="allocation.omitted"> · Not scheduled today; manual study available</span>
-              <span v-if="allocation.reviewMinutes"> · Due review first</span>
-              <span v-if="!allocation.available"> · Lessons not yet available</span>
+              <div><strong>{{ allocation.name }}</strong> · {{ allocation.minutes }} min</div>
+              <span v-if="!allocation.available">Lessons not yet available</span>
+              <span v-else-if="allocation.omitted">Not scheduled today · manual study available</span>
+              <span v-else-if="allocation.reviewMinutes">Due review first</span>
             </li>
           </ul>
           </details>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { BookOpen, Check, ChevronRight, LockKeyhole, PenLine, Target } from '@lucide/vue'
 import { canDoLabels, deriveCanDo, outcomeAchievement, type CanDoCard } from './canDo'
 import { getCanDoPreferences, recordCanDoAchievement, setCanDoAchievementDisplay, type CanDoPreferences } from './canDoStorage'
 import type { RecallEvidence } from './recallStorage'
@@ -10,6 +11,8 @@ const props = defineProps<{ scope: string; lessons: LessonResponse[]; evidence: 
 const emit = defineEmits<{ practice: [lessonId: string, targetId: string] }>()
 const cards = computed(() => deriveCanDo(props.scope, props.lessons, props.evidence, props.history, props.now))
 const currentAchievement = computed(() => outcomeAchievement(cards.value))
+const demonstratedCount = computed(() => cards.value.filter(card => card.state === 'independent' || card.state === 'later').length)
+const unavailableCount = computed(() => cards.value.filter(card => !card.lesson).length)
 const preferences = ref<CanDoPreferences>({ showAchievements: true, achievements: [] })
 const error = ref('')
 const saving = ref(false)
@@ -56,24 +59,35 @@ watch(() => [props.scope, currentAchievement.value?.id], refreshPreferences, { i
 
 <template>
   <section class="can-do-progress review-hub" aria-labelledby="can-do-title">
-    <h2 id="can-do-title">What you can do</h2>
-    <p>Everyday conversations · Levantine · Written recall on this device</p>
+    <div class="can-do-heading">
+      <span class="can-do-heading-icon" aria-hidden="true"><Target :size="22" /></span>
+      <div><h2 id="can-do-title">What you can do</h2><p>Levantine · Written recall on this device</p></div>
+    </div>
     <p v-if="loading" role="status">Loading progress…</p>
+    <div v-if="!loading && unavailableCount" class="can-do-start">
+      <BookOpen :size="22" aria-hidden="true" />
+      <div><h3>{{ unavailableCount === cards.length ? 'Start with a lesson' : 'Unlock more targets' }}</h3><p>Complete and download an Everyday lesson to unlock its recall practice.</p></div>
+      <a href="#/courses">Explore lessons <ChevronRight :size="18" aria-hidden="true" /></a>
+    </div>
+    <p v-if="!loading" class="can-do-summary"><strong>{{ demonstratedCount }} of {{ cards.length }}</strong> targets demonstrated independently</p>
     <div v-show="!loading" class="can-do-cards">
-      <article v-for="card in cards" :key="card.targetId" class="can-do-card" :data-can-do="card.targetId">
-        <h3>{{ card.title }}</h3>
-        <p class="can-do-state">{{ canDoLabels[card.state] }}</p>
-        <p v-if="card.lesson">{{ card.lesson.version }} · {{ card.target?.dialect === 'palestinian-urban' ? 'Urban Palestinian' : card.target?.dialect }} · {{ card.target?.register }}</p>
-        <p v-if="!card.lesson">Current practice is unavailable here. Complete and download the published lesson to use this target.</p>
-        <p v-if="card.historical.length">Evidence from earlier or unavailable content is preserved. Current content needs fresh practice; this does not mean you lost ability.</p>
-        <p v-if="card.supporting.length">Evidence: {{ card.supporting.map(e => date(e.attempts[0]!.at)).join(' and ') }}</p>
-        <p v-if="card.lesson && card.current.some(e => e.attempts.length)">
-          {{ card.due ? 'Due for review' : `Review due ${date(card.nextDueAt)}` }}
-        </p>
-        <p v-if="card.state === 'independent'">Try a different situation when review is due, at least 24 hours after your independent response.</p>
-        <button class="primary-action" :disabled="!card.lesson" :aria-label="`${action(card)}: ${card.title}`" @click="emit('practice', card.lessonId, card.targetId)">{{ action(card) }}</button>
-        <details class="can-do-evidence">
+      <article v-for="card in cards" :key="card.targetId" class="can-do-card" :data-can-do="card.targetId" :data-state="card.state">
+        <div class="can-do-row">
+          <span class="can-do-marker" aria-hidden="true"><LockKeyhole v-if="!card.lesson" :size="18" /><Check v-else-if="card.state === 'independent' || card.state === 'later'" :size="20" /><PenLine v-else :size="18" /></span>
+          <div class="can-do-copy">
+            <h3>{{ card.title }}</h3>
+            <p class="can-do-state">{{ canDoLabels[card.state] }}</p>
+            <p v-if="!card.lesson" class="can-do-next">Lesson needed</p>
+            <p v-else-if="card.current.some(e => e.attempts.length)" class="can-do-next">{{ card.due ? 'Due for review' : `Review due ${date(card.nextDueAt)}` }}</p>
+          </div>
+          <button v-if="card.lesson" class="secondary-action can-do-action" :aria-label="`${action(card)}: ${card.title}`" @click="emit('practice', card.lessonId, card.targetId)">{{ !card.current.some(e => e.attempts.length) ? 'Practice' : card.due ? 'Review now' : 'Practice again' }}<ChevronRight :size="17" aria-hidden="true" /></button>
+        </div>
+        <p v-if="card.historical.length" class="can-do-history-note">Earlier evidence saved. Fresh practice does not mean you lost ability.</p>
+        <details v-if="card.lesson || card.current.length || card.historical.length" class="can-do-evidence">
           <summary>Attempts and sources</summary>
+          <p v-if="card.lesson">{{ card.lesson.version }} · {{ card.target?.dialect === 'palestinian-urban' ? 'Urban Palestinian' : card.target?.dialect }} · {{ card.target?.register }}</p>
+          <p v-if="card.supporting.length">Evidence: {{ card.supporting.map(e => date(e.attempts[0]!.at)).join(' and ') }}</p>
+          <p v-if="card.state === 'independent'">Try a different situation when review is due, at least 24 hours after your independent response.</p>
           <p>Arabic / Arabizi typed responses. Speaking and listening are not assessed.</p>
           <p v-if="!card.current.length && !card.historical.length">No recorded attempts. Lesson completion alone is not evidence.</p>
           <p v-if="card.lesson">{{ card.lesson.title }} · {{ card.lesson.version }}</p>
@@ -93,9 +107,13 @@ watch(() => [props.scope, currentAchievement.value?.id], refreshPreferences, { i
     </div>
     <details class="can-do-rules">
       <summary>How progress works</summary>
-      <p>An accepted first response without a hint, model or retry demonstrates independent written recall. Two different situations, with the second shown when review is due at least 24 hours after the first independent response, demonstrate again later.</p>
-      <p>All three targets demonstrated again later earn “Everyday responses — demonstrated again later.” Review becoming due preserves earlier evidence and achievements. Revised or unavailable content keeps historical evidence and requires current practice.</p>
-      <p>These are practice records, not a proficiency score or proof of spoken fluency. Older attempts without a recorded review deadline cannot establish a later due-review demonstration. History is separate for each guest/account on this device and does not sync across devices.</p>
+      <ol>
+        <li><strong>Try independently.</strong> An accepted first response without a hint, model or retry demonstrates written recall.</li>
+        <li><strong>Return when review is due.</strong> Succeed in a different situation shown at least 24 hours after your first independent response to demonstrate again later.</li>
+        <li><strong>Build all three.</strong> Demonstrate each target again later to earn “Everyday responses — demonstrated again later.”</li>
+      </ol>
+      <p>Due review preserves earlier evidence and achievements. Revised or unavailable content keeps historical evidence and needs fresh practice. Older attempts without a recorded review deadline cannot demonstrate again later.</p>
+      <p>Written practice records do not assess listening, speaking or proficiency. History stays on this device, separately for each guest/account; it does not sync across devices.</p>
     </details>
     <label class="can-do-toggle"><input type="checkbox" :checked="preferences.showAchievements" :disabled="saving || loading || loadingPreferences" @change="toggle" /> Show outcome achievements</label>
     <p v-if="error" role="alert">{{ error }}</p>
@@ -113,17 +131,43 @@ watch(() => [props.scope, currentAchievement.value?.id], refreshPreferences, { i
 </template>
 
 <style scoped>
-.can-do-cards { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
-.can-do-card { border: 1px solid #b7c8c0; border-top: 4px solid #087545; border-radius: 16px; padding: 1rem; min-width: 0; overflow-wrap: anywhere; }
-.can-do-card h3, .can-do-achievements h3 { font-size: 1.05rem; margin: 0 0 .7rem; }
-.can-do-card p { margin: .6rem 0; }
-.can-do-state { font-weight: 700; }
-.can-do-evidence { margin-top: 1rem; }
-summary { cursor: pointer; min-height: 2.75rem; padding-block: .65rem; }
+.can-do-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.can-do-heading h2 { margin: 0; }
+.can-do-heading p { margin: 4px 0 0; font-size: .8rem; color: var(--ink-soft); line-height: 1.5; }
+.can-do-heading-icon { display: grid; place-items: center; flex: 0 0 44px; height: 44px; border-radius: 12px; color: white; background: var(--teal); }
+.can-do-start { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 10px 12px; padding: 16px; border-radius: 14px; background: var(--teal-dark); color: white; }
+.can-do-start > svg { margin-top: 2px; }
+.can-do-start h3 { color: white; font-size: 1rem; margin: 0 0 5px; }
+.can-do-start p { font-size: .85rem; margin: 0; line-height: 1.5; }
+.can-do-start a { grid-column: 2; display: flex; align-items: center; justify-content: center; gap: 8px; width: fit-content; min-height: 44px; padding: 8px 14px; border-radius: 9px; background: white; color: var(--teal-dark); font-weight: 750; font-size: .85rem; text-decoration: none; }
+.can-do-start a:hover { background: var(--gold-soft); }
+.can-do-start a:focus-visible { outline-color: var(--gold-bright); }
+.can-do-summary { font-size: .85rem; margin: 18px 0 12px; line-height: 1.5; color: var(--ink-soft); }
+.can-do-summary strong { color: var(--ink); }
+.can-do-cards { display: grid; gap: 10px; }
+.can-do-card { border: 1px solid var(--line); border-radius: 14px; background: var(--paper); min-width: 0; overflow-wrap: anywhere; }
+.can-do-row { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 16px; }
+.can-do-marker { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--teal-soft); color: var(--teal-dark); }
+[data-state="independent"] .can-do-marker, [data-state="later"] .can-do-marker { background: var(--teal); color: white; }
+.can-do-card h3, .can-do-achievements h3 { font-size: .95rem; line-height: 1.4; margin: 0 0 6px; }
+.can-do-state { font-size: .8rem; font-weight: 650; margin: 0; line-height: 1.5; }
+.can-do-next { font-size: .75rem; color: var(--ink-soft); margin: 4px 0 0; line-height: 1.5; }
+.can-do-action { width: auto; padding: 8px 12px; font-size: .8rem; min-height: 44px; }
+.can-do-action:hover { background: var(--gold-soft); }
+.can-do-evidence { padding: 0 16px; border-top: 1px solid var(--line); font-size: .8rem; line-height: 1.6; }
+.can-do-history-note { font-size: .8rem; line-height: 1.5; margin: 0 16px 12px; }
+summary { cursor: pointer; min-height: 44px; padding-block: 12px; }
+summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; border-radius: 4px; }
 li { margin-bottom: .75rem; }
-ul { padding-inline-start: 1.2rem; }
-.can-do-rules { margin-top: .7rem; }
-.can-do-toggle { display: flex; align-items: center; gap: .6rem; min-height: 2.75rem; }
+ul, ol { padding-inline-start: 1.2rem; }
+.can-do-rules { margin-top: 12px; font-size: .85rem; line-height: 1.6; }
+.can-do-toggle { display: flex; align-items: center; gap: .6rem; min-height: 44px; font-size: .85rem; line-height: 1.5; cursor: pointer; }
 .can-do-toggle input { width: 1.2rem; height: 1.2rem; accent-color: #087545; }
+.can-do-toggle input:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
 .can-do-achievements { margin-top: .8rem; border: 2px solid #a47113; border-radius: 16px; padding: 1rem; background: #fff8df; }
+@media (max-width: 560px) {
+  .can-do-row { grid-template-columns: auto minmax(0, 1fr); gap: 10px; padding: 14px; }
+  .can-do-action { grid-column: 2; justify-self: start; }
+}
+@media (forced-colors: active) { .can-do-marker, .can-do-heading-icon, .can-do-start a { border: 1px solid ButtonText; } }
 </style>
