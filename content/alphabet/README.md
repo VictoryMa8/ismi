@@ -1,5 +1,10 @@
 # Alphabet inventory proposals — not publishable packs
 
+October 17 update: the owner-revised F28 text-only completion now has
+[full unreviewed draft packs](text-only/README.md). The technical proposals below
+remain historical inputs; F30 tracks acceptance/release and F09 recordings.
+The following October 16 zero-pack audit preceded the pinned preview publication.
+
 October 16, 2026. The owner initially chose reviewed packs with human audio, then
 subsequently directed publication despite absent human evidence. The exact
 [inventory-only preview exception](inventory-preview/README.md) is now authorized;

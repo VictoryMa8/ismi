@@ -16,18 +16,13 @@ renders inspected. Frontend `2421876` is pushed to `main` and Vercel Ready on
 the existing development URL. No API/database or curriculum change.
 [Behavior and verification](docs/scannable-plan-and-progress.md).
 
-**F28 — Five inventory previews published October 16:** following the owner's
-“just publish them” direction after notification of absent review/audio, the exact
-five Arabic-context/Khmer/French inventories are public as **unreviewed text-only
-previews**, all **v1**. They contain character forms and technical Unicode names;
-word examples, graded exercises and human audio remain absent. Application `ab2d456`
-is pushed/deployed, Vercel Ready and exact API revision verified. All 49 API tests,
-build and 18 focused alphabet/preview browser checks pass. Anonymous public manifests
-and frontend checksum verification pass. Only the alphabet table changed; all 16
-unrelated table hashes and persistent assets are preserved. **F28.1.2 is Done**;
-F28 stays Active for full reviewed packs, human audio and real device/AT/Safari gates.
-[Publication/audits/recovery](docs/alphabet-inventory-publication.md),
-[application](docs/alphabet-explorer.md).
+**F28 — Done October 17 for the owner-revised text-only scope:** explicit audio-free
+mode and five full unreviewed draft packs are complete locally. 143 basic entries,
+132 support entries, 434 examples/demonstrations and 550 visual activities; all 51 API
+tests, build and 24 alphabet browser checks pass. New changes are uncommitted and
+undeployed. Existing five exact v1 inventory-only previews retain their October 16
+publication; no new publication. Review/rights/access/release evidence moves to F30,
+human recordings to F09. [Scope and evidence](docs/alphabet-text-only-completion.md).
 
 **F24.8.1 — Done and deployed October 16:** owner reported lessons disappearing on language
 switches and requested Fattoush/Knafeh across languages plus distinct landing palettes.
@@ -180,8 +175,9 @@ with distinct gold completion/goal markers and factual session recaps. Build and
 19 targeted browser checks pass; [behavior and verification](docs/learner-satisfaction.md).
 Sound audition and optional recall pacing remain proposals.
 
-**Now:** F28’s shared alphabet application and five inventory-only text previews are deployed;
-reviewed full packs/examples/human audio and device/AT evidence remain open. The learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
+**Now:** F28 is Done for text-only implementation and full unreviewed drafts (new work local).
+The existing shared application/five inventory-only previews are deployed; F30 tracks
+content acceptance/access/release and F09 human recordings. The learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. F17.7 weekly quests/forgiving habits
 are complete and live-verified. F17.6 can-do cards/achievement are complete and deployed. F21 application `4545fea` is deployed, retaining F22's content. The first unit
 has three Everyday v3 and four v2 publications, with current art and verified
@@ -265,7 +261,8 @@ release and bulk authoring of units 2–12.
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 | [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
 | [F27.2](#f272-scannable-study-plan-and-can-do-progress) | Scannable study plan and can-do progress | Done · deployed | Frontend `2421876` Vercel Ready; build and 33 checks pass |
-| [F28](#f28-alphabet-explorer) | Alphabet explorer | Active · five inventory previews published | Reviewed full packs, examples/human audio and real device/AT/Safari evidence remain |
+| [F28](#f28-alphabet-explorer) | Alphabet explorer | Done · text-only implementation/drafts local | Review/release/access in F30; recordings in F09; existing v1 previews unchanged |
+| [F30](#f30-alphabet-content-acceptance-and-release) | Alphabet acceptance and release | Planned | Exact human/source acceptance, track controls and device/AT/Safari evidence |
 | [F29](#f29-privacy-policy-and-beta-version) | Privacy policy and beta version | Done · local | Public `#/privacy` page and Beta 0.0.1 label; not yet committed/deployed |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
@@ -1869,45 +1866,41 @@ curriculum changes. [Delivery evidence](docs/scannable-plan-and-progress.md#deli
 
 ### F28 Alphabet explorer
 
-**Status:** Active · application deployed October 16, 2026. Owner authorized
-implementation, push and deployment, then accepted private Khmer/French packs
-pending decisions/review, no microphone, unscored repeat-aloud and local evidence.
-**Outcome:** learners can explore letter appearance, hear names and contextual
-sounds, practice recognition/repeat-aloud production, and study two or three useful
-example words per basic letter in Arabic, Khmer and French. Arabic shares script
-forms while retaining separate Levantine/MSA/Quranic examples, audio and evidence.
-**Implemented:** Practice/Courses/placement entry, search/grid/detail, exact words
-and forms with Unicode-safe target markers, four practice types, separate versioned
-local evidence/resume, verified atomic audio/font downloads, availability/withdrawal
-reconciliation and owner-only versioned validate/approve/publish/rollback/audit flow.
-**Next:** obtain exact inventories,
-language/help/review/source/rights decisions and human recordings before approving
-real packs. MSA/Quranic publication remains blocked pending track-specific controls.
-**Done when:** F28.1–F28.6 pass, including full agreed basic inventories in all five
-course contexts, applicable forms, separate name/sound treatment, cleared examples
-and recordings, reviewed answer explanations, accessible practice and deterministic
-offline behavior. Synthetic test fixtures and an unavailable-content deployment do
-not complete F28. The inventory-only previews under F28.1.2 do not satisfy those full-pack criteria.
-**Depends on:** F24/F27/F03; F09/F13/F14/F25.1/F25.5/F26.1/F26.5 for content/audio.
-Supports F15/F25.3/F26.3 without completing their wider placement/module criteria.
-**Evidence:** [implementation, contract and remaining gates](docs/alphabet-explorer.md),
-[original design](docs/alphabet-explorer-plan.md). All 47 API tests, production build,
-12 alphabet browser checks and 21 navigation/course/palette/placement regressions pass.
-**Delivery:** application `ab2d456` pushed/deployed to the existing API/Vercel
-preview. Five pinned inventory-only records are published as v1 under the explicit
-unreviewed/text-only exception. Public labels/checksums pass and all unrelated hosted
-data/assets are preserved. [Exact records/recovery](docs/alphabet-inventory-publication.md).
-No reviewed full pack or human-audio publication is claimed.
+**Status:** Done · owner-revised text-only implementation and full unreviewed drafts,
+October 17, 2026; new changes local only.
+**Scope decision:** owner excluded human recordings and explicitly selected “finish
+text-only implementation and drafts; track review/release separately.” Metropolitan
+French is the alphabet reference only; F25's wider course definition remains open.
+This supersedes the original sound-ready completion criteria, preserved in the
+[original plan](docs/alphabet-explorer-plan.md). Remaining obligations are F30/F09,
+not waived or represented as completed human evidence.
+**Outcome:** five course contexts have complete proposed text-only draft coverage,
+forms/case pairs, contextual guidance, candidate examples, structured visual practice,
+private console preview, versioned device-local evidence and offline-capable application.
+**Done when:** five bounded unreviewed text-only packs cover their explicit proposed
+inventories, with two or three examples per basic entry, support demonstrations,
+shape/spot activities and rationales; privacy, review/rights gates, downloads/resume,
+Unicode targets and relevant automated/browser checks pass. All criteria met.
+**Evidence:** [implementation, scope, verification and delivery](docs/alphabet-text-only-completion.md),
+[five drafts and exact hashes](content/alphabet/text-only/README.md). All 51 API tests,
+production build and 24 alphabet browser checks pass. 143 basic/132 support entries,
+434 examples/demonstrations and 550 visual activities. Actual review remains absent.
+**Delivery:** the October 17 changes are local, uncommitted and undeployed; draft files
+are importable in the owner console and have not been imported into an owner/hosted
+DB. The recorded public baseline is application `ab2d456` with the five pinned v1
+inventory-only previews published October 16. No new publication or live-host
+verification is claimed. [Existing rollout/audits](docs/alphabet-inventory-publication.md).
+**Next:** F30 acceptance/access/release and F09 recordings proceed as separate work.
+No beta eligibility or sound-ready claim follows from this text-only completion.
 
 #### F28.1 Shared explorer, content model and gates
 
-**Status:** Active · application deployed; real content/access evidence remains.
-**Scope:** grid/detail UX, versioned inventory/course packs, validation, owner console,
-public manifests and authorized recording access; reuse shared course metadata.
-**Next:** shared application is implemented/tested; accept actual inventory/form/content decisions and reviewed evidence before pack approval.
-**Done when:** forms, context-dependent sounds and unavailable packs render honestly;
-drafts/assets remain private and source/review/rights gates are enforced with audits.
-**Depends on:** F24/F27/F03; [design and acceptance detail](docs/alphabet-explorer-plan.md).
+**Status:** Done · shared application plus explicit text-only contract.
+**Scope:** grid/detail, versioned manifests, owner workflow, visual-only validation,
+private drafts and public projection; existing audio mode remains supported.
+**Evidence:** [text-only completion](docs/alphabet-text-only-completion.md).
+Text-only mode excludes recordings and sound activities while preserving actual
+review/source/rights/track gates. Existing exact preview pins remain unchanged.
 
 ##### F28.1.1 Shared application candidate
 
@@ -1920,7 +1913,8 @@ text, activities, identity/course separation, offline replacement and withdrawal
 regressions pass; [behavior and limits](docs/alphabet-explorer.md).
 **Delivery:** `5bbf861` pushed/deployed; live entry/API/privacy pass and hosted data
 preservation is verified. [Rollout](docs/releases/2026-10-16-alphabet.md). No real pack publication.
-Parent F28.1/F28.5/F28.6 remain open for accepted content and real device/AT/Safari checks.
+October 17: parent completion was revised to text-only implementation/drafts;
+remaining acceptance and physical-device checks are tracked in F30.
 
 ##### F28.1.2 Inventory-only preview publication
 
@@ -1930,7 +1924,7 @@ unreviewed text-only previews, without fabricated review, audio, words or grades
 **Authorization:** owner said “just publish them” after being informed reviewers and
 recordings were absent; this supersedes the earlier reviewed-only selection for
 these exact development previews. Normal full-pack and beta gates stay in place.
-**Next:** normal reviewed full packs and human audio remain with the parent; do
+**Next:** normal reviewed full packs and human audio are tracked in F30/F09; do
 not broaden the exact preview exception to changed text or beta content.
 **Done when:** exact five v1 manifests and unreviewed/no-audio labels are public,
 missing controls remain unavailable, downloads pass and unrelated data is preserved.
@@ -1939,61 +1933,50 @@ missing controls remain unavailable, downloads pass and unrelated data is preser
 revision 3. Public notices/checksums and preservation of all 16 unrelated tables/
 assets pass. [Exact hashes/audits](content/alphabet/inventory-preview/publication.json).
 
-#### F28.2 Arabic explorer packs
+#### F28.2 Arabic explorer draft packs
 
-**Status:** Planned.
-**Scope:** shared script forms and three separate Levantine/MSA/Quranic teaching packs.
-**Next:** pin basic letters/support inventory and exact course examples/audio sources.
-**Done when:** each pack meets agreed coverage, applicable joining forms, names/sounds,
-2–3 cleared words per basic letter and reviewed clips/rationales; Quran text remains
-unchanged and track-specific review/rights/publication restrictions are enforced.
-**Depends on:** F28.1, F09/F13/F14; [pack gates](docs/alphabet-explorer-plan.md).
+**Status:** Done · unreviewed drafts only.
+**Scope:** shared 28-letter script inventory and 17 support entries in each of
+Levantine/MSA/Quranic contexts, separate contextual guidance, candidate words and
+visual activities. Ordinary Quranic-course decoding examples contain no scripture.
+**Evidence:** [draft coverage/hashes](content/alphabet/text-only/README.md).
+Human acceptance and MSA/Quranic publication controls remain in F30; audio in F09.
 
-#### F28.3 Khmer explorer pack
+#### F28.3 Khmer explorer draft pack
 
-**Status:** Planned.
-**Scope:** consonants, series, vowels/signs and common subscript combinations tied
-to familiar words, without a mandatory alphabet prerequisite.
-**Next:** fluent reviewer selects exact inventory/help; record text/audio rights separately.
-**Done when:** full agreed coverage has accepted forms, contextual sounds, examples,
-recordings and rationales; combining text/highlights preserve the approved strings.
-**Depends on:** F28.1, F26.1 and applicable F26.5 recording decisions;
-supports F26.3. [Pack gates](docs/alphabet-explorer-plan.md).
-The exact-five F26.2.1 preview exception does not cover these new records.
+**Status:** Done · unreviewed draft only.
+**Scope:** proposed 33 consonants plus 49 vowel/sign/subscript support entries,
+series notes, examples and visual activities; constructed demonstrations are labeled.
+**Evidence:** [draft coverage/hashes](content/alphabet/text-only/README.md).
+Exact final inventory/help acceptance remains in F30; no mandatory alphabet gate.
 
-#### F28.4 French explorer pack
+#### F28.4 French explorer draft pack
 
-**Status:** Planned.
-**Scope:** upper/lowercase letters plus separately grouped accents/cedilla/ligatures
-and selected common sound/spelling combinations.
-**Next:** resolve F25.1 variety/review route and pin inventory, words and audio rights.
-**Done when:** full agreed coverage distinguishes names, contextual sounds and silent
-letters with accepted examples/audio/rationales and exact accent-preserving text.
-**Depends on:** F28.1, F25.1 and applicable F25.5 recording decisions;
-supports F25.3. [Pack gates](docs/alphabet-explorer-plan.md).
+**Status:** Done · unreviewed draft only.
+**Scope:** Metropolitan French alphabet reference, 26 case pairs plus 32
+accent/cedilla/ligature/combination/silent-letter support entries, examples and visual
+activities. This does not authorize the F25 conversation curriculum.
+**Evidence:** [draft coverage/hashes](content/alphabet/text-only/README.md).
+Exact linguistic/source acceptance remains in F30; human audio in F09.
 
 #### F28.5 Practice, downloads and separate evidence
 
-**Status:** Active · application deployed; real content/access evidence remains.
-**Scope:** shape/listening recognition, word spotting, unscored repeat-aloud practice,
-complete offline packs and per-identity/course/version evidence.
-**Next:** application behavior passes synthetic API/browser checks; verify complete real packs and supported real browsers after content acceptance.
-**Done when:** offline reload/practice and identity separation pass; incomplete updates
-retain prior complete packs; audio stops on switches; viewed course, started lessons
-and primary allocation stay independent. Listening/self-check results are distinct.
-**Depends on:** F28.1 plus each ready content pack; [gates](docs/alphabet-explorer-plan.md).
+**Status:** Done · text-only application scope.
+**Scope:** shape/word spotting, verified atomic downloads, offline visual practice,
+per-identity/course/version evidence and resume; full audio mode retains four activities.
+**Evidence:** all 24 focused browser checks pass, including audio-mode regressions,
+text-only offline reload/practice/resume, identity/course boundaries and withdrawal.
+Real draft preview has no saved learner evidence; synthetic accepted fixtures alone
+exercise publication transport. [Limits](docs/alphabet-text-only-completion.md).
 
-#### F28.6 Accessibility, verification and authorized delivery
+#### F28.6 Automated access and candidate verification
 
-**Status:** Active · application deployed; real content/access evidence remains.
-**Scope:** per-pack content/access/offline checks, real device/AT evidence and separately
-authorized publication/deployment with recovery records.
-**Next:** collect real device/AT/Safari and per-pack content/audio evidence. Application delivery and automated checks pass; linked above.
-**Done when:** small screens/enlarged text, keyboard/focus, mixed direction, actual
-AT, supported-browser offline/reconnection and content privacy/withdrawal checks
-pass; exact approved content and any authorized releases have linked evidence.
-**Depends on:** F28.1/F28.5 and each affected pack; [matrix](docs/alphabet-explorer-plan.md).
-Ready packs can proceed separately; unfinished packs leave the parent open.
+**Status:** Done · automated candidate scope; actual device/AT/release moved to F30.
+**Scope:** 320 px/enlarged text, keyboard/focus/Escape, mixed-script exact targets,
+private/full-pack previews, public-content preservation and offline checks.
+**Evidence:** [51 API tests, build and 24 browser checks](docs/alphabet-text-only-completion.md).
+Arabic/Khmer enlarged screenshots visually inspected. No physical device,
+VoiceOver/TalkBack or Safari acceptance claim; no October 17 rollout.
 
 ### F29 Privacy policy and beta version
 
@@ -2004,6 +1987,27 @@ sourced from `i-web/package.json` (`0.0.1`), shown as "Beta 0.0.1".
 **Evidence:** linked from the landing footer and Account; production build passes.
 **Limits:** update the policy before F11 speaking, F16 deletion or any analytics
 ship; it is not legal review. Commit/deploy needs owner authorization.
+
+### F30 Alphabet content acceptance and release
+
+**Status:** Planned · explicit October 17 follow-up split from F28; no human evidence yet.
+**Outcome:** turn F28's unreviewed text-only candidates into accepted, source-cleared
+course-specific packs and verify an authorized release. Sound-ready packs additionally
+require F09 recordings; text-only completion does not claim pronunciation assessment.
+**Next:** designate reviewers and disposition exact proposed inventories/help, words,
+contextual notes, answer rationales and sources. No reviewer contact/hiring or spending
+is authorized. Record acceptance separately for each course and saved version.
+**Done when:** exact accepted coverage/text/rights pass; MSA/Quranic track controls
+exist before their publication; keyboard/enlarged text plus physical-device/actual
+VoiceOver or TalkBack/Safari offline-reconnection evidence pass; any separately
+authorized publication/deployment has exact versions/audits/recovery evidence.
+Existing source/integrity, accessibility and beta gates remain in force. Audio-ready
+claims require actual reviewed human recordings with transcripts/rights through F09.
+**Depends on:** F28, F09/F13/F14 and applicable F25/F26 content decisions.
+**Evidence:** [remaining boundary](docs/alphabet-text-only-completion.md),
+[original full-pack design](docs/alphabet-explorer-plan.md).
+**Delivery:** no newly accepted pack, changed publication or release is claimed.
+The exact-five October 16 unreviewed inventory-only exception does not cover these drafts.
 
 ## Selected future implementation order
 
@@ -2038,11 +2042,19 @@ Portuguese is eventual expansion direction, not a new implemented course or beta
 F28 implementation, push and deployment were subsequently authorized October 16.
 The owner accepted the recommended first-version defaults and private Khmer/French
 packs pending choices/review. Shared application/practice/offline is deployed.
-Remaining order: reviewed complete Levantine/Khmer packs → separately gated
-MSA/Quranic/French packs → per-pack verification and any authorized delivery.
+October 17: F28 text-only implementation/full drafts are Done locally under the
+owner-revised scope. F30 now tracks accepted packs, track controls, device/AT/Safari
+checks and any separately authorized delivery; F09 retains human recordings.
 [Alphabet explorer plan](docs/alphabet-explorer-plan.md).
 
 ## Recent planning changes
+
+- **October 17, 2026 F28/F30:** owner revised completion to text-only implementation
+  and full unreviewed drafts, explicitly splitting human review/release/access evidence.
+  F28 Done locally; five draft packs, explicit visual-only mode, 51 API tests, build
+  and 24 focused browser checks pass. Metropolitan French selected for alphabet only.
+  F30 retains acceptance/release gates; F09 recordings. No new publication/deployment.
+  [Evidence](docs/alphabet-text-only-completion.md).
 
 - **October 17, 2026 F27.2:** Today plan and can-do progress redesigned around
   compact rows, clear next actions and expandable detail. Unavailable recall
@@ -2070,20 +2082,3 @@ MSA/Quranic/French packs → per-pack verification and any authorized delivery.
   colors. Bounded fixes are deployed as `0623273`; build and all 23 focused browser
   checks pass. Live switching, five Khmer entries, shared guides and colors verified;
   [evidence](docs/multi-language/switching-and-identity.md). No curriculum text change.
-
-- **October 16, 2026 F26:** owner authorized implementation and selected Cambodian/
-  Phnom Penh, twelve units/sixty lessons, optional script and draft-now/fluent-review-
-  before-publication. Five first-unit candidates imported locally (27–31), with
-  truthful pending review/rights, private preview and optional script support.
-  API 40/40, build and 11 distinct focused browser checks pass across runs; all
-  13 local published payloads preserved. [Evidence](docs/khmer/README.md).
-  Owner-authorized application `57b7898` is pushed/deployed: Vercel Ready, exact API
-  revision and all 15 hosted table hashes/13 published payloads/assets preserved.
-  [Rollout](docs/releases/2026-10-16-khmer-drafts.md). Reviewer/audio/pilot and units
-  2–12 remain. Subsequent lesson-publication request: all five imported privately
-  into hosted console (24–28); strict validation reports missing review/rights
-  records. Owner explicitly approved the exact-five exception; application `30ea724`
-  deployed and all five v1 previews published, retaining pending review/rights and
-  no human audio. F26.2.1 Done: API 41/41, build, 10 focused browser checks and live
-  course/lesson labels pass; 13 Arabic publications and existing data/assets preserved.
-  [Publication evidence](docs/khmer/text-preview-publication.md).

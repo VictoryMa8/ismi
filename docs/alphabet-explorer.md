@@ -5,7 +5,13 @@ accepted the planned defaults: reviewed playback and unscored repeat-aloud pract
 no microphone access, device-local evidence, and private Khmer/French packs until
 inventory/help/variety choices and fluent review are recorded.
 
-**The application is implemented and deployed; F28 as a whole remains Active.**
+**October 17 scope update:** F28 now completes text-only implementation and full
+unreviewed drafts, as explicitly selected by the owner. [Completion evidence and
+separate review/release work](alphabet-text-only-completion.md). The October 16
+sound-ready gates described below are retained as historical implementation context;
+F30 tracks remaining acceptance/release evidence and F09 retains recordings.
+
+**October 16 baseline: application implemented and deployed.**
 The original `5bbf861` rollout contained no alphabet publication. The subsequent
 owner-authorized `ab2d456` release publishes five inventory-only previews, explicitly
 unreviewed and text-only. [Exact scope, audits and recovery](alphabet-inventory-publication.md).

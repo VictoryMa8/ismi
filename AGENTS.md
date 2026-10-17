@@ -48,6 +48,14 @@ activities. This does not approve changed/additional packs, MSA/Quranic lessons,
 reviewed/sound-ready claims or beta inclusion. The normal full-pack review/audio path
 remains the target.
 
+On October 17 the owner revised F28 completion to text-only implementation and full
+unreviewed draft packs, excluding human recordings, and explicitly moved human
+review/publication and real-device/accessibility evidence to separate follow-ups.
+Metropolitan French is selected for the alphabet pack only, not the entire F25
+course definition. This does not authorize changed/additional preview publication
+or fabricate review/rights acceptance. Keep the five exact existing preview pins
+and normal publication/beta gates intact; current delivery belongs in ROADMAP.md.
+
 ## Primary audience and promise
 
 - First users are false beginners who already know enough Arabic for basic questions or directions.

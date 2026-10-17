@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <Content Include="Fixtures/*.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../content/alphabet/text-only/*.pack.json" Link="alphabet-text-only/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

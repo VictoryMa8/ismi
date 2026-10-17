@@ -1,0 +1,62 @@
+[
+  {
+    "courseId": "french",
+    "file": "french.pack.json",
+    "sha256": "19d35953669be2b2e8a3211862abc2c5960a13866e63dd7053b8a0dc1bf15382",
+    "basicEntries": 26,
+    "supportEntries": 32,
+    "examples": 84,
+    "activities": 116,
+    "reviewed": false,
+    "published": false,
+    "humanRecordings": 0
+  },
+  {
+    "courseId": "khmer",
+    "file": "khmer.pack.json",
+    "sha256": "d0cd0b64d5420db0cd47d2ac88c3dbffbe208acef31c92c49d2123d620980909",
+    "basicEntries": 33,
+    "supportEntries": 49,
+    "examples": 131,
+    "activities": 164,
+    "reviewed": false,
+    "published": false,
+    "humanRecordings": 0
+  },
+  {
+    "courseId": "levantine",
+    "file": "levantine.pack.json",
+    "sha256": "ca647c562d944ede574f73d6981d1fe44e44157ca923503fe832e2a263d71489",
+    "basicEntries": 28,
+    "supportEntries": 17,
+    "examples": 73,
+    "activities": 90,
+    "reviewed": false,
+    "published": false,
+    "humanRecordings": 0
+  },
+  {
+    "courseId": "msa",
+    "file": "msa.pack.json",
+    "sha256": "c972ffc5b7d9f11eee75797f4b3e804a9aa261037ce3ff100f23b03dcea47725",
+    "basicEntries": 28,
+    "supportEntries": 17,
+    "examples": 73,
+    "activities": 90,
+    "reviewed": false,
+    "published": false,
+    "humanRecordings": 0
+  },
+  {
+    "courseId": "quranic",
+    "file": "quranic.pack.json",
+    "sha256": "6e6f584049c9093f6541a842489c39e4cda3f7d649df8143b935348363b10a0a",
+    "basicEntries": 28,
+    "supportEntries": 17,
+    "examples": 73,
+    "activities": 90,
+    "reviewed": false,
+    "published": false,
+    "humanRecordings": 0
+  }
+]

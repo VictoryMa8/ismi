@@ -138,7 +138,7 @@ async function download() {
   try {
     await downloadAlphabet(p)
     if (token !== epoch) return
-    downloaded.value = p; status.value = p.publicationNotice ? 'Downloaded · text and forms.' : 'Downloaded · text, practice and all model recordings.'
+    downloaded.value = p; status.value = p.textOnly ? 'Downloaded · text, forms and visual practice.' : p.publicationNotice ? 'Downloaded · text and forms.' : 'Downloaded · text, practice and all model recordings.'
   } catch (caught) { if (token === epoch) error.value = `Alphabet download failed. Previous download retained. ${caught instanceof Error ? caught.message : ''}` }
   finally { saving.value = false }
 }
@@ -231,11 +231,12 @@ onBeforeUnmount(() => { epoch++; closePractice(true); document.removeEventListen
     <p v-if="status" role="status">{{ status }}</p>
     <div v-if="!busy && !pack" class="alphabet-empty">
       <BookOpen :size="36" aria-hidden="true" /><h2>No alphabet pack published yet</h2>
-      <p>Letters, examples and human recordings will appear after review and publication.</p>
+      <p>Alphabet content will appear after review and publication.</p>
       <BackControl href="#/courses">Browse courses</BackControl>
     </div>
     <template v-if="pack">
       <p v-if="pack.publicationNotice" class="alphabet-notice"><strong>{{ pack.publicationNotice.title }}</strong><br />{{ pack.publicationNotice.detail }}</p>
+      <p v-if="pack.textOnly" class="alphabet-notice">Text only · no recordings. Practice covers visual recognition, not listening or pronunciation.</p>
       <div class="alphabet-toolbar">
         <span>{{ pack.variety }} · Version {{ pack.version }}</span>
         <button v-if="!previewPack" type="button" class="primary-action" :disabled="saving || currentDownloaded" @click="download"><Download :size="18" aria-hidden="true" />{{ saving ? 'Downloading…' : currentDownloaded ? 'Downloaded' : 'Download alphabet' }}</button>
@@ -267,7 +268,7 @@ onBeforeUnmount(() => { epoch++; closePractice(true); document.removeEventListen
         <p v-if="entry.soundContext"><strong>Sound context:</strong> {{ entry.soundContext }}</p><p v-if="entry.soundAudio.transcript">Sound transcript: <span v-bind="textAttributes(courseId)">{{ entry.soundAudio.transcript }}</span></p>
         <div class="alphabet-forms"><div v-for="f in scriptEntry?.forms" :key="f.label"><strong>{{ f.label }}</strong><span v-bind="textAttributes(courseId)">{{ f.text }}</span><small>{{ f.note }}</small></div></div>
         <h3 v-if="entry.examples.length">Words</h3>
-        <div class="alphabet-examples"><article v-for="w in entry.examples" :key="w.id"><p class="alphabet-word" v-bind="textAttributes(courseId)"><AlphabetWord :text="w.text" :target="w.target" :occurrences="w.occurrences" /></p><p><strong>{{ w.meaning }}</strong></p><p>{{ w.help }}</p><p>Find <bdi v-bind="textAttributes(courseId)">{{ w.target }}</bdi> · {{ w.occurrences.length }} {{ w.occurrences.length === 1 ? 'occurrence' : 'occurrences' }}.</p><p>{{ w.note }}</p><button type="button" class="secondary-action" data-ui-sound="silent" :aria-label="`Play word: ${w.meaning}`" @click="play(w.audio.url)"><Volume2 :size="18" aria-hidden="true" />Play word</button></article></div>
+        <div class="alphabet-examples"><article v-for="w in entry.examples" :key="w.id"><p class="alphabet-word" v-bind="textAttributes(courseId)"><AlphabetWord :text="w.text" :target="w.target" :occurrences="w.occurrences" /></p><p><strong>{{ w.meaning }}</strong></p><p>{{ w.help }}</p><p>Find <bdi v-bind="textAttributes(courseId)">{{ w.target }}</bdi> · {{ w.occurrences.length }} {{ w.occurrences.length === 1 ? 'occurrence' : 'occurrences' }}.</p><p>{{ w.note }}</p><button v-if="w.audio.url" type="button" class="secondary-action" data-ui-sound="silent" :aria-label="`Play word: ${w.meaning}`" @click="play(w.audio.url)"><Volume2 :size="18" aria-hidden="true" />Play word</button></article></div>
         <button v-if="entry.activities.length" type="button" class="primary-action" @click="begin()">Practice this letter</button>
         <details><summary>Sources and version</summary><p>{{ pack.inventoryId }} v{{ pack.inventoryVersion }} · {{ pack.helpConvention }}</p><ul><li v-for="s in pack.sources.filter(s => entry?.sourceIds.includes(s.id) || entry?.examples.some(w => w.sourceIds.includes(s.id)))" :key="s.id">{{ s.citation }} · {{ s.locator }} · {{ s.version }}</li></ul><details v-if="pack.licenseText"><summary>Unicode license</summary><pre class="alphabet-license">{{ pack.licenseText }}</pre></details></details>
       </article>
@@ -275,7 +276,7 @@ onBeforeUnmount(() => { epoch++; closePractice(true); document.removeEventListen
     <dialog ref="dialog" class="alphabet-practice" aria-labelledby="alphabet-practice-title" @cancel.prevent="closePractice()">
       <header><span>{{ course.name }} · {{ finished ? 'Practice recap' : `${activityIndex + 1} of ${practice.length}` }}</span><button type="button" class="secondary-action" @click="closePractice()">Close practice</button></header>
       <LessonScroll>
-        <template v-if="finished"><h2 id="alphabet-practice-title" tabindex="-1">Practice complete</h2><p>{{ results.length }} activities tried.</p><p>{{ results.filter(r => r.correct === true && r.answers.length === 1 && !r.help).length }} recognition answers without help or retries.</p><p>{{ results.filter(r => r.selfChecked).length }} sound self-checks · unscored.</p><p v-if="results.some(r => r.correct === false || r.answers.length > 1 || r.help)">Revisit entries where you used help or another try.</p></template>
+        <template v-if="finished"><h2 id="alphabet-practice-title" tabindex="-1">Practice complete</h2><p>{{ results.length }} activities tried.</p><p>{{ results.filter(r => r.correct === true && r.answers.length === 1 && !r.help).length }} recognition answers without help or retries.</p><p v-if="!pack?.textOnly">{{ results.filter(r => r.selfChecked).length }} sound self-checks · unscored.</p><p v-if="results.some(r => r.correct === false || r.answers.length > 1 || r.help)">Revisit entries where you used help or another try.</p></template>
         <template v-else-if="current">
           <h2 id="alphabet-practice-title" tabindex="-1">{{ kindName[current.activity.kind] }}</h2><p>{{ current.activity.prompt }}</p>
           <p v-if="practiceExample" class="alphabet-word" v-bind="textAttributes(courseId)"><AlphabetWord :text="practiceExample.text" :target="practiceExample.target" :occurrences="help || feedback ? practiceExample.occurrences : []" /></p>

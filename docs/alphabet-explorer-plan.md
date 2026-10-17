@@ -9,6 +9,11 @@ unscored repeat-aloud practice and device-local evidence. See the
 [implemented application and remaining content gates](alphabet-explorer.md).
 Historical authorization statements below describe the original planning request.
 
+October 17: the owner explicitly revised completion to text-only implementation and
+full unreviewed drafts, moving review/release/access evidence to separate follow-ups.
+[Current completion scope](alphabet-text-only-completion.md) supersedes the original
+sound-ready completion conditions below; F30/F09 retain the deferred obligations.
+
 ## Goal and scope
 
 Give learners a freely accessible place to see a letter, hear its name and sounds,

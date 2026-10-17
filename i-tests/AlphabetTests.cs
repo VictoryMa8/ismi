@@ -131,4 +131,55 @@ public sealed class AlphabetTests : IDisposable
         Assert.False(v.Validate(p with { Entries=[e with { Activities=e.Activities.Select(a=>a with { Rationale="" }).ToArray() },p.Entries[1]] }).IsValid);
         Assert.False(v.Validate(p with { Entries=[e with { Examples=[w,w] },p.Entries[1]] }).IsValid);
     }
+
+    private static AlphabetPack TextFixture() {
+        var p = Fixture() with { EngineeringFixture = false, TextOnly = true };
+        AlphabetClip Empty(string transcript) => new("",transcript,"","","","","",false,false);
+        return p with { Entries = p.Entries.Select(e => e with {
+            NameAudio = Empty(e.Name), SoundAudio = Empty(""),
+            Examples = e.Examples.Select(w => w with { Audio = Empty(w.Text) }).ToArray(),
+            Activities = e.Activities.Where(a => a.Kind is "shape" or "spot").Select(a => a with { AudioUrl = null }).ToArray()
+        }).ToArray() };
+    }
+    [Fact] public async Task ReviewedTextOnlyPacksPublishWithoutAudioButKeepAllOtherGates() {
+        using var c = await Owner(); var p = TextFixture();
+        Assert.True(new AlphabetValidator().Validate(p).IsValid);
+        var d = await Save(c,p); d = await Command(c,d,"approve"); d = await Command(c,d,"publish");
+        var pub = (await c.GetFromJsonAsync<AlphabetPublicPack>($"/api/alphabet/packs/{p.Id}"))!;
+        Assert.True(pub.TextOnly); Assert.All(pub.Entries,e => Assert.All(e.Activities,a => Assert.Contains(a.Kind,new[]{"shape","spot"})));
+        Assert.Equal(64,pub.ContentHash.Length);
+        var validator = new AlphabetValidator();
+        foreach (var invalid in new[] { p with { Reviewer="" }, p with { Sources=[p.Sources[0] with { OfflineCleared=false }] },
+            p with { CourseId="msa" }, p with { CourseId="quranic" }, p with { TextOnly=false },
+            p with { Entries=[p.Entries[0] with { NameAudio=Fixture().Entries[0].NameAudio },p.Entries[1]] },
+            p with { Entries=[p.Entries[0] with { Activities=Fixture().Entries[0].Activities },p.Entries[1]] } }) Assert.False(validator.Validate(invalid).IsValid);
+    }
+    [Fact] public async Task FullTextDraftsHaveExactCoverageTargetsAndActivitiesButCannotBeApproved() {
+        using var c = await Owner(); var validator = new AlphabetValidator();
+        var inventories = new List<string>();
+        var counts = new Dictionary<string,int> { ["levantine"]=28,["msa"]=28,["quranic"]=28,["khmer"]=33,["french"]=26 };
+        foreach (var (course,count) in counts) {
+            var p=JsonSerializer.Deserialize<AlphabetPack>(File.ReadAllText(Path.Combine(AppContext.BaseDirectory,"alphabet-text-only",course+".pack.json")),Json)!;
+            Assert.True(AlphabetValidator.Bounded(p)); Assert.True(p.TextOnly); Assert.False(p.EngineeringFixture);
+            if(course is "levantine" or "msa" or "quranic") inventories.Add(JsonSerializer.Serialize(p.Inventory,Json));
+            Assert.Equal(count,p.Inventory.BasicEntryIds.Length); Assert.Equal(p.Entries.Length,p.Inventory.Entries.Length);
+            Assert.Equal(p.Entries.Length,p.Entries.Select(e=>e.Id).Distinct().Count());
+            Assert.All(p.Entries,e=> {
+                Assert.False(string.IsNullOrWhiteSpace(e.Name)); Assert.False(string.IsNullOrWhiteSpace(e.SoundContext));
+                Assert.InRange(e.Examples.Length,p.Inventory.BasicEntryIds.Contains(e.Id)?2:1,3);
+                Assert.All(e.Examples,w=>Assert.True(AlphabetValidator.ValidTargets(w),$"{course}/{e.Id}/{w.Text}/{w.Target}"));
+                Assert.Equal(new[]{"shape","spot"},e.Activities.Select(a=>a.Kind));
+            });
+            Assert.All(AlphabetService.Clips(p),clip=>{ Assert.Empty(clip.Url);Assert.False(clip.HumanRecording);Assert.Empty(clip.Reviewer); });
+            // Remove no review gate: authored coverage is complete, acceptance is absent.
+            var validation=validator.Validate(p); Assert.False(validation.IsValid);
+            Assert.All(validation.Errors,error=>Assert.True(error.Contains("linguistic review") || error.Contains("reviewed script inventory")
+                || error.Contains("rights are required") || error.Contains("track-specific"),error));
+            var d=await Save(c,p); Assert.Equal(HttpStatusCode.BadRequest,(await Cmd(c,d,"approve")).StatusCode);
+            Assert.Equal(HttpStatusCode.NotFound,(await c.GetAsync($"/api/alphabet/packs/{p.Id}")).StatusCode);
+            var preview=(await c.GetFromJsonAsync<AlphabetPublicPack>($"/api/admin/alphabet/packs/{p.Id}/preview/1"))!;
+            Assert.True(preview.TextOnly); Assert.Equal(p.Entries.Length,preview.Entries.Length);
+        }
+        Assert.Single(inventories.Distinct());
+    }
 }

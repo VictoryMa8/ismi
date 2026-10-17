@@ -19,7 +19,8 @@ public sealed record AlphabetEntry(string Id, string Name, string Help, string N
     AlphabetExample[] Examples, AlphabetActivity[] Activities);
 public sealed record AlphabetPack(string Id, string CourseId, string Title, string Variety, string HelpConvention,
     AlphabetInventory Inventory, AlphabetEntry[] Entries, AlphabetSource[] Sources,
-    string Reviewer, string ReviewEvidence, bool EngineeringFixture = false, AlphabetFont[]? Fonts = null);
+    string Reviewer, string ReviewEvidence, bool EngineeringFixture = false, AlphabetFont[]? Fonts = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault)] bool TextOnly = false);
 public sealed record AlphabetDraft(AlphabetPack Pack, long? ExpectedRevision = null);
 public sealed record AlphabetCommand(long ExpectedRevision, int Version, string Reason = "");
 public sealed record AlphabetValidation(bool IsValid, string[] Errors);
@@ -42,6 +43,7 @@ public sealed record AlphabetFont(string Url, string Hash);
 public sealed record AlphabetPublicationNotice(string Id, string Title, string Detail);
 public sealed record AlphabetPublicPack(string Id, string CourseId, int Version, string ContentHash, string Title,
     string Variety, string HelpConvention, string InventoryId, int InventoryVersion, string[] BasicEntryIds,
-    AlphabetScriptEntry[] ScriptEntries, AlphabetPublicEntry[] Entries, AlphabetPublicSource[] Sources, AlphabetFont[] Fonts, AlphabetPublicationNotice? PublicationNotice = null, string? LicenseText = null);
+    AlphabetScriptEntry[] ScriptEntries, AlphabetPublicEntry[] Entries, AlphabetPublicSource[] Sources, AlphabetFont[] Fonts, AlphabetPublicationNotice? PublicationNotice = null, string? LicenseText = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault)] bool TextOnly = false);
 public sealed record AlphabetCatalogItem(string CourseId, string? PackId, int? Version, string? ContentHash);
 public sealed record AlphabetCatalog(int SchemaVersion, AlphabetCatalogItem[] Courses, string[] WithdrawnIds);

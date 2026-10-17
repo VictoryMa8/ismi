@@ -43,7 +43,7 @@ onMounted(() => void run(async () => { summaries.value = await list(); create() 
 <template>
   <section class="alphabet-console" aria-labelledby="alphabet-console-heading">
     <h2 id="alphabet-console-heading">Alphabet packs</h2>
-    <p>Draft → validate → approve → publish. Review exact inventories, examples, answer rationales and human recordings. MSA and Quranic publication require further track controls.</p>
+    <p>Draft → validate → approve → publish. Review exact inventories, examples and answer rationales. Text-only packs use visual practice; audio packs also require reviewed human recordings. MSA and Quranic publication require further track controls.</p>
     <p v-if="error" role="alert" class="console-message error">{{ error }}</p><p v-if="notice" role="status" class="console-message success">{{ notice }}</p>
     <div class="alphabet-console-toolbar"><label>New pack course<select v-model="course" :disabled="busy"><option v-for="c in courses" :key="c.id" :value="c.id">{{ c.name }}</option></select></label><button type="button" class="secondary-action" :disabled="busy" @click="create">New alphabet draft</button><label>Import alphabet JSON<input type="file" accept=".json,application/json" :disabled="busy" @change="importJson" /></label></div>
     <ul><li v-for="s in summaries" :key="s.id"><button type="button" class="secondary-action" :disabled="busy" @click="load(s.id)">{{ s.title }} · {{ s.courseId }} · {{ s.status }} · v{{ s.latestVersion }}</button></li></ul>

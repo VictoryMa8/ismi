@@ -70,7 +70,7 @@ public sealed class AlphabetService(IsmiDbContext db, AlphabetValidator validato
     private async Task<AlphabetValidation> Validate(AlphabetVersion v, CancellationToken ct)
     {
         var result = validator.Validate(v.Pack); var errors = result.Errors.ToList();
-        foreach (var url in Clips(v.Pack).Select(c => c.Url).Distinct())
+        foreach (var url in Clips(v.Pack).Select(c => c.Url).Where(url => !v.Pack.TextOnly || !string.IsNullOrEmpty(url)).Distinct())
         {
             var path = recordings.Find(url);
             if (path is null) { errors.Add($"{url}: recording bytes are missing."); continue; }
@@ -122,7 +122,7 @@ public sealed class AlphabetService(IsmiDbContext db, AlphabetValidator validato
                 PublicClip(e.NameAudio), PublicClip(e.SoundAudio), e.Examples.Select(w => new AlphabetPublicExample(w.Id, w.Text,
                     w.Meaning, w.Help, w.Target, w.Occurrences, w.Note, w.SourceIds, PublicClip(w.Audio))).ToArray(), e.Activities)).ToArray(),
             p.Sources.Select(s => new AlphabetPublicSource(s.Id, s.Citation, s.Locator, s.Version)).ToArray(),
-            p.Fonts ?? [], v.TextPreview ? AlphabetTextPreviewPolicy.Notice : null, v.TextPreview ? AlphabetTextPreviewPolicy.LicenseText : null);
+            p.Fonts ?? [], v.TextPreview ? AlphabetTextPreviewPolicy.Notice : null, v.TextPreview ? AlphabetTextPreviewPolicy.LicenseText : null, p.TextOnly);
         // Clients verify the exact projected payload, excluding its own hash field.
         return result with { ContentHash = Hash(result) };
     }

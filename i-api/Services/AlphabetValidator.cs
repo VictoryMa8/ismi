@@ -48,9 +48,17 @@ public sealed class AlphabetValidator
                 && s.TextCleared && s.AdaptationCleared && s.OfflineCleared, $"{s.Id}: exact source/version and text/adaptation/offline rights are required.");
         void Sources(string[] ids, string label) => Need(ids.Length > 0 && ids.Distinct().Count() == ids.Length
             && ids.All(id => p.Sources.Any(s => s.Id == id)), $"{label}: link exact source records.");
-        void Clip(AlphabetClip c, string label) => Need(RecordingStore.IsUrl(c.Url) && Text(c.Transcript) && Text(c.Speaker)
+        void Clip(AlphabetClip c, string label) {
+            if (p.TextOnly) {
+                Need(!Text(c.Url) && !Text(c.Speaker) && !Text(c.Reviewer) && !Text(c.ReviewEvidence)
+                    && !Text(c.RightsEvidence) && !c.HumanRecording && !c.OfflineCleared,
+                    $"{label}: text-only packs cannot include recordings or audio acceptance claims.");
+                return;
+            }
+            Need(RecordingStore.IsUrl(c.Url) && Text(c.Transcript) && Text(c.Speaker)
             && c.Variety == p.Variety && Text(c.Reviewer) && Text(c.ReviewEvidence) && Text(c.RightsEvidence)
             && c.HumanRecording && c.OfflineCleared, $"{label}: a reviewed human recording, exact transcript, variety and offline rights are required.");
+        }
         foreach (var s in inv.Entries)
         {
             Need(Text(s.Text) && Text(s.Category) && s.Forms.Length > 0 && s.Forms.All(f => Text(f.Label) && Text(f.Text) && Text(f.Note)), $"{s.Id}: record category and applicable forms with context notes.");
@@ -69,10 +77,14 @@ public sealed class AlphabetValidator
                 Need(Text(w.Text) && Text(w.Meaning) && Text(w.Note) && w.Audio.Transcript == w.Text, $"{w.Id}: preserve exact word/transcript, meaning and contextual note.");
                 Need(ValidTargets(w), $"{w.Id}: target locators must cover every intended exact occurrence at Unicode text-element boundaries.");
             }
-            Need(Unique(e.Activities.Select(a => a.Id)) && new[] { "shape", "listening", "spot", "repeat" }.All(k => e.Activities.Any(a => a.Kind == k)), $"{e.Id}: include all four practice activities.");
+            var required = p.TextOnly ? new[] { "shape", "spot" } : new[] { "shape", "listening", "spot", "repeat" };
+            Need(Unique(e.Activities.Select(a => a.Id)) && required.All(k => e.Activities.Any(a => a.Kind == k)),
+                $"{e.Id}: include all {(p.TextOnly ? "visual" : "four")} practice activities.");
             foreach (var a in e.Activities)
             {
                 Need(new[] { "shape", "listening", "spot", "repeat" }.Contains(a.Kind) && Text(a.Prompt) && Text(a.Explanation) && Text(a.Rationale), $"{a.Id}: reviewed prompt, explanation and accepted-answer rationale required.");
+                Need(!p.TextOnly || a.Kind is "shape" or "spot" && a.AudioUrl is null,
+                    $"{a.Id}: text-only practice supports visual activities without audio only.");
                 Need(a.Kind == "repeat" ? a.Choices.Length == 0 && a.AcceptedIds.Length == 0
                     : a.Choices.Length >= 2 && Unique(a.Choices.Select(c => c.Id)) && a.Choices.All(c => Text(c.Text))
                         && a.Choices.Select(c => c.Text).Distinct().Count() == a.Choices.Length
