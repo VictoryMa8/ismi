@@ -257,6 +257,7 @@ release and bulk authoring of units 2–12.
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 | [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
 | [F28](#f28-alphabet-explorer) | Alphabet explorer | Active · five inventory previews published | Reviewed full packs, examples/human audio and real device/AT/Safari evidence remain |
+| [F29](#f29-privacy-policy-and-beta-version) | Privacy policy and beta version | Done · local | Public `#/privacy` page and Beta 0.0.1 label; not yet committed/deployed |
 
 **Status key:** Planned = unstarted; Active = authorized work in progress;
 Needs decision = a named choice prevents the next step; Needs input = external
@@ -1943,6 +1944,16 @@ AT, supported-browser offline/reconnection and content privacy/withdrawal checks
 pass; exact approved content and any authorized releases have linked evidence.
 **Depends on:** F28.1/F28.5 and each affected pack; [matrix](docs/alphabet-explorer-plan.md).
 Ready packs can proceed separately; unfinished packs leave the parent open.
+
+### F29 Privacy policy and beta version
+
+**Scope:** a public privacy page at `#/privacy` describing current behavior (guest
+local storage, account fields, essential cookies only, no voice/AI processing yet,
+Vercel/alwaysdata hosting, deletion by request until F16) and a single app version
+sourced from `i-web/package.json` (`0.0.1`), shown as "Beta 0.0.1".
+**Evidence:** linked from the landing footer and Account; production build passes.
+**Limits:** update the policy before F11 speaking, F16 deletion or any analytics
+ship; it is not legal review. Commit/deploy needs owner authorization.
 
 ## Selected future implementation order
 

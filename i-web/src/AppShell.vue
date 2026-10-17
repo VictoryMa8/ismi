@@ -8,10 +8,14 @@ import {
 } from 'vue';
 import LandingPage from './LandingPage.vue';
 import AppWelcome from './AppWelcome.vue';
-import { isLearnerRoute } from './routes';
+import { isLearnerRoute, isPrivacyRoute } from './routes';
+const PrivacyPolicy = defineAsyncComponent(() => import('./PrivacyPolicy.vue'));
 const LearnerApp = defineAsyncComponent(() => import('./App.vue'));
 const learner = ref(
   typeof window !== 'undefined' && isLearnerRoute(window.location.hash),
+);
+const privacy = ref(
+  typeof window !== 'undefined' && isPrivacyRoute(window.location.hash),
 );
 const welcomeOpen = ref(false);
 let welcomeHandled = false;
@@ -44,11 +48,18 @@ async function closeWelcome() {
   focusLearner();
 }
 async function routeChanged() {
-  const changed = learner.value !== isLearnerRoute(window.location.hash);
+  const changed =
+    learner.value !== isLearnerRoute(window.location.hash) ||
+    privacy.value !== isPrivacyRoute(window.location.hash);
   learner.value = isLearnerRoute(window.location.hash);
+  privacy.value = isPrivacyRoute(window.location.hash);
   if (changed) window.scrollTo(0, 0);
   if (learner.value) showWelcome();
   else welcomeOpen.value = false;
+  if (privacy.value) {
+    document.title = 'Privacy policy — Ismi';
+    return;
+  }
   if (!learner.value) {
     document.title = 'Ismi — Speak with the people you love';
     await nextTick();
@@ -75,6 +86,7 @@ onBeforeUnmount(() => window.removeEventListener('hashchange', routeChanged));
       ></Suspense
     >
   </div>
+  <PrivacyPolicy v-else-if="privacy" />
   <LandingPage v-else />
   <AppWelcome v-if="welcomeOpen" @close="closeWelcome" />
 </template>

@@ -14,6 +14,7 @@ import CharacterPortrait from './CharacterPortrait.vue';
 import { benefits, faqs } from './landing/content';
 import './landing/landing.css';
 import { courses } from './courses';
+import { appVersionLabel } from './version';
 const availableCourses = ref<string[]>([]);
 const previewCourses = ref<string[]>([]);
 onMounted(async () => {
@@ -380,7 +381,9 @@ onMounted(() => {
         >
         <p>Arabic for the conversations that matter.</p>
         <a href="#/account">Sign in</a
-        ><a href="#beta">Development preview · 18+</a><span>© 2026 Ismi</span>
+        ><a href="#beta">Development preview · 18+</a
+        ><a href="#/privacy">Privacy</a><span>{{ appVersionLabel }}</span
+        ><span>© 2026 Ismi</span>
       </footer>
     </div>
   </div>

@@ -2076,3 +2076,14 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 }
 
 .status-strip + .section-block { margin-top: 16px; }
+
+.account-legal {
+  margin: 4px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.account-guest {
+  margin-top: 16px;
+}

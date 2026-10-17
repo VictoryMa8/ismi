@@ -48,6 +48,7 @@ import CharacterCast from './CharacterCast.vue';
 import CharacterCue from './CharacterCue.vue';
 import CharacterPortrait from './CharacterPortrait.vue';
 import { isLearnerRoute } from './routes';
+import { appVersionLabel } from './version';
 import { evaluateOffline } from './evaluation';
 import { installUiSounds, playUiSound } from './uiSounds';
 import {
@@ -1886,6 +1887,7 @@ async function finishLesson() {
           </form>
 
           <BackControl
+            class="account-guest"
             :disabled="accountSubmitting || studySettings.busy.value"
             @click="closeAccount"
           >
@@ -1902,6 +1904,9 @@ async function finishLesson() {
             <p>Lesson audio stays on.</p>
           </div>
         </section>
+        <p class="account-legal">
+          <a href="#/privacy">Privacy policy</a> · {{ appVersionLabel }}
+        </p>
       </section>
     </main>
 
