@@ -17,10 +17,11 @@ the existing development URL. No API/database or curriculum change.
 [Behavior and verification](docs/scannable-plan-and-progress.md).
 
 **F28 — Done October 17 for the owner-revised text-only scope:** explicit audio-free
-mode and five full unreviewed draft packs are complete locally. 143 basic entries,
+mode and five full unreviewed draft packs are complete. Application `fdd5c5f`
+is pushed/deployed to the existing API/Vercel development previews. 143 basic entries,
 132 support entries, 434 examples/demonstrations and 550 visual activities; all 51 API
-tests, build and 24 alphabet browser checks pass. New changes are uncommitted and
-undeployed. Existing five exact v1 inventory-only previews retain their October 16
+tests, build and 24 alphabet browser checks pass. Vercel Ready; exact API revision,
+all 17 hosted table/asset hashes and five pinned public preview manifests verified. Existing five exact v1 inventory-only previews retain their October 16
 publication; no new publication. Review/rights/access/release evidence moves to F30,
 human recordings to F09. [Scope and evidence](docs/alphabet-text-only-completion.md).
 
@@ -175,7 +176,8 @@ with distinct gold completion/goal markers and factual session recaps. Build and
 19 targeted browser checks pass; [behavior and verification](docs/learner-satisfaction.md).
 Sound audition and optional recall pacing remain proposals.
 
-**Now:** F28 is Done for text-only implementation and full unreviewed drafts (new work local).
+**Now:** F28 is Done for text-only implementation and full unreviewed drafts;
+application `fdd5c5f` is pushed/deployed, with drafts unpublished.
 The existing shared application/five inventory-only previews are deployed; F30 tracks
 content acceptance/access/release and F09 human recordings. The learner/offline foundation, learned-word glossary, guided teaching, manual and scheduled review/checkpoints,
 characters, and landing/welcome are implemented. F17.7 weekly quests/forgiving habits
@@ -261,7 +263,7 @@ release and bulk authoring of units 2–12.
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 | [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
 | [F27.2](#f272-scannable-study-plan-and-can-do-progress) | Scannable study plan and can-do progress | Done · deployed | Frontend `2421876` Vercel Ready; build and 33 checks pass |
-| [F28](#f28-alphabet-explorer) | Alphabet explorer | Done · text-only implementation/drafts local | Review/release/access in F30; recordings in F09; existing v1 previews unchanged |
+| [F28](#f28-alphabet-explorer) | Alphabet explorer | Done · application deployed; full drafts unpublished | Review/release/access in F30; recordings in F09; existing v1 previews unchanged |
 | [F30](#f30-alphabet-content-acceptance-and-release) | Alphabet acceptance and release | Planned | Exact human/source acceptance, track controls and device/AT/Safari evidence |
 | [F29](#f29-privacy-policy-and-beta-version) | Privacy policy and beta version | Done · local | Public `#/privacy` page and Beta 0.0.1 label; not yet committed/deployed |
 
@@ -1867,7 +1869,7 @@ curriculum changes. [Delivery evidence](docs/scannable-plan-and-progress.md#deli
 ### F28 Alphabet explorer
 
 **Status:** Done · owner-revised text-only implementation and full unreviewed drafts,
-October 17, 2026; new changes local only.
+October 17, 2026; application `fdd5c5f` pushed/deployed, full drafts unpublished.
 **Scope decision:** owner excluded human recordings and explicitly selected “finish
 text-only implementation and drafts; track review/release separately.” Metropolitan
 French is the alphabet reference only; F25's wider course definition remains open.
@@ -1885,11 +1887,12 @@ Unicode targets and relevant automated/browser checks pass. All criteria met.
 [five drafts and exact hashes](content/alphabet/text-only/README.md). All 51 API tests,
 production build and 24 alphabet browser checks pass. 143 basic/132 support entries,
 434 examples/demonstrations and 550 visual activities. Actual review remains absent.
-**Delivery:** the October 17 changes are local, uncommitted and undeployed; draft files
-are importable in the owner console and have not been imported into an owner/hosted
-DB. The recorded public baseline is application `ab2d456` with the five pinned v1
-inventory-only previews published October 16. No new publication or live-host
-verification is claimed. [Existing rollout/audits](docs/alphabet-inventory-publication.md).
+**Delivery:** application `fdd5c5f` is pushed/deployed to the existing API/Vercel
+previews; Vercel Ready with stable aliases and exact healthy API revision verified.
+All 17 hosted table/asset hashes match and the five pinned v1 public preview hashes
+remain unchanged. Full draft files are committed/importable but have not been imported
+into an owner/hosted DB or published. [October 17 rollout/recovery](docs/alphabet-text-only-completion.md#authorized-rollout--october-17),
+[existing publication audits](docs/alphabet-inventory-publication.md).
 **Next:** F30 acceptance/access/release and F09 recordings proceed as separate work.
 No beta eligibility or sound-ready claim follows from this text-only completion.
 
@@ -1976,7 +1979,8 @@ exercise publication transport. [Limits](docs/alphabet-text-only-completion.md).
 private/full-pack previews, public-content preservation and offline checks.
 **Evidence:** [51 API tests, build and 24 browser checks](docs/alphabet-text-only-completion.md).
 Arabic/Khmer enlarged screenshots visually inspected. No physical device,
-VoiceOver/TalkBack or Safari acceptance claim; no October 17 rollout.
+VoiceOver/TalkBack or Safari acceptance claim. The authorized October 17 application
+rollout is verified separately; full drafts remain unpublished.
 
 ### F29 Privacy policy and beta version
 
@@ -2042,7 +2046,8 @@ Portuguese is eventual expansion direction, not a new implemented course or beta
 F28 implementation, push and deployment were subsequently authorized October 16.
 The owner accepted the recommended first-version defaults and private Khmer/French
 packs pending choices/review. Shared application/practice/offline is deployed.
-October 17: F28 text-only implementation/full drafts are Done locally under the
+October 17: F28 text-only implementation/full drafts are Done and application
+`fdd5c5f` is pushed/deployed under the
 owner-revised scope. F30 now tracks accepted packs, track controls, device/AT/Safari
 checks and any separately authorized delivery; F09 retains human recordings.
 [Alphabet explorer plan](docs/alphabet-explorer-plan.md).
@@ -2051,9 +2056,11 @@ checks and any separately authorized delivery; F09 retains human recordings.
 
 - **October 17, 2026 F28/F30:** owner revised completion to text-only implementation
   and full unreviewed drafts, explicitly splitting human review/release/access evidence.
-  F28 Done locally; five draft packs, explicit visual-only mode, 51 API tests, build
+  F28 Done; five draft packs, explicit visual-only mode, 51 API tests, build
   and 24 focused browser checks pass. Metropolitan French selected for alphabet only.
-  F30 retains acceptance/release gates; F09 recordings. No new publication/deployment.
+  F30 retains acceptance/release gates; F09 recordings. Owner-authorized `fdd5c5f`
+  pushed/deployed; API/Vercel Ready, 17 table/asset hashes and five pinned public
+  previews unchanged. Full drafts remain unpublished.
   [Evidence](docs/alphabet-text-only-completion.md).
 
 - **October 17, 2026 F27.2:** Today plan and can-do progress redesigned around

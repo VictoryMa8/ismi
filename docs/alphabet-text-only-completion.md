@@ -70,9 +70,9 @@ pedagogical adequacy or linguistic accuracy.
 
 ## Delivery and follow-ups
 
-F28 is Done for the owner-revised text-only implementation/draft scope, locally.
-This task has not committed, pushed, deployed or published these changes. The
-recorded public baseline remains October 16's five exact inventory-only v1 previews.
+F28 is Done for the owner-revised text-only implementation/draft scope. The
+subsequent owner-authorized rollout is recorded below. The published content baseline
+remains October 16's five exact inventory-only v1 previews.
 
 F30 tracks human inventory/text/help/answer acceptance, source dispositions,
 MSA/Quranic controls, physical-device/AT/Safari evidence and separately authorized
@@ -83,8 +83,33 @@ review, rights or beta gate is silently waived.
 ## Authorized rollout — October 17
 
 The owner subsequently requested push and deployment to the existing development
-preview. API connection preflight passes. Deployment will use the repository's
-clean-commit workflow, with database/application recovery and persistent-asset
-verification; frontend follows through the existing `main` Git integration. New
-text-only draft files remain unpublished. Exact revisions and delivery verification
-will be recorded after the release completes.
+preview. Application commit `fdd5c5feaa0e5cb43b5be32c9b04db73c221aa51` is pushed to
+`main` and deployed to the existing alwaysdata API. New text-only draft files remain
+unpublished; none was imported into the hosted owner database.
+
+`npm run deploy:api -- --check` verified the existing site and reusable SSH access.
+`npm run deploy:api` built the clean committed Release revision, retained application/
+SQLite recovery, restarted the site and verified exact healthy revision
+`1.0.0+fdd5c5feaa0e5cb43b5be32c9b04db73c221aa51`, assembly integrity, recordings and
+cookie keys. Recovery directory:
+`/home/ismi/ismi/deployments/20261017-065331-fdd5c5feaa0e`.
+
+Independent read-only aggregate snapshots before/after confirm all **17 table
+counts/logical hashes** and persistent recording/cookie-key hashes match, with SQLite
+integrity `ok`. Anonymous API checks confirm all five existing v1 inventory previews
+retain their exact pinned public hashes and unreviewed notice, no words/activities/
+audio, and anonymous admin access returns 401. Private aggregate evidence:
+`/private/tmp/ismi-f28-text-before.json`, `/private/tmp/ismi-f28-text-after.json`,
+`/private/tmp/ismi-f28-text-api-verification.json`.
+
+Frontend deployment `dpl_2AEeTc4XNiXdKRAupDnh6tqq1FcR`,
+[ismi-kb0r87zun-victorys-projects-c1cb4594.vercel.app](https://ismi-kb0r87zun-victorys-projects-c1cb4594.vercel.app),
+is **Ready**, matches the exact application commit and has the existing
+`ismi-arabic.vercel.app` / `ismi-ruby.vercel.app` aliases assigned.
+The Vercel connector returned a team-scope 403; the existing authorized CLI verifies
+the same project/team successfully. No provider/account/environment change was made.
+A subsequent documentation-only commit records this rollout; its frontend source
+is identical. API revision and curriculum state remain as verified above.
+
+This verifies application delivery and existing public inventory preservation,
+not release of the full draft packs or F30 human/accessibility acceptance.
