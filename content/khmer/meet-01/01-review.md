@@ -1,6 +1,6 @@
 # Greet someone
 
-Unreviewed F26 candidate · khmer-meet-01-01 · no publication approval or model audio.
+Unreviewed F26 candidate · khmer-meet-01-01 · text-only development-preview exception authorized separately; no linguistic approval or model audio.
 
 Your partner introduces you to a friend of a similar age at their home. Greet each other, introduce yourselves, then thank the host for welcoming you.
 

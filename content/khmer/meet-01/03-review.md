@@ -1,6 +1,6 @@
 # Get to know each other
 
-Unreviewed F26 candidate · khmer-meet-01-03 · no publication approval or model audio.
+Unreviewed F26 candidate · khmer-meet-01-03 · text-only development-preview exception authorized separately; no linguistic approval or model audio.
 
 At a small gathering, Alex is from America and Sam is from Phnom Penh. These are assigned practice details, not assumptions about you.
 

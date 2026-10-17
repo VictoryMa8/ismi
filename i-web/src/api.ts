@@ -222,6 +222,12 @@ export function approveCurriculumVersion(versionId: number): Promise<CurriculumV
   })
 }
 
+export function approveTextPreview(versionId: number): Promise<CurriculumVersionDetail> {
+  return request<CurriculumVersionDetail>(`/api/admin/curriculum/versions/${versionId}/approve-text-preview`, {
+    method: 'POST', body: '{}',
+  })
+}
+
 export function publishCurriculumVersion(versionId: number): Promise<CurriculumVersionDetail> {
   return request<CurriculumVersionDetail>(`/api/admin/curriculum/versions/${versionId}/publish`, {
     method: 'POST',

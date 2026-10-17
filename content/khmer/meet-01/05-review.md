@@ -1,6 +1,6 @@
 # Keep the exchange going
 
-Unreviewed F26 candidate · khmer-meet-01-05 · no publication approval or model audio.
+Unreviewed F26 candidate · khmer-meet-01-05 · text-only development-preview exception authorized separately; no linguistic approval or model audio.
 
 A different gathering: you are Sam and meet Alex at a friend’s home. Use earlier phrases in a changed role and clarify when needed.
 

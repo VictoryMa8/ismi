@@ -27,7 +27,7 @@ const feedbackHeading = ref<HTMLElement | null>(null)
 let generation = 0
 const question = computed(() => questions.value[answers.value.length - (feedback.value ? 1 : 0)])
 const currentAnswer = computed(() => answers.value.at(-1))
-const available = computed(() => props.lessons.some(l => (l.trackId ?? 'levantine') === props.courseId && l.reviewStatus !== 'demonstrative'))
+const available = computed(() => props.lessons.some(l => (l.trackId ?? 'levantine') === props.courseId && !l.publicationNotice && l.reviewStatus !== 'demonstrative'))
 const recommendationAvailable = computed(() => result.value?.recommendation
   && props.lessons.some(l => l.id === result.value?.recommendation?.lessonId && l.reviewStatus !== 'demonstrative'))
 async function focusHeading() {
@@ -63,7 +63,7 @@ async function start() {
   notice.value = ''
   questions.value = []; answers.value = []; help.value = false; selected.value = ''; feedback.value = false
   readingSupport.value = true; soundSupport.value = true
-  const candidates = props.lessons.filter(l => (l.trackId ?? 'levantine') === props.courseId && l.reviewStatus !== 'demonstrative')
+  const candidates = props.lessons.filter(l => (l.trackId ?? 'levantine') === props.courseId && !l.publicationNotice && l.reviewStatus !== 'demonstrative')
     .sort((a, b) => a.courseOrder - b.courseOrder || a.id.localeCompare(b.id)).slice(0, 3)
   const packages = []
   for (const item of candidates) {

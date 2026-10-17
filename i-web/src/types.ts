@@ -32,6 +32,7 @@ export type DashboardResponse = {
 }
 
 export type CourseLessonSummary = {
+  publicationNotice?: LessonPublicationNotice | null
   trackId?: string
   completedToday?: boolean
   characters?: LessonCast | null
@@ -121,7 +122,9 @@ export type LessonVocabulary = TargetText & {
   sourceLocators: string[]; teachingCardIndex: number
 }
 
+export type LessonPublicationNotice = { releaseId: string; label: string; details: string }
 export type LessonResponse = {
+  publicationNotice?: LessonPublicationNotice | null
   schemaVersion?: number
   contentReview?: { languageTag: string; variety: string; helpConvention: string; reviewer: string; reviewDisposition: string; rightsDisposition: string; criticalIssues: string[]; engineeringFixture?: boolean; sourceLanguages?: Record<string, string> }
   recall?: RecallTarget[] | null

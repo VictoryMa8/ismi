@@ -32,6 +32,7 @@ export default defineConfig({
         Database__Path: join(tmpdir(), `ismi-playwright-${process.pid}.db`),
         Recordings__Path: join(tmpdir(), `ismi-playwright-recordings-${process.pid}`),
         Curriculum__ApproverEmail: 'preview-owner@example.test',
+        Curriculum__AllowKhmerTextPreview: 'true',
         // Serial owner logins in the last specs exceed the production limit of 10 per minute.
         RateLimits__AuthPermitLimit: '100',
       },

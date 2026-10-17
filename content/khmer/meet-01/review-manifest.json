@@ -3,20 +3,20 @@
   "feature": "F26",
   "unitId": "khmer-meet-01",
   "date": "2026-10-16",
-  "status": "unreviewed-draft",
+  "status": "unreviewed-text-preview-authorized",
   "ownerDecisions": {
     "variety": "cambodian-phnom-penh",
     "targetUnits": 12,
     "newLessonsPerUnit": 5,
     "optionalScript": true,
-    "route": "Draft now; designate fluent Khmer reviewer before publication."
+    "route": "Owner authorized exact five unreviewed text-only development-preview lessons October 16; review required for full curriculum/beta."
   },
   "sourceApproval": "pending",
   "linguisticReview": "pending",
   "pronunciationHelp": "provisional-v0",
   "humanModelAudio": "missing",
   "ownerWordingApproval": "pending",
-  "publication": "not-authorized",
+  "publication": "owner-authorized exact five as unreviewed text-only development previews; rollout in progress",
   "packages": [
     {
       "lessonId": "khmer-meet-01-01",

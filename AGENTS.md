@@ -30,6 +30,13 @@ earlier planning-only F26 limit; it does not authorize publication, deployment,
 hiring, provider spending or beta expansion. Exact sources/rights, pronunciation-help
 convention, reading inventory and review/audio evidence remain gates.
 
+On October 16 the owner explicitly superseded the fluent-review-before-publication
+rule for the exact five F26 first-unit candidates only: publish them on the existing
+development preview as clearly labeled unreviewed, text-only lessons. Retain pending
+linguistic/source-rights records and the lack of human audio. This is not review,
+rights clearance, beta inclusion or approval of other lessons/changed text. Preserve
+the normal review path and all beta gates; do not fabricate accepted review records.
+
 ## Primary audience and promise
 
 - First users are false beginners who already know enough Arabic for basic questions or directions.

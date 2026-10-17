@@ -98,3 +98,11 @@ learner evidence remain. The first-unit pilot protocol is in
 [docs/khmer/README.md](../../../docs/khmer/README.md). Finalize the first unit before
 units 2–12 authoring. Do not fill 55 remaining lessons with unchecked translations.
 Publication, hosted rollout and beta inclusion remain separate owner decisions.
+
+## Hosted preparation after the publication request
+
+The owner subsequently requested publication. All five exact candidates are now
+private drafts in the hosted console; [hosted-import.json](hosted-import.json) records
+the verified IDs/hashes. Current validation still requires actual review and rights
+dispositions. An explicit exception to the earlier fluent-review-before-publication
+rule is pending the owner’s answer; these lessons have not been published.

@@ -123,7 +123,7 @@ async function back() {
       </button>
     </div>
     <LessonScroll>
-      <p v-if="lesson.contentReview && lesson.contentReview.reviewDisposition !== 'accepted'" class="draft-review-notice" role="status">
+      <p v-if="!lesson.publicationNotice && lesson.contentReview && lesson.contentReview.reviewDisposition !== 'accepted'" class="draft-review-notice" role="status">
         Unreviewed draft · fluent linguistic review pending.
       </p>
       <details v-if="lesson.contentReview && stage === 'scene'" class="content-review-record">

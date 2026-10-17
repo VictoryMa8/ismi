@@ -19,6 +19,9 @@ export ASPNETCORE_FORWARDEDHEADERS_ENABLED=true
 export Database__Path="$ISMI_DATA_DIR/ismi.db"
 export Recordings__Path="$ISMI_DATA_DIR/recordings"
 export DataProtection__KeysPath="$ISMI_DATA_DIR/keys"
+# Owner-authorized five-package exception on this development preview only.
+# Omit this flag on any future beta host; the application default is disabled.
+export Curriculum__AllowKhmerTextPreview=true
 # Reduce idle memory on the 256 MB free host; do not enable server GC.
 export DOTNET_gcServer=0
 case "$IP" in

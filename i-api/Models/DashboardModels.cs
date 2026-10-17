@@ -32,7 +32,9 @@ public sealed record CourseLessonSummary(
     bool IsCurrent,
     LessonCast? Characters = null,
     string TrackId = "levantine",
-    bool CompletedToday = false);
+    bool CompletedToday = false,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    LessonPublicationNotice? PublicationNotice = null);
 
 public sealed record TrackProgress(
     string Id,

@@ -130,3 +130,24 @@ development preview. Vercel is Ready; exact API revision, 15 hosted table hashes
 confirm new console guidance and planned Khmer state after refreshing the cached
 PWA. No hosted draft import or curriculum publication.
 [Rollout and recovery](../releases/2026-10-16-khmer-drafts.md).
+
+## October 16 publication request and hosted preparation
+
+After application deployment, the owner requested lesson publication. The earlier
+explicit rule still requires a fluent reviewer before publication; the owner explicitly approved these five as labeled unreviewed text-only
+development-preview lessons. [Scoped exception and publication](text-preview-publication.md)
+records implementation and delivery. No accepted review or cleared-rights attestation has
+been invented, and no publication has occurred.
+
+All five exact packages were uploaded through the authenticated hosted owner console
+as private v1 drafts. [Hosted import evidence](../../content/khmer/meet-01/hosted-import.json)
+records the exact version IDs and package hashes. Hosted validation reports three
+issues: actual reviewer missing; accepted review/cleared rights with resolved
+critical issues missing; factual linguistic-review source missing. This is a
+content/policy dependency, not missing publication authorization.
+
+The owner-approved scoped exception retains pending review/rights and
+missing-audio facts, identify all five exact candidate versions, visibly label their
+experimental text-only status, preserve the ordinary review path for other content,
+and retains beta/audio/AT/learner-evidence gates. It does not forge reviewer metadata
+or mark unresolved issues resolved to satisfy the current validator.

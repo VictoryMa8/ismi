@@ -15,12 +15,14 @@ import { benefits, faqs } from './landing/content';
 import './landing/landing.css';
 import { courses } from './courses';
 const availableCourses = ref<string[]>([]);
+const previewCourses = ref<string[]>([]);
 onMounted(async () => {
   try {
     const response = await fetch('/api/courses');
     if (response.ok) {
-      const catalog = await response.json() as Array<{ course: { id: string }; publishedLessonCount: number }>;
+      const catalog = await response.json() as Array<{ course: { id: string }; publishedLessonCount: number; unreviewedPreviewLessonCount?: number }>;
       availableCourses.value = catalog.filter(c => c.publishedLessonCount > 0).map(c => c.course.id);
+      previewCourses.value = catalog.filter(c => c.unreviewedPreviewLessonCount).map(c => c.course.id);
     }
   } catch { /* Planned/unknown availability never enables a false course claim. */ }
 });
@@ -304,11 +306,12 @@ onMounted(() => {
             <div class="landing-section-heading"><h2 id="tracks-title">Languages</h2><p>Arabic is our flagship, rooted in Palestinian everyday life. Understand Arabic from conversation to Quran as its courses grow.</p></div>
             <div class="tracks-grid">
               <article v-for="course in courses" :key="course.id" :class="{ 'track-featured': course.id === 'levantine', 'track-khmer': course.id === 'khmer' }">
-                <span class="track-planned">{{ availableCourses.includes(course.id) ? 'Published lessons available' : 'Planned' }}</span>
+                <span class="track-planned">{{ previewCourses.includes(course.id) ? 'Unreviewed · text-only preview' : availableCourses.includes(course.id) ? 'Published lessons available' : 'Planned' }}</span>
                 <h3>{{ course.name }}</h3>
                 <p v-if="course.id === 'levantine'">Urban Palestinian Arabic for everyday conversations. Jordanian variants are labeled.</p>
                 <p v-else-if="course.id === 'msa'">Formal Arabic for reading and listening, including learner-adapted news.</p>
                 <p v-else-if="course.id === 'quranic'">Core vocabulary and direct meaning, with a respectful, comprehension-first approach.</p>
+                <p v-else-if="previewCourses.includes(course.id)">Five AI-assisted text lessons. Linguistic and source-rights review remain pending; no human audio.</p>
                 <p v-else>Everyday conversations and relationships. Course scope, sources and review are being prepared.</p>
                 <a class="landing-outline-button" href="#/courses" @click.prevent="enterCourse(course.id)">{{ availableCourses.includes(course.id) ? 'View course' : 'View course status' }}<ArrowRight :size="17" /></a>
               </article>

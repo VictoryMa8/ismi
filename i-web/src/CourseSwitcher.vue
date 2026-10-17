@@ -10,13 +10,15 @@ const languageChoices = computed(() => [...new Set(courses.map(c => c.languageId
 }))
 const otherCourses = computed(() => courses.filter(c => !languageChoices.value.some(choice => choice.id === c.id)))
 const emit = defineEmits<{ 'update:modelValue': [id: string] }>()
+const status = (id: string) => props.lessons.some(l => (l.trackId ?? 'levantine') === id && l.publicationNotice)
+  ? ' · Unreviewed preview' : props.lessons.some(l => (l.trackId ?? 'levantine') === id) ? '' : ' · Planned'
 </script>
 <template>
   <div class="course-switcher">
     <label for="viewed-course">Language / course <span>Switch</span></label>
     <select id="viewed-course" :value="modelValue" :disabled="disabled" @change="emit('update:modelValue', ($event.target as HTMLSelectElement).value)">
       <optgroup label="Languages">
-        <option v-for="course in languageChoices" :key="course.id" :value="course.id">{{ course.languageName === course.name ? course.name : `${course.languageName} · ${course.name}` }}{{ lessons.some(l => (l.trackId ?? 'levantine') === course.id) ? '' : ' · Planned' }}</option>
+        <option v-for="course in languageChoices" :key="course.id" :value="course.id">{{ course.languageName === course.name ? course.name : `${course.languageName} · ${course.name}` }}{{ status(course.id) }}</option>
       </optgroup>
       <optgroup v-if="otherCourses.length" label="Other Arabic courses">
         <option v-for="course in otherCourses" :key="course.id" :value="course.id">{{ course.name }}{{ lessons.some(l => (l.trackId ?? 'levantine') === course.id) ? '' : ' · Planned' }}</option>

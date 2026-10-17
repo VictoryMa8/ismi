@@ -29,6 +29,7 @@ import { buildStudyPlan, type TrackId } from './studyPlan';
 import { courses, courseFor, textAttributes, readableLesson } from './courses';
 import { loadStartedLesson, storeStartedLesson, type StartedLesson, type TeachingCheckpoint } from './lessonSessions';
 import CourseSwitcher from './CourseSwitcher.vue';
+import PublicationNotice from './PublicationNotice.vue';
 import { ApiRequestError } from './api';
 import { useStudySettings } from './useStudySettings';
 import LessonTeaching from './LessonTeaching.vue';
@@ -424,9 +425,10 @@ const currentPromptIsPlaying = computed(
   () => speakingPromptId.value === currentStep.value?.id,
 );
 const canPlayCurrentPrompt = computed(
-  () => Boolean(currentStep.value?.prompt.audioUrl) || (speechSupported.value && Boolean(selectedArabicVoice.value)),
+  () => !lesson.value?.publicationNotice && (Boolean(currentStep.value?.prompt.audioUrl) || (speechSupported.value && Boolean(selectedArabicVoice.value))),
 );
 const audioButtonLabel = computed(() => {
+  if (lesson.value?.publicationNotice) return 'Text-only preview · audio unavailable';
   if (currentPromptIsPlaying.value) return `Stop ${lessonCourse.value.languageName} audio`;
   if (currentStep.value?.prompt.audioUrl)
     return `Play the recorded ${lessonCourse.value.languageName} prompt`;
@@ -438,6 +440,7 @@ const audioButtonLabel = computed(() => {
   return `No ${lessonCourse.value.languageName} device voice available; read the transcript`;
 });
 const deviceVoiceDescription = computed(() => {
+  if (lesson.value?.publicationNotice) return 'Text-only preview. Read the transcript and continue.';
   if (!speechSupported.value)
     return 'Device speech is unavailable in this browser.';
   if (selectedArabicVoice.value) {
@@ -1370,6 +1373,7 @@ async function finishLesson() {
       <BackControl class="landing-return mobile-landing-return" href="#">Back to landing page</BackControl>
 
       <CourseSwitcher :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
+      <PublicationNotice :notice="activeLessons.find(l => l.publicationNotice)?.publicationNotice" />
       <button v-if="resumableLessonId && activeLessons.some(l => l.id === resumableLessonId)" type="button" class="secondary-action resume-course" @click="startLesson(resumableLessonId)">Resume {{ activeCourse.name }} lesson</button>
       <p v-if="courseStorageError" role="status">{{ courseStorageError }}</p>
       <section v-if="studyPageAvailable && !activeLessons.length && page !== 'account'" class="course-empty" role="status">
@@ -1479,9 +1483,9 @@ async function finishLesson() {
                 <summary>About this lesson</summary>
                 <p>
                   {{
-                    nextStudyLesson?.reviewStatus === 'demonstrative'
+                    nextStudyLesson?.publicationNotice?.label ?? (nextStudyLesson?.reviewStatus === 'demonstrative'
                       ? 'Demonstration · not reviewed launch curriculum.'
-                      : 'Owner-approved · no native-expert review.'
+                      : 'Owner-approved · no native-expert review.')
                   }}
                 </p>
               </details>
@@ -1575,6 +1579,7 @@ async function finishLesson() {
                 </span>
                 <span class="course-path-copy">
                   <strong>{{ item.title }}</strong>
+                  <span v-if="item.publicationNotice">{{ item.publicationNotice.label }}</span>
                   <span
                     >{{ item.estimatedMinutes }} min ·
                     {{
@@ -1932,6 +1937,7 @@ async function finishLesson() {
         </div>
       </header>
 
+      <PublicationNotice :notice="lesson?.publicationNotice" compact />
       <div class="lesson-workspace">
         <div
           v-if="lessonLoading || lessonError || lessonFinished"

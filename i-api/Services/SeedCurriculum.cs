@@ -130,7 +130,8 @@ public sealed class SeedCurriculum
             string.Equals(lesson.Response.Id, (ordered.FirstOrDefault(l => l.Response.TrackId == lesson.Response.TrackId && !completedLessonIds.Contains(l.Response.Id)) ?? ordered.Last(l => l.Response.TrackId == lesson.Response.TrackId)).Response.Id, StringComparison.OrdinalIgnoreCase),
             lesson.Response.Characters,
             lesson.Response.TrackId,
-            completedTodayIds?.Contains(lesson.Response.Id) ?? false))
+            completedTodayIds?.Contains(lesson.Response.Id) ?? false,
+            lesson.Response.PublicationNotice))
             .ToList();
 
         return new DashboardResponse(

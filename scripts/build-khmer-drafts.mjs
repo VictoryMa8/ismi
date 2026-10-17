@@ -73,7 +73,7 @@ for (const [index, pack] of packages.entries()) {
   const stem = String(index + 1).padStart(2, '0')
   outputs.set(`${stem}-lesson.json`, json(pack))
   const l = pack.lesson
-  let review = `# ${l.title}\n\nUnreviewed F26 candidate · ${l.id} · no publication approval or model audio.\n\n${l.scenario}\n\nGoal: ${l.introduction.goal}\n\n## Dialogue\n\n`
+  let review = `# ${l.title}\n\nUnreviewed F26 candidate · ${l.id} · text-only development-preview exception authorized separately; no linguistic approval or model audio.\n\n${l.scenario}\n\nGoal: ${l.introduction.goal}\n\n## Dialogue\n\n`
   for (const t of l.introduction.dialogue) review += `- **${t.speaker}:** ${t.line.targetText} · ${t.line.pronunciationHelp} · ${t.line.meaning}\n`
   review += '\n## Teaching and optional script inventory\n\n'
   for (const c of l.introduction.teachingCards) review += `### ${c.title}\n\n${c.phrase.targetText}\n\n${c.phrase.pronunciationHelp} · ${c.phrase.meaning}\n\n${c.note}\n\nRecall: ${c.recallCue}\n\n`
@@ -88,11 +88,11 @@ for (const [index, pack] of packages.entries()) {
   outputs.set(`${stem}-review.md`, review)
 }
 const manifest = {
-  schemaVersion: 1, feature: 'F26', unitId: 'khmer-meet-01', date: '2026-10-16', status: 'unreviewed-draft',
+  schemaVersion: 1, feature: 'F26', unitId: 'khmer-meet-01', date: '2026-10-16', status: 'unreviewed-text-preview-authorized',
   ownerDecisions: { variety, targetUnits: 12, newLessonsPerUnit: 5, optionalScript: true,
-    route: 'Draft now; designate fluent Khmer reviewer before publication.' },
+    route: 'Owner authorized exact five unreviewed text-only development-preview lessons October 16; review required for full curriculum/beta.' },
   sourceApproval: 'pending', linguisticReview: 'pending', pronunciationHelp: 'provisional-v0',
-  humanModelAudio: 'missing', ownerWordingApproval: 'pending', publication: 'not-authorized',
+  humanModelAudio: 'missing', ownerWordingApproval: 'pending', publication: 'owner-authorized exact five as unreviewed text-only development previews; rollout in progress',
   packages: packages.map((p, i) => { const file = `${String(i + 1).padStart(2, '0')}-lesson.json`; return {
     lessonId: p.lesson.id, file, sha256: createHash('sha256').update(outputs.get(file)).digest('hex'),
     dialogueTurns: p.lesson.introduction.dialogue.length, teachingCards: p.lesson.introduction.teachingCards.length,

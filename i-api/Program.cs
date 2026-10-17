@@ -144,6 +144,7 @@ builder.Services.AddScoped<CurriculumPackageImporter>();
 builder.Services.AddScoped<RecallReportService>();
 builder.Services.AddSingleton<RecordingStore>();
 builder.Services.AddSingleton<CurriculumValidator>();
+builder.Services.AddSingleton<KhmerTextPreviewPolicy>();
 builder.Services.AddSingleton<CurriculumAccessService>();
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddSingleton<CulturalMediaValidator>();
@@ -219,7 +220,7 @@ app.MapGet("/api/health", () => Results.Ok(new
 {
     status = "healthy",
     service = "ismi-api",
-    features = new[] { "typed-recall-v1", "multi-language-v1", "private-draft-preview-v1" },
+    features = new[] { "typed-recall-v1", "multi-language-v1", "private-draft-preview-v1", "khmer-text-preview-v1" },
     revision = typeof(LessonResponse).Assembly
         .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
         .Cast<System.Reflection.AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,
@@ -357,7 +358,8 @@ app.MapGet("/api/courses", async (CurriculumPublishingService publishing, Cancel
     var lessons = await publishing.ListPublishedLessonsAsync(null, cancellationToken);
     return Results.Ok(CourseCatalog.All.Select(course => new {
         course, publishedLessonCount = lessons.Count(l => l.Response.TrackId == course.Id),
-        availability = lessons.Any(l => l.Response.TrackId == course.Id) ? "available" : "planned"
+        availability = lessons.Any(l => l.Response.TrackId == course.Id) ? "available" : "planned",
+        unreviewedPreviewLessonCount = lessons.Count(l => l.Response.TrackId == course.Id && l.Response.PublicationNotice is not null)
     }));
 });
 
@@ -635,6 +637,15 @@ curriculumAdmin.MapPost("/versions/{versionId:long}/approve", async Task<IResult
     if (antiforgeryError is not null) return antiforgeryError;
     return await CurriculumCommandAsync(
         () => publishing.ApproveAsync(versionId, CurriculumActor(context), cancellationToken));
+});
+
+curriculumAdmin.MapPost("/versions/{versionId:long}/approve-text-preview", async Task<IResult> (
+    long versionId, HttpContext context, IAntiforgery antiforgery,
+    CurriculumPublishingService publishing, CancellationToken cancellationToken) =>
+{
+    var csrfError = await ValidateAntiforgeryAsync(context, antiforgery);
+    if (csrfError is not null) return csrfError;
+    return await CurriculumCommandAsync(() => publishing.ApproveTextPreviewAsync(versionId, CurriculumActor(context), cancellationToken));
 });
 
 curriculumAdmin.MapPost("/versions/{versionId:long}/publish", async Task<IResult> (

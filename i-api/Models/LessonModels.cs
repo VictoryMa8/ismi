@@ -20,7 +20,11 @@ public sealed record LessonResponse(
     [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
     IReadOnlyList<RecallTarget>? Recall = null,
     int SchemaVersion = 1,
-    CourseContentReview? ContentReview = null);
+    CourseContentReview? ContentReview = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    LessonPublicationNotice? PublicationNotice = null);
+
+public sealed record LessonPublicationNotice(string ReleaseId, string Label, string Details);
 
 public sealed record LessonCast(string RegistryVersion, IReadOnlyList<string> CharacterIds);
 public sealed record CharacterRoles(string? SpeakerId = null, string? AddresseeId = null,

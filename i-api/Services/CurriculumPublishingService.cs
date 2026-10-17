@@ -7,7 +7,8 @@ namespace Ismi.Api.Services;
 
 public sealed class CurriculumPublishingService(
     IsmiDbContext database,
-    CurriculumValidator validator)
+    CurriculumValidator validator,
+    KhmerTextPreviewPolicy previews)
 {
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
 
@@ -106,7 +107,8 @@ public sealed class CurriculumPublishingService(
             .SingleOrDefaultAsync(cancellationToken);
 
         var lesson = content is null ? null : Deserialize(content);
-        return lesson is null ? null : new LessonDefinition(lesson);
+        return lesson is null || lesson.PublicationNotice is not null && !previews.IsAuthorized(lesson,
+            (await GetSourcesForLessonAsync(lessonId, cancellationToken))) ? null : new LessonDefinition(lesson);
     }
 
     public async Task<IReadOnlyList<LessonDefinition>> ListPublishedLessonsAsync(
@@ -119,7 +121,7 @@ public sealed class CurriculumPublishingService(
             .Select(version => version.ContentJson)
             .ToListAsync(cancellationToken);
 
-        return content
+        var result = content
             .Select(Deserialize)
             .Where(lesson => trackId is null || string.Equals(lesson.TrackId, trackId, StringComparison.OrdinalIgnoreCase))
             .OrderBy(lesson => lesson.UnitId, StringComparer.OrdinalIgnoreCase)
@@ -127,6 +129,17 @@ public sealed class CurriculumPublishingService(
             .ThenBy(lesson => lesson.Id, StringComparer.OrdinalIgnoreCase)
             .Select(lesson => new LessonDefinition(lesson))
             .ToList();
+        // A future beta host does not serve these previews merely because its DB
+        // contains a publication from the development host.
+        if (!previews.Enabled) result.RemoveAll(l => l.Response.PublicationNotice is not null);
+        return result;
+    }
+
+    private async Task<IReadOnlyList<CurriculumSourceInput>> GetSourcesForLessonAsync(string lessonId, CancellationToken ct)
+    {
+        var record = await database.CurriculumVersions.AsNoTracking().Include(v => v.Sources)
+            .SingleAsync(v => v.LessonId == lessonId && v.Status == CurriculumStatuses.Published, ct);
+        return record.Sources.OrderBy(s => s.Id).Select(ToSource).ToArray();
     }
 
     public async Task<IReadOnlyList<CurriculumVersionSummary>> ListAsync(
@@ -300,6 +313,26 @@ public sealed class CurriculumPublishingService(
         record.ApprovedAtUtc = now;
         record.ApprovedBy = actor;
         record.AuditEvents.Add(Audit("approved", actor, now, "Approved after deterministic validation passed."));
+        await database.SaveChangesAsync(cancellationToken);
+        return ToDetail(record);
+    }
+
+    public async Task<CurriculumVersionDetail> ApproveTextPreviewAsync(
+        long versionId, string actor, CancellationToken cancellationToken = default)
+    {
+        var record = await LoadAsync(versionId, cancellationToken);
+        RequireStatus(record, CurriculumStatuses.Draft, "Only a draft can be approved.");
+        var lesson = Deserialize(record.ContentJson) with { PublicationNotice = KhmerTextPreviewPolicy.Notice };
+        var sources = record.Sources.Select(ToSource).ToList();
+        var validation = validator.Validate(lesson, sources);
+        if (!validation.IsValid) throw new CurriculumValidationException(validation.Errors);
+        var now = DateTime.UtcNow;
+        record.ContentJson = Serialize(lesson);
+        record.Status = CurriculumStatuses.Approved;
+        record.ApprovedAtUtc = now;
+        record.ApprovedBy = actor;
+        record.AuditEvents.Add(Audit("approved-text-preview", actor, now,
+            $"Owner-authorized {KhmerTextPreviewPolicy.Notice.ReleaseId}; exact package fingerprint {KhmerTextPreviewPolicy.Fingerprint(lesson, sources)}. Pending linguistic/source-rights records retained; no human audio or beta approval."));
         await database.SaveChangesAsync(cancellationToken);
         return ToDetail(record);
     }

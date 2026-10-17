@@ -20,6 +20,7 @@ import {
 } from '@lucide/vue';
 import {
   approveCurriculumVersion,
+  approveTextPreview,
   checkCurriculumReadiness,
   createCurriculumDraft,
   getCurriculumVersion,
@@ -296,6 +297,17 @@ async function approve() {
   }
 }
 
+async function approvePreview() {
+  if (!selected.value) return;
+  busy.value = true; clearMessages();
+  try {
+    const detail = await approveTextPreview(selected.value.id);
+    await loadVersions(detail.id);
+    notice.value = 'Approved only as an unreviewed text-only development preview. Pending linguistic review and rights remain visible. Publish to make this exact version available.';
+  } catch (caught) { error.value = messageFor(caught); }
+  finally { busy.value = false; }
+}
+
 async function publish() {
   if (!selected.value) return;
   busy.value = true;
@@ -550,6 +562,10 @@ function formatDate(value: string | null): string {
                 @click="approve"
               >
                 <CheckCircle2 :size="17" aria-hidden="true" /> Approve
+              </button>
+              <button v-if="selected.status === 'draft' && /^khmer-meet-01-0[1-5]$/.test(selected.lesson.id)"
+                class="secondary-action" type="button" :disabled="busy || uploading || dirty" @click="approvePreview">
+                Approve text-only preview
               </button>
               <button
                 v-if="selected.status === 'approved'"

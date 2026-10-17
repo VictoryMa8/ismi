@@ -16,8 +16,9 @@ and source-rights research. API 40/40 and 11 distinct focused browser checks pas
 across runs. All 13 existing local published payloads are preserved. Fluent review,
 source/help/inventory approval, human audio and first-unit/device evidence precede
 publication and units 2–12. Application `57b7898` is pushed/deployed October 16;
-Vercel Ready, exact API revision and all hosted data/assets are verified. No hosted
-draft import or curriculum publication. [Rollout](docs/releases/2026-10-16-khmer-drafts.md).
+Vercel Ready, exact API revision and all hosted data/assets are verified. Owner requested lesson publication after deployment. Hosted draft preparation is
+active; the owner explicitly approved an exception for the exact five as unreviewed,
+text-only development-preview lessons. Scoped publication implementation is Active. No Khmer lesson is published yet; the explicit scoped exception is being deployed. [Rollout](docs/releases/2026-10-16-khmer-drafts.md).
 [Candidate and evidence](docs/khmer/README.md).
 
 **F24 — Application deployed October 16:** multi-language foundation, course selector,
@@ -225,7 +226,7 @@ dispositions, permissions and linguistic/audio evidence remain before publicatio
 | [F24.7](#f247-multi-language-wording-landing-and-visual-identity) | Multi-language wording, landing and visual identity | Active · application deployed | Shared copy, Languages and Khmer colors deployed; title A approved; real AT remains |
 | [F24.8](#f248-prominent-language-and-course-switching) | Prominent language and course switching | Active · application deployed | Selector live; offline flows verified with fixtures; approved units/observed task remain |
 | [F25](#f25-french-course) | French course | Planned · definition decisions | Proposed twelve-week course; select variety, depth and review route |
-| [F26](#f26-khmer-course) | Khmer course | Active · five local drafts | Review exact candidates/sources/help; fluent review/audio/pilot precede publication and remaining units |
+| [F26](#f26-khmer-course) | Khmer course | Active · publication requested | Five hosted private drafts; Owner-authorized five-lesson unreviewed preview release in progress; full review/audio/pilot remain |
 | [F27](#f27-feature-discoverability-and-navigation) | Feature discoverability and navigation | Done · deployed | Five tabs, Practice hub, Progress page, feature colors, habits on by default |
 | [F27.1](#f271-mobile-friendly-back-navigation) | Mobile-friendly back navigation | Done · deployed | Application `5875e6d` pushed; Vercel Ready, alias confirmed |
 
@@ -1510,8 +1511,10 @@ audio and F24.5/F24.6 for full release. These stages do not form a dependency cy
 **Status:** Active — owner authorized F26 implementation October 16 and selected the
 recommended Cambodian/Phnom Penh reference, twelve-unit/sixty-lesson target and
 conversation-first optional script pathway. Prepare drafts now; designate a fluent
-Khmer reviewer before publication. No publication, deployment, hiring or provider
-spend is authorized by this instruction.
+Khmer reviewer before publication. The owner subsequently authorized application
+deployment and requested lesson publication. A labeled unreviewed text-only preview
+exception is awaiting an explicit answer; no review/rights attestation is inferred.
+Hiring or provider spend remains unauthorized.
 **Outcome:** English-taught Khmer for adult beginners/false beginners communicating
 with partners, family and friends. Conversation and gradual script learning support
 each other; optional pronunciation help remains available without requiring reading
@@ -1555,7 +1558,10 @@ committed reviewer or learner outcome evidence exists.
 **Delivery:** application `57b7898` pushed/deployed October 16 to the existing
 web/API development preview. Vercel Ready, exact API revision, 15 hosted table hashes,
 13 published payloads and assets preserved; live console guidance and course states
-verified. Five local v1 drafts (27–31) remain unpublished; zero hosted Khmer records.
+verified. Five local v1 drafts (27–31) remain unpublished. After the owner requested
+publication, all five were imported privately through the hosted console; strict
+validation still requires actual review/rights records. A labeled development-preview
+exception awaits the owner’s explicit policy decision.
 API 40/40, build and 11 distinct focused browser checks pass across runs.
 [Rollout/recovery](docs/releases/2026-10-16-khmer-drafts.md). Parent remains Active
 for review/audio/pilot and remaining course criteria.
@@ -1599,8 +1605,12 @@ review route are agreed; uncertain linguistic/cultural claims are excluded.
 
 #### F26.2 Khmer first unit
 
-**Status:** Active — five unreviewed candidates authored/imported locally October 16;
-not linguistically reviewed, approved or published.
+**Status:** Active — five unreviewed candidates authored locally and subsequently
+imported through the hosted owner console as v1 drafts 24–28 on October 16 after
+the publication request. Exact package/source matches and preservation of prior
+published lessons, learner tables and assets pass. No approval or publication;
+the owner explicitly approved the unreviewed text-only development-preview exception;
+scoped publication is in progress.
 **Scope:** five authored greeting/introduction/repair lessons, contextual recall,
 varied review and checkpoint; separate source-linked script, help, meaning, accepted
 answers and audio. Do not mechanically translate the French lesson sequence.
@@ -1615,6 +1625,21 @@ source approval and linguistic/rights review remain pending.
 answer rationales are checked; changed-context recall and accessible offline study
 can be verified. Text, audio, approval and publication states remain distinct.
 **Depends on:** F26.1 and F26.3's agreed text/segment rules; F24.4 and F26.5 audio.
+
+##### F26.2.1 Owner-authorized text-only development preview
+
+**Status:** Active — explicitly authorized October 16 after the owner superseded the
+fluent-review-before-publication rule for the exact five first-unit candidates only.
+**Scope:** publish those five on the existing development preview with prominent
+unreviewed/text-only labels, retaining pending review/rights and no human audio.
+Normal publication gates remain for other/changed content; beta gates are unchanged.
+**Done when:** exact pinned packages pass the explicit owner-only preview approval
+and publication flow; all five are live, correctly labeled in course/lesson/review,
+download/offline completion/reconnect works, existing Arabic/progress/assets remain
+preserved, and exact versions plus withdrawal/rollback evidence are recorded.
+**Next:** finish focused browser verification; deploy API/web then approve/publish
+hosted drafts 24–28 through the console. Do not invent a linguistic reviewer.
+**Evidence:** [scoped preview policy and rollout](docs/khmer/text-preview-publication.md).
 
 #### F26.3 Khmer script, sounds, input and starting check
 
@@ -1778,7 +1803,10 @@ Portuguese is eventual expansion direction, not a new implemented course or beta
   Owner-authorized application `57b7898` is pushed/deployed: Vercel Ready, exact API
   revision and all 15 hosted table hashes/13 published payloads/assets preserved.
   [Rollout](docs/releases/2026-10-16-khmer-drafts.md). Reviewer/audio/pilot and units
-  2–12 remain; no hosted draft import or publication.
+  2–12 remain. Subsequent lesson-publication request: all five imported privately
+  into hosted console (24–28); strict validation reports missing review/rights
+  records. Awaiting explicit labeled-preview exception; no publication.
+  [Preparation evidence](content/khmer/meet-01/hosted-import.json).
 
 - **October 16, 2026 F24:** owner authorized push/deployment. Application `f515f43`
   is deployed to the existing web/API preview, with exact revision, all 15 hosted

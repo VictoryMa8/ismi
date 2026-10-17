@@ -42,6 +42,7 @@ import LessonTransition from './LessonTransition.vue';
 import PhraseBuilder from './PhraseBuilder.vue';
 import SoundToggle from './SoundToggle.vue';
 import BackControl from './BackControl.vue';
+import PublicationNotice from './PublicationNotice.vue';
 import CharacterCue from './CharacterCue.vue';
 import { playUiSound } from './uiSounds';
 import type { ReviewAvailability, StudyActivity } from './learningHabits';
@@ -618,6 +619,7 @@ defineExpose({ start });
             </button>
           </div>
         </header>
+        <PublicationNotice :notice="turn?.lesson.publicationNotice" compact />
         <section class="practice-journey review-journey">
           <p class="review-stage">
             {{
@@ -664,9 +666,9 @@ defineExpose({ start });
                 <p class="review-origin">
                   {{ turn.lesson.title }} · {{ turn.lesson.version }} ·
                   {{
-                    turn.lesson.reviewStatus === 'demonstrative'
+                    turn.lesson.publicationNotice?.label ?? (turn.lesson.reviewStatus === 'demonstrative'
                       ? 'Demonstration'
-                      : 'Owner-approved · no native-expert review'
+                      : 'Owner-approved · no native-expert review')
                   }}
                 </p>
                 <p v-if="turn.step.characters" class="review-scene">

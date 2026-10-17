@@ -1,6 +1,6 @@
 # Ask for help understanding
 
-Unreviewed F26 candidate · khmer-meet-01-04 · no publication approval or model audio.
+Unreviewed F26 candidate · khmer-meet-01-04 · text-only development-preview exception authorized separately; no linguistic approval or model audio.
 
 In a noisy room you miss Sam’s name. Ask for help, read the repeated line, then respond. No listening is required in this text candidate.
 

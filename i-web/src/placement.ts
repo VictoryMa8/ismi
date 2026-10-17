@@ -12,7 +12,7 @@ export type PlacementResult = {
 
 // Select only published packages supplied by the catalog; fixtures are not placement content.
 export function placementQuestions(packages: LessonResponse[], courseId: TrackId = 'levantine'): PlacementQuestion[] {
-  return packages.filter(p => p.trackId === courseId && !p.contentReview?.engineeringFixture && p.reviewStatus !== 'demonstrative'
+  return packages.filter(p => p.trackId === courseId && !p.publicationNotice && !p.contentReview?.engineeringFixture && p.reviewStatus !== 'demonstrative'
     && p.introduction?.sourceLocators.length)
     .sort((a, b) => a.courseOrder - b.courseOrder || a.id.localeCompare(b.id)).slice(0, 3)
     .flatMap(p => p.steps.filter(step => step.answers.length >= 2

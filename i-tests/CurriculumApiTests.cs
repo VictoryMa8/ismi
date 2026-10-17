@@ -814,6 +814,79 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         Assert.Equal(arabicBefore, await guest.GetStringAsync("/api/lessons/levantine-day-01"));
     }
 
+    [Fact]
+    public async Task OwnerTextPreviewExceptionPinsFiveExactPackagesAndPreservesPendingReviewAndNormalGates()
+    {
+        using var previewFactory = _factory.WithWebHostBuilder(builder => builder.ConfigureAppConfiguration((_, config) =>
+            config.AddInMemoryCollection(new Dictionary<string, string?> { ["Curriculum:AllowKhmerTextPreview"] = "true" })));
+        using var owner = previewFactory.CreateClient();
+        using var guest = previewFactory.CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        var arabicBefore = await guest.GetStringAsync("/api/lessons/levantine-day-01");
+        using var scope = previewFactory.Services.CreateScope();
+        var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
+        var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
+        var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
+        await importer.ImportAsync(Path.Combine(AppContext.BaseDirectory, "khmer-meet-01"));
+        var drafts = (await publishing.ListAsync()).Where(v => v.LessonId.StartsWith("khmer-meet-01-")).ToArray();
+        Assert.Equal(5, drafts.Length);
+        foreach (var draft in drafts)
+        {
+            var original = (await publishing.GetAsync(draft.Id))!;
+            var candidate = original.Lesson with { PublicationNotice = KhmerTextPreviewPolicy.Notice };
+            Assert.True(validator.Validate(candidate, original.Sources).IsValid);
+            Assert.False(new KhmerTextPreviewPolicy(new ConfigurationBuilder().Build()).IsAuthorized(candidate, original.Sources));
+            foreach (var changed in new[] {
+                candidate with { Id = "khmer-meet-01-06" }, candidate with { TrackId = "french" },
+                candidate with { Title = "Changed wording" },
+                candidate with { PublicationNotice = candidate.PublicationNotice! with { Label = "Reviewed" } },
+                candidate with { ContentReview = candidate.ContentReview! with { Reviewer = "invented", ReviewDisposition = "accepted", CriticalIssues = [] } }
+            }) Assert.False(validator.Validate(changed, original.Sources).IsValid);
+            Assert.False(validator.Validate(candidate, original.Sources.Select(s => s with { Notes = "changed" }).ToArray()).IsValid);
+            Assert.Equal(HttpStatusCode.BadRequest, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{draft.Id}/approve", new { })).StatusCode);
+            Assert.Equal(HttpStatusCode.Unauthorized, (await SendWithCsrfAsync(guest, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{draft.Id}/approve-text-preview", new { })).StatusCode);
+            Assert.Equal(HttpStatusCode.BadRequest, (await owner.PostAsJsonAsync(
+                $"/api/admin/curriculum/versions/{draft.Id}/approve-text-preview", new { })).StatusCode);
+            var approve = await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{draft.Id}/approve-text-preview", new { });
+            approve.EnsureSuccessStatusCode();
+            var approved = (await approve.Content.ReadFromJsonAsync<CurriculumVersionDetail>())!;
+            Assert.Equal(KhmerTextPreviewPolicy.Notice, approved.Lesson.PublicationNotice);
+            Assert.Equal("pending", approved.Lesson.ContentReview!.ReviewDisposition);
+            Assert.Equal("pending", approved.Lesson.ContentReview.RightsDisposition);
+            Assert.Equal("", approved.Lesson.ContentReview.Reviewer);
+            Assert.NotEmpty(approved.Lesson.ContentReview.CriticalIssues);
+            Assert.Contains(approved.Audit, a => a.Action == "approved-text-preview");
+            Assert.DoesNotContain(approved.Sources, s => s.SourceType == "linguistic-review");
+            (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/publish", new { })).EnsureSuccessStatusCode();
+            var published = (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{draft.LessonId}"))!;
+            Assert.Equal(KhmerTextPreviewPolicy.Notice, published.PublicationNotice);
+            Assert.All(published.Steps, s => Assert.Null(s.Prompt.AudioUrl));
+        }
+        var dashboard = (await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
+        Assert.Equal(5, dashboard.DailyPlan.Lessons.Count(l => l.TrackId == "khmer" && l.PublicationNotice == KhmerTextPreviewPolicy.Notice));
+        Assert.Equal(arabicBefore, await guest.GetStringAsync("/api/lessons/levantine-day-01"));
+        var configuration = previewFactory.Services.GetRequiredService<IConfiguration>();
+        configuration["Curriculum:AllowKhmerTextPreview"] = "false";
+        Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{drafts[0].LessonId}")).StatusCode);
+        Assert.DoesNotContain((await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!.DailyPlan.Lessons, l => l.TrackId == "khmer");
+        configuration["Curriculum:AllowKhmerTextPreview"] = "true";
+        // Earlier HTTP commands used separate request scopes; refresh this
+        // import scope before the direct service withdrawal/rollback rehearsal.
+        scope.ServiceProvider.GetRequiredService<Ismi.Api.Data.IsmiDbContext>().ChangeTracker.Clear();
+        var first = (await publishing.GetAsync(drafts[0].Id))!;
+        var revision = await publishing.CreateDraftAsync(new(first.Lesson, first.Sources), "test owner");
+        await publishing.ApproveTextPreviewAsync(revision.Id, "test owner");
+        await publishing.PublishAsync(revision.Id, "test owner");
+        await publishing.WithdrawAsync(revision.Id, "Test withdrawal", "test owner");
+        Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{first.Lesson.Id}")).StatusCode);
+        try { await publishing.RollbackAsync(first.Lesson.Id, first.Id, "test owner"); }
+        catch (CurriculumValidationException ex) { Assert.Fail(string.Join("; ", ex.Errors)); }
+        Assert.Equal(KhmerTextPreviewPolicy.Notice, (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{first.Lesson.Id}"))!.PublicationNotice);
+    }
+
     private sealed class LessonJsonComparer : IEqualityComparer<LessonResponse>
     {
         public bool Equals(LessonResponse? x, LessonResponse? y) => System.Text.Json.JsonSerializer.Serialize(x) == System.Text.Json.JsonSerializer.Serialize(y);

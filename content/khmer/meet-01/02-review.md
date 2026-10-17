@@ -1,6 +1,6 @@
 # Introduce yourself
 
-Unreviewed F26 candidate · khmer-meet-01-02 · no publication approval or model audio.
+Unreviewed F26 candidate · khmer-meet-01-02 · text-only development-preview exception authorized separately; no linguistic approval or model audio.
 
 You are Alex, meeting Sam through a friend. You are both adults of a similar age. Use the assigned names in this practice.
 

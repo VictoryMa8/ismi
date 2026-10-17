@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-16",
+  "target": "hosted owner console",
+  "state": "private drafts prepared; publication exception awaiting owner decision",
+  "entries": [
+    {
+      "recordId": 24,
+      "lessonId": "khmer-meet-01-01",
+      "versionNumber": 1,
+      "status": "draft",
+      "packageSha256": "2224bd136e0fcdda1ec04ce15994bf9ebdd57bba5decdabd653acfaf47c127b3",
+      "authoredPayloadAndSourcesMatch": true,
+      "approved": false,
+      "published": false
+    },
+    {
+      "recordId": 25,
+      "lessonId": "khmer-meet-01-02",
+      "versionNumber": 1,
+      "status": "draft",
+      "packageSha256": "dbdd9898c8ae7a195fc415bf29a2afc8f259ca35358ffa34039ac1b14b6f6eff",
+      "authoredPayloadAndSourcesMatch": true,
+      "approved": false,
+      "published": false
+    },
+    {
+      "recordId": 26,
+      "lessonId": "khmer-meet-01-03",
+      "versionNumber": 1,
+      "status": "draft",
+      "packageSha256": "eb1f2cf47d2ef65f31707d53548f1aa32f1768ff4583fce8f4671be34ab803e9",
+      "authoredPayloadAndSourcesMatch": true,
+      "approved": false,
+      "published": false
+    },
+    {
+      "recordId": 27,
+      "lessonId": "khmer-meet-01-04",
+      "versionNumber": 1,
+      "status": "draft",
+      "packageSha256": "4365ee17b61b0f3d89e958b41021c46768cc52e13beb9d8e5ec89b1b07c2625a",
+      "authoredPayloadAndSourcesMatch": true,
+      "approved": false,
+      "published": false
+    },
+    {
+      "recordId": 28,
+      "lessonId": "khmer-meet-01-05",
+      "versionNumber": 1,
+      "status": "draft",
+      "packageSha256": "76d79aeae71bba70feb0a485f67ccda203da303ed805a9f18bdc49384ea74209",
+      "authoredPayloadAndSourcesMatch": true,
+      "approved": false,
+      "published": false
+    }
+  ],
+  "existingPublishedPayloadsPreserved": 13,
+  "unchangedTableCount": 12,
+  "recordingsAndKeysPreserved": true,
+  "newPublishedKhmerLessons": 0
+}
