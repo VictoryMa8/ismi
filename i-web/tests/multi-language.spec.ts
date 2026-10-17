@@ -277,3 +277,61 @@ test('completed review time consumes the shared daily budget once and survives r
   await page.reload()
   await expect(page.locator('.daily-progress')).toContainText(/5 of\s+15 minutes/)
 })
+
+test('Today retains manual lessons and shared guides when switching outside the daily allocation', async ({ page, context }) => {
+  const { disconnect } = await install(page)
+  await page.goto('/#/today')
+  // Default plan selects only Levantine. Viewing another language must still
+  // expose its lesson without editing the primary course or selected courses.
+  for (const id of ['khmer', 'french', 'levantine', 'khmer', 'french']) {
+    await switchCourse(page, id)
+    if (id !== 'levantine') {
+      await expect(page.getByRole('button', { name: `Open ${id} engineering 1`, exact: true })).toBeVisible()
+      await expect(page.getByText('Outside today’s plan · study settings unchanged.', { exact: true })).toBeVisible()
+      await expect(page.locator('.primary-lesson-card [data-character="fattoush"]')).toBeVisible()
+      await expect(page.locator('.primary-lesson-card [data-character="knafeh"]')).toBeVisible()
+    }
+  }
+  await page.getByRole('button', { name: 'Open french engineering 1', exact: true }).click()
+  const dialog = page.getByRole('dialog', { name: 'french engineering 1', exact: true })
+  await expect(dialog.locator('.character-cast').filter({ hasText: 'Fattoush' })).toContainText('Knafeh')
+  // Guides are separate from the authored dialogue speakers.
+  await expect(dialog.getByRole('list', { name: 'Dialogue transcript' })).toContainText('Test 0')
+  await expect(dialog.locator('.dialogue-transcript .character-label')).toHaveCount(0)
+  await dialog.getByRole('button', { name: 'Learn the phrases', exact: true }).click()
+  await expect(dialog.locator('.teaching-page:not([inert]) [data-character="fattoush"]')).toBeVisible()
+  await dialog.getByRole('button', { name: 'Close lesson', exact: true }).click()
+  await switchCourse(page, 'khmer')
+  await switchCourse(page, 'french')
+  await page.getByRole('button', { name: 'Resume French lesson', exact: true }).click()
+  await expect(dialog.getByRole('button', { name: 'Try from memory', exact: true })).toBeVisible()
+  await dialog.getByRole('button', { name: 'Close lesson', exact: true }).click()
+  await page.getByRole('link', { name: 'Account', exact: true }).first().click()
+  await expect(page.getByLabel('Primary course', { exact: true })).toHaveValue('levantine')
+  await expect(page.getByRole('checkbox', { name: 'French', exact: true })).not.toBeChecked()
+  await expect(page.getByRole('checkbox', { name: 'Khmer', exact: true })).not.toBeChecked()
+  await page.getByRole('link', { name: 'Today', exact: true }).first().click()
+  await page.evaluate(async () => { await navigator.serviceWorker.ready })
+  disconnect()
+  await context.setOffline(true)
+  await page.reload()
+  await expect(page.getByLabel('Language / course Switch')).toHaveValue('french')
+  await expect(page.getByRole('button', { name: 'Open french engineering 1', exact: true })).toBeVisible()
+  await page.getByRole('button', { name: 'Resume French lesson', exact: true }).click()
+  await expect(dialog.getByRole('button', { name: 'Try from memory', exact: true })).toBeVisible()
+  await expect(dialog.locator('.teaching-page:not([inert]) [data-character="knafeh"] img')).toBeVisible()
+})
+
+test('course selection waits for startup data instead of accepting a choice that can be overwritten', async ({ page }) => {
+  let release!: () => void
+  const ready = new Promise<void>(resolve => { release = resolve })
+  await page.route('**/api/dashboard', async route => { await ready; await route.continue() })
+  await page.goto('/#/today')
+  await expect(page.getByLabel('Language / course Switch')).toBeDisabled()
+  release()
+  await expect(page.getByLabel('Language / course Switch')).toBeEnabled()
+  await switchCourse(page, 'french')
+  await expect(page.getByRole('status').filter({ has: page.getByRole('heading', { name: 'French', exact: true }) })).toBeVisible()
+  await switchCourse(page, 'levantine')
+  await expect(page.getByRole('button', { name: /Continue in Levantine/ })).toBeVisible()
+})

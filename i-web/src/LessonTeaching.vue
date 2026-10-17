@@ -207,6 +207,7 @@ async function back() {
               :addressee-id="card.addresseeId"
               :registry-version="lesson.characters?.registryVersion"
             />
+            <CharacterCast v-else compact />
             <p v-if="stage === 'recall'" class="recall-cue">
               {{ card.recallCue || card.phrase.meaning }}
             </p>

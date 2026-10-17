@@ -305,7 +305,7 @@ onMounted(() => {
             <span id="arabic-tracks" aria-hidden="true"></span>
             <div class="landing-section-heading"><h2 id="tracks-title">Languages</h2><p>Arabic is our flagship, rooted in Palestinian everyday life. Understand Arabic from conversation to Quran as its courses grow.</p></div>
             <div class="tracks-grid">
-              <article v-for="course in courses" :key="course.id" :class="{ 'track-featured': course.id === 'levantine', 'track-khmer': course.id === 'khmer' }">
+              <article v-for="course in courses" :key="course.id" :data-course="course.id" :class="`track-${course.id}`">
                 <span class="track-planned">{{ previewCourses.includes(course.id) ? 'Unreviewed · text-only preview' : availableCourses.includes(course.id) ? 'Published lessons available' : 'Planned' }}</span>
                 <h3>{{ course.name }}</h3>
                 <p v-if="course.id === 'levantine'">Urban Palestinian Arabic for everyday conversations. Jordanian variants are labeled.</p>

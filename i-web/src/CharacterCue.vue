@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CharacterLabel from './CharacterLabel.vue';
+import CharacterCast from './CharacterCast.vue';
 import { characterName } from './characters';
 import type { CharacterRoles } from './types';
 defineProps<{
@@ -25,4 +26,5 @@ defineProps<{
       :label="`Reply as ${characterName(roles.responseSpeakerId)} to ${characterName(roles.responseAddresseeId)}`"
     />
   </div>
+  <CharacterCast v-else compact />
 </template>

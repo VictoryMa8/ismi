@@ -395,11 +395,14 @@ async function refreshOfflineQuestLessons() {
 const dailyCompleted = computed(() => Math.min(dailyGoal.value,
   (dashboard.value.dailyPlan.studyMinutesToday ?? dashboard.value.dailyPlan.completedMinutes) + dailyReviewMinutes.value));
 const nextStudyLesson = computed(() => {
-  if (!studySettings.preferences.value.selectedTrackIds.includes(viewedCourse.value)) return undefined;
   const scheduled = studyPlan.value.queue.find(item => (item.trackId ?? 'levantine') === viewedCourse.value);
   if (scheduled) return scheduled;
-  return dailyCompleted.value >= dailyGoal.value ? activeLessons.value.find(item => !item.isCompleted) ?? activeLessons.value.at(-1) : undefined;
+  // Viewing a course is independent of the daily allocation. Keep manual entry
+  // available for unselected/omitted courses and when review takes today's slot.
+  return activeLessons.value.find(item => !item.isCompleted) ?? activeLessons.value.at(-1);
 });
+const manualCourseStudy = computed(() => Boolean(nextStudyLesson.value
+  && !studyPlan.value.queue.some(item => item.id === nextStudyLesson.value!.id)));
 const nextStudyTrack = computed(() => ({ name: activeCourse.value.name }));
 const isCorrect = computed(() => attemptFeedback.value?.isCorrect ?? false);
 const selectedArabicVoice = computed(() => {
@@ -1027,7 +1030,6 @@ async function startLesson(requestedId?: string, practiceOnly = false, cardIndex
     }
   } finally {
     if (session !== lessonSession) return;
-    lessonLoading.value = false;
     introductionOpen.value = Boolean(lesson.value);
     resetPracticeSupport();
     if (lesson.value && cardIndex === undefined && !practiceOnly) {
@@ -1045,6 +1047,9 @@ async function startLesson(requestedId?: string, practiceOnly = false, cardIndex
         }
       } catch { /* Resume is optional if storage is unavailable. */ }
     }
+    // Teaching initializes from its saved checkpoint on mount. Keep the loading
+    // frame until restoration finishes so it cannot mount at the opening scene.
+    lessonLoading.value = false;
     restoringLesson = false;
     await nextTick();
     lessonCloseButton.value?.focus();
@@ -1372,7 +1377,7 @@ async function finishLesson() {
 
       <BackControl class="landing-return mobile-landing-return" href="#">Back to landing page</BackControl>
 
-      <CourseSwitcher :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
+      <CourseSwitcher :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || !studyPageAvailable || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
       <PublicationNotice :notice="activeLessons.find(l => l.publicationNotice)?.publicationNotice" />
       <button v-if="resumableLessonId && activeLessons.some(l => l.id === resumableLessonId)" type="button" class="secondary-action resume-course" @click="startLesson(resumableLessonId)">Resume {{ activeCourse.name }} lesson</button>
       <p v-if="courseStorageError" role="status">{{ courseStorageError }}</p>
@@ -1445,7 +1450,7 @@ async function finishLesson() {
         <section v-if="nextStudyLesson" class="section-block" aria-labelledby="next-heading">
           <div class="section-heading">
             <div>
-              <h2 id="next-heading">{{ dailyCompleted >= dailyGoal ? 'Keep practicing' : 'Next lesson' }}</h2>
+              <h2 id="next-heading">{{ dailyCompleted >= dailyGoal ? 'Keep practicing' : manualCourseStudy ? `Study ${activeCourse.name}` : 'Next lesson' }}</h2>
             </div>
             <span class="time-chip"
               >{{ nextStudyLesson?.estimatedMinutes ?? 0 }} min</span
@@ -1473,10 +1478,10 @@ async function finishLesson() {
                 class="primary-action"
                 type="button"
                 data-ui-sound="advance"
-                :aria-label="`Continue in ${nextStudyTrack?.name?.includes('Levantine') ? 'Levantine' : (nextStudyTrack?.name ?? 'your track')}`"
+                :aria-label="manualCourseStudy ? `Open ${nextStudyLesson.title}` : `Continue in ${nextStudyTrack?.name?.includes('Levantine') ? 'Levantine' : (nextStudyTrack?.name ?? 'your track')}`"
                 @click="startLesson()"
               >
-                Continue
+                {{ manualCourseStudy ? 'Open lesson' : 'Continue' }}
                 <ChevronRight :size="20" aria-hidden="true" />
               </button>
               <details class="lesson-about">
@@ -1491,6 +1496,7 @@ async function finishLesson() {
               </details>
             </div>
           </article>
+          <p v-if="manualCourseStudy && dailyCompleted < dailyGoal" class="review-status-note">Outside today’s plan · study settings unchanged.</p>
 
           <a class="page-link" href="#/courses"
             ><span>{{ courseProgressLabel }}</span
@@ -1982,6 +1988,7 @@ async function finishLesson() {
               <div v-if="lesson?.characters?.characterIds?.length" class="completion-encouragement">
                 <CharacterPortrait :character-id="lesson.characters.characterIds[0]!" :registry-version="lesson.characters.registryVersion" expression="encouraging" />
               </div>
+              <CharacterCast v-else compact />
               <p v-if="dailyGoalReached" class="goal-milestone"><Check :size="18" aria-hidden="true" /> Daily goal complete · {{ dailyGoal }} minutes</p>
               <p v-if="previewMode">
                 No learner progress was saved. Preview does not approve or

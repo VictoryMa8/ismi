@@ -24,6 +24,15 @@ All new assets are precached. The integration was committed/pushed/deployed in
 `03bc3b8`; the owner confirmed the live artwork October 15. Lesson/home portraits
 now use 64px in refinement `9b585a2`, deployed October 15.
 
+## Shared languages / October 16, 2026
+
+The owner confirmed that Fattoush and Knafeh remain characters across all languages.
+Lessons without authored cast metadata now show the existing pair as learning guides
+on Today, course cards, teaching, practice/review and completion. Preserve authored
+participant mappings, unknown-registry fallbacks, dialogue text and offline snapshots;
+never infer who speaks from turn order. This presentation fallback does not alter
+published curriculum. [Behavior and verification](../multi-language/switching-and-identity.md).
+
 ## Historical v1 baseline
 
 October 1, 2026. Implementation proposal, incorporating the owner's direction:

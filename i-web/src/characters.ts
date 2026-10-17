@@ -1,4 +1,6 @@
 export const characterRegistryVersion = 'ismi-cast-v2'
+// Shared guides are presentation only, never inferred dialogue participants.
+export const sharedGuideCast = { registryVersion: characterRegistryVersion, characterIds: ['fattoush', 'knafeh'] }
 // v1 publications keep their immutable cast metadata. The owner-approved v2
 // appearance is a presentation migration for that same named roster.
 export function supportsCharacterRegistry(version?: string) {

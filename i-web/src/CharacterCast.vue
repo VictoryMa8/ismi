@@ -1,20 +1,23 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import CharacterPortrait from './CharacterPortrait.vue';
-import { characterName } from './characters';
+import { characterName, sharedGuideCast } from './characters';
 import type { LessonCast } from './types';
-defineProps<{ cast?: LessonCast | null; compact?: boolean }>();
+const props = defineProps<{ cast?: LessonCast | null; compact?: boolean }>();
+const displayedCast = computed(() => props.cast ?? sharedGuideCast);
 </script>
 <template>
   <div
-    v-if="cast?.characterIds?.length"
+    v-if="displayedCast.characterIds?.length"
     class="character-cast"
     :class="{ compact }"
     :aria-hidden="compact ? true : undefined"
+    :aria-label="!compact && !cast ? 'Learning guides' : undefined"
   >
-    <span v-for="id in cast.characterIds" :key="id">
+    <span v-for="id in displayedCast.characterIds" :key="id">
       <CharacterPortrait
         :character-id="id"
-        :registry-version="cast.registryVersion"
+        :registry-version="displayedCast.registryVersion"
       />
       <strong v-if="!compact">{{ characterName(id) }}</strong>
     </span>

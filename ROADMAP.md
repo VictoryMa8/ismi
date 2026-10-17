@@ -8,6 +8,15 @@ this file. Older plans provide design context, not current priority or permissio
 
 ## At a glance
 
+**F24.8.1 — Implemented October 16, rollout in progress:** owner reported lessons disappearing on language
+switches and requested Fattoush/Knafeh across languages plus distinct landing palettes.
+Scope: keep manual lesson entry visible for the viewed course without changing daily
+allocation; retain explicit character roles and provide shared guides when absent;
+replace positional landing color rules with explicit course palettes. Build and all
+23 focused browser checks pass, including teaching resume/offline and mobile/desktop
+contrast. No curriculum text or publication change.
+[Behavior and delivery](docs/multi-language/switching-and-identity.md).
+
 **F26 — Five previews published October 16:** the owner selected Cambodian Khmer/
 Phnom Penh, twelve units/sixty lessons and conversation-first optional script help,
 then explicitly authorized these five as **unreviewed, text-only development previews**.
@@ -173,9 +182,10 @@ remains the published baseline.
 verified F0 access and then owner listening review. No paid services authorized.
 Real recordings, live speech-provider choices, Quran permissions
 and beta evidence remain separate dependencies.
-For French, course-definition decisions precede authoring. Khmer definition defaults
-and draft preparation are authorized; a fluent reviewer, exact source/help/inventory
-dispositions, permissions and linguistic/audio evidence remain before publication.
+For French, course-definition decisions precede authoring. Khmer's five text-only
+previews are published under F26.2.1. A fluent reviewer, exact source/help/inventory
+dispositions, permissions and linguistic/audio evidence remain before a full reviewed
+release and bulk authoring of units 2–12.
 
 | ID | Feature / bounded scope | Status | Next action or limit |
 | --- | --- | --- | --- |
@@ -1358,7 +1368,7 @@ Recommend two taps from a main page: open selector → choose Arabic or Khmer.
 Arabic retains its separate Palestinian Levantine/MSA/Quranic courses; restore the
 last usable course within that language, with clear choices for the others.
 Future French/Portuguese entries use the same selector when actually available.
-**Next:** Validate discoverability with approved first-unit candidates in the observed pilot and real AT/device matrix. Actual Khmer entry remains planned until content is published.
+**Next:** F24.8.1 fixes course-switch/manual-entry and teaching-resume issues, shared characters and language palettes. Five Khmer previews are published under F26.2.1; observed discoverability and real AT/device checks remain.
 
 **Done when:** switching is apparent on Today, Courses, Practice, Progress and Words;
 the selected course drives each page's content, help/audio labels, review and progress.
@@ -1375,6 +1385,23 @@ availability, F25/F26 published candidates and F24.5 verification. Khmer integra
 does not depend on French publication; enable each language as it becomes available.
 **Evidence:** [implementation and verification](docs/multi-language/README.md), [title options](docs/multi-language/brand-options.html), [original design context](docs/khmer-course-and-brand-expansion.md).
 **Delivery:** application `f515f43` deployed; no new course publication. [Rollout](docs/releases/2026-10-16-multi-language.md).
+
+##### F24.8.1 Switching continuity and shared presentation
+
+**Status:** Done locally — owner-requested fixes implemented October 16; frontend rollout in progress.
+**Scope:** Today retains manual entry to published lessons outside daily allocation;
+startup selection and saved teaching positions cannot be overwritten by loading races;
+Fattoush/Knafeh remain shared guides without changing authored participant roles;
+landing cards use explicit, distinct course palettes with readable text/controls.
+**Done when:** repeated switching, teaching/practice resume, offline reload, primary
+settings independence, authored-role compatibility and mobile/desktop contrast/layout
+checks pass; deployed behavior is recorded separately from local checks.
+**Verification:** production build and all 23 focused Chromium checks pass, including
+repeated switching, teaching/practice/offline resume, settings independence, existing
+authored character roles and actual five-package Khmer publication flow. 320/1280 px
+palettes pass text/control contrast and layout checks. Package regeneration/diff pass.
+**Next:** deploy and verify the frontend. No API/content publication change is required.
+**Evidence:** [behavior and verification](docs/multi-language/switching-and-identity.md).
 
 ### F25 French course
 
@@ -1796,6 +1823,11 @@ Portuguese is eventual expansion direction, not a new implemented course or beta
 
 ## Recent planning changes
 
+- **October 16, 2026 F24.8.1:** owner reported disappearing lessons during language
+  switches, confirmed Fattoush/Knafeh across languages and requested distinct landing
+  colors. Authorized bounded switching/teaching-resume and presentation fixes;
+  [evidence](docs/multi-language/switching-and-identity.md). No curriculum text change.
+
 - **October 16, 2026 F26:** owner authorized implementation and selected Cambodian/
   Phnom Penh, twelve units/sixty lessons, optional script and draft-now/fluent-review-
   before-publication. Five first-unit candidates imported locally (27–31), with
@@ -1833,15 +1865,3 @@ Portuguese is eventual expansion direction, not a new implemented course or beta
   Follow-up adds a three-script title exploration, prominent Arabic–Khmer switching
   and consistent mobile-friendly back controls with measurable acceptance criteria.
   Local planning only; no product implementation, publication or deployment.
-
-- **October 15, 2026 F21:** owner authorized implementation, selected broader Arabic
-  and Monday UTC. Catalog/owner console and learner/offline scopes are built locally;
-  four research drafts imported with explicit blocking media checks. Build/37 API
-  tests and final 21 focused browser checks pass; found recall focus race fixed.
-  [Behavior/evidence](docs/cultural-watch-listen.md). Real content/AT review and release
-  remain open; frontend/API `4545fea` are deployed and live-verified with hosted
-  data/recording/cookie-key preservation. Reusable deployment access is configured.
-  No actual content published. [Rollout](docs/releases/2026-10-15-cultural-media.md).
-
-Keep this log short (latest five meaningful changes). Put detailed evidence in the
-linked feature notes; keep private learner observations outside Git.

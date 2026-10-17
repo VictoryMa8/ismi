@@ -237,6 +237,8 @@ The owner authorized the F24.7 multi-language wording overhaul on October 15, re
 
 The owner prefers richer green, red and gold surfaces over pastel fills. Keep the landing hero image oval and border-free; do not add decorative bubbles behind it. Reload starts at the top, clearing landing section hashes on reload while preserving learner routes. Explicit section navigation and shared section links still scroll to their targets.
 
+Fattoush and Knafeh are shared recurring characters across all languages. Preserve authored participant mappings; where a lesson has no mapping, show them as learning guides without inventing speaker roles or altering published dialogue.
+
 For the planned multi-language identity, red/blue Cambodian-inspired accents may accompany the existing green/red/gold/charcoal/white surfaces. Preserve recognizable Palestinian/Arabic branding, keep course accents distinct from correctness/error states, and identify courses with names as well as color. Exact tokens and assets remain design work; do not infer a required replacement of the wordmark, characters or hero.
 
 The owner selected title option A on October 15: retain Ismi/اسمي until a Khmer rendering is linguistically reviewed. The follow-up establishes these UX preferences: explore an English/Arabic/Khmer brand title with a reviewed Khmer rendering; make page-back controls visibly actionable and comfortable on mobile rather than plain underlined text; and expose an obvious labeled language/course switcher once Khmer is implemented. Preserve separate course progress and started lessons; changing the viewed course must not silently change the primary course or daily allocation. Current implementation and authorization status belongs to F24.7/F24.8/F27.1 in ROADMAP.md.
