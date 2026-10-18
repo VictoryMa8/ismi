@@ -65,8 +65,8 @@ This is a reconciliation of repository/release evidence, **not a new live audit*
 
 | Layer | Latest recorded state | Evidence / limit |
 | --- | --- | --- |
-| Frontend application | `30a393e` Ready on existing Vercel development aliases October 18; documentation follow-up may advance frontend revision | [Learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md) |
-| ASP.NET API | Healthy exact `30a393e` revision October 18 on existing alwaysdata preview | [Learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md); SQLite integrity, recordings and cookie keys verified; no curriculum publication |
+| Frontend application | F27.3 UI from `30a393e` on existing Vercel development aliases; compatibility fix `34a936b` pushed; documentation follow-up may advance revision | [Learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md) |
+| ASP.NET API | Restored healthy exact `08fed75` October 18 after `30a393e` notice regression hid French/Khmer | [Learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md); SQLite/assets verified; fresh five-per-course counts and all ten French/Khmer URLs pass; no curriculum publication |
 | Levantine Everyday | Lesson 1 v4 with S0 synthetic prompt audio; lessons 3/6 v3, other four v2 | [October 18 publication](docs/releases/2026-10-18-s0-audio.md); existing publications preserved |
 | French lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F25.2.1 audit](content/french/meet-01/publication.json); no accepted linguistic/rights review or human audio |
 | Khmer lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F26.2.1 audit](content/khmer/meet-01/publication.json); no human audio/accepted linguistic review |
@@ -109,7 +109,6 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F27.3 · Learner clarity and mobile fixes](#f273-learner-clarity-and-mobile-fixes) | Agent: restore historical preview notices, verify and redeploy; current API hides French/Khmer. |
 | [F25 · French course](#f25-french-course) | Owner: designate fluent reviewer/source dispositions. Agent: first-unit review/pilot before bulk units 2–12. |
 | [F25.3 · French starting check, sounds and text support](#f253-french-starting-check-sounds-and-text-support) | Reviewer/agent: accept sample/spelling inputs, then calibrate starting check and sound/text support. |
 | [F06.1 · Character art redesign](#f061-character-art-redesign) | Owner: decide whether to authorize the remaining profile/turnaround production; no current app call site needs it. |
@@ -185,6 +184,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F27.3 · Learner clarity and mobile fixes](#f273-learner-clarity-and-mobile-fixes) | UI fixes delivered; preview availability restored on prior API; source regression corrected in `34a936b`. |
 | [F25.2.1 · Owner-authorized French text-only development preview](#f2521-owner-authorized-french-text-only-development-preview) | Five exact v1 previews published; normal F25 review/audio/pilot/depth gates remain. |
 | [F19 · Chatterbox phrase audio](#f19-chatterbox-phrase-audio) | Local synthetic-audio contract complete; eight selected mappings integrated into an isolated private console draft. F19.1 retains rights/release. |
 | [F19.1 · Synthetic audio rights and preview release](#f191-synthetic-audio-rights-and-preview-release) | Six S0 clips published across eight lesson-one prompts as v4; other publications and learner data preserved. |
@@ -1045,11 +1045,11 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 #### F27.3 Learner clarity and mobile fixes
 
-- **Work state:** Partial.
-- **Readiness:** Implementation — Notice compatibility regression under repair; content — N/A; verification — Live French/Khmer availability fails on 30a393e; earlier automation missed persisted notices.
-- **Delivery:** Application — Deployed frontend/API `30a393e`; documentation follow-up may advance frontend revision; content publication — Unchanged.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; source notice compatibility corrected in 34a936b; content — N/A; verification — Regression reproduced/fixed in two API cases; live counts and all ten lesson URLs pass after API rollback; real-device/AT absent.
+- **Delivery:** Application — Frontend fixes deployed; corrected source 34a936b pushed; API restored to working 08fed75; documentation follow-up may advance frontend; content publication — Unchanged.
 - **Scope:** Readable Practice tiles, plain study/response wording, one Today resume action, silent streak grace, hidden optional weekly activities and shared French/Khmer character presentation.
-- **Next action:** Agent: restore original persisted-notice compatibility, run regression checks and deploy correction under existing rollout authority.
+- **Next action:** None in this bounded functional scope; before the next full API upload, assess hosting space and use corrected source 34a936b or later.
 - **Authorization:** Owner requested fixes and then “commit and reploy” October 18, authorizing commit/push and deployment to existing development hosts; no curriculum publication.
 - **Completion gate / evidence:** [Bounded contract and evidence](docs/learner-clarity-fixes.md).
 - **Dependencies:** F06/F17.7/F24/F27.2; preserve exact preview text and answer records.
@@ -1167,7 +1167,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
-- **October 18 — F27.3:** mobile Practice text, plain study/response labels, one Today resume action, silent grace, hidden optional weekly activities and shared French/Khmer character presentation deployed as `30a393e` to both existing development hosts. Forty-five focused browser checks and two API checks pass; curriculum unchanged.
+- **October 18 — F27.3:** mobile Practice text, plain study/response labels, one Today resume action, silent grace, hidden optional weekly activities and shared French/Khmer character presentation UI delivered; notice regression corrected in `34a936b`, working API restored to `08fed75`. All ten French/Khmer previews available again; historical-notice tests now independent of policy constants. Curriculum unchanged.
 
 - **October 18 — F25:** owner selected Metropolitan France reference, twelve units/sixty lessons, five-minute month-one guided target and draft-first review route. Five exact first-unit text previews published on deployed `08fed75`; 57 API/three publication browser checks pass, existing data/assets preserved. Full review/audio/course gates remain.
 
