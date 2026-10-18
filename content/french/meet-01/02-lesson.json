@@ -1,0 +1,800 @@
+{
+  "lesson": {
+    "id": "french-meet-01-02",
+    "trackId": "french",
+    "schemaVersion": 2,
+    "title": "Exchange names with a friend",
+    "scenario": "A mutual friend has explicitly invited Alex and Camille to use tu with each other.",
+    "estimatedMinutes": 5,
+    "version": "draft",
+    "unitId": "french-meet-01",
+    "unitTitle": "Meet someone and keep the exchange going",
+    "courseOrder": 2,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": false,
+    "contentReview": {
+      "languageTag": "fr-FR",
+      "variety": "metropolitan-france",
+      "helpConvention": "none",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "criticalIssues": [
+        "No fluent French reviewer designated; exact text, register, explanations, answers and segments need acceptance.",
+        "References are not an approved source foundation or publication rights clearance; no publisher media or lessons copied.",
+        "No reviewed human model audio or pronunciation assessment; repair phrases and optional spelling help require fluent verification.",
+        "No actual device/input/assistive-technology checks or observed immediate/delayed learner outcomes."
+      ],
+      "sourceLanguages": {
+        "https://www.laits.utexas.edu/tex/gr/pro2.html": "fr-FR",
+        "https://www.laits.utexas.edu/tex/gr/vpr1.html": "fr-FR",
+        "https://www.laits.utexas.edu/tex/gr/int1.html": "fr-FR",
+        "https://www.dictionnaire-academie.fr/article/A9B1554?history=0": "fr-FR",
+        "internal:french/meet-01/authoring-v1": "fr-FR"
+      }
+    },
+    "introduction": {
+      "goal": "Give an assigned name, ask a name and return the question.",
+      "dialogue": [
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Bonjour.",
+            "pronunciationHelp": "",
+            "meaning": "Hello.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Bonjour.",
+            "pronunciationHelp": "",
+            "meaning": "Hello.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu t’appelles comment ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (familiar)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Et toi ?",
+            "pronunciationHelp": "",
+            "meaning": "And you? (familiar)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Alex.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Alex.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Tu t’appelles comment ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (familiar)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Je m’appelle Camille.",
+          "pronunciationHelp": "",
+          "meaning": "My name is Camille.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Je m’appelle Alex.",
+          "pronunciationHelp": "",
+          "meaning": "My name is Alex.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Et toi ?",
+          "pronunciationHelp": "",
+          "meaning": "And you? (familiar)",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Use the fictional assigned name. Tu and toi belong to this explicitly familiar exchange; they are not universal defaults for every person you meet.",
+      "dialectNote": "Reference target: contemporary everyday Metropolitan French. Familiar tu and polite singular vous are explicitly assigned by scene, not inferred from age or appearance. No regional alternative is claimed without a reviewed source.",
+      "recordingNote": "Unreviewed private text draft. No human model audio or phonetic transcription. Device speech, if available, is a preview, not pronunciation evidence.",
+      "sourceLocators": [
+        "https://www.laits.utexas.edu/tex/gr/pro2.html",
+        "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+        "https://www.laits.utexas.edu/tex/gr/int1.html",
+        "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+        "internal:french/meet-01/authoring-v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Ask a familiar person’s name",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu t’appelles comment ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (familiar)",
+            "audioUrl": null
+          },
+          "note": "This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase.",
+          "recallCue": "Ask for a name in the familiar setting.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Tu t’appelles comment ?",
+              "pronunciationHelp": "",
+              "meaning": "What is your name? (familiar)",
+              "audioUrl": null
+            }
+          ]
+        },
+        {
+          "title": "Give the assigned name Camille",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null
+          },
+          "note": "Use the assigned name Camille. The phrase does not specify a gender.",
+          "recallCue": "Introduce yourself as Camille.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Je m’appelle Camille.",
+              "pronunciationHelp": "",
+              "meaning": "My name is Camille.",
+              "audioUrl": null
+            }
+          ]
+        },
+        {
+          "title": "Give the assigned name Alex",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Alex.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Alex.",
+            "audioUrl": null
+          },
+          "note": "Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name.",
+          "recallCue": "Introduce yourself as Alex.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Je m’appelle Alex.",
+              "pronunciationHelp": "",
+              "meaning": "My name is Alex.",
+              "audioUrl": null
+            }
+          ]
+        },
+        {
+          "title": "Return a familiar question",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Et toi ?",
+            "pronunciationHelp": "",
+            "meaning": "And you? (familiar)",
+            "audioUrl": null
+          },
+          "note": "After giving a name, this returns that same question to the familiar conversation partner. The preceding context supplies the topic.",
+          "recallCue": "Return the name question to a familiar friend.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Et toi ?",
+              "pronunciationHelp": "",
+              "meaning": "And you? (familiar)",
+              "audioUrl": null
+            }
+          ]
+        }
+      ],
+      "scriptSupport": {
+        "title": "Optional spelling help",
+        "note": "Compare the exact taught phrases, including accents and apostrophes. Reveal meaning when useful. These examples do not assess pronunciation or general reading ability.",
+        "teachingCardIndexes": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "vocabulary": [
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Tu t’appelles comment ?",
+        "pronunciationHelp": "",
+        "meaning": "What is your name? (familiar)",
+        "audioUrl": null,
+        "id": "nameq",
+        "senseId": "meet-nameq",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "familiar-scene",
+        "forms": [],
+        "note": "This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Je m’appelle Camille.",
+        "pronunciationHelp": "",
+        "meaning": "My name is Camille.",
+        "audioUrl": null,
+        "id": "camille",
+        "senseId": "meet-camille",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "general",
+        "forms": [],
+        "note": "Use the assigned name Camille. The phrase does not specify a gender.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Je m’appelle Alex.",
+        "pronunciationHelp": "",
+        "meaning": "My name is Alex.",
+        "audioUrl": null,
+        "id": "alex",
+        "senseId": "meet-alex",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "general",
+        "forms": [],
+        "note": "Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Et toi ?",
+        "pronunciationHelp": "",
+        "meaning": "And you? (familiar)",
+        "audioUrl": null,
+        "id": "andyou",
+        "senseId": "meet-andyou",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "familiar-scene",
+        "forms": [],
+        "note": "After giving a name, this returns that same question to the familiar conversation partner. The preceding context supplies the topic.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 3
+      }
+    ],
+    "steps": [
+      {
+        "id": "names-1",
+        "instruction": "Ask the familiar partner for their name.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Bonjour.",
+          "pronunciationHelp": "",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “What is your name? (familiar)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “What is your name? (familiar)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu t’appelles comment ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (familiar)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Tu ",
+              "t’appelles ",
+              "comment ?"
+            ],
+            "rationale": "This supplies the requested response: “What is your name? (familiar)” This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “What is your name? (familiar)” This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Ask for a name in the familiar setting."
+        }
+      },
+      {
+        "id": "names-2",
+        "instruction": "You are Camille. Answer the name question.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Tu t’appelles comment ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (familiar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “My name is Camille.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Camille."
+            ],
+            "rationale": "This supplies the requested response: “My name is Camille.” Use the assigned name Camille. The phrase does not specify a gender."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Alex.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Alex.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Alex."
+            ],
+            "rationale": "This means “My name is Alex.” Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name. The task specifically requests “My name is Camille.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “My name is Camille.” Use the assigned name Camille. The phrase does not specify a gender.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Introduce yourself as Camille."
+        }
+      },
+      {
+        "id": "names-3",
+        "instruction": "You are Alex. Answer the returned name question.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Et toi ?",
+          "pronunciationHelp": "",
+          "meaning": "And you? (familiar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Alex.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Alex.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Alex."
+            ],
+            "rationale": "This supplies the requested response: “My name is Alex.” Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Camille."
+            ],
+            "rationale": "This means “My name is Camille.” Use the assigned name Camille. The phrase does not specify a gender. The task specifically requests “My name is Alex.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “My name is Alex.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “My name is Alex.” Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Introduce yourself as Alex."
+        }
+      },
+      {
+        "id": "names-4",
+        "instruction": "You just gave your name. Return that question in this tu conversation.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Je m’appelle Camille.",
+          "pronunciationHelp": "",
+          "meaning": "My name is Camille.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “And you? (familiar)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “And you? (familiar)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Et toi ?",
+            "pronunciationHelp": "",
+            "meaning": "And you? (familiar)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Et ",
+              "toi ?"
+            ],
+            "rationale": "This supplies the requested response: “And you? (familiar)” After giving a name, this returns that same question to the familiar conversation partner. The preceding context supplies the topic."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “And you? (familiar)” After giving a name, this returns that same question to the familiar conversation partner. The preceding context supplies the topic.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Return the name question to a familiar friend."
+        }
+      },
+      {
+        "id": "names-5",
+        "instruction": "At another visit you are Alex again. Give that assigned name.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Tu t’appelles comment ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (familiar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “My name is Alex.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Alex.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Alex.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Alex."
+            ],
+            "rationale": "This supplies the requested response: “My name is Alex.” Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Camille."
+            ],
+            "rationale": "This means “My name is Camille.” Use the assigned name Camille. The phrase does not specify a gender. The task specifically requests “My name is Alex.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “My name is Alex.” Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Introduce yourself as Alex."
+        }
+      },
+      {
+        "id": "names-6",
+        "instruction": "After a brief greeting, ask your familiar partner’s name rather than ending the exchange.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Salut !",
+          "pronunciationHelp": "",
+          "meaning": "Hi!",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu t’appelles comment ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (familiar)",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Tu ",
+              "t’appelles ",
+              "comment ?"
+            ],
+            "rationale": "This supplies the requested response: “What is your name? (familiar)” This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “What is your name? (familiar)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “What is your name? (familiar)” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “What is your name? (familiar)” This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Ask for a name in the familiar setting."
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — subject pronouns",
+      "locator": "https://www.laits.utexas.edu/tex/gr/pro2.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for first/second person and situational tu/vous. Peer familiarity in these original scenarios is stipulated, not inferred from age alone."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — pronominal verbs",
+      "locator": "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for s’appeler and pronoun/verb patterns. Ismi names, dialogue arrangements and explanations are original draft compositions."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — interrogatives",
+      "locator": "https://www.laits.utexas.edu/tex/gr/int1.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for information questions and conversational question forms. Does not directly attest every composed phrase."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "Académie française: bonjour, ninth edition",
+      "locator": "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Lexical greeting reference; does not constitute acceptance of the full curriculum."
+    },
+    {
+      "sourceType": "authoring-record",
+      "title": "Ismi F25 first-unit draft v1",
+      "locator": "internal:french/meet-01/authoring-v1",
+      "rights": "Original AI-assisted private draft for review. No publication approval or external rights clearance implied.",
+      "notes": "Owner authorized French implementation and Metropolitan France reference, 12 units/60 lessons, five-minute month-one guided-conversation target and draft-first/fluent-review-before-publication route October 18, 2026. No reviewer designated."
+    }
+  ]
+}

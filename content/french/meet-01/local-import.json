@@ -1,0 +1,82 @@
+{
+  "feature": "F25.2",
+  "date": "2026-10-18",
+  "target": "local development SQLite only",
+  "backupPrepared": true,
+  "records": [
+    {
+      "Id": 32,
+      "LessonId": "french-meet-01-01",
+      "VersionNumber": 1,
+      "Status": "draft",
+      "ApprovedBy": null,
+      "PublishedBy": null,
+      "storedVersion": "draft-french-meet-01-01-v1",
+      "authoredFieldsMatch": true
+    },
+    {
+      "Id": 33,
+      "LessonId": "french-meet-01-02",
+      "VersionNumber": 1,
+      "Status": "draft",
+      "ApprovedBy": null,
+      "PublishedBy": null,
+      "storedVersion": "draft-french-meet-01-02-v1",
+      "authoredFieldsMatch": true
+    },
+    {
+      "Id": 34,
+      "LessonId": "french-meet-01-03",
+      "VersionNumber": 1,
+      "Status": "draft",
+      "ApprovedBy": null,
+      "PublishedBy": null,
+      "storedVersion": "draft-french-meet-01-03-v1",
+      "authoredFieldsMatch": true
+    },
+    {
+      "Id": 35,
+      "LessonId": "french-meet-01-04",
+      "VersionNumber": 1,
+      "Status": "draft",
+      "ApprovedBy": null,
+      "PublishedBy": null,
+      "storedVersion": "draft-french-meet-01-04-v1",
+      "authoredFieldsMatch": true
+    },
+    {
+      "Id": 36,
+      "LessonId": "french-meet-01-05",
+      "VersionNumber": 1,
+      "Status": "draft",
+      "ApprovedBy": null,
+      "PublishedBy": null,
+      "storedVersion": "draft-french-meet-01-05-v1",
+      "authoredFieldsMatch": true
+    }
+  ],
+  "unchangedTables": [
+    "AlphabetPacks",
+    "AspNetRoleClaims",
+    "AspNetRoles",
+    "AspNetUserClaims",
+    "AspNetUserLogins",
+    "AspNetUserRoles",
+    "AspNetUserTokens",
+    "AspNetUsers",
+    "CulturalCollections",
+    "LearnerProgress",
+    "LessonCompletions",
+    "RecallReviewCases",
+    "StudySettings"
+  ],
+  "tablesWithAdditionsOnly": [
+    "CurriculumAuditEvents",
+    "CurriculumSources",
+    "CurriculumVersions"
+  ],
+  "allExistingRowsPreserved": true,
+  "existingPublishedPayloadsPreserved": 13,
+  "hostedDatabaseChanged": false,
+  "approvalOrPublicationPerformed": false
+}

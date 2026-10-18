@@ -566,7 +566,7 @@ function formatDate(value: string | null): string {
               >
                 <CheckCircle2 :size="17" aria-hidden="true" /> Approve
               </button>
-              <button v-if="selected.status === 'draft' && /^khmer-meet-01-0[1-5]$/.test(selected.lesson.id)"
+              <button v-if="selected.status === 'draft' && /^(khmer|french)-meet-01-0[1-5]$/.test(selected.lesson.id)"
                 class="secondary-action" type="button" :disabled="busy || uploading || dirty" @click="approvePreview">
                 Approve text-only preview
               </button>

@@ -145,6 +145,8 @@ builder.Services.AddScoped<RecallReportService>();
 builder.Services.AddSingleton<RecordingStore>();
 builder.Services.AddSingleton<CurriculumValidator>();
 builder.Services.AddSingleton<KhmerTextPreviewPolicy>();
+builder.Services.AddSingleton<FrenchTextPreviewPolicy>();
+builder.Services.AddSingleton<CourseTextPreviewPolicy>();
 builder.Services.AddSingleton<CurriculumAccessService>();
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddSingleton<CulturalMediaValidator>();
@@ -238,7 +240,7 @@ app.MapGet("/api/health", () => Results.Ok(new
 {
     status = "healthy",
     service = "ismi-api",
-    features = new[] { "typed-recall-v1", "multi-language-v1", "private-draft-preview-v1", "khmer-text-preview-v1", "alphabet-v1", "alphabet-text-preview-v1" },
+    features = new[] { "typed-recall-v1", "multi-language-v1", "private-draft-preview-v1", "khmer-text-preview-v1", "french-text-preview-v1", "alphabet-v1", "alphabet-text-preview-v1" },
     revision = typeof(LessonResponse).Assembly
         .GetCustomAttributes(typeof(System.Reflection.AssemblyInformationalVersionAttribute), false)
         .Cast<System.Reflection.AssemblyInformationalVersionAttribute>().FirstOrDefault()?.InformationalVersion,

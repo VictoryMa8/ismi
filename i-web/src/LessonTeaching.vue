@@ -140,8 +140,8 @@ async function back() {
           <li v-for="cardIndex in lesson.introduction.scriptSupport.teachingCardIndexes" :key="cardIndex">
             <template v-if="cards[cardIndex]">
               <p v-bind="textAttributes(lesson.trackId)">{{ cards[cardIndex]!.phrase.arabic }}</p>
-              <details><summary>Show pronunciation help and meaning</summary>
-                <p dir="ltr">{{ cards[cardIndex]!.phrase.arabizi }}</p>
+              <details><summary>{{ cards[cardIndex]!.phrase.arabizi ? 'Show pronunciation help and meaning' : 'Show meaning' }}</summary>
+                <p v-if="cards[cardIndex]!.phrase.arabizi" dir="ltr">{{ cards[cardIndex]!.phrase.arabizi }}</p>
                 <p>{{ cards[cardIndex]!.phrase.meaning }}</p>
               </details>
             </template>

@@ -796,8 +796,10 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         (await SendWithCsrfAsync(owner, HttpMethod.Post, "/api/study-settings", new SaveStudySettingsRequest(preferences, 0))).EnsureSuccessStatusCode();
         Assert.Equal(5, (await owner.GetFromJsonAsync<StudySettingsResponse>("/api/study-settings"))!.Preferences.SelectedTrackIds.Count);
     }
-    [Fact]
-    public async Task UnreviewedKhmerUnitImportsAndPreviewsPrivatelyButCannotApproveOrPublish()
+    [Theory]
+    [InlineData("khmer")]
+    [InlineData("french")]
+    public async Task UnreviewedFirstUnitImportsAndPreviewsPrivatelyButCannotApproveOrPublish(string courseId)
     {
         using var owner = CreateClient();
         using var guest = CreateClient();
@@ -807,10 +809,10 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
         var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
         var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
-        var path = Path.Combine(AppContext.BaseDirectory, "khmer-meet-01");
+        var path = Path.Combine(AppContext.BaseDirectory, courseId + "-meet-01");
         Assert.Equal(5, (await importer.ImportAsync(path)).Count);
         Assert.All(await importer.ImportAsync(path), line => Assert.StartsWith("Unchanged:", line));
-        var drafts = (await publishing.ListAsync()).Where(v => v.LessonId.StartsWith("khmer-meet-01-")).ToArray();
+        var drafts = (await publishing.ListAsync()).Where(v => v.LessonId.StartsWith(courseId + "-meet-01-")).ToArray();
         Assert.Equal(5, drafts.Length);
         foreach (var draft in drafts)
         {
@@ -850,15 +852,19 @@ public sealed class CurriculumApiTests : IAsyncLifetime
                 SourceLanguages = new Dictionary<string, string>() } }, detail.Sources).IsValid);
         }
         var dashboard = (await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
-        Assert.DoesNotContain(dashboard.DailyPlan.Lessons, l => l.TrackId == "khmer");
+        Assert.DoesNotContain(dashboard.DailyPlan.Lessons, l => l.TrackId == courseId);
         Assert.Equal(arabicBefore, await guest.GetStringAsync("/api/lessons/levantine-day-01"));
     }
 
-    [Fact]
-    public async Task OwnerTextPreviewExceptionPinsFiveExactPackagesAndPreservesPendingReviewAndNormalGates()
+    [Theory]
+    [InlineData("khmer")]
+    [InlineData("french")]
+    public async Task OwnerTextPreviewExceptionPinsFiveExactPackagesAndPreservesPendingReviewAndNormalGates(string courseId)
     {
+        var flag = courseId == "khmer" ? "Curriculum:AllowKhmerTextPreview" : "Curriculum:AllowFrenchTextPreview";
+        var notice = courseId == "khmer" ? KhmerTextPreviewPolicy.Notice : FrenchTextPreviewPolicy.Notice;
         using var previewFactory = _factory.WithWebHostBuilder(builder => builder.ConfigureAppConfiguration((_, config) =>
-            config.AddInMemoryCollection(new Dictionary<string, string?> { ["Curriculum:AllowKhmerTextPreview"] = "true" })));
+            config.AddInMemoryCollection(new Dictionary<string, string?> { [flag] = "true" })));
         using var owner = previewFactory.CreateClient();
         using var guest = previewFactory.CreateClient();
         await RegisterAsync(owner, "Owner", "owner@example.test");
@@ -867,17 +873,17 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
         var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
         var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
-        await importer.ImportAsync(Path.Combine(AppContext.BaseDirectory, "khmer-meet-01"));
-        var drafts = (await publishing.ListAsync()).Where(v => v.LessonId.StartsWith("khmer-meet-01-")).ToArray();
+        await importer.ImportAsync(Path.Combine(AppContext.BaseDirectory, courseId + "-meet-01"));
+        var drafts = (await publishing.ListAsync()).Where(v => v.LessonId.StartsWith(courseId + "-meet-01-")).ToArray();
         Assert.Equal(5, drafts.Length);
         foreach (var draft in drafts)
         {
             var original = (await publishing.GetAsync(draft.Id))!;
-            var candidate = original.Lesson with { PublicationNotice = KhmerTextPreviewPolicy.Notice };
+            var candidate = original.Lesson with { PublicationNotice = notice };
             Assert.True(validator.Validate(candidate, original.Sources).IsValid);
-            Assert.False(new KhmerTextPreviewPolicy(new ConfigurationBuilder().Build()).IsAuthorized(candidate, original.Sources));
+            Assert.False(new CourseTextPreviewPolicy(new KhmerTextPreviewPolicy(new ConfigurationBuilder().Build()), new FrenchTextPreviewPolicy(new ConfigurationBuilder().Build())).IsAuthorized(candidate, original.Sources));
             foreach (var changed in new[] {
-                candidate with { Id = "khmer-meet-01-06" }, candidate with { TrackId = "french" },
+                candidate with { Id = courseId + "-meet-01-06" }, candidate with { TrackId = courseId == "khmer" ? "french" : "khmer" },
                 candidate with { Title = "Changed wording" },
                 candidate with { PublicationNotice = candidate.PublicationNotice! with { Label = "Reviewed" } },
                 candidate with { ContentReview = candidate.ContentReview! with { Reviewer = "invented", ReviewDisposition = "accepted", CriticalIssues = [] } }
@@ -893,7 +899,7 @@ public sealed class CurriculumApiTests : IAsyncLifetime
                 $"/api/admin/curriculum/versions/{draft.Id}/approve-text-preview", new { });
             approve.EnsureSuccessStatusCode();
             var approved = (await approve.Content.ReadFromJsonAsync<CurriculumVersionDetail>())!;
-            Assert.Equal(KhmerTextPreviewPolicy.Notice, approved.Lesson.PublicationNotice);
+            Assert.Equal(notice, approved.Lesson.PublicationNotice);
             Assert.Equal("pending", approved.Lesson.ContentReview!.ReviewDisposition);
             Assert.Equal("pending", approved.Lesson.ContentReview.RightsDisposition);
             Assert.Equal("", approved.Lesson.ContentReview.Reviewer);
@@ -902,17 +908,17 @@ public sealed class CurriculumApiTests : IAsyncLifetime
             Assert.DoesNotContain(approved.Sources, s => s.SourceType == "linguistic-review");
             (await SendWithCsrfAsync(owner, HttpMethod.Post, $"/api/admin/curriculum/versions/{draft.Id}/publish", new { })).EnsureSuccessStatusCode();
             var published = (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{draft.LessonId}"))!;
-            Assert.Equal(KhmerTextPreviewPolicy.Notice, published.PublicationNotice);
+            Assert.Equal(notice, published.PublicationNotice);
             Assert.All(published.Steps, s => Assert.Null(s.Prompt.AudioUrl));
         }
         var dashboard = (await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!;
-        Assert.Equal(5, dashboard.DailyPlan.Lessons.Count(l => l.TrackId == "khmer" && l.PublicationNotice == KhmerTextPreviewPolicy.Notice));
+        Assert.Equal(5, dashboard.DailyPlan.Lessons.Count(l => l.TrackId == courseId && l.PublicationNotice == notice));
         Assert.Equal(arabicBefore, await guest.GetStringAsync("/api/lessons/levantine-day-01"));
         var configuration = previewFactory.Services.GetRequiredService<IConfiguration>();
-        configuration["Curriculum:AllowKhmerTextPreview"] = "false";
+        configuration[flag] = "false";
         Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{drafts[0].LessonId}")).StatusCode);
-        Assert.DoesNotContain((await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!.DailyPlan.Lessons, l => l.TrackId == "khmer");
-        configuration["Curriculum:AllowKhmerTextPreview"] = "true";
+        Assert.DoesNotContain((await guest.GetFromJsonAsync<DashboardResponse>("/api/dashboard"))!.DailyPlan.Lessons, l => l.TrackId == courseId);
+        configuration[flag] = "true";
         // Earlier HTTP commands used separate request scopes; refresh this
         // import scope before the direct service withdrawal/rollback rehearsal.
         scope.ServiceProvider.GetRequiredService<Ismi.Api.Data.IsmiDbContext>().ChangeTracker.Clear();
@@ -924,7 +930,7 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{first.Lesson.Id}")).StatusCode);
         try { await publishing.RollbackAsync(first.Lesson.Id, first.Id, "test owner"); }
         catch (CurriculumValidationException ex) { Assert.Fail(string.Join("; ", ex.Errors)); }
-        Assert.Equal(KhmerTextPreviewPolicy.Notice, (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{first.Lesson.Id}"))!.PublicationNotice);
+        Assert.Equal(notice, (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{first.Lesson.Id}"))!.PublicationNotice);
     }
 
     private sealed class LessonJsonComparer : IEqualityComparer<LessonResponse>

@@ -56,6 +56,24 @@ course definition. This does not authorize changed/additional preview publicatio
 or fabricate review/rights acceptance. Keep the five exact existing preview pins
 and normal publication/beta gates intact; current delivery belongs in ROADMAP.md.
 
+On October 18 the owner authorized F25 implementation and selected contemporary
+everyday French with a Metropolitan France reference, labeled regional variants
+where supported, twelve units/sixty lessons, and a thirty-day target of a guided
+five-minute conversation about introductions, family, food and plans at fifteen
+minutes per day devoted to French. Prepare unpublished drafts now and designate
+a fluent French reviewer before publication. This supersedes the earlier F25
+planning-only limit, not exact source/rights acceptance, publication/deployment,
+hiring/contact, provider spending or beta inclusion. First-unit review/pilot
+precedes bulk units 2–12 under the existing contract.
+
+On October 18 the owner then authorized publication/deployment and explicitly
+selected “Publish these five as unreviewed text-only previews” after the missing
+review, source-rights acceptance and human audio were explained. This exception
+covers only the five original hash-pinned F25 first-unit packages on the existing
+development preview, labeled unreviewed/text-only. Preserve pending review/rights,
+empty reviewer and missing audio. No changed/additional text, beta inclusion,
+reviewed-content claim or broader waiver follows; normal full-course review remains.
+
 ## Primary audience and promise
 
 - First users are false beginners who already know enough Arabic for basic questions or directions.
@@ -74,7 +92,7 @@ and normal publication/beta gates intact; current delivery belongs in ROADMAP.md
 
 - Levantine is the flagship track.
 - Launch target: 12 weeks of Levantine content and 4 weeks each of MSA and Quranic Arabic.
-- French and Khmer are included in the product roadmap. Khmer's Cambodian/Phnom Penh model, twelve-unit target and conversation-first optional script direction were selected October 16; fluent review, exact reading/help/source decisions and release timing remain open. French definition remains unresolved. Neither joins the first-100 beta automatically. English remains the teaching/interface language unless the owner requests localization.
+- French and Khmer are included in the product roadmap. Khmer's Cambodian/Phnom Penh model, twelve-unit target and conversation-first optional script direction were selected October 16; fluent review, exact reading/help/source decisions and release timing remain open. French’s Metropolitan France reference and twelve-unit target were selected October 18; exact source/review/audio acceptance remains. Neither joins the first-100 beta automatically. English remains the teaching/interface language unless the owner requests localization.
 - Levantine uses urban Palestinian as the primary model and labels Jordanian alternatives.
 - Quranic Arabic is comprehension-first. Teach decoding and pronunciation, but not detailed tajwid in the initial product.
 - Connect related words, roots, meanings, and register differences across tracks when useful; do not force the three curricula into identical vocabulary sequences.
@@ -235,7 +253,7 @@ Do not include billing, a social network, or a live-news content operation in th
 
 ## Open decisions
 
-- French course definition; Khmer exact reading inventory/help convention and both courses' content/audio sources, linguistic review arrangements and beta inclusion. Khmer's Cambodian/Phnom Penh model, twelve-unit/sixty-lesson target and draft-first/fluent-review-before-publication route were approved October 16. The F24 queue policy was approved October 15: whole sessions, about 60% primary when useful, rotating secondary courses, due review first within each allocation, visible overruns/omissions and manual access.
+- French exact sources/review/audio and assessment acceptance; Khmer exact reading inventory/help convention and both courses' content/audio sources, linguistic review arrangements and beta inclusion. Khmer's Cambodian/Phnom Penh model, twelve-unit/sixty-lesson target and draft-first/fluent-review-before-publication route were approved October 16. The F24 queue policy was approved October 15: whole sessions, about 60% primary when useful, rotating secondary courses, due review first within each allocation, visible overruns/omissions and manual access.
 - Final approved Quran translation, word-level, morphology, and recitation resource IDs and written permissions.
 - Subscription pricing, trials, family plans, and regional pricing.
 - External authentication providers, production account recovery/email delivery, analytics, and detailed data-retention periods.

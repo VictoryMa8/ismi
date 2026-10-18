@@ -53,6 +53,7 @@ not native-expert review. “N/A” means that layer is outside the bounded scop
 | F17 learning support | Habits/can-do/UI complete | Grammar/reference slice not authored | Bound grammar, reminder and XP work before implementing | Selected children deployed |
 | F21 cultural media | Complete | Four research editions awaiting acceptance | Real media/editorial checks, AT, exact publication | App deployed / media unpublished |
 | F24 multi-language foundation | Complete | Reviewed French/Khmer first units still required | Real input/AT/Safari offline and observed mixed-language pilot | App deployed / expansion release gated |
+| F25 French course | First-unit private flow complete; course partial | Five drafts; 55 lessons unauthored | Exact fluent/source acceptance, audio/check inputs, first-unit pilot | Shared app deployed / French drafts local only |
 | F26 Khmer course | Shared app complete; course partial | Five of sixty lessons drafted and preview-published | Review/source/help decisions, 55 lessons, audio/modules/pilot | App deployed / five unreviewed text previews |
 | F28 alphabet | Complete under revised text-only contract | Five full packs authored, unreviewed | No remaining F28 gate; human/source/access/release is F30 | App deployed / full drafts unpublished |
 
@@ -84,8 +85,8 @@ not a deployment command. UI availability is not curriculum completion.
 - Arabic content: review F12.1/F12.2 candidates before further release; F09 real
   recordings remain distinct from F19's narrowly authorized free-tier audition.
 - Multi-language: F24 software is deployed. Accepted F25/F26 first units and actual
-  device/pilot evidence precede bulk course/release decisions. F26 draft work is
-  authorized; F25 full-course definition/authoring remains unresolved. F28's
+  device/pilot evidence precede bulk course/release decisions. F25/F26 draft implementation is
+  authorized; French definition was selected October 18, with exact review/source gates open. F28's
   Metropolitan French choice applies only to its alphabet pack.
 - F18.1 remains owner-deferred. No participant/reviewer contact, hiring, spending,
   provider enrollment, beta expansion or changed preview publication follows from
@@ -107,6 +108,8 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F25 · French course](#f25-french-course) | Owner: designate fluent reviewer/source dispositions. Agent: first-unit review/pilot before bulk units 2–12. |
+| [F25.3 · French starting check, sounds and text support](#f253-french-starting-check-sounds-and-text-support) | Reviewer/agent: accept sample/spelling inputs, then calibrate starting check and sound/text support. |
 | [F06.1 · Character art redesign](#f061-character-art-redesign) | Owner: decide whether to authorize the remaining profile/turnaround production; no current app call site needs it. |
 | [F12 · Levantine course expansion](#f12-levantine-course-expansion) | Owner: review F12.1 drafts. Agent: bound the next batch only after review; do not equate three drafts with twelve weeks. |
 | [F15 · Personal study plan and placement](#f15-personal-study-plan-and-placement) | Agent: scope remaining track-specific assessments/modules; reuse delivered F28 text-only explorer, with F30/F09 review/audio boundaries. |
@@ -119,6 +122,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F25.2 · French first unit](#f252-french-first-unit) | Reviewer/owner: disposition five private drafts; exact text, register, answers, segments and source acceptance remain. |
 | [F12.2 · Transliteration and pronunciation audit](#f122-transliteration-and-pronunciation-audit) | Owner: review exact corrections. Agent: record source/model dispositions and reconcile existing local drafts before integration. |
 | [F21 · Cultural watch and listen recommendations](#f21-cultural-watch-and-listen-recommendations) | Agent: resolve F21.1 source/access/runtime gaps; owner reviews exact editions; F21.5 retains real AT/release checks. |
 | [F21.1 · Curation and first four collections](#f211-curation-and-first-four-collections) | Agent: verify precise runtime/edition, playback, region/access/support and editorial suitability; owner records dispositions. |
@@ -128,6 +132,8 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F25.1 · French definition, sources and review route](#f251-french-definition-sources-and-review-route) | Owner: designate fluent French reviewer and disposition prepared sources/rights; course variety/depth/outcome selected. |
+| [F25.5 · French model audio and guided speaking](#f255-french-model-audio-and-guided-speaking) | Reviewer: accept fourteen scripts. Owner: arrange permitted recordings and provider/privacy decisions. |
 | [F09 · Reviewed Levantine recordings](#f09-reviewed-levantine-recordings) | Owner: supply/select permitted recordings and reviewer for an exact prompt batch. Agent: reconcile script/package hashes before upload. |
 | [F14 · Quranic course](#f14-quranic-course) | Owner: approve exact resource IDs/permissions. Agent: scope integrity and track-specific review/publication controls. |
 | [F26.5 · Khmer model audio and guided speaking](#f265-khmer-model-audio-and-guided-speaking) | Reviewer: accept scripts. Owner: arrange permitted recordings and provider/privacy decisions; agent verifies actual Khmer feedback/offline behavior. |
@@ -139,8 +145,6 @@ The next-action text names the actor; use the record before taking action.
 | --- | --- |
 | [F11 · Guided speaking](#f11-guided-speaking) | Owner: select a first scenario and provider/privacy setup. Agent: scope the selected branch and failure/text alternatives. |
 | [F16 · Account recovery and deletion](#f16-account-recovery-and-deletion) | Owner: decide email delivery, hosting constraints and deletion/retention requirements; then agent scopes flows. |
-| [F25 · French course](#f25-french-course) | Owner: decide full course definition, depth/outcomes and review route through F25.1 before first-unit drafting. |
-| [F25.1 · French definition, sources and review route](#f251-french-definition-sources-and-review-route) | Owner/agent: settle course definition and resource dispositions; do not inherit F28 alphabet-only variety approval as full course approval. |
 | [F26.1 · Khmer definition, sources and review route](#f261-khmer-definition-sources-and-review-route) | Owner/reviewer: accept source/rights, help v0, eight-expression inventory and observed-outcome rubric. |
 
 ### Verification pending
@@ -161,16 +165,19 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F25.4 · French remaining units and reference material](#f254-french-remaining-units-and-reference-material) | Reviewer/agent: use first-unit review/pilot before bounded units 2–12 batches. |
+| [F25.6 · French pilot, publication and release evidence](#f256-french-pilot-publication-and-release-evidence) | Owner/reviewer: accepted text/audio and agreed setup precede the prepared pilot protocol. |
 | [F13 · MSA course](#f13-msa-course) | Owner/agent: define first unit, source/audio permissions and a bounded console-control extension. |
 | [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Agent after implementation authorization: map phrases/patterns/notes to exact approved sources and console metadata. |
 | [F23 · Recurring mini-stories](#f23-recurring-mini-stories) | Owner: authorize a bounded first episode. Agent then outlines arc and F23.1, without queue/accounting policy assumptions. |
 | [F23.1 · First text episode](#f231-first-text-episode) | Agent after authorization: choose unit, roles, target/source records and console scope. Today integration needs an explicit accounting rule. |
-| [F25.2 · French first unit](#f252-french-first-unit) | Owner/agent: After F25.1 and authoring authorization, draft/validate a bounded first unit. |
-| [F25.3 · French starting check, sounds and text support](#f253-french-starting-check-sounds-and-text-support) | Owner/agent: After F25.1/first-unit inputs, define samples, conservative placement and accessible alternatives. |
-| [F25.4 · French remaining units and reference material](#f254-french-remaining-units-and-reference-material) | Owner/agent: Use reviewed first-unit/pilot findings before bounded unit batches. |
-| [F25.5 · French model audio and guided speaking](#f255-french-model-audio-and-guided-speaking) | Owner/agent: Prepare scripts/rights from accepted text; owner/provider decisions precede integration or spending. |
-| [F25.6 · French pilot, publication and release evidence](#f256-french-pilot-publication-and-release-evidence) | Owner/agent: Agree rubric/setup after F25.1; observe first-unit use before course-scale authoring. |
 | [F26.4 · Khmer remaining units and reference material](#f264-khmer-remaining-units-and-reference-material) | Agent after first-unit review/pilot: revise sequence and author source-backed bounded batches. |
+
+### Delivery pending
+
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F25.2.1 · Owner-authorized French text-only development preview](#f2521-owner-authorized-french-text-only-development-preview) | Agent: deploy candidate, import exact five hosted drafts, publish through owner controls and verify preservation. |
 
 ### Deferred
 
@@ -833,46 +840,57 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F25 French course
 
-- **Work state:** Decision needed.
-- **Readiness:** Implementation — Not started course; content — Not authored course; verification — Not run course.
-- **Delivery:** Application — Shared infrastructure deployed; content publication — No French conversation lessons.
-- **Scope:** Proposed twelve-unit/sixty-lesson French course; F28 alphabet draft does not fulfill course authoring.
-- **Next action:** Owner: decide full course definition, depth/outcomes and review route through F25.1 before first-unit drafting.
-- **Authorization:** French roadmap planning only. Metropolitan French selected for F28 alphabet, not the full F25 course.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f25-french-course).
-- **Dependencies:** Uses delivered F24.1–F24.4 software; course definition/source/review and speech/AI decisions gate course work. Full expansion evidence is coordinated with F24.5/F24.6, not a prerequisite to drafting the first unit.
+- **Work state:** Partial.
+- **Readiness:** Implementation — First-unit draft flow complete; full course partial; content — Five private unreviewed drafts; verification — 56 API and 12 browser checks; no pilot.
+- **Delivery:** Application — Shared infrastructure deployed; new spelling-help refinement local/uncommitted; content publication — Five local drafts, hosted import/publication authorized, not yet executed.
+- **Scope:** Twelve-unit/sixty-lesson contemporary everyday French course with Metropolitan France reference; five first-unit candidates exist, 55 lessons remain.
+- **Next action:** Owner: designate fluent reviewer and disposition exact sources/text. Agent: reconcile first-unit review and pilot before units 2–12; finish accepted starting-check/audio inputs.
+- **Authorization:** Owner authorized implementation and selected variety/depth/outcome plus draft-now/fluent-review-before-publication route October 18. October 18 application deployment and exact five unreviewed text previews subsequently authorized; no contact, hiring, provider spending or beta expansion.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f25-french-course); [October 18 implementation/evidence](docs/french/README.md).
+- **Dependencies:** Uses delivered F24.1–F24.4 software. F25.1/F25.2 review/source acceptance and F25.3/F25.5 support/audio feed early F25.6 pilot; that pilot gates F25.4 bulk authoring.
 
 #### F25.1 French definition, sources and review route
 
-- **Work state:** Decision needed.
-- **Readiness:** Implementation — Not started; content — Sources proposed; verification — Not run.
-- **Delivery:** Application — None; content publication — None.
-- **Scope:** French course brief, reference variety/depth, outcomes, sources/rights and named review route.
-- **Next action:** Owner/agent: settle course definition and resource dispositions; do not inherit F28 alphabet-only variety approval as full course approval.
-- **Authorization:** Planning/source investigation only; unresolved full-course choices remain explicit.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f251-french-definition-sources-and-review-route).
+- **Work state:** Input needed.
+- **Readiness:** Implementation — Course brief and source register prepared; content — Sources proposed; verification — Primary-reference access checked; acceptance missing.
+- **Delivery:** Application — N/A; content publication — N/A.
+- **Scope:** Selected Metropolitan France reference, twelve units/sixty lessons and five-minute month-one conversation target; exact source/reviewer/rubric acceptance remains.
+- **Next action:** Owner: designate a fluent French reviewer and disposition source/rights records. Reviewer/agent: accept exact text/register and assessment samples using the prepared register.
+- **Authorization:** Course definition and draft preparation approved October 18; no source-rights acceptance, reviewer designation, hiring or contact inferred.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f251-french-definition-sources-and-review-route); [October 18 implementation/evidence](docs/french/README.md).
 - **Dependencies:** owner definition decisions and verified reference rights/access.
 
 #### F25.2 French first unit
 
-- **Work state:** Planned.
-- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
-- **Delivery:** Application — None; content publication — None.
-- **Scope:** French first unit with reviewed text/answers/source/audio records.
-- **Next action:** Owner/agent: After F25.1 and authoring authorization, draft/validate a bounded first unit.
-- **Authorization:** French planning only; implementation, provider/spend, contact and publication retain separate authorization.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f252-french-first-unit).
-- **Dependencies:** F25.1; F24.4 for import/publication; F25.3/F25.5 for full learner delivery.
+- **Work state:** Review pending.
+- **Readiness:** Implementation — Complete first-unit draft flow; content — Five unreviewed drafts; verification — Automated private import/preview and gate checks.
+- **Delivery:** Application — Tested deployment candidate; content publication — Local records 32–36 remain drafts; exact hosted preview release authorized, pending execution.
+- **Scope:** Five greeting/name/register/repair packages with contextual rationales, exact segments, vocabulary, review sheets and pinned manifest; review/audio/transfer evidence missing.
+- **Next action:** Reviewer/owner: disposition exact phrases, register, meanings, explanations, accepted choices, segments and sources. Agent: reconcile and revalidate changed packages.
+- **Authorization:** Unpublished drafting and local private import authorized October 18; exact five original hash-pinned text previews subsequently authorized October 18; changed/new text retains normal fluent review.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f252-french-first-unit); [October 18 implementation/evidence](docs/french/README.md).
+- **Dependencies:** F25.1 acceptance before approval; F24.4 private flow reused; F25.3/F25.5 and early F25.6 evidence before full delivery.
+
+##### F25.2.1 Owner-authorized French text-only development preview
+
+- **Work state:** Delivery pending.
+- **Readiness:** Implementation — Complete exception candidate; content — Exact five unreviewed packages; verification — 57 API tests and focused browser checks.
+- **Delivery:** Application — Local/uncommitted deployment candidate; content publication — Authorized, not yet performed.
+- **Scope:** Five hash-pinned French first-unit previews labeled unreviewed/text-only on the existing development preview, with pending rights/review and no human audio.
+- **Next action:** Agent: deploy tested application, import exact hosted drafts, approve/publish through the owner console and verify preservation/version evidence.
+- **Authorization:** Owner explicitly authorized publication/deployment and selected the five-preview exception October 18. No changed/additional content or beta inclusion.
+- **Completion gate / evidence:** [Exact policy](docs/french/text-preview-publication.md); [rollout evidence](docs/releases/2026-10-18-french-preview.md).
+- **Dependencies:** F25.2 original pinned packages; tested notice-aware application and exact target backup.
 
 #### F25.3 French starting check, sounds and text support
 
-- **Work state:** Planned.
-- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
-- **Delivery:** Application — None; content publication — None.
-- **Scope:** Skippable French starting check and text/sound support; separate from delivered F28 explorer.
-- **Next action:** Owner/agent: After F25.1/first-unit inputs, define samples, conservative placement and accessible alternatives.
-- **Authorization:** French planning only; implementation, provider/spend, contact and publication retain separate authorization.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f253-french-starting-check-sounds-and-text-support).
+- **Work state:** Partial.
+- **Readiness:** Implementation — Optional spelling help and generic course-specific check foundation present; content — First-unit spelling examples drafted; verification — Automated; accepted assessment/audio and real input/AT absent.
+- **Delivery:** Application — Spelling-help refinement local/uncommitted; generic check deployed; content publication — None.
+- **Scope:** Skippable French starting check and text/sound support; exact spelling examples exist, accepted check calibration and sound modules remain; F28/F30 explorer reused.
+- **Next action:** Reviewer/agent: accept manifest sample phrases and spelling policy, then calibrate the conservative course-specific starting check and sound/text alternatives.
+- **Authorization:** Implementation/draft support authorized October 18; no unpublished draft becomes learner placement content or approved pronunciation material.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f253-french-starting-check-sounds-and-text-support); [October 18 implementation/evidence](docs/french/README.md).
 - **Dependencies:** F25.1/F25.2, F24.1/F24.2; result-sync expansion needs its own scope.
 
 #### F25.4 French remaining units and reference material
@@ -881,31 +899,31 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
 - **Delivery:** Application — None; content publication — None.
 - **Scope:** Remaining French units 2–12, reviews/checkpoints, grammar and glossary.
-- **Next action:** Owner/agent: Use reviewed first-unit/pilot findings before bounded unit batches.
-- **Authorization:** French planning only; implementation, provider/spend, contact and publication retain separate authorization.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f254-french-remaining-units-and-reference-material).
+- **Next action:** Reviewer/agent: use accepted first-unit and F25.6 pilot findings to revise the sequence before authoring units 2–12 in bounded batches.
+- **Authorization:** Implementation authorized October 18; bulk authoring follows first-unit review/pilot; no publishing, deployment, contact or spending.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f254-french-remaining-units-and-reference-material); [October 18 implementation/evidence](docs/french/README.md).
 - **Dependencies:** F25.1/F25.2 and first-unit pilot under F25.6; F24.4; F25.5 audio.
 
 #### F25.5 French model audio and guided speaking
 
-- **Work state:** Planned.
-- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
-- **Delivery:** Application — None; content publication — None.
-- **Scope:** French human model recordings and guided speaking with validated privacy/feedback.
-- **Next action:** Owner/agent: Prepare scripts/rights from accepted text; owner/provider decisions precede integration or spending.
-- **Authorization:** French planning only; implementation, provider/spend, contact and publication retain separate authorization.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f255-french-model-audio-and-guided-speaking).
+- **Work state:** Input needed.
+- **Readiness:** Implementation — Fourteen recording scripts and three branch briefs prepared; content — Unreviewed text, no human recordings; verification — Audio/feedback not run.
+- **Delivery:** Application — No new audio/provider integration; content publication — None.
+- **Scope:** French human model recordings and controlled guided speaking; exact draft scripts/branch briefs exist, recordings and privacy-verified feedback remain.
+- **Next action:** Reviewer: accept exact scripts. Owner: arrange permitted recordings and decide provider/privacy setup. Agent: integrate accepted assets and verify playback/offline/feedback.
+- **Authorization:** Draft script/scenario preparation authorized October 18; no speaker contact, hiring, provider spending, recording consent or live feedback provider inferred.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f255-french-model-audio-and-guided-speaking); [October 18 implementation/evidence](docs/french/README.md).
 - **Dependencies:** approved F25.2/F25.4 text, F24.2/F24.4 and provider/privacy decisions.
 
 #### F25.6 French pilot, publication and release evidence
 
 - **Work state:** Planned.
-- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
-- **Delivery:** Application — None; content publication — None.
+- **Readiness:** Implementation — Pilot protocol/evidence template prepared; content — First-unit candidates unreviewed; verification — No observations or real-device/AT evidence.
+- **Delivery:** Application — N/A; content publication — None.
 - **Scope:** French first-unit pilot, then full-course access/offline/outcome and release evidence.
-- **Next action:** Owner/agent: Agree rubric/setup after F25.1; observe first-unit use before course-scale authoring.
-- **Authorization:** French planning only; implementation, provider/spend, contact and publication retain separate authorization.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f256-french-pilot-publication-and-release-evidence).
+- **Next action:** Owner/reviewer: accept first-unit text/audio and agree participant/device setup and exact rubric. Agent: execute immediate/delayed pilot before bulk authoring.
+- **Authorization:** Protocol preparation authorized October 18; actual participant contact, publication/deployment and beta expansion remain separate.
+- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f256-french-pilot-publication-and-release-evidence); [October 18 implementation/evidence](docs/french/README.md).
 - **Dependencies:** Early pilot needs only accepted first-unit F25.2/F25.3 and first-unit F25.5 audio; its findings gate F25.4 bulk authoring. Full release then needs F25.4/full audio and F24.5/F24.6. Do not require the full course before the first-unit pilot.
 
 ### F26 Khmer course
@@ -1141,6 +1159,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **October 18 — F25:** owner selected Metropolitan France reference, twelve units/sixty lessons, five-minute month-one guided target and draft-first review route. Five private first-unit drafts imported locally; 56 API/12 browser checks pass. No French publication or deployment.
+
 - **October 18 — F19.1:** S0 verified and six exact selected requests regenerated;
   owner selections reconciled through waveform comparison. Lesson one v4 published
   with eight synthetic prompt mappings; thirteen non-curriculum tables, other
@@ -1154,5 +1174,3 @@ not a fresh execution of every feature's tests or inspection of each database.
   full-draft scope and split human/source/access/release obligations to F30. App
   deployed as `fdd5c5f`; exact existing publications and hosted data preserved.
 - **October 17 — F27.2:** scannable plan/progress UI deployed, 33 focused checks pass.
-- **October 17 — F24.8.2:** course identity banner/picker and Study language bubble
-  deployed with owner-selected colors; real AT/discoverability remains F24.5/F24.8.

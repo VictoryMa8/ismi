@@ -8,7 +8,7 @@ namespace Ismi.Api.Services;
 public sealed class CurriculumPublishingService(
     IsmiDbContext database,
     CurriculumValidator validator,
-    KhmerTextPreviewPolicy previews)
+    CourseTextPreviewPolicy previews)
 {
     private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web);
 
@@ -131,7 +131,10 @@ public sealed class CurriculumPublishingService(
             .ToList();
         // A future beta host does not serve these previews merely because its DB
         // contains a publication from the development host.
-        if (!previews.Enabled) result.RemoveAll(l => l.Response.PublicationNotice is not null);
+        foreach (var preview in result.Where(l => l.Response.PublicationNotice is not null).ToArray())
+            if (!previews.IsAuthorized(preview.Response,
+                await GetSourcesForLessonAsync(preview.Response.Id, cancellationToken)))
+                result.Remove(preview);
         return result;
     }
 
@@ -322,7 +325,10 @@ public sealed class CurriculumPublishingService(
     {
         var record = await LoadAsync(versionId, cancellationToken);
         RequireStatus(record, CurriculumStatuses.Draft, "Only a draft can be approved.");
-        var lesson = Deserialize(record.ContentJson) with { PublicationNotice = KhmerTextPreviewPolicy.Notice };
+        var original = Deserialize(record.ContentJson);
+        var notice = previews.NoticeFor(original)
+            ?? throw new CurriculumValidationException(["No text-preview exception exists for this course."]);
+        var lesson = original with { PublicationNotice = notice };
         var sources = record.Sources.Select(ToSource).ToList();
         var validation = validator.Validate(lesson, sources);
         if (!validation.IsValid) throw new CurriculumValidationException(validation.Errors);
@@ -332,7 +338,7 @@ public sealed class CurriculumPublishingService(
         record.ApprovedAtUtc = now;
         record.ApprovedBy = actor;
         record.AuditEvents.Add(Audit("approved-text-preview", actor, now,
-            $"Owner-authorized {KhmerTextPreviewPolicy.Notice.ReleaseId}; exact package fingerprint {KhmerTextPreviewPolicy.Fingerprint(lesson, sources)}. Pending linguistic/source-rights records retained; no human audio or beta approval."));
+            $"Owner-authorized {notice.ReleaseId}; exact package fingerprint {KhmerTextPreviewPolicy.Fingerprint(lesson, sources)}. Pending linguistic/source-rights records retained; no human audio or beta approval."));
         await database.SaveChangesAsync(cancellationToken);
         return ToDetail(record);
     }

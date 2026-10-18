@@ -2,7 +2,7 @@ using Ismi.Api.Models;
 
 namespace Ismi.Api.Services;
 
-public sealed class CurriculumValidator(RecordingStore recordings, KhmerTextPreviewPolicy previews)
+public sealed class CurriculumValidator(RecordingStore recordings, CourseTextPreviewPolicy previews)
 {
     public CurriculumValidationResult Validate(
         LessonResponse lesson,
@@ -24,7 +24,7 @@ public sealed class CurriculumValidator(RecordingStore recordings, KhmerTextPrev
 
         var preview = lesson.PublicationNotice is not null && previews.IsAuthorized(lesson, sources);
         if (lesson.PublicationNotice is not null && !preview)
-            errors.Add("This text-preview release is disabled or does not match one of the five exact owner-authorized Khmer packages.");
+            errors.Add("This text-preview release is disabled or does not match an exact owner-authorized course package.");
         CourseContentCompatibility.ValidateProfile(lesson, sources, errors, forPublication, preview);
         lesson = CourseContentCompatibility.Readable(lesson);
         var needsPronunciationHelp = lesson.TrackId != "french" || lesson.ContentReview?.HelpConvention != "none";

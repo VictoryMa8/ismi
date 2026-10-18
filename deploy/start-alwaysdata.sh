@@ -22,6 +22,8 @@ export DataProtection__KeysPath="$ISMI_DATA_DIR/keys"
 # Owner-authorized five-package exception on this development preview only.
 # Omit this flag on any future beta host; the application default is disabled.
 export Curriculum__AllowKhmerTextPreview=true
+# Separate October 18 owner exception for five pinned French text-only lessons.
+export Curriculum__AllowFrenchTextPreview=true
 # Separate owner-authorized five-pack inventory-only alphabet exception.
 export Curriculum__AllowAlphabetTextPreview=true
 # Reduce idle memory on the 256 MB free host; do not enable server GC.

@@ -1,0 +1,824 @@
+{
+  "lesson": {
+    "id": "french-meet-01-04",
+    "trackId": "french",
+    "schemaVersion": 2,
+    "title": "Ask for help understanding",
+    "scenario": "At a lively visit Alex and Camille have agreed to use tu. Read the repair exchange; this draft has no listening assessment.",
+    "estimatedMinutes": 5,
+    "version": "draft",
+    "unitId": "french-meet-01",
+    "unitTitle": "Meet someone and keep the exchange going",
+    "courseOrder": 4,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": false,
+    "contentReview": {
+      "languageTag": "fr-FR",
+      "variety": "metropolitan-france",
+      "helpConvention": "none",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "criticalIssues": [
+        "No fluent French reviewer designated; exact text, register, explanations, answers and segments need acceptance.",
+        "References are not an approved source foundation or publication rights clearance; no publisher media or lessons copied.",
+        "No reviewed human model audio or pronunciation assessment; repair phrases and optional spelling help require fluent verification.",
+        "No actual device/input/assistive-technology checks or observed immediate/delayed learner outcomes."
+      ],
+      "sourceLanguages": {
+        "https://www.laits.utexas.edu/tex/gr/pro2.html": "fr-FR",
+        "https://www.laits.utexas.edu/tex/gr/vpr1.html": "fr-FR",
+        "https://www.laits.utexas.edu/tex/gr/int1.html": "fr-FR",
+        "https://www.dictionnaire-academie.fr/article/A9B1554?history=0": "fr-FR",
+        "internal:french/meet-01/authoring-v1": "fr-FR"
+      }
+    },
+    "introduction": {
+      "goal": "Signal a missed message, request repetition or a slower pace and acknowledge help.",
+      "dialogue": [
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je n’ai pas compris.",
+            "pronunciationHelp": "",
+            "meaning": "I did not understand.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux répéter, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you repeat, please? (familiar)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux parler plus lentement, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you speak more slowly, please? (familiar)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Je n’ai pas compris.",
+          "pronunciationHelp": "",
+          "meaning": "I did not understand.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Tu peux répéter, s’il te plaît ?",
+          "pronunciationHelp": "",
+          "meaning": "Can you repeat, please? (familiar)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Tu peux parler plus lentement, s’il te plaît ?",
+          "pronunciationHelp": "",
+          "meaning": "Can you speak more slowly, please? (familiar)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Merci.",
+          "pronunciationHelp": "",
+          "meaning": "Thank you.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Tell the person when you did not understand. Repetition asks for the words again; slower speech asks for a different pace. The task specifies which help is needed.",
+      "dialectNote": "Reference target: contemporary everyday Metropolitan French. Familiar tu and polite singular vous are explicitly assigned by scene, not inferred from age or appearance. No regional alternative is claimed without a reviewed source.",
+      "recordingNote": "Unreviewed private text draft. No human model audio or phonetic transcription. Device speech, if available, is a preview, not pronunciation evidence.",
+      "sourceLocators": [
+        "https://www.laits.utexas.edu/tex/gr/pro2.html",
+        "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+        "https://www.laits.utexas.edu/tex/gr/int1.html",
+        "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+        "internal:french/meet-01/authoring-v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Signal a missed message",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je n’ai pas compris.",
+            "pronunciationHelp": "",
+            "meaning": "I did not understand.",
+            "audioUrl": null
+          },
+          "note": "Learn this as a whole repair expression for now; this unit does not assess past-tense conjugation.",
+          "recallCue": "Say that you did not understand.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Je n’ai pas compris.",
+              "pronunciationHelp": "",
+              "meaning": "I did not understand.",
+              "audioUrl": null
+            }
+          ]
+        },
+        {
+          "title": "Ask a friend to repeat",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux répéter, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you repeat, please? (familiar)",
+            "audioUrl": null
+          },
+          "note": "Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation.",
+          "recallCue": "Ask a familiar partner for the words again.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Tu peux répéter, s’il te plaît ?",
+              "pronunciationHelp": "",
+              "meaning": "Can you repeat, please? (familiar)",
+              "audioUrl": null
+            }
+          ]
+        },
+        {
+          "title": "Ask for a slower pace",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux parler plus lentement, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you speak more slowly, please? (familiar)",
+            "audioUrl": null
+          },
+          "note": "Ask for a change of pace when the words are too fast. This is distinct from simply requesting another repetition. This composed phrase needs fluent confirmation.",
+          "recallCue": "Ask a familiar partner specifically to slow down.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Tu peux parler plus lentement, s’il te plaît ?",
+              "pronunciationHelp": "",
+              "meaning": "Can you speak more slowly, please? (familiar)",
+              "audioUrl": null
+            }
+          ]
+        },
+        {
+          "title": "Acknowledge help",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null
+          },
+          "note": "Thank the person after clarification; this does not supply your name or ask a question.",
+          "recallCue": "Thank someone who helped you.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Merci.",
+              "pronunciationHelp": "",
+              "meaning": "Thank you.",
+              "audioUrl": null
+            }
+          ]
+        }
+      ],
+      "scriptSupport": {
+        "title": "Optional spelling help",
+        "note": "Compare the exact taught phrases, including accents and apostrophes. Reveal meaning when useful. These examples do not assess pronunciation or general reading ability.",
+        "teachingCardIndexes": [
+          0,
+          1,
+          2,
+          3
+        ]
+      }
+    },
+    "vocabulary": [
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Je n’ai pas compris.",
+        "pronunciationHelp": "",
+        "meaning": "I did not understand.",
+        "audioUrl": null,
+        "id": "notunderstood",
+        "senseId": "meet-notunderstood",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "general",
+        "forms": [],
+        "note": "Learn this as a whole repair expression for now; this unit does not assess past-tense conjugation.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Tu peux répéter, s’il te plaît ?",
+        "pronunciationHelp": "",
+        "meaning": "Can you repeat, please? (familiar)",
+        "audioUrl": null,
+        "id": "repeat",
+        "senseId": "meet-repeat",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "familiar-scene",
+        "forms": [],
+        "note": "Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Tu peux parler plus lentement, s’il te plaît ?",
+        "pronunciationHelp": "",
+        "meaning": "Can you speak more slowly, please? (familiar)",
+        "audioUrl": null,
+        "id": "slow",
+        "senseId": "meet-slow",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "familiar-scene",
+        "forms": [],
+        "note": "Ask for a change of pace when the words are too fast. This is distinct from simply requesting another repetition. This composed phrase needs fluent confirmation.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 2
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Merci.",
+        "pronunciationHelp": "",
+        "meaning": "Thank you.",
+        "audioUrl": null,
+        "id": "thanks",
+        "senseId": "meet-thanks",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "general",
+        "forms": [],
+        "note": "Thank the person after clarification; this does not supply your name or ask a question.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 3
+      }
+    ],
+    "steps": [
+      {
+        "id": "repair-1",
+        "instruction": "State that you did not understand; choose the statement rather than a request.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Je m’appelle Camille.",
+          "pronunciationHelp": "",
+          "meaning": "My name is Camille.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je n’ai pas compris.",
+            "pronunciationHelp": "",
+            "meaning": "I did not understand.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Je ",
+              "n’ai ",
+              "pas ",
+              "compris."
+            ],
+            "rationale": "This supplies the requested response: “I did not understand.” Learn this as a whole repair expression for now; this unit does not assess past-tense conjugation."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux répéter, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you repeat, please? (familiar)",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Tu ",
+              "peux ",
+              "répéter, ",
+              "s’il te plaît ?"
+            ],
+            "rationale": "This means “Can you repeat, please? (familiar)” Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation. The task specifically requests “I did not understand.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux parler plus lentement, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you speak more slowly, please? (familiar)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Tu ",
+              "peux ",
+              "parler ",
+              "plus lentement, ",
+              "s’il te plaît ?"
+            ],
+            "rationale": "This means “Can you speak more slowly, please? (familiar)” Ask for a change of pace when the words are too fast. This is distinct from simply requesting another repetition. This composed phrase needs fluent confirmation. The task specifically requests “I did not understand.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “I did not understand.” Learn this as a whole repair expression for now; this unit does not assess past-tense conjugation.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Say that you did not understand."
+        }
+      },
+      {
+        "id": "repair-2",
+        "instruction": "You missed the name under a loud noise. Ask specifically for the words again.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Je m’appelle Camille.",
+          "pronunciationHelp": "",
+          "meaning": "My name is Camille.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux parler plus lentement, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you speak more slowly, please? (familiar)",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Tu ",
+              "peux ",
+              "parler ",
+              "plus lentement, ",
+              "s’il te plaît ?"
+            ],
+            "rationale": "This means “Can you speak more slowly, please? (familiar)” Ask for a change of pace when the words are too fast. This is distinct from simply requesting another repetition. This composed phrase needs fluent confirmation. The task specifically requests “Can you repeat, please? (familiar)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “Can you repeat, please? (familiar)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux répéter, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you repeat, please? (familiar)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Tu ",
+              "peux ",
+              "répéter, ",
+              "s’il te plaît ?"
+            ],
+            "rationale": "This supplies the requested response: “Can you repeat, please? (familiar)” Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Can you repeat, please? (familiar)” Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Ask a familiar partner for the words again."
+        }
+      },
+      {
+        "id": "repair-3",
+        "instruction": "The partner is speaking too fast. Ask specifically for a slower pace.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Tu t’appelles comment ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (familiar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “Can you speak more slowly, please? (familiar)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux parler plus lentement, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you speak more slowly, please? (familiar)",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Tu ",
+              "peux ",
+              "parler ",
+              "plus lentement, ",
+              "s’il te plaît ?"
+            ],
+            "rationale": "This supplies the requested response: “Can you speak more slowly, please? (familiar)” Ask for a change of pace when the words are too fast. This is distinct from simply requesting another repetition. This composed phrase needs fluent confirmation."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux répéter, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you repeat, please? (familiar)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Tu ",
+              "peux ",
+              "répéter, ",
+              "s’il te plaît ?"
+            ],
+            "rationale": "This means “Can you repeat, please? (familiar)” Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation. The task specifically requests “Can you speak more slowly, please? (familiar)” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Can you speak more slowly, please? (familiar)” Ask for a change of pace when the words are too fast. This is distinct from simply requesting another repetition. This composed phrase needs fluent confirmation.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Ask a familiar partner specifically to slow down."
+        }
+      },
+      {
+        "id": "repair-4",
+        "instruction": "The clarification helped. Thank your partner.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Je m’appelle Camille.",
+          "pronunciationHelp": "",
+          "meaning": "My name is Camille.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This supplies the requested response: “Thank you.” Thank the person after clarification; this does not supply your name or ask a question."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux répéter, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you repeat, please? (familiar)",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Tu ",
+              "peux ",
+              "répéter, ",
+              "s’il te plaît ?"
+            ],
+            "rationale": "This means “Can you repeat, please? (familiar)” Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation. The task specifically requests “Thank you.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “Thank you.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Thank you.” Thank the person after clarification; this does not supply your name or ask a question.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Thank someone who helped you."
+        }
+      },
+      {
+        "id": "repair-5",
+        "instruction": "The clarified question asks your name. You are Alex.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Tu t’appelles comment ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (familiar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Camille."
+            ],
+            "rationale": "This means “My name is Camille.” Use the assigned name Camille. The phrase does not specify a gender. The task specifically requests “My name is Alex.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je n’ai pas compris.",
+            "pronunciationHelp": "",
+            "meaning": "I did not understand.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Je ",
+              "n’ai ",
+              "pas ",
+              "compris."
+            ],
+            "rationale": "This means “I did not understand.” Learn this as a whole repair expression for now; this unit does not assess past-tense conjugation. The task specifically requests “My name is Alex.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Alex.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Alex.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Alex."
+            ],
+            "rationale": "This supplies the requested response: “My name is Alex.” Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “My name is Alex.” Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Introduce yourself as Alex."
+        }
+      },
+      {
+        "id": "repair-6",
+        "instruction": "At a later familiar conversation, noise covers a question. Request repetition.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Tu t’appelles comment ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (familiar)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “Can you repeat, please? (familiar)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux répéter, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you repeat, please? (familiar)",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Tu ",
+              "peux ",
+              "répéter, ",
+              "s’il te plaît ?"
+            ],
+            "rationale": "This supplies the requested response: “Can you repeat, please? (familiar)” Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux parler plus lentement, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you speak more slowly, please? (familiar)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Tu ",
+              "peux ",
+              "parler ",
+              "plus lentement, ",
+              "s’il te plaît ?"
+            ],
+            "rationale": "This means “Can you speak more slowly, please? (familiar)” Ask for a change of pace when the words are too fast. This is distinct from simply requesting another repetition. This composed phrase needs fluent confirmation. The task specifically requests “Can you repeat, please? (familiar)” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Can you repeat, please? (familiar)” Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Ask a familiar partner for the words again."
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — subject pronouns",
+      "locator": "https://www.laits.utexas.edu/tex/gr/pro2.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for first/second person and situational tu/vous. Peer familiarity in these original scenarios is stipulated, not inferred from age alone."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — pronominal verbs",
+      "locator": "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for s’appeler and pronoun/verb patterns. Ismi names, dialogue arrangements and explanations are original draft compositions."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — interrogatives",
+      "locator": "https://www.laits.utexas.edu/tex/gr/int1.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for information questions and conversational question forms. Does not directly attest every composed phrase."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "Académie française: bonjour, ninth edition",
+      "locator": "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Lexical greeting reference; does not constitute acceptance of the full curriculum."
+    },
+    {
+      "sourceType": "authoring-record",
+      "title": "Ismi F25 first-unit draft v1",
+      "locator": "internal:french/meet-01/authoring-v1",
+      "rights": "Original AI-assisted private draft for review. No publication approval or external rights clearance implied.",
+      "notes": "Owner authorized French implementation and Metropolitan France reference, 12 units/60 lessons, five-minute month-one guided-conversation target and draft-first/fluent-review-before-publication route October 18, 2026. No reviewer designated."
+    }
+  ]
+}

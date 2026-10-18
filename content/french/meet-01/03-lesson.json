@@ -1,0 +1,745 @@
+{
+  "lesson": {
+    "id": "french-meet-01-03",
+    "trackId": "french",
+    "schemaVersion": 2,
+    "title": "Meet someone politely",
+    "scenario": "Alex and Camille meet as new adult acquaintances. The exercise explicitly keeps vous.",
+    "estimatedMinutes": 5,
+    "version": "draft",
+    "unitId": "french-meet-01",
+    "unitTitle": "Meet someone and keep the exchange going",
+    "courseOrder": 3,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": false,
+    "contentReview": {
+      "languageTag": "fr-FR",
+      "variety": "metropolitan-france",
+      "helpConvention": "none",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "criticalIssues": [
+        "No fluent French reviewer designated; exact text, register, explanations, answers and segments need acceptance.",
+        "References are not an approved source foundation or publication rights clearance; no publisher media or lessons copied.",
+        "No reviewed human model audio or pronunciation assessment; repair phrases and optional spelling help require fluent verification.",
+        "No actual device/input/assistive-technology checks or observed immediate/delayed learner outcomes."
+      ],
+      "sourceLanguages": {
+        "https://www.laits.utexas.edu/tex/gr/pro2.html": "fr-FR",
+        "https://www.laits.utexas.edu/tex/gr/vpr1.html": "fr-FR",
+        "https://www.laits.utexas.edu/tex/gr/int1.html": "fr-FR",
+        "https://www.dictionnaire-academie.fr/article/A9B1554?history=0": "fr-FR",
+        "internal:french/meet-01/authoring-v1": "fr-FR"
+      }
+    },
+    "introduction": {
+      "goal": "Keep polite singular address through a name exchange.",
+      "dialogue": [
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Bonjour.",
+            "pronunciationHelp": "",
+            "meaning": "Hello.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Comment vous appelez-vous ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (polite singular here)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Et vous ?",
+            "pronunciationHelp": "",
+            "meaning": "And you? (polite singular here)",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Alex.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Alex.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Comment vous appelez-vous ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (polite singular here)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Et vous ?",
+          "pronunciationHelp": "",
+          "meaning": "And you? (polite singular here)",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Vous pouvez répéter, s’il vous plaît ?",
+          "pronunciationHelp": "",
+          "meaning": "Can you repeat, please? (polite singular here)",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "The scene specifies polite singular vous. In real interaction, address depends on context and mutual preference; a familiar alternative is not universally wrong.",
+      "dialectNote": "Reference target: contemporary everyday Metropolitan French. Familiar tu and polite singular vous are explicitly assigned by scene, not inferred from age or appearance. No regional alternative is claimed without a reviewed source.",
+      "recordingNote": "Unreviewed private text draft. No human model audio or phonetic transcription. Device speech, if available, is a preview, not pronunciation evidence.",
+      "sourceLocators": [
+        "https://www.laits.utexas.edu/tex/gr/pro2.html",
+        "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+        "https://www.laits.utexas.edu/tex/gr/int1.html",
+        "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+        "internal:french/meet-01/authoring-v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Ask politely",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Comment vous appelez-vous ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (polite singular here)",
+            "audioUrl": null
+          },
+          "note": "Here vous addresses one person politely. It can also address several people; this scene explicitly has one addressee.",
+          "recallCue": "Ask one new adult politely for a name.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Comment vous appelez-vous ?",
+              "pronunciationHelp": "",
+              "meaning": "What is your name? (polite singular here)",
+              "audioUrl": null
+            }
+          ]
+        },
+        {
+          "title": "Return a polite question",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Et vous ?",
+            "pronunciationHelp": "",
+            "meaning": "And you? (polite singular here)",
+            "audioUrl": null
+          },
+          "note": "Return the previous question while keeping the stated polite address.",
+          "recallCue": "Return the name question politely.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Et vous ?",
+              "pronunciationHelp": "",
+              "meaning": "And you? (polite singular here)",
+              "audioUrl": null
+            }
+          ]
+        },
+        {
+          "title": "Request repetition politely",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Vous pouvez répéter, s’il vous plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you repeat, please? (polite singular here)",
+            "audioUrl": null
+          },
+          "note": "Use the vous request in the scene that explicitly keeps polite singular address. Exact wording and register need fluent review.",
+          "recallCue": "Ask one new adult politely to repeat.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Vous pouvez répéter, s’il vous plaît ?",
+              "pronunciationHelp": "",
+              "meaning": "Can you repeat, please? (polite singular here)",
+              "audioUrl": null
+            }
+          ]
+        }
+      ],
+      "scriptSupport": {
+        "title": "Optional spelling help",
+        "note": "Compare the exact taught phrases, including accents and apostrophes. Reveal meaning when useful. These examples do not assess pronunciation or general reading ability.",
+        "teachingCardIndexes": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "vocabulary": [
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Comment vous appelez-vous ?",
+        "pronunciationHelp": "",
+        "meaning": "What is your name? (polite singular here)",
+        "audioUrl": null,
+        "id": "politeq",
+        "senseId": "meet-politeq",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "polite-singular-scene",
+        "forms": [],
+        "note": "Here vous addresses one person politely. It can also address several people; this scene explicitly has one addressee.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Et vous ?",
+        "pronunciationHelp": "",
+        "meaning": "And you? (polite singular here)",
+        "audioUrl": null,
+        "id": "andpolite",
+        "senseId": "meet-andpolite",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "polite-singular-scene",
+        "forms": [],
+        "note": "Return the previous question while keeping the stated polite address.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Vous pouvez répéter, s’il vous plaît ?",
+        "pronunciationHelp": "",
+        "meaning": "Can you repeat, please? (polite singular here)",
+        "audioUrl": null,
+        "id": "politerepeat",
+        "senseId": "meet-politerepeat",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "polite-singular-scene",
+        "forms": [],
+        "note": "Use the vous request in the scene that explicitly keeps polite singular address. Exact wording and register need fluent review.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 2
+      }
+    ],
+    "steps": [
+      {
+        "id": "polite-1",
+        "instruction": "Ask the new adult’s name while keeping the stated polite vous address.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Bonjour.",
+          "pronunciationHelp": "",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “What is your name? (polite singular here)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Comment vous appelez-vous ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (polite singular here)",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Comment ",
+              "vous ",
+              "appelez-vous ?"
+            ],
+            "rationale": "This supplies the requested response: “What is your name? (polite singular here)” Here vous addresses one person politely. It can also address several people; this scene explicitly has one addressee."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu t’appelles comment ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (familiar)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Tu ",
+              "t’appelles ",
+              "comment ?"
+            ],
+            "rationale": "This means “What is your name? (familiar)” This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase. The task specifically requests “What is your name? (polite singular here)” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “What is your name? (polite singular here)” Here vous addresses one person politely. It can also address several people; this scene explicitly has one addressee.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Ask one new adult politely for a name."
+        }
+      },
+      {
+        "id": "polite-2",
+        "instruction": "You are Camille. Supply your assigned name.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Comment vous appelez-vous ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (polite singular here)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Camille."
+            ],
+            "rationale": "This supplies the requested response: “My name is Camille.” Use the assigned name Camille. The phrase does not specify a gender."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Alex.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Alex.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Alex."
+            ],
+            "rationale": "This means “My name is Alex.” Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name. The task specifically requests “My name is Camille.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “My name is Camille.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “My name is Camille.” Use the assigned name Camille. The phrase does not specify a gender.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Introduce yourself as Camille."
+        }
+      },
+      {
+        "id": "polite-3",
+        "instruction": "Return the name question while keeping polite vous address.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Je m’appelle Camille.",
+          "pronunciationHelp": "",
+          "meaning": "My name is Camille.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Et toi ?",
+            "pronunciationHelp": "",
+            "meaning": "And you? (familiar)",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Et ",
+              "toi ?"
+            ],
+            "rationale": "This means “And you? (familiar)” After giving a name, this returns that same question to the familiar conversation partner. The preceding context supplies the topic. The task specifically requests “And you? (polite singular here)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “And you? (polite singular here)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Et vous ?",
+            "pronunciationHelp": "",
+            "meaning": "And you? (polite singular here)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Et ",
+              "vous ?"
+            ],
+            "rationale": "This supplies the requested response: “And you? (polite singular here)” Return the previous question while keeping the stated polite address."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “And you? (polite singular here)” Return the previous question while keeping the stated polite address.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Return the name question politely."
+        }
+      },
+      {
+        "id": "polite-4",
+        "instruction": "You missed the polite question. Request repetition while retaining vous.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Comment vous appelez-vous ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (polite singular here)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “Can you repeat, please? (polite singular here)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Vous pouvez répéter, s’il vous plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you repeat, please? (polite singular here)",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Vous ",
+              "pouvez ",
+              "répéter, ",
+              "s’il vous plaît ?"
+            ],
+            "rationale": "This supplies the requested response: “Can you repeat, please? (polite singular here)” Use the vous request in the scene that explicitly keeps polite singular address. Exact wording and register need fluent review."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu peux répéter, s’il te plaît ?",
+            "pronunciationHelp": "",
+            "meaning": "Can you repeat, please? (familiar)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Tu ",
+              "peux ",
+              "répéter, ",
+              "s’il te plaît ?"
+            ],
+            "rationale": "This means “Can you repeat, please? (familiar)” Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation. The task specifically requests “Can you repeat, please? (polite singular here)” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Can you repeat, please? (polite singular here)” Use the vous request in the scene that explicitly keeps polite singular address. Exact wording and register need fluent review.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Ask one new adult politely to repeat."
+        }
+      },
+      {
+        "id": "polite-5",
+        "instruction": "The repeated question asks your name. You are Alex.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Comment vous appelez-vous ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (polite singular here)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Alex.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Alex.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Alex."
+            ],
+            "rationale": "This supplies the requested response: “My name is Alex.” Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Je m’appelle Camille.",
+            "pronunciationHelp": "",
+            "meaning": "My name is Camille.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Je ",
+              "m’appelle ",
+              "Camille."
+            ],
+            "rationale": "This means “My name is Camille.” Use the assigned name Camille. The phrase does not specify a gender. The task specifically requests “My name is Alex.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “My name is Alex.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “My name is Alex.” Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Introduce yourself as Alex."
+        }
+      },
+      {
+        "id": "polite-6",
+        "instruction": "At a second formal introduction, ask the name with the stated polite address.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Bonjour.",
+          "pronunciationHelp": "",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu t’appelles comment ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (familiar)",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Tu ",
+              "t’appelles ",
+              "comment ?"
+            ],
+            "rationale": "This means “What is your name? (familiar)” This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase. The task specifically requests “What is your name? (polite singular here)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “What is your name? (polite singular here)” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Comment vous appelez-vous ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (polite singular here)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Comment ",
+              "vous ",
+              "appelez-vous ?"
+            ],
+            "rationale": "This supplies the requested response: “What is your name? (polite singular here)” Here vous addresses one person politely. It can also address several people; this scene explicitly has one addressee."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “What is your name? (polite singular here)” Here vous addresses one person politely. It can also address several people; this scene explicitly has one addressee.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Ask one new adult politely for a name."
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — subject pronouns",
+      "locator": "https://www.laits.utexas.edu/tex/gr/pro2.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for first/second person and situational tu/vous. Peer familiarity in these original scenarios is stipulated, not inferred from age alone."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — pronominal verbs",
+      "locator": "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for s’appeler and pronoun/verb patterns. Ismi names, dialogue arrangements and explanations are original draft compositions."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — interrogatives",
+      "locator": "https://www.laits.utexas.edu/tex/gr/int1.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for information questions and conversational question forms. Does not directly attest every composed phrase."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "Académie française: bonjour, ninth edition",
+      "locator": "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Lexical greeting reference; does not constitute acceptance of the full curriculum."
+    },
+    {
+      "sourceType": "authoring-record",
+      "title": "Ismi F25 first-unit draft v1",
+      "locator": "internal:french/meet-01/authoring-v1",
+      "rights": "Original AI-assisted private draft for review. No publication approval or external rights clearance implied.",
+      "notes": "Owner authorized French implementation and Metropolitan France reference, 12 units/60 lessons, five-minute month-one guided-conversation target and draft-first/fluent-review-before-publication route October 18, 2026. No reviewer designated."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "feature": "F25.6",
+  "status": "template-not-observed",
+  "date": null,
+  "candidate": {
+    "webRevision": null,
+    "apiRevision": null,
+    "packageHashes": {},
+    "linguisticReviewer": null,
+    "acceptedSourceRecords": [],
+    "recordingVersions": []
+  },
+  "consentAndPrivateEvidence": "Keep identities, recordings and raw observations outside Git. No participant contact authorized.",
+  "tasks": {
+    "familiarIntroduction": {
+      "attempts": null,
+      "independentSuccesses": null,
+      "helpUsed": null,
+      "aggregateNotes": null
+    },
+    "politeIntroduction": {
+      "attempts": null,
+      "independentSuccesses": null,
+      "helpUsed": null,
+      "aggregateNotes": null
+    },
+    "repair": {
+      "attempts": null,
+      "independentSuccesses": null,
+      "helpUsed": null,
+      "aggregateNotes": null
+    },
+    "listening": {
+      "attempts": null,
+      "independentSuccesses": null,
+      "helpUsed": null,
+      "aggregateNotes": null
+    },
+    "spellingInput": {
+      "attempts": null,
+      "independentSuccesses": null,
+      "helpUsed": null,
+      "aggregateNotes": null
+    },
+    "delayedTransfer": {
+      "attempts": null,
+      "independentSuccesses": null,
+      "helpUsed": null,
+      "aggregateNotes": null
+    },
+    "mixedStudy": {
+      "attempts": null,
+      "independentSuccesses": null,
+      "helpUsed": null,
+      "aggregateNotes": null
+    },
+    "accessibilityOffline": {
+      "attempts": null,
+      "independentSuccesses": null,
+      "helpUsed": null,
+      "aggregateNotes": null
+    }
+  },
+  "devices": [],
+  "criticalDefects": [],
+  "fixRetest": [],
+  "publication": "not authorized",
+  "betaInclusion": "not authorized"
+}

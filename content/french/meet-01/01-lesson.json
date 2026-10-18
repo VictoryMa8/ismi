@@ -1,0 +1,703 @@
+{
+  "lesson": {
+    "id": "french-meet-01-01",
+    "trackId": "french",
+    "schemaVersion": 2,
+    "title": "Greet someone and say goodbye",
+    "scenario": "Alex meets a familiar friend Camille in the daytime, then leaves.",
+    "estimatedMinutes": 5,
+    "version": "draft",
+    "unitId": "french-meet-01",
+    "unitTitle": "Meet someone and keep the exchange going",
+    "courseOrder": 1,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": false,
+    "contentReview": {
+      "languageTag": "fr-FR",
+      "variety": "metropolitan-france",
+      "helpConvention": "none",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "criticalIssues": [
+        "No fluent French reviewer designated; exact text, register, explanations, answers and segments need acceptance.",
+        "References are not an approved source foundation or publication rights clearance; no publisher media or lessons copied.",
+        "No reviewed human model audio or pronunciation assessment; repair phrases and optional spelling help require fluent verification.",
+        "No actual device/input/assistive-technology checks or observed immediate/delayed learner outcomes."
+      ],
+      "sourceLanguages": {
+        "https://www.laits.utexas.edu/tex/gr/pro2.html": "fr-FR",
+        "https://www.laits.utexas.edu/tex/gr/vpr1.html": "fr-FR",
+        "https://www.laits.utexas.edu/tex/gr/int1.html": "fr-FR",
+        "https://www.dictionnaire-academie.fr/article/A9B1554?history=0": "fr-FR",
+        "internal:french/meet-01/authoring-v1": "fr-FR"
+      }
+    },
+    "introduction": {
+      "goal": "Open and close a short meeting in the stated context.",
+      "dialogue": [
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Bonjour.",
+            "pronunciationHelp": "",
+            "meaning": "Hello.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Salut !",
+            "pronunciationHelp": "",
+            "meaning": "Hi!",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Alex",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null
+          }
+        },
+        {
+          "speaker": "Camille",
+          "line": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null
+          }
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Bonjour.",
+          "pronunciationHelp": "",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Salut !",
+          "pronunciationHelp": "",
+          "meaning": "Hi!",
+          "audioUrl": null
+        },
+        {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Au revoir.",
+          "pronunciationHelp": "",
+          "meaning": "Goodbye.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Bonjour opens this daytime meeting. Salut is available in the familiar-friend scene; au revoir closes it. More than one greeting can be natural, so tasks specify the intended phrase or exclude equally suitable options.",
+      "dialectNote": "Reference target: contemporary everyday Metropolitan French. Familiar tu and polite singular vous are explicitly assigned by scene, not inferred from age or appearance. No regional alternative is claimed without a reviewed source.",
+      "recordingNote": "Unreviewed private text draft. No human model audio or phonetic transcription. Device speech, if available, is a preview, not pronunciation evidence.",
+      "sourceLocators": [
+        "https://www.laits.utexas.edu/tex/gr/pro2.html",
+        "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+        "https://www.laits.utexas.edu/tex/gr/int1.html",
+        "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+        "internal:french/meet-01/authoring-v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Open a meeting",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Bonjour.",
+            "pronunciationHelp": "",
+            "meaning": "Hello.",
+            "audioUrl": null
+          },
+          "note": "A daytime greeting usable beyond familiar friends; choose the greeting for the stated situation.",
+          "recallCue": "Greet someone during the day.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Bonjour.",
+              "pronunciationHelp": "",
+              "meaning": "Hello.",
+              "audioUrl": null
+            }
+          ]
+        },
+        {
+          "title": "Greet a familiar friend",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Salut !",
+            "pronunciationHelp": "",
+            "meaning": "Hi!",
+            "audioUrl": null
+          },
+          "note": "Use this casual greeting in the explicitly familiar-friend role here; it is not a rule for every new acquaintance.",
+          "recallCue": "Greet a familiar friend casually.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Salut !",
+              "pronunciationHelp": "",
+              "meaning": "Hi!",
+              "audioUrl": null
+            }
+          ]
+        },
+        {
+          "title": "Close an exchange",
+          "phrase": {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null
+          },
+          "note": "This closes the meeting rather than introducing a new person.",
+          "recallCue": "Say goodbye when leaving.",
+          "sourceLocators": [
+            "https://www.laits.utexas.edu/tex/gr/pro2.html",
+            "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+            "https://www.laits.utexas.edu/tex/gr/int1.html",
+            "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+            "internal:french/meet-01/authoring-v1"
+          ],
+          "chunks": [
+            {
+              "arabic": "",
+              "arabizi": "",
+              "targetText": "Au revoir.",
+              "pronunciationHelp": "",
+              "meaning": "Goodbye.",
+              "audioUrl": null
+            }
+          ]
+        }
+      ],
+      "scriptSupport": {
+        "title": "Optional spelling help",
+        "note": "Compare the exact taught phrases, including accents and apostrophes. Reveal meaning when useful. These examples do not assess pronunciation or general reading ability.",
+        "teachingCardIndexes": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "vocabulary": [
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Bonjour.",
+        "pronunciationHelp": "",
+        "meaning": "Hello.",
+        "audioUrl": null,
+        "id": "hello",
+        "senseId": "meet-hello",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "general",
+        "forms": [],
+        "note": "A daytime greeting usable beyond familiar friends; choose the greeting for the stated situation.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 0
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Salut !",
+        "pronunciationHelp": "",
+        "meaning": "Hi!",
+        "audioUrl": null,
+        "id": "casual",
+        "senseId": "meet-casual",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "familiar-scene",
+        "forms": [],
+        "note": "Use this casual greeting in the explicitly familiar-friend role here; it is not a rule for every new acquaintance.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 1
+      },
+      {
+        "arabic": "",
+        "arabizi": "",
+        "targetText": "Au revoir.",
+        "pronunciationHelp": "",
+        "meaning": "Goodbye.",
+        "audioUrl": null,
+        "id": "bye",
+        "senseId": "meet-bye",
+        "kind": "expression",
+        "dialect": "metropolitan-france",
+        "register": "general",
+        "forms": [],
+        "note": "This closes the meeting rather than introducing a new person.",
+        "sourceLocators": [
+          "https://www.laits.utexas.edu/tex/gr/pro2.html",
+          "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+          "https://www.laits.utexas.edu/tex/gr/int1.html",
+          "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+          "internal:french/meet-01/authoring-v1"
+        ],
+        "teachingCardIndex": 2
+      }
+    ],
+    "steps": [
+      {
+        "id": "greetings-1",
+        "instruction": "You arrive during the day. Choose a greeting rather than a farewell or a thank-you.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Bonjour.",
+          "pronunciationHelp": "",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Bonjour.",
+            "pronunciationHelp": "",
+            "meaning": "Hello.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Bonjour."
+            ],
+            "rationale": "This supplies the requested response: “Hello.” A daytime greeting usable beyond familiar friends; choose the greeting for the stated situation."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “Hello.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “Hello.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Hello.” A daytime greeting usable beyond familiar friends; choose the greeting for the stated situation.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Greet someone during the day."
+        }
+      },
+      {
+        "id": "greetings-2",
+        "instruction": "A familiar friend says hi. Choose the casual greeting shown in the dialogue.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Salut !",
+          "pronunciationHelp": "",
+          "meaning": "Hi!",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “Hi!” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “Hi!” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Salut !",
+            "pronunciationHelp": "",
+            "meaning": "Hi!",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Salut !"
+            ],
+            "rationale": "This supplies the requested response: “Hi!” Use this casual greeting in the explicitly familiar-friend role here; it is not a rule for every new acquaintance."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Hi!” Use this casual greeting in the explicitly familiar-friend role here; it is not a rule for every new acquaintance.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Greet a familiar friend casually."
+        }
+      },
+      {
+        "id": "greetings-3",
+        "instruction": "You are leaving the gathering. Say goodbye.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Salut !",
+          "pronunciationHelp": "",
+          "meaning": "Hi!",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “Goodbye.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This supplies the requested response: “Goodbye.” This closes the meeting rather than introducing a new person."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Bonjour.",
+            "pronunciationHelp": "",
+            "meaning": "Hello.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Bonjour."
+            ],
+            "rationale": "This means “Hello.” A daytime greeting usable beyond familiar friends; choose the greeting for the stated situation. The task specifically requests “Goodbye.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Goodbye.” This closes the meeting rather than introducing a new person.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Say goodbye when leaving."
+        }
+      },
+      {
+        "id": "greetings-4",
+        "instruction": "You start a daytime visit with someone new. Choose the general daytime greeting among these options.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Comment vous appelez-vous ?",
+          "pronunciationHelp": "",
+          "meaning": "What is your name? (polite singular here)",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Bonjour.",
+            "pronunciationHelp": "",
+            "meaning": "Hello.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Bonjour."
+            ],
+            "rationale": "This supplies the requested response: “Hello.” A daytime greeting usable beyond familiar friends; choose the greeting for the stated situation."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “Hello.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “Hello.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Hello.” A daytime greeting usable beyond familiar friends; choose the greeting for the stated situation.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Greet someone during the day."
+        }
+      },
+      {
+        "id": "greetings-5",
+        "instruction": "At a later meeting, greet a familiar friend casually using the taught phrase.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Salut !",
+          "pronunciationHelp": "",
+          "meaning": "Hi!",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This means “Goodbye.” This closes the meeting rather than introducing a new person. The task specifically requests “Hi!” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu t’appelles comment ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (familiar)",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Tu ",
+              "t’appelles ",
+              "comment ?"
+            ],
+            "rationale": "This means “What is your name? (familiar)” This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase. The task specifically requests “Hi!” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Salut !",
+            "pronunciationHelp": "",
+            "meaning": "Hi!",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Salut !"
+            ],
+            "rationale": "This supplies the requested response: “Hi!” Use this casual greeting in the explicitly familiar-friend role here; it is not a rule for every new acquaintance."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Hi!” Use this casual greeting in the explicitly familiar-friend role here; it is not a rule for every new acquaintance.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Greet a familiar friend casually."
+        }
+      },
+      {
+        "id": "greetings-6",
+        "instruction": "The visit ends. Close it rather than asking for a name.",
+        "prompt": {
+          "arabic": "",
+          "arabizi": "",
+          "targetText": "Bonjour.",
+          "pronunciationHelp": "",
+          "meaning": "Hello.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Merci.",
+            "pronunciationHelp": "",
+            "meaning": "Thank you.",
+            "audioUrl": null,
+            "id": "a",
+            "segments": [
+              "Merci."
+            ],
+            "rationale": "This means “Thank you.” Thank the person after clarification; this does not supply your name or ask a question. The task specifically requests “Goodbye.” This choice is not being rejected as universally incorrect French."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Au revoir.",
+            "pronunciationHelp": "",
+            "meaning": "Goodbye.",
+            "audioUrl": null,
+            "id": "b",
+            "segments": [
+              "Au revoir."
+            ],
+            "rationale": "This supplies the requested response: “Goodbye.” This closes the meeting rather than introducing a new person."
+          },
+          {
+            "arabic": "",
+            "arabizi": "",
+            "targetText": "Tu t’appelles comment ?",
+            "pronunciationHelp": "",
+            "meaning": "What is your name? (familiar)",
+            "audioUrl": null,
+            "id": "c",
+            "segments": [
+              "Tu ",
+              "t’appelles ",
+              "comment ?"
+            ],
+            "rationale": "This means “What is your name? (familiar)” This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase. The task specifically requests “Goodbye.” This choice is not being rejected as universally incorrect French."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits this situation.",
+          "correctExplanation": "This supplies the requested response: “Goodbye.” This closes the meeting rather than introducing a new person.",
+          "incorrectTitle": "Check the requested response.",
+          "incorrectExplanation": "Compare the assigned role, requested meaning and address in this situation.",
+          "retryHint": "Say goodbye when leaving."
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — subject pronouns",
+      "locator": "https://www.laits.utexas.edu/tex/gr/pro2.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for first/second person and situational tu/vous. Peer familiarity in these original scenarios is stipulated, not inferred from age alone."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — pronominal verbs",
+      "locator": "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for s’appeler and pronoun/verb patterns. Ismi names, dialogue arrangements and explanations are original draft compositions."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — interrogatives",
+      "locator": "https://www.laits.utexas.edu/tex/gr/int1.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for information questions and conversational question forms. Does not directly attest every composed phrase."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "Académie française: bonjour, ninth edition",
+      "locator": "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Lexical greeting reference; does not constitute acceptance of the full curriculum."
+    },
+    {
+      "sourceType": "authoring-record",
+      "title": "Ismi F25 first-unit draft v1",
+      "locator": "internal:french/meet-01/authoring-v1",
+      "rights": "Original AI-assisted private draft for review. No publication approval or external rights clearance implied.",
+      "notes": "Owner authorized French implementation and Metropolitan France reference, 12 units/60 lessons, five-minute month-one guided-conversation target and draft-first/fluent-review-before-publication route October 18, 2026. No reviewer designated."
+    }
+  ]
+}

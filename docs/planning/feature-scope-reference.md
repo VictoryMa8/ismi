@@ -1103,14 +1103,14 @@ in-card artwork was removed, typecheck, build and 39 focused checks pass.
 beginners, alone or alongside Arabic/Khmer, with free core lessons, explanations,
 review, downloads and baseline guided speaking.
 
-**Proposed depth:** twelve units/weeks, five new 5–7-minute lessons per unit
+**Owner-selected depth (October 18):** twelve units/weeks, five new 5–7-minute lessons per unit
 (60 new lessons), plus varied review and one checkpoint per unit. Review/checkpoints
 do not inflate the new-lesson count. Weeks are a suggested study pace, not delivery
 dates or a promise for learners sharing their daily time across languages.
-The depth and outcomes below are recommendations awaiting F25.1 agreement.
+The owner selected this depth and the five-minute month-one guided interaction target October 18; exact source/reviewer/rubric acceptance remains F25.1.
 
-**Proposed outcomes:** at 30 days with 15 minutes devoted to French daily, handle a
-three-minute guided introduction/food/plan exchange, extract four requested facts
+**Assessment targets:** at 30 days with 15 minutes devoted to French daily, handle a
+five-minute guided introductions/family/food/plan exchange, extract four requested facts
 from a slow 45–60-second studied-topic dialogue and write a short invitation/reply.
 At twelve units, complete a five-minute guided social/day-out scenario and understand/
 write short practical messages. Record help and delayed/new-context retrieval;
@@ -1132,10 +1132,9 @@ outcome checks pass. A first unit or 60 drafted lessons does not complete the pa
 separately approved speech/AI setup for automated feedback.
 
 **Evidence:** [inspection](../../docs/multi-language-feasibility.md), reference links above.
-No French packages, recordings, committed reviewers or outcome evidence yet.
+[October 18 private first-unit packages and verification](../french/README.md); no human recordings, designated reviewer or observed outcomes. Implementation and draft-first/fluent-review-before-publication route authorized October 18; no release/contact/spend authority inferred.
 
-**Proposed unit sequence:** ordering and linguistic targets require source/reviewer
-validation before drafting. These are learning briefs, not approved course content.
+**Unit sequence:** twelve scenario briefs for the selected course. First-unit drafts may be prepared under October 18 authorization; exact text/source acceptance and first-unit pilot precede bulk authoring. These briefs are not approved lesson content.
 
 | Unit | Scenario and observable task | Language/support focus |
 | --- | --- | --- |
@@ -1154,7 +1153,7 @@ validation before drafting. These are learning briefs, not approved course conte
 
 #### F25.1 French definition, sources and review route
 
-**Recommendation:** contemporary everyday French with a France-based reference
+**Owner selection, October 18:** contemporary everyday French with a Metropolitan France reference
 variety and labeled Canadian/other alternatives where supported; informal/polite
 address follows the situation. Beginner entry includes a skippable false-beginner check.
 
@@ -1180,7 +1179,7 @@ audio-ready, approved and published states are reported separately.
 modules, accent input/help and readable phrase/word chunks. Pronunciation notes are
 authored/source-linked; any IPA help is optional rather than an entry requirement.
 The delivered F28 application and [French alphabet draft](../../ROADMAP.md#f284-french-explorer-draft-pack) supply the explorer foundation; F30 retains acceptance/release;
-it does not complete the wider starting check or authorize French authoring.
+it does not complete the wider starting check. French draft authoring was separately authorized October 18.
 
 **Done when:** skip/retry and accessible alternatives work; accents/apostrophes and
 segments render correctly; reviewed answer rules explain when spelling matters

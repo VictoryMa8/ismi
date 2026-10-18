@@ -1,0 +1,658 @@
+{
+  "schemaVersion": 1,
+  "status": "unreviewed-private-draft",
+  "sources": [
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — subject pronouns",
+      "locator": "https://www.laits.utexas.edu/tex/gr/pro2.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for first/second person and situational tu/vous. Peer familiarity in these original scenarios is stipulated, not inferred from age alone."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — pronominal verbs",
+      "locator": "https://www.laits.utexas.edu/tex/gr/vpr1.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for s’appeler and pronoun/verb patterns. Ismi names, dialogue arrangements and explanations are original draft compositions."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "UT Austin: Tex’s French Grammar — interrogatives",
+      "locator": "https://www.laits.utexas.edu/tex/gr/int1.html",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Reference for information questions and conversational question forms. Does not directly attest every composed phrase."
+    },
+    {
+      "sourceType": "teaching-reference",
+      "title": "Académie française: bonjour, ninth edition",
+      "locator": "https://www.dictionnaire-academie.fr/article/A9B1554?history=0",
+      "rights": "Reference only; no publisher prose, exercises, media or recordings bundled. Exact publication rights/source acceptance pending.",
+      "notes": "Lexical greeting reference; does not constitute acceptance of the full curriculum."
+    },
+    {
+      "sourceType": "authoring-record",
+      "title": "Ismi F25 first-unit draft v1",
+      "locator": "internal:french/meet-01/authoring-v1",
+      "rights": "Original AI-assisted private draft for review. No publication approval or external rights clearance implied.",
+      "notes": "Owner authorized French implementation and Metropolitan France reference, 12 units/60 lessons, five-minute month-one guided-conversation target and draft-first/fluent-review-before-publication route October 18, 2026. No reviewer designated."
+    }
+  ],
+  "phrases": {
+    "hello": [
+      "Bonjour.",
+      "",
+      "Hello.",
+      [
+        "Bonjour."
+      ]
+    ],
+    "casual": [
+      "Salut !",
+      "",
+      "Hi!",
+      [
+        "Salut !"
+      ]
+    ],
+    "bye": [
+      "Au revoir.",
+      "",
+      "Goodbye.",
+      [
+        "Au revoir."
+      ]
+    ],
+    "nameq": [
+      "Tu t’appelles comment ?",
+      "",
+      "What is your name? (familiar)",
+      [
+        "Tu ",
+        "t’appelles ",
+        "comment ?"
+      ]
+    ],
+    "politeq": [
+      "Comment vous appelez-vous ?",
+      "",
+      "What is your name? (polite singular here)",
+      [
+        "Comment ",
+        "vous ",
+        "appelez-vous ?"
+      ]
+    ],
+    "alex": [
+      "Je m’appelle Alex.",
+      "",
+      "My name is Alex.",
+      [
+        "Je ",
+        "m’appelle ",
+        "Alex."
+      ]
+    ],
+    "camille": [
+      "Je m’appelle Camille.",
+      "",
+      "My name is Camille.",
+      [
+        "Je ",
+        "m’appelle ",
+        "Camille."
+      ]
+    ],
+    "andyou": [
+      "Et toi ?",
+      "",
+      "And you? (familiar)",
+      [
+        "Et ",
+        "toi ?"
+      ]
+    ],
+    "andpolite": [
+      "Et vous ?",
+      "",
+      "And you? (polite singular here)",
+      [
+        "Et ",
+        "vous ?"
+      ]
+    ],
+    "repeat": [
+      "Tu peux répéter, s’il te plaît ?",
+      "",
+      "Can you repeat, please? (familiar)",
+      [
+        "Tu ",
+        "peux ",
+        "répéter, ",
+        "s’il te plaît ?"
+      ]
+    ],
+    "slow": [
+      "Tu peux parler plus lentement, s’il te plaît ?",
+      "",
+      "Can you speak more slowly, please? (familiar)",
+      [
+        "Tu ",
+        "peux ",
+        "parler ",
+        "plus lentement, ",
+        "s’il te plaît ?"
+      ]
+    ],
+    "politerepeat": [
+      "Vous pouvez répéter, s’il vous plaît ?",
+      "",
+      "Can you repeat, please? (polite singular here)",
+      [
+        "Vous ",
+        "pouvez ",
+        "répéter, ",
+        "s’il vous plaît ?"
+      ]
+    ],
+    "notunderstood": [
+      "Je n’ai pas compris.",
+      "",
+      "I did not understand.",
+      [
+        "Je ",
+        "n’ai ",
+        "pas ",
+        "compris."
+      ]
+    ],
+    "thanks": [
+      "Merci.",
+      "",
+      "Thank you.",
+      [
+        "Merci."
+      ]
+    ]
+  },
+  "notes": {
+    "hello": [
+      "Open a meeting",
+      "A daytime greeting usable beyond familiar friends; choose the greeting for the stated situation.",
+      "Greet someone during the day."
+    ],
+    "casual": [
+      "Greet a familiar friend",
+      "Use this casual greeting in the explicitly familiar-friend role here; it is not a rule for every new acquaintance.",
+      "Greet a familiar friend casually."
+    ],
+    "bye": [
+      "Close an exchange",
+      "This closes the meeting rather than introducing a new person.",
+      "Say goodbye when leaving."
+    ],
+    "nameq": [
+      "Ask a familiar person’s name",
+      "This is the familiar singular question used in the agreed tu setting. Keep t’ attached to appelles in the written phrase.",
+      "Ask for a name in the familiar setting."
+    ],
+    "politeq": [
+      "Ask politely",
+      "Here vous addresses one person politely. It can also address several people; this scene explicitly has one addressee.",
+      "Ask one new adult politely for a name."
+    ],
+    "alex": [
+      "Give the assigned name Alex",
+      "Keep m’ with appelle. Alex is an assigned fictional role, not a request for your real name.",
+      "Introduce yourself as Alex."
+    ],
+    "camille": [
+      "Give the assigned name Camille",
+      "Use the assigned name Camille. The phrase does not specify a gender.",
+      "Introduce yourself as Camille."
+    ],
+    "andyou": [
+      "Return a familiar question",
+      "After giving a name, this returns that same question to the familiar conversation partner. The preceding context supplies the topic.",
+      "Return the name question to a familiar friend."
+    ],
+    "andpolite": [
+      "Return a polite question",
+      "Return the previous question while keeping the stated polite address.",
+      "Return the name question politely."
+    ],
+    "repeat": [
+      "Ask a friend to repeat",
+      "Request the words again when you missed them; this does not specifically ask for slower delivery. This composed repair phrase needs fluent confirmation.",
+      "Ask a familiar partner for the words again."
+    ],
+    "slow": [
+      "Ask for a slower pace",
+      "Ask for a change of pace when the words are too fast. This is distinct from simply requesting another repetition. This composed phrase needs fluent confirmation.",
+      "Ask a familiar partner specifically to slow down."
+    ],
+    "politerepeat": [
+      "Request repetition politely",
+      "Use the vous request in the scene that explicitly keeps polite singular address. Exact wording and register need fluent review.",
+      "Ask one new adult politely to repeat."
+    ],
+    "notunderstood": [
+      "Signal a missed message",
+      "Learn this as a whole repair expression for now; this unit does not assess past-tense conjugation.",
+      "Say that you did not understand."
+    ],
+    "thanks": [
+      "Acknowledge help",
+      "Thank the person after clarification; this does not supply your name or ask a question.",
+      "Thank someone who helped you."
+    ]
+  },
+  "lessons": [
+    {
+      "slug": "greetings",
+      "title": "Greet someone and say goodbye",
+      "goal": "Open and close a short meeting in the stated context.",
+      "scenario": "Alex meets a familiar friend Camille in the daytime, then leaves.",
+      "dialogue": [
+        [
+          "Alex",
+          "hello"
+        ],
+        [
+          "Camille",
+          "casual"
+        ],
+        [
+          "Alex",
+          "bye"
+        ],
+        [
+          "Camille",
+          "bye"
+        ]
+      ],
+      "cards": [
+        "hello",
+        "casual",
+        "bye"
+      ],
+      "usage": "Bonjour opens this daytime meeting. Salut is available in the familiar-friend scene; au revoir closes it. More than one greeting can be natural, so tasks specify the intended phrase or exclude equally suitable options.",
+      "practice": [
+        [
+          "You arrive during the day. Choose a greeting rather than a farewell or a thank-you.",
+          "hello",
+          "hello",
+          "bye",
+          "thanks"
+        ],
+        [
+          "A familiar friend says hi. Choose the casual greeting shown in the dialogue.",
+          "casual",
+          "casual",
+          "bye",
+          "thanks"
+        ],
+        [
+          "You are leaving the gathering. Say goodbye.",
+          "casual",
+          "bye",
+          "hello",
+          "thanks"
+        ],
+        [
+          "You start a daytime visit with someone new. Choose the general daytime greeting among these options.",
+          "politeq",
+          "hello",
+          "bye",
+          "thanks"
+        ],
+        [
+          "At a later meeting, greet a familiar friend casually using the taught phrase.",
+          "casual",
+          "casual",
+          "bye",
+          "nameq"
+        ],
+        [
+          "The visit ends. Close it rather than asking for a name.",
+          "hello",
+          "bye",
+          "nameq",
+          "thanks"
+        ]
+      ]
+    },
+    {
+      "slug": "names",
+      "title": "Exchange names with a friend",
+      "goal": "Give an assigned name, ask a name and return the question.",
+      "scenario": "A mutual friend has explicitly invited Alex and Camille to use tu with each other.",
+      "dialogue": [
+        [
+          "Alex",
+          "hello"
+        ],
+        [
+          "Camille",
+          "hello"
+        ],
+        [
+          "Alex",
+          "nameq"
+        ],
+        [
+          "Camille",
+          "camille"
+        ],
+        [
+          "Camille",
+          "andyou"
+        ],
+        [
+          "Alex",
+          "alex"
+        ]
+      ],
+      "cards": [
+        "nameq",
+        "camille",
+        "alex",
+        "andyou"
+      ],
+      "usage": "Use the fictional assigned name. Tu and toi belong to this explicitly familiar exchange; they are not universal defaults for every person you meet.",
+      "practice": [
+        [
+          "Ask the familiar partner for their name.",
+          "hello",
+          "nameq",
+          "bye",
+          "thanks"
+        ],
+        [
+          "You are Camille. Answer the name question.",
+          "nameq",
+          "camille",
+          "alex",
+          "bye"
+        ],
+        [
+          "You are Alex. Answer the returned name question.",
+          "andyou",
+          "alex",
+          "camille",
+          "thanks"
+        ],
+        [
+          "You just gave your name. Return that question in this tu conversation.",
+          "camille",
+          "andyou",
+          "bye",
+          "thanks"
+        ],
+        [
+          "At another visit you are Alex again. Give that assigned name.",
+          "nameq",
+          "alex",
+          "camille",
+          "bye"
+        ],
+        [
+          "After a brief greeting, ask your familiar partner’s name rather than ending the exchange.",
+          "casual",
+          "nameq",
+          "bye",
+          "thanks"
+        ]
+      ]
+    },
+    {
+      "slug": "polite",
+      "title": "Meet someone politely",
+      "goal": "Keep polite singular address through a name exchange.",
+      "scenario": "Alex and Camille meet as new adult acquaintances. The exercise explicitly keeps vous.",
+      "dialogue": [
+        [
+          "Alex",
+          "hello"
+        ],
+        [
+          "Alex",
+          "politeq"
+        ],
+        [
+          "Camille",
+          "camille"
+        ],
+        [
+          "Camille",
+          "andpolite"
+        ],
+        [
+          "Alex",
+          "alex"
+        ],
+        [
+          "Camille",
+          "bye"
+        ]
+      ],
+      "cards": [
+        "politeq",
+        "andpolite",
+        "politerepeat"
+      ],
+      "usage": "The scene specifies polite singular vous. In real interaction, address depends on context and mutual preference; a familiar alternative is not universally wrong.",
+      "practice": [
+        [
+          "Ask the new adult’s name while keeping the stated polite vous address.",
+          "hello",
+          "politeq",
+          "nameq",
+          "bye"
+        ],
+        [
+          "You are Camille. Supply your assigned name.",
+          "politeq",
+          "camille",
+          "alex",
+          "thanks"
+        ],
+        [
+          "Return the name question while keeping polite vous address.",
+          "camille",
+          "andpolite",
+          "andyou",
+          "bye"
+        ],
+        [
+          "You missed the polite question. Request repetition while retaining vous.",
+          "politeq",
+          "politerepeat",
+          "repeat",
+          "thanks"
+        ],
+        [
+          "The repeated question asks your name. You are Alex.",
+          "politeq",
+          "alex",
+          "camille",
+          "thanks"
+        ],
+        [
+          "At a second formal introduction, ask the name with the stated polite address.",
+          "hello",
+          "politeq",
+          "nameq",
+          "bye"
+        ]
+      ]
+    },
+    {
+      "slug": "repair",
+      "title": "Ask for help understanding",
+      "goal": "Signal a missed message, request repetition or a slower pace and acknowledge help.",
+      "scenario": "At a lively visit Alex and Camille have agreed to use tu. Read the repair exchange; this draft has no listening assessment.",
+      "dialogue": [
+        [
+          "Camille",
+          "camille"
+        ],
+        [
+          "Alex",
+          "notunderstood"
+        ],
+        [
+          "Alex",
+          "repeat"
+        ],
+        [
+          "Camille",
+          "camille"
+        ],
+        [
+          "Alex",
+          "slow"
+        ],
+        [
+          "Camille",
+          "camille"
+        ]
+      ],
+      "cards": [
+        "notunderstood",
+        "repeat",
+        "slow",
+        "thanks"
+      ],
+      "usage": "Tell the person when you did not understand. Repetition asks for the words again; slower speech asks for a different pace. The task specifies which help is needed.",
+      "practice": [
+        [
+          "State that you did not understand; choose the statement rather than a request.",
+          "camille",
+          "notunderstood",
+          "repeat",
+          "slow"
+        ],
+        [
+          "You missed the name under a loud noise. Ask specifically for the words again.",
+          "camille",
+          "repeat",
+          "slow",
+          "thanks"
+        ],
+        [
+          "The partner is speaking too fast. Ask specifically for a slower pace.",
+          "nameq",
+          "slow",
+          "repeat",
+          "thanks"
+        ],
+        [
+          "The clarification helped. Thank your partner.",
+          "camille",
+          "thanks",
+          "repeat",
+          "bye"
+        ],
+        [
+          "The clarified question asks your name. You are Alex.",
+          "nameq",
+          "alex",
+          "camille",
+          "notunderstood"
+        ],
+        [
+          "At a later familiar conversation, noise covers a question. Request repetition.",
+          "nameq",
+          "repeat",
+          "slow",
+          "bye"
+        ]
+      ]
+    },
+    {
+      "slug": "together",
+      "title": "Keep a new exchange going",
+      "goal": "Reuse greetings, assigned names and repair in a changed role.",
+      "scenario": "At another friend’s home you now play Camille. The partner Alex explicitly agrees to tu.",
+      "dialogue": [
+        [
+          "Camille",
+          "hello"
+        ],
+        [
+          "Alex",
+          "nameq"
+        ],
+        [
+          "Camille",
+          "repeat"
+        ],
+        [
+          "Alex",
+          "nameq"
+        ],
+        [
+          "Camille",
+          "camille"
+        ],
+        [
+          "Camille",
+          "andyou"
+        ]
+      ],
+      "cards": [
+        "hello",
+        "camille",
+        "andyou",
+        "repeat",
+        "slow"
+      ],
+      "usage": "Switch the assigned role without switching the learning goal. Ask for clarification when useful. Written choices and reconstruction do not demonstrate listening or spontaneous speaking.",
+      "practice": [
+        [
+          "Open the daytime visit with a greeting.",
+          "hello",
+          "hello",
+          "bye",
+          "thanks"
+        ],
+        [
+          "The name question was covered by noise. Ask specifically for repetition.",
+          "nameq",
+          "repeat",
+          "slow",
+          "thanks"
+        ],
+        [
+          "The question is clear now. You are Camille; give that name.",
+          "nameq",
+          "camille",
+          "alex",
+          "bye"
+        ],
+        [
+          "After your name, return the question to your familiar partner.",
+          "camille",
+          "andyou",
+          "andpolite",
+          "bye"
+        ],
+        [
+          "Alex speaks too quickly at the next table. Ask specifically for a slower pace.",
+          "alex",
+          "slow",
+          "repeat",
+          "thanks"
+        ],
+        [
+          "You leave the visit after introducing yourself. Say goodbye.",
+          "alex",
+          "bye",
+          "nameq",
+          "hello"
+        ]
+      ]
+    }
+  ]
+}

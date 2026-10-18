@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="../content/french/meet-01/*-lesson.json" Link="french-meet-01/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/khmer/meet-01/*-lesson.json" Link="khmer-meet-01/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/revisions/recall/*-lesson.json" Link="recall/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/revisions/transliteration-audit/*-lesson.json" Link="transliteration-audit/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
