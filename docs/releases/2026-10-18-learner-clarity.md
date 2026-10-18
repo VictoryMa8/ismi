@@ -11,3 +11,12 @@ The API deployed the same exact revision to `https://ismi.alwaysdata.net`. Prefl
 A read-only live browser check after refreshing the cached PWA confirmed the new Write a response label, missing AI-assisted draft prefix, single Today resume card, silent grace and collapsed optional weekly activities. No lesson was started/completed and no study or habit preference was changed. The owner then chose to inspect the UI themselves; no further browser interaction was performed.
 
 Documentation-only follow-up may advance the frontend commit; the verified API runtime remains `30a393e`. No beta release, curriculum revision, accepted review/rights claim or broader publication authority follows.
+
+
+## Published-preview availability regression
+
+After the rollout, the owner reported French/Khmer unavailable. A fresh live API audit confirmed both course counts were zero and their first lesson URLs returned 404, despite a healthy API. The F27.3 edit removed “AI-assisted draft.” from the API's `Notice` constants; preview authorization compares the full persisted `LessonPublicationNotice` against those constants. Existing published snapshots retained the original notice, so the guard hid all ten lessons. Package pins, review records and flags were unchanged.
+
+The earlier smoke check saw cached learner data and did not establish fresh API catalog/lesson availability. The original policy tests derived their expected notice from the same constant being changed, so they passed against newly approved test records and missed compatibility with existing publications.
+
+Correction: retain the original API notice exactly and keep the existing presentation-only prefix removal in `PublicationNotice.vue`. No publication, database rewrite, guard relaxation or new review acceptance is needed. Both integration cases now use independent literal historical notices: they failed on the regression and pass after restoring the original values, exercising all five packages per course plus review gates, disabling, withdrawal and rollback. Deployment correction and fresh live counts/lesson responses will be recorded below.

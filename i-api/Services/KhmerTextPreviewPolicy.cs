@@ -17,10 +17,12 @@ public sealed class KhmerTextPreviewPolicy(IConfiguration configuration)
         "4365ee17b61b0f3d89e958b41021c46768cc52e13beb9d8e5ec89b1b07c2625a",
         "76d79aeae71bba70feb0a485f67ccda203da303ed805a9f18bdc49384ea74209"
     ];
+    // Persisted approval metadata: keep byte-for-byte compatible with existing
+    // publications. UI-only wording belongs in PublicationNotice.vue.
     public static readonly LessonPublicationNotice Notice = new(
         "khmer-meet-01-text-preview-2026-10-16",
         "Unreviewed · text-only preview",
-        "Khmer wording, pronunciation help and source rights remain unreviewed. No human audio.");
+        "AI-assisted draft. Khmer wording, pronunciation help and source rights remain unreviewed. No human audio.");
     private static readonly Lazy<HashSet<string>> Authorized = new(() =>
         Enumerable.Range(1, 5).Select(n => {
             using var stream = typeof(KhmerTextPreviewPolicy).Assembly.GetManifestResourceStream($"Ismi.KhmerPreview.{n:00}-lesson.json")

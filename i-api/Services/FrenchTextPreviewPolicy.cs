@@ -17,10 +17,12 @@ public sealed class FrenchTextPreviewPolicy(IConfiguration configuration)
         "98998a3097ac2ddaaef7e5709b1320faf5815814abe53ef075243e35f73522b2",
         "6f57ce3919c894a9adce8361e6dc2c28c37806d79cd1692e08a85cfc7bf06165"
     ];
+    // Persisted approval metadata: keep byte-for-byte compatible with existing
+    // publications. UI-only wording belongs in PublicationNotice.vue.
     public static readonly LessonPublicationNotice Notice = new(
         "french-meet-01-text-preview-2026-10-18",
         "Unreviewed · text-only preview",
-        "French wording, register and source rights remain unreviewed. No human audio.");
+        "AI-assisted draft. French wording, register and source rights remain unreviewed. No human audio.");
     private static readonly Lazy<HashSet<string>> Authorized = new(() =>
         Enumerable.Range(1, 5).Select(n => {
             using var stream = typeof(FrenchTextPreviewPolicy).Assembly.GetManifestResourceStream($"Ismi.FrenchPreview.{n:00}-lesson.json")

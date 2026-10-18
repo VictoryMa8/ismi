@@ -11,7 +11,7 @@ Implementation:
 - Grace calculations and saved streak evidence are unchanged; counters and grace rules are absent from learner copy.
 - “Your plan” becomes “Today’s lessons”; Courses briefly explains course vs. lesson. “Recall” becomes “Write a response,” with a short explanation and hints.
 - A started lesson takes priority in Today’s main card, including after offline reload. The separate global resume button is removed.
-- Unreviewed status, pending rights/review and missing audio remain visible; the AI-assisted draft prefix is removed, including when displaying an older downloaded notice.
+- Unreviewed status, pending rights/review and missing audio remain visible; the AI-assisted draft prefix is removed in presentation only, including older downloaded notices. Persisted API notice constants retain their original text because publication authorization checks them exactly.
 - Fattoush and Knafeh act out French/Khmer scenes. Labels identify the existing roles (Alex/Camille, Alex/Sam or Host/Guest) because the exact published self-introductions and accepted answers still use those names. This is an explicit presentation mapping; it does not rename target-language text or mutate packages, versions, hashes or progress. Existing authored character mappings take precedence.
 
 Verification · October 18:

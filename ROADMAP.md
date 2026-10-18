@@ -109,6 +109,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F27.3 · Learner clarity and mobile fixes](#f273-learner-clarity-and-mobile-fixes) | Agent: restore historical preview notices, verify and redeploy; current API hides French/Khmer. |
 | [F25 · French course](#f25-french-course) | Owner: designate fluent reviewer/source dispositions. Agent: first-unit review/pilot before bulk units 2–12. |
 | [F25.3 · French starting check, sounds and text support](#f253-french-starting-check-sounds-and-text-support) | Reviewer/agent: accept sample/spelling inputs, then calibrate starting check and sound/text support. |
 | [F06.1 · Character art redesign](#f061-character-art-redesign) | Owner: decide whether to authorize the remaining profile/turnaround production; no current app call site needs it. |
@@ -184,7 +185,6 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F27.3 · Learner clarity and mobile fixes](#f273-learner-clarity-and-mobile-fixes) | Bounded fixes deployed as `30a393e`; existing content publication unchanged. |
 | [F25.2.1 · Owner-authorized French text-only development preview](#f2521-owner-authorized-french-text-only-development-preview) | Five exact v1 previews published; normal F25 review/audio/pilot/depth gates remain. |
 | [F19 · Chatterbox phrase audio](#f19-chatterbox-phrase-audio) | Local synthetic-audio contract complete; eight selected mappings integrated into an isolated private console draft. F19.1 retains rights/release. |
 | [F19.1 · Synthetic audio rights and preview release](#f191-synthetic-audio-rights-and-preview-release) | Six S0 clips published across eight lesson-one prompts as v4; other publications and learner data preserved. |
@@ -1045,11 +1045,11 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 #### F27.3 Learner clarity and mobile fixes
 
-- **Work state:** Complete.
-- **Readiness:** Implementation — Complete; content — N/A; verification — Automated; physical-device/AT evidence absent.
+- **Work state:** Partial.
+- **Readiness:** Implementation — Notice compatibility regression under repair; content — N/A; verification — Live French/Khmer availability fails on 30a393e; earlier automation missed persisted notices.
 - **Delivery:** Application — Deployed frontend/API `30a393e`; documentation follow-up may advance frontend revision; content publication — Unchanged.
 - **Scope:** Readable Practice tiles, plain study/response wording, one Today resume action, silent streak grace, hidden optional weekly activities and shared French/Khmer character presentation.
-- **Next action:** None in this bounded scope; broader real-device/AT and release gates remain with their owning features.
+- **Next action:** Agent: restore original persisted-notice compatibility, run regression checks and deploy correction under existing rollout authority.
 - **Authorization:** Owner requested fixes and then “commit and reploy” October 18, authorizing commit/push and deployment to existing development hosts; no curriculum publication.
 - **Completion gate / evidence:** [Bounded contract and evidence](docs/learner-clarity-fixes.md).
 - **Dependencies:** F06/F17.7/F24/F27.2; preserve exact preview text and answer records.

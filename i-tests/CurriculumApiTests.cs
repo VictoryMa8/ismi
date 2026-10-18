@@ -862,7 +862,14 @@ public sealed class CurriculumApiTests : IAsyncLifetime
     public async Task OwnerTextPreviewExceptionPinsFiveExactPackagesAndPreservesPendingReviewAndNormalGates(string courseId)
     {
         var flag = courseId == "khmer" ? "Curriculum:AllowKhmerTextPreview" : "Curriculum:AllowFrenchTextPreview";
-        var notice = courseId == "khmer" ? KhmerTextPreviewPolicy.Notice : FrenchTextPreviewPolicy.Notice;
+        // Persisted publication metadata is a compatibility contract. Do not
+        // derive this expectation from the policy constant under test: changing
+        // UI wording must never hide snapshots approved by an earlier release.
+        var notice = courseId == "khmer"
+            ? new LessonPublicationNotice("khmer-meet-01-text-preview-2026-10-16", "Unreviewed · text-only preview",
+                "AI-assisted draft. Khmer wording, pronunciation help and source rights remain unreviewed. No human audio.")
+            : new LessonPublicationNotice("french-meet-01-text-preview-2026-10-18", "Unreviewed · text-only preview",
+                "AI-assisted draft. French wording, register and source rights remain unreviewed. No human audio.");
         using var previewFactory = _factory.WithWebHostBuilder(builder => builder.ConfigureAppConfiguration((_, config) =>
             config.AddInMemoryCollection(new Dictionary<string, string?> { [flag] = "true" })));
         using var owner = previewFactory.CreateClient();
