@@ -43,3 +43,12 @@ owner decisions, source limitations, recording/starting-check briefs and the pil
 protocol. Units 2–12 follow first-unit review and pilot; no bulk unreviewed course
 is represented as finished. [ROADMAP.md](../../../ROADMAP.md#f25-french-course)
 owns current status. The owner subsequently authorized the exact five as unreviewed text-only previews; [exception and release evidence](../../../docs/french/text-preview-publication.md) records that separate action. The authoring manifest remains the original private-draft snapshot.
+
+## Exact development-preview publication
+
+The five exact original packages are published v1 on the existing development
+preview, hosted records 30–34. They remain **unreviewed, text-only** with pending
+rights and no human audio. [Publication pins and audit](publication.json) and
+[rollout/recovery](../../../docs/releases/2026-10-18-french-preview.md) describe the
+separate owner-authorized exception. Local records 32–36 remain private drafts;
+hosted/local IDs are separate namespaces.

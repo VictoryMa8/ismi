@@ -41,3 +41,11 @@ completion/reconnection and separate Arabic progress. Production build and five
 deployment-tool fixture tests pass. Real AT/device/Safari and fluent review remain
 missing. Rollout/version/publication evidence is recorded in the
 [release record](../releases/2026-10-18-french-preview.md).
+
+## Delivered release
+
+Application `08fed75` is deployed to the existing frontend/API. Hosted records
+30–34 are all published v1, with pending review/rights, empty reviewer and no human
+model audio. All 18 prior publications and all existing rows/assets are preserved.
+[Exact audit and hashes](../../content/french/meet-01/publication.json) ·
+[rollout and recovery](../releases/2026-10-18-french-preview.md).

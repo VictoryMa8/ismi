@@ -1,0 +1,234 @@
+{
+  "feature": "F25.2.1",
+  "date": "2026-10-18",
+  "target": "existing alwaysdata development preview",
+  "records": [
+    {
+      "recordId": 30,
+      "lessonId": "french-meet-01-01",
+      "versionNumber": 1,
+      "version": "curriculum-french-meet-01-01-v1",
+      "status": "published",
+      "approvedAtUtc": "2026-10-18 19:56:19.9470326",
+      "publishedAtUtc": "2026-10-18 19:56:28.2793163",
+      "authoredFieldsAndSourcesMatch": true,
+      "audit": [
+        {
+          "action": "created",
+          "atUtc": "2026-10-18 19:55:04.4369508",
+          "details": "Created draft version 1."
+        },
+        {
+          "action": "validated",
+          "atUtc": "2026-10-18 19:55:05.4236709",
+          "details": "Validation found 3 issue(s)."
+        },
+        {
+          "action": "approved-text-preview",
+          "atUtc": "2026-10-18 19:56:19.9470326",
+          "details": "Owner-authorized french-meet-01-text-preview-2026-10-18; exact package fingerprint bc2fffbde5f634aa92e2bba481c0c2333a20e5443e63f5ccbd171f402b84eca8. Pending linguistic/source-rights records retained; no human audio or beta approval."
+        },
+        {
+          "action": "published",
+          "atUtc": "2026-10-18 19:56:28.2793163",
+          "details": "Published to the learner API and offline package feed."
+        }
+      ]
+    },
+    {
+      "recordId": 31,
+      "lessonId": "french-meet-01-02",
+      "versionNumber": 1,
+      "version": "curriculum-french-meet-01-02-v1",
+      "status": "published",
+      "approvedAtUtc": "2026-10-18 19:57:00.7263475",
+      "publishedAtUtc": "2026-10-18 19:57:01.8797318",
+      "authoredFieldsAndSourcesMatch": true,
+      "audit": [
+        {
+          "action": "created",
+          "atUtc": "2026-10-18 19:55:05.4293525",
+          "details": "Created draft version 1."
+        },
+        {
+          "action": "validated",
+          "atUtc": "2026-10-18 19:55:05.439515",
+          "details": "Validation found 3 issue(s)."
+        },
+        {
+          "action": "approved-text-preview",
+          "atUtc": "2026-10-18 19:57:00.7263475",
+          "details": "Owner-authorized french-meet-01-text-preview-2026-10-18; exact package fingerprint fef682f4f4cac2335020f5d994e7ac9cfff4ca6612b65e4238dadce49f7172a4. Pending linguistic/source-rights records retained; no human audio or beta approval."
+        },
+        {
+          "action": "published",
+          "atUtc": "2026-10-18 19:57:01.8797318",
+          "details": "Published to the learner API and offline package feed."
+        }
+      ]
+    },
+    {
+      "recordId": 32,
+      "lessonId": "french-meet-01-03",
+      "versionNumber": 1,
+      "version": "curriculum-french-meet-01-03-v1",
+      "status": "published",
+      "approvedAtUtc": "2026-10-18 19:57:03.0113497",
+      "publishedAtUtc": "2026-10-18 19:57:04.9537421",
+      "authoredFieldsAndSourcesMatch": true,
+      "audit": [
+        {
+          "action": "created",
+          "atUtc": "2026-10-18 19:55:05.4415903",
+          "details": "Created draft version 1."
+        },
+        {
+          "action": "validated",
+          "atUtc": "2026-10-18 19:55:05.4487068",
+          "details": "Validation found 3 issue(s)."
+        },
+        {
+          "action": "approved-text-preview",
+          "atUtc": "2026-10-18 19:57:03.0113497",
+          "details": "Owner-authorized french-meet-01-text-preview-2026-10-18; exact package fingerprint af1e005d2ceab30a4551e5f56b59ea8b0916781739b5b1fe7dae33c7fe95ce4f. Pending linguistic/source-rights records retained; no human audio or beta approval."
+        },
+        {
+          "action": "published",
+          "atUtc": "2026-10-18 19:57:04.9537421",
+          "details": "Published to the learner API and offline package feed."
+        }
+      ]
+    },
+    {
+      "recordId": 33,
+      "lessonId": "french-meet-01-04",
+      "versionNumber": 1,
+      "version": "curriculum-french-meet-01-04-v1",
+      "status": "published",
+      "approvedAtUtc": "2026-10-18 19:57:09.9737255",
+      "publishedAtUtc": "2026-10-18 19:57:39.6896053",
+      "authoredFieldsAndSourcesMatch": true,
+      "audit": [
+        {
+          "action": "created",
+          "atUtc": "2026-10-18 19:55:05.45177",
+          "details": "Created draft version 1."
+        },
+        {
+          "action": "validated",
+          "atUtc": "2026-10-18 19:55:05.4614346",
+          "details": "Validation found 3 issue(s)."
+        },
+        {
+          "action": "approved-text-preview",
+          "atUtc": "2026-10-18 19:57:09.9737255",
+          "details": "Owner-authorized french-meet-01-text-preview-2026-10-18; exact package fingerprint aa7b5838cfb4ee46a1aadfd13bbaca7bf2e4fde897d3547a5d29d8f524f7cfc5. Pending linguistic/source-rights records retained; no human audio or beta approval."
+        },
+        {
+          "action": "published",
+          "atUtc": "2026-10-18 19:57:39.6896053",
+          "details": "Published to the learner API and offline package feed."
+        }
+      ]
+    },
+    {
+      "recordId": 34,
+      "lessonId": "french-meet-01-05",
+      "versionNumber": 1,
+      "version": "curriculum-french-meet-01-05-v1",
+      "status": "published",
+      "approvedAtUtc": "2026-10-18 19:57:50.2041373",
+      "publishedAtUtc": "2026-10-18 19:57:55.7148535",
+      "authoredFieldsAndSourcesMatch": true,
+      "audit": [
+        {
+          "action": "created",
+          "atUtc": "2026-10-18 19:55:05.4644449",
+          "details": "Created draft version 1."
+        },
+        {
+          "action": "validated",
+          "atUtc": "2026-10-18 19:55:05.4735427",
+          "details": "Validation found 3 issue(s)."
+        },
+        {
+          "action": "approved-text-preview",
+          "atUtc": "2026-10-18 19:57:50.2041373",
+          "details": "Owner-authorized french-meet-01-text-preview-2026-10-18; exact package fingerprint ca50fb9a142c9533fcc694a6b541f031b5438a76be69aea38afed3b575bfa63d. Pending linguistic/source-rights records retained; no human audio or beta approval."
+        },
+        {
+          "action": "published",
+          "atUtc": "2026-10-18 19:57:55.7148535",
+          "details": "Published to the learner API and offline package feed."
+        }
+      ]
+    }
+  ],
+  "allExistingRowsPreserved": true,
+  "previousPublishedPayloadsPreserved": 18,
+  "unchangedTables": [
+    "AlphabetPacks",
+    "AspNetRoleClaims",
+    "AspNetRoles",
+    "AspNetUserClaims",
+    "AspNetUserLogins",
+    "AspNetUserRoles",
+    "AspNetUserTokens",
+    "AspNetUsers",
+    "CulturalCollections",
+    "LearnerProgress",
+    "LessonCompletions",
+    "RecallReviewCases",
+    "StudySettings"
+  ],
+  "tablesWithAdditionsOnly": [
+    "CurriculumAuditEvents",
+    "CurriculumSources",
+    "CurriculumVersions"
+  ],
+  "integrity": "ok",
+  "recordingsAndCookieKeysPreserved": true,
+  "applicationRevision": "08fed7525991fdc8202242cf01dbb12eba504bd6",
+  "originalPackages": [
+    {
+      "lessonId": "french-meet-01-01",
+      "file": "01-lesson.json",
+      "sha256": "f483c36bc23785c5bdb541a7e1d593b39d1cb0e664a22002bdd4e5a0f3349b22",
+      "dialogueTurns": 4,
+      "teachingCards": 3,
+      "practiceSteps": 6
+    },
+    {
+      "lessonId": "french-meet-01-02",
+      "file": "02-lesson.json",
+      "sha256": "55a0199541981e253fed3911a62dce8b8a98d4238454bc231bda4fefdddd5bd6",
+      "dialogueTurns": 6,
+      "teachingCards": 4,
+      "practiceSteps": 6
+    },
+    {
+      "lessonId": "french-meet-01-03",
+      "file": "03-lesson.json",
+      "sha256": "d1e50ddcb1fbe45b3bd7a5eefb53dde1d01518e7dc7ba9a9e187f17af0f89367",
+      "dialogueTurns": 6,
+      "teachingCards": 3,
+      "practiceSteps": 6
+    },
+    {
+      "lessonId": "french-meet-01-04",
+      "file": "04-lesson.json",
+      "sha256": "98998a3097ac2ddaaef7e5709b1320faf5815814abe53ef075243e35f73522b2",
+      "dialogueTurns": 6,
+      "teachingCards": 4,
+      "practiceSteps": 6
+    },
+    {
+      "lessonId": "french-meet-01-05",
+      "file": "05-lesson.json",
+      "sha256": "6f57ce3919c894a9adce8361e6dc2c28c37806d79cd1692e08a85cfc7bf06165",
+      "dialogueTurns": 6,
+      "teachingCards": 5,
+      "practiceSteps": 6
+    }
+  ]
+}

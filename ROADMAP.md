@@ -53,7 +53,7 @@ not native-expert review. “N/A” means that layer is outside the bounded scop
 | F17 learning support | Habits/can-do/UI complete | Grammar/reference slice not authored | Bound grammar, reminder and XP work before implementing | Selected children deployed |
 | F21 cultural media | Complete | Four research editions awaiting acceptance | Real media/editorial checks, AT, exact publication | App deployed / media unpublished |
 | F24 multi-language foundation | Complete | Reviewed French/Khmer first units still required | Real input/AT/Safari offline and observed mixed-language pilot | App deployed / expansion release gated |
-| F25 French course | First-unit private flow complete; course partial | Five drafts; 55 lessons unauthored | Exact fluent/source acceptance, audio/check inputs, first-unit pilot | Shared app deployed / French drafts local only |
+| F25 French course | First-unit private flow complete; course partial | Five drafts; 55 lessons unauthored | Exact fluent/source acceptance, audio/check inputs, first-unit pilot | App deployed / five unreviewed text previews |
 | F26 Khmer course | Shared app complete; course partial | Five of sixty lessons drafted and preview-published | Review/source/help decisions, 55 lessons, audio/modules/pilot | App deployed / five unreviewed text previews |
 | F28 alphabet | Complete under revised text-only contract | Five full packs authored, unreviewed | No remaining F28 gate; human/source/access/release is F30 | App deployed / full drafts unpublished |
 
@@ -65,9 +65,10 @@ This is a reconciliation of repository/release evidence, **not a new live audit*
 
 | Layer | Latest recorded state | Evidence / limit |
 | --- | --- | --- |
-| Frontend application | `5c169b7` Ready on existing Vercel development aliases October 17; release-record follow-up may advance frontend revision | [F19 rollout](docs/releases/2026-10-17-synthetic-audio.md) |
-| ASP.NET API | Healthy exact `5c169b7` revision October 17 on existing alwaysdata preview | [F19 rollout](docs/releases/2026-10-17-synthetic-audio.md); all 17 table hashes and persistent assets preserved |
+| Frontend application | `08fed75` Ready on existing Vercel development aliases October 18; documentation follow-up may advance frontend revision | [French preview rollout](docs/releases/2026-10-18-french-preview.md) |
+| ASP.NET API | Healthy exact `08fed75` revision October 18 on existing alwaysdata preview | [French preview rollout](docs/releases/2026-10-18-french-preview.md); existing rows, eighteen prior publications and persistent assets preserved |
 | Levantine Everyday | Lesson 1 v4 with S0 synthetic prompt audio; lessons 3/6 v3, other four v2 | [October 18 publication](docs/releases/2026-10-18-s0-audio.md); existing publications preserved |
+| French lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F25.2.1 audit](content/french/meet-01/publication.json); no accepted linguistic/rights review or human audio |
 | Khmer lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F26.2.1 audit](content/khmer/meet-01/publication.json); no human audio/accepted linguistic review |
 | Alphabet | Five exact v1 inventory-only previews; full five text-only draft packs remain unpublished | [F28 scope](docs/alphabet-text-only-completion.md); F30 acceptance/release remains |
 | Cultural media | Application deployed; four local research editions, hosted catalog empty at last verification | [F21 release](docs/releases/2026-10-15-cultural-media.md) |
@@ -173,12 +174,6 @@ The next-action text names the actor; use the record before taking action.
 | [F23.1 · First text episode](#f231-first-text-episode) | Agent after authorization: choose unit, roles, target/source records and console scope. Today integration needs an explicit accounting rule. |
 | [F26.4 · Khmer remaining units and reference material](#f264-khmer-remaining-units-and-reference-material) | Agent after first-unit review/pilot: revise sequence and author source-backed bounded batches. |
 
-### Delivery pending
-
-| ID / scope | Next action or remaining gate |
-| --- | --- |
-| [F25.2.1 · Owner-authorized French text-only development preview](#f2521-owner-authorized-french-text-only-development-preview) | Agent: deploy candidate, import exact five hosted drafts, publish through owner controls and verify preservation. |
-
 ### Deferred
 
 | ID / scope | Next action or remaining gate |
@@ -189,6 +184,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F25.2.1 · Owner-authorized French text-only development preview](#f2521-owner-authorized-french-text-only-development-preview) | Five exact v1 previews published; normal F25 review/audio/pilot/depth gates remain. |
 | [F19 · Chatterbox phrase audio](#f19-chatterbox-phrase-audio) | Local synthetic-audio contract complete; eight selected mappings integrated into an isolated private console draft. F19.1 retains rights/release. |
 | [F19.1 · Synthetic audio rights and preview release](#f191-synthetic-audio-rights-and-preview-release) | Six S0 clips published across eight lesson-one prompts as v4; other publications and learner data preserved. |
 | [F01 · Core study and offline progress](#f01-core-study-and-offline-progress) | Bounded scope delivered; deployed. |
@@ -842,7 +838,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Partial.
 - **Readiness:** Implementation — First-unit draft flow complete; full course partial; content — Five private unreviewed drafts; verification — 56 API and 12 browser checks; no pilot.
-- **Delivery:** Application — Shared infrastructure deployed; new spelling-help refinement local/uncommitted; content publication — Five local drafts, hosted import/publication authorized, not yet executed.
+- **Delivery:** Application — `08fed75` deployed to existing web/API preview; content publication — Five exact unreviewed text-only v1 previews.
 - **Scope:** Twelve-unit/sixty-lesson contemporary everyday French course with Metropolitan France reference; five first-unit candidates exist, 55 lessons remain.
 - **Next action:** Owner: designate fluent reviewer and disposition exact sources/text. Agent: reconcile first-unit review and pilot before units 2–12; finish accepted starting-check/audio inputs.
 - **Authorization:** Owner authorized implementation and selected variety/depth/outcome plus draft-now/fluent-review-before-publication route October 18. October 18 application deployment and exact five unreviewed text previews subsequently authorized; no contact, hiring, provider spending or beta expansion.
@@ -864,7 +860,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Review pending.
 - **Readiness:** Implementation — Complete first-unit draft flow; content — Five unreviewed drafts; verification — Automated private import/preview and gate checks.
-- **Delivery:** Application — Tested deployment candidate; content publication — Local records 32–36 remain drafts; exact hosted preview release authorized, pending execution.
+- **Delivery:** Application — `08fed75` deployed; content publication — Hosted records 30–34 published v1 as unreviewed text previews; local records 32–36 remain drafts.
 - **Scope:** Five greeting/name/register/repair packages with contextual rationales, exact segments, vocabulary, review sheets and pinned manifest; review/audio/transfer evidence missing.
 - **Next action:** Reviewer/owner: disposition exact phrases, register, meanings, explanations, accepted choices, segments and sources. Agent: reconcile and revalidate changed packages.
 - **Authorization:** Unpublished drafting and local private import authorized October 18; exact five original hash-pinned text previews subsequently authorized October 18; changed/new text retains normal fluent review.
@@ -873,11 +869,11 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ##### F25.2.1 Owner-authorized French text-only development preview
 
-- **Work state:** Delivery pending.
-- **Readiness:** Implementation — Complete exception candidate; content — Exact five unreviewed packages; verification — 57 API tests and focused browser checks.
-- **Delivery:** Application — Local/uncommitted deployment candidate; content publication — Authorized, not yet performed.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Exact five unreviewed exception packages; verification — 57 API tests, three focused browser stories and hosted preservation/live labels.
+- **Delivery:** Application — `08fed75` deployed; content publication — Hosted records 30–34 published v1.
 - **Scope:** Five hash-pinned French first-unit previews labeled unreviewed/text-only on the existing development preview, with pending rights/review and no human audio.
-- **Next action:** Agent: deploy tested application, import exact hosted drafts, approve/publish through the owner console and verify preservation/version evidence.
+- **Next action:** None for the exact preview release; full review/audio/pilot/course depth remains F25.1–F25.6.
 - **Authorization:** Owner explicitly authorized publication/deployment and selected the five-preview exception October 18. No changed/additional content or beta inclusion.
 - **Completion gate / evidence:** [Exact policy](docs/french/text-preview-publication.md); [rollout evidence](docs/releases/2026-10-18-french-preview.md).
 - **Dependencies:** F25.2 original pinned packages; tested notice-aware application and exact target backup.
@@ -886,7 +882,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Partial.
 - **Readiness:** Implementation — Optional spelling help and generic course-specific check foundation present; content — First-unit spelling examples drafted; verification — Automated; accepted assessment/audio and real input/AT absent.
-- **Delivery:** Application — Spelling-help refinement local/uncommitted; generic check deployed; content publication — None.
+- **Delivery:** Application — Spelling-help refinement and generic check deployed; content publication — First-unit examples only in exact unreviewed previews; no accepted placement/audio content.
 - **Scope:** Skippable French starting check and text/sound support; exact spelling examples exist, accepted check calibration and sound modules remain; F28/F30 explorer reused.
 - **Next action:** Reviewer/agent: accept manifest sample phrases and spelling policy, then calibrate the conservative course-specific starting check and sound/text alternatives.
 - **Authorization:** Implementation/draft support authorized October 18; no unpublished draft becomes learner placement content or approved pronunciation material.
@@ -1159,7 +1155,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
-- **October 18 — F25:** owner selected Metropolitan France reference, twelve units/sixty lessons, five-minute month-one guided target and draft-first review route. Five private first-unit drafts imported locally; 56 API/12 browser checks pass. No French publication or deployment.
+- **October 18 — F25:** owner selected Metropolitan France reference, twelve units/sixty lessons, five-minute month-one guided target and draft-first review route. Five exact first-unit text previews published on deployed `08fed75`; 57 API/three publication browser checks pass, existing data/assets preserved. Full review/audio/course gates remain.
 
 - **October 18 — F19.1:** S0 verified and six exact selected requests regenerated;
   owner selections reconciled through waveform comparison. Lesson one v4 published
