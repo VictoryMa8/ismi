@@ -1,3 +1,12 @@
+> **October 18 release:** the owner subsequently authorized S0 regeneration using
+> trial credits. The six selected requests were regenerated and published as eight
+> lesson-one prompt mappings, v4. See [release evidence](../../docs/releases/2026-10-18-s0-audio.md).
+> Earlier F0-only instructions below describe the audition boundary; the original
+> audition runners still reject S0. `regenerate_selected.py` is the separate bounded
+> S0 runner and refuses nonempty output directories. `prepare_s0_release.py` checks
+> waveform equivalence before carrying selections forward. Never rerun a completed
+> paid generation blindly or treat this six-clip authorization as bulk synthesis.
+
 # Azure F0 three-phrase audition
 
 Owner authorized this alternative on October 3, 2026, after both Chatterbox

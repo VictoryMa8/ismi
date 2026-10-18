@@ -40,3 +40,39 @@ website or user publication instruction is not recorded as provider permission.
 The application rollout is unaffected by this content gate. Its exact release
 evidence belongs in the dated release note and ROADMAP.md; this file records the
 rights finding, not a second current feature-status inventory.
+
+## Subsequent S0 authorization
+
+After inspecting Azure in Safari, the portal showed $200.00 remaining trial credit
+and 30 days remaining. The owner then authorized the explained S0 regeneration
+route ("ok lets do it then"). This covers switching the existing Speech resource
+and regenerating the six exact selected requests, validation and publication;
+it does not authorize upgrading the whole subscription to pay-as-you-go.
+`regenerate_selected.py` validates the original SSML hashes and requires verified
+S0 configuration, preserves attempted outputs and performs no retries. Offline
+preflight: six requests, 1,384 UTF-8 SSML bytes. No provider requests made yet.
+The portal currently renders its shell/search but fails to load resource controls;
+no tier change, credit consumption, or new publication has occurred.
+
+## October 18 tier-change attempt
+
+The owner opened the pricing page. Agent selected **S0 Standard** and pressed
+**Apply** under the existing authorization. Azure displayed "Updating pricing tier
+from F0 to S0..."; the operation ended and Apply became disabled with S0 selected.
+A reload to independently confirm persisted configuration again rendered only the
+portal shell. Saved-tier confirmation remains pending; the local resource config
+has not been relabeled S0 and no synthesis requests have been made.
+The release exporter requires regenerated PCM to match the owner-selected audio
+exactly before carrying listening acceptance forward. Changed audio needs listening
+acceptance, rather than silently inheriting it from unchanged SSML.
+
+## October 18 verified resolution
+
+The fresh pricing panel eventually loaded with S0 selected and Apply disabled;
+the owner independently confirmed S0. Six exact selected requests were generated
+once under S0. New files have tiny sample differences; automated timing/waveform
+comparison reconciled the original listening selections without claiming new owner
+listening or native review. The resulting S0 package was validated, approved and
+published as lesson-one v4. See the [dated release](releases/2026-10-18-s0-audio.md)
+for hashes, comparison limits, service audits and preservation checks. Earlier
+pending statements above describe the sequence, not the final outcome.

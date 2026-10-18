@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 17, 2026 · **Single source of current feature state and next work.**
+Updated October 18, 2026 · **Single source of current feature state and next work.**
 
 ## Agent entry
 
@@ -66,7 +66,7 @@ This is a reconciliation of repository/release evidence, **not a new live audit*
 | --- | --- | --- |
 | Frontend application | `5c169b7` Ready on existing Vercel development aliases October 17; release-record follow-up may advance frontend revision | [F19 rollout](docs/releases/2026-10-17-synthetic-audio.md) |
 | ASP.NET API | Healthy exact `5c169b7` revision October 17 on existing alwaysdata preview | [F19 rollout](docs/releases/2026-10-17-synthetic-audio.md); all 17 table hashes and persistent assets preserved |
-| Levantine Everyday | Lessons 1/3/6 v3; other four v2 in recorded hosted release | [F22 versions/audits](docs/releases/2026-10-13-recall.md); not a fresh DB query |
+| Levantine Everyday | Lesson 1 v4 with S0 synthetic prompt audio; lessons 3/6 v3, other four v2 | [October 18 publication](docs/releases/2026-10-18-s0-audio.md); existing publications preserved |
 | Khmer lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F26.2.1 audit](content/khmer/meet-01/publication.json); no human audio/accepted linguistic review |
 | Alphabet | Five exact v1 inventory-only previews; full five text-only draft packs remain unpublished | [F28 scope](docs/alphabet-text-only-completion.md); F30 acceptance/release remains |
 | Cultural media | Application deployed; four local research editions, hosted catalog empty at last verification | [F21 release](docs/releases/2026-10-15-cultural-media.md) |
@@ -128,7 +128,6 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F19.1 · Synthetic audio rights and preview release](#f191-synthetic-audio-rights-and-preview-release) | Owner: choose written permission for exact F0 clips or explicitly authorize a paid generation route. Agent: reconcile rights/provenance and revalidate the exact package after that input; audio approval remains blocked. |
 | [F09 · Reviewed Levantine recordings](#f09-reviewed-levantine-recordings) | Owner: supply/select permitted recordings and reviewer for an exact prompt batch. Agent: reconcile script/package hashes before upload. |
 | [F14 · Quranic course](#f14-quranic-course) | Owner: approve exact resource IDs/permissions. Agent: scope integrity and track-specific review/publication controls. |
 | [F26.5 · Khmer model audio and guided speaking](#f265-khmer-model-audio-and-guided-speaking) | Reviewer: accept scripts. Owner: arrange permitted recordings and provider/privacy decisions; agent verifies actual Khmer feedback/offline behavior. |
@@ -184,6 +183,7 @@ The next-action text names the actor; use the record before taking action.
 | ID / scope | Next action or remaining gate |
 | --- | --- |
 | [F19 · Chatterbox phrase audio](#f19-chatterbox-phrase-audio) | Local synthetic-audio contract complete; eight selected mappings integrated into an isolated private console draft. F19.1 retains rights/release. |
+| [F19.1 · Synthetic audio rights and preview release](#f191-synthetic-audio-rights-and-preview-release) | Six S0 clips published across eight lesson-one prompts as v4; other publications and learner data preserved. |
 | [F01 · Core study and offline progress](#f01-core-study-and-offline-progress) | Bounded scope delivered; deployed. |
 | [F02 · Guest and account baseline](#f02-guest-and-account-baseline) | Bounded scope delivered; deployed. |
 | [F03 · Levantine curriculum console](#f03-levantine-curriculum-console) | Bounded scope delivered; deployed. |
@@ -577,7 +577,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — Complete for bounded local synthetic provenance/console draft scope; content — Eight exact owner-selected draft mappings, female lighter accepted fallback; verification — 55 API tests, 14 Python checks, frontend build and five focused browser flows pass; real chosen clip plays in saved draft preview. Real-device/AT gates remain F18.
-- **Delivery:** Application — Committed/pushed `5c169b7`, frontend Ready and API healthy on existing development hosts; content publication — Eight mappings/six WAVs remain in isolated local draft record 7 v1, unapproved/unpublished.
+- **Delivery:** Application — Committed/pushed `5c169b7`, frontend Ready and API healthy on existing development hosts; content publication — Original F0 mappings remain in private local draft record 7 v1; S0 regeneration published under F19.1.
 - **Scope:** Reproducible synthetic workflow, provenance/labels, eight accepted draft prompt mappings and focused playback/offline validation; original bounded contract, not human-audio or release completion.
 - **Next action:** None in this local implementation scope; F19.1 owns rights acceptance and authorized rollout, F09 owns reviewed human audio.
 - **Authorization:** Owner authorized local F19 implementation, F0 synthesis, selected clips/fallback and console integration October 17. Owner subsequently authorized push/publication; application deployed under F19.1. No paid resource, full-unit synthesis or rights acceptance inferred.
@@ -586,14 +586,14 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 #### F19.1 Synthetic audio rights and preview release
 
-- **Work state:** Input needed.
-- **Readiness:** Implementation — F19 candidate complete; content — Selected F0 outputs lack publication-rights evidence under verified paid-tier-only terms; verification — Local checks pass; frontend Ready, exact API revision healthy, all 17 database table hashes and persistent recordings/keys preserved.
-- **Delivery:** Application — `5c169b7` pushed and deployed to existing Vercel/alwaysdata hosts; content publication — Private local draft only; F0 rights gate blocks publication.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — Six S0-generated clips across eight exact prompt mappings, rights evidence recorded and owner selections reconciled by automated waveform comparison; verification — Normal service readiness/validation/approval/publication pass, public v4 and six audio hashes verified, thirteen non-curriculum table hashes and existing assets preserved. No new listening, native-expert or field-accessibility review claimed.
+- **Delivery:** Application — Existing deployed `5c169b7` support; content publication — Hosted record 29, lesson one v4, October 18; prior record 21 v3 retained for rollback. F0 files remain private.
 - **Scope:** Exact synthetic-resource rights acceptance and separately authorized application/audio rollout to the existing development preview; no beta/human-audio claim.
-- **Next action:** Owner: choose written permission for exact F0 clips or explicitly authorize a paid generation route. Agent: reconcile rights/provenance and revalidate the exact package after that input; audio approval remains blocked.
-- **Authorization:** Owner requested push and publication October 17: existing-host application rollout and exact content release authorized if gates pass. Paid resources/spending and rights waiver are not authorized.
-- **Completion gate / evidence:** [Rights/release contract](docs/planning/feature-scope-reference.md#f191-synthetic-audio-rights-and-preview-release).
-- **Dependencies:** F19 selected hashes and current-source package; normal console approval/publication and target preservation checks.
+- **Next action:** None in this bounded release; wider human-audio and real-device/beta gates remain F09/F18.
+- **Authorization:** Owner requested push/publication and subsequently authorized the S0 switch and six-clip regeneration using verified trial credits, followed by validation/publication. No whole-account pay-as-you-go upgrade or broader spending performed.
+- **Completion gate / evidence:** [Rights/release contract](docs/planning/feature-scope-reference.md#f191-synthetic-audio-rights-and-preview-release); [S0 publication evidence](docs/releases/2026-10-18-s0-audio.md).
+- **Dependencies:** F19 selected requests/current source; normal publishing-service gates passed.
 
 ### F20 Learned-word glossary
 
@@ -1141,11 +1141,10 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
-- **October 17 — F19:** bounded local synthetic workflow complete: eight selected
-  prompt mappings in an isolated private console draft; API/build/browser checks
-  pass. Authorized code rollout `5c169b7` is verified on both hosts, with all 17
-  database tables/assets preserved. Paid-tier-only Azure output-use terms block
-  publication of the F0 clips.
+- **October 18 — F19.1:** S0 verified and six exact selected requests regenerated;
+  owner selections reconciled through waveform comparison. Lesson one v4 published
+  with eight synthetic prompt mappings; thirteen non-curriculum tables, other
+  publications and existing assets preserved. F09/F18 gates remain separate.
 - **October 17, 2026 — roadmap structure:** replaced generic Active/Done grouping
   with independent work state, implementation/content/verification readiness,
   application/publication delivery, explicit actor/authorization and linked contracts
