@@ -65,8 +65,8 @@ This is a reconciliation of repository/release evidence, **not a new live audit*
 
 | Layer | Latest recorded state | Evidence / limit |
 | --- | --- | --- |
-| Frontend application | `08fed75` Ready on existing Vercel development aliases October 18; documentation follow-up may advance frontend revision | [French preview rollout](docs/releases/2026-10-18-french-preview.md) |
-| ASP.NET API | Healthy exact `08fed75` revision October 18 on existing alwaysdata preview | [French preview rollout](docs/releases/2026-10-18-french-preview.md); existing rows, eighteen prior publications and persistent assets preserved |
+| Frontend application | `30a393e` Ready on existing Vercel development aliases October 18; documentation follow-up may advance frontend revision | [Learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md) |
+| ASP.NET API | Healthy exact `30a393e` revision October 18 on existing alwaysdata preview | [Learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md); SQLite integrity, recordings and cookie keys verified; no curriculum publication |
 | Levantine Everyday | Lesson 1 v4 with S0 synthetic prompt audio; lessons 3/6 v3, other four v2 | [October 18 publication](docs/releases/2026-10-18-s0-audio.md); existing publications preserved |
 | French lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F25.2.1 audit](content/french/meet-01/publication.json); no accepted linguistic/rights review or human audio |
 | Khmer lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F26.2.1 audit](content/khmer/meet-01/publication.json); no human audio/accepted linguistic review |
@@ -184,7 +184,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F27.3 · Learner clarity and mobile fixes](#f273-learner-clarity-and-mobile-fixes) | Bounded fixes verified; owner-authorized deployment underway. |
+| [F27.3 · Learner clarity and mobile fixes](#f273-learner-clarity-and-mobile-fixes) | Bounded fixes deployed as `30a393e`; existing content publication unchanged. |
 | [F25.2.1 · Owner-authorized French text-only development preview](#f2521-owner-authorized-french-text-only-development-preview) | Five exact v1 previews published; normal F25 review/audio/pilot/depth gates remain. |
 | [F19 · Chatterbox phrase audio](#f19-chatterbox-phrase-audio) | Local synthetic-audio contract complete; eight selected mappings integrated into an isolated private console draft. F19.1 retains rights/release. |
 | [F19.1 · Synthetic audio rights and preview release](#f191-synthetic-audio-rights-and-preview-release) | Six S0 clips published across eight lesson-one prompts as v4; other publications and learner data preserved. |
@@ -1015,7 +1015,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Work state:** Complete.
 - **Readiness:** Implementation — Complete; content — N/A; verification — Automated.
 - **Delivery:** Application — Deployed; content publication — N/A.
-- **Scope:** Five learner tabs, short Practice hub and Progress page preserving saved habit choices; F27.3 revises defaults/presentation locally.
+- **Scope:** Five learner tabs, short Practice hub and Progress page preserving saved habit choices; F27.3 delivers the revised defaults/presentation.
 - **Next action:** None in this bounded scope; broader release evidence remains F18.
 - **Authorization:** Delivered scope; extensions need their own authorization.
 - **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f27-feature-discoverability-and-navigation).
@@ -1047,9 +1047,9 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — Complete; content — N/A; verification — Automated; physical-device/AT evidence absent.
-- **Delivery:** Application — Local candidate; owner-authorized commit/deployment underway; content publication — Unchanged.
+- **Delivery:** Application — Deployed frontend/API `30a393e`; documentation follow-up may advance frontend revision; content publication — Unchanged.
 - **Scope:** Readable Practice tiles, plain study/response wording, one Today resume action, silent streak grace, hidden optional weekly activities and shared French/Khmer character presentation.
-- **Next action:** Agent: commit/push and deploy the verified fixes to the existing development preview, then record exact delivery evidence.
+- **Next action:** None in this bounded scope; broader real-device/AT and release gates remain with their owning features.
 - **Authorization:** Owner requested fixes and then “commit and reploy” October 18, authorizing commit/push and deployment to existing development hosts; no curriculum publication.
 - **Completion gate / evidence:** [Bounded contract and evidence](docs/learner-clarity-fixes.md).
 - **Dependencies:** F06/F17.7/F24/F27.2; preserve exact preview text and answer records.
@@ -1167,7 +1167,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
-- **October 18 — F27.3:** mobile Practice text, plain study/response labels, one Today resume action, silent grace, hidden optional weekly activities and shared French/Khmer character presentation verified locally. Forty-five focused browser checks and two API checks pass; no deployment or curriculum change.
+- **October 18 — F27.3:** mobile Practice text, plain study/response labels, one Today resume action, silent grace, hidden optional weekly activities and shared French/Khmer character presentation deployed as `30a393e` to both existing development hosts. Forty-five focused browser checks and two API checks pass; curriculum unchanged.
 
 - **October 18 — F25:** owner selected Metropolitan France reference, twelve units/sixty lessons, five-minute month-one guided target and draft-first review route. Five exact first-unit text previews published on deployed `08fed75`; 57 API/three publication browser checks pass, existing data/assets preserved. Full review/audio/course gates remain.
 
