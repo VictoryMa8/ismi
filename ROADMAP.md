@@ -65,7 +65,7 @@ This is a reconciliation of repository/release evidence, **not a new live audit*
 
 | Layer | Latest recorded state | Evidence / limit |
 | --- | --- | --- |
-| Frontend application | F27.3 UI from `30a393e` on existing Vercel development aliases; compatibility fix `34a936b` pushed; documentation follow-up may advance revision | [Learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md) |
+| Frontend application | F31 About/FAQ page, Beta 0.0.2, `536832b` verified Vercel Ready on existing aliases October 18; documentation follow-up may advance revision | [About rollout](docs/releases/2026-10-18-about.md); prior [learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md) |
 | ASP.NET API | Restored healthy exact `08fed75` October 18 after `30a393e` notice regression hid French/Khmer | [Learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md); SQLite/assets verified; fresh five-per-course counts and all ten French/Khmer URLs pass; no curriculum publication |
 | Levantine Everyday | Lesson 1 v4 with S0 synthetic prompt audio; lessons 3/6 v3, other four v2 | [October 18 publication](docs/releases/2026-10-18-s0-audio.md); existing publications preserved |
 | French lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F25.2.1 audit](content/french/meet-01/publication.json); no accepted linguistic/rights review or human audio |
@@ -162,12 +162,6 @@ The next-action text names the actor; use the record before taking action.
 | [F24.8 · Prominent language and course switching](#f248-prominent-language-and-course-switching) | Owner/agent: run an observed switching/discoverability task and actual device/AT checks; preserve independent primary allocation. |
 | [F26.6 · Khmer pilot, publication and release evidence](#f266-khmer-pilot-publication-and-release-evidence) | Owner: agree rubric/setup/participation after F26.1. Agent: record immediate/delayed evidence and fix/retest before scaling. |
 
-### Delivery pending
-
-| ID / scope | Next action or remaining gate |
-| --- | --- |
-| [F31 · About and FAQ page](#f31-about-and-faq-page) | Agent: commit/push the verified page and confirm the existing frontend deployment. |
-
 ### Planned
 
 | ID / scope | Next action or remaining gate |
@@ -190,6 +184,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F31 · About and FAQ page](#f31-about-and-faq-page) | Separate page and shared FAQ deployed as 0.0.2; linked from landing and Account; no remaining work in this scope. |
 | [F27.3 · Learner clarity and mobile fixes](#f273-learner-clarity-and-mobile-fixes) | UI fixes delivered; preview availability restored on prior API; source regression corrected in `34a936b`. |
 | [F25.2.1 · Owner-authorized French text-only development preview](#f2521-owner-authorized-french-text-only-development-preview) | Five exact v1 previews published; normal F25 review/audio/pilot/depth gates remain. |
 | [F19 · Chatterbox phrase audio](#f19-chatterbox-phrase-audio) | Local synthetic-audio contract complete; eight selected mappings integrated into an isolated private console draft. F19.1 retains rights/release. |
@@ -1173,11 +1168,11 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F31 About and FAQ page
 
-- **Work state:** Delivery pending.
+- **Work state:** Complete.
 - **Readiness:** Implementation — complete; content — authored factual About copy and shared FAQ; verification — production build and automated mobile/desktop page checks pass; all 15 About/landing browser checks pass.
-- **Delivery:** Application — local/uncommitted; content publication — N/A (informational page only).
+- **Delivery:** Application — `536832b` pushed and Vercel Ready on existing development aliases October 18; content publication — N/A (informational page only).
 - **Scope:** Separate small About page with FAQ, landing and Account links, humane learning/cultural context copy and honest native-speaker support status. Application version 0.0.2.
-- **Next action:** Agent: verify navigation, reload, layout and build; commit/push and confirm existing frontend deployment.
+- **Next action:** No remaining work in this bounded scope; native-speaker review/recordings remain with their course gates.
 - **Authorization:** Owner authorized implementation, push and deployment October 18; no curriculum publication or review-status change.
 - **Completion gate / evidence:** [About page contract and verification](docs/releases/2026-10-18-about.md).
 - **Dependencies:** Existing landing/Account routing and shared FAQ; native-speaker review remains with course review gates.
