@@ -24,30 +24,30 @@ async function toggle(feature: 'questsEnabled' | 'streakEnabled', event: Event) 
 <template>
   <section v-if="section === 'streak'" class="learning-habits feature-panel accent-gold" aria-labelledby="streak-heading">
     <h2 id="streak-heading">Streak</h2>
-    <label class="habit-switch"><input type="checkbox" :checked="state.streakEnabled" @change="toggle('streakEnabled', $event)" /> Forgiving streak</label>
-    <p v-if="state.streakEnabled" class="streak-status" role="status">{{ streak.studyDays }} study {{ streak.studyDays === 1 ? 'day' : 'days' }} in your current streak · {{ streak.graceRemaining }} free grace {{ streak.graceRemaining === 1 ? 'day' : 'days' }} left this week.</p>
+    <label class="habit-switch"><input type="checkbox" :checked="state.streakEnabled" @change="toggle('streakEnabled', $event)" /> Track my streak</label>
+    <p v-if="state.streakEnabled" class="streak-status" role="status">{{ streak.studyDays }} study {{ streak.studyDays === 1 ? 'day' : 'days' }} in your current streak.</p>
     <p v-else>Streak is off. Saved days stay on this device.</p>
     <p v-if="state.streakEnabled && streak.restart">A fresh start is always welcome. Your learning progress is here.</p>
     <p v-if="error" role="alert">{{ error }}</p>
   </section>
 
   <section v-else-if="section === 'quests'" class="learning-habits feature-panel accent-gold" aria-labelledby="weekly-habits-heading">
-    <h2 id="weekly-habits-heading">This week</h2>
-    <label class="habit-switch"><input type="checkbox" :checked="state.questsEnabled" @change="toggle('questsEnabled', $event)" /> Weekly quests</label>
+    <h2 id="weekly-habits-heading">Weekly activities</h2>
+    <label class="habit-switch"><input type="checkbox" :checked="state.questsEnabled" @change="toggle('questsEnabled', $event)" /> Weekly activities</label>
     <p v-if="returning">Welcome back. Pick up wherever you like.</p>
     <template v-if="state.questsEnabled">
       <p class="quest-summary" role="status">{{ completed }} of {{ state.tasks.length }} weekly activities complete · {{ weekLabel }}</p>
-      <p v-if="state.tasks.length && completed === state.tasks.length" class="quest-complete"><Check :size="18" aria-hidden="true" /> Weekly plan complete. Practice is always available.</p>
+      <p v-if="state.tasks.length && completed === state.tasks.length" class="quest-complete"><Check :size="18" aria-hidden="true" /> Weekly activities complete. Practice is always available.</p>
       <p v-if="!state.tasks.length">{{ reviewReady ? 'No activities available for your selected tracks. You can change your study settings or practise freely.' : 'Checking available activities…' }}</p>
-      <ul v-else class="quest-list" aria-label="Weekly quests">
+      <ul v-else class="quest-list" aria-label="Weekly activities">
         <li v-for="task in state.tasks" :key="task.id">
           <span v-if="task.completedBy" class="completed-task"><Check :size="18" aria-hidden="true" /><span>Complete · {{ task.label }}</span></span>
           <button v-else type="button" class="secondary-action" :disabled="!reviewReady" @click="emit('start', task)">{{ task.label }}</button>
         </li>
       </ul>
-      <p class="habit-note">These activities fit your study plan. Choose any order.</p>
+      <p class="habit-note">These are lessons and practice for your selected courses. Choose any order.</p>
     </template>
-    <p v-else>Weekly quests are off. Saved progress stays on this device.</p>
+    <p v-else>Weekly activities are off. Saved progress stays on this device.</p>
   </section>
 
   <section v-else class="learning-habits feature-panel accent-ink" aria-labelledby="habit-rules-heading">
@@ -55,10 +55,9 @@ async function toggle(feature: 'questsEnabled' | 'streakEnabled', event: Event) 
     <p class="habit-note">History stays on this device, separately for guests and each account.</p>
     <details class="habit-rules">
       <summary>Weekly and streak rules</summary>
-      <p>Completed lessons, reviews and checkpoints count, including attempts with help or retries. Partial sessions do not count. Quests and streaks are separately optional.</p>
+      <p>Completed lessons, reviews and checkpoints count, including attempts with help or retries. Partial sessions do not count. Weekly activities and streaks are optional.</p>
       <p>Weeks start Monday; days end at midnight in {{ state.timezone }}. This timezone stays fixed while you travel or change your device timezone.</p>
-      <p>Weekly plans offer up to 1, 2, 3 or 6 activities for daily goals of 5, 10, 15 or 30 minutes. Available content may make the list shorter. Changing your goal keeps completed tasks and adjusts the remainder.</p>
-      <p>Two missed days per week are covered automatically by free grace. Unused grace expires each Monday. Grace preserves a streak but does not add study days. Today is still open for study.</p>
+      <p>The checklist adjusts to your daily goal and available lessons. Completed activities stay checked.</p>
       <p>Offline completions count immediately. Reloading, retries and reconnecting do not add duplicate credit. Turning tracking off pauses new credit and preserves saved history. No scores, XP or access depend on this checklist.</p>
     </details>
   </section>

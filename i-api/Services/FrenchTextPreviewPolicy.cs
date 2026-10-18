@@ -20,7 +20,7 @@ public sealed class FrenchTextPreviewPolicy(IConfiguration configuration)
     public static readonly LessonPublicationNotice Notice = new(
         "french-meet-01-text-preview-2026-10-18",
         "Unreviewed · text-only preview",
-        "AI-assisted draft. French wording, register and source rights remain unreviewed. No human audio.");
+        "French wording, register and source rights remain unreviewed. No human audio.");
     private static readonly Lazy<HashSet<string>> Authorized = new(() =>
         Enumerable.Range(1, 5).Select(n => {
             using var stream = typeof(FrenchTextPreviewPolicy).Assembly.GetManifestResourceStream($"Ismi.FrenchPreview.{n:00}-lesson.json")

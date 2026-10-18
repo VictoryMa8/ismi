@@ -15,7 +15,7 @@ import LessonStages from './LessonStages.vue';
 import LessonScroll from './LessonScroll.vue';
 import CharacterCast from './CharacterCast.vue';
 import CharacterLabel from './CharacterLabel.vue';
-import { lessonScene } from './characters';
+import { characterName, lessonScene, sharedGuideCast } from './characters';
 
 const props = defineProps<{ lesson: LessonResponse; review: boolean; startCardIndex?: number; checkpoint?: TeachingCheckpoint }>();
 const emit = defineEmits<{ done: []; checkpoint: [value: TeachingCheckpoint] }>();
@@ -23,6 +23,16 @@ const stage = ref<'scene' | 'learn' | 'recall' | 'pattern'>('scene');
 const index = ref(0);
 const revealed = ref(false);
 const sceneSource = computed(() => lessonScene(props.lesson));
+// The shared cast acts out the existing preview scripts. Role names are explicit
+// because self-introductions/accepted answers still contain those authored names.
+const sharedRoles = computed((): Record<string, string> => props.lesson.characters ? {} :
+  props.lesson.trackId === 'french' ? { Alex: 'knafeh', Camille: 'fattoush' } :
+  props.lesson.trackId === 'khmer' ? { Alex: 'knafeh', Sam: 'fattoush', Host: 'fattoush', Guest: 'knafeh' } : {});
+const sceneCast = computed(() => Object.keys(sharedRoles.value).length ? sharedGuideCast : props.lesson.characters);
+const dialogue = computed(() => (props.lesson.introduction?.dialogue ?? []).map(turn => {
+  const id = sharedRoles.value[turn.speaker];
+  return id ? { ...turn, speakerId: id, speaker: `${characterName(id)} (as ${turn.speaker})` } : turn;
+}));
 const sceneFailed = ref(false);
 const heading = ref<HTMLElement | null>(null);
 const cards = computed<LessonTeachingCard[]>(() => {
@@ -160,19 +170,20 @@ async function back() {
             </h3>
             <p class="coach-context">{{ lesson.scenario }}</p>
             <img v-if="sceneSource && !sceneFailed" class="lesson-scene-art" :src="sceneSource" alt="" aria-hidden="true" width="960" height="640" @error="sceneFailed = true" />
-            <CharacterCast :cast="lesson.characters" />
+            <CharacterCast :cast="sceneCast" />
+            <p v-if="Object.keys(sharedRoles).length" class="coach-caption">Fattoush and Knafeh act out this conversation using the names in the dialogue.</p>
             <ol
               v-if="lesson.introduction"
               class="dialogue-transcript dialogue-bubbles"
               aria-label="Dialogue transcript"
             >
               <li
-                v-for="(turn, i) in lesson.introduction.dialogue"
+                v-for="(turn, i) in dialogue"
                 :key="i"
                 :class="{
                   reply: Boolean(
                     turn.speakerId &&
-                    lesson.characters?.characterIds.indexOf(turn.speakerId) ===
+                    sceneCast?.characterIds.indexOf(turn.speakerId) ===
                       1,
                   ),
                 }"
@@ -182,7 +193,7 @@ async function back() {
                   :speaker-id="turn.speakerId"
                   :addressee-id="turn.addresseeId"
                   :label="turn.speaker"
-                  :registry-version="lesson.characters?.registryVersion"
+                  :registry-version="sceneCast?.registryVersion"
                   expression="attentive"
                 />
                 <strong v-else>{{ turn.speaker }}</strong>

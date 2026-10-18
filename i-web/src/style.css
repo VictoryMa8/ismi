@@ -2011,8 +2011,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
   display: grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 12px;
   background: var(--accent, var(--teal)); color: #fff;
 }
-.feature-copy { display: grid; gap: 2px; min-width: 0; overflow: hidden; }
-.feature-copy strong, .feature-copy small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.feature-copy { display: grid; gap: 2px; min-width: 0; overflow-wrap: anywhere; }
+.feature-copy strong, .feature-copy small { white-space: normal; }
 .feature-copy small { font-weight: 650; color: var(--ink-soft); }
 .feature-count {
   margin-inline-start: auto; min-width: 28px; padding: 2px 8px; border-radius: 999px;
@@ -2027,7 +2027,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
   padding: 16px 18px; border: 1px solid var(--line); border-inline-start: 4px solid var(--accent, var(--gold-bright));
   border-radius: 16px; background: var(--paper);
 }
-.status-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 4px 0 20px; }
+.status-strip { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 4px 0 20px; }
 .status-strip .feature-tile { flex-direction: column; align-items: flex-start; justify-content: center; min-height: 96px; padding: 12px; gap: 8px; }
 .tile-review { order: 1; }
 .tile-checkpoints { order: 2; }
@@ -2145,3 +2145,10 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 }
 .app-shell .side-nav::before { background: var(--course-stripe); }
 @media (max-width: 900px) { .app-shell .bottom-nav a.active { color: var(--course-text); } }
+
+/* Keep full Practice names readable on narrow screens and with large text. */
+@media (max-width: 600px) {
+  .feature-grid { grid-template-columns: minmax(0, 1fr); }
+}
+.optional-activities { margin-bottom: 24px; }
+.optional-activities > summary { cursor: pointer; padding: 14px 0; font-weight: 700; }

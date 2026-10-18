@@ -22,7 +22,7 @@ let loadedScope = ''
 const date = (value: string | number) => Number.isFinite(typeof value === 'number' ? value : Date.parse(value))
   ? new Date(value).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : 'Date unavailable'
 function action(card: CanDoCard): string {
-  if (!card.current.some(e => e.attempts.length)) return 'Try typed recall'
+  if (!card.current.some(e => e.attempts.length)) return 'Try writing a response'
   return card.due ? 'Review now' : 'Practice again'
 }
 function facts(entry: RecallEvidence): string {
@@ -61,12 +61,12 @@ watch(() => [props.scope, currentAchievement.value?.id], refreshPreferences, { i
   <section class="can-do-progress review-hub" aria-labelledby="can-do-title">
     <div class="can-do-heading">
       <span class="can-do-heading-icon" aria-hidden="true"><Target :size="22" /></span>
-      <div><h2 id="can-do-title">What you can do</h2><p>Levantine · Written recall on this device</p></div>
+      <div><h2 id="can-do-title">What you can do</h2><p>Levantine · Written responses on this device</p></div>
     </div>
     <p v-if="loading" role="status">Loading progress…</p>
     <div v-if="!loading && unavailableCount" class="can-do-start">
       <BookOpen :size="22" aria-hidden="true" />
-      <div><h3>{{ unavailableCount === cards.length ? 'Start with a lesson' : 'Unlock more targets' }}</h3><p>Complete and download an Everyday lesson to unlock its recall practice.</p></div>
+      <div><h3>{{ unavailableCount === cards.length ? 'Start with a lesson' : 'Unlock more targets' }}</h3><p>Complete and download an Everyday lesson to unlock writing practice.</p></div>
       <a href="#/courses">Explore lessons <ChevronRight :size="18" aria-hidden="true" /></a>
     </div>
     <p v-if="!loading" class="can-do-summary"><strong>{{ demonstratedCount }} of {{ cards.length }}</strong> targets demonstrated independently</p>
@@ -108,7 +108,7 @@ watch(() => [props.scope, currentAchievement.value?.id], refreshPreferences, { i
     <details class="can-do-rules">
       <summary>How progress works</summary>
       <ol>
-        <li><strong>Try independently.</strong> An accepted first response without a hint, model or retry demonstrates written recall.</li>
+        <li><strong>Try independently.</strong> An accepted first response without a hint, model or retry demonstrates writing from memory.</li>
         <li><strong>Return when review is due.</strong> Succeed in a different situation shown at least 24 hours after your first independent response to demonstrate again later.</li>
         <li><strong>Build all three.</strong> Demonstrate each target again later to earn “Everyday responses — demonstrated again later.”</li>
       </ol>
@@ -120,7 +120,7 @@ watch(() => [props.scope, currentAchievement.value?.id], refreshPreferences, { i
     <div v-if="preferences.showAchievements && preferences.achievements.length" class="can-do-achievements" aria-label="Outcome achievements">
       <article v-for="achievement in preferences.achievements" :key="achievement.id">
         <h3>{{ achievement.title }}</h3>
-        <p>Earned {{ date(achievement.earnedAt) }} · Written recall</p>
+        <p>Earned {{ date(achievement.earnedAt) }} · Written responses</p>
         <p v-if="achievement.id !== currentAchievement?.id">Historical achievement. Current content needs fresh evidence.</p>
         <details><summary>Achievement evidence</summary>
           <p v-for="entry in achievement.evidence" :key="entry.targetId">{{ entry.targetId }} · {{ entry.version }} · {{ date(entry.demonstratedAt) }}</p>

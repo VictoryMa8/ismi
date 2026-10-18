@@ -29,7 +29,7 @@ export function weekStart(day: string): string {
   return shiftDay(day, -(weekday + 6) % 7)
 }
 export function freshHabits(now = Date.now(), timezone = deviceTimezone()): HabitState {
-  return { version: 1, timezone, questsEnabled: true, streakEnabled: true, week: weekStart(calendarDay(now, timezone)),
+  return { version: 1, timezone, questsEnabled: false, streakEnabled: true, week: weekStart(calendarDay(now, timezone)),
     tasks: [], studyDays: [], creditedIds: [], lastActivityDay: '' }
 }
 export function validHabits(value: HabitState): boolean {

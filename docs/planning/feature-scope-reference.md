@@ -490,7 +490,7 @@ choices offline. No new XP economy or reminder delivery service.
 and calendar days use the timezone saved at opt-in. Two free grace days per week,
 unused days expire; goal changes preserve checked tasks and resize the remainder.
 Quests/streaks independently defaulted off on October 12; guest/account history stays on this device.
-On October 14, F27 changes the default for new habit states to on. Saved states are unchanged, and either switch can still be turned off.
+On October 14, F27 changed both new-state defaults to on. The October 18 F27.3 revision turns weekly activities off for new learners and hides them under an optional Progress control; streak tracking stays on and grace is silent. Saved choices remain unchanged.
 Stable activity IDs prevent retry/reload/reconnection credit duplication.
 
 **Verification:** production TypeScript/Vite/PWA build and 29 targeted Chromium
@@ -1404,15 +1404,15 @@ Supporting references: [task/rubric and evidence template](../../docs/khmer/READ
 
 ### F27 Feature discoverability and navigation
 
-**Outcome:** learners can reach review, weekly quests, streak, can-do progress and word search without scrolling through long Today or Practice screens. Feature tiles use a restrained green/red/gold/charcoal accent so each feature is recognizable. New learners see weekly quests and the forgiving streak immediately, and can turn either off.
+**Outcome:** learners can reach practice, streak, can-do progress and word search through focused pages. Weekly activities are optional and tucked away in Progress (owner's October 18 revision).
 
-**Scope:** five bottom tabs (Today, Courses, Practice, Progress, Words). Account moves to the mobile header profile button and the desktop sidebar footer. Practice becomes a short tile hub linking to Review, Checkpoints, Recall and Lesson practice. Progress holds streak, weekly quests, can-do cards and habit switches. Today shows a compact streak / this week / review-due strip. Words is a tab with search at the top. New habit states default both switches on; existing saved states are unchanged.
+**Scope:** five tabs (Today, Courses, Practice, Progress, Words), with Account in the header/sidebar. Practice links to Alphabet, Review, Checkpoints, Write a response, Lesson practice and Arabic cultural picks. Today has streak and due-review shortcuts. New streak tracking starts on; weekly activities start off; saved choices remain intact. Grace works silently.
 
-**Done when:** the five tabs and focused pages work on mobile and desktop; each Practice tile opens its page; the Today strip links to Progress or starts due review; search is one tap from any tab; new guests have both habits on and a saved off state survives reload; keyboard names include counts; color is not the only signal; build and focused checks pass.
+**Done when:** tabs and focused pages work on mobile/desktop; Practice names remain readable; optional controls persist; Today has one primary lesson/resume action; keyboard names include counts and color is not the only signal; build and focused checks pass.
 
 **Depends on:** F05/F10 review, F17.6 can-do, F17.7 habits, F20 glossary.
 
-**Evidence:** [behavior and verification](../../docs/feature-navigation.md). October 15: full Playwright suite 100 passed; API tests 32 passed.
+**Evidence:** [original behavior and verification](../../docs/feature-navigation.md); [October 18 clarity contract/evidence](../learner-clarity-fixes.md). Earlier default-on weekly-quest and three-shortcut rules are superseded by F27.3.
 
 #### F27.1 Mobile-friendly back navigation
 

@@ -20,7 +20,7 @@ public sealed class KhmerTextPreviewPolicy(IConfiguration configuration)
     public static readonly LessonPublicationNotice Notice = new(
         "khmer-meet-01-text-preview-2026-10-16",
         "Unreviewed · text-only preview",
-        "AI-assisted draft. Khmer wording, pronunciation help and source rights remain unreviewed. No human audio.");
+        "Khmer wording, pronunciation help and source rights remain unreviewed. No human audio.");
     private static readonly Lazy<HashSet<string>> Authorized = new(() =>
         Enumerable.Range(1, 5).Select(n => {
             using var stream = typeof(KhmerTextPreviewPolicy).Assembly.GetManifestResourceStream($"Ismi.KhmerPreview.{n:00}-lesson.json")

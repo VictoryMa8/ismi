@@ -164,7 +164,7 @@ const pageNames: Record<string, PageName> = {
 };
 const pageTitles: Record<PageName, string> = {
   today: 'Today', courses: 'Courses', practice: 'Practice', 'practice-review': 'Review',
-  'practice-checkpoints': 'Checkpoints', 'practice-recall': 'Recall', 'practice-lessons': 'Lesson practice',
+  'practice-checkpoints': 'Checkpoints', 'practice-recall': 'Write a response', 'practice-lessons': 'Lesson practice',
   'practice-culture': 'Watch & listen', 'practice-alphabet': 'Alphabet',
   progress: 'Progress', words: 'Learned words', account: 'Account',
 };
@@ -351,7 +351,6 @@ const todayReviewLessons = computed(() => dashboard.value.dailyPlan.lessons.filt
 ));
 const hubReviewLessons = computed(() => activeLessons.value);
 const streak = computed(() => streakSummary(learningHabits.state.value, habitNow.value));
-const questsDone = computed(() => learningHabits.state.value.tasks.filter(task => task.completedBy).length);
 const dailyGoal = computed(() => studySettings.preferences.value.goalMinutes);
 const questLessons = computed(() => dashboardScope.value === reviewScope.value
   ? todayReviewLessons.value.filter(item => apiLive.value || offlineQuestLessonIds.value.includes(item.id)) : []);
@@ -400,6 +399,8 @@ async function refreshOfflineQuestLessons() {
 const dailyCompleted = computed(() => Math.min(dailyGoal.value,
   (dashboard.value.dailyPlan.studyMinutesToday ?? dashboard.value.dailyPlan.completedMinutes) + dailyReviewMinutes.value));
 const nextStudyLesson = computed(() => {
+  const saved = activeLessons.value.find(item => item.id === resumableLessonId.value);
+  if (saved) return saved;
   const scheduled = studyPlan.value.queue.find(item => (item.trackId ?? 'levantine') === viewedCourse.value);
   if (scheduled) return scheduled;
   // Viewing a course is independent of the daily allocation. Keep manual entry
@@ -1385,7 +1386,6 @@ async function finishLesson() {
 
       <CourseSwitcher :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || (!studyPageAvailable && page !== 'practice-alphabet') || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
       <PublicationNotice :notice="activeLessons.find(l => l.publicationNotice)?.publicationNotice" />
-      <button v-if="resumableLessonId && activeLessons.some(l => l.id === resumableLessonId)" type="button" class="secondary-action resume-course" @click="startLesson(resumableLessonId)">Resume {{ activeCourse.name }} lesson</button>
       <p v-if="courseStorageError" role="status">{{ courseStorageError }}</p>
       <section v-if="studyPageAvailable && !activeLessons.length && page !== 'account' && page !== 'practice-alphabet'" class="course-empty" role="status">
         <h2>{{ activeCourse.name }}</h2><p>Lessons not yet available. Your saved progress and daily study settings are unchanged.</p>
@@ -1395,8 +1395,8 @@ async function finishLesson() {
       <LoadingWords v-if="dashboardLoading && page !== 'practice-culture' && page !== 'practice-alphabet'" :compact="!initialDashboardLoading" />
       <section v-else-if="dashboardUnavailable && page !== 'account' && page !== 'practice-culture' && page !== 'practice-alphabet'" class="dashboard-error" aria-labelledby="dashboard-error-heading">
         <WifiOff :size="28" aria-hidden="true" />
-        <h1 id="dashboard-error-heading">Your study plan couldn’t load</h1>
-        <p>Reconnect and try again. No saved plan is available on this device.</p>
+        <h1 id="dashboard-error-heading">Your lessons couldn’t load</h1>
+        <p>Reconnect and try again. No saved lessons are available on this device.</p>
         <button type="button" class="primary-action" @click="loadDashboard">Try again</button>
       </section>
 
@@ -1429,14 +1429,7 @@ async function finishLesson() {
             <span class="feature-badge" aria-hidden="true"><Flame :size="18" /></span>
             <span class="feature-copy">
               <strong>Streak</strong>
-              <small>{{ learningHabits.state.value.streakEnabled ? `${streak.studyDays} days · ${streak.graceRemaining} grace` : 'Off' }}</small>
-            </span>
-          </a>
-          <a class="feature-tile accent-gold" href="#/progress">
-            <span class="feature-badge" aria-hidden="true"><Trophy :size="18" /></span>
-            <span class="feature-copy">
-              <strong>This week</strong>
-              <small>{{ learningHabits.state.value.questsEnabled ? `${questsDone} of ${learningHabits.state.value.tasks.length}` : 'Off' }}</small>
+              <small>{{ learningHabits.state.value.streakEnabled ? `${streak.studyDays} study ${streak.studyDays === 1 ? 'day' : 'days'}` : 'Off' }}</small>
             </span>
           </a>
           <button
@@ -1456,7 +1449,7 @@ async function finishLesson() {
         <section v-if="nextStudyLesson" class="section-block" aria-labelledby="next-heading">
           <div class="section-heading">
             <div>
-              <h2 id="next-heading">{{ dailyCompleted >= dailyGoal ? 'Keep practicing' : manualCourseStudy ? `Study ${activeCourse.name}` : 'Next lesson' }}</h2>
+              <h2 id="next-heading">{{ nextStudyLesson.id === resumableLessonId ? 'Continue your lesson' : dailyCompleted >= dailyGoal ? 'Keep practicing' : 'Next lesson' }}</h2>
             </div>
             <span class="time-chip"
               >{{ nextStudyLesson?.estimatedMinutes ?? 0 }} min</span
@@ -1487,10 +1480,10 @@ async function finishLesson() {
                 class="primary-action"
                 type="button"
                 data-ui-sound="advance"
-                :aria-label="manualCourseStudy ? `Open ${nextStudyLesson.title}` : `Continue in ${nextStudyTrack?.name?.includes('Levantine') ? 'Levantine' : (nextStudyTrack?.name ?? 'your track')}`"
+                :aria-label="nextStudyLesson.id === resumableLessonId ? `Resume ${nextStudyLesson.title}` : manualCourseStudy ? `Open ${nextStudyLesson.title}` : `Continue in ${nextStudyTrack?.name?.includes('Levantine') ? 'Levantine' : (nextStudyTrack?.name ?? 'your track')}`"
                 @click="startLesson()"
               >
-                {{ manualCourseStudy ? 'Open lesson' : 'Continue' }}
+                {{ nextStudyLesson.id === resumableLessonId ? 'Resume lesson' : manualCourseStudy ? 'Open lesson' : 'Continue' }}
                 <ChevronRight :size="20" aria-hidden="true" />
               </button>
               <details class="lesson-about">
@@ -1505,7 +1498,7 @@ async function finishLesson() {
               </details>
             </div>
           </article>
-          <p v-if="manualCourseStudy && dailyCompleted < dailyGoal" class="review-status-note">Outside today’s plan · study settings unchanged.</p>
+          <p v-if="manualCourseStudy && dailyCompleted < dailyGoal" class="review-status-note">Extra practice · your daily goal stays the same.</p>
 
           <a class="page-link" href="#/courses"
             ><span>{{ courseProgressLabel }}</span
@@ -1537,7 +1530,7 @@ async function finishLesson() {
 
         <section class="study-plan section-block" aria-labelledby="study-plan-heading">
           <div class="section-heading">
-            <div><h2 id="study-plan-heading">Your plan</h2><p class="plan-total">{{ studyPlan.plannedMinutes }} min planned</p></div>
+            <div><h2 id="study-plan-heading">Today’s lessons</h2><p class="plan-total">{{ studyPlan.plannedMinutes }} min of study</p></div>
             <a class="plan-settings" href="#/account" aria-label="Edit study settings"><Settings2 :size="17" aria-hidden="true" /> Settings</a>
           </div>
           <h3 v-if="upcomingPlanLessons.length" class="up-next-heading">Up next</h3>
@@ -1552,7 +1545,7 @@ async function finishLesson() {
           </ol>
           <p v-else-if="studyPlan.queue.length" class="plan-empty">Your next lesson is ready above.</p>
           <div v-else class="plan-empty">
-            <p>{{ dailyCompleted >= dailyGoal ? 'Daily goal complete. Practice is always available.' : 'No new lessons are available for this plan.' }}</p>
+            <p>{{ dailyCompleted >= dailyGoal ? 'Daily goal complete. Practice is always available.' : 'No new lessons are available today.' }}</p>
             <a :href="dailyCompleted >= dailyGoal ? '#/practice' : '#/courses'">{{ dailyCompleted >= dailyGoal ? 'Open practice' : 'Explore courses' }} <ChevronRight :size="16" aria-hidden="true" /></a>
           </div>
           <p v-if="studyPlan.overrunMinutes" class="plan-overrun"><span>+{{ studyPlan.overrunMinutes }} min</span> to finish whole lessons</p>
@@ -1576,6 +1569,7 @@ async function finishLesson() {
       <template v-if="page === 'courses' && studyPageAvailable">
         <header class="page-heading">
           <h1>Courses</h1>
+          <p>A course is a language or Arabic track. Each lesson teaches a short conversation or skill.</p>
           <p class="review-status-note"><span>{{ activeCourse.name }}</span> · <span>{{ courseProgressLabel }}</span></p>
           <p
             v-if="!apiLive || pendingSyncCount > 0"
@@ -1717,7 +1711,10 @@ async function finishLesson() {
       <template v-if="page === 'progress' && studyPageAvailable">
         <header class="page-heading"><h1>Progress</h1><p><span>{{ activeCourse.name }}</span> · <span>{{ courseProgressLabel }}</span></p></header>
         <LearningHabits section="streak" :state="learningHabits.state.value" :now="habitNow" :error="learningHabits.error.value" @toggle="learningHabits.toggle" />
+        <details class="optional-activities"><summary>Optional weekly activities</summary>
+        <p>A small checklist of lessons and practice for Monday–Sunday. Turn it on if you find it helpful.</p>
         <LearningHabits section="quests" :state="learningHabits.state.value" :now="habitNow" :error="''" :review-ready="questReviewAvailability.ready" @toggle="learningHabits.toggle" @start="startQuest" />
+        </details>
         <div id="progress-cando"></div>
         <LearningHabits section="rules" :state="learningHabits.state.value" :now="habitNow" error="" />
       </template>

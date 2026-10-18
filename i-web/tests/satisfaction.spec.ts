@@ -29,7 +29,7 @@ test('Today leads with Continue and keeps review, queue and settings accessible 
     await expect(page.getByRole('button', { name: /^Review due/ })).toBeVisible()
     await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }))
     await page.screenshot({ path: testInfo.outputPath(`today-${width}.png`), fullPage: true })
-    await page.getByRole('region', { name: 'Your plan' }).screenshot({ path: testInfo.outputPath(`plan-${width}.png`) })
+    await page.getByRole('region', { name: 'Today’s lessons' }).screenshot({ path: testInfo.outputPath(`plan-${width}.png`) })
   }
   await page.setViewportSize({ width: 390, height: 844 })
   await page.evaluate(() => {
@@ -45,7 +45,7 @@ test('Today leads with Continue and keeps review, queue and settings accessible 
   await page.keyboard.press('Enter')
   await expect(page.getByRole('dialog', { name: queuedTitle, exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'Close lesson' }).click()
-  await page.getByRole('button', { name: /Continue in Levantine/ }).focus()
+  await page.locator('.primary-lesson-card').getByRole('button', { name: /^Resume / }).focus()
   await page.keyboard.press('Enter')
   await expect(page.getByRole('button', { name: 'Close lesson' })).toBeFocused()
 })

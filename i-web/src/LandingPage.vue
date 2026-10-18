@@ -241,7 +241,7 @@ onMounted(() => {
               <article class="method-card">
                 <span class="method-number">03</span>
                 <h3>Try your response</h3>
-                <p>Recall it first. Reveal it when you need help.</p>
+                <p>Try from memory. Reveal it when you need help.</p>
                 <div class="method-example method-recall">
                   <span>Your turn as Knafeh</span>
                   <p>Fattoush checks in.<br />How would you say you’re well?</p>

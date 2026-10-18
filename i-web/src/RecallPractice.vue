@@ -82,7 +82,7 @@ async function refresh() {
     }
     if (token !== generation || scope !== props.scope) return
     packages.value = loaded; savedEvidence.value = saved; savedHistory.value = history; now.value = Date.now()
-    if (missing) notice.value = 'Connect to download recall practice for completed lessons.'
+    if (missing) notice.value = 'Connect to download writing practice for completed lessons.'
     await flushRecallReports(scope)
     if (token !== generation || scope !== props.scope) return
     pending.value = await getPendingRecallReports(scope)
@@ -282,23 +282,24 @@ onBeforeUnmount(() => {
 
 <template>
   <Teleport v-if="hubTarget" :to="hubTarget">
-    <a v-if="hubView === 'tile'" class="feature-tile accent-red tile-recall" href="#/practice/recall" :aria-label="`Recall and recombine, ${available.length} targets, ${dueTargets} due`">
+    <a v-if="hubView === 'tile'" class="feature-tile accent-red tile-recall" href="#/practice/recall" :aria-label="`Write a response, ${available.length} targets, ${dueTargets} due`">
       <span class="feature-badge" aria-hidden="true"><PenLine :size="18" /></span>
-      <span class="feature-copy"><strong>Recall</strong><small>{{ dueTargets }} due</small></span>
+      <span class="feature-copy"><strong>Write a response</strong><small>{{ dueTargets }} due</small></span>
       <span class="feature-count">{{ available.length }}</span>
     </a>
     <CanDoProgress v-else-if="hubView === 'can-do'" :scope="scope" :lessons="packages" :evidence="savedEvidence" :history="savedHistory"
       :now="now" :loading="loading" @practice="start" />
-    <section v-else class="review-hub" aria-label="Recall and recombine">
-      <h2>Recall and recombine</h2>
-      <p v-if="loading" role="status">Loading recall practice…</p>
-      <p v-else-if="!available.length">Complete a lesson with published recall practice to begin.</p>
+    <section v-else class="review-hub" aria-label="Write a response">
+      <h2>Write a response</h2>
+      <p>Practise answering in your own words, from memory. Hints are available.</p>
+      <p v-if="loading" role="status">Loading writing practice…</p>
+      <p v-else-if="!available.length">Complete a lesson with writing practice to begin.</p>
       <p v-else>{{ available.length }} targets available · {{ dueTargets }} due</p>
-      <button class="primary-action" :disabled="loading || busy || !available.length" @click="start()">Start typed recall</button>
+      <button class="primary-action" :disabled="loading || busy || !available.length" @click="start()">Start writing</button>
       <p v-if="notice" role="status">{{ notice }}</p>
       <p v-if="error && !open" role="alert">{{ error }}</p>
       <div v-for="item in pending" :key="item.report.id">
-        <p role="status">{{ item.error || 'Recall report waiting to send when you reconnect.' }}</p>
+        <p role="status">{{ item.error || 'Response report waiting to send when you reconnect.' }}</p>
         <button class="text-button" @click="discard(item.report.id)">Discard saved report</button>
       </div>
     </section>
@@ -307,8 +308,8 @@ onBeforeUnmount(() => {
     <div v-if="open" class="lesson-overlay" @click.self="close">
       <section ref="dialog" class="lesson-sheet" role="dialog" aria-modal="true" aria-labelledby="recall-title" @keydown="trap">
         <header class="lesson-sheet-header">
-          <h2 id="recall-title">Recall and recombine</h2>
-          <div class="lesson-header-controls"><SoundToggle /><button ref="closeButton" class="close-button" :disabled="busy" aria-label="Close recall" @click="close">×</button></div>
+          <h2 id="recall-title">Write a response</h2>
+          <div class="lesson-header-controls"><SoundToggle /><button ref="closeButton" class="close-button" :disabled="busy" aria-label="Close writing practice" @click="close">×</button></div>
         </header>
         <div class="practice-topline"><span>{{ finished ? 'Complete' : `Target ${index + 1} of ${queue.length}` }}</span></div>
         <LessonScroll>
@@ -316,7 +317,7 @@ onBeforeUnmount(() => {
             <div v-if="finished" key="finished" class="practice-page">
               <h3 ref="heading" tabindex="-1">Recall complete</h3>
               <p>{{ independent }} of {{ total }} first answers matched without help.</p>
-              <p>Written recall on this device. This does not assess speaking.</p>
+              <p>Written responses on this device. This does not assess speaking.</p>
               <BackControl @click="close">Back to practice</BackControl>
             </div>
             <div v-else-if="turn" :key="`${turn.lesson.id}:${turn.variant.id}`" class="practice-page recall-page" :data-recall-target="turn.target.id" :data-recall-variant="turn.variant.id">
@@ -356,7 +357,7 @@ onBeforeUnmount(() => {
         </LessonScroll>
         <footer v-if="!finished" class="lesson-actions">
           <button v-if="!result" class="primary-action" :disabled="busy || !answer.trim()" @click="check">Check response</button>
-          <button v-else class="primary-action" :disabled="busy" @click="next">{{ index === queue.length - 1 ? 'Finish recall' : 'Next target' }}</button>
+          <button v-else class="primary-action" :disabled="busy" @click="next">{{ index === queue.length - 1 ? 'Finish practice' : 'Next target' }}</button>
           <button v-if="!result" class="text-button" :disabled="busy" @click="next">Skip target</button>
         </footer>
       </section>

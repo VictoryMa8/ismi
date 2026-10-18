@@ -5,7 +5,7 @@ defineProps<{ notice?: LessonPublicationNotice | null; compact?: boolean }>()
 <template>
   <aside v-if="notice" class="publication-notice" :class="{ compact }" aria-label="Content status">
     <strong>{{ notice.label }}</strong>
-    <p v-if="!compact">{{ notice.details }}</p>
+    <p v-if="!compact">{{ notice.details.replace(/^AI-assisted draft\.\s*/, '') }}</p>
   </aside>
 </template>
 <style scoped>

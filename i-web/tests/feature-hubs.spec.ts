@@ -1,8 +1,8 @@
 import { expect, test } from '@playwright/test'
 import { freshHabits } from '../src/learningHabits'
 
-test('new habit states are on and a saved off state is kept', async ({ page }) => {
-  expect(freshHabits().questsEnabled).toBe(true)
+test('weekly activities start off and saved habit choices are kept', async ({ page }) => {
+  expect(freshHabits().questsEnabled).toBe(false)
   expect(freshHabits().streakEnabled).toBe(true)
   await page.goto('/#/today')
   await page.evaluate(() => localStorage.setItem('ismi-learning-habits-v1:guest', JSON.stringify({
@@ -11,12 +11,13 @@ test('new habit states are on and a saved off state is kept', async ({ page }) =
   })))
   await page.reload()
   await expect(page.getByRole('link', { name: /Streak/ })).toContainText('Off')
-  await expect(page.getByRole('link', { name: /This week/ })).toContainText('Off')
+  await expect(page.locator('.status-strip')).not.toContainText('This week')
   await page.getByRole('link', { name: 'Progress', exact: true }).click()
-  await page.getByRole('checkbox', { name: 'Forgiving streak', exact: true }).check()
+  await page.getByRole('checkbox', { name: 'Track my streak', exact: true }).check()
   await page.reload()
-  await expect(page.getByRole('checkbox', { name: 'Weekly quests', exact: true })).not.toBeChecked()
-  await expect(page.getByRole('checkbox', { name: 'Forgiving streak', exact: true })).toBeChecked()
+  await page.getByText('Optional weekly activities', { exact: true }).click()
+  await expect(page.getByRole('checkbox', { name: 'Weekly activities', exact: true })).not.toBeChecked()
+  await expect(page.getByRole('checkbox', { name: 'Track my streak', exact: true })).toBeChecked()
 })
 
 for (const width of [320, 390, 1280]) {
@@ -51,6 +52,10 @@ for (const width of [320, 390, 1280]) {
     await expect(page.getByLabel('Search words')).toBeVisible()
     await expect(page.getByLabel('Search words')).not.toBeFocused()
     await nav.getByRole('link', { name: 'Practice', exact: true }).click()
+    for (const tile of await page.locator('.feature-grid .feature-copy').all()) {
+      expect(await tile.evaluate(el => [...el.children].every(child => child.scrollWidth <= child.clientWidth + 1))).toBeTruthy()
+    }
+    await page.screenshot({ path: `/tmp/ismi-practice-${width}.png`, fullPage: true })
     const review = page.getByRole('link', { name: /^Review,/ })
     await expect(review).toContainText('due')
     await review.click()
@@ -60,15 +65,39 @@ for (const width of [320, 390, 1280]) {
     await page.getByRole('link', { name: /^Checkpoints,/ }).click()
     await expect(page.getByRole('region', { name: 'Checkpoints' })).toBeVisible()
     await page.getByRole('link', { name: 'Back to Practice', exact: true }).click()
-    await page.getByRole('link', { name: /^Recall and recombine,/ }).click()
-    await expect(page.getByRole('region', { name: 'Recall and recombine' })).toBeVisible()
+    await page.getByRole('link', { name: /^Write a response,/ }).click()
+    await expect(page.getByRole('region', { name: 'Write a response' })).toBeVisible()
     await page.getByRole('link', { name: 'Back to Practice', exact: true }).focus()
     await nav.getByRole('link', { name: 'Progress', exact: true }).click()
     await expect(page.getByRole('region', { name: 'Streak' })).toBeVisible()
-    await expect(page.getByRole('region', { name: 'This week' })).toBeVisible()
+    await expect(page.getByRole('region', { name: 'Weekly activities' })).not.toBeVisible()
     await expect(page.getByRole('region', { name: 'What you can do' })).toBeVisible()
     expect(await page.locator('.feature-panel').first().evaluate(element => element.getAnimations().length)).toBe(0)
     await page.addStyleTag({ content: 'html { font-size: 200%; }' })
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1)).toBeTruthy()
   })
 }
+
+test('Today uses its main card to resume a different started lesson', async ({ page, context }, testInfo) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await page.goto('/#/practice/lessons')
+  const selected = page.locator('.practice-item').nth(1)
+  const title = (await selected.locator('strong').textContent())!
+  await selected.click()
+  const dialog = page.getByRole('dialog')
+  await dialog.getByRole('button', { name: 'Learn the phrases' }).click()
+  await dialog.getByRole('button', { name: 'Close lesson', exact: true }).click()
+  await page.getByRole('link', { name: 'Today', exact: true }).click()
+  const card = page.locator('.primary-lesson-card')
+  await expect(card).toContainText(title)
+  await expect(card.getByRole('button', { name: `Resume ${title}`, exact: true })).toHaveText('Resume lesson')
+  await expect(page.locator('.resume-course')).toHaveCount(0)
+  await expect(page.locator('.status-strip')).not.toContainText(/grace|This week/i)
+  await page.screenshot({ path: testInfo.outputPath('today-resume.png'), fullPage: true })
+  await page.evaluate(async () => { await navigator.serviceWorker.ready })
+  await context.setOffline(true)
+  await page.reload()
+  await expect(card).toContainText(title)
+  await card.getByRole('button', { name: `Resume ${title}`, exact: true }).click()
+  await expect(dialog.getByRole('button', { name: 'Try from memory', exact: true })).toBeVisible()
+})

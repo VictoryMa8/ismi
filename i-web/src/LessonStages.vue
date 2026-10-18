@@ -12,7 +12,7 @@ defineProps<{ stage: 'meet' | 'learn' | 'use' }>();
     <span
       :class="{ active: stage === 'learn' }"
       :aria-current="stage === 'learn' ? 'step' : undefined"
-      >Learn & recall</span
+      >Learn & practise</span
     ><span aria-hidden="true">→</span>
     <span
       :class="{ active: stage === 'use' }"
