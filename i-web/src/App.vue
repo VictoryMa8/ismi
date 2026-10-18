@@ -1920,7 +1920,7 @@ async function finishLesson() {
           </div>
         </section>
         <p class="account-legal">
-          <a href="#/privacy">Privacy policy</a> · {{ appVersionLabel }}
+          <a href="#/about">About & FAQ</a> · <a href="#/privacy">Privacy policy</a> · {{ appVersionLabel }}
         </p>
       </section>
     </main>

@@ -76,7 +76,7 @@ onMounted(() => {
         >
           <a href="#how-it-works" @click="menuOpen = false">How it works</a
           ><a href="#languages" @click="menuOpen = false">Languages</a
-          ><a href="#faq" @click="menuOpen = false">FAQ</a>
+          ><a href="#/about" @click="menuOpen = false">About & FAQ</a>
           <a
             :href="returning ? '#/today' : '#/account'"
             class="landing-signin"
@@ -382,7 +382,7 @@ onMounted(() => {
         <p>Arabic for the conversations that matter.</p>
         <a href="#/account">Sign in</a
         ><a href="#beta">Development preview · 18+</a
-        ><a href="#/privacy">Privacy</a><span>{{ appVersionLabel }}</span
+        ><a href="#/about">About & FAQ</a><a href="#/privacy">Privacy</a><span>{{ appVersionLabel }}</span
         ><span>© 2026 Ismi</span>
       </footer>
     </div>

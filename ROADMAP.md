@@ -162,6 +162,12 @@ The next-action text names the actor; use the record before taking action.
 | [F24.8 · Prominent language and course switching](#f248-prominent-language-and-course-switching) | Owner/agent: run an observed switching/discoverability task and actual device/AT checks; preserve independent primary allocation. |
 | [F26.6 · Khmer pilot, publication and release evidence](#f266-khmer-pilot-publication-and-release-evidence) | Owner: agree rubric/setup/participation after F26.1. Agent: record immediate/delayed evidence and fix/retest before scaling. |
 
+### Delivery pending
+
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F31 · About and FAQ page](#f31-about-and-faq-page) | Agent: commit/push the verified page and confirm the existing frontend deployment. |
+
 ### Planned
 
 | ID / scope | Next action or remaining gate |
@@ -1164,6 +1170,17 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Authorization:** Follow-up planned, not blanket implementation/contact/publication authority; no review/beta gates waived.
 - **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f30-alphabet-content-acceptance-and-release).
 - **Dependencies:** F28, F09/F13/F14 and applicable F25/F26 content decisions.
+
+### F31 About and FAQ page
+
+- **Work state:** Delivery pending.
+- **Readiness:** Implementation — complete; content — authored factual About copy and shared FAQ; verification — production build and automated mobile/desktop page checks pass; all 15 About/landing browser checks pass.
+- **Delivery:** Application — local/uncommitted; content publication — N/A (informational page only).
+- **Scope:** Separate small About page with FAQ, landing and Account links, humane learning/cultural context copy and honest native-speaker support status. Application version 0.0.2.
+- **Next action:** Agent: verify navigation, reload, layout and build; commit/push and confirm existing frontend deployment.
+- **Authorization:** Owner authorized implementation, push and deployment October 18; no curriculum publication or review-status change.
+- **Completion gate / evidence:** [About page contract and verification](docs/releases/2026-10-18-about.md).
+- **Dependencies:** Existing landing/Account routing and shared FAQ; native-speaker review remains with course review gates.
 
 ## Recent roadmap changes
 
