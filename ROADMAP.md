@@ -81,8 +81,8 @@ not a deployment command. UI availability is not curriculum completion.
 ## Priority and authorization boundaries
 
 - Preserve the owner's selected engagement order: remaining **F23 → F17.5**;
-  F22/F17.6/F17.7 are already delivered. Selection was research/planning, not new
-  implementation/publication authority. [Original scopes](docs/learning-engagement-plan.md).
+  F22/F17.6/F17.7 are already delivered. F23 implementation was authorized October 18;
+  F17.5 remains planning-only and exact content publication remains separate. [Original scopes](docs/learning-engagement-plan.md).
 - Arabic content: review F12.1/F12.2 candidates before further release; F09 real
   recordings remain distinct from F19's narrowly authorized free-tier audition.
 - Multi-language: F24 software is deployed. Accepted F25/F26 first units and actual
@@ -118,6 +118,7 @@ The next-action text names the actor; use the record before taking action.
 | [F18 · Invite-only beta readiness](#f18-invite-only-beta-readiness) | Agent: split remaining invite enforcement, reports/quarantine and operations into bounded tasks. Owner: resume F18.1 only explicitly. |
 | [F26 · Khmer course](#f26-khmer-course) | Owner: designate review route and source/help/reading dispositions. Agent: finish first-unit acceptance/pilot before bulk units 2–12. |
 | [F26.3 · Khmer script, sounds, input and starting check](#f263-khmer-script-sounds-input-and-starting-check) | Reviewer: select inventory/help and sound modules. Agent: integrate accepted modules and actual device checks; reuse F28/F30 rather than duplicate explorer. |
+| [F23 · Recurring mini-stories](#f23-recurring-mini-stories) | Owner: review F23.1. Agent: scope episodes two/three after first review; shared machinery is implemented locally. |
 
 ### Review pending
 
@@ -128,6 +129,7 @@ The next-action text names the actor; use the record before taking action.
 | [F21 · Cultural watch and listen recommendations](#f21-cultural-watch-and-listen-recommendations) | Agent: resolve F21.1 source/access/runtime gaps; owner reviews exact editions; F21.5 retains real AT/release checks. |
 | [F21.1 · Curation and first four collections](#f211-curation-and-first-four-collections) | Agent: verify precise runtime/edition, playback, region/access/support and editorial suitability; owner records dispositions. |
 | [F26.2 · Khmer first unit](#f262-khmer-first-unit) | Reviewer/owner: disposition exact phrases/answers/segments/sources; agent reconciles changes before any new approval/publication. |
+| [F23.1 · First text episode](#f231-first-text-episode) | Owner: review exact A little rest scene/check/role/source candidate; no publication yet. |
 
 ### Input needed
 
@@ -170,9 +172,13 @@ The next-action text names the actor; use the record before taking action.
 | [F25.6 · French pilot, publication and release evidence](#f256-french-pilot-publication-and-release-evidence) | Owner/reviewer: accepted text/audio and agreed setup precede the prepared pilot protocol. |
 | [F13 · MSA course](#f13-msa-course) | Owner/agent: define first unit, source/audio permissions and a bounded console-control extension. |
 | [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Agent after implementation authorization: map phrases/patterns/notes to exact approved sources and console metadata. |
-| [F23 · Recurring mini-stories](#f23-recurring-mini-stories) | Owner: authorize a bounded first episode. Agent then outlines arc and F23.1, without queue/accounting policy assumptions. |
-| [F23.1 · First text episode](#f231-first-text-episode) | Agent after authorization: choose unit, roles, target/source records and console scope. Today integration needs an explicit accounting rule. |
 | [F26.4 · Khmer remaining units and reference material](#f264-khmer-remaining-units-and-reference-material) | Agent after first-unit review/pilot: revise sequence and author source-backed bounded batches. |
+
+### Delivery pending
+
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F23.1.1 · Exact first-story development preview](#f2311-exact-first-story-development-preview) | Agent: deploy and publish the exact owner-authorized unreviewed/text-only package; verify preserved data. |
 
 ### Deferred
 
@@ -697,25 +703,36 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F23 Recurring mini-stories
 
-- **Work state:** Planned.
-- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
-- **Delivery:** Application — None; content publication — None.
+- **Work state:** Partial.
+- **Readiness:** Implementation — shared text-story machinery complete; remaining episode scopes follow first review; content — first episode draft and linked three-episode outline; verification — automated candidate checks, real access/learner evidence missing.
+- **Delivery:** Application — Local/uncommitted, candidate 0.0.4; content publication — None.
 - **Scope:** Linked three-episode text story arc using taught Levantine language; audio is a separate extension.
-- **Next action:** Owner: authorize a bounded first episode. Agent then outlines arc and F23.1, without queue/accounting policy assumptions.
-- **Authorization:** Research priority selected; implementation/publication not authorized by that selection.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f23-recurring-mini-stories).
-- **Dependencies:** F03/F04/F06 and approved curriculum; F22 for independently graded typed responses. Character redesign and external media curation are independent.
+- **Next action:** Owner: review F23.1's exact scene/check/role/source candidate. Agent: reconcile feedback, then scope episodes two/three after first review.
+- **Authorization:** Owner authorized F23 implementation October 18. Deployment and exact unreviewed-preview publication were authorized October 18; review/source-rights acceptance remain pending; the first-episode review sequence and no-assumed-Today-accounting rule are retained.
+- **Completion gate / evidence:** [Full contract](docs/planning/feature-scope-reference.md#f23-recurring-mini-stories); [implementation, arc and verification](docs/mini-stories.md).
+- **Dependencies:** F03/F04/F06 and approved curriculum; F22 for independently graded typed responses. Current response choices are explicitly assisted; character redesign and external media curation are independent.
 
 ### F23.1 First text episode
 
-- **Work state:** Planned.
-- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
-- **Delivery:** Application — None; content publication — None.
+- **Work state:** Review pending.
+- **Readiness:** Implementation — Complete: console, reader, source/version/identity and offline safeguards; content — Unreviewed first episode draft; verification — automated API/browser/build checks, actual screen-reader/device/Safari/learner checks missing.
+- **Delivery:** Application — Local/uncommitted, candidate 0.0.4; content publication — Exact unreviewed preview authorized; normal approval absent.
 - **Scope:** One reviewed text episode, two comprehension checks and a response, with offline/version/identity safeguards.
-- **Next action:** Agent after authorization: choose unit, roles, target/source records and console scope. Today integration needs an explicit accounting rule.
-- **Authorization:** First child is scoped but implementation/publication awaits authorization; audio not part of text scope.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f231-first-text-episode).
-- **Dependencies:** F03/F04/F06 and approved curriculum; F22 if the response is independently typed/graded, otherwise report assisted evidence honestly. F09 is needed only for audio.
+- **Next action:** Owner: disposition A little rest's exact scenes, checks, response rationales, roles and source/rights reuse in Stories console; actual access checks and normal reviewed publication still precede completion.
+- **Authorization:** Owner authorized implementation October 18; later authorized deployment and only the exact unreviewed text-preview publication, keeping review/rights pending. Audio is outside this text scope; no Today credit added.
+- **Completion gate / evidence:** [Full contract](docs/planning/feature-scope-reference.md#f231-first-text-episode); [candidate and verification](docs/mini-stories.md).
+- **Dependencies:** Exact Everyday lesson-one v4 on the selected target; F03/F04/F06. Response is choice-assisted written practice, with no independent production claim. F09 is needed only for audio.
+
+### F23.1.1 Exact first-story development preview
+
+- **Work state:** Delivery pending.
+- **Readiness:** Implementation — Complete: pinned exception and honest notices; content — Exact first episode unreviewed; verification — API/build/browser automation, target/source checks prepared.
+- **Delivery:** Application — Local candidate 0.0.4; content publication — Authorized, not yet executed.
+- **Scope:** Deploy and publish only A little rest as an unreviewed, text-only development preview, preserving pending review/source-rights and no story audio/beta inclusion.
+- **Next action:** Agent: deploy exact candidate, publish the pinned package through the service, verify hosted projection and unchanged existing data/assets.
+- **Authorization:** Owner requested deploy/publication and explicitly selected this exact unreviewed text-only exception October 18. No changed/additional episodes or broader gate waiver.
+- **Completion gate / evidence:** [Exact authorization, pin, rollout and preservation evidence](docs/releases/2026-10-18-mini-stories.md).
+- **Dependencies:** Exact hosted Everyday lesson-one v4; F23.1 application. Normal F23 review/release gates remain independent.
 
 ### F24 Multi-language foundation and parallel study
 
@@ -1150,7 +1167,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Work state:** Complete.
 - **Readiness:** Implementation — Complete; content — Authored; verification — Automated.
 - **Delivery:** Application — Included in deployed frontend; route not freshly checked; content publication — N/A.
-- **Scope:** Public privacy page and Beta 0.0.1 label; policy is descriptive, not legal review.
+- **Scope:** Public privacy page and Beta 0.0.1 label; October 18 owner rule requires +0.0.1 for each future completed fix/feature implementation ([versioning rule](AGENTS.md#application-versioning)). Policy is descriptive, not legal review.
 - **Next action:** Before voice/AI, analytics or deletion changes, update policy to match behavior; no new product scope from this documentation audit.
 - **Authorization:** Delivered scope; extensions need their own authorization.
 - **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f29-privacy-policy-and-beta-version).
@@ -1179,6 +1196,9 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **October 18 — F23:** text-story console/reader/offline machinery and first exact Everyday v4 draft implemented locally as 0.0.3. First episode awaits human/source acceptance; remaining two episodes follow that review. No publication/deployment or Today credit. [Evidence](docs/mini-stories.md).
+
+
 - **October 18 — F27.3:** mobile Practice text, plain study/response labels, one Today resume action, silent grace, hidden optional weekly activities and shared French/Khmer character presentation UI delivered; notice regression corrected in `34a936b`, working API restored to `08fed75`. All ten French/Khmer previews available again; historical-notice tests now independent of policy constants. Curriculum unchanged.
 
 - **October 18 — F25:** owner selected Metropolitan France reference, twelve units/sixty lessons, five-minute month-one guided target and draft-first review route. Five exact first-unit text previews published on deployed `08fed75`; 57 API/three publication browser checks pass, existing data/assets preserved. Full review/audio/course gates remain.
@@ -1192,6 +1212,3 @@ not a fresh execution of every feature's tests or inspection of each database.
   application/publication delivery, explicit actor/authorization and linked contracts
   for every feature/child. Removed repeated chronological release summaries. No
   product scope, publication, deployment, spending or deferral was newly authorized.
-- **October 17 — F28/F30:** owner explicitly completed F28's text-only application/
-  full-draft scope and split human/source/access/release obligations to F30. App
-  deployed as `fdd5c5f`; exact existing publications and hosted data preserved.

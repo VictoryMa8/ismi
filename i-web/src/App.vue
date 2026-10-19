@@ -44,6 +44,7 @@ import RecallPractice from './RecallPractice.vue';
 import LearnedWords from './LearnedWords.vue';
 import CulturalPicks from './CulturalPicks.vue';
 import AlphabetExplorer from './AlphabetExplorer.vue';
+import StoryReader from './StoryReader.vue';
 import BackControl from './BackControl.vue';
 import CharacterCast from './CharacterCast.vue';
 import CharacterCue from './CharacterCue.vue';
@@ -155,17 +156,17 @@ const completionSummary = computed(() => {
   };
 });
 const pendingSyncCount = ref(0);
-type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'practice-culture' | 'practice-alphabet' | 'progress' | 'words' | 'account';
+type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'practice-culture' | 'practice-alphabet' | 'practice-stories' | 'progress' | 'words' | 'account';
 const pageNames: Record<string, PageName> = {
   today: 'today', courses: 'courses', practice: 'practice', 'practice/review': 'practice-review',
   'practice/checkpoints': 'practice-checkpoints', 'practice/recall': 'practice-recall', 'practice/lessons': 'practice-lessons',
-  'practice/culture': 'practice-culture', 'practice/alphabet': 'practice-alphabet',
+  'practice/culture': 'practice-culture', 'practice/alphabet': 'practice-alphabet', 'practice/stories': 'practice-stories',
   progress: 'progress', words: 'words', account: 'account',
 };
 const pageTitles: Record<PageName, string> = {
   today: 'Today', courses: 'Courses', practice: 'Practice', 'practice-review': 'Review',
   'practice-checkpoints': 'Checkpoints', 'practice-recall': 'Write a response', 'practice-lessons': 'Lesson practice',
-  'practice-culture': 'Watch & listen', 'practice-alphabet': 'Alphabet',
+  'practice-culture': 'Watch & listen', 'practice-alphabet': 'Alphabet', 'practice-stories': 'Mini-stories',
   progress: 'Progress', words: 'Learned words', account: 'Account',
 };
 const navigation = [
@@ -187,7 +188,7 @@ const primaryPage = computed(() => page.value.startsWith('practice') ? 'practice
 const pageTitle = computed(() => pageTitles[page.value]);
 const reviewView = computed(() => page.value === 'practice' ? 'tiles' : page.value === 'practice-review' ? 'review' : page.value === 'practice-checkpoints' ? 'checkpoints' : 'hidden');
 const recallView = computed(() => page.value === 'practice' ? 'tile' : page.value === 'practice-recall' ? 'recall' : page.value === 'progress' ? 'can-do' : 'hidden');
-const practiceChild = computed(() => page.value.startsWith('practice-') && page.value !== 'practice-culture' && page.value !== 'practice-alphabet');
+const practiceChild = computed(() => page.value.startsWith('practice-') && page.value !== 'practice-culture' && page.value !== 'practice-alphabet' && page.value !== 'practice-stories');
 function navigate(destination: PageName) {
   window.location.hash = `/${Object.keys(pageNames).find(path => pageNames[path] === destination) ?? destination}`;
 }
@@ -1579,6 +1580,7 @@ async function finishLesson() {
             {{ syncStatus }}
           </p>
         </header>
+        <a v-if="viewedCourse === 'levantine'" class="page-link" href="#/practice/stories"><BookOpen :size="18" aria-hidden="true" /> Mini-stories · Everyday</a>
         <a class="page-link" href="#/practice/alphabet"><BookOpen :size="18" aria-hidden="true" /> Alphabet · {{ activeCourse.name }}</a>
         <div class="course-units">
           <section
@@ -1663,6 +1665,7 @@ async function finishLesson() {
           <h1>Practice</h1>
         </header>
         <div id="practice-hub" class="feature-grid">
+          <a v-if="viewedCourse === 'levantine'" class="feature-tile accent-green" href="#/practice/stories"><span class="feature-badge" aria-hidden="true"><BookOpen :size="26" /></span><span class="feature-copy"><strong>Mini-stories</strong><small>Read with Fattoush and Knafeh</small></span></a>
           <a class="feature-tile accent-gold tile-alphabet" href="#/practice/alphabet">
             <span class="feature-badge" aria-hidden="true"><BookOpen :size="26" /></span><span class="feature-copy"><strong>Alphabet</strong><small>{{ activeCourse.name }}</small></span>
           </a>
@@ -1678,6 +1681,7 @@ async function finishLesson() {
         </div>
         <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
       </template>
+      <StoryReader v-if="page === 'practice-stories' && viewedReady && !lessonOpen && !reviewOpen && !consoleOpen" :course-id="viewedCourse" :scope="reviewScope" />
       <AlphabetExplorer v-if="page === 'practice-alphabet' && viewedReady" :course-id="viewedCourse" :scope="reviewScope" :suspended="lessonOpen || reviewOpen || consoleOpen" @audio="alphabetAudioPlaying = $event" />
       <p v-if="page === 'practice-culture' && viewedReady && activeCourse.languageId !== 'arabic'">Watch &amp; listen currently covers Arabic. Switch to an Arabic course to view its collections.</p>
       <CulturalPicks v-if="page === 'practice-culture' && viewedReady && activeCourse.languageId === 'arabic'" :edition-id="culturalEditionId" />

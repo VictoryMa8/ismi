@@ -143,6 +143,8 @@ learner evidence and beta eligibility distinct.
 
 ## Finish a task
 
+Before finishing a fix or feature implementation, apply the [application versioning rule](../AGENTS.md#application-versioning): add 0.0.1 per completed fix/feature, align package/lock metadata, verify the displayed version and record it in the feature evidence. Extra commits, documentation-only work and deployment retries do not add increments.
+
 1. Update the feature record's state, each readiness layer, delivery, actor/next action,
    authorization, dependencies and evidence as affected. Preserve unrelated changes.
 2. Move/update its row in the matching work queue. Do not leave it under the old gate.

@@ -74,6 +74,15 @@ development preview, labeled unreviewed/text-only. Preserve pending review/right
 empty reviewer and missing audio. No changed/additional text, beta inclusion,
 reviewed-content claim or broader waiver follows; normal full-course review remains.
 
+On October 18 the owner authorized deploying F23 and explicitly selected publication
+of the exact first “A little rest” episode as an **unreviewed, text-only development
+preview**, retaining pending linguistic/source-rights acceptance. This exception is
+limited to `content/stories/after-a-long-day/01.pack.json`, SHA-256
+`58a0827fdeffd2b4469657fc4ed696a15b97f1003670f4a02c7ae97256b63c7b`,
+on the existing preview. It grants no reviewed-content claim, beta inclusion,
+changed/additional episode publication or human acceptance; the normal review path
+and subsequent-episode review dependency remain. Current delivery belongs in F23.
+
 ## Primary audience and promise
 
 - First users are false beginners who already know enough Arabic for basic questions or directions.
@@ -267,6 +276,12 @@ Do not include billing, a social network, or a live-news content operation in th
 ## Working rule for future agents
 
 Work directly on `main`. Do not create Codex branches, other feature branches, or additional worktrees unless the owner explicitly requests one. Preserve existing local changes when switching branches. Commits and pushes still follow the owner's authorization; pushing `main` triggers a frontend deployment.
+
+### Application versioning
+
+Starting October 18, 2026, increment the application patch version by **0.0.1 for every completed fix or feature implementation**, including API-only changes. The current version is `0.0.1`; the next implementation must be `0.0.2`, then `0.0.3`, and so on. Do not retroactively renumber earlier work. Increment once per distinct completed fix/feature, not again for its tests, extra commits, documentation follow-ups, deployment retries or rollback. Distinct implementations bundled in one release each count toward the increment.
+
+Use `i-web/package.json` as the application version source and keep the top-level and root-package versions in `i-web/package-lock.json` aligned. The displayed `Beta` label derives from that source through Vite and `i-web/src/version.ts`; do not hardcode a separate UI version. Record the new application version with the implementation evidence and verify the build displays it. Application version changes never alter curriculum package versions, hashes, approval notices or publication records. Documentation-only work and recording this rule do not increment the version.
 
 Use `npm run api` and `npm run web` from the repository root in two separate terminals for local development. The API uses `dotnet watch`; the frontend uses Vite. Ctrl+C stops only that terminal's server. `dotnet watch` is the default when starting the API directly as well. Do not restore a combined launcher unless the owner asks for one.
 

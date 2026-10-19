@@ -151,6 +151,8 @@ builder.Services.AddSingleton<CurriculumAccessService>();
 builder.Services.AddSingleton(TimeProvider.System);
 builder.Services.AddSingleton<CulturalMediaValidator>();
 builder.Services.AddScoped<CulturalMediaService>();
+builder.Services.AddScoped<StoryService>();
+builder.Services.AddSingleton<StoryTextPreviewPolicy>();
 builder.Services.AddSingleton<AlphabetValidator>();
 builder.Services.AddScoped<AlphabetService>();
 builder.Services.AddSingleton<AlphabetTextPreviewPolicy>();
@@ -166,9 +168,18 @@ await using (var scope = app.Services.CreateAsyncScope())
     await RecallReportService.EnsureSchemaAsync(database);
     await CulturalMediaService.EnsureSchemaAsync(database);
     await AlphabetService.EnsureSchemaAsync(database);
+    await StoryService.EnsureSchemaAsync(database);
     var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
     var seed = scope.ServiceProvider.GetRequiredService<SeedCurriculum>();
     await publishing.EnsureSeededAsync(seed.GetInitialLessons());
+    if (builder.Configuration.GetValue<bool>("publish-story-text-preview")) {
+        try {
+            var stories = scope.ServiceProvider.GetRequiredService<StoryService>();
+            var d = await stories.PublishExactTextPreviewAsync("owner-authorized operator CLI; exact unreviewed story exception 2026-10-18", CancellationToken.None);
+            Console.WriteLine($"{d.Id}: published unreviewed text-only preview v{d.State.PublishedVersion}; no linguistic/source-rights acceptance or beta inclusion.");
+        } catch (Exception e) when (e is StoryException or InvalidOperationException) { Console.Error.WriteLine($"Story preview publication stopped: {e.Message}"); Environment.ExitCode = 1; }
+        return;
+    }
     if (builder.Configuration.GetValue<bool>("publish-alphabet-text-previews") || builder.Configuration.GetValue<bool>("withdraw-alphabet-text-previews"))
     {
         try {
@@ -235,6 +246,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapCulturalMedia();
 app.MapAlphabet();
+app.MapStory();
 
 app.MapGet("/api/health", () => Results.Ok(new
 {

@@ -26,6 +26,8 @@ export Curriculum__AllowKhmerTextPreview=true
 export Curriculum__AllowFrenchTextPreview=true
 # Separate owner-authorized five-pack inventory-only alphabet exception.
 export Curriculum__AllowAlphabetTextPreview=true
+# Separate October 18 owner exception for one exact unreviewed story.
+export Curriculum__AllowStoryTextPreview=true
 # Reduce idle memory on the 256 MB free host; do not enable server GC.
 export DOTNET_gcServer=0
 case "$IP" in

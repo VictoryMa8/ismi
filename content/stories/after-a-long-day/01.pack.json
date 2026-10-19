@@ -1,0 +1,190 @@
+{
+  "id": "after-a-long-day-01",
+  "courseId": "levantine",
+  "unitId": "levantine-everyday-01",
+  "arcId": "after-a-long-day",
+  "episode": 1,
+  "title": "A little rest",
+  "summary": "Fattoush and Knafeh want to catch up, but both need a pause.",
+  "sources": [
+    {
+      "lessonId": "levantine-everyday-01-01",
+      "version": "curriculum-levantine-everyday-01-01-v4"
+    }
+  ],
+  "scenes": [
+    {
+      "title": "A quick hello",
+      "situation": "Fattoush hopes to catch up with Knafeh. First, she checks how he is doing.",
+      "lines": [
+        {
+          "speakerId": "fattoush",
+          "text": {
+            "arabic": "شو عامل؟",
+            "arabizi": "Shū ʿāmel?",
+            "meaning": "How are you doing? (casual check-in to Knafeh)",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        },
+        {
+          "speakerId": "knafeh",
+          "text": {
+            "arabic": "أنا منيح. وإنتِ؟",
+            "arabizi": "Ana mnīḥ. W-inti?",
+            "meaning": "I’m well. And you? (to Fattoush)",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        }
+      ]
+    },
+    {
+      "title": "Both need a pause",
+      "situation": "The conversation reveals a small problem: neither has much energy for a long catch-up.",
+      "lines": [
+        {
+          "speakerId": "fattoush",
+          "text": {
+            "arabic": "أنا تعبانة شوي.",
+            "arabizi": "Ana taʿbāne shwayy.",
+            "meaning": "I’m a little tired. (Fattoush speaking)",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        },
+        {
+          "speakerId": "knafeh",
+          "text": {
+            "arabic": "أنا تعبان كمان.",
+            "arabizi": "Ana taʿbān kamān.",
+            "meaning": "I’m tired too. (Knafeh speaking)",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        }
+      ]
+    },
+    {
+      "title": "A little rest",
+      "situation": "Fattoush offers a pause. Knafeh says what he needs; their catch-up can wait.",
+      "lines": [
+        {
+          "speakerId": "fattoush",
+          "text": {
+            "arabic": "بدك ترتاح؟",
+            "arabizi": "Biddak tirtāḥ?",
+            "meaning": "Do you want to rest? (to Knafeh)",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        },
+        {
+          "speakerId": "knafeh",
+          "text": {
+            "arabic": "آه، بدي أرتاح شوي.",
+            "arabizi": "Āh, biddi artāḥ shwayy.",
+            "meaning": "Yes, I want to rest a little.",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "both-tired",
+      "kind": "comprehension",
+      "prompt": "Why do they pause their catch-up?",
+      "choices": [
+        {
+          "id": "0",
+          "text": "Both are a little tired.",
+          "rationale": "Fattoush says she is tired; Knafeh says he is tired too."
+        },
+        {
+          "id": "1",
+          "text": "Only Knafeh is tired.",
+          "rationale": "Fattoush also says she is a little tired."
+        },
+        {
+          "id": "2",
+          "text": "They disagree about where to go.",
+          "rationale": "The scene is about energy and rest, not directions."
+        }
+      ],
+      "acceptedId": "0",
+      "explanation": "Kamān adds that Knafeh is tired too. Both need a pause.",
+      "sourceIndex": 0,
+      "target": "e01-05"
+    },
+    {
+      "id": "offer-rest",
+      "kind": "comprehension",
+      "prompt": "What does Fattoush offer Knafeh?",
+      "choices": [
+        {
+          "id": "0",
+          "text": "Something to drink.",
+          "rationale": "No drink is offered in this scene."
+        },
+        {
+          "id": "1",
+          "text": "A chance to rest.",
+          "rationale": "Biddak tirtāḥ asks whether he wants to rest."
+        },
+        {
+          "id": "2",
+          "text": "A visit tomorrow.",
+          "rationale": "The scene makes no plan for tomorrow."
+        }
+      ],
+      "acceptedId": "1",
+      "explanation": "Her question responds to his tiredness by offering rest.",
+      "sourceIndex": 0,
+      "target": "e01-06"
+    },
+    {
+      "id": "respond-rest",
+      "kind": "response",
+      "prompt": "Reply as Knafeh: say yes and that you want to rest a little.",
+      "choices": [
+        {
+          "id": "0",
+          "text": "آه، بدي أرتاح شوي.",
+          "rationale": "This accepts the offer and says he wants a little rest.",
+          "help": "Āh, biddi artāḥ shwayy.",
+          "meaning": "Yes, I want to rest a little."
+        },
+        {
+          "id": "1",
+          "text": "أنا تعبان كمان.",
+          "rationale": "This says he is tired too, but does not answer the offer.",
+          "help": "Ana taʿbān kamān.",
+          "meaning": "I’m tired too. (Knafeh speaking)"
+        },
+        {
+          "id": "2",
+          "text": "شو عامل؟",
+          "rationale": "This asks how someone is doing rather than accepting rest.",
+          "help": "Shū ʿāmel?",
+          "meaning": "How are you doing? (casual check-in to Knafeh)"
+        }
+      ],
+      "acceptedId": "0",
+      "explanation": "Āh answers yes; biddi artāḥ shwayy says what Knafeh wants. This is practice with choices, not independent production.",
+      "sourceIndex": 0,
+      "target": "e01-06"
+    }
+  ],
+  "reviewer": "",
+  "reviewEvidence": "",
+  "rightsEvidence": ""
+}

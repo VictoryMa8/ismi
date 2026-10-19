@@ -6,6 +6,7 @@ import RecallReports from './RecallReports.vue';
 import CharacterMapping from './CharacterMapping.vue';
 import CulturalMediaConsole from './CulturalMediaConsole.vue';
 import AlphabetConsole from './AlphabetConsole.vue';
+import StoryConsole from './StoryConsole.vue';
 import BackControl from './BackControl.vue';
 import {
   CheckCircle2,
@@ -48,7 +49,7 @@ const emit = defineEmits<{
 const withdrawalReason = ref('');
 const draftCourse = ref<CourseId>('levantine');
 const versions = ref<CurriculumVersionSummary[]>([]);
-const consoleSection = ref<'lessons' | 'media' | 'alphabet'>('lessons');
+const consoleSection = ref<'lessons' | 'media' | 'alphabet' | 'stories'>('lessons');
 const selected = ref<CurriculumVersionDetail | null>(null);
 const lessonJson = ref('');
 const sources = ref<CurriculumSource[]>([]);
@@ -419,9 +420,11 @@ function formatDate(value: string | null): string {
     <nav class="culture-admin-toolbar" aria-label="Console sections">
       <button type="button" class="secondary-action" :aria-pressed="consoleSection === 'lessons'" @click="consoleSection = 'lessons'">Lessons</button>
       <button type="button" class="secondary-action" :aria-pressed="consoleSection === 'media'" @click="consoleSection = 'media'">Watch &amp; listen</button>
+      <button type="button" class="secondary-action" :aria-pressed="consoleSection === 'stories'" @click="consoleSection = 'stories'">Stories</button>
       <button type="button" class="secondary-action" :aria-pressed="consoleSection === 'alphabet'" @click="consoleSection = 'alphabet'">Alphabet</button>
     </nav>
-    <AlphabetConsole v-if="consoleSection === 'alphabet'" />
+    <StoryConsole v-if="consoleSection === 'stories'" />
+    <AlphabetConsole v-else-if="consoleSection === 'alphabet'" />
     <CulturalMediaConsole v-else-if="consoleSection === 'media'" />
     <template v-else>
     <div class="console-safety-note">

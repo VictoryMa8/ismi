@@ -841,7 +841,7 @@ needs separate learner evidence.
 **Depends on:** F03/F04/F06 and approved curriculum; F22 for independently graded
 typed responses. Character redesign and external media curation are independent.
 
-**Evidence:** [expanded narrative scope and checks](../../docs/learning-engagement-plan.md#f23-recurring-mini-stories).
+**Evidence:** [implementation, first candidate and verification](../mini-stories.md); [expanded narrative scope and checks](../../docs/learning-engagement-plan.md#f23-recurring-mini-stories).
 
 ### F23.1 First text episode
 
@@ -859,7 +859,7 @@ no listening claim; a later audio edition requires F09 accepted recordings/trans
 **Depends on:** F03/F04/F06 and approved curriculum; F22 if the response is independently
 typed/graded, otherwise report assisted evidence honestly. F09 is needed only for audio.
 
-**Evidence:** [expanded narrative scope and checks](../../docs/learning-engagement-plan.md#f23-recurring-mini-stories).
+**Evidence:** [implementation, first candidate and verification](../mini-stories.md); [expanded narrative scope and checks](../../docs/learning-engagement-plan.md#f23-recurring-mini-stories).
 
 **Parent limit:** F23's remaining two text episodes need their own child scopes;
 listening editions need separately scoped F09 recordings/transcripts.

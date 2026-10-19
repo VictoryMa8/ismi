@@ -21,9 +21,12 @@ public sealed class IsmiDbContext(DbContextOptions<IsmiDbContext> options)
 
     public DbSet<AlphabetPackRecord> AlphabetPacks => Set<AlphabetPackRecord>();
 
+    public DbSet<StoryPackRecord> StoryPacks => Set<StoryPackRecord>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<StoryPackRecord>(e => { e.HasKey(r => r.Id); e.Property(r => r.Revision).IsConcurrencyToken(); });
         builder.Entity<AlphabetPackRecord>(entity =>
         {
             entity.HasKey(e => e.Id);
