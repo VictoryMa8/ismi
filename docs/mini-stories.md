@@ -168,3 +168,8 @@ Ordinary startup performs no publication. The publication exception is not first
 episode linguistic acceptance and does not authorize bulk episode authoring.
 
 [Rollout and preservation evidence](releases/2026-10-18-mini-stories.md).
+
+The authorized 0.0.4 rollout is now verified: API/frontend deployed, exact first
+text preview v1 published, nine story browser/63 API/five deployment tests pass.
+The [release record](releases/2026-10-18-mini-stories.md) records the exact revisions,
+publication hashes, preserved existing data, backups and capacity recovery.

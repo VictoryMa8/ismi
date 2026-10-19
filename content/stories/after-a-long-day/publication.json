@@ -1,0 +1,29 @@
+{
+  "releaseDate": "2026-10-18",
+  "target": "existing development preview; not beta",
+  "applicationVersion": "0.0.4",
+  "applicationRevision": "99f2de49ecea9735bf226abf429bf4d4d2757e93",
+  "episodeId": "after-a-long-day-01",
+  "version": 1,
+  "packageFile": "01.pack.json",
+  "packageSha256": "58a0827fdeffd2b4469657fc4ed696a15b97f1003670f4a02c7ae97256b63c7b",
+  "savedContentHash": "45bb93860e765d0fb75d67b06f50d4b802495ebe758e8291c6a763534ce7b1af",
+  "publicContentHash": "6149a74caebba924f0fb553a4da3ac85fe20123b3ceeb611d7b916809dff85aa",
+  "publicationMode": "owner-authorized-unreviewed-text-only-preview",
+  "linguisticReview": "pending",
+  "sourceRightsAcceptance": "pending",
+  "reviewer": "",
+  "reviewEvidence": "",
+  "rightsEvidence": "",
+  "normalApprovedBy": null,
+  "storyAudio": "none",
+  "betaIncluded": false,
+  "auditActions": [
+    "draft-saved",
+    "authorize-text-preview",
+    "publish"
+  ],
+  "unchangedExistingTables": 17,
+  "existingRecordingsAndKeys": "unchanged",
+  "evidence": "../../../docs/releases/2026-10-18-mini-stories.md"
+}

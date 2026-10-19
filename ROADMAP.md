@@ -65,12 +65,13 @@ This is a reconciliation of repository/release evidence, **not a new live audit*
 
 | Layer | Latest recorded state | Evidence / limit |
 | --- | --- | --- |
-| Frontend application | F31 About/FAQ page, Beta 0.0.2, `536832b` verified Vercel Ready on existing aliases October 18; documentation follow-up may advance revision | [About rollout](docs/releases/2026-10-18-about.md); prior [learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md) |
-| ASP.NET API | Restored healthy exact `08fed75` October 18 after `30a393e` notice regression hid French/Khmer | [Learner clarity rollout](docs/releases/2026-10-18-learner-clarity.md); SQLite/assets verified; fresh five-per-course counts and all ten French/Khmer URLs pass; no curriculum publication |
+| Frontend application | F23 stories and exact preview support, Beta 0.0.4, `99f2de4` verified Vercel Ready on existing aliases October 18; documentation follow-up may advance revision | [Story rollout](docs/releases/2026-10-18-mini-stories.md); prior [About rollout](docs/releases/2026-10-18-about.md) |
+| ASP.NET API | Healthy exact `99f2de4` deployed October 18; one exact story preview published through service | [Story rollout](docs/releases/2026-10-18-mini-stories.md); all 17 existing tables/assets preserved; course catalog and all ten French/Khmer URLs unchanged |
 | Levantine Everyday | Lesson 1 v4 with S0 synthetic prompt audio; lessons 3/6 v3, other four v2 | [October 18 publication](docs/releases/2026-10-18-s0-audio.md); existing publications preserved |
 | French lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F25.2.1 audit](content/french/meet-01/publication.json); no accepted linguistic/rights review or human audio |
 | Khmer lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F26.2.1 audit](content/khmer/meet-01/publication.json); no human audio/accepted linguistic review |
 | Alphabet | Five exact v1 inventory-only previews; full five text-only draft packs remain unpublished | [F28 scope](docs/alphabet-text-only-completion.md); F30 acceptance/release remains |
+| Mini-stories | Exact A little rest v1 **unreviewed, text-only** preview | [F23.1.1 publication](content/stories/after-a-long-day/publication.json); normal human/source acceptance pending, no beta inclusion |
 | Cultural media | Application deployed; four local research editions, hosted catalog empty at last verification | [F21 release](docs/releases/2026-10-15-cultural-media.md) |
 | Beta | Not released; invitation/pilot/content/access/provider gates remain | F18; no French/Khmer beta inclusion inferred |
 
@@ -118,7 +119,7 @@ The next-action text names the actor; use the record before taking action.
 | [F18 · Invite-only beta readiness](#f18-invite-only-beta-readiness) | Agent: split remaining invite enforcement, reports/quarantine and operations into bounded tasks. Owner: resume F18.1 only explicitly. |
 | [F26 · Khmer course](#f26-khmer-course) | Owner: designate review route and source/help/reading dispositions. Agent: finish first-unit acceptance/pilot before bulk units 2–12. |
 | [F26.3 · Khmer script, sounds, input and starting check](#f263-khmer-script-sounds-input-and-starting-check) | Reviewer: select inventory/help and sound modules. Agent: integrate accepted modules and actual device checks; reuse F28/F30 rather than duplicate explorer. |
-| [F23 · Recurring mini-stories](#f23-recurring-mini-stories) | Owner: review F23.1. Agent: scope episodes two/three after first review; shared machinery is implemented locally. |
+| [F23 · Recurring mini-stories](#f23-recurring-mini-stories) | Owner: review F23.1. Agent: scope episodes two/three after first review; shared machinery and exact unreviewed preview are deployed. |
 
 ### Review pending
 
@@ -129,7 +130,7 @@ The next-action text names the actor; use the record before taking action.
 | [F21 · Cultural watch and listen recommendations](#f21-cultural-watch-and-listen-recommendations) | Agent: resolve F21.1 source/access/runtime gaps; owner reviews exact editions; F21.5 retains real AT/release checks. |
 | [F21.1 · Curation and first four collections](#f211-curation-and-first-four-collections) | Agent: verify precise runtime/edition, playback, region/access/support and editorial suitability; owner records dispositions. |
 | [F26.2 · Khmer first unit](#f262-khmer-first-unit) | Reviewer/owner: disposition exact phrases/answers/segments/sources; agent reconciles changes before any new approval/publication. |
-| [F23.1 · First text episode](#f231-first-text-episode) | Owner: review exact A little rest scene/check/role/source candidate; no publication yet. |
+| [F23.1 · First text episode](#f231-first-text-episode) | Owner: review exact A little rest scene/check/role/source candidate; v1 is published only under the unreviewed exception. |
 
 ### Input needed
 
@@ -174,12 +175,6 @@ The next-action text names the actor; use the record before taking action.
 | [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Agent after implementation authorization: map phrases/patterns/notes to exact approved sources and console metadata. |
 | [F26.4 · Khmer remaining units and reference material](#f264-khmer-remaining-units-and-reference-material) | Agent after first-unit review/pilot: revise sequence and author source-backed bounded batches. |
 
-### Delivery pending
-
-| ID / scope | Next action or remaining gate |
-| --- | --- |
-| [F23.1.1 · Exact first-story development preview](#f2311-exact-first-story-development-preview) | Agent: deploy and publish the exact owner-authorized unreviewed/text-only package; verify preserved data. |
-
 ### Deferred
 
 | ID / scope | Next action or remaining gate |
@@ -190,6 +185,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F23.1.1 · Exact first-story development preview](#f2311-exact-first-story-development-preview) | Deployed 0.0.4 and published exact v1 unreviewed/text-only; normal F23.1 review/access gates remain. |
 | [F31 · About and FAQ page](#f31-about-and-faq-page) | Separate page and shared FAQ deployed as 0.0.2; linked from landing and Account; no remaining work in this scope. |
 | [F27.3 · Learner clarity and mobile fixes](#f273-learner-clarity-and-mobile-fixes) | UI fixes delivered; preview availability restored on prior API; source regression corrected in `34a936b`. |
 | [F25.2.1 · Owner-authorized French text-only development preview](#f2521-owner-authorized-french-text-only-development-preview) | Five exact v1 previews published; normal F25 review/audio/pilot/depth gates remain. |
@@ -704,8 +700,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 ### F23 Recurring mini-stories
 
 - **Work state:** Partial.
-- **Readiness:** Implementation — shared text-story machinery complete; remaining episode scopes follow first review; content — first episode draft and linked three-episode outline; verification — automated candidate checks, real access/learner evidence missing.
-- **Delivery:** Application — Local/uncommitted, candidate 0.0.4; content publication — None.
+- **Readiness:** Implementation — shared text-story machinery complete; remaining episode scopes follow first review; content — first unreviewed preview and linked arc outline; two episodes unauthored; verification — automated candidate checks, real access/learner evidence missing.
+- **Delivery:** Application — Deployed 0.0.4, application source `99f2de4`; content publication — Exact first episode v1 unreviewed/text-only; remaining episodes unauthored.
 - **Scope:** Linked three-episode text story arc using taught Levantine language; audio is a separate extension.
 - **Next action:** Owner: review F23.1's exact scene/check/role/source candidate. Agent: reconcile feedback, then scope episodes two/three after first review.
 - **Authorization:** Owner authorized F23 implementation October 18. Deployment and exact unreviewed-preview publication were authorized October 18; review/source-rights acceptance remain pending; the first-episode review sequence and no-assumed-Today-accounting rule are retained.
@@ -715,8 +711,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 ### F23.1 First text episode
 
 - **Work state:** Review pending.
-- **Readiness:** Implementation — Complete: console, reader, source/version/identity and offline safeguards; content — Unreviewed first episode draft; verification — automated API/browser/build checks, actual screen-reader/device/Safari/learner checks missing.
-- **Delivery:** Application — Local/uncommitted, candidate 0.0.4; content publication — Exact unreviewed preview authorized; normal approval absent.
+- **Readiness:** Implementation — Complete: console, reader, source/version/identity and offline safeguards; content — Unreviewed first-episode text preview; verification — automated API/browser/build checks, actual screen-reader/device/Safari/learner checks missing.
+- **Delivery:** Application — Deployed 0.0.4, application source `99f2de4`; content publication — Exact first episode v1 unreviewed/text-only; normal approval absent.
 - **Scope:** One reviewed text episode, two comprehension checks and a response, with offline/version/identity safeguards.
 - **Next action:** Owner: disposition A little rest's exact scenes, checks, response rationales, roles and source/rights reuse in Stories console; actual access checks and normal reviewed publication still precede completion.
 - **Authorization:** Owner authorized implementation October 18; later authorized deployment and only the exact unreviewed text-preview publication, keeping review/rights pending. Audio is outside this text scope; no Today credit added.
@@ -725,11 +721,11 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F23.1.1 Exact first-story development preview
 
-- **Work state:** Delivery pending.
-- **Readiness:** Implementation — Complete: pinned exception and honest notices; content — Exact first episode unreviewed; verification — API/build/browser automation, target/source checks prepared.
-- **Delivery:** Application — Local candidate 0.0.4; content publication — Authorized, not yet executed.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete: pinned exception and honest notices; content — Exact first episode unreviewed; verification — 63 API/nine story-browser/five deploy tests, hosted source/projection and preservation checks pass.
+- **Delivery:** Application — Deployed 0.0.4 (`99f2de4` source); content publication — Exact v1 unreviewed/text-only preview.
 - **Scope:** Deploy and publish only A little rest as an unreviewed, text-only development preview, preserving pending review/source-rights and no story audio/beta inclusion.
-- **Next action:** Agent: deploy exact candidate, publish the pinned package through the service, verify hosted projection and unchanged existing data/assets.
+- **Next action:** None in this exact exception scope. Normal F23.1 human/source/access acceptance and the rest of F23 remain open.
 - **Authorization:** Owner requested deploy/publication and explicitly selected this exact unreviewed text-only exception October 18. No changed/additional episodes or broader gate waiver.
 - **Completion gate / evidence:** [Exact authorization, pin, rollout and preservation evidence](docs/releases/2026-10-18-mini-stories.md).
 - **Dependencies:** Exact hosted Everyday lesson-one v4; F23.1 application. Normal F23 review/release gates remain independent.
@@ -1196,7 +1192,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
-- **October 18 — F23:** text-story console/reader/offline machinery and first exact Everyday v4 draft implemented locally as 0.0.3. First episode awaits human/source acceptance; remaining two episodes follow that review. No publication/deployment or Today credit. [Evidence](docs/mini-stories.md).
+- **October 18 — F23:** text-story machinery and exact A little rest v1 unreviewed/text-only preview deployed as 0.0.4 (`99f2de4` source). Existing tables/assets preserved. Normal human/source/access acceptance and remaining two episodes stay open; no Today credit. [Evidence](docs/mini-stories.md).
 
 
 - **October 18 — F27.3:** mobile Practice text, plain study/response labels, one Today resume action, silent grace, hidden optional weekly activities and shared French/Khmer character presentation UI delivered; notice regression corrected in `34a936b`, working API restored to `08fed75`. All ten French/Khmer previews available again; historical-notice tests now independent of policy constants. Curriculum unchanged.
