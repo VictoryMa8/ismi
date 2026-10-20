@@ -61,4 +61,27 @@ beta acceptance. Current delivery and next action live in ROADMAP.md.
 The owner authorized commit/push and deployment after local verification. The
 existing Vercel Git integration and programmatic alwaysdata workflow are the
 selected delivery routes. Saved credentials and SSH access passed the deployment
-check before committing. Exact revision and delivery results will be recorded here.
+check before committing.
+
+On October 19, 2026 (America/Chicago), implementation revision
+`2a4cdee86839f3d018385118c6eb1225051058e5` was committed and pushed on `main`.
+Vercel confirmed **Ready**, deployment `dpl_FRzHTMFsua29Vn6eyt3ooxgDLjhK`, at
+[the immutable frontend](https://ismi-g4v6mzb5w-victorys-projects-c1cb4594.vercel.app)
+with existing `ismi-arabic.vercel.app` and `ismi-ruby.vercel.app` aliases. Its
+production target is the established free development preview. A documentation
+follow-up push may advance the frontend Git revision without changing Beta 0.0.9;
+the API remains pinned to the implementation revision.
+
+The normal API workflow deployed that exact revision to
+[the existing API](https://ismi.alwaysdata.net). Health returned `healthy` and
+`1.0.0+2a4cdee86839f3d018385118c6eb1225051058e5`. Assembly SHA verification,
+SQLite integrity, recordings and cookie-key preservation passed. Application
+rollback and online database backup remain at
+`/home/ismi/ismi/deployments/20261020-041024-2a4cdee86839` (UTC directory date).
+
+A public before/after catalog comparison confirms unchanged lesson counts:
+Levantine 33, French 5, Khmer 5, general MSA 0 and Quranic 0. Availability and
+unreviewed-preview counts match; the complete five-pack alphabet catalog, including
+all exact preview versions/hashes, is unchanged. Both `msa` and `quranic` report
+`groupId: msa`. No curriculum publication was performed or review state changed.
+The rollout adds no beta inclusion or human/source/audio acceptance.
