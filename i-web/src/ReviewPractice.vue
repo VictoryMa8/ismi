@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PhraseAnatomy from './PhraseAnatomy.vue';
 import RecordingAttribution from './RecordingAttribution.vue';
 import {
   computed,
@@ -846,6 +847,9 @@ defineExpose({ start });
                     <p>{{ model?.meaning }}</p>
                   </div>
                   <p>{{ feedback.explanation }}</p>
+                  <template v-for="(card, cardIndex) in turn.lesson.introduction?.teachingCards ?? []" :key="cardIndex">
+                    <PhraseAnatomy v-if="[turn.step.prompt, model].some(p => p && p.arabic === card.phrase.arabic && p.arabizi === card.phrase.arabizi && p.meaning === card.phrase.meaning)" :lesson="turn.lesson" :card-index="cardIndex" />
+                  </template>
                   <p v-if="!feedback.isCorrect">{{ feedback.retryHint }}</p>
                 </div>
                 <details

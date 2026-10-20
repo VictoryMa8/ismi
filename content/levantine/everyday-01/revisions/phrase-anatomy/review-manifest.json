@@ -1,0 +1,19 @@
+{
+  "basePackage": "content/levantine/everyday-01/revisions/recall/01-lesson.json",
+  "baseSha256": "e03c6db0d6cf6cb8bb9169283e6f78de6e797ab1443c3d009131214f791d35bc",
+  "candidatePackage": "content/levantine/everyday-01/revisions/phrase-anatomy/01-lesson.json",
+  "candidateSha256": "8dfceea1c39032a7dcdba670fa147934288bb1780c82b923cc63fe5471b07a01",
+  "reviewDisposition": "pending",
+  "reviewer": "",
+  "publication": "not authorized",
+  "teachingCardIndexes": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    6
+  ],
+  "grammarReferences": 2,
+  "usageNotes": 3
+}

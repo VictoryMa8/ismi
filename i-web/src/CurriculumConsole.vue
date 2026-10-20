@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import LanguageSupportReview from './LanguageSupportReview.vue';
 import { computed, onMounted, ref } from 'vue';
 import { courses, type CourseId } from './courses';
 import RecordingEditor from './RecordingEditor.vue';
@@ -632,6 +633,7 @@ function formatDate(value: string | null): string {
           <p v-if="dirty && canEdit" role="status">
             Save your changes before validation or approval.
           </p>
+          <LanguageSupportReview :lesson-json="lessonJson" />
           <CharacterMapping :lesson-json="lessonJson" />
           <RecordingEditor
             v-model="lessonJson"

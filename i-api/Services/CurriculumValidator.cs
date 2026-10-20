@@ -30,6 +30,7 @@ public sealed class CurriculumValidator(RecordingStore recordings, CourseTextPre
         var needsPronunciationHelp = lesson.TrackId != "french" || lesson.ContentReview?.HelpConvention != "none";
         CharacterRegistry.Validate(lesson, errors);
         RecallValidator.Validate(lesson, sources, errors);
+        LanguageSupportValidator.Validate(lesson, sources, forPublication, errors);
 
         Required(errors, lesson.Id, "Lesson ID is required.");
         if (lesson.Id.Length > 100) errors.Add("Lesson ID cannot exceed 100 characters.");
@@ -225,6 +226,7 @@ public sealed class CurriculumValidator(RecordingStore recordings, CourseTextPre
     public static bool HasReadableShape(LessonResponse? lesson, IReadOnlyCollection<CurriculumSourceInput>? sources) =>
         lesson is { Id: not null, TrackId: not null, Steps: not null }
         && RecallValidator.HasShape(lesson.Recall)
+        && LanguageSupportValidator.HasShape(lesson.LanguageSupport)
         && (lesson.Vocabulary is null || lesson.Vocabulary.All(entry => entry is
             { Forms: not null, SourceLocators: not null }))
         && sources is not null && sources.All(source => source is not null)

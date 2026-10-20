@@ -22,9 +22,23 @@ public sealed record LessonResponse(
     int SchemaVersion = 1,
     CourseContentReview? ContentReview = null,
     [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-    LessonPublicationNotice? PublicationNotice = null);
+    LessonPublicationNotice? PublicationNotice = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    LessonLanguageSupport? LanguageSupport = null);
 
 public sealed record LessonPublicationNotice(string ReleaseId, string Label, string Details);
+
+// Versioned with the lesson: no independent mutable reference catalog or inferred morphology.
+public sealed record LessonLanguageSupport(string ReviewDisposition, string Reviewer,
+    IReadOnlyList<PhraseAnatomy> Phrases, IReadOnlyList<GrammarReference> References,
+    IReadOnlyList<PhraseUsageNote> UsageNotes);
+public sealed record PhraseAnatomy(int TeachingCardIndex, string LiteralMeaning,
+    IReadOnlyList<PhraseFunction> Functions, IReadOnlyList<string> SourceLocators);
+public sealed record PhraseFunction(int ChunkIndex, string Label, IReadOnlyList<string> ReferenceIds);
+public sealed record GrammarReference(string Id, string Title, string Explanation,
+    IReadOnlyList<string> SearchTerms, IReadOnlyList<int> ExampleCardIndexes, IReadOnlyList<string> SourceLocators);
+public sealed record PhraseUsageNote(string Id, string Text, IReadOnlyList<int> TeachingCardIndexes,
+    IReadOnlyList<string> SourceLocators);
 
 public sealed record LessonCast(string RegistryVersion, IReadOnlyList<string> CharacterIds);
 public sealed record CharacterRoles(string? SpeakerId = null, string? AddresseeId = null,

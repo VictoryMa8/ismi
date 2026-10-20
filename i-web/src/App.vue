@@ -41,6 +41,8 @@ import LessonScroll from './LessonScroll.vue';
 import SoundToggle from './SoundToggle.vue';
 import ReviewPractice from './ReviewPractice.vue';
 import RecallPractice from './RecallPractice.vue';
+import PhraseAnatomy from './PhraseAnatomy.vue';
+import GrammarLibrary from './GrammarLibrary.vue';
 import LearnedWords from './LearnedWords.vue';
 import CulturalPicks from './CulturalPicks.vue';
 import AlphabetExplorer from './AlphabetExplorer.vue';
@@ -156,17 +158,17 @@ const completionSummary = computed(() => {
   };
 });
 const pendingSyncCount = ref(0);
-type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'practice-culture' | 'practice-alphabet' | 'practice-stories' | 'progress' | 'words' | 'account';
+type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'practice-culture' | 'practice-alphabet' | 'practice-stories' | 'practice-grammar' | 'progress' | 'words' | 'account';
 const pageNames: Record<string, PageName> = {
   today: 'today', courses: 'courses', practice: 'practice', 'practice/review': 'practice-review',
   'practice/checkpoints': 'practice-checkpoints', 'practice/recall': 'practice-recall', 'practice/lessons': 'practice-lessons',
-  'practice/culture': 'practice-culture', 'practice/alphabet': 'practice-alphabet', 'practice/stories': 'practice-stories',
+  'practice/culture': 'practice-culture', 'practice/alphabet': 'practice-alphabet', 'practice/stories': 'practice-stories', 'practice/grammar': 'practice-grammar',
   progress: 'progress', words: 'words', account: 'account',
 };
 const pageTitles: Record<PageName, string> = {
   today: 'Today', courses: 'Courses', practice: 'Practice', 'practice-review': 'Review',
   'practice-checkpoints': 'Checkpoints', 'practice-recall': 'Write a response', 'practice-lessons': 'Lesson practice',
-  'practice-culture': 'Watch & listen', 'practice-alphabet': 'Alphabet', 'practice-stories': 'Mini-stories',
+  'practice-culture': 'Watch & listen', 'practice-alphabet': 'Alphabet', 'practice-stories': 'Mini-stories', 'practice-grammar': 'Grammar reference',
   progress: 'Progress', words: 'Learned words', account: 'Account',
 };
 const navigation = [
@@ -1665,6 +1667,7 @@ async function finishLesson() {
           <h1>Practice</h1>
         </header>
         <div id="practice-hub" class="feature-grid">
+          <a class="feature-tile accent-red" href="#/practice/grammar"><span class="feature-badge" aria-hidden="true"><BookOpen :size="26" /></span><span class="feature-copy"><strong>Grammar reference</strong></span></a>
           <a v-if="viewedCourse === 'levantine'" class="feature-tile accent-green" href="#/practice/stories"><span class="feature-badge" aria-hidden="true"><BookOpen :size="26" /></span><span class="feature-copy"><strong>Mini-stories</strong><small>Read with Fattoush and Knafeh</small></span></a>
           <a class="feature-tile accent-gold tile-alphabet" href="#/practice/alphabet">
             <span class="feature-badge" aria-hidden="true"><BookOpen :size="26" /></span><span class="feature-copy"><strong>Alphabet</strong><small>{{ activeCourse.name }}</small></span>
@@ -1688,6 +1691,7 @@ async function finishLesson() {
       <template v-if="practiceChild && studyPageAvailable">
         <BackControl class="page-back" href="#/practice">Back to Practice</BackControl>
         <header class="page-heading"><h1>{{ pageTitle }}</h1></header>
+        <GrammarLibrary v-if="page === 'practice-grammar'" :scope="reviewScope" :lessons="activeLessons" @open-lesson="openGlossaryLesson" />
         <div v-if="page === 'practice-review'" id="practice-review"></div>
         <div v-if="page === 'practice-checkpoints'" id="practice-checkpoints"></div>
         <div v-if="page === 'practice-recall'" id="practice-recall"></div>
@@ -2313,6 +2317,9 @@ async function finishLesson() {
                       </p>
                     </div>
                     <p>{{ attemptFeedback.explanation }}</p>
+                    <template v-for="(card, cardIndex) in lesson.introduction?.teachingCards ?? []" :key="cardIndex">
+                      <PhraseAnatomy v-if="[currentStep.prompt, currentStep.answers.find(a => a.id.toLowerCase() === attemptFeedback!.correctAnswerId.toLowerCase())].some(p => p && p.arabic === card.phrase.arabic && p.arabizi === card.phrase.arabizi && p.meaning === card.phrase.meaning)" :lesson="lesson" :card-index="cardIndex" />
+                    </template>
                     <p v-if="!isCorrect && attemptFeedback.retryHint">
                       <em>{{ attemptFeedback.retryHint }}</em>
                     </p>

@@ -1,0 +1,14 @@
+{
+  "package": "content/levantine/everyday-01/revisions/phrase-anatomy/release/01-lesson.json",
+  "sha256": "1762dbf74a3dbbe52dc2924fda86197ad60075defceeee9652cea223d196f35b",
+  "previousHostedRecordId": 29,
+  "previousHostedVersion": 4,
+  "ownerAcceptance": "October 19, 2026: approve commit deploy and publish for me",
+  "reviewer": "Project owner — approval delegated to Codex, October 19, 2026",
+  "nativeExpertReview": false,
+  "preservedAudioPrompts": 8,
+  "changedFields": [
+    "languageSupport",
+    "one additional original-authoring source"
+  ]
+}

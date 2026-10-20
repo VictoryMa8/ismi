@@ -10,6 +10,7 @@ import {
 import type { TeachingCheckpoint } from './lessonSessions';
 import { textAttributes } from './courses';
 import type { LessonResponse, LessonTeachingCard } from './types';
+import PhraseAnatomy from './PhraseAnatomy.vue';
 import LessonTransition from './LessonTransition.vue';
 import LessonStages from './LessonStages.vue';
 import LessonScroll from './LessonScroll.vue';
@@ -231,6 +232,7 @@ async function back() {
               </p>
               <p class="phrase-meaning">{{ card.phrase.meaning }}</p>
             </div>
+            <PhraseAnatomy v-if="stage === 'learn'" :lesson="lesson" :card-index="index" />
             <dl
               v-if="stage === 'learn' && card.chunks.length"
               class="phrase-chunks"

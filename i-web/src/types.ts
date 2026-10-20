@@ -132,7 +132,14 @@ export type LessonVocabulary = TargetText & {
 }
 
 export type LessonPublicationNotice = { releaseId: string; label: string; details: string }
+export type LessonLanguageSupport = {
+  reviewDisposition: 'pending' | 'accepted'; reviewer: string
+  phrases: Array<{ teachingCardIndex: number; literalMeaning: string; functions: Array<{ chunkIndex: number; label: string; referenceIds: string[] }>; sourceLocators: string[] }>
+  references: Array<{ id: string; title: string; explanation: string; searchTerms: string[]; exampleCardIndexes: number[]; sourceLocators: string[] }>
+  usageNotes: Array<{ id: string; text: string; teachingCardIndexes: number[]; sourceLocators: string[] }>
+}
 export type LessonResponse = {
+  languageSupport?: LessonLanguageSupport | null
   publicationNotice?: LessonPublicationNotice | null
   schemaVersion?: number
   contentReview?: { languageTag: string; variety: string; helpConvention: string; reviewer: string; reviewDisposition: string; rightsDisposition: string; criticalIssues: string[]; engineeringFixture?: boolean; sourceLanguages?: Record<string, string> }

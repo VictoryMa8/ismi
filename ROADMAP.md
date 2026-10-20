@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 18, 2026 · **Single source of current feature state and next work.**
+Updated October 19, 2026 · **Single source of current feature state and next work.**
 
 ## Agent entry
 
@@ -50,7 +50,7 @@ not native-expert review. “N/A” means that layer is outside the bounded scop
 | --- | --- | --- | --- | --- |
 | F12 Levantine expansion | Partial course | Follow-on unit drafted; twelve-week depth absent | Exact draft review, speaker dispositions, remaining authoring | Shared app deployed / new drafts private |
 | F15 study plan/placement | Settings and Levantine check complete | Remaining reading/sound modules absent | Scope other-track assessments and accepted modules | Delivered slices deployed |
-| F17 learning support | Habits/can-do/UI complete | Grammar/reference slice not authored | Bound grammar, reminder and XP work before implementing | Selected children deployed |
+| F17 learning support | Habits/can-do/UI deployed; grammar software complete locally | Six anatomy phrases, two patterns and three notes drafted | Exact grammar/source acceptance, publication and real AT checks; reminder/XP scope | Selected children deployed / grammar candidate private |
 | F21 cultural media | Complete | Four research editions awaiting acceptance | Real media/editorial checks, AT, exact publication | App deployed / media unpublished |
 | F24 multi-language foundation | Complete | Reviewed French/Khmer first units still required | Real input/AT/Safari offline and observed mixed-language pilot | App deployed / expansion release gated |
 | F25 French course | First-unit private flow complete; course partial | Five drafts; 55 lessons unauthored | Exact fluent/source acceptance, audio/check inputs, first-unit pilot | App deployed / five unreviewed text previews |
@@ -83,7 +83,7 @@ not a deployment command. UI availability is not curriculum completion.
 
 - Preserve the owner's selected engagement order: remaining **F23 → F17.5**;
   F22/F17.6/F17.7 are already delivered. F23 implementation was authorized October 18;
-  F17.5 remains planning-only and exact content publication remains separate. [Original scopes](docs/learning-engagement-plan.md).
+  F17.5 implementation authorized October 19; exact content publication remains separate. [Original scopes](docs/learning-engagement-plan.md).
 - Arabic content: review F12.1/F12.2 candidates before further release; F09 real
   recordings remain distinct from F19's narrowly authorized free-tier audition.
 - Multi-language: F24 software is deployed. Accepted F25/F26 first units and actual
@@ -115,7 +115,7 @@ The next-action text names the actor; use the record before taking action.
 | [F06.1 · Character art redesign](#f061-character-art-redesign) | Owner: decide whether to authorize the remaining profile/turnaround production; no current app call site needs it. |
 | [F12 · Levantine course expansion](#f12-levantine-course-expansion) | Owner: review F12.1 drafts. Agent: bound the next batch only after review; do not equate three drafts with twelve weeks. |
 | [F15 · Personal study plan and placement](#f15-personal-study-plan-and-placement) | Agent: scope remaining track-specific assessments/modules; reuse delivered F28 text-only explorer, with F30/F09 review/audio boundaries. |
-| [F17 · Learning support and gamification](#f17-learning-support-and-gamification) | Owner/agent: bound F17.5 and separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints. |
+| [F17 · Learning support and gamification](#f17-learning-support-and-gamification) | Owner: review F17.5 exact draft. Agent: bound separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints. |
 | [F18 · Invite-only beta readiness](#f18-invite-only-beta-readiness) | Agent: split remaining invite enforcement, reports/quarantine and operations into bounded tasks. Owner: resume F18.1 only explicitly. |
 | [F26 · Khmer course](#f26-khmer-course) | Owner: designate review route and source/help/reading dispositions. Agent: finish first-unit acceptance/pilot before bulk units 2–12. |
 | [F26.3 · Khmer script, sounds, input and starting check](#f263-khmer-script-sounds-input-and-starting-check) | Reviewer: select inventory/help and sound modules. Agent: integrate accepted modules and actual device checks; reuse F28/F30 rather than duplicate explorer. |
@@ -125,6 +125,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Agent: deliver owner-approved Beta 0.0.5 and exact rebased package, then record actual AT evidence separately. |
 | [F25.2 · French first unit](#f252-french-first-unit) | Reviewer/owner: disposition five private drafts; exact text, register, answers, segments and source acceptance remain. |
 | [F12.2 · Transliteration and pronunciation audit](#f122-transliteration-and-pronunciation-audit) | Owner: review exact corrections. Agent: record source/model dispositions and reconcile existing local drafts before integration. |
 | [F21 · Cultural watch and listen recommendations](#f21-cultural-watch-and-listen-recommendations) | Agent: resolve F21.1 source/access/runtime gaps; owner reviews exact editions; F21.5 retains real AT/release checks. |
@@ -172,7 +173,6 @@ The next-action text names the actor; use the record before taking action.
 | [F25.4 · French remaining units and reference material](#f254-french-remaining-units-and-reference-material) | Reviewer/agent: use first-unit review/pilot before bounded units 2–12 batches. |
 | [F25.6 · French pilot, publication and release evidence](#f256-french-pilot-publication-and-release-evidence) | Owner/reviewer: accepted text/audio and agreed setup precede the prepared pilot protocol. |
 | [F13 · MSA course](#f13-msa-course) | Owner/agent: define first unit, source/audio permissions and a bounded console-control extension. |
-| [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Agent after implementation authorization: map phrases/patterns/notes to exact approved sources and console metadata. |
 | [F26.4 · Khmer remaining units and reference material](#f264-khmer-remaining-units-and-reference-material) | Agent after first-unit review/pilot: revise sequence and author source-backed bounded batches. |
 
 ### Deferred
@@ -482,8 +482,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Readiness:** Implementation — Partial; content — Partial; verification — Partial.
 - **Delivery:** Application — Selected children deployed; content publication — No new grammar-reference content.
 - **Scope:** Learning support umbrella: habits/can-do/UI delivered; grammar, XP economy and reminders remain.
-- **Next action:** Owner/agent: bound F17.5 and separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints.
-- **Authorization:** Selected research priorities are planning; delivered children do not authorize remaining product/provider policies.
+- **Next action:** Owner: review F17.5 exact draft. Agent: bound separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints.
+- **Authorization:** F17.5 implementation authorized October 19; remaining reminder/XP product/provider policies and exact publication remain separate.
 - **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f17-learning-support-and-gamification).
 
 ### F17.1 Learner satisfaction
@@ -528,14 +528,14 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F17.5 Phrase anatomy and grammar reference
 
-- **Work state:** Planned.
-- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
-- **Delivery:** Application — None; content publication — None.
-- **Scope:** First scope: six phrases, two reusable grammar patterns, three sourced usage notes and searchable offline reference.
-- **Next action:** Agent after implementation authorization: map phrases/patterns/notes to exact approved sources and console metadata.
-- **Authorization:** Research priority selected October 12; implementation/publication not authorized by that selection.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f175-phrase-anatomy-and-grammar-reference).
-- **Dependencies:** F03/F04/F20, approved sources/content and publication approval.
+- **Work state:** Review pending.
+- **Readiness:** Implementation — Complete locally; content — Six phrases, two grammar patterns and three usage notes accepted by owner October 19; no native-expert review; verification — Automated checks recorded in feature note; actual screen-reader/device acceptance missing.
+- **Delivery:** Application — Local uncommitted candidate, Beta 0.0.5; content publication — Exact approved release package prepared; publication pending.
+- **Scope:** Six Levantine phrases, two reusable grammar patterns, three sourced usage notes, teaching/feedback/Words links and searchable offline reference.
+- **Next action:** Agent: commit/deploy Beta 0.0.5 and publish exact rebased owner-accepted package; actual AT evidence remains.
+- **Authorization:** Owner explicitly authorized approval, commit, deployment and publication October 19; no beta inclusion or expert-review claim.
+- **Completion gate / evidence:** [Original full contract](docs/planning/feature-scope-reference.md#f175-phrase-anatomy-and-grammar-reference); [implementation and verification](docs/phrase-anatomy.md); [pinned private candidate](content/levantine/everyday-01/revisions/phrase-anatomy/review-manifest.json).
+- **Dependencies:** F03/F04/F20, exact source/content acceptance and publication approval; actual access evidence remains required.
 
 ### F17.6 Can-do progress and outcome achievements
 
@@ -1192,6 +1192,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **October 19 — F17.5:** Beta 0.0.5 local implementation adds optional phrase anatomy, console metadata/review gates and searchable offline references. Six phrases/two patterns/three usage notes remain private, unreviewed drafts; publication, deployment and actual AT evidence remain separate. [Evidence](docs/phrase-anatomy.md).
+
 - **October 18 — F23:** text-story machinery and exact A little rest v1 unreviewed/text-only preview deployed as 0.0.4 (`99f2de4` source). Existing tables/assets preserved. Normal human/source/access acceptance and remaining two episodes stay open; no Today credit. [Evidence](docs/mini-stories.md).
 
 
@@ -1203,8 +1205,3 @@ not a fresh execution of every feature's tests or inspection of each database.
   owner selections reconciled through waveform comparison. Lesson one v4 published
   with eight synthetic prompt mappings; thirteen non-curriculum tables, other
   publications and existing assets preserved. F09/F18 gates remain separate.
-- **October 17, 2026 — roadmap structure:** replaced generic Active/Done grouping
-  with independent work state, implementation/content/verification readiness,
-  application/publication delivery, explicit actor/authorization and linked contracts
-  for every feature/child. Removed repeated chronological release summaries. No
-  product scope, publication, deployment, spending or deferral was newly authorized.

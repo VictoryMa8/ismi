@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import PhraseAnatomy from './PhraseAnatomy.vue';
 import RecordingAttribution from './RecordingAttribution.vue';
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { ApiRequestError, getLesson } from './api'
@@ -148,6 +149,7 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
             <ul v-else><li v-for="form in entry.forms" :key="form" dir="auto">{{ form }}</li></ul>
             <div v-for="context in entry.contexts" :key="`${context.lessonId}:${context.cardIndex}`" class="glossary-context">
               <p>{{ context.note }}</p>
+              <PhraseAnatomy v-if="packages.find(p => p.id === context.lessonId)" :lesson="packages.find(p => p.id === context.lessonId)!" :card-index="context.cardIndex" />
               <p v-if="context.recording"><RecordingAttribution :recording="context.recording" /><br /><bdi>{{ context.recording.sourceLocator }}</bdi><br />{{ context.recording.reviewNotes }}</p>
               <button type="button" @click="stopAudio(); emit('open-lesson', context.lessonId, context.cardIndex)">Open lesson: {{ context.title }}</button>
               <small>{{ context.version }} · Teaching card {{ context.cardIndex + 1 }}</small>

@@ -231,6 +231,8 @@ test('synced completions populate a second device and stay isolated from guests 
     } finally { await device.close() }
     await page.getByRole('link', { name: 'Account', exact: true }).click()
     await page.getByRole('button', { name: 'Sign out', exact: true }).click()
+    // Sign-out finishes loading the guest dashboard before its final Today redirect.
+    await expect(page).toHaveURL(/#\/today$/)
     await page.getByRole('link', { name: 'Words', exact: true }).click()
     await expect(glossary.getByText('0 entries', { exact: true })).toBeVisible()
     // A guest's offline queue must never enroll a new account in those lessons.

@@ -444,7 +444,7 @@ verification separately; no expert-review claim without actual evidence.
 
 **Depends on:** F03/F04/F20, approved sources/content and publication approval.
 
-**Evidence:** [expanded behavior and checks](../../docs/learning-engagement-plan.md#f175-phrase-anatomy-and-grammar-reference);
+**Evidence:** [implementation, validation and private candidate](../phrase-anatomy.md); [expanded behavior and checks](../../docs/learning-engagement-plan.md#f175-phrase-anatomy-and-grammar-reference);
 existing baseline [teaching](../../i-web/src/LessonTeaching.vue) and [glossary](../../docs/learned-word-glossary.md).
 
 ### F17.6 Can-do progress and outcome achievements
