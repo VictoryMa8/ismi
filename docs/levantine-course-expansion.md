@@ -186,8 +186,8 @@ runner; it was fixed before the passing run. An initial version-label assertion
 looked on Today instead of Account; the corrected test verifies the actual label.
 The sandbox prevented .NET test sockets, so local API/browser checks ran with
 reviewed elevated execution. No new libraries, network sources or providers were
-needed; all application delivery remains local/uncommitted, with no push, hosted
-publication or deployment.
+needed; at that initial software checkpoint application delivery was local/uncommitted.
+The later authorized twenty-lesson rollout is recorded below.
 
 ## October 19 twenty-lesson delivery evidence
 
@@ -198,3 +198,11 @@ and one for the separately discovered character-migration fix, following the ear
 0.0.6 plan/coverage feature. No extra increment for tests/docs or rollout retries.
 All twenty packages have 120 dialogue turns, 80 teaching cards, 120 contextual steps
 and 60 recall targets, with pending human/source acceptance and no human audio.
+
+Final delivery: Beta 0.0.8 source `f01fed0` deployed to the existing frontend/API;
+all twenty exact v1 previews published and every prior curriculum row/non-curriculum
+table/recording/key preserved. [Publication verification](../content/levantine/expansion-20/publication.json)
+records exact IDs, audit actions, pending review/rights and public payload matches.
+[Release evidence](releases/2026-10-19-levantine-expansion.md) retains rollback and
+backup locations. Current F12 cycle is complete by explicit owner scope revision;
+the final thirty and full human-quality obligations remain F12.6/F12.5.

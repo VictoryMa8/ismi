@@ -48,7 +48,7 @@ not native-expert review. “N/A” means that layer is outside the bounded scop
 
 | Feature | Implementation | Content | Missing evidence / next gate | Application / publication |
 | --- | --- | --- | --- | --- |
-| F12 Levantine expansion | Current twenty-lesson cycle prepared; remaining depth is F12.6 | Twenty new unreviewed text packages; thirty remaining slots unauthored | Authorized application/content delivery; F12.5 retains human acceptance | Beta 0.0.8 local / new previews unpublished |
+| F12.5/F12.6 full Levantine course | Current F12 twenty-lesson delivery cycle complete; remaining depth separate | Twenty new unreviewed previews; thirty further slots unauthored | Exact human/source/audio/outcome/access acceptance and later thirty-lesson checkpoint | Beta 0.0.8 deployed / twenty exact previews published |
 | F15 study plan/placement | Settings and Levantine check complete | Remaining reading/sound modules absent | Scope other-track assessments and accepted modules | Delivered slices deployed |
 | F17 learning support | Habits/can-do/UI and grammar software deployed | Six anatomy phrases, two patterns and three notes owner accepted/published | Real AT checks; reminder/XP scope | Selected children deployed / lesson-one v5 published |
 | F21 cultural media | Complete | Four research editions awaiting acceptance | Real media/editorial checks, AT, exact publication | App deployed / media unpublished |
@@ -65,9 +65,9 @@ This is a reconciliation of repository/release evidence, **not a new live audit*
 
 | Layer | Latest recorded state | Evidence / limit |
 | --- | --- | --- |
-| Frontend application | F17.5 phrase anatomy/reference, Beta 0.0.5, `b7b910c` verified Vercel Ready on existing aliases October 19; documentation follow-up may advance revision | [F17.5 rollout](docs/releases/2026-10-19-phrase-anatomy.md) |
-| ASP.NET API | Healthy exact `b7b910c` deployed October 19; F17.5 owner-accepted lesson-one v5 published through normal service | [F17.5 rollout](docs/releases/2026-10-19-phrase-anatomy.md); non-curriculum data, prior content and assets preserved; ten French/Khmer URLs available |
-| Levantine Everyday | Lesson 1 v5 adds owner-accepted phrase anatomy while preserving S0 audio; other lesson publications preserved | [F17.5 publication](docs/releases/2026-10-19-phrase-anatomy.md); [prior audio publication](docs/releases/2026-10-18-s0-audio.md) |
+| Frontend application | Beta 0.0.8 `f01fed0` verified Vercel Ready on existing aliases October 19; documentation follow-up may advance revision | [F12 rollout](docs/releases/2026-10-19-levantine-expansion.md); includes plan/coverage and Arabic word-preserving compatibility fix |
+| ASP.NET API | Healthy exact `f01fed0` deployed October 19; twenty exact F12 text previews published through normal service | [F12 rollout](docs/releases/2026-10-19-levantine-expansion.md); all prior curriculum rows, non-curriculum tables and assets preserved |
+| Levantine Everyday | Existing lesson-one v5/audio and all other publications unchanged; twenty new F12 v1 unreviewed/text-only lessons added at orders 11–30 | [F12 publication](content/levantine/expansion-20/publication.json); normal human/source/audio acceptance remains F12.5 |
 | French lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F25.2.1 audit](content/french/meet-01/publication.json); no accepted linguistic/rights review or human audio |
 | Khmer lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F26.2.1 audit](content/khmer/meet-01/publication.json); no human audio/accepted linguistic review |
 | Alphabet | Five exact v1 inventory-only previews; full five text-only draft packs remain unpublished | [F28 scope](docs/alphabet-text-only-completion.md); F30 acceptance/release remains |
@@ -118,12 +118,6 @@ The next-action text names the actor; use the record before taking action.
 | [F26 · Khmer course](#f26-khmer-course) | Owner: designate review route and source/help/reading dispositions. Agent: finish first-unit acceptance/pilot before bulk units 2–12. |
 | [F26.3 · Khmer script, sounds, input and starting check](#f263-khmer-script-sounds-input-and-starting-check) | Reviewer: select inventory/help and sound modules. Agent: integrate accepted modules and actual device checks; reuse F28/F30 rather than duplicate explorer. |
 | [F23 · Recurring mini-stories](#f23-recurring-mini-stories) | Owner: review F23.1. Agent: scope episodes two/three after first review; shared machinery and exact unreviewed preview are deployed. |
-
-### Delivery pending
-
-| ID / scope | Next action or remaining gate |
-| --- | --- |
-| [F12 · Levantine course expansion](#f12-levantine-course-expansion) | Agent: commit, deploy Beta 0.0.8 and publish exactly twenty unreviewed text previews; thirty remaining lessons moved to F12.6 by owner. |
 
 ### Review pending
 
@@ -191,9 +185,10 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F12.4 · Remaining Levantine authoring batches](#f124-remaining-levantine-authoring-batches) | Owner-revised twenty-package authoring slice complete; exact preview delivery is F12, final thirty slots are F12.6 and human acceptance is F12.5. |
+| [F12 · Levantine course expansion](#f12-levantine-course-expansion) | Owner-revised current cycle complete: twenty exact unreviewed previews published and Beta 0.0.8 deployed; final thirty are F12.6, human/full-depth acceptance is F12.5. |
+| [F12.4 · Remaining Levantine authoring batches](#f124-remaining-levantine-authoring-batches) | Owner-revised twenty-package authoring slice complete; exact preview delivery completed under F12, final thirty slots are F12.6 and human acceptance is F12.5. |
 | [F12.7 · Arabic word-preserving character migration](#f127-arabic-word-preserving-character-migration) | API/browser name adapter preserves ordinary Arabic words and literal escapes; immutable snapshots retained. |
-| [F12.3 · Twelve-week course plan and coverage](#f123-twelve-week-course-plan-and-coverage) | Beta 0.0.6 local; twelve-week console plan and stored coverage verified. No remaining work in this child; content review/authoring/release remain F12.1/F12.2/F12.4/F12.5. |
+| [F12.3 · Twelve-week course plan and coverage](#f123-twelve-week-course-plan-and-coverage) | Plan/coverage deployed with Beta 0.0.8; twelve-week console plan and stored coverage verified. No remaining work in this child; content review/full-depth acceptance remain F12.1/F12.2/F12.5 and future authoring remains F12.6. |
 | [F23.1.1 · Exact first-story development preview](#f2311-exact-first-story-development-preview) | Deployed 0.0.4 and published exact v1 unreviewed/text-only; normal F23.1 review/access gates remain. |
 | [F31 · About and FAQ page](#f31-about-and-faq-page) | Separate page and shared FAQ deployed as 0.0.2; linked from landing and Account; no remaining work in this scope. |
 | [F27.3 · Learner clarity and mobile fixes](#f273-learner-clarity-and-mobile-fixes) | UI fixes delivered; preview availability restored on prior API; source regression corrected in `34a936b`. |
@@ -396,11 +391,11 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F12 Levantine course expansion
 
-- **Work state:** Delivery pending.
+- **Work state:** Complete.
 - **Readiness:** Implementation — Current owner-revised cycle complete; content — Twenty new authored unreviewed text-only packages, thirty future slots moved to F12.6; verification — 67 API tests pass; four focused browser checks pass, including all twenty offline completions/reconnection; no human timing/audio/access acceptance.
-- **Delivery:** Application — Local/uncommitted Beta 0.0.8; content publication — New twenty-package preview unpublished; existing publications and three private Plans drafts untouched.
+- **Delivery:** Application — Beta 0.0.8 committed/pushed at `f01fed0`, Vercel Ready and alwaysdata API deployed at that exact source; content publication — Twenty exact v1 unreviewed/text-only previews published, all prior curriculum rows/data/assets preserved. Documentation follow-up may advance frontend revision.
 - **Scope:** Owner revised the current completion contract October 19 to the twelve-week plan/coverage software plus twenty additional lessons (orders 11–30), deployment and exact unreviewed text-only development-preview publication. Original twelve-week depth moves to F12.6 and human/source/audio/outcome/access acceptance stays F12.5.
-- **Next action:** Agent: commit/push main, deploy existing frontend/API and publish exactly twenty pinned preview packages; verify preservation/recovery evidence before Complete.
+- **Next action:** No work remains in this owner-revised cycle. F12.6 owns the later thirty lessons; F12.5 owns human/source/audio/outcome/access acceptance and original full-depth quality; F12.1/F12.2 remain separately pending review.
 - **Authorization:** October 19 owner explicitly directed author twenty now, leave thirty for another roadmap checkpoint, mark this cycle done, commit, deploy and publish. This supersedes the prior review-before-authoring sequence for this batch only; pending linguistic/source acceptance and missing human audio/beta gates remain honest.
 - **Completion gate / evidence:** [Revised delivery contract and exact batch evidence](docs/levantine-course-expansion.md); [release record](docs/releases/2026-10-19-levantine-expansion.md).
 
@@ -410,7 +405,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Readiness:** Implementation — Complete; content — Authored; verification — Automated.
 - **Delivery:** Application — Committed; content publication — Local unapproved drafts.
 - **Scope:** Three Plans lessons, positions 8–10, validated and imported locally.
-- **Next action:** Owner: preview/review exact drafts; approval/publication remains separate under F12.
+- **Next action:** Owner: preview/review exact drafts; approval/publication remains separate under F12.5.
 - **Authorization:** Delivered scope; extensions need their own authorization.
 - **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f121-make-a-plan-together).
 
@@ -429,10 +424,10 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — Complete; content — English task/sequence plan, no new Arabic; verification — 64 API tests, two focused coverage/browser checks and production build pass; mobile panel visually inspected.
-- **Delivery:** Application — Local/uncommitted Beta 0.0.6; content publication — None; existing package bytes untouched.
+- **Delivery:** Application — Plan/coverage committed/pushed and deployed in Beta 0.0.8 (`f01fed0`); content publication — None within this software child, existing package bytes untouched.
 - **Scope:** Shared twelve-week/sixty-slot authoring map and private console coverage from exact stored lesson IDs/placement; separate latest candidate, approval and live predecessor counts, excluding demonstrations/history duplicates.
-- **Next action:** None in this bounded child. Owner review remains F12.1/F12.2; remaining authoring/release remains F12.4/F12.5. Commit/push/deployment requires separate owner authorization.
-- **Authorization:** October 19 owner expansion/implementation request; no automatic imports, acceptance, publication, deployment, spending or contact.
+- **Next action:** None in this bounded child. Owner review remains F12.1/F12.2; remaining authoring/acceptance remains F12.6/F12.5. Authorized delivery completed under F12.
+- **Authorization:** October 19 owner expansion/implementation request and later explicit commit/deploy instruction; no automatic content acceptance, spending or contact.
 - **Completion gate / evidence:** [Console coverage contract and verification](docs/levantine-course-expansion.md#f123--course-plan-and-stored-coverage-contract).
 - **Dependencies:** Existing approver-protected curriculum console and versions endpoint; independent of exact Plans acceptance.
 
@@ -440,9 +435,9 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — Complete for owner-revised twenty-package batch; content — Authored, unreviewed with pending rights and empty reviewer; verification — Deterministic rebuild and API validation/import/lifecycle checks pass.
-- **Delivery:** Application — Local preview policy/console controls; content publication — Awaiting F12 exact preview rollout.
+- **Delivery:** Application — Exact preview policy/console deployed as Beta 0.0.8; content publication — All twenty exact v1 unreviewed/text-only previews published under F12, pending human/source records retained.
 - **Scope:** October 19 owner narrowed this batch from fifty to twenty new source-linked original lessons in weeks 3–6, orders 11–30, with complete readable review packets, 120 dialogue turns, 80 teaching cards, 120 contextual steps and 60 recall targets. Final thirty slots moved to F12.6.
-- **Next action:** None in this bounded authoring slice. F12 owns exact preview delivery; F12.5 owns human/source/audio/outcome/access acceptance; F12.6 owns future thirty lessons.
+- **Next action:** None in this bounded authoring slice. F12 records completed exact preview delivery; F12.5 owns human/source/audio/outcome/access acceptance; F12.6 owns future thirty lessons.
 - **Authorization:** Owner requested exactly twenty lessons now and authorized their unreviewed text-only development preview after the review/audio gaps were explained; no accepted review fabricated.
 - **Completion gate / evidence:** [Batch and hash-pinned review manifest](content/levantine/expansion-20/README.md); [revised authoring contract](docs/levantine-course-expansion.md#f124--remaining-bounded-authoring-batches-contract).
 - **Dependencies:** F12.3 sequence; earlier F12.1/F12.2 acceptance is not silently inferred from the owner-directed batch exception.
@@ -451,7 +446,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Input needed.
 - **Readiness:** Implementation — Existing console/offline infrastructure reusable; content — Exact new-batch approval and human audio missing; verification — Required observed timing/recall, actual device/accessibility and full-depth release evidence missing.
-- **Delivery:** Application — Existing shared preview deployed; content publication — Twenty new lessons authorized only as exact unreviewed development previews under F12; reviewed/full-course publication absent.
+- **Delivery:** Application — Existing shared preview deployed; content publication — Twenty new lessons published only as exact unreviewed development previews under F12; reviewed/full-course publication absent.
 - **Scope:** Exact source/linguistic acceptance, reviewed human recordings, observed month-one and cumulative outcome checks, downloads/offline/access checks and separately authorized publication/recovery evidence across twelve weeks.
 - **Next action:** Owner: disposition exact twenty-package batch plus earlier Plans/correction candidates and supply permitted human recordings/review arrangements and agreed observed-check setup; agent validates accepted versions separately from preview publication.
 - **Authorization:** Prepare evidence/tools under Arabic implementation authority; full-reviewed publication/beta inclusion, participant contact, provider decisions and spending remain separate; exact current preview deployment/publication is authorized under F12.
@@ -473,9 +468,9 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — API/browser fix complete; content — N/A, curriculum snapshots untouched; verification — Plain/escaped JSON regression and full API suite pass; browser regression and all twenty offline flows pass.
-- **Delivery:** Application — Local/uncommitted Beta 0.0.8; content publication — N/A.
+- **Delivery:** Application — Committed/pushed/deployed in Beta 0.0.8 (`f01fed0`); content publication — N/A, prior immutable rows preserved.
 - **Scope:** Match the legacy Arabic name only as a complete word. Decode JSON string tokens before name matching so the name fragment in ordinary words such as خلينا is not replaced in API reads, browser presentation or imports.
-- **Next action:** No implementation work remains; delivery accompanies the authorized F12 rollout.
+- **Next action:** No work remains in this fix; deployment and preservation verified in the F12 rollout.
 - **Authorization:** Necessary fix discovered while validating the owner-authorized twenty-lesson batch; no stored publication rewrite or new character identity.
 - **Completion gate / evidence:** [Regression evidence](docs/levantine-course-expansion.md#f127--arabic-word-preserving-character-migration).
 - **Dependencies:** Existing legacy character read-compatibility adapter.
@@ -1256,7 +1251,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
-- **October 19 — F12:** owner revised current completion to twenty newly authored lessons plus plan/coverage and authorized commit/deploy/unreviewed preview publication. Final thirty lessons moved to F12.6; human acceptance remains F12.5. Arabic name-fragment corruption fixed in API/browser; combined candidate Beta 0.0.8. [Contract/evidence](docs/levantine-course-expansion.md).
+- **October 19 — F12:** owner revised current completion to twenty newly authored lessons plus plan/coverage and authorized commit/deploy/unreviewed preview publication. Final thirty lessons moved to F12.6; human acceptance remains F12.5. Arabic name-fragment corruption fixed in API/browser; Beta 0.0.8 `f01fed0` deployed, twenty exact v1 unreviewed/text-only previews published with all prior rows/data/assets preserved; current cycle Complete. [Contract/evidence](docs/levantine-course-expansion.md).
 
 - **October 19 — F17.5:** Beta 0.0.5 `b7b910c` deployed and exact owner-accepted lesson-one v5 published with existing audio preserved. Six phrases/two patterns/three usage notes delivered; actual AT evidence remains. [Rollout](docs/releases/2026-10-19-phrase-anatomy.md).
 
