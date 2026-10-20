@@ -1,0 +1,25 @@
+{
+  "recordId": 35,
+  "versionNumber": 5,
+  "version": "curriculum-levantine-everyday-01-01-v5",
+  "changedTables": [
+    "CurriculumVersions",
+    "sqlite_sequence",
+    "CurriculumAuditEvents",
+    "CurriculumSources"
+  ],
+  "priorPublishedContentsPreserved": true,
+  "recordingsAndKeysPreserved": true,
+  "databaseIntegrity": "ok",
+  "auditActions": [
+    "published",
+    "approved",
+    "validated",
+    "draft-checked",
+    "created"
+  ],
+  "approvedPackageSha256": "1762dbf74a3dbbe52dc2924fda86197ad60075defceeee9652cea223d196f35b",
+  "publicPayloadMatchesApprovedSupport": true,
+  "eightAudioPromptsPreserved": true,
+  "tenFrenchKhmerPreviewsAvailable": true
+}

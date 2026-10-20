@@ -50,7 +50,7 @@ not native-expert review. “N/A” means that layer is outside the bounded scop
 | --- | --- | --- | --- | --- |
 | F12 Levantine expansion | Partial course | Follow-on unit drafted; twelve-week depth absent | Exact draft review, speaker dispositions, remaining authoring | Shared app deployed / new drafts private |
 | F15 study plan/placement | Settings and Levantine check complete | Remaining reading/sound modules absent | Scope other-track assessments and accepted modules | Delivered slices deployed |
-| F17 learning support | Habits/can-do/UI deployed; grammar software complete locally | Six anatomy phrases, two patterns and three notes drafted | Exact grammar/source acceptance, publication and real AT checks; reminder/XP scope | Selected children deployed / grammar candidate private |
+| F17 learning support | Habits/can-do/UI and grammar software deployed | Six anatomy phrases, two patterns and three notes owner accepted/published | Real AT checks; reminder/XP scope | Selected children deployed / lesson-one v5 published |
 | F21 cultural media | Complete | Four research editions awaiting acceptance | Real media/editorial checks, AT, exact publication | App deployed / media unpublished |
 | F24 multi-language foundation | Complete | Reviewed French/Khmer first units still required | Real input/AT/Safari offline and observed mixed-language pilot | App deployed / expansion release gated |
 | F25 French course | First-unit private flow complete; course partial | Five drafts; 55 lessons unauthored | Exact fluent/source acceptance, audio/check inputs, first-unit pilot | App deployed / five unreviewed text previews |
@@ -65,9 +65,9 @@ This is a reconciliation of repository/release evidence, **not a new live audit*
 
 | Layer | Latest recorded state | Evidence / limit |
 | --- | --- | --- |
-| Frontend application | F23 stories and exact preview support, Beta 0.0.4, `99f2de4` verified Vercel Ready on existing aliases October 18; documentation follow-up may advance revision | [Story rollout](docs/releases/2026-10-18-mini-stories.md); prior [About rollout](docs/releases/2026-10-18-about.md) |
-| ASP.NET API | Healthy exact `99f2de4` deployed October 18; one exact story preview published through service | [Story rollout](docs/releases/2026-10-18-mini-stories.md); all 17 existing tables/assets preserved; course catalog and all ten French/Khmer URLs unchanged |
-| Levantine Everyday | Lesson 1 v4 with S0 synthetic prompt audio; lessons 3/6 v3, other four v2 | [October 18 publication](docs/releases/2026-10-18-s0-audio.md); existing publications preserved |
+| Frontend application | F17.5 phrase anatomy/reference, Beta 0.0.5, `b7b910c` verified Vercel Ready on existing aliases October 19; documentation follow-up may advance revision | [F17.5 rollout](docs/releases/2026-10-19-phrase-anatomy.md) |
+| ASP.NET API | Healthy exact `b7b910c` deployed October 19; F17.5 owner-accepted lesson-one v5 published through normal service | [F17.5 rollout](docs/releases/2026-10-19-phrase-anatomy.md); non-curriculum data, prior content and assets preserved; ten French/Khmer URLs available |
+| Levantine Everyday | Lesson 1 v5 adds owner-accepted phrase anatomy while preserving S0 audio; other lesson publications preserved | [F17.5 publication](docs/releases/2026-10-19-phrase-anatomy.md); [prior audio publication](docs/releases/2026-10-18-s0-audio.md) |
 | French lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F25.2.1 audit](content/french/meet-01/publication.json); no accepted linguistic/rights review or human audio |
 | Khmer lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F26.2.1 audit](content/khmer/meet-01/publication.json); no human audio/accepted linguistic review |
 | Alphabet | Five exact v1 inventory-only previews; full five text-only draft packs remain unpublished | [F28 scope](docs/alphabet-text-only-completion.md); F30 acceptance/release remains |
@@ -115,7 +115,7 @@ The next-action text names the actor; use the record before taking action.
 | [F06.1 · Character art redesign](#f061-character-art-redesign) | Owner: decide whether to authorize the remaining profile/turnaround production; no current app call site needs it. |
 | [F12 · Levantine course expansion](#f12-levantine-course-expansion) | Owner: review F12.1 drafts. Agent: bound the next batch only after review; do not equate three drafts with twelve weeks. |
 | [F15 · Personal study plan and placement](#f15-personal-study-plan-and-placement) | Agent: scope remaining track-specific assessments/modules; reuse delivered F28 text-only explorer, with F30/F09 review/audio boundaries. |
-| [F17 · Learning support and gamification](#f17-learning-support-and-gamification) | Owner: review F17.5 exact draft. Agent: bound separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints. |
+| [F17 · Learning support and gamification](#f17-learning-support-and-gamification) | Owner/agent: record F17.5 real access checks. Agent: bound separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints. |
 | [F18 · Invite-only beta readiness](#f18-invite-only-beta-readiness) | Agent: split remaining invite enforcement, reports/quarantine and operations into bounded tasks. Owner: resume F18.1 only explicitly. |
 | [F26 · Khmer course](#f26-khmer-course) | Owner: designate review route and source/help/reading dispositions. Agent: finish first-unit acceptance/pilot before bulk units 2–12. |
 | [F26.3 · Khmer script, sounds, input and starting check](#f263-khmer-script-sounds-input-and-starting-check) | Reviewer: select inventory/help and sound modules. Agent: integrate accepted modules and actual device checks; reuse F28/F30 rather than duplicate explorer. |
@@ -125,7 +125,6 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Agent: deliver owner-approved Beta 0.0.5 and exact rebased package, then record actual AT evidence separately. |
 | [F25.2 · French first unit](#f252-french-first-unit) | Reviewer/owner: disposition five private drafts; exact text, register, answers, segments and source acceptance remain. |
 | [F12.2 · Transliteration and pronunciation audit](#f122-transliteration-and-pronunciation-audit) | Owner: review exact corrections. Agent: record source/model dispositions and reconcile existing local drafts before integration. |
 | [F21 · Cultural watch and listen recommendations](#f21-cultural-watch-and-listen-recommendations) | Agent: resolve F21.1 source/access/runtime gaps; owner reviews exact editions; F21.5 retains real AT/release checks. |
@@ -156,6 +155,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Owner/agent: perform actual screen-reader/device checks; application and exact owner-approved lesson-one v5 are delivered. |
 | [F21.4 · Availability upkeep and corrections](#f214-availability-upkeep-and-corrections) | Agent/owner: execute one real unavailable-item/replacement/recheck cycle once F21.1 content is accepted. |
 | [F21.5 · Verification and authorized release](#f215-verification-and-authorized-release) | Agent/owner: finish real media checks and AT; publish only exact approved revisions; application rollout already verified. |
 | [F24 · Multi-language foundation and parallel study](#f24-multi-language-foundation-and-parallel-study) | Owner/agent: agree real device/pilot setup and accepted first-unit inputs; verify Safari offline. Do not rebuild settings/selector/console. |
@@ -480,9 +480,9 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Partial.
 - **Readiness:** Implementation — Partial; content — Partial; verification — Partial.
-- **Delivery:** Application — Selected children deployed; content publication — No new grammar-reference content.
+- **Delivery:** Application — Selected children deployed; content publication — Six F17.5 phrases/two patterns/three notes owner accepted and published in lesson-one v5.
 - **Scope:** Learning support umbrella: habits/can-do/UI delivered; grammar, XP economy and reminders remain.
-- **Next action:** Owner: review F17.5 exact draft. Agent: bound separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints.
+- **Next action:** Owner/agent: record F17.5 real access checks. Agent: bound separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints.
 - **Authorization:** F17.5 implementation authorized October 19; remaining reminder/XP product/provider policies and exact publication remain separate.
 - **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f17-learning-support-and-gamification).
 
@@ -528,13 +528,13 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F17.5 Phrase anatomy and grammar reference
 
-- **Work state:** Review pending.
-- **Readiness:** Implementation — Complete locally; content — Six phrases, two grammar patterns and three usage notes accepted by owner October 19; no native-expert review; verification — Automated checks recorded in feature note; actual screen-reader/device acceptance missing.
-- **Delivery:** Application — Local uncommitted candidate, Beta 0.0.5; content publication — Exact approved release package prepared; publication pending.
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete; content — Six phrases, two grammar patterns and three usage notes accepted by owner October 19; no native-expert review; verification — Automated checks recorded in feature note; actual screen-reader/device acceptance missing.
+- **Delivery:** Application — Beta 0.0.5 source `b7b910c` pushed, Vercel Ready and exact API deployed October 19; content publication — Owner-accepted lesson-one record 35/v5 published, eight existing synthetic prompt mappings preserved.
 - **Scope:** Six Levantine phrases, two reusable grammar patterns, three sourced usage notes, teaching/feedback/Words links and searchable offline reference.
-- **Next action:** Agent: commit/deploy Beta 0.0.5 and publish exact rebased owner-accepted package; actual AT evidence remains.
+- **Next action:** Owner/agent: perform actual screen-reader/device and enlarged mixed-direction acceptance checks; no implementation or publication work remains in this bounded release.
 - **Authorization:** Owner explicitly authorized approval, commit, deployment and publication October 19; no beta inclusion or expert-review claim.
-- **Completion gate / evidence:** [Original full contract](docs/planning/feature-scope-reference.md#f175-phrase-anatomy-and-grammar-reference); [implementation and verification](docs/phrase-anatomy.md); [pinned private candidate](content/levantine/everyday-01/revisions/phrase-anatomy/review-manifest.json).
+- **Completion gate / evidence:** [Original full contract](docs/planning/feature-scope-reference.md#f175-phrase-anatomy-and-grammar-reference); [implementation and verification](docs/phrase-anatomy.md); [verified rollout](docs/releases/2026-10-19-phrase-anatomy.md); [pinned private candidate](content/levantine/everyday-01/revisions/phrase-anatomy/review-manifest.json).
 - **Dependencies:** F03/F04/F20, exact source/content acceptance and publication approval; actual access evidence remains required.
 
 ### F17.6 Can-do progress and outcome achievements
@@ -1192,7 +1192,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
-- **October 19 — F17.5:** Beta 0.0.5 local implementation adds optional phrase anatomy, console metadata/review gates and searchable offline references. Six phrases/two patterns/three usage notes remain private, unreviewed drafts; publication, deployment and actual AT evidence remain separate. [Evidence](docs/phrase-anatomy.md).
+- **October 19 — F17.5:** Beta 0.0.5 `b7b910c` deployed and exact owner-accepted lesson-one v5 published with existing audio preserved. Six phrases/two patterns/three usage notes delivered; actual AT evidence remains. [Rollout](docs/releases/2026-10-19-phrase-anatomy.md).
 
 - **October 18 — F23:** text-story machinery and exact A little rest v1 unreviewed/text-only preview deployed as 0.0.4 (`99f2de4` source). Existing tables/assets preserved. Normal human/source/access acceptance and remaining two episodes stay open; no Today credit. [Evidence](docs/mini-stories.md).
 

@@ -86,8 +86,9 @@ October 19, 2026, local candidate only:
 
 The test runner required localhost socket access outside the filesystem sandbox.
 No real screen reader, physical device, Safari offline acceptance, hosted rollout,
-content publication or human linguistic/source acceptance was performed. The code
-and private draft files remain local/uncommitted on main.
+content publication or human linguistic/source acceptance was performed at this
+initial implementation checkpoint. The subsequent owner-authorized rollout is
+recorded below and in the linked release note.
 
 
 ## Authorized release preparation
@@ -106,3 +107,9 @@ retained under `/home/ismi/ismi/deployments/20261019-f175`. The administrative r
 uses normal curriculum services for validation, approval and publication; it does
 not edit curriculum rows directly or create/impersonate an account. Deployment and
 publication results are recorded in the release note after verification.
+
+
+The [verified rollout](releases/2026-10-19-phrase-anatomy.md) subsequently deployed
+Beta 0.0.5 and published owner-accepted lesson-one record 35/v5, preserving all
+existing audio and unrelated data. Actual screen-reader/device acceptance remains
+open under the original contract; owner approval does not claim expert review.
