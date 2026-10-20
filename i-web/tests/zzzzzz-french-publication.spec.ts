@@ -46,7 +46,7 @@ test('owner publishes exact French unreviewed text previews; labels, offline com
   await page.reload()
   await chooseCourse(page, 'french')
   await page.getByRole('link', { name: 'Courses', exact: true }).click()
-  await expect(page.locator('.publication-notice')).toContainText('Unreviewed · text-only preview')
+  await expect(page.locator('.publication-notice')).toHaveCount(0)
   await expect(page.getByRole('button', { name: /^Open / })).toHaveCount(5)
   const pack = packs[0]!
   await page.getByRole('button', { name: `Open ${pack.lesson.title}`, exact: true }).click()

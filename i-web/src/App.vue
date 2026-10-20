@@ -31,6 +31,7 @@ import { courses, courseGroups, groupFor, courseFor, textAttributes, readableLes
 import { loadStartedLesson, storeStartedLesson, type StartedLesson, type TeachingCheckpoint } from './lessonSessions';
 import CourseSwitcher from './CourseSwitcher.vue';
 import PublicationNotice from './PublicationNotice.vue';
+import { coursePathLessons, orderedLessons } from './courseSequence';
 import { ApiRequestError } from './api';
 import { useStudySettings } from './useStudySettings';
 import LessonTeaching from './LessonTeaching.vue';
@@ -302,7 +303,14 @@ const courseStorageError = ref('');
 const activeCourse = computed(() => courseFor(viewedCourse.value));
 const lessonCourse = computed(() => courseFor(lesson.value?.trackId));
 const activeLessons = computed(() => dashboardScope.value === reviewScope.value
-  ? dashboard.value.dailyPlan.lessons.filter(item => (item.trackId ?? 'levantine') === viewedCourse.value) : []);
+  ? orderedLessons(dashboard.value.dailyPlan.lessons.filter(item => (item.trackId ?? 'levantine') === viewedCourse.value)) : []);
+const pathLessons = computed(() => coursePathLessons(activeLessons.value));
+const nextPathLesson = computed(() => pathLessons.value.find(item => !item.isCompleted));
+const extraPracticeLessons = computed(() => activeLessons.value.filter(item => !pathLessons.value.some(path => path.id === item.id)));
+const practiceLessonGroups = computed(() => [
+  { id: 'course', title: extraPracticeLessons.value.length ? 'Course lessons' : '', lessons: pathLessons.value },
+  { id: 'extra', title: 'Extra practice', lessons: extraPracticeLessons.value },
+].filter(group => group.lessons.length));
 let courseGeneration = 0;
 watch(reviewScope, async scope => {
   const token = ++courseGeneration;
@@ -408,7 +416,7 @@ const nextStudyLesson = computed(() => {
   if (scheduled) return scheduled;
   // Viewing a course is independent of the daily allocation. Keep manual entry
   // available for unselected/omitted courses and when review takes today's slot.
-  return activeLessons.value.find(item => !item.isCompleted) ?? activeLessons.value.at(-1);
+  return nextPathLesson.value ?? pathLessons.value.at(-1);
 });
 const manualCourseStudy = computed(() => Boolean(nextStudyLesson.value
   && !studyPlan.value.queue.some(item => item.id === nextStudyLesson.value!.id)));
@@ -479,7 +487,7 @@ const courseUnits = computed(() => {
       lessons: DashboardResponse['dailyPlan']['lessons'];
     }
   >();
-  for (const item of activeLessons.value) {
+  for (const item of pathLessons.value) {
     if (!units.has(item.unitId))
       units.set(item.unitId, {
         id: item.unitId,
@@ -492,11 +500,11 @@ const courseUnits = computed(() => {
 });
 const completedCourseLessons = computed(
   () =>
-    activeLessons.value.filter((item) => item.isCompleted).length,
+    pathLessons.value.filter((item) => item.isCompleted).length,
 );
 const courseProgressLabel = computed(
   () =>
-    `${completedCourseLessons.value} of ${activeLessons.value.length} lessons complete`,
+    `${completedCourseLessons.value} of ${pathLessons.value.length} lessons complete`,
 );
 const syncStatus = computed(() => {
   if (pendingSyncCount.value > 0) {
@@ -1388,7 +1396,6 @@ async function finishLesson() {
       <BackControl class="landing-return mobile-landing-return" href="#">Back to landing page</BackControl>
 
       <CourseSwitcher :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || (!studyPageAvailable && page !== 'practice-alphabet') || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
-      <PublicationNotice :notice="activeLessons.find(l => l.publicationNotice)?.publicationNotice" />
       <p v-if="courseStorageError" role="status">{{ courseStorageError }}</p>
       <section v-if="studyPageAvailable && !activeLessons.length && page !== 'account' && page !== 'practice-alphabet'" class="course-empty" role="status">
         <h2>{{ activeCourse.name }}</h2><p>Lessons not yet available. Your saved progress and daily study settings are unchanged.</p>
@@ -1604,7 +1611,7 @@ async function finishLesson() {
                 :key="item.id"
                 :class="{
                   completed: item.isCompleted,
-                  current: item.isCurrent,
+                  current: item.id === nextPathLesson?.id,
                 }"
               >
                 <span class="course-path-marker" aria-hidden="true">
@@ -1619,7 +1626,7 @@ async function finishLesson() {
                     {{
                       item.isCompleted
                         ? 'Complete'
-                        : item.isCurrent
+                        : item.id === nextPathLesson?.id
                           ? 'Up next'
                           : 'Later'
                     }}</span
@@ -1703,20 +1710,23 @@ async function finishLesson() {
         <div v-if="page === 'practice-checkpoints'" id="practice-checkpoints"></div>
         <div v-if="page === 'practice-recall'" id="practice-recall"></div>
         <section v-if="page === 'practice-lessons'" class="practice-list" aria-label="Practice lessons">
-          <button
-            v-for="item in activeLessons"
-            :key="item.id"
-            class="practice-item"
-            type="button"
-            @click="startLesson(item.id, true)"
-          >
-            <RotateCcw :size="20" aria-hidden="true" />
-            <span
-              ><strong>{{ item.title }}</strong
-              ><small>{{ item.estimatedMinutes }} min</small></span
+          <template v-for="group in practiceLessonGroups" :key="group.id">
+            <h2 v-if="group.title">{{ group.title }}</h2>
+            <button
+              v-for="item in group.lessons"
+              :key="item.id"
+              class="practice-item"
+              type="button"
+              @click="startLesson(item.id, true)"
             >
-            <ChevronRight :size="18" aria-hidden="true" />
-          </button>
+              <RotateCcw :size="20" aria-hidden="true" />
+              <span
+                ><strong>{{ item.title }}</strong
+                ><small>{{ item.estimatedMinutes }} min</small></span
+              >
+              <ChevronRight :size="18" aria-hidden="true" />
+            </button>
+          </template>
           <p v-if="!activeLessons.length">
             Lessons will appear here when your course is available. Connect to
             download your first lessons.

@@ -1,4 +1,5 @@
 import type { CourseLessonSummary } from './types'
+import { coursePathLessons } from './courseSequence'
 
 import { courses, type CourseId } from './courses'
 
@@ -34,7 +35,7 @@ export function buildStudyPlan(preferences: StudyPreferences, lessons: CourseLes
   let budget = Math.max(0, p.goalMinutes - completedReviewMinutes - lessons.filter(l => l.completedToday).reduce((sum, l) => sum + l.estimatedMinutes, 0))
   const tasks: StudyTask[] = []
   const allocations = ids.map(id => {
-    const course = lessons.filter(l => (l.trackId ?? 'levantine') === id)
+    const course = coursePathLessons(lessons.filter(l => (l.trackId ?? 'levantine') === id))
     const allocation = { id, name: studyTracks.find(t => t.id === id)!.name, minutes: 0, available: course.length > 0,
       completedCount: course.filter(l => l.isCompleted).length, totalCount: course.length, queue: [] as CourseLessonSummary[],
       omitted: false, reviewMinutes: 0 }

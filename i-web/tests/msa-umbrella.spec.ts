@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs'
 import { expect, test } from '@playwright/test'
 import { chooseCourse, expectViewedCourse } from './courseSwitcher'
 
@@ -58,5 +59,5 @@ test('existing Quranic account preferences and API path identities survive the u
   await chooseCourse(page, 'msa')
   await chooseCourse(page, 'quranic')
   expect((await (await page.request.get('/api/study-settings')).json()).preferences).toEqual(preferences)
-  await expect(page.locator('.app-shell')).toContainText('Beta 0.0.9')
+  await expect(page.locator('.app-shell')).toContainText(`Beta ${JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version}`)
 })

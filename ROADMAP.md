@@ -178,6 +178,12 @@ The next-action text names the actor; use the record before taking action.
 | [F25.6 · French pilot, publication and release evidence](#f256-french-pilot-publication-and-release-evidence) | Owner/reviewer: accepted text/audio and agreed setup precede the prepared pilot protocol. |
 | [F26.4 · Khmer remaining units and reference material](#f264-khmer-remaining-units-and-reference-material) | Agent after first-unit review/pilot: revise sequence and author source-backed bounded batches. |
 
+### Delivery pending
+
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F27.4 · Course path clarity](#f274-course-path-clarity) | Agent: commit/push verified Beta 0.0.10 and confirm Vercel Ready on existing aliases. |
+
 ### Deferred
 
 | ID / scope | Next action or remaining gate |
@@ -1145,6 +1151,17 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Completion gate / evidence:** [Bounded contract and evidence](docs/learner-clarity-fixes.md).
 - **Dependencies:** F06/F17.7/F24/F27.2; preserve exact preview text and answer records.
 
+#### F27.4 Course path clarity
+
+- **Work state:** Delivery pending.
+- **Readiness:** Implementation — Complete; content — N/A, packages and notices unchanged; verification — Production build and 27 distinct browser checks pass, including 390/1280-pixel ordering, offline resume, legacy practice, progress and French/Khmer preview labels; real-device/AT evidence not claimed.
+- **Delivery:** Application — Verified Beta 0.0.10 candidate; owner-authorized commit/push/frontend deployment pending; content publication — None.
+- **Scope:** Remove the entire shared AI/draft card from learner pages; use numeric course order for Courses and Today, with old Week 1 demonstrations available as Extra practice rather than a second main course. Preserve started lessons, stored completions, daily time credit, offline access and each preview lesson’s status.
+- **Next action:** Agent: commit/push the verified frontend candidate, confirm the exact Vercel revision/aliases and record rollout evidence; API code and curriculum publication are unchanged.
+- **Authorization:** Owner requested removal of the card and correction of the apparent Week 1 course restart. Owner subsequently requested push and deployment, authorizing rollout to the existing development frontend. No new curriculum publication or source/review acceptance follows.
+- **Completion gate / evidence:** [Course path clarity contract and checks](docs/course-path-clarity.md).
+- **Dependencies:** Existing F12 course metadata, F15/F24 daily queue and F27 learner navigation; no publication rewrite or data migration.
+
 ### F28 Alphabet explorer
 
 - **Work state:** Complete.
@@ -1269,6 +1286,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **October 19 — F27.4:** owner requested removing the course-wide draft card and the confusing Week 1 restart. Local Beta 0.0.10 complete (production build and 27 browser checks pass) orders the main course numerically and keeps legacy demonstrations in Extra practice; lesson-level preview notices and published content remain intact. [Evidence](docs/course-path-clarity.md).
+
 - **October 19 — F13/F14:** owner joined MSA and Quranic study under one MSA umbrella. F13.1 completes Beta 0.0.9 presentation and owner-authorized rollout as `2a4cdee` (Vercel Ready, exact API health, build, 67 API tests and 59 browser checks pass); F14 remains the Quranic path with its full target and integrity/rights gates. [Contract/evidence](docs/msa-umbrella.md).
 
 - **October 19 — F12:** owner revised current completion to twenty newly authored lessons plus plan/coverage and authorized commit/deploy/unreviewed preview publication. Final thirty lessons moved to F12.6; human acceptance remains F12.5. Arabic name-fragment corruption fixed in API/browser; Beta 0.0.8 `f01fed0` deployed, twenty exact v1 unreviewed/text-only previews published with all prior rows/data/assets preserved; current cycle Complete. [Contract/evidence](docs/levantine-course-expansion.md).
@@ -1276,6 +1295,3 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **October 19 — F17.5:** Beta 0.0.5 `b7b910c` deployed and exact owner-accepted lesson-one v5 published with existing audio preserved. Six phrases/two patterns/three usage notes delivered; actual AT evidence remains. [Rollout](docs/releases/2026-10-19-phrase-anatomy.md).
 
 - **October 18 — F23:** text-story machinery and exact A little rest v1 unreviewed/text-only preview deployed as 0.0.4 (`99f2de4` source). Existing tables/assets preserved. Normal human/source/access acceptance and remaining two episodes stay open; no Today credit. [Evidence](docs/mini-stories.md).
-
-
-- **October 18 — F27.3:** mobile Practice text, plain study/response labels, one Today resume action, silent grace, hidden optional weekly activities and shared French/Khmer character presentation UI delivered; notice regression corrected in `34a936b`, working API restored to `08fed75`. All ten French/Khmer previews available again; historical-notice tests now independent of policy constants. Curriculum unchanged.
