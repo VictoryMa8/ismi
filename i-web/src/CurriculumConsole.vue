@@ -436,7 +436,7 @@ function formatDate(value: string | null): string {
       <ShieldCheck :size="22" aria-hidden="true" />
       <p>
         <strong>Human publish gate is active.</strong> Drafts and approved
-        versions remain invisible to learners. Quranic and MSA publishing are
+        versions remain invisible to learners. Both general MSA and its Quranic path are
         blocked in this bounded slice.
       </p>
     </div>

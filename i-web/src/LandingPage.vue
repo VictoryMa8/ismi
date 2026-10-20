@@ -13,7 +13,7 @@ import {
 import CharacterPortrait from './CharacterPortrait.vue';
 import { benefits, faqs } from './landing/content';
 import './landing/landing.css';
-import { courses } from './courses';
+import { courseGroups } from './courses';
 import { appVersionLabel } from './version';
 const availableCourses = ref<string[]>([]);
 const previewCourses = ref<string[]>([]);
@@ -306,15 +306,14 @@ onMounted(() => {
             <span id="arabic-tracks" aria-hidden="true"></span>
             <div class="landing-section-heading"><h2 id="tracks-title">Languages</h2><p>Arabic is our flagship, rooted in Palestinian everyday life. Understand Arabic from conversation to Quran as its courses grow.</p></div>
             <div class="tracks-grid">
-              <article v-for="course in courses" :key="course.id" :data-course="course.id" :class="`track-${course.id}`">
-                <span class="track-planned">{{ previewCourses.includes(course.id) ? 'Unreviewed · text-only preview' : availableCourses.includes(course.id) ? 'Published lessons available' : 'Planned' }}</span>
+              <article v-for="course in courseGroups" :key="course.id" :data-course="course.id" :class="`track-${course.id}`">
+                <span class="track-planned">{{ course.paths.some(path => previewCourses.includes(path.id)) ? 'Unreviewed · text-only preview' : course.paths.some(path => availableCourses.includes(path.id)) ? 'Published lessons available' : 'Planned' }}</span>
                 <h3>{{ course.name }}</h3>
                 <p v-if="course.id === 'levantine'">Urban Palestinian Arabic for everyday conversations. Jordanian variants are labeled.</p>
-                <p v-else-if="course.id === 'msa'">Formal Arabic for reading and listening, including learner-adapted news.</p>
-                <p v-else-if="course.id === 'quranic'">Core vocabulary and direct meaning, with a respectful, comprehension-first approach.</p>
-                <p v-else-if="previewCourses.includes(course.id)">Five AI-assisted text lessons. Linguistic and source-rights review remain pending; no human audio.</p>
+                <p v-else-if="course.id === 'msa'">General MSA for reading and listening, plus a Quranic Arabic path for vocabulary and direct meaning.</p>
+                <p v-else-if="course.paths.some(path => previewCourses.includes(path.id))">Five AI-assisted text lessons. Linguistic and source-rights review remain pending; no human audio.</p>
                 <p v-else>Everyday conversations and relationships. Course scope, sources and review are being prepared.</p>
-                <a class="landing-outline-button" href="#/courses" @click.prevent="enterCourse(course.id)">{{ availableCourses.includes(course.id) ? 'View course' : 'View course status' }}<ArrowRight :size="17" /></a>
+                <a class="landing-outline-button" href="#/courses" @click.prevent="enterCourse(course.id)">{{ course.paths.some(path => availableCourses.includes(path.id)) ? 'View course' : 'View course status' }}<ArrowRight :size="17" /></a>
               </article>
             </div>
           </div>

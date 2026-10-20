@@ -11,13 +11,13 @@ for (const width of [320, 1280]) test(`language cards have distinct stable palet
   await page.setViewportSize({ width, height: 1100 })
   await page.goto('/')
   const cards = page.locator('.tracks-grid article')
-  await expect(cards).toHaveCount(5)
+  await expect(cards).toHaveCount(4)
   const colors = await cards.evaluateAll(items => items.map(item => {
     const elements = [item.querySelector('h3')!, item.querySelector('p')!, item.querySelector('.track-planned')!, item.querySelector('a')!]
     return { id: item.getAttribute('data-course'), background: getComputedStyle(item).backgroundColor,
       foreground: elements.map(el => getComputedStyle(el).color) }
   }))
-  expect(new Set(colors.map(c => c.background)).size).toBe(5)
+  expect(new Set(colors.map(c => c.background)).size).toBe(4)
   for (const card of colors) for (const text of card.foreground) {
     const a = luminance(card.background), b = luminance(text)
     expect((Math.max(a, b) + .05) / (Math.min(a, b) + .05), `${card.id} contrast`).toBeGreaterThanOrEqual(4.5)

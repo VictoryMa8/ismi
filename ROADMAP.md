@@ -49,6 +49,7 @@ not native-expert review. “N/A” means that layer is outside the bounded scop
 | Feature | Implementation | Content | Missing evidence / next gate | Application / publication |
 | --- | --- | --- | --- | --- |
 | F12.5/F12.6 full Levantine course | Current F12 twenty-lesson delivery cycle complete; remaining depth separate | Twenty new unreviewed previews; thirty further slots unauthored | Exact human/source/audio/outcome/access acceptance and later thirty-lesson checkpoint | Beta 0.0.8 deployed / twenty exact previews published |
+| F13 MSA umbrella | Grouped presentation complete; authorized rollout pending | General MSA unauthored; Quranic sources proposed under F14 | First-unit scope, exact source/audio permissions and path-specific publication controls | Beta 0.0.9 candidate / no new publication |
 | F15 study plan/placement | Settings and Levantine check complete | Remaining reading/sound modules absent | Scope other-track assessments and accepted modules | Delivered slices deployed |
 | F17 learning support | Habits/can-do/UI and grammar software deployed | Six anatomy phrases, two patterns and three notes owner accepted/published | Real AT checks; reminder/XP scope | Selected children deployed / lesson-one v5 published |
 | F21 cultural media | Complete | Four research editions awaiting acceptance | Real media/editorial checks, AT, exact publication | App deployed / media unpublished |
@@ -81,6 +82,8 @@ not a deployment command. UI availability is not curriculum completion.
 
 ## Priority and authorization boundaries
 
+- Arabic hierarchy: **F13 owns the MSA umbrella**, with general-MSA curriculum and **F14 as its Quranic path**. F13.1 implements website discovery/navigation. Both four-week targets and distinct progress/source/integrity/review gates remain; the owner subsequently authorized commit/push/deployment of this application rework. Curriculum publication gates remain unchanged.
+
 - Preserve the owner's selected engagement order: remaining **F23 → F17.5**;
   F22/F17.6/F17.7 are already delivered. F23 implementation was authorized October 18;
   F17.5 implementation authorized October 19; exact content publication remains separate. [Original scopes](docs/learning-engagement-plan.md).
@@ -109,6 +112,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F13 · MSA course](#f13-msa-course) | Agent/owner: define the general-MSA first unit and source/audio/control scope; F14 retains Quranic path gates. |
 | [F25 · French course](#f25-french-course) | Owner: designate fluent reviewer/source dispositions. Agent: first-unit review/pilot before bulk units 2–12. |
 | [F25.3 · French starting check, sounds and text support](#f253-french-starting-check-sounds-and-text-support) | Reviewer/agent: accept sample/spelling inputs, then calibrate starting check and sound/text support. |
 | [F06.1 · Character art redesign](#f061-character-art-redesign) | Owner: decide whether to authorize the remaining profile/turnaround production; no current app call site needs it. |
@@ -138,7 +142,7 @@ The next-action text names the actor; use the record before taking action.
 | [F25.1 · French definition, sources and review route](#f251-french-definition-sources-and-review-route) | Owner: designate fluent French reviewer and disposition prepared sources/rights; course variety/depth/outcome selected. |
 | [F25.5 · French model audio and guided speaking](#f255-french-model-audio-and-guided-speaking) | Reviewer: accept fourteen scripts. Owner: arrange permitted recordings and provider/privacy decisions. |
 | [F09 · Reviewed Levantine recordings](#f09-reviewed-levantine-recordings) | Owner: supply/select permitted recordings and reviewer for an exact prompt batch. Agent: reconcile script/package hashes before upload. |
-| [F14 · Quranic course](#f14-quranic-course) | Owner: approve exact resource IDs/permissions. Agent: scope integrity and track-specific review/publication controls. |
+| [F14 · Quranic path within MSA](#f14-quranic-course) | Owner: approve exact resource IDs/permissions. Agent: scope integrity and track-specific review/publication controls. |
 | [F26.5 · Khmer model audio and guided speaking](#f265-khmer-model-audio-and-guided-speaking) | Reviewer: accept scripts. Owner: arrange permitted recordings and provider/privacy decisions; agent verifies actual Khmer feedback/offline behavior. |
 | [F30 · Alphabet content acceptance and release](#f30-alphabet-content-acceptance-and-release) | Owner: designate reviewers. Agent: disposition exact inventories/help/examples/rights, scope MSA/Quranic controls, then collect authorized access/release evidence. |
 
@@ -172,8 +176,13 @@ The next-action text names the actor; use the record before taking action.
 | [F12.6 · Remaining thirty Levantine lessons](#f126-remaining-thirty-levantine-lessons) | Owner: resume at a separate roadmap checkpoint after exact first-batch review/outcome dispositions; agent then bounds weeks 7–12. |
 | [F25.4 · French remaining units and reference material](#f254-french-remaining-units-and-reference-material) | Reviewer/agent: use first-unit review/pilot before bounded units 2–12 batches. |
 | [F25.6 · French pilot, publication and release evidence](#f256-french-pilot-publication-and-release-evidence) | Owner/reviewer: accepted text/audio and agreed setup precede the prepared pilot protocol. |
-| [F13 · MSA course](#f13-msa-course) | Owner/agent: define first unit, source/audio permissions and a bounded console-control extension. |
 | [F26.4 · Khmer remaining units and reference material](#f264-khmer-remaining-units-and-reference-material) | Agent after first-unit review/pilot: revise sequence and author source-backed bounded batches. |
+
+### Delivery pending
+
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F13.1 · MSA umbrella presentation](#f131-msa-umbrella-presentation) | Agent: commit/push and deploy Beta 0.0.9 to existing preview frontend/API; record exact rollout evidence. |
 
 ### Deferred
 
@@ -477,23 +486,37 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F13 MSA course
 
-- **Work state:** Planned.
-- **Readiness:** Implementation — Not started; content — Not authored; verification — Not run.
-- **Delivery:** Application — Shared UI only; content publication — No MSA lessons.
-- **Scope:** Four-week MSA course with timeless adapted listening and track-specific publication controls.
-- **Next action:** Owner/agent: define first unit, source/audio permissions and a bounded console-control extension.
-- **Authorization:** Roadmap target; no source/provider choice or publication implied.
+- **Work state:** Partial.
+- **Readiness:** Implementation — Umbrella presentation complete under F13.1; general-MSA curriculum/control implementation not started; content — General MSA unauthored, Quranic sources proposed under F14; verification — F13.1 automated checks pass, curriculum/outcome/release evidence absent.
+- **Delivery:** Application — Existing shared UI deployed; F13.1 reorganization verified locally, authorized rollout pending; content publication — No general-MSA or Quranic lessons, exact alphabet previews unchanged.
+- **Scope:** One MSA umbrella with general-MSA and Quranic paths. Retain four weeks of general MSA with timeless adapted listening plus four weeks of Quranic direct-meaning study under stable F14, distinct goals/progress and path-specific source/publication controls.
+- **Next action:** Agent/owner: define general-MSA first unit, source/audio permissions and bounded console controls; owner supplies exact Quranic resources/permissions under F14.
+- **Authorization:** Owner authorized website/roadmap unification October 19; existing Arabic implementation authority retained. Owner subsequently authorized committing and deploying the application rework. No new source/provider choice, curriculum publication or beta inclusion implied.
 - **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f13-msa-course).
 
-### F14 Quranic course
+#### F13.1 MSA umbrella presentation
+
+- **Work state:** Delivery pending.
+- **Readiness:** Implementation — Complete; content — N/A, packages/pins unchanged; verification — Production build, 67 API tests and 59 browser checks pass, including mobile/desktop hierarchy, saved preferences and offline return; real assistive-technology/device evidence not claimed.
+- **Delivery:** Application — Verified local Beta 0.0.9 candidate; commit/push and existing-preview rollout authorized; content publication — N/A.
+- **Scope:** One MSA entry on landing/course catalog, general-MSA/Quranic path navigation, grouped settings/filters and matching API hierarchy. Retain stable path IDs, independent progress, stored primary preferences and exact publication gates.
+- **Next action:** Agent: commit/push, deploy existing frontend/API preview and record exact revision/health/preservation evidence. General-MSA curriculum remains F13; Quranic content/rights/integrity remains F14.
+- **Authorization:** Owner requested website and roadmap rework October 19. Owner subsequently requested commit and deployment; this authorizes the existing frontend/API preview rollout, not changed curriculum publication.
+- **Completion gate / evidence:** [Bounded contract and checks](docs/msa-umbrella.md).
+- **Dependencies:** Existing F24 course switcher/settings and F28 explorer reused; general-MSA curriculum remains F13 and Quranic content/integrity remains F14.
+
+<a id="f14-quranic-course"></a>
+
+#### F14 Quranic path within MSA
 
 - **Work state:** Input needed.
 - **Readiness:** Implementation — Not started; content — Sources proposed; verification — Not run.
 - **Delivery:** Application — Shared UI only; content publication — No Quranic lessons.
-- **Scope:** Four-week direct-meaning Quranic course with unchanged canonical text and separate provenance layers.
+- **Scope:** Quranic study path within the F13 MSA umbrella, retaining the full four-week direct-meaning target, distinct outcomes/progress and unchanged canonical text with separate provenance layers. This is a product hierarchy, not a claim that Quranic and modern Arabic are the same register.
 - **Next action:** Owner: approve exact resource IDs/permissions. Agent: scope integrity and track-specific review/publication controls.
-- **Authorization:** Approved-source boundary applies; no generated/normalized canonical text or invented qualified acceptance.
+- **Authorization:** Owner placed this path under MSA October 19; approved-source boundary remains. No generated/normalized canonical text, invented qualified acceptance or new publication authority.
 - **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f14-quranic-course).
+- **Dependencies:** F13 umbrella/F13.1 presentation; exact resource/rights and Quranic integrity/review controls remain required.
 
 ### F15 Personal study plan and placement
 
@@ -1251,6 +1274,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **October 19 — F13/F14:** owner joined MSA and Quranic study under one MSA umbrella. F13.1 completes local Beta 0.0.9 presentation (build, 67 API tests, 59 browser checks pass); F14 remains the Quranic path with its full target and integrity/rights gates. [Contract/evidence](docs/msa-umbrella.md).
+
 - **October 19 — F12:** owner revised current completion to twenty newly authored lessons plus plan/coverage and authorized commit/deploy/unreviewed preview publication. Final thirty lessons moved to F12.6; human acceptance remains F12.5. Arabic name-fragment corruption fixed in API/browser; Beta 0.0.8 `f01fed0` deployed, twenty exact v1 unreviewed/text-only previews published with all prior rows/data/assets preserved; current cycle Complete. [Contract/evidence](docs/levantine-course-expansion.md).
 
 - **October 19 — F17.5:** Beta 0.0.5 `b7b910c` deployed and exact owner-accepted lesson-one v5 published with existing audio preserved. Six phrases/two patterns/three usage notes delivered; actual AT evidence remains. [Rollout](docs/releases/2026-10-19-phrase-anatomy.md).
@@ -1259,5 +1284,3 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 
 - **October 18 — F27.3:** mobile Practice text, plain study/response labels, one Today resume action, silent grace, hidden optional weekly activities and shared French/Khmer character presentation UI delivered; notice regression corrected in `34a936b`, working API restored to `08fed75`. All ten French/Khmer previews available again; historical-notice tests now independent of policy constants. Curriculum unchanged.
-
-- **October 18 — F25:** owner selected Metropolitan France reference, twelve units/sixty lessons, five-minute month-one guided target and draft-first review route. Five exact first-unit text previews published on deployed `08fed75`; 57 API/three publication browser checks pass, existing data/assets preserved. Full review/audio/course gates remain.

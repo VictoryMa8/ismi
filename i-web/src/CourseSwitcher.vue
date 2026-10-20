@@ -2,7 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, ref, useId, watch } from 'vue'
 import { Check, ChevronDown } from '@lucide/vue'
 import CultureScene from './CultureScene.vue'
-import { courseFor, courses, textAttributes } from './courses'
+import { courseFor, courses, courseGroups, textAttributes } from './courses'
 import { playUiSound } from './uiSounds'
 import type { CourseLessonSummary } from './types'
 const props = defineProps<{ modelValue: string; lessons: CourseLessonSummary[]; disabled?: boolean; lastCourses?: Record<string, string> }>()
@@ -18,7 +18,7 @@ const languageChoices = computed(() => [...new Set(courses.map(c => c.languageId
   const usable = candidates.filter(c => hasLessons(c.id))
   return usable.find(c => c.id === props.lastCourses?.[language]) ?? usable[0] ?? candidates[0]!
 }))
-const arabicCourses = courses.filter(c => c.languageId === 'arabic')
+const arabicCourses = courseGroups.filter(c => c.languageId === 'arabic')
 const status = (id: string) => props.lessons.some(l => (l.trackId ?? 'levantine') === id && l.publicationNotice)
   ? 'Unreviewed preview' : hasLessons(id) ? '' : 'Planned'
 const currentDetail = computed(() => [current.value.name === current.value.languageName ? '' : current.value.name, status(current.value.id)].filter(Boolean).join(' · '))
@@ -66,7 +66,13 @@ onBeforeUnmount(() => document.removeEventListener('pointerdown', outside))
       <h3 class="picker-heading">Arabic courses</h3>
       <ul class="picker-courses">
         <li v-for="course in arabicCourses" :key="course.id">
-          <button type="button" class="picker-chip" :data-course="course.id" :aria-pressed="course.id === current.id" @click="choose(course.id)">
+          <fieldset v-if="course.paths.length > 1" class="picker-paths" :data-course-group="course.id">
+            <legend>{{ course.name }}</legend>
+            <button v-for="path in course.paths" :key="path.id" type="button" class="picker-chip" :data-course="path.id" :aria-pressed="path.id === current.id" @click="choose(path.id)">
+              {{ path.pathName }}<small v-if="status(path.id)"> · {{ status(path.id) }}</small>
+            </button>
+          </fieldset>
+          <button v-else type="button" class="picker-chip" :data-course="course.id" :aria-pressed="course.id === current.id" @click="choose(course.id)">
             {{ course.name }}<small v-if="status(course.id)"> · {{ status(course.id) }}</small>
           </button>
         </li>
@@ -106,6 +112,8 @@ h3.picker-heading { margin-top: 16px; }
 .tile-copy small { font-size: 12px; opacity: .92; }
 .tile-scene { position: absolute; right: -4px; bottom: -8px; width: 84px; opacity: .6; }
 .tile-check { position: absolute; z-index: 1; top: 8px; right: 8px; padding: 2px; border-radius: 50%; color: var(--course-text); background: white; }
+.picker-paths { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; margin: 0; padding: 8px; border: 1px solid var(--line); border-radius: 14px; }
+.picker-paths legend { padding: 0 4px; font-size: 13px; font-weight: 700; }
 .picker-chip { min-height: 44px; padding: 8px 14px; border: 2px solid var(--course-text); border-radius: 999px; color: var(--course-text); background: white; font: inherit; font-weight: 700; cursor: pointer; }
 .picker-chip[aria-pressed='true'] { color: var(--course-ink); background: var(--course-surface); border-color: var(--course-surface); }
 .picker-chip small { font-weight: 600; }

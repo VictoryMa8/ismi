@@ -99,7 +99,7 @@ test('withdrawn content cannot shorten assessment; other tracks remain unavailab
   await region(page).getByRole('button', { name: 'Start Levantine check' }).click()
   await expect(region(page)).toContainText('This check needs the first three published lessons')
   await expect(region(page).getByRole('button', { name: 'Begin questions' })).toHaveCount(0)
-  await page.getByRole('checkbox', { name: /Modern Standard Arabic/ }).check()
+  await page.getByRole('checkbox', { name: /General MSA/ }).check()
   await page.getByRole('checkbox', { name: /Quranic Arabic/ }).check()
   await page.getByRole('button', { name: 'Save study settings', exact: true }).click()
   for (const id of ['msa', 'quranic']) {

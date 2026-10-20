@@ -5,7 +5,7 @@ import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { ApiRequestError, getLesson } from './api'
 import { cacheLesson, getCachedLesson, recordingPlaybackUrl, removeCachedLesson } from './offline'
 import { glossaryCaution, learnedVocabulary, matchesGlossary, vocabularyForLesson, type GlossaryEntry } from './glossary'
-import { textAttributes } from './courses'
+import { courseGroups, textAttributes } from './courses'
 import { studyTracks } from './studyPlan'
 import type { CourseLessonSummary, LessonResponse } from './types'
 
@@ -125,7 +125,7 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
     <p>Words and expressions from completed lessons. Completion does not mean mastery.</p>
     <div class="glossary-filters">
       <label class="glossary-search">Search words<input v-model="query" type="search" placeholder="Word, English or pronunciation help" dir="auto" /></label>
-      <label>Course<select v-model="track"><option value="">All courses</option><option v-for="item in studyTracks" :key="item.id" :value="item.id">{{ item.name }}</option></select></label>
+      <label>Course<select v-model="track"><option value="">All courses</option><template v-for="group in courseGroups" :key="group.id"><optgroup v-if="group.paths.length > 1" :label="group.name"><option v-for="path in group.paths" :key="path.id" :value="path.id">{{ path.pathName }}</option></optgroup><option v-else :value="group.id">{{ group.name }}</option></template></select></label>
       <label>Dialect<select v-model="dialect"><option value="">All dialects</option><option v-for="id in dialects" :key="id" :value="id">{{ dialectName(id) }}</option></select></label>
       <label>Type<select v-model="kind"><option value="">Words and expressions</option><option value="word">Words</option><option value="expression">Expressions</option></select></label>
     </div>

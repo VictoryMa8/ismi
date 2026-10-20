@@ -27,7 +27,7 @@ import { emptyReviewAvailability, streakSummary, type QuestTask, type StudyActiv
 import LoadingWords from './LoadingWords.vue';
 import PlacementCheck from './PlacementCheck.vue';
 import { buildStudyPlan, type TrackId } from './studyPlan';
-import { courses, courseFor, textAttributes, readableLesson } from './courses';
+import { courses, courseGroups, groupFor, courseFor, textAttributes, readableLesson } from './courses';
 import { loadStartedLesson, storeStartedLesson, type StartedLesson, type TeachingCheckpoint } from './lessonSessions';
 import CourseSwitcher from './CourseSwitcher.vue';
 import PublicationNotice from './PublicationNotice.vue';
@@ -1572,7 +1572,7 @@ async function finishLesson() {
       <template v-if="page === 'courses' && studyPageAvailable">
         <header class="page-heading">
           <h1>Courses</h1>
-          <p>A course is a language or Arabic track. Each lesson teaches a short conversation or skill.</p>
+          <p>Choose a language or Arabic course. Modern Standard Arabic includes general MSA and Quranic study paths.</p>
           <p class="review-status-note"><span>{{ activeCourse.name }}</span> · <span>{{ courseProgressLabel }}</span></p>
           <p
             v-if="!apiLive || pendingSyncCount > 0"
@@ -1584,6 +1584,13 @@ async function finishLesson() {
         </header>
         <a v-if="viewedCourse === 'levantine'" class="page-link" href="#/practice/stories"><BookOpen :size="18" aria-hidden="true" /> Mini-stories · Everyday</a>
         <a class="page-link" href="#/practice/alphabet"><BookOpen :size="18" aria-hidden="true" /> Alphabet · {{ activeCourse.name }}</a>
+        <section v-if="activeCourse.groupId === 'msa'" class="section-block msa-paths" aria-labelledby="msa-paths-title">
+          <h2 id="msa-paths-title">Modern Standard Arabic paths</h2>
+          <p>General MSA builds formal reading and listening. Quranic Arabic focuses on vocabulary and direct meaning.</p>
+          <div class="msa-path-actions">
+            <button v-for="path in groupFor('msa').paths" :key="path.id" class="secondary-action" :aria-pressed="viewedCourse === path.id" @click="switchViewedCourse(path.id)">{{ path.pathName }}</button>
+          </div>
+        </section>
         <div class="course-units">
           <section
             v-for="unit in courseUnits"
@@ -1654,8 +1661,8 @@ async function finishLesson() {
           </div>
 
           <div class="track-grid">
-            <article v-for="course in courses.filter(c => !dashboard.dailyPlan.lessons.some(l => l.trackId === c.id))" :key="course.id" class="track-card">
-              <div class="track-card-copy"><h3>{{ course.name }}</h3><p>Planned · Lessons not yet available</p></div>
+            <article v-for="course in courseGroups.filter(c => !dashboard.dailyPlan.lessons.some(l => c.paths.some(path => l.trackId === path.id)))" :key="course.id" class="track-card">
+              <div class="track-card-copy"><h3>{{ course.name }}</h3><p v-if="course.id === 'msa'">General MSA and Quranic Arabic paths</p><p>Planned · Lessons not yet available</p></div>
               <button class="secondary-action" @click="switchViewedCourse(course.id)">View status</button>
             </article>
           </div>

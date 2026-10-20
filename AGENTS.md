@@ -13,10 +13,11 @@
 Ismi is a web-first language learning product inspired by Duolingo, with Arabic as its flagship:
 
 1. Urban Palestinian Levantine Arabic, with Jordanian variants labeled where useful.
-2. Modern Standard Arabic (MSA).
-3. Quranic Arabic.
-4. French (planned expansion).
-5. Khmer (planned expansion).
+2. Modern Standard Arabic (MSA), including general MSA and Quranic Arabic study paths.
+3. French (planned expansion).
+4. Khmer (planned expansion).
+
+On October 19, 2026 the owner authorized joining MSA and Quranic study under one MSA umbrella in the website and roadmap. Quranic Arabic is a path within MSA, not a separate top-level course. Preserve the distinct general-MSA and Quranic goals, four-week targets, progress, placement, source/integrity controls and publication gates. Existing `msa` and `quranic` IDs remain stable for stored learning data and exact published alphabet pins; this reorganization does not authorize new curriculum publication. The owner subsequently requested commit and deployment of the application rework to the existing preview. F13 owns the umbrella; stable F14 owns its Quranic path.
 
 Users may study one course or several languages/courses in parallel, with separate progress. On October 12, 2026 the owner authorized expanding the roadmap to French, Khmer and parallel language study. This authorizes planning, not implementation or release of the new courses. Previously authorized Arabic implementation remains in scope. Continue to resolve open product decisions explicitly before they become architecture or policy commitments.
 
@@ -112,7 +113,7 @@ full twelve-week quality target. Current delivery belongs in ROADMAP.md.
 ### Curriculum scope
 
 - Levantine is the flagship track.
-- Launch target: 12 weeks of Levantine content and 4 weeks each of MSA and Quranic Arabic.
+- Launch target: 12 weeks of Levantine content and, under MSA, 4 weeks of general MSA plus 4 weeks of Quranic study.
 - French and Khmer are included in the product roadmap. Khmer's Cambodian/Phnom Penh model, twelve-unit target and conversation-first optional script direction were selected October 16; fluent review, exact reading/help/source decisions and release timing remain open. French’s Metropolitan France reference and twelve-unit target were selected October 18; exact source/review/audio acceptance remains. Neither joins the first-100 beta automatically. English remains the teaching/interface language unless the owner requests localization.
 - Levantine uses urban Palestinian as the primary model and labels Jordanian alternatives.
 - Quranic Arabic is comprehension-first. Teach decoding and pronunciation, but not detailed tajwid in the initial product.
@@ -121,8 +122,8 @@ full twelve-week quality target. Current delivery belongs in ROADMAP.md.
 ### Thirty-day outcomes at 15 minutes per day
 
 - Levantine: hold a five-minute guided conversation about topics such as the learner's day, plans, food, family, or directions without switching to English.
-- MSA: understand common headlines and the gist of a one-minute learner-adapted news segment, then answer comprehension questions.
-- Quranic Arabic: read and explain the core vocabulary and direct meaning of Al-Ikhlas, Al-Falaq, and An-Nas.
+- General MSA path: understand common headlines and the gist of a one-minute learner-adapted news segment, then answer comprehension questions.
+- Quranic path within MSA: read and explain the core vocabulary and direct meaning of Al-Ikhlas, Al-Falaq, and An-Nas.
 
 ### Learning experience
 
@@ -218,7 +219,7 @@ The initial release is a free, invite-only beta containing:
 
 - The mobile-first learner web app.
 - The internal curriculum review console.
-- Twelve weeks of Levantine and four weeks each of MSA and Quranic Arabic.
+- Twelve weeks of Levantine and, under the MSA umbrella, four weeks each of general MSA and Quranic study.
 - Downloadable/offline core lessons and queued progress synchronization.
 - Controlled, guided speaking scenarios with online AI feedback.
 
@@ -291,7 +292,7 @@ Work directly on `main`. Do not create Codex branches, other feature branches, o
 
 ### Application versioning
 
-Starting October 18, 2026, increment the application patch version by **0.0.1 for every completed fix or feature implementation**, including API-only changes. The current version is `0.0.1`; the next implementation must be `0.0.2`, then `0.0.3`, and so on. Do not retroactively renumber earlier work. Increment once per distinct completed fix/feature, not again for its tests, extra commits, documentation follow-ups, deployment retries or rollback. Distinct implementations bundled in one release each count toward the increment.
+Starting October 18, 2026, increment the application patch version by **0.0.1 for every completed fix or feature implementation**, including API-only changes. The initial version was `0.0.1`; read the current version from `i-web/package.json` and increment its patch by one. Do not retroactively renumber earlier work. Increment once per distinct completed fix/feature, not again for its tests, extra commits, documentation follow-ups, deployment retries or rollback. Distinct implementations bundled in one release each count toward the increment.
 
 Use `i-web/package.json` as the application version source and keep the top-level and root-package versions in `i-web/package-lock.json` aligned. The displayed `Beta` label derives from that source through Vite and `i-web/src/version.ts`; do not hardcode a separate UI version. Record the new application version with the implementation evidence and verify the build displays it. Application version changes never alter curriculum package versions, hashes, approval notices or publication records. Documentation-only work and recording this rule do not increment the version.
 

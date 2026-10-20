@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
+import { courseGroups } from './courses'
 import { studyTracks, type StudyPreferences, type TrackId } from './studyPlan'
 const props = defineProps<{ preferences: StudyPreferences; busy: boolean; message: string; conflict: boolean; availableCourseIds?: string[] }>()
 const emit = defineEmits<{ save: [value: StudyPreferences]; resolve: [keepLocal: boolean] }>()
@@ -28,10 +29,20 @@ function toggle(id: TrackId, checked: boolean) {
       </fieldset>
       <fieldset :disabled="busy">
         <legend>Courses</legend>
-        <label v-for="track in studyTracks" :key="track.id" class="study-track-option">
-          <input type="checkbox" :checked="draft.selectedTrackIds.includes(track.id)" @change="toggle(track.id, ($event.target as HTMLInputElement).checked)" />
-          <span>{{ track.name }}<small v-if="!availableCourseIds?.includes(track.id)">Lessons not yet available</small></span>
-        </label>
+        <template v-for="group in courseGroups" :key="group.id">
+          <fieldset v-if="group.paths.length > 1" class="study-paths">
+            <legend>{{ group.name }}</legend>
+            <p>Choose either or both paths. Each keeps its own progress.</p>
+            <label v-for="track in group.paths" :key="track.id" class="study-track-option">
+              <input type="checkbox" :checked="draft.selectedTrackIds.includes(track.id)" @change="toggle(track.id, ($event.target as HTMLInputElement).checked)" />
+              <span>{{ track.pathName }}<small v-if="!availableCourseIds?.includes(track.id)">Lessons not yet available</small></span>
+            </label>
+          </fieldset>
+          <label v-else class="study-track-option">
+            <input type="checkbox" :checked="draft.selectedTrackIds.includes(group.id)" @change="toggle(group.id, ($event.target as HTMLInputElement).checked)" />
+            <span>{{ group.name }}<small v-if="!availableCourseIds?.includes(group.id)">Lessons not yet available</small></span>
+          </label>
+        </template>
       </fieldset>
       <div class="primary-track-select">
         <label for="primary-study-track">Primary course</label>
@@ -61,6 +72,8 @@ legend, .primary-track-select { font-weight: 700; }
 .goal-options label { display: flex; gap: .35rem; align-items: center; padding: .65rem; border: 1px solid #738d7b; border-radius: .5rem; }
 input { flex-shrink: 0; margin: 0; accent-color: #12613f; width: 1.1rem; height: 1.1rem; }
 .study-track-option { display: flex; align-items: center; gap: .65rem; min-height: 48px; margin-top: .4rem; }
+.study-paths { margin-top: .75rem; padding: .75rem; border: 1px solid #b5c2b8; border-radius: .75rem; }
+.study-paths p { margin: 0; font-size: .85rem; }
 small { display: block; font-size: .8rem; font-weight: 400; }
 .primary-track-select { display: grid; gap: .5rem; }
 select { max-width: 100%; min-height: 44px; padding: .5rem; background: white; color: inherit; border: 1px solid #738d7b; border-radius: .5rem; font: inherit; }

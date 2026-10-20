@@ -2127,14 +2127,11 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
   --course-surface: #076447; --course-ink: #fff; --course-band: #bd293b; --course-band-ink: #fff; --course-text: #076447;
   --course-stripe: linear-gradient(90deg, #16120f 0 25%, #fff 25% 50%, #13a774 50% 75%, #ce3341 75%);
 }
-[data-course="msa"] {
+[data-course="msa"], [data-course="quranic"] {
   --course-surface: #e8b442; --course-ink: #26352f; --course-band: #26352f; --course-band-ink: #fff8e6; --course-text: #7a4f0c;
   --course-stripe: linear-gradient(90deg, #26352f 0 30%, #fff4d6 30% 70%, #936015 70%);
 }
-[data-course="quranic"] {
-  --course-surface: #293832; --course-ink: #fffdf8; --course-band: #c49b46; --course-band-ink: #1d2924; --course-text: #293832;
-  --course-stripe: linear-gradient(90deg, #c49b46 0 50%, #8a6a2a 50%);
-}
+
 [data-course="french"] {
   --course-surface: #174b91; --course-ink: #fff; --course-band: #bd293b; --course-band-ink: #fff; --course-text: #174b91;
   --course-stripe: linear-gradient(90deg, #0f3a78 0 33%, #fff 33% 66%, #ce3341 66%);
@@ -2152,3 +2149,6 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 }
 .optional-activities { margin-bottom: 24px; }
 .optional-activities > summary { cursor: pointer; padding: 14px 0; font-weight: 700; }
+
+.msa-path-actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+.msa-path-actions [aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 2px; }

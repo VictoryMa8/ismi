@@ -31,9 +31,9 @@ test.beforeAll(async({request})=>{await owner(request); for(const course of ['le
 test('unavailable packs and direct routes are honest and accessible',async({page})=>{
   await page.route('**/api/alphabet',r=>r.fulfill({json:{schemaVersion:1,courses:['levantine','msa','quranic','french','khmer'].map(courseId=>({courseId,packId:null,version:null,contentHash:null})),withdrawnIds:[]}}))
   await page.goto('/#/practice/alphabet'); await expect(page.getByRole('heading',{name:'No alphabet pack published yet'})).toBeVisible(); await expect(courseSwitch(page)).toBeVisible()
-  await chooseCourse(page, 'quranic'); await expect(page.locator('.alphabet-course')).toHaveText('Quranic Arabic')
+  await chooseCourse(page, 'quranic'); await expect(page.locator('.alphabet-course')).toHaveText('MSA · Quranic Arabic')
   await page.getByRole('link',{name:'Back to Practice',exact:true}).click(); await expect(page.locator('.tile-alphabet')).toBeVisible()
-  await page.getByRole('link',{name:'Courses',exact:true}).last().click(); await expect(page.getByRole('link',{name:/Alphabet · Quranic Arabic/})).toBeVisible()
+  await page.getByRole('link',{name:'Courses',exact:true}).last().click(); await expect(page.getByRole('link',{name:/Alphabet · MSA · Quranic Arabic/})).toBeVisible()
 })
 
 test('real API pack renders exact forms and words, search and first-help-retry evidence',async({page})=>{

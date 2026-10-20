@@ -160,7 +160,6 @@
 }
 .tracks-grid [data-course="levantine"] { --course-surface: #087456; --course-edge: #075640; }
 .tracks-grid [data-course="msa"] { --course-surface: #e8b442; --course-ink: #26352f; --course-edge: #936015; }
-.tracks-grid [data-course="quranic"] { --course-surface: #293832; --course-edge: #c49b46; }
 .tracks-grid [data-course="french"] { --course-surface: #174b91; --course-edge: #102f5b; }
 .tracks-grid [data-course="khmer"] { --course-surface: #a51f40; --course-edge: #174b91; }
 .tracks-grid article h3, .tracks-grid article p, .tracks-grid article .track-planned { color: inherit; }

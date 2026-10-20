@@ -1,6 +1,6 @@
 # Ismi
 
-Ismi is a mobile-first Arabic learning web app for Palestinian Levantine, Modern Standard Arabic, and Quranic Arabic. Learners can study one track or combine all three in one daily plan.
+Ismi is a mobile-first language learning web app rooted in Palestinian Arabic. Arabic has Palestinian Levantine and a Modern Standard Arabic (MSA) umbrella with general MSA and Quranic study paths. French and Khmer previews are also available. Learners can combine courses and paths in one daily plan, with separate progress.
 
 **[Open the roadmap](ROADMAP.md)** for work queues, separate implementation/content/verification
 states, delivery evidence and the next action for each feature. Agents follow [the planning workflow](docs/planning-workflow.md).

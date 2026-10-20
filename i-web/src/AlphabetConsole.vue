@@ -2,7 +2,7 @@
 import { computed, onMounted, ref } from 'vue'
 import { request, uploadRecording } from './api'
 import { blankAlphabet, type AlphabetDetail, type AlphabetSummary, type AlphabetDraftPack, type AlphabetPack } from './alphabet'
-import { courses, type CourseId } from './courses'
+import { courses, courseGroups, type CourseId } from './courses'
 import AlphabetExplorer from './AlphabetExplorer.vue'
 const summaries = ref<AlphabetSummary[]>([]), selected = ref<AlphabetDetail | null>(null), version = ref(1), course = ref<CourseId>('levantine')
 const json = ref(''), saved = ref(''), busy = ref(false), error = ref(''), notice = ref(''), reason = ref('')
@@ -43,9 +43,9 @@ onMounted(() => void run(async () => { summaries.value = await list(); create() 
 <template>
   <section class="alphabet-console" aria-labelledby="alphabet-console-heading">
     <h2 id="alphabet-console-heading">Alphabet packs</h2>
-    <p>Draft → validate → approve → publish. Review exact inventories, examples and answer rationales. Text-only packs use visual practice; audio packs also require reviewed human recordings. MSA and Quranic publication require further track controls.</p>
+    <p>Draft → validate → approve → publish. Review exact inventories, examples and answer rationales. Text-only packs use visual practice; audio packs also require reviewed human recordings. Both MSA paths require further publication controls; Quranic study also requires scripture integrity controls.</p>
     <p v-if="error" role="alert" class="console-message error">{{ error }}</p><p v-if="notice" role="status" class="console-message success">{{ notice }}</p>
-    <div class="alphabet-console-toolbar"><label>New pack course<select v-model="course" :disabled="busy"><option v-for="c in courses" :key="c.id" :value="c.id">{{ c.name }}</option></select></label><button type="button" class="secondary-action" :disabled="busy" @click="create">New alphabet draft</button><label>Import alphabet JSON<input type="file" accept=".json,application/json" :disabled="busy" @change="importJson" /></label></div>
+    <div class="alphabet-console-toolbar"><label>New pack course<select v-model="course" :disabled="busy"><template v-for="group in courseGroups" :key="group.id"><optgroup v-if="group.paths.length > 1" :label="group.name"><option v-for="path in group.paths" :key="path.id" :value="path.id">{{ path.pathName }}</option></optgroup><option v-else :value="group.id">{{ group.name }}</option></template></select></label><button type="button" class="secondary-action" :disabled="busy" @click="create">New alphabet draft</button><label>Import alphabet JSON<input type="file" accept=".json,application/json" :disabled="busy" @change="importJson" /></label></div>
     <ul><li v-for="s in summaries" :key="s.id"><button type="button" class="secondary-action" :disabled="busy" @click="load(s.id)">{{ s.title }} · {{ s.courseId }} · {{ s.status }} · v{{ s.latestVersion }}</button></li></ul>
     <label v-if="selected">Saved alphabet version<select v-model="version" :disabled="busy" @change="set(selected!, version)"><option v-for="v in selected.state.versions" :key="v.number" :value="v.number">v{{ v.number }} · {{ v.status }}</option></select></label>
     <label>Alphabet pack JSON<textarea v-model="json" spellcheck="false" rows="20" :disabled="busy" @input="preview = null; validation = null" /></label>

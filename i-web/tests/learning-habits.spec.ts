@@ -177,7 +177,7 @@ test('optional controls, keyboard, goal changes, enlarged text and missing track
   })
   expect(await page.locator('body').evaluate(el => el.scrollWidth <= window.innerWidth)).toBe(true)
   await page.getByRole('link', { name: 'Account', exact: true }).click()
-  await page.getByLabel('Modern Standard Arabic').check()
+  await page.getByLabel('General MSA').check()
   await page.getByLabel('Palestinian Levantine').uncheck()
   await page.getByRole('button', { name: 'Save study settings' }).click()
   await expect(page.getByRole('button', { name: 'Save study settings' })).toBeEnabled()

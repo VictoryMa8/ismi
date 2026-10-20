@@ -286,15 +286,19 @@ reconciliation are separate gates; preserve published release snapshots.
 
 ### F13 MSA course
 
-**Outcome:** four weeks of MSA with script/help support and timeless adapted listening.
+**Outcome:** one MSA umbrella containing four weeks of general MSA with script/help support and timeless adapted listening, plus the four-week Quranic path retained under stable F14. The owner requested this hierarchy on October 19, 2026. F13.1 covers presentation only; completing it does not complete either curriculum.
+
+The umbrella requires both paths to satisfy their own outcomes and gates. [Presentation contract](../msa-umbrella.md).
 
 **Done when:** source-linked course/audio packages pass appropriate validation and
 publication gates, support offline accessible study and have comprehension evidence.
-The current three-track dashboard is not evidence that an MSA course exists.
+A grouped dashboard is not evidence that either MSA path has a complete course.
 
-### F14 Quranic course
+<a id="f14-quranic-course"></a>
 
-**Outcome:** four weeks of comprehension-first Quranic study within adopted source boundaries.
+#### F14 Quranic path within MSA
+
+**Outcome:** four weeks of comprehension-first Quranic study as a path within the F13 MSA umbrella, with distinct progress, goals and adopted source boundaries. The stable F14 ID and old anchor are retained for existing links; it no longer denotes a separate top-level course.
 
 **Done when:** unchanged canonical text and separate provenance-bearing translations,
 morphology/audio are integrity-checked; console review/publication controls exist;
@@ -881,7 +885,7 @@ listening editions need separately scoped F09 recordings/transcripts.
 ### F24 Multi-language foundation and parallel study
 
 **Outcome:** learners study Arabic, French and Khmer singly or in parallel in the
-same English-language app. Arabic retains distinct Levantine/MSA/Quranic courses;
+same English-language app. Arabic retains Levantine and an MSA umbrella with distinct general-MSA/Quranic paths;
 each course has separate placement, progress, review and content safeguards.
 Shared course metadata, wording and visual identity also accommodate eventual
 Portuguese and further languages without promising their curricula or release.
@@ -1050,7 +1054,7 @@ switch between Arabic and Khmer without visiting Account or hunting through Cour
 **Scope:** a persistent, labeled selector in the mobile app header and desktop
 header/sidebar, with the current language and course plus an explicit “Switch” cue.
 Recommend two taps from a main page: open selector → choose Arabic or Khmer.
-Arabic retains its separate Palestinian Levantine/MSA/Quranic courses; restore the
+Arabic retains Palestinian Levantine and an MSA umbrella with general-MSA/Quranic paths; restore the
 last usable course within that language, with clear choices for the others.
 Future French/Portuguese entries use the same selector when actually available.
 
