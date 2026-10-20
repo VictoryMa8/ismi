@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-neighborhood-06-04",
+    "trackId": "levantine",
+    "title": "Explain where you are",
+    "scenario": "Telling someone where you are now and correcting the wrong street.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: I'm at the pharmacy, beside the bank.",
+        "prompt": {
+          "arabic": "وينك هلأ؟",
+          "arabizi": "Wēnak hallaʾ?",
+          "meaning": "Where are you now?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، لسا برا.",
+            "arabizi": "Laʾ, lissa barra.",
+            "meaning": "No, I'm still outside.",
+            "rationale": "This says “No, I'm still outside.” The requested response is “I'm at the pharmacy, beside the bank.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا عند الصيدلية، جنب البنك.",
+            "arabizi": "Ana ʿind iṣ-ṣēdaliyye, janb il-bank.",
+            "meaning": "I'm at the pharmacy, beside the bank.",
+            "rationale": "This gives the requested response: I'm at the pharmacy, beside the bank. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، بالشارع الصغير.",
+            "arabizi": "Laʾ, bish-shāriʿ iṣ-ṣghīr.",
+            "meaning": "No, on the small street.",
+            "rationale": "This says “No, on the small street.” The requested response is “I'm at the pharmacy, beside the bank.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I'm at the pharmacy, beside the bank. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I'm at the pharmacy, beside the bank.",
+          "retryHint": "Keep this meaning and perspective: I'm at the pharmacy, beside the bank."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: No, on the small street.",
+        "prompt": {
+          "arabic": "بالشارع الكبير، صح؟",
+          "arabizi": "Bish-shāriʿ il-kbīr, ṣaḥḥ?",
+          "meaning": "On the big street, right?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، بالشارع الصغير.",
+            "arabizi": "Laʾ, bish-shāriʿ iṣ-ṣghīr.",
+            "meaning": "No, on the small street.",
+            "rationale": "This gives the requested response: No, on the small street. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، لسا برا.",
+            "arabizi": "Laʾ, lissa barra.",
+            "meaning": "No, I'm still outside.",
+            "rationale": "This says “No, I'm still outside.” The requested response is “No, on the small street.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا عند الصيدلية، جنب البنك.",
+            "arabizi": "Ana ʿind iṣ-ṣēdaliyye, janb il-bank.",
+            "meaning": "I'm at the pharmacy, beside the bank.",
+            "rationale": "This says “I'm at the pharmacy, beside the bank.” The requested response is “No, on the small street.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: No, on the small street. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: No, on the small street.",
+          "retryHint": "Keep this meaning and perspective: No, on the small street."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: No, I'm still outside.",
+        "prompt": {
+          "arabic": "دخلت عالصيدلية؟",
+          "arabizi": "Dakhalt ʿa-ṣ-ṣēdaliyye?",
+          "meaning": "Did you go into the pharmacy?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا عند الصيدلية، جنب البنك.",
+            "arabizi": "Ana ʿind iṣ-ṣēdaliyye, janb il-bank.",
+            "meaning": "I'm at the pharmacy, beside the bank.",
+            "rationale": "This says “I'm at the pharmacy, beside the bank.” The requested response is “No, I'm still outside.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، بالشارع الصغير.",
+            "arabizi": "Laʾ, bish-shāriʿ iṣ-ṣghīr.",
+            "meaning": "No, on the small street.",
+            "rationale": "This says “No, on the small street.” The requested response is “No, I'm still outside.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، لسا برا.",
+            "arabizi": "Laʾ, lissa barra.",
+            "meaning": "No, I'm still outside.",
+            "rationale": "This gives the requested response: No, I'm still outside. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: No, I'm still outside. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: No, I'm still outside.",
+          "retryHint": "Keep this meaning and perspective: No, I'm still outside."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: I'm at the pharmacy, beside the bank.",
+        "prompt": {
+          "arabic": "وينك هلأ؟",
+          "arabizi": "Wēnak hallaʾ?",
+          "meaning": "Where are you now?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، لسا برا.",
+            "arabizi": "Laʾ, lissa barra.",
+            "meaning": "No, I'm still outside.",
+            "rationale": "This says “No, I'm still outside.” The requested response is “I'm at the pharmacy, beside the bank.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا عند الصيدلية، جنب البنك.",
+            "arabizi": "Ana ʿind iṣ-ṣēdaliyye, janb il-bank.",
+            "meaning": "I'm at the pharmacy, beside the bank.",
+            "rationale": "This gives the requested response: I'm at the pharmacy, beside the bank. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، بالشارع الصغير.",
+            "arabizi": "Laʾ, bish-shāriʿ iṣ-ṣghīr.",
+            "meaning": "No, on the small street.",
+            "rationale": "This says “No, on the small street.” The requested response is “I'm at the pharmacy, beside the bank.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I'm at the pharmacy, beside the bank. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I'm at the pharmacy, beside the bank.",
+          "retryHint": "Keep this meaning and perspective: I'm at the pharmacy, beside the bank."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: No, on the small street.",
+        "prompt": {
+          "arabic": "بالشارع الكبير، صح؟",
+          "arabizi": "Bish-shāriʿ il-kbīr, ṣaḥḥ?",
+          "meaning": "On the big street, right?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، بالشارع الصغير.",
+            "arabizi": "Laʾ, bish-shāriʿ iṣ-ṣghīr.",
+            "meaning": "No, on the small street.",
+            "rationale": "This gives the requested response: No, on the small street. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، لسا برا.",
+            "arabizi": "Laʾ, lissa barra.",
+            "meaning": "No, I'm still outside.",
+            "rationale": "This says “No, I'm still outside.” The requested response is “No, on the small street.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا عند الصيدلية، جنب البنك.",
+            "arabizi": "Ana ʿind iṣ-ṣēdaliyye, janb il-bank.",
+            "meaning": "I'm at the pharmacy, beside the bank.",
+            "rationale": "This says “I'm at the pharmacy, beside the bank.” The requested response is “No, on the small street.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: No, on the small street. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: No, on the small street.",
+          "retryHint": "Keep this meaning and perspective: No, on the small street."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: No, I'm still outside.",
+        "prompt": {
+          "arabic": "دخلت عالصيدلية؟",
+          "arabizi": "Dakhalt ʿa-ṣ-ṣēdaliyye?",
+          "meaning": "Did you go into the pharmacy?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا عند الصيدلية، جنب البنك.",
+            "arabizi": "Ana ʿind iṣ-ṣēdaliyye, janb il-bank.",
+            "meaning": "I'm at the pharmacy, beside the bank.",
+            "rationale": "This says “I'm at the pharmacy, beside the bank.” The requested response is “No, I'm still outside.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، بالشارع الصغير.",
+            "arabizi": "Laʾ, bish-shāriʿ iṣ-ṣghīr.",
+            "meaning": "No, on the small street.",
+            "rationale": "This says “No, on the small street.” The requested response is “No, I'm still outside.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، لسا برا.",
+            "arabizi": "Laʾ, lissa barra.",
+            "meaning": "No, I'm still outside.",
+            "rationale": "This gives the requested response: No, I'm still outside. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: No, I'm still outside. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: No, I'm still outside.",
+          "retryHint": "Keep this meaning and perspective: No, I'm still outside."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-neighborhood-06",
+    "unitTitle": "Around the neighborhood",
+    "courseOrder": 29,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-neighborhood-06-04/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to explain where you are.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وينك هلأ؟",
+            "arabizi": "Wēnak hallaʾ?",
+            "meaning": "Where are you now?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "أنا عند الصيدلية، جنب البنك.",
+            "arabizi": "Ana ʿind iṣ-ṣēdaliyye, janb il-bank.",
+            "meaning": "I'm at the pharmacy, beside the bank.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "بالشارع الكبير، صح؟",
+            "arabizi": "Bish-shāriʿ il-kbīr, ṣaḥḥ?",
+            "meaning": "On the big street, right?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "لا، بالشارع الصغير.",
+            "arabizi": "Laʾ, bish-shāriʿ iṣ-ṣghīr.",
+            "meaning": "No, on the small street.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "دخلت عالصيدلية؟",
+            "arabizi": "Dakhalt ʿa-ṣ-ṣēdaliyye?",
+            "meaning": "Did you go into the pharmacy?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "لا، لسا برا.",
+            "arabizi": "Laʾ, lissa barra.",
+            "meaning": "No, I'm still outside.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "وينك هلأ؟",
+          "arabizi": "Wēnak hallaʾ?",
+          "meaning": "Where are you now?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أنا عند الصيدلية، جنب البنك.",
+          "arabizi": "Ana ʿind iṣ-ṣēdaliyye, janb il-bank.",
+          "meaning": "I'm at the pharmacy, beside the bank.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "لا، بالشارع الصغير.",
+          "arabizi": "Laʾ, bish-shāriʿ iṣ-ṣghīr.",
+          "meaning": "No, on the small street.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "لا، لسا برا.",
+          "arabizi": "Laʾ, lissa barra.",
+          "meaning": "No, I'm still outside.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+        "internal:ismi/f12-expansion/levantine-neighborhood-06-04/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Where are you now?",
+          "phrase": {
+            "arabic": "وينك هلأ؟",
+            "arabizi": "Wēnak hallaʾ?",
+            "meaning": "Where are you now?",
+            "audioUrl": null
+          },
+          "note": "Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice. In this scene: Where are you now?",
+          "recallCue": "In this scene, express: Where are you now?",
+          "chunks": [
+            {
+              "arabic": "وينك",
+              "arabizi": "Wēnak",
+              "meaning": "Where are you"
+            },
+            {
+              "arabic": "هلأ؟",
+              "arabizi": "hallaʾ?",
+              "meaning": "now?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-04/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "I'm at the pharmacy, beside the bank.",
+          "phrase": {
+            "arabic": "أنا عند الصيدلية، جنب البنك.",
+            "arabizi": "Ana ʿind iṣ-ṣēdaliyye, janb il-bank.",
+            "meaning": "I'm at the pharmacy, beside the bank.",
+            "audioUrl": null
+          },
+          "note": "Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice. In this scene: I'm at the pharmacy, beside the bank.",
+          "recallCue": "In this scene, express: I'm at the pharmacy, beside the bank.",
+          "chunks": [
+            {
+              "arabic": "أنا عند الصيدلية،",
+              "arabizi": "Ana ʿind iṣ-ṣēdaliyye,",
+              "meaning": "I'm at the pharmacy,"
+            },
+            {
+              "arabic": "جنب البنك.",
+              "arabizi": "janb il-bank.",
+              "meaning": "beside the bank."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "No, on the small street.",
+          "phrase": {
+            "arabic": "لا، بالشارع الصغير.",
+            "arabizi": "Laʾ, bish-shāriʿ iṣ-ṣghīr.",
+            "meaning": "No, on the small street.",
+            "audioUrl": null
+          },
+          "note": "Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice. In this scene: No, on the small street.",
+          "recallCue": "In this scene, express: No, on the small street.",
+          "chunks": [
+            {
+              "arabic": "لا،",
+              "arabizi": "Laʾ,",
+              "meaning": "No,"
+            },
+            {
+              "arabic": "بالشارع الصغير.",
+              "arabizi": "bish-shāriʿ iṣ-ṣghīr.",
+              "meaning": "on the small street."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "No, I'm still outside.",
+          "phrase": {
+            "arabic": "لا، لسا برا.",
+            "arabizi": "Laʾ, lissa barra.",
+            "meaning": "No, I'm still outside.",
+            "audioUrl": null
+          },
+          "note": "Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice. In this scene: No, I'm still outside.",
+          "recallCue": "In this scene, express: No, I'm still outside.",
+          "chunks": [
+            {
+              "arabic": "لا،",
+              "arabizi": "Laʾ,",
+              "meaning": "No,"
+            },
+            {
+              "arabic": "لسا برا.",
+              "arabizi": "lissa barra.",
+              "meaning": "I'm still outside."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: I'm at the pharmacy, beside the bank.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "I'm at the pharmacy, beside the bank."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "أنا عند الصيدلية، جنب البنك.",
+            "arabizi": "Ana ʿind iṣ-ṣēdaliyye, janb il-bank.",
+            "meaning": "I'm at the pharmacy, beside the bank.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "I'm at the pharmacy, beside the bank.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Telling someone where you are now and correcting the wrong street. Respond to: Where are you now? Your intended meaning: I'm at the pharmacy, beside the bank.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: I'm at the pharmacy, beside the bank.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: No, on the small street.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "No, on the small street."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "لا، بالشارع الصغير.",
+            "arabizi": "Laʾ, bish-shāriʿ iṣ-ṣghīr.",
+            "meaning": "No, on the small street.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "No, on the small street.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Telling someone where you are now and correcting the wrong street. Respond to: On the big street, right? Your intended meaning: No, on the small street.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: No, on the small street.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: No, I'm still outside.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "No, I'm still outside."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "لا، لسا برا.",
+            "arabizi": "Laʾ, lissa barra.",
+            "meaning": "No, I'm still outside.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "No, I'm still outside.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Telling someone where you are now and correcting the wrong street. Respond to: Did you go into the pharmacy? Your intended meaning: No, I'm still outside.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: No, I'm still outside.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · cars-and-other-transportation-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · adverbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Explain where you are",
+      "locator": "internal:ismi/f12-expansion/levantine-neighborhood-06-04/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Telling someone where you are now and correcting the wrong street. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

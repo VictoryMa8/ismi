@@ -9,6 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="../content/levantine/expansion-20/*-lesson.json" LogicalName="Ismi.LevantineExpansion.%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../content/levantine/expansion-20/review-manifest.json" LogicalName="Ismi.LevantineExpansion.review-manifest.json" />
     <EmbeddedResource Include="../content/stories/after-a-long-day/01.pack.json" LogicalName="Ismi.StoryPreview.01.pack.json" />
     <EmbeddedResource Include="../content/alphabet/inventory-preview/*.pack.json" LogicalName="Ismi.AlphabetPreview.%(Filename)%(Extension)" />
     <EmbeddedResource Include="../content/alphabet/sources/UNICODE-LICENSE-V3.txt" LogicalName="Ismi.AlphabetPreview.UnicodeLicense.txt" />

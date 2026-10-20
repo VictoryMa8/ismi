@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-home-03-04",
+    "trackId": "levantine",
+    "title": "Say what you need",
+    "scenario": "Choosing rest and water after work; a need is different from an invitation to go out.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: I want to rest a little.",
+        "prompt": {
+          "arabic": "شو بدك بعد الشغل؟",
+          "arabizi": "Shū biddak baʿd ish-shughl?",
+          "meaning": "What would you like after work?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "مش هلأ، بعد شوي.",
+            "arabizi": "Mish hallaʾ, baʿd shway.",
+            "meaning": "Not now, in a little while.",
+            "rationale": "This says “Not now, in a little while.” The requested response is “I want to rest a little.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "بدي أرتاح شوي.",
+            "arabizi": "Biddi artāḥ shway.",
+            "meaning": "I want to rest a little.",
+            "rationale": "This gives the requested response: I want to rest a little. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، مي باردة.",
+            "arabizi": "Āh, mayy bārde.",
+            "meaning": "Yes, cold water.",
+            "rationale": "This says “Yes, cold water.” The requested response is “I want to rest a little.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I want to rest a little. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I want to rest a little.",
+          "retryHint": "Keep this meaning and perspective: I want to rest a little."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, cold water.",
+        "prompt": {
+          "arabic": "بدك مي؟",
+          "arabizi": "Biddak mayy?",
+          "meaning": "Would you like water?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، مي باردة.",
+            "arabizi": "Āh, mayy bārde.",
+            "meaning": "Yes, cold water.",
+            "rationale": "This gives the requested response: Yes, cold water. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike."
+          },
+          {
+            "id": "b",
+            "arabic": "مش هلأ، بعد شوي.",
+            "arabizi": "Mish hallaʾ, baʿd shway.",
+            "meaning": "Not now, in a little while.",
+            "rationale": "This says “Not now, in a little while.” The requested response is “Yes, cold water.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "بدي أرتاح شوي.",
+            "arabizi": "Biddi artāḥ shway.",
+            "meaning": "I want to rest a little.",
+            "rationale": "This says “I want to rest a little.” The requested response is “Yes, cold water.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, cold water. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, cold water.",
+          "retryHint": "Keep this meaning and perspective: Yes, cold water."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Not now, in a little while.",
+        "prompt": {
+          "arabic": "نطلع هلأ؟",
+          "arabizi": "Niṭlaʿ hallaʾ?",
+          "meaning": "Shall we go out now?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بدي أرتاح شوي.",
+            "arabizi": "Biddi artāḥ shway.",
+            "meaning": "I want to rest a little.",
+            "rationale": "This says “I want to rest a little.” The requested response is “Not now, in a little while.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، مي باردة.",
+            "arabizi": "Āh, mayy bārde.",
+            "meaning": "Yes, cold water.",
+            "rationale": "This says “Yes, cold water.” The requested response is “Not now, in a little while.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "مش هلأ، بعد شوي.",
+            "arabizi": "Mish hallaʾ, baʿd shway.",
+            "meaning": "Not now, in a little while.",
+            "rationale": "This gives the requested response: Not now, in a little while. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Not now, in a little while. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Not now, in a little while.",
+          "retryHint": "Keep this meaning and perspective: Not now, in a little while."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: I want to rest a little.",
+        "prompt": {
+          "arabic": "شو بدك بعد الشغل؟",
+          "arabizi": "Shū biddak baʿd ish-shughl?",
+          "meaning": "What would you like after work?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "مش هلأ، بعد شوي.",
+            "arabizi": "Mish hallaʾ, baʿd shway.",
+            "meaning": "Not now, in a little while.",
+            "rationale": "This says “Not now, in a little while.” The requested response is “I want to rest a little.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "بدي أرتاح شوي.",
+            "arabizi": "Biddi artāḥ shway.",
+            "meaning": "I want to rest a little.",
+            "rationale": "This gives the requested response: I want to rest a little. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، مي باردة.",
+            "arabizi": "Āh, mayy bārde.",
+            "meaning": "Yes, cold water.",
+            "rationale": "This says “Yes, cold water.” The requested response is “I want to rest a little.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I want to rest a little. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I want to rest a little.",
+          "retryHint": "Keep this meaning and perspective: I want to rest a little."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, cold water.",
+        "prompt": {
+          "arabic": "بدك مي؟",
+          "arabizi": "Biddak mayy?",
+          "meaning": "Would you like water?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، مي باردة.",
+            "arabizi": "Āh, mayy bārde.",
+            "meaning": "Yes, cold water.",
+            "rationale": "This gives the requested response: Yes, cold water. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike."
+          },
+          {
+            "id": "b",
+            "arabic": "مش هلأ، بعد شوي.",
+            "arabizi": "Mish hallaʾ, baʿd shway.",
+            "meaning": "Not now, in a little while.",
+            "rationale": "This says “Not now, in a little while.” The requested response is “Yes, cold water.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "بدي أرتاح شوي.",
+            "arabizi": "Biddi artāḥ shway.",
+            "meaning": "I want to rest a little.",
+            "rationale": "This says “I want to rest a little.” The requested response is “Yes, cold water.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, cold water. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, cold water.",
+          "retryHint": "Keep this meaning and perspective: Yes, cold water."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Not now, in a little while.",
+        "prompt": {
+          "arabic": "نطلع هلأ؟",
+          "arabizi": "Niṭlaʿ hallaʾ?",
+          "meaning": "Shall we go out now?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بدي أرتاح شوي.",
+            "arabizi": "Biddi artāḥ shway.",
+            "meaning": "I want to rest a little.",
+            "rationale": "This says “I want to rest a little.” The requested response is “Not now, in a little while.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، مي باردة.",
+            "arabizi": "Āh, mayy bārde.",
+            "meaning": "Yes, cold water.",
+            "rationale": "This says “Yes, cold water.” The requested response is “Not now, in a little while.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "مش هلأ، بعد شوي.",
+            "arabizi": "Mish hallaʾ, baʿd shway.",
+            "meaning": "Not now, in a little while.",
+            "rationale": "This gives the requested response: Not now, in a little while. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Not now, in a little while. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Not now, in a little while.",
+          "retryHint": "Keep this meaning and perspective: Not now, in a little while."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-home-03",
+    "unitTitle": "At home together",
+    "courseOrder": 14,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/around-the-house-2/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-home-03-04/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to say what you need.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "شو بدك بعد الشغل؟",
+            "arabizi": "Shū biddak baʿd ish-shughl?",
+            "meaning": "What would you like after work?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "بدي أرتاح شوي.",
+            "arabizi": "Biddi artāḥ shway.",
+            "meaning": "I want to rest a little.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "بدك مي؟",
+            "arabizi": "Biddak mayy?",
+            "meaning": "Would you like water?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، مي باردة.",
+            "arabizi": "Āh, mayy bārde.",
+            "meaning": "Yes, cold water.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "نطلع هلأ؟",
+            "arabizi": "Niṭlaʿ hallaʾ?",
+            "meaning": "Shall we go out now?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "مش هلأ، بعد شوي.",
+            "arabizi": "Mish hallaʾ, baʿd shway.",
+            "meaning": "Not now, in a little while.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "شو بدك بعد الشغل؟",
+          "arabizi": "Shū biddak baʿd ish-shughl?",
+          "meaning": "What would you like after work?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "بدي أرتاح شوي.",
+          "arabizi": "Biddi artāḥ shway.",
+          "meaning": "I want to rest a little.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، مي باردة.",
+          "arabizi": "Āh, mayy bārde.",
+          "meaning": "Yes, cold water.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "مش هلأ، بعد شوي.",
+          "arabizi": "Mish hallaʾ, baʿd shway.",
+          "meaning": "Not now, in a little while.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+        "internal:ismi/f12-expansion/levantine-home-03-04/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "What would you like after work?",
+          "phrase": {
+            "arabic": "شو بدك بعد الشغل؟",
+            "arabizi": "Shū biddak baʿd ish-shughl?",
+            "meaning": "What would you like after work?",
+            "audioUrl": null
+          },
+          "note": "Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike. In this scene: What would you like after work?",
+          "recallCue": "In this scene, express: What would you like after work?",
+          "chunks": [
+            {
+              "arabic": "شو بدك",
+              "arabizi": "Shū biddak",
+              "meaning": "What would you like"
+            },
+            {
+              "arabic": "بعد الشغل؟",
+              "arabizi": "baʿd ish-shughl?",
+              "meaning": "after work?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-04/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "I want to rest a little.",
+          "phrase": {
+            "arabic": "بدي أرتاح شوي.",
+            "arabizi": "Biddi artāḥ shway.",
+            "meaning": "I want to rest a little.",
+            "audioUrl": null
+          },
+          "note": "Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike. In this scene: I want to rest a little.",
+          "recallCue": "In this scene, express: I want to rest a little.",
+          "chunks": [
+            {
+              "arabic": "بدي أرتاح",
+              "arabizi": "Biddi artāḥ",
+              "meaning": "I want to rest"
+            },
+            {
+              "arabic": "شوي.",
+              "arabizi": "shway.",
+              "meaning": "a little."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, cold water.",
+          "phrase": {
+            "arabic": "آه، مي باردة.",
+            "arabizi": "Āh, mayy bārde.",
+            "meaning": "Yes, cold water.",
+            "audioUrl": null
+          },
+          "note": "Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike. In this scene: Yes, cold water.",
+          "recallCue": "In this scene, express: Yes, cold water.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "مي باردة.",
+              "arabizi": "mayy bārde.",
+              "meaning": "cold water."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Not now, in a little while.",
+          "phrase": {
+            "arabic": "مش هلأ، بعد شوي.",
+            "arabizi": "Mish hallaʾ, baʿd shway.",
+            "meaning": "Not now, in a little while.",
+            "audioUrl": null
+          },
+          "note": "Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike. In this scene: Not now, in a little while.",
+          "recallCue": "In this scene, express: Not now, in a little while.",
+          "chunks": [
+            {
+              "arabic": "مش هلأ،",
+              "arabizi": "Mish hallaʾ,",
+              "meaning": "Not now,"
+            },
+            {
+              "arabic": "بعد شوي.",
+              "arabizi": "baʿd shway.",
+              "meaning": "in a little while."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: I want to rest a little.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "I want to rest a little."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "بدي أرتاح شوي.",
+            "arabizi": "Biddi artāḥ shway.",
+            "meaning": "I want to rest a little.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "I want to rest a little.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Choosing rest and water after work; a need is different from an invitation to go out. Respond to: What would you like after work? Your intended meaning: I want to rest a little.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: I want to rest a little.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Yes, cold water.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, cold water."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، مي باردة.",
+            "arabizi": "Āh, mayy bārde.",
+            "meaning": "Yes, cold water.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, cold water.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Choosing rest and water after work; a need is different from an invitation to go out. Respond to: Would you like water? Your intended meaning: Yes, cold water.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, cold water.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Not now, in a little while.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Not now, in a little while."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "مش هلأ، بعد شوي.",
+            "arabizi": "Mish hallaʾ, baʿd shway.",
+            "meaning": "Not now, in a little while.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Not now, in a little while.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Choosing rest and water after work; a need is different from an invitation to go out. Respond to: Shall we go out now? Your intended meaning: Not now, in a little while.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Not now, in a little while.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · around-the-house-2",
+      "locator": "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · adverbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Say what you need",
+      "locator": "internal:ismi/f12-expansion/levantine-home-03-04/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Choosing rest and water after work; a need is different from an invitation to go out. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

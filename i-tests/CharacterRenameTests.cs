@@ -6,6 +6,20 @@ namespace Ismi.Api.Tests;
 
 public sealed class CharacterRenameTests
 {
+    [Theory]
+    [InlineData("خلينا نطبخ سوا. لينا هون.", "خلينا نطبخ سوا. فتوش هون.")]
+    [InlineData("علينا وبالينا", "علينا وبالينا")]
+    public void ArabicNameMigrationPreservesWordsInPlainAndEscapedJson(string before, string expected)
+    {
+        Assert.Equal(expected, CharacterRegistry.CurrentNames(before));
+        var encoded = JsonSerializer.Serialize(new { text = before });
+        using var parsed = JsonDocument.Parse(CharacterRegistry.CurrentNames(encoded));
+        Assert.Equal(expected, parsed.RootElement.GetProperty("text").GetString());
+        var literal = JsonSerializer.Serialize(new { text = @"\u0644\u064A\u0646\u0627" });
+        using var literalParsed = JsonDocument.Parse(CharacterRegistry.CurrentNames(literal));
+        Assert.Equal(@"\u0644\u064A\u0646\u0627", literalParsed.RootElement.GetProperty("text").GetString());
+    }
+
     [Fact]
     public void LegacyPublicationCanBeReadWithCurrentNamesWithoutRewritingSnapshot()
     {

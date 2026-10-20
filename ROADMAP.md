@@ -48,7 +48,7 @@ not native-expert review. “N/A” means that layer is outside the bounded scop
 
 | Feature | Implementation | Content | Missing evidence / next gate | Application / publication |
 | --- | --- | --- | --- | --- |
-| F12 Levantine expansion | Partial course | Follow-on unit drafted; twelve-week depth absent | Exact draft review, speaker dispositions, remaining authoring | Shared app deployed / new drafts private |
+| F12 Levantine expansion | Current twenty-lesson cycle prepared; remaining depth is F12.6 | Twenty new unreviewed text packages; thirty remaining slots unauthored | Authorized application/content delivery; F12.5 retains human acceptance | Beta 0.0.8 local / new previews unpublished |
 | F15 study plan/placement | Settings and Levantine check complete | Remaining reading/sound modules absent | Scope other-track assessments and accepted modules | Delivered slices deployed |
 | F17 learning support | Habits/can-do/UI and grammar software deployed | Six anatomy phrases, two patterns and three notes owner accepted/published | Real AT checks; reminder/XP scope | Selected children deployed / lesson-one v5 published |
 | F21 cultural media | Complete | Four research editions awaiting acceptance | Real media/editorial checks, AT, exact publication | App deployed / media unpublished |
@@ -84,8 +84,7 @@ not a deployment command. UI availability is not curriculum completion.
 - Preserve the owner's selected engagement order: remaining **F23 → F17.5**;
   F22/F17.6/F17.7 are already delivered. F23 implementation was authorized October 18;
   F17.5 implementation authorized October 19; exact content publication remains separate. [Original scopes](docs/learning-engagement-plan.md).
-- Arabic content: review F12.1/F12.2 candidates before further release; F09 real
-  recordings remain distinct from F19's narrowly authorized free-tier audition.
+- Arabic content: owner authorized the exact F12 twenty-lesson unreviewed preview cycle October 19; F12.6 retains the final thirty. F12.1/F12.2 and full linguistic/source/audio/outcome acceptance remain separate. F09 human recordings remain distinct from F19 synthetic auditions.
 - Multi-language: F24 software is deployed. Accepted F25/F26 first units and actual
   device/pilot evidence precede bulk course/release decisions. F25/F26 draft implementation is
   authorized; French definition was selected October 18, with exact review/source gates open. F28's
@@ -113,13 +112,18 @@ The next-action text names the actor; use the record before taking action.
 | [F25 · French course](#f25-french-course) | Owner: designate fluent reviewer/source dispositions. Agent: first-unit review/pilot before bulk units 2–12. |
 | [F25.3 · French starting check, sounds and text support](#f253-french-starting-check-sounds-and-text-support) | Reviewer/agent: accept sample/spelling inputs, then calibrate starting check and sound/text support. |
 | [F06.1 · Character art redesign](#f061-character-art-redesign) | Owner: decide whether to authorize the remaining profile/turnaround production; no current app call site needs it. |
-| [F12 · Levantine course expansion](#f12-levantine-course-expansion) | Owner: review F12.1 drafts. Agent: bound the next batch only after review; do not equate three drafts with twelve weeks. |
 | [F15 · Personal study plan and placement](#f15-personal-study-plan-and-placement) | Agent: scope remaining track-specific assessments/modules; reuse delivered F28 text-only explorer, with F30/F09 review/audio boundaries. |
 | [F17 · Learning support and gamification](#f17-learning-support-and-gamification) | Owner/agent: record F17.5 real access checks. Agent: bound separate reminder/XP tasks before implementation; preserve no-hearts/free-floor constraints. |
 | [F18 · Invite-only beta readiness](#f18-invite-only-beta-readiness) | Agent: split remaining invite enforcement, reports/quarantine and operations into bounded tasks. Owner: resume F18.1 only explicitly. |
 | [F26 · Khmer course](#f26-khmer-course) | Owner: designate review route and source/help/reading dispositions. Agent: finish first-unit acceptance/pilot before bulk units 2–12. |
 | [F26.3 · Khmer script, sounds, input and starting check](#f263-khmer-script-sounds-input-and-starting-check) | Reviewer: select inventory/help and sound modules. Agent: integrate accepted modules and actual device checks; reuse F28/F30 rather than duplicate explorer. |
 | [F23 · Recurring mini-stories](#f23-recurring-mini-stories) | Owner: review F23.1. Agent: scope episodes two/three after first review; shared machinery and exact unreviewed preview are deployed. |
+
+### Delivery pending
+
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F12 · Levantine course expansion](#f12-levantine-course-expansion) | Agent: commit, deploy Beta 0.0.8 and publish exactly twenty unreviewed text previews; thirty remaining lessons moved to F12.6 by owner. |
 
 ### Review pending
 
@@ -136,6 +140,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F12.5 · Levantine acceptance and release evidence](#f125-levantine-acceptance-and-release-evidence) | Owner: exact linguistic/source dispositions, permitted audio and agreed observed-check setup; agent verifies accepted batches before authorized release. |
 | [F25.1 · French definition, sources and review route](#f251-french-definition-sources-and-review-route) | Owner: designate fluent French reviewer and disposition prepared sources/rights; course variety/depth/outcome selected. |
 | [F25.5 · French model audio and guided speaking](#f255-french-model-audio-and-guided-speaking) | Reviewer: accept fourteen scripts. Owner: arrange permitted recordings and provider/privacy decisions. |
 | [F09 · Reviewed Levantine recordings](#f09-reviewed-levantine-recordings) | Owner: supply/select permitted recordings and reviewer for an exact prompt batch. Agent: reconcile script/package hashes before upload. |
@@ -170,6 +175,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F12.6 · Remaining thirty Levantine lessons](#f126-remaining-thirty-levantine-lessons) | Owner: resume at a separate roadmap checkpoint after exact first-batch review/outcome dispositions; agent then bounds weeks 7–12. |
 | [F25.4 · French remaining units and reference material](#f254-french-remaining-units-and-reference-material) | Reviewer/agent: use first-unit review/pilot before bounded units 2–12 batches. |
 | [F25.6 · French pilot, publication and release evidence](#f256-french-pilot-publication-and-release-evidence) | Owner/reviewer: accepted text/audio and agreed setup precede the prepared pilot protocol. |
 | [F13 · MSA course](#f13-msa-course) | Owner/agent: define first unit, source/audio permissions and a bounded console-control extension. |
@@ -185,6 +191,9 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F12.4 · Remaining Levantine authoring batches](#f124-remaining-levantine-authoring-batches) | Owner-revised twenty-package authoring slice complete; exact preview delivery is F12, final thirty slots are F12.6 and human acceptance is F12.5. |
+| [F12.7 · Arabic word-preserving character migration](#f127-arabic-word-preserving-character-migration) | API/browser name adapter preserves ordinary Arabic words and literal escapes; immutable snapshots retained. |
+| [F12.3 · Twelve-week course plan and coverage](#f123-twelve-week-course-plan-and-coverage) | Beta 0.0.6 local; twelve-week console plan and stored coverage verified. No remaining work in this child; content review/authoring/release remain F12.1/F12.2/F12.4/F12.5. |
 | [F23.1.1 · Exact first-story development preview](#f2311-exact-first-story-development-preview) | Deployed 0.0.4 and published exact v1 unreviewed/text-only; normal F23.1 review/access gates remain. |
 | [F31 · About and FAQ page](#f31-about-and-faq-page) | Separate page and shared FAQ deployed as 0.0.2; linked from landing and Account; no remaining work in this scope. |
 | [F27.3 · Learner clarity and mobile fixes](#f273-learner-clarity-and-mobile-fixes) | UI fixes delivered; preview availability restored on prior API; source regression corrected in `34a936b`. |
@@ -387,13 +396,13 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F12 Levantine course expansion
 
-- **Work state:** Partial.
-- **Readiness:** Implementation — Partial; content — Partial; verification — Partial.
-- **Delivery:** Application — Shared application deployed; content publication — Everyday published; Plans drafts private.
-- **Scope:** Twelve-week Palestinian Levantine curriculum; one follow-on unit drafted, wider depth absent.
-- **Next action:** Owner: review F12.1 drafts. Agent: bound the next batch only after review; do not equate three drafts with twelve weeks.
-- **Authorization:** Arabic work authorized; new bounded authoring/publication follows source and owner-review gates.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f12-levantine-course-expansion).
+- **Work state:** Delivery pending.
+- **Readiness:** Implementation — Current owner-revised cycle complete; content — Twenty new authored unreviewed text-only packages, thirty future slots moved to F12.6; verification — 67 API tests pass; four focused browser checks pass, including all twenty offline completions/reconnection; no human timing/audio/access acceptance.
+- **Delivery:** Application — Local/uncommitted Beta 0.0.8; content publication — New twenty-package preview unpublished; existing publications and three private Plans drafts untouched.
+- **Scope:** Owner revised the current completion contract October 19 to the twelve-week plan/coverage software plus twenty additional lessons (orders 11–30), deployment and exact unreviewed text-only development-preview publication. Original twelve-week depth moves to F12.6 and human/source/audio/outcome/access acceptance stays F12.5.
+- **Next action:** Agent: commit/push main, deploy existing frontend/API and publish exactly twenty pinned preview packages; verify preservation/recovery evidence before Complete.
+- **Authorization:** October 19 owner explicitly directed author twenty now, leave thirty for another roadmap checkpoint, mark this cycle done, commit, deploy and publish. This supersedes the prior review-before-authoring sequence for this batch only; pending linguistic/source acceptance and missing human audio/beta gates remain honest.
+- **Completion gate / evidence:** [Revised delivery contract and exact batch evidence](docs/levantine-course-expansion.md); [release record](docs/releases/2026-10-19-levantine-expansion.md).
 
 ### F12.1 Make a plan together
 
@@ -415,6 +424,61 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Authorization:** Audit/correction drafting authorized; actual speaker evidence and exact approval/publication remain required.
 - **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f122-transliteration-and-pronunciation-audit).
 - **Dependencies:** approved-source constraints and reviewed Palestinian pronunciation for audio claims. Revised package approval/publication and recording-script/hash reconciliation are separate gates; preserve published release snapshots.
+
+### F12.3 Twelve-week course plan and coverage
+
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete; content — English task/sequence plan, no new Arabic; verification — 64 API tests, two focused coverage/browser checks and production build pass; mobile panel visually inspected.
+- **Delivery:** Application — Local/uncommitted Beta 0.0.6; content publication — None; existing package bytes untouched.
+- **Scope:** Shared twelve-week/sixty-slot authoring map and private console coverage from exact stored lesson IDs/placement; separate latest candidate, approval and live predecessor counts, excluding demonstrations/history duplicates.
+- **Next action:** None in this bounded child. Owner review remains F12.1/F12.2; remaining authoring/release remains F12.4/F12.5. Commit/push/deployment requires separate owner authorization.
+- **Authorization:** October 19 owner expansion/implementation request; no automatic imports, acceptance, publication, deployment, spending or contact.
+- **Completion gate / evidence:** [Console coverage contract and verification](docs/levantine-course-expansion.md#f123--course-plan-and-stored-coverage-contract).
+- **Dependencies:** Existing approver-protected curriculum console and versions endpoint; independent of exact Plans acceptance.
+
+### F12.4 Remaining Levantine authoring batches
+
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete for owner-revised twenty-package batch; content — Authored, unreviewed with pending rights and empty reviewer; verification — Deterministic rebuild and API validation/import/lifecycle checks pass.
+- **Delivery:** Application — Local preview policy/console controls; content publication — Awaiting F12 exact preview rollout.
+- **Scope:** October 19 owner narrowed this batch from fifty to twenty new source-linked original lessons in weeks 3–6, orders 11–30, with complete readable review packets, 120 dialogue turns, 80 teaching cards, 120 contextual steps and 60 recall targets. Final thirty slots moved to F12.6.
+- **Next action:** None in this bounded authoring slice. F12 owns exact preview delivery; F12.5 owns human/source/audio/outcome/access acceptance; F12.6 owns future thirty lessons.
+- **Authorization:** Owner requested exactly twenty lessons now and authorized their unreviewed text-only development preview after the review/audio gaps were explained; no accepted review fabricated.
+- **Completion gate / evidence:** [Batch and hash-pinned review manifest](content/levantine/expansion-20/README.md); [revised authoring contract](docs/levantine-course-expansion.md#f124--remaining-bounded-authoring-batches-contract).
+- **Dependencies:** F12.3 sequence; earlier F12.1/F12.2 acceptance is not silently inferred from the owner-directed batch exception.
+
+### F12.5 Levantine acceptance and release evidence
+
+- **Work state:** Input needed.
+- **Readiness:** Implementation — Existing console/offline infrastructure reusable; content — Exact new-batch approval and human audio missing; verification — Required observed timing/recall, actual device/accessibility and full-depth release evidence missing.
+- **Delivery:** Application — Existing shared preview deployed; content publication — Twenty new lessons authorized only as exact unreviewed development previews under F12; reviewed/full-course publication absent.
+- **Scope:** Exact source/linguistic acceptance, reviewed human recordings, observed month-one and cumulative outcome checks, downloads/offline/access checks and separately authorized publication/recovery evidence across twelve weeks.
+- **Next action:** Owner: disposition exact twenty-package batch plus earlier Plans/correction candidates and supply permitted human recordings/review arrangements and agreed observed-check setup; agent validates accepted versions separately from preview publication.
+- **Authorization:** Prepare evidence/tools under Arabic implementation authority; full-reviewed publication/beta inclusion, participant contact, provider decisions and spending remain separate; exact current preview deployment/publication is authorized under F12.
+- **Completion gate / evidence:** [Acceptance and release contract](docs/levantine-course-expansion.md#f125--review-measured-outcomes-and-release-contract).
+- **Dependencies:** F12.1/F12.2/F12.4 exact candidates; F09 human recordings; F18 retains beta cohort gates.
+
+### F12.6 Remaining thirty Levantine lessons
+
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — Thirty English task slots outlined, Arabic unauthored; verification — Not run.
+- **Delivery:** Application — Existing shared renderer/console reusable; content publication — None.
+- **Scope:** Weeks 7–12, orders 31–60, preserving original twelve-week depth: visits, recent days, shopping, travel, support and cumulative conversation, five substantive lessons per unit.
+- **Next action:** Owner: resume this separate roadmap checkpoint after exact first-batch review/outcome dispositions. Agent then bounds the next source-backed authoring batch and revises pacing from evidence.
+- **Authorization:** Owner explicitly left these thirty lessons for a later checkpoint on October 19. Current author/deploy/publish authority covers the preceding twenty only; no automatic bulk generation or release of these thirty.
+- **Completion gate / evidence:** [Remaining-depth contract](docs/levantine-course-expansion.md#f126--remaining-thirty-lesson-checkpoint).
+- **Dependencies:** F12.4 exact batch and F12.5 relevant review/outcome feedback; F12.2 reconciliation remains separate.
+
+### F12.7 Arabic word-preserving character migration
+
+- **Work state:** Complete.
+- **Readiness:** Implementation — API/browser fix complete; content — N/A, curriculum snapshots untouched; verification — Plain/escaped JSON regression and full API suite pass; browser regression and all twenty offline flows pass.
+- **Delivery:** Application — Local/uncommitted Beta 0.0.8; content publication — N/A.
+- **Scope:** Match the legacy Arabic name only as a complete word. Decode JSON string tokens before name matching so the name fragment in ordinary words such as خلينا is not replaced in API reads, browser presentation or imports.
+- **Next action:** No implementation work remains; delivery accompanies the authorized F12 rollout.
+- **Authorization:** Necessary fix discovered while validating the owner-authorized twenty-lesson batch; no stored publication rewrite or new character identity.
+- **Completion gate / evidence:** [Regression evidence](docs/levantine-course-expansion.md#f127--arabic-word-preserving-character-migration).
+- **Dependencies:** Existing legacy character read-compatibility adapter.
 
 ### F13 MSA course
 
@@ -1192,6 +1256,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **October 19 — F12:** owner revised current completion to twenty newly authored lessons plus plan/coverage and authorized commit/deploy/unreviewed preview publication. Final thirty lessons moved to F12.6; human acceptance remains F12.5. Arabic name-fragment corruption fixed in API/browser; combined candidate Beta 0.0.8. [Contract/evidence](docs/levantine-course-expansion.md).
+
 - **October 19 — F17.5:** Beta 0.0.5 `b7b910c` deployed and exact owner-accepted lesson-one v5 published with existing audio preserved. Six phrases/two patterns/three usage notes delivered; actual AT evidence remains. [Rollout](docs/releases/2026-10-19-phrase-anatomy.md).
 
 - **October 18 — F23:** text-story machinery and exact A little rest v1 unreviewed/text-only preview deployed as 0.0.4 (`99f2de4` source). Existing tables/assets preserved. Normal human/source/access acceptance and remaining two episodes stay open; no Today credit. [Evidence](docs/mini-stories.md).
@@ -1200,8 +1266,3 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **October 18 — F27.3:** mobile Practice text, plain study/response labels, one Today resume action, silent grace, hidden optional weekly activities and shared French/Khmer character presentation UI delivered; notice regression corrected in `34a936b`, working API restored to `08fed75`. All ten French/Khmer previews available again; historical-notice tests now independent of policy constants. Curriculum unchanged.
 
 - **October 18 — F25:** owner selected Metropolitan France reference, twelve units/sixty lessons, five-minute month-one guided target and draft-first review route. Five exact first-unit text previews published on deployed `08fed75`; 57 API/three publication browser checks pass, existing data/assets preserved. Full review/audio/course gates remain.
-
-- **October 18 — F19.1:** S0 verified and six exact selected requests regenerated;
-  owner selections reconciled through waveform comparison. Lesson one v4 published
-  with eight synthetic prompt mappings; thirteen non-curriculum tables, other
-  publications and existing assets preserved. F09/F18 gates remain separate.

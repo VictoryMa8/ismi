@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-family-04-05",
+    "trackId": "levantine",
+    "title": "Month-one conversation checkpoint",
+    "scenario": "Text-supported month-one rehearsal: catch up, ask about family, adapt food and confirm tomorrow.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: My day is good, and my family are well.",
+        "prompt": {
+          "arabic": "كيف كان يومك، وكيف أهلك؟",
+          "arabizi": "Kīf kān yōmak, w-kīf ahlak?",
+          "meaning": "How was your day, and how is your family?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، بكرا الساعة سبعة.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa.",
+            "meaning": "Yes, tomorrow at seven.",
+            "rationale": "This says “Yes, tomorrow at seven.” The requested response is “My day is good, and my family are well.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "يومي منيح، وأهلي مناح.",
+            "arabizi": "Yōmi mnīḥ, w-ahli mnāḥ.",
+            "meaning": "My day is good, and my family are well.",
+            "rationale": "This gives the requested response: My day is good, and my family are well. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met."
+          },
+          {
+            "id": "c",
+            "arabic": "بكرا أحسن، بعد الشغل.",
+            "arabizi": "Bukra aḥsan, baʿd ish-shughl.",
+            "meaning": "Tomorrow is better, after work.",
+            "rationale": "This says “Tomorrow is better, after work.” The requested response is “My day is good, and my family are well.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: My day is good, and my family are well. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: My day is good, and my family are well.",
+          "retryHint": "Keep this meaning and perspective: My day is good, and my family are well."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Tomorrow is better, after work.",
+        "prompt": {
+          "arabic": "ناكل سوا اليوم، ولا بكرا؟",
+          "arabizi": "Nākul sawa il-yōm, walla bukra?",
+          "meaning": "Shall we eat together today, or tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بكرا أحسن، بعد الشغل.",
+            "arabizi": "Bukra aḥsan, baʿd ish-shughl.",
+            "meaning": "Tomorrow is better, after work.",
+            "rationale": "This gives the requested response: Tomorrow is better, after work. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، بكرا الساعة سبعة.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa.",
+            "meaning": "Yes, tomorrow at seven.",
+            "rationale": "This says “Yes, tomorrow at seven.” The requested response is “Tomorrow is better, after work.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "يومي منيح، وأهلي مناح.",
+            "arabizi": "Yōmi mnīḥ, w-ahli mnāḥ.",
+            "meaning": "My day is good, and my family are well.",
+            "rationale": "This says “My day is good, and my family are well.” The requested response is “Tomorrow is better, after work.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Tomorrow is better, after work. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Tomorrow is better, after work.",
+          "retryHint": "Keep this meaning and perspective: Tomorrow is better, after work."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, tomorrow at seven.",
+        "prompt": {
+          "arabic": "تمام، شوربة وسلطة الساعة سبعة؟",
+          "arabizi": "Tamām, shōraba w-salaṭa is-sāʿa sabʿa?",
+          "meaning": "Okay, soup and salad at seven?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "يومي منيح، وأهلي مناح.",
+            "arabizi": "Yōmi mnīḥ, w-ahli mnāḥ.",
+            "meaning": "My day is good, and my family are well.",
+            "rationale": "This says “My day is good, and my family are well.” The requested response is “Yes, tomorrow at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "بكرا أحسن، بعد الشغل.",
+            "arabizi": "Bukra aḥsan, baʿd ish-shughl.",
+            "meaning": "Tomorrow is better, after work.",
+            "rationale": "This says “Tomorrow is better, after work.” The requested response is “Yes, tomorrow at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بكرا الساعة سبعة.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa.",
+            "meaning": "Yes, tomorrow at seven.",
+            "rationale": "This gives the requested response: Yes, tomorrow at seven. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, tomorrow at seven. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, tomorrow at seven.",
+          "retryHint": "Keep this meaning and perspective: Yes, tomorrow at seven."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: My day is good, and my family are well.",
+        "prompt": {
+          "arabic": "كيف كان يومك، وكيف أهلك؟",
+          "arabizi": "Kīf kān yōmak, w-kīf ahlak?",
+          "meaning": "How was your day, and how is your family?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، بكرا الساعة سبعة.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa.",
+            "meaning": "Yes, tomorrow at seven.",
+            "rationale": "This says “Yes, tomorrow at seven.” The requested response is “My day is good, and my family are well.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "يومي منيح، وأهلي مناح.",
+            "arabizi": "Yōmi mnīḥ, w-ahli mnāḥ.",
+            "meaning": "My day is good, and my family are well.",
+            "rationale": "This gives the requested response: My day is good, and my family are well. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met."
+          },
+          {
+            "id": "c",
+            "arabic": "بكرا أحسن، بعد الشغل.",
+            "arabizi": "Bukra aḥsan, baʿd ish-shughl.",
+            "meaning": "Tomorrow is better, after work.",
+            "rationale": "This says “Tomorrow is better, after work.” The requested response is “My day is good, and my family are well.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: My day is good, and my family are well. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: My day is good, and my family are well.",
+          "retryHint": "Keep this meaning and perspective: My day is good, and my family are well."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Tomorrow is better, after work.",
+        "prompt": {
+          "arabic": "ناكل سوا اليوم، ولا بكرا؟",
+          "arabizi": "Nākul sawa il-yōm, walla bukra?",
+          "meaning": "Shall we eat together today, or tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بكرا أحسن، بعد الشغل.",
+            "arabizi": "Bukra aḥsan, baʿd ish-shughl.",
+            "meaning": "Tomorrow is better, after work.",
+            "rationale": "This gives the requested response: Tomorrow is better, after work. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، بكرا الساعة سبعة.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa.",
+            "meaning": "Yes, tomorrow at seven.",
+            "rationale": "This says “Yes, tomorrow at seven.” The requested response is “Tomorrow is better, after work.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "يومي منيح، وأهلي مناح.",
+            "arabizi": "Yōmi mnīḥ, w-ahli mnāḥ.",
+            "meaning": "My day is good, and my family are well.",
+            "rationale": "This says “My day is good, and my family are well.” The requested response is “Tomorrow is better, after work.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Tomorrow is better, after work. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Tomorrow is better, after work.",
+          "retryHint": "Keep this meaning and perspective: Tomorrow is better, after work."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, tomorrow at seven.",
+        "prompt": {
+          "arabic": "تمام، شوربة وسلطة الساعة سبعة؟",
+          "arabizi": "Tamām, shōraba w-salaṭa is-sāʿa sabʿa?",
+          "meaning": "Okay, soup and salad at seven?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "يومي منيح، وأهلي مناح.",
+            "arabizi": "Yōmi mnīḥ, w-ahli mnāḥ.",
+            "meaning": "My day is good, and my family are well.",
+            "rationale": "This says “My day is good, and my family are well.” The requested response is “Yes, tomorrow at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "بكرا أحسن، بعد الشغل.",
+            "arabizi": "Bukra aḥsan, baʿd ish-shughl.",
+            "meaning": "Tomorrow is better, after work.",
+            "rationale": "This says “Tomorrow is better, after work.” The requested response is “Yes, tomorrow at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بكرا الساعة سبعة.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa.",
+            "meaning": "Yes, tomorrow at seven.",
+            "rationale": "This gives the requested response: Yes, tomorrow at seven. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, tomorrow at seven. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, tomorrow at seven.",
+          "retryHint": "Keep this meaning and perspective: Yes, tomorrow at seven."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-family-04",
+    "unitTitle": "People and plans",
+    "courseOrder": 20,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/family-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-family-04-05/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to month-one conversation checkpoint.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "كيف كان يومك، وكيف أهلك؟",
+            "arabizi": "Kīf kān yōmak, w-kīf ahlak?",
+            "meaning": "How was your day, and how is your family?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "يومي منيح، وأهلي مناح.",
+            "arabizi": "Yōmi mnīḥ, w-ahli mnāḥ.",
+            "meaning": "My day is good, and my family are well.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "ناكل سوا اليوم، ولا بكرا؟",
+            "arabizi": "Nākul sawa il-yōm, walla bukra?",
+            "meaning": "Shall we eat together today, or tomorrow?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "بكرا أحسن، بعد الشغل.",
+            "arabizi": "Bukra aḥsan, baʿd ish-shughl.",
+            "meaning": "Tomorrow is better, after work.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "تمام، شوربة وسلطة الساعة سبعة؟",
+            "arabizi": "Tamām, shōraba w-salaṭa is-sāʿa sabʿa?",
+            "meaning": "Okay, soup and salad at seven?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، بكرا الساعة سبعة.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa.",
+            "meaning": "Yes, tomorrow at seven.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "كيف كان يومك، وكيف أهلك؟",
+          "arabizi": "Kīf kān yōmak, w-kīf ahlak?",
+          "meaning": "How was your day, and how is your family?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "يومي منيح، وأهلي مناح.",
+          "arabizi": "Yōmi mnīḥ, w-ahli mnāḥ.",
+          "meaning": "My day is good, and my family are well.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "بكرا أحسن، بعد الشغل.",
+          "arabizi": "Bukra aḥsan, baʿd ish-shughl.",
+          "meaning": "Tomorrow is better, after work.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، بكرا الساعة سبعة.",
+          "arabizi": "Āh, bukra is-sāʿa sabʿa.",
+          "meaning": "Yes, tomorrow at seven.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/family-3/",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/f12-expansion/levantine-family-04-05/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "How was your day, and how is your family?",
+          "phrase": {
+            "arabic": "كيف كان يومك، وكيف أهلك؟",
+            "arabizi": "Kīf kān yōmak, w-kīf ahlak?",
+            "meaning": "How was your day, and how is your family?",
+            "audioUrl": null
+          },
+          "note": "This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met. In this scene: How was your day, and how is your family?",
+          "recallCue": "In this scene, express: How was your day, and how is your family?",
+          "chunks": [
+            {
+              "arabic": "كيف كان يومك،",
+              "arabizi": "Kīf kān yōmak,",
+              "meaning": "How was your day,"
+            },
+            {
+              "arabic": "وكيف أهلك؟",
+              "arabizi": "w-kīf ahlak?",
+              "meaning": "and how is your family?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-05/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "My day is good, and my family are well.",
+          "phrase": {
+            "arabic": "يومي منيح، وأهلي مناح.",
+            "arabizi": "Yōmi mnīḥ, w-ahli mnāḥ.",
+            "meaning": "My day is good, and my family are well.",
+            "audioUrl": null
+          },
+          "note": "This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met. In this scene: My day is good, and my family are well.",
+          "recallCue": "In this scene, express: My day is good, and my family are well.",
+          "chunks": [
+            {
+              "arabic": "يومي منيح،",
+              "arabizi": "Yōmi mnīḥ,",
+              "meaning": "My day is good,"
+            },
+            {
+              "arabic": "وأهلي مناح.",
+              "arabizi": "w-ahli mnāḥ.",
+              "meaning": "and my family are well."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Tomorrow is better, after work.",
+          "phrase": {
+            "arabic": "بكرا أحسن، بعد الشغل.",
+            "arabizi": "Bukra aḥsan, baʿd ish-shughl.",
+            "meaning": "Tomorrow is better, after work.",
+            "audioUrl": null
+          },
+          "note": "This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met. In this scene: Tomorrow is better, after work.",
+          "recallCue": "In this scene, express: Tomorrow is better, after work.",
+          "chunks": [
+            {
+              "arabic": "بكرا أحسن،",
+              "arabizi": "Bukra aḥsan,",
+              "meaning": "Tomorrow is better,"
+            },
+            {
+              "arabic": "بعد الشغل.",
+              "arabizi": "baʿd ish-shughl.",
+              "meaning": "after work."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, tomorrow at seven.",
+          "phrase": {
+            "arabic": "آه، بكرا الساعة سبعة.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa.",
+            "meaning": "Yes, tomorrow at seven.",
+            "audioUrl": null
+          },
+          "note": "This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met. In this scene: Yes, tomorrow at seven.",
+          "recallCue": "In this scene, express: Yes, tomorrow at seven.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "بكرا الساعة سبعة.",
+              "arabizi": "bukra is-sāʿa sabʿa.",
+              "meaning": "tomorrow at seven."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: My day is good, and my family are well.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "My day is good, and my family are well."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "يومي منيح، وأهلي مناح.",
+            "arabizi": "Yōmi mnīḥ, w-ahli mnāḥ.",
+            "meaning": "My day is good, and my family are well.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "My day is good, and my family are well.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Text-supported month-one rehearsal: catch up, ask about family, adapt food and confirm tomorrow. Respond to: How was your day, and how is your family? Your intended meaning: My day is good, and my family are well.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: My day is good, and my family are well.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Tomorrow is better, after work.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Tomorrow is better, after work."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "بكرا أحسن، بعد الشغل.",
+            "arabizi": "Bukra aḥsan, baʿd ish-shughl.",
+            "meaning": "Tomorrow is better, after work.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Tomorrow is better, after work.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Text-supported month-one rehearsal: catch up, ask about family, adapt food and confirm tomorrow. Respond to: Shall we eat together today, or tomorrow? Your intended meaning: Tomorrow is better, after work.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Tomorrow is better, after work.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Yes, tomorrow at seven.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, tomorrow at seven."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، بكرا الساعة سبعة.",
+            "arabizi": "Āh, bukra is-sāʿa sabʿa.",
+            "meaning": "Yes, tomorrow at seven.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, tomorrow at seven.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Text-supported month-one rehearsal: catch up, ask about family, adapt food and confirm tomorrow. Respond to: Okay, soup and salad at seven? Your intended meaning: Yes, tomorrow at seven.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, tomorrow at seven.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · family-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · verbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Month-one conversation checkpoint",
+      "locator": "internal:ismi/f12-expansion/levantine-family-04-05/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Text-supported month-one rehearsal: catch up, ask about family, adapt food and confirm tomorrow. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

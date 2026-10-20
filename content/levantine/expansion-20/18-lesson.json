@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-family-04-03",
+    "trackId": "levantine",
+    "title": "Talk about today",
+    "scenario": "Catching up after work and adapting the evening to someone who wants a rest.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: It was long, but good.",
+        "prompt": {
+          "arabic": "كيف كان يومك؟",
+          "arabizi": "Kīf kān yōmak?",
+          "meaning": "How was your day?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "كان طويل، بس منيح.",
+            "arabizi": "Kān ṭawīl, bas mnīḥ.",
+            "meaning": "It was long, but good.",
+            "rationale": "This gives the requested response: It was long, but good. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation."
+          },
+          {
+            "id": "b",
+            "arabic": "رحت عالبيت وارتحت شوي.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-irtaḥt shway.",
+            "meaning": "I went home and rested a little.",
+            "rationale": "This says “I went home and rested a little.” The requested response is “It was long, but good.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "خلينا ناكل سوا.",
+            "arabizi": "Khallīna nākul sawa.",
+            "meaning": "Let's eat together.",
+            "rationale": "This says “Let's eat together.” The requested response is “It was long, but good.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: It was long, but good. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: It was long, but good.",
+          "retryHint": "Keep this meaning and perspective: It was long, but good."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: I went home and rested a little.",
+        "prompt": {
+          "arabic": "شو عملت بعد الشغل؟",
+          "arabizi": "Shū ʿmilt baʿd ish-shughl?",
+          "meaning": "What did you do after work?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "خلينا ناكل سوا.",
+            "arabizi": "Khallīna nākul sawa.",
+            "meaning": "Let's eat together.",
+            "rationale": "This says “Let's eat together.” The requested response is “I went home and rested a little.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "كان طويل، بس منيح.",
+            "arabizi": "Kān ṭawīl, bas mnīḥ.",
+            "meaning": "It was long, but good.",
+            "rationale": "This says “It was long, but good.” The requested response is “I went home and rested a little.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "رحت عالبيت وارتحت شوي.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-irtaḥt shway.",
+            "meaning": "I went home and rested a little.",
+            "rationale": "This gives the requested response: I went home and rested a little. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I went home and rested a little. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I went home and rested a little.",
+          "retryHint": "Keep this meaning and perspective: I went home and rested a little."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Let's eat together.",
+        "prompt": {
+          "arabic": "وهلأ شو رح نعمل؟",
+          "arabizi": "W-hallaʾ shū raḥ niʿmal?",
+          "meaning": "And now, what will we do?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "رحت عالبيت وارتحت شوي.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-irtaḥt shway.",
+            "meaning": "I went home and rested a little.",
+            "rationale": "This says “I went home and rested a little.” The requested response is “Let's eat together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "خلينا ناكل سوا.",
+            "arabizi": "Khallīna nākul sawa.",
+            "meaning": "Let's eat together.",
+            "rationale": "This gives the requested response: Let's eat together. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation."
+          },
+          {
+            "id": "c",
+            "arabic": "كان طويل، بس منيح.",
+            "arabizi": "Kān ṭawīl, bas mnīḥ.",
+            "meaning": "It was long, but good.",
+            "rationale": "This says “It was long, but good.” The requested response is “Let's eat together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Let's eat together. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Let's eat together.",
+          "retryHint": "Keep this meaning and perspective: Let's eat together."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: It was long, but good.",
+        "prompt": {
+          "arabic": "كيف كان يومك؟",
+          "arabizi": "Kīf kān yōmak?",
+          "meaning": "How was your day?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "كان طويل، بس منيح.",
+            "arabizi": "Kān ṭawīl, bas mnīḥ.",
+            "meaning": "It was long, but good.",
+            "rationale": "This gives the requested response: It was long, but good. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation."
+          },
+          {
+            "id": "b",
+            "arabic": "رحت عالبيت وارتحت شوي.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-irtaḥt shway.",
+            "meaning": "I went home and rested a little.",
+            "rationale": "This says “I went home and rested a little.” The requested response is “It was long, but good.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "خلينا ناكل سوا.",
+            "arabizi": "Khallīna nākul sawa.",
+            "meaning": "Let's eat together.",
+            "rationale": "This says “Let's eat together.” The requested response is “It was long, but good.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: It was long, but good. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: It was long, but good.",
+          "retryHint": "Keep this meaning and perspective: It was long, but good."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: I went home and rested a little.",
+        "prompt": {
+          "arabic": "شو عملت بعد الشغل؟",
+          "arabizi": "Shū ʿmilt baʿd ish-shughl?",
+          "meaning": "What did you do after work?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "خلينا ناكل سوا.",
+            "arabizi": "Khallīna nākul sawa.",
+            "meaning": "Let's eat together.",
+            "rationale": "This says “Let's eat together.” The requested response is “I went home and rested a little.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "كان طويل، بس منيح.",
+            "arabizi": "Kān ṭawīl, bas mnīḥ.",
+            "meaning": "It was long, but good.",
+            "rationale": "This says “It was long, but good.” The requested response is “I went home and rested a little.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "رحت عالبيت وارتحت شوي.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-irtaḥt shway.",
+            "meaning": "I went home and rested a little.",
+            "rationale": "This gives the requested response: I went home and rested a little. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I went home and rested a little. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I went home and rested a little.",
+          "retryHint": "Keep this meaning and perspective: I went home and rested a little."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Let's eat together.",
+        "prompt": {
+          "arabic": "وهلأ شو رح نعمل؟",
+          "arabizi": "W-hallaʾ shū raḥ niʿmal?",
+          "meaning": "And now, what will we do?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "رحت عالبيت وارتحت شوي.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-irtaḥt shway.",
+            "meaning": "I went home and rested a little.",
+            "rationale": "This says “I went home and rested a little.” The requested response is “Let's eat together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "خلينا ناكل سوا.",
+            "arabizi": "Khallīna nākul sawa.",
+            "meaning": "Let's eat together.",
+            "rationale": "This gives the requested response: Let's eat together. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation."
+          },
+          {
+            "id": "c",
+            "arabic": "كان طويل، بس منيح.",
+            "arabizi": "Kān ṭawīl, bas mnīḥ.",
+            "meaning": "It was long, but good.",
+            "rationale": "This says “It was long, but good.” The requested response is “Let's eat together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Let's eat together. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Let's eat together.",
+          "retryHint": "Keep this meaning and perspective: Let's eat together."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-family-04",
+    "unitTitle": "People and plans",
+    "courseOrder": 18,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/family-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-family-04-03/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to talk about today.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "كيف كان يومك؟",
+            "arabizi": "Kīf kān yōmak?",
+            "meaning": "How was your day?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "كان طويل، بس منيح.",
+            "arabizi": "Kān ṭawīl, bas mnīḥ.",
+            "meaning": "It was long, but good.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "شو عملت بعد الشغل؟",
+            "arabizi": "Shū ʿmilt baʿd ish-shughl?",
+            "meaning": "What did you do after work?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "رحت عالبيت وارتحت شوي.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-irtaḥt shway.",
+            "meaning": "I went home and rested a little.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وهلأ شو رح نعمل؟",
+            "arabizi": "W-hallaʾ shū raḥ niʿmal?",
+            "meaning": "And now, what will we do?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "خلينا ناكل سوا.",
+            "arabizi": "Khallīna nākul sawa.",
+            "meaning": "Let's eat together.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "كيف كان يومك؟",
+          "arabizi": "Kīf kān yōmak?",
+          "meaning": "How was your day?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "كان طويل، بس منيح.",
+          "arabizi": "Kān ṭawīl, bas mnīḥ.",
+          "meaning": "It was long, but good.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "رحت عالبيت وارتحت شوي.",
+          "arabizi": "Ruḥt ʿa-l-bēt w-irtaḥt shway.",
+          "meaning": "I went home and rested a little.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "خلينا ناكل سوا.",
+          "arabizi": "Khallīna nākul sawa.",
+          "meaning": "Let's eat together.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/family-3/",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/f12-expansion/levantine-family-04-03/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "How was your day?",
+          "phrase": {
+            "arabic": "كيف كان يومك؟",
+            "arabizi": "Kīf kān yōmak?",
+            "meaning": "How was your day?",
+            "audioUrl": null
+          },
+          "note": "Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation. In this scene: How was your day?",
+          "recallCue": "In this scene, express: How was your day?",
+          "chunks": [
+            {
+              "arabic": "كيف كان",
+              "arabizi": "Kīf kān",
+              "meaning": "How was"
+            },
+            {
+              "arabic": "يومك؟",
+              "arabizi": "yōmak?",
+              "meaning": "your day?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-03/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "It was long, but good.",
+          "phrase": {
+            "arabic": "كان طويل، بس منيح.",
+            "arabizi": "Kān ṭawīl, bas mnīḥ.",
+            "meaning": "It was long, but good.",
+            "audioUrl": null
+          },
+          "note": "Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation. In this scene: It was long, but good.",
+          "recallCue": "In this scene, express: It was long, but good.",
+          "chunks": [
+            {
+              "arabic": "كان طويل،",
+              "arabizi": "Kān ṭawīl,",
+              "meaning": "It was long,"
+            },
+            {
+              "arabic": "بس منيح.",
+              "arabizi": "bas mnīḥ.",
+              "meaning": "but good."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "I went home and rested a little.",
+          "phrase": {
+            "arabic": "رحت عالبيت وارتحت شوي.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-irtaḥt shway.",
+            "meaning": "I went home and rested a little.",
+            "audioUrl": null
+          },
+          "note": "Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation. In this scene: I went home and rested a little.",
+          "recallCue": "In this scene, express: I went home and rested a little.",
+          "chunks": [
+            {
+              "arabic": "رحت عالبيت",
+              "arabizi": "Ruḥt ʿa-l-bēt",
+              "meaning": "I went home"
+            },
+            {
+              "arabic": "وارتحت شوي.",
+              "arabizi": "w-irtaḥt shway.",
+              "meaning": "and rested a little."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Let's eat together.",
+          "phrase": {
+            "arabic": "خلينا ناكل سوا.",
+            "arabizi": "Khallīna nākul sawa.",
+            "meaning": "Let's eat together.",
+            "audioUrl": null
+          },
+          "note": "Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation. In this scene: Let's eat together.",
+          "recallCue": "In this scene, express: Let's eat together.",
+          "chunks": [
+            {
+              "arabic": "خلينا ناكل",
+              "arabizi": "Khallīna nākul",
+              "meaning": "Let's eat"
+            },
+            {
+              "arabic": "سوا.",
+              "arabizi": "sawa.",
+              "meaning": "together."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: It was long, but good.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "It was long, but good."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "كان طويل، بس منيح.",
+            "arabizi": "Kān ṭawīl, bas mnīḥ.",
+            "meaning": "It was long, but good.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "It was long, but good.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Catching up after work and adapting the evening to someone who wants a rest. Respond to: How was your day? Your intended meaning: It was long, but good.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: It was long, but good.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: I went home and rested a little.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "I went home and rested a little."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "رحت عالبيت وارتحت شوي.",
+            "arabizi": "Ruḥt ʿa-l-bēt w-irtaḥt shway.",
+            "meaning": "I went home and rested a little.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "I went home and rested a little.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Catching up after work and adapting the evening to someone who wants a rest. Respond to: What did you do after work? Your intended meaning: I went home and rested a little.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: I went home and rested a little.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Let's eat together.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Let's eat together."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "خلينا ناكل سوا.",
+            "arabizi": "Khallīna nākul sawa.",
+            "meaning": "Let's eat together.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Let's eat together.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Catching up after work and adapting the evening to someone who wants a rest. Respond to: And now, what will we do? Your intended meaning: Let's eat together.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Let's eat together.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · family-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · verbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Talk about today",
+      "locator": "internal:ismi/f12-expansion/levantine-family-04-03/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Catching up after work and adapting the evening to someone who wants a rest. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

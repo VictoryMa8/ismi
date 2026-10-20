@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-neighborhood-06-05",
+    "trackId": "levantine",
+    "title": "Find each other",
+    "scenario": "Finding each other by the bakery after correcting a location and waiting outside.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: I'm opposite the bakery, beside the library.",
+        "prompt": {
+          "arabic": "أنا قدام المخبز، وإنت وين؟",
+          "arabizi": "Ana ʾuddām il-makhbaz, w-inta wēn?",
+          "meaning": "I'm in front of the bakery, and where are you?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا قبال المخبز، جنب المكتبة.",
+            "arabizi": "Ana ʾbāl il-makhbaz, janb il-maktabe.",
+            "meaning": "I'm opposite the bakery, beside the library.",
+            "rationale": "This gives the requested response: I'm opposite the bakery, beside the library. Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance."
+          },
+          {
+            "id": "b",
+            "arabic": "أجي لعندك؟",
+            "arabizi": "Āji la-ʿindik?",
+            "meaning": "Shall I come over to you?",
+            "rationale": "This says “Shall I come over to you?” The requested response is “I'm opposite the bakery, beside the library.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، جاي هلأ.",
+            "arabizi": "Tamām, jāy hallaʾ.",
+            "meaning": "Okay, I'm coming now.",
+            "rationale": "This says “Okay, I'm coming now.” The requested response is “I'm opposite the bakery, beside the library.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I'm opposite the bakery, beside the library. Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I'm opposite the bakery, beside the library.",
+          "retryHint": "Keep this meaning and perspective: I'm opposite the bakery, beside the library."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Shall I come over to you?",
+        "prompt": {
+          "arabic": "آه، شايفتك هلأ.",
+          "arabizi": "Āh, shāyiftak hallaʾ.",
+          "meaning": "Ah, I can see you now.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، جاي هلأ.",
+            "arabizi": "Tamām, jāy hallaʾ.",
+            "meaning": "Okay, I'm coming now.",
+            "rationale": "This says “Okay, I'm coming now.” The requested response is “Shall I come over to you?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا قبال المخبز، جنب المكتبة.",
+            "arabizi": "Ana ʾbāl il-makhbaz, janb il-maktabe.",
+            "meaning": "I'm opposite the bakery, beside the library.",
+            "rationale": "This says “I'm opposite the bakery, beside the library.” The requested response is “Shall I come over to you?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "أجي لعندك؟",
+            "arabizi": "Āji la-ʿindik?",
+            "meaning": "Shall I come over to you?",
+            "rationale": "This gives the requested response: Shall I come over to you? Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Shall I come over to you? Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Shall I come over to you?",
+          "retryHint": "Keep this meaning and perspective: Shall I come over to you?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Okay, I'm coming now.",
+        "prompt": {
+          "arabic": "آه، أنا بستناك برا.",
+          "arabizi": "Āh, ana bastannāk barra.",
+          "meaning": "Yes, I'm waiting for you outside.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أجي لعندك؟",
+            "arabizi": "Āji la-ʿindik?",
+            "meaning": "Shall I come over to you?",
+            "rationale": "This says “Shall I come over to you?” The requested response is “Okay, I'm coming now.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، جاي هلأ.",
+            "arabizi": "Tamām, jāy hallaʾ.",
+            "meaning": "Okay, I'm coming now.",
+            "rationale": "This gives the requested response: Okay, I'm coming now. Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا قبال المخبز، جنب المكتبة.",
+            "arabizi": "Ana ʾbāl il-makhbaz, janb il-maktabe.",
+            "meaning": "I'm opposite the bakery, beside the library.",
+            "rationale": "This says “I'm opposite the bakery, beside the library.” The requested response is “Okay, I'm coming now.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, I'm coming now. Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, I'm coming now.",
+          "retryHint": "Keep this meaning and perspective: Okay, I'm coming now."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: I'm opposite the bakery, beside the library.",
+        "prompt": {
+          "arabic": "أنا قدام المخبز، وإنت وين؟",
+          "arabizi": "Ana ʾuddām il-makhbaz, w-inta wēn?",
+          "meaning": "I'm in front of the bakery, and where are you?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا قبال المخبز، جنب المكتبة.",
+            "arabizi": "Ana ʾbāl il-makhbaz, janb il-maktabe.",
+            "meaning": "I'm opposite the bakery, beside the library.",
+            "rationale": "This gives the requested response: I'm opposite the bakery, beside the library. Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance."
+          },
+          {
+            "id": "b",
+            "arabic": "أجي لعندك؟",
+            "arabizi": "Āji la-ʿindik?",
+            "meaning": "Shall I come over to you?",
+            "rationale": "This says “Shall I come over to you?” The requested response is “I'm opposite the bakery, beside the library.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، جاي هلأ.",
+            "arabizi": "Tamām, jāy hallaʾ.",
+            "meaning": "Okay, I'm coming now.",
+            "rationale": "This says “Okay, I'm coming now.” The requested response is “I'm opposite the bakery, beside the library.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I'm opposite the bakery, beside the library. Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I'm opposite the bakery, beside the library.",
+          "retryHint": "Keep this meaning and perspective: I'm opposite the bakery, beside the library."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Shall I come over to you?",
+        "prompt": {
+          "arabic": "آه، شايفتك هلأ.",
+          "arabizi": "Āh, shāyiftak hallaʾ.",
+          "meaning": "Ah, I can see you now.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، جاي هلأ.",
+            "arabizi": "Tamām, jāy hallaʾ.",
+            "meaning": "Okay, I'm coming now.",
+            "rationale": "This says “Okay, I'm coming now.” The requested response is “Shall I come over to you?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا قبال المخبز، جنب المكتبة.",
+            "arabizi": "Ana ʾbāl il-makhbaz, janb il-maktabe.",
+            "meaning": "I'm opposite the bakery, beside the library.",
+            "rationale": "This says “I'm opposite the bakery, beside the library.” The requested response is “Shall I come over to you?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "أجي لعندك؟",
+            "arabizi": "Āji la-ʿindik?",
+            "meaning": "Shall I come over to you?",
+            "rationale": "This gives the requested response: Shall I come over to you? Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Shall I come over to you? Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Shall I come over to you?",
+          "retryHint": "Keep this meaning and perspective: Shall I come over to you?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Okay, I'm coming now.",
+        "prompt": {
+          "arabic": "آه، أنا بستناك برا.",
+          "arabizi": "Āh, ana bastannāk barra.",
+          "meaning": "Yes, I'm waiting for you outside.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أجي لعندك؟",
+            "arabizi": "Āji la-ʿindik?",
+            "meaning": "Shall I come over to you?",
+            "rationale": "This says “Shall I come over to you?” The requested response is “Okay, I'm coming now.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، جاي هلأ.",
+            "arabizi": "Tamām, jāy hallaʾ.",
+            "meaning": "Okay, I'm coming now.",
+            "rationale": "This gives the requested response: Okay, I'm coming now. Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا قبال المخبز، جنب المكتبة.",
+            "arabizi": "Ana ʾbāl il-makhbaz, janb il-maktabe.",
+            "meaning": "I'm opposite the bakery, beside the library.",
+            "rationale": "This says “I'm opposite the bakery, beside the library.” The requested response is “Okay, I'm coming now.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, I'm coming now. Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, I'm coming now.",
+          "retryHint": "Keep this meaning and perspective: Okay, I'm coming now."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-neighborhood-06",
+    "unitTitle": "Around the neighborhood",
+    "courseOrder": 30,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-neighborhood-06-05/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to find each other.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "أنا قدام المخبز، وإنت وين؟",
+            "arabizi": "Ana ʾuddām il-makhbaz, w-inta wēn?",
+            "meaning": "I'm in front of the bakery, and where are you?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "أنا قبال المخبز، جنب المكتبة.",
+            "arabizi": "Ana ʾbāl il-makhbaz, janb il-maktabe.",
+            "meaning": "I'm opposite the bakery, beside the library.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "آه، شايفتك هلأ.",
+            "arabizi": "Āh, shāyiftak hallaʾ.",
+            "meaning": "Ah, I can see you now.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "أجي لعندك؟",
+            "arabizi": "Āji la-ʿindik?",
+            "meaning": "Shall I come over to you?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "آه، أنا بستناك برا.",
+            "arabizi": "Āh, ana bastannāk barra.",
+            "meaning": "Yes, I'm waiting for you outside.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "تمام، جاي هلأ.",
+            "arabizi": "Tamām, jāy hallaʾ.",
+            "meaning": "Okay, I'm coming now.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "أنا قدام المخبز، وإنت وين؟",
+          "arabizi": "Ana ʾuddām il-makhbaz, w-inta wēn?",
+          "meaning": "I'm in front of the bakery, and where are you?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أنا قبال المخبز، جنب المكتبة.",
+          "arabizi": "Ana ʾbāl il-makhbaz, janb il-maktabe.",
+          "meaning": "I'm opposite the bakery, beside the library.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أجي لعندك؟",
+          "arabizi": "Āji la-ʿindik?",
+          "meaning": "Shall I come over to you?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام، جاي هلأ.",
+          "arabizi": "Tamām, jāy hallaʾ.",
+          "meaning": "Okay, I'm coming now.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+        "internal:ismi/f12-expansion/levantine-neighborhood-06-05/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "I'm in front of the bakery, and where are you?",
+          "phrase": {
+            "arabic": "أنا قدام المخبز، وإنت وين؟",
+            "arabizi": "Ana ʾuddām il-makhbaz, w-inta wēn?",
+            "meaning": "I'm in front of the bakery, and where are you?",
+            "audioUrl": null
+          },
+          "note": "Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance. In this scene: I'm in front of the bakery, and where are you?",
+          "recallCue": "In this scene, express: I'm in front of the bakery, and where are you?",
+          "chunks": [
+            {
+              "arabic": "أنا قدام المخبز،",
+              "arabizi": "Ana ʾuddām il-makhbaz,",
+              "meaning": "I'm in front of the bakery,"
+            },
+            {
+              "arabic": "وإنت وين؟",
+              "arabizi": "w-inta wēn?",
+              "meaning": "and where are you?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-05/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "I'm opposite the bakery, beside the library.",
+          "phrase": {
+            "arabic": "أنا قبال المخبز، جنب المكتبة.",
+            "arabizi": "Ana ʾbāl il-makhbaz, janb il-maktabe.",
+            "meaning": "I'm opposite the bakery, beside the library.",
+            "audioUrl": null
+          },
+          "note": "Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance. In this scene: I'm opposite the bakery, beside the library.",
+          "recallCue": "In this scene, express: I'm opposite the bakery, beside the library.",
+          "chunks": [
+            {
+              "arabic": "أنا قبال المخبز،",
+              "arabizi": "Ana ʾbāl il-makhbaz,",
+              "meaning": "I'm opposite the bakery,"
+            },
+            {
+              "arabic": "جنب المكتبة.",
+              "arabizi": "janb il-maktabe.",
+              "meaning": "beside the library."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Shall I come over to you?",
+          "phrase": {
+            "arabic": "أجي لعندك؟",
+            "arabizi": "Āji la-ʿindik?",
+            "meaning": "Shall I come over to you?",
+            "audioUrl": null
+          },
+          "note": "Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance. In this scene: Shall I come over to you?",
+          "recallCue": "In this scene, express: Shall I come over to you?",
+          "chunks": [
+            {
+              "arabic": "أجي",
+              "arabizi": "Āji",
+              "meaning": "Shall I come"
+            },
+            {
+              "arabic": "لعندك؟",
+              "arabizi": "la-ʿindik?",
+              "meaning": "over to you?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Okay, I'm coming now.",
+          "phrase": {
+            "arabic": "تمام، جاي هلأ.",
+            "arabizi": "Tamām, jāy hallaʾ.",
+            "meaning": "Okay, I'm coming now.",
+            "audioUrl": null
+          },
+          "note": "Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance. In this scene: Okay, I'm coming now.",
+          "recallCue": "In this scene, express: Okay, I'm coming now.",
+          "chunks": [
+            {
+              "arabic": "تمام،",
+              "arabizi": "Tamām,",
+              "meaning": "Okay,"
+            },
+            {
+              "arabic": "جاي هلأ.",
+              "arabizi": "jāy hallaʾ.",
+              "meaning": "I'm coming now."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: I'm opposite the bakery, beside the library.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "I'm opposite the bakery, beside the library."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "أنا قبال المخبز، جنب المكتبة.",
+            "arabizi": "Ana ʾbāl il-makhbaz, janb il-maktabe.",
+            "meaning": "I'm opposite the bakery, beside the library.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "I'm opposite the bakery, beside the library.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Finding each other by the bakery after correcting a location and waiting outside. Respond to: I'm in front of the bakery, and where are you? Your intended meaning: I'm opposite the bakery, beside the library.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: I'm opposite the bakery, beside the library.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Shall I come over to you?",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Shall I come over to you?"
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "أجي لعندك؟",
+            "arabizi": "Āji la-ʿindik?",
+            "meaning": "Shall I come over to you?",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Shall I come over to you?",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Finding each other by the bakery after correcting a location and waiting outside. Respond to: Ah, I can see you now. Your intended meaning: Shall I come over to you?",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Shall I come over to you?",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Okay, I'm coming now.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Okay, I'm coming now."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "تمام، جاي هلأ.",
+            "arabizi": "Tamām, jāy hallaʾ.",
+            "meaning": "Okay, I'm coming now.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Okay, I'm coming now.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Finding each other by the bakery after correcting a location and waiting outside. Respond to: Yes, I'm waiting for you outside. Your intended meaning: Okay, I'm coming now.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Okay, I'm coming now.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · cars-and-other-transportation-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · adverbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Find each other",
+      "locator": "internal:ismi/f12-expansion/levantine-neighborhood-06-05/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Finding each other by the bakery after correcting a location and waiting outside. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

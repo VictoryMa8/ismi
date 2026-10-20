@@ -165,7 +165,11 @@ public sealed class CurriculumPublishingService(
                 version.Status,
                 version.CreatedAtUtc,
                 version.CreatedBy,
-                version.PublishedAtUtc);
+                version.PublishedAtUtc,
+                lesson.TrackId,
+                lesson.UnitId,
+                lesson.CourseOrder,
+                lesson.ReviewStatus);
         }).ToList();
     }
 

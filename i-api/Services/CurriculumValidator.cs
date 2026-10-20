@@ -25,6 +25,11 @@ public sealed class CurriculumValidator(RecordingStore recordings, CourseTextPre
         var preview = lesson.PublicationNotice is not null && previews.IsAuthorized(lesson, sources);
         if (lesson.PublicationNotice is not null && !preview)
             errors.Add("This text-preview release is disabled or does not match an exact owner-authorized course package.");
+        if (forPublication && !preview && LevantineExpansionTextPreviewPolicy.IsExpansionLesson(lesson.Id)
+            && (lesson.ContentReview is not { ReviewDisposition: "accepted", RightsDisposition: "cleared" } review
+                || string.IsNullOrWhiteSpace(review.Reviewer) || review.CriticalIssues is null || review.CriticalIssues.Count > 0
+                || !sources.Any(s => s.SourceType == "linguistic-review" && !string.IsNullOrWhiteSpace(s.Notes))))
+            errors.Add("Expansion lessons require accepted linguistic/source review or their exact owner-authorized text-preview exception.");
         CourseContentCompatibility.ValidateProfile(lesson, sources, errors, forPublication, preview);
         lesson = CourseContentCompatibility.Readable(lesson);
         var needsPronunciationHelp = lesson.TrackId != "french" || lesson.ContentReview?.HelpConvention != "none";

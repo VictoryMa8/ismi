@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-home-03-02",
+    "trackId": "levantine",
+    "title": "Ask for a little help",
+    "scenario": "Opening a window at home; asking for help is different from saying where an object is.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Of course, what do you need?",
+        "prompt": {
+          "arabic": "ممكن تساعدني شوي؟",
+          "arabizi": "Mumkin tsāʿidni shway?",
+          "meaning": "Could you help me a little?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أكيد، شو بدك؟",
+            "arabizi": "Akīd, shū biddik?",
+            "meaning": "Of course, what do you need?",
+            "rationale": "This gives the requested response: Of course, what do you need? Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، الشباك مسكر.",
+            "arabizi": "Āh, ish-shubbāk msakkar.",
+            "meaning": "Yes, the window is closed.",
+            "rationale": "This says “Yes, the window is closed.” The requested response is “Of course, what do you need?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "بدك إشي تاني؟",
+            "arabizi": "Biddik ishi tāni?",
+            "meaning": "Do you need anything else?",
+            "rationale": "This says “Do you need anything else?” The requested response is “Of course, what do you need?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Of course, what do you need? Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Of course, what do you need?",
+          "retryHint": "Keep this meaning and perspective: Of course, what do you need?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, the window is closed.",
+        "prompt": {
+          "arabic": "ممكن تفتح الشباك شوي؟",
+          "arabizi": "Mumkin tiftaḥ ish-shubbāk shway?",
+          "meaning": "Could you open the window a little?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بدك إشي تاني؟",
+            "arabizi": "Biddik ishi tāni?",
+            "meaning": "Do you need anything else?",
+            "rationale": "This says “Do you need anything else?” The requested response is “Yes, the window is closed.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "أكيد، شو بدك؟",
+            "arabizi": "Akīd, shū biddik?",
+            "meaning": "Of course, what do you need?",
+            "rationale": "This says “Of course, what do you need?” The requested response is “Yes, the window is closed.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، الشباك مسكر.",
+            "arabizi": "Āh, ish-shubbāk msakkar.",
+            "meaning": "Yes, the window is closed.",
+            "rationale": "This gives the requested response: Yes, the window is closed. Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, the window is closed. Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, the window is closed.",
+          "retryHint": "Keep this meaning and perspective: Yes, the window is closed."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Do you need anything else?",
+        "prompt": {
+          "arabic": "شكرا، هيك أحسن.",
+          "arabizi": "Shukran, hēk aḥsan.",
+          "meaning": "Thanks, that's better.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، الشباك مسكر.",
+            "arabizi": "Āh, ish-shubbāk msakkar.",
+            "meaning": "Yes, the window is closed.",
+            "rationale": "This says “Yes, the window is closed.” The requested response is “Do you need anything else?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "بدك إشي تاني؟",
+            "arabizi": "Biddik ishi tāni?",
+            "meaning": "Do you need anything else?",
+            "rationale": "This gives the requested response: Do you need anything else? Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction."
+          },
+          {
+            "id": "c",
+            "arabic": "أكيد، شو بدك؟",
+            "arabizi": "Akīd, shū biddik?",
+            "meaning": "Of course, what do you need?",
+            "rationale": "This says “Of course, what do you need?” The requested response is “Do you need anything else?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Do you need anything else? Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Do you need anything else?",
+          "retryHint": "Keep this meaning and perspective: Do you need anything else?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Of course, what do you need?",
+        "prompt": {
+          "arabic": "ممكن تساعدني شوي؟",
+          "arabizi": "Mumkin tsāʿidni shway?",
+          "meaning": "Could you help me a little?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أكيد، شو بدك؟",
+            "arabizi": "Akīd, shū biddik?",
+            "meaning": "Of course, what do you need?",
+            "rationale": "This gives the requested response: Of course, what do you need? Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، الشباك مسكر.",
+            "arabizi": "Āh, ish-shubbāk msakkar.",
+            "meaning": "Yes, the window is closed.",
+            "rationale": "This says “Yes, the window is closed.” The requested response is “Of course, what do you need?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "بدك إشي تاني؟",
+            "arabizi": "Biddik ishi tāni?",
+            "meaning": "Do you need anything else?",
+            "rationale": "This says “Do you need anything else?” The requested response is “Of course, what do you need?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Of course, what do you need? Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Of course, what do you need?",
+          "retryHint": "Keep this meaning and perspective: Of course, what do you need?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, the window is closed.",
+        "prompt": {
+          "arabic": "ممكن تفتح الشباك شوي؟",
+          "arabizi": "Mumkin tiftaḥ ish-shubbāk shway?",
+          "meaning": "Could you open the window a little?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بدك إشي تاني؟",
+            "arabizi": "Biddik ishi tāni?",
+            "meaning": "Do you need anything else?",
+            "rationale": "This says “Do you need anything else?” The requested response is “Yes, the window is closed.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "أكيد، شو بدك؟",
+            "arabizi": "Akīd, shū biddik?",
+            "meaning": "Of course, what do you need?",
+            "rationale": "This says “Of course, what do you need?” The requested response is “Yes, the window is closed.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، الشباك مسكر.",
+            "arabizi": "Āh, ish-shubbāk msakkar.",
+            "meaning": "Yes, the window is closed.",
+            "rationale": "This gives the requested response: Yes, the window is closed. Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, the window is closed. Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, the window is closed.",
+          "retryHint": "Keep this meaning and perspective: Yes, the window is closed."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Do you need anything else?",
+        "prompt": {
+          "arabic": "شكرا، هيك أحسن.",
+          "arabizi": "Shukran, hēk aḥsan.",
+          "meaning": "Thanks, that's better.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، الشباك مسكر.",
+            "arabizi": "Āh, ish-shubbāk msakkar.",
+            "meaning": "Yes, the window is closed.",
+            "rationale": "This says “Yes, the window is closed.” The requested response is “Do you need anything else?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "بدك إشي تاني؟",
+            "arabizi": "Biddik ishi tāni?",
+            "meaning": "Do you need anything else?",
+            "rationale": "This gives the requested response: Do you need anything else? Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction."
+          },
+          {
+            "id": "c",
+            "arabic": "أكيد، شو بدك؟",
+            "arabizi": "Akīd, shū biddik?",
+            "meaning": "Of course, what do you need?",
+            "rationale": "This says “Of course, what do you need?” The requested response is “Do you need anything else?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Do you need anything else? Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Do you need anything else?",
+          "retryHint": "Keep this meaning and perspective: Do you need anything else?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-home-03",
+    "unitTitle": "At home together",
+    "courseOrder": 12,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/around-the-house-2/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-home-03-02/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to ask for a little help.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "ممكن تساعدني شوي؟",
+            "arabizi": "Mumkin tsāʿidni shway?",
+            "meaning": "Could you help me a little?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "أكيد، شو بدك؟",
+            "arabizi": "Akīd, shū biddik?",
+            "meaning": "Of course, what do you need?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "ممكن تفتح الشباك شوي؟",
+            "arabizi": "Mumkin tiftaḥ ish-shubbāk shway?",
+            "meaning": "Could you open the window a little?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، الشباك مسكر.",
+            "arabizi": "Āh, ish-shubbāk msakkar.",
+            "meaning": "Yes, the window is closed.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "شكرا، هيك أحسن.",
+            "arabizi": "Shukran, hēk aḥsan.",
+            "meaning": "Thanks, that's better.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "بدك إشي تاني؟",
+            "arabizi": "Biddik ishi tāni?",
+            "meaning": "Do you need anything else?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "ممكن تساعدني شوي؟",
+          "arabizi": "Mumkin tsāʿidni shway?",
+          "meaning": "Could you help me a little?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أكيد، شو بدك؟",
+          "arabizi": "Akīd, shū biddik?",
+          "meaning": "Of course, what do you need?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، الشباك مسكر.",
+          "arabizi": "Āh, ish-shubbāk msakkar.",
+          "meaning": "Yes, the window is closed.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "بدك إشي تاني؟",
+          "arabizi": "Biddik ishi tāni?",
+          "meaning": "Do you need anything else?",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+        "internal:ismi/f12-expansion/levantine-home-03-02/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Could you help me a little?",
+          "phrase": {
+            "arabic": "ممكن تساعدني شوي؟",
+            "arabizi": "Mumkin tsāʿidni shway?",
+            "meaning": "Could you help me a little?",
+            "audioUrl": null
+          },
+          "note": "Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction. In this scene: Could you help me a little?",
+          "recallCue": "In this scene, express: Could you help me a little?",
+          "chunks": [
+            {
+              "arabic": "ممكن",
+              "arabizi": "Mumkin",
+              "meaning": "Could you"
+            },
+            {
+              "arabic": "تساعدني شوي؟",
+              "arabizi": "tsāʿidni shway?",
+              "meaning": "help me a little?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-02/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Of course, what do you need?",
+          "phrase": {
+            "arabic": "أكيد، شو بدك؟",
+            "arabizi": "Akīd, shū biddik?",
+            "meaning": "Of course, what do you need?",
+            "audioUrl": null
+          },
+          "note": "Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction. In this scene: Of course, what do you need?",
+          "recallCue": "In this scene, express: Of course, what do you need?",
+          "chunks": [
+            {
+              "arabic": "أكيد،",
+              "arabizi": "Akīd,",
+              "meaning": "Of course,"
+            },
+            {
+              "arabic": "شو بدك؟",
+              "arabizi": "shū biddik?",
+              "meaning": "what do you need?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, the window is closed.",
+          "phrase": {
+            "arabic": "آه، الشباك مسكر.",
+            "arabizi": "Āh, ish-shubbāk msakkar.",
+            "meaning": "Yes, the window is closed.",
+            "audioUrl": null
+          },
+          "note": "Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction. In this scene: Yes, the window is closed.",
+          "recallCue": "In this scene, express: Yes, the window is closed.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "الشباك مسكر.",
+              "arabizi": "ish-shubbāk msakkar.",
+              "meaning": "the window is closed."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Do you need anything else?",
+          "phrase": {
+            "arabic": "بدك إشي تاني؟",
+            "arabizi": "Biddik ishi tāni?",
+            "meaning": "Do you need anything else?",
+            "audioUrl": null
+          },
+          "note": "Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction. In this scene: Do you need anything else?",
+          "recallCue": "In this scene, express: Do you need anything else?",
+          "chunks": [
+            {
+              "arabic": "بدك",
+              "arabizi": "Biddik",
+              "meaning": "Do you need"
+            },
+            {
+              "arabic": "إشي تاني؟",
+              "arabizi": "ishi tāni?",
+              "meaning": "anything else?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: Of course, what do you need?",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Of course, what do you need?"
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "أكيد، شو بدك؟",
+            "arabizi": "Akīd, shū biddik?",
+            "meaning": "Of course, what do you need?",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Of course, what do you need?",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Opening a window at home; asking for help is different from saying where an object is. Respond to: Could you help me a little? Your intended meaning: Of course, what do you need?",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Of course, what do you need?",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Yes, the window is closed.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, the window is closed."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، الشباك مسكر.",
+            "arabizi": "Āh, ish-shubbāk msakkar.",
+            "meaning": "Yes, the window is closed.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, the window is closed.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Opening a window at home; asking for help is different from saying where an object is. Respond to: Could you open the window a little? Your intended meaning: Yes, the window is closed.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, the window is closed.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Do you need anything else?",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Do you need anything else?"
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "بدك إشي تاني؟",
+            "arabizi": "Biddik ishi tāni?",
+            "meaning": "Do you need anything else?",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Do you need anything else?",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Opening a window at home; asking for help is different from saying where an object is. Respond to: Thanks, that's better. Your intended meaning: Do you need anything else?",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Do you need anything else?",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · around-the-house-2",
+      "locator": "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · adverbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Ask for a little help",
+      "locator": "internal:ismi/f12-expansion/levantine-home-03-02/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Opening a window at home; asking for help is different from saying where an object is. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

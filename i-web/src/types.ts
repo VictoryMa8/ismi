@@ -213,6 +213,10 @@ export type CurriculumSource = {
 }
 
 export type CurriculumVersionSummary = {
+  trackId?: string
+  unitId?: string
+  courseOrder?: number
+  reviewStatus?: string
   id: number
   lessonId: string
   title: string

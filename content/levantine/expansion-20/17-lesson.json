@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-family-04-02",
+    "trackId": "levantine",
+    "title": "Ask about family",
+    "scenario": "Checking on a family and arranging a brief visit tomorrow.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Thank God, my family are well.",
+        "prompt": {
+          "arabic": "كيف أهلك اليوم؟",
+          "arabizi": "Kīf ahlak il-yōm?",
+          "meaning": "How is your family today?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، بعد الشغل.",
+            "arabizi": "Āh, baʿd ish-shughl.",
+            "meaning": "Yes, after work.",
+            "rationale": "This says “Yes, after work.” The requested response is “Thank God, my family are well.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "الحمد لله، أهلي مناح.",
+            "arabizi": "Il-ḥamdu lillāh, ahli mnāḥ.",
+            "meaning": "Thank God, my family are well.",
+            "rationale": "This gives the requested response: Thank God, my family are well. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation."
+          },
+          {
+            "id": "c",
+            "arabic": "منيحة، بالبيت اليوم.",
+            "arabizi": "Mnīḥa, bil-bēt il-yōm.",
+            "meaning": "She's well, at home today.",
+            "rationale": "This says “She's well, at home today.” The requested response is “Thank God, my family are well.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Thank God, my family are well. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Thank God, my family are well.",
+          "retryHint": "Keep this meaning and perspective: Thank God, my family are well."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: She's well, at home today.",
+        "prompt": {
+          "arabic": "وأمك، كيفها؟",
+          "arabizi": "W-immak, kīfha?",
+          "meaning": "And your mother, how is she?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "منيحة، بالبيت اليوم.",
+            "arabizi": "Mnīḥa, bil-bēt il-yōm.",
+            "meaning": "She's well, at home today.",
+            "rationale": "This gives the requested response: She's well, at home today. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، بعد الشغل.",
+            "arabizi": "Āh, baʿd ish-shughl.",
+            "meaning": "Yes, after work.",
+            "rationale": "This says “Yes, after work.” The requested response is “She's well, at home today.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "الحمد لله، أهلي مناح.",
+            "arabizi": "Il-ḥamdu lillāh, ahli mnāḥ.",
+            "meaning": "Thank God, my family are well.",
+            "rationale": "This says “Thank God, my family are well.” The requested response is “She's well, at home today.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: She's well, at home today. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: She's well, at home today.",
+          "retryHint": "Keep this meaning and perspective: She's well, at home today."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, after work.",
+        "prompt": {
+          "arabic": "نزورها بكرا؟",
+          "arabizi": "Nzūrha bukra?",
+          "meaning": "Shall we visit her tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "الحمد لله، أهلي مناح.",
+            "arabizi": "Il-ḥamdu lillāh, ahli mnāḥ.",
+            "meaning": "Thank God, my family are well.",
+            "rationale": "This says “Thank God, my family are well.” The requested response is “Yes, after work.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "منيحة، بالبيت اليوم.",
+            "arabizi": "Mnīḥa, bil-bēt il-yōm.",
+            "meaning": "She's well, at home today.",
+            "rationale": "This says “She's well, at home today.” The requested response is “Yes, after work.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بعد الشغل.",
+            "arabizi": "Āh, baʿd ish-shughl.",
+            "meaning": "Yes, after work.",
+            "rationale": "This gives the requested response: Yes, after work. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, after work. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, after work.",
+          "retryHint": "Keep this meaning and perspective: Yes, after work."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Thank God, my family are well.",
+        "prompt": {
+          "arabic": "كيف أهلك اليوم؟",
+          "arabizi": "Kīf ahlak il-yōm?",
+          "meaning": "How is your family today?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، بعد الشغل.",
+            "arabizi": "Āh, baʿd ish-shughl.",
+            "meaning": "Yes, after work.",
+            "rationale": "This says “Yes, after work.” The requested response is “Thank God, my family are well.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "الحمد لله، أهلي مناح.",
+            "arabizi": "Il-ḥamdu lillāh, ahli mnāḥ.",
+            "meaning": "Thank God, my family are well.",
+            "rationale": "This gives the requested response: Thank God, my family are well. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation."
+          },
+          {
+            "id": "c",
+            "arabic": "منيحة، بالبيت اليوم.",
+            "arabizi": "Mnīḥa, bil-bēt il-yōm.",
+            "meaning": "She's well, at home today.",
+            "rationale": "This says “She's well, at home today.” The requested response is “Thank God, my family are well.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Thank God, my family are well. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Thank God, my family are well.",
+          "retryHint": "Keep this meaning and perspective: Thank God, my family are well."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: She's well, at home today.",
+        "prompt": {
+          "arabic": "وأمك، كيفها؟",
+          "arabizi": "W-immak, kīfha?",
+          "meaning": "And your mother, how is she?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "منيحة، بالبيت اليوم.",
+            "arabizi": "Mnīḥa, bil-bēt il-yōm.",
+            "meaning": "She's well, at home today.",
+            "rationale": "This gives the requested response: She's well, at home today. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، بعد الشغل.",
+            "arabizi": "Āh, baʿd ish-shughl.",
+            "meaning": "Yes, after work.",
+            "rationale": "This says “Yes, after work.” The requested response is “She's well, at home today.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "الحمد لله، أهلي مناح.",
+            "arabizi": "Il-ḥamdu lillāh, ahli mnāḥ.",
+            "meaning": "Thank God, my family are well.",
+            "rationale": "This says “Thank God, my family are well.” The requested response is “She's well, at home today.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: She's well, at home today. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: She's well, at home today.",
+          "retryHint": "Keep this meaning and perspective: She's well, at home today."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, after work.",
+        "prompt": {
+          "arabic": "نزورها بكرا؟",
+          "arabizi": "Nzūrha bukra?",
+          "meaning": "Shall we visit her tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "الحمد لله، أهلي مناح.",
+            "arabizi": "Il-ḥamdu lillāh, ahli mnāḥ.",
+            "meaning": "Thank God, my family are well.",
+            "rationale": "This says “Thank God, my family are well.” The requested response is “Yes, after work.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "منيحة، بالبيت اليوم.",
+            "arabizi": "Mnīḥa, bil-bēt il-yōm.",
+            "meaning": "She's well, at home today.",
+            "rationale": "This says “She's well, at home today.” The requested response is “Yes, after work.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بعد الشغل.",
+            "arabizi": "Āh, baʿd ish-shughl.",
+            "meaning": "Yes, after work.",
+            "rationale": "This gives the requested response: Yes, after work. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, after work. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, after work.",
+          "retryHint": "Keep this meaning and perspective: Yes, after work."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-family-04",
+    "unitTitle": "People and plans",
+    "courseOrder": 17,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/family-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-family-04-02/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to ask about family.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "كيف أهلك اليوم؟",
+            "arabizi": "Kīf ahlak il-yōm?",
+            "meaning": "How is your family today?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "الحمد لله، أهلي مناح.",
+            "arabizi": "Il-ḥamdu lillāh, ahli mnāḥ.",
+            "meaning": "Thank God, my family are well.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وأمك، كيفها؟",
+            "arabizi": "W-immak, kīfha?",
+            "meaning": "And your mother, how is she?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "منيحة، بالبيت اليوم.",
+            "arabizi": "Mnīḥa, bil-bēt il-yōm.",
+            "meaning": "She's well, at home today.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "نزورها بكرا؟",
+            "arabizi": "Nzūrha bukra?",
+            "meaning": "Shall we visit her tomorrow?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، بعد الشغل.",
+            "arabizi": "Āh, baʿd ish-shughl.",
+            "meaning": "Yes, after work.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "كيف أهلك اليوم؟",
+          "arabizi": "Kīf ahlak il-yōm?",
+          "meaning": "How is your family today?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "الحمد لله، أهلي مناح.",
+          "arabizi": "Il-ḥamdu lillāh, ahli mnāḥ.",
+          "meaning": "Thank God, my family are well.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "منيحة، بالبيت اليوم.",
+          "arabizi": "Mnīḥa, bil-bēt il-yōm.",
+          "meaning": "She's well, at home today.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، بعد الشغل.",
+          "arabizi": "Āh, baʿd ish-shughl.",
+          "meaning": "Yes, after work.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/family-3/",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/f12-expansion/levantine-family-04-02/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "How is your family today?",
+          "phrase": {
+            "arabic": "كيف أهلك اليوم؟",
+            "arabizi": "Kīf ahlak il-yōm?",
+            "meaning": "How is your family today?",
+            "audioUrl": null
+          },
+          "note": "Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation. In this scene: How is your family today?",
+          "recallCue": "In this scene, express: How is your family today?",
+          "chunks": [
+            {
+              "arabic": "كيف أهلك",
+              "arabizi": "Kīf ahlak",
+              "meaning": "How is your family"
+            },
+            {
+              "arabic": "اليوم؟",
+              "arabizi": "il-yōm?",
+              "meaning": "today?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-02/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Thank God, my family are well.",
+          "phrase": {
+            "arabic": "الحمد لله، أهلي مناح.",
+            "arabizi": "Il-ḥamdu lillāh, ahli mnāḥ.",
+            "meaning": "Thank God, my family are well.",
+            "audioUrl": null
+          },
+          "note": "Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation. In this scene: Thank God, my family are well.",
+          "recallCue": "In this scene, express: Thank God, my family are well.",
+          "chunks": [
+            {
+              "arabic": "الحمد لله،",
+              "arabizi": "Il-ḥamdu lillāh,",
+              "meaning": "Thank God,"
+            },
+            {
+              "arabic": "أهلي مناح.",
+              "arabizi": "ahli mnāḥ.",
+              "meaning": "my family are well."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "She's well, at home today.",
+          "phrase": {
+            "arabic": "منيحة، بالبيت اليوم.",
+            "arabizi": "Mnīḥa, bil-bēt il-yōm.",
+            "meaning": "She's well, at home today.",
+            "audioUrl": null
+          },
+          "note": "Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation. In this scene: She's well, at home today.",
+          "recallCue": "In this scene, express: She's well, at home today.",
+          "chunks": [
+            {
+              "arabic": "منيحة،",
+              "arabizi": "Mnīḥa,",
+              "meaning": "She's well,"
+            },
+            {
+              "arabic": "بالبيت اليوم.",
+              "arabizi": "bil-bēt il-yōm.",
+              "meaning": "at home today."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, after work.",
+          "phrase": {
+            "arabic": "آه، بعد الشغل.",
+            "arabizi": "Āh, baʿd ish-shughl.",
+            "meaning": "Yes, after work.",
+            "audioUrl": null
+          },
+          "note": "Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation. In this scene: Yes, after work.",
+          "recallCue": "In this scene, express: Yes, after work.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "بعد الشغل.",
+              "arabizi": "baʿd ish-shughl.",
+              "meaning": "after work."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: Thank God, my family are well.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Thank God, my family are well."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "الحمد لله، أهلي مناح.",
+            "arabizi": "Il-ḥamdu lillāh, ahli mnāḥ.",
+            "meaning": "Thank God, my family are well.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Thank God, my family are well.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Checking on a family and arranging a brief visit tomorrow. Respond to: How is your family today? Your intended meaning: Thank God, my family are well.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Thank God, my family are well.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: She's well, at home today.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "She's well, at home today."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "منيحة، بالبيت اليوم.",
+            "arabizi": "Mnīḥa, bil-bēt il-yōm.",
+            "meaning": "She's well, at home today.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "She's well, at home today.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Checking on a family and arranging a brief visit tomorrow. Respond to: And your mother, how is she? Your intended meaning: She's well, at home today.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: She's well, at home today.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Yes, after work.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, after work."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، بعد الشغل.",
+            "arabizi": "Āh, baʿd ish-shughl.",
+            "meaning": "Yes, after work.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, after work.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Checking on a family and arranging a brief visit tomorrow. Respond to: Shall we visit her tomorrow? Your intended meaning: Yes, after work.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, after work.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · family-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · verbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Ask about family",
+      "locator": "internal:ismi/f12-expansion/levantine-family-04-02/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Checking on a family and arranging a brief visit tomorrow. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

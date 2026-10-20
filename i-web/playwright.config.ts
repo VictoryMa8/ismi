@@ -34,6 +34,7 @@ export default defineConfig({
         Curriculum__ApproverEmail: 'preview-owner@example.test',
         Curriculum__AllowKhmerTextPreview: 'true',
         Curriculum__AllowFrenchTextPreview: 'true',
+        Curriculum__AllowLevantineExpansionTextPreview: 'true',
         Curriculum__AllowAlphabetTextPreview: 'true',
         // Serial owner logins in the last specs exceed the production limit of 10 per minute.
         RateLimits__AuthPermitLimit: '100',

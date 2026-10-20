@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-neighborhood-06-03",
+    "trackId": "levantine",
+    "title": "Check the meeting point",
+    "scenario": "Confirming an exact meeting point and distinguishing inside from outside.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: In front of the library, at five.",
+        "prompt": {
+          "arabic": "وين نلتقي؟",
+          "arabizi": "Wēn niltaʾi?",
+          "meaning": "Where shall we meet?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "برا، جنب الباب.",
+            "arabizi": "Barra, janb il-bāb.",
+            "meaning": "Outside, beside the door.",
+            "rationale": "This says “Outside, beside the door.” The requested response is “In front of the library, at five.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، عند باب المكتبة.",
+            "arabizi": "Āh, ʿind bāb il-maktabe.",
+            "meaning": "Yes, at the library door.",
+            "rationale": "This says “Yes, at the library door.” The requested response is “In front of the library, at five.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "قدام المكتبة، الساعة خمسة.",
+            "arabizi": "ʾUddām il-maktabe, is-sāʿa khamse.",
+            "meaning": "In front of the library, at five.",
+            "rationale": "This gives the requested response: In front of the library, at five. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: In front of the library, at five. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: In front of the library, at five.",
+          "retryHint": "Keep this meaning and perspective: In front of the library, at five."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Outside, beside the door.",
+        "prompt": {
+          "arabic": "جوا المكتبة، ولا برا؟",
+          "arabizi": "Juwwa il-maktabe, walla barra?",
+          "meaning": "Inside the library, or outside?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "قدام المكتبة، الساعة خمسة.",
+            "arabizi": "ʾUddām il-maktabe, is-sāʿa khamse.",
+            "meaning": "In front of the library, at five.",
+            "rationale": "This says “In front of the library, at five.” The requested response is “Outside, beside the door.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "برا، جنب الباب.",
+            "arabizi": "Barra, janb il-bāb.",
+            "meaning": "Outside, beside the door.",
+            "rationale": "This gives the requested response: Outside, beside the door. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، عند باب المكتبة.",
+            "arabizi": "Āh, ʿind bāb il-maktabe.",
+            "meaning": "Yes, at the library door.",
+            "rationale": "This says “Yes, at the library door.” The requested response is “Outside, beside the door.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Outside, beside the door. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Outside, beside the door.",
+          "retryHint": "Keep this meaning and perspective: Outside, beside the door."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, at the library door.",
+        "prompt": {
+          "arabic": "باب المكتبة، مش باب المقهى؟",
+          "arabizi": "Bāb il-maktabe, mish bāb il-maʾha?",
+          "meaning": "The library door, not the cafe door?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، عند باب المكتبة.",
+            "arabizi": "Āh, ʿind bāb il-maktabe.",
+            "meaning": "Yes, at the library door.",
+            "rationale": "This gives the requested response: Yes, at the library door. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance."
+          },
+          {
+            "id": "b",
+            "arabic": "قدام المكتبة، الساعة خمسة.",
+            "arabizi": "ʾUddām il-maktabe, is-sāʿa khamse.",
+            "meaning": "In front of the library, at five.",
+            "rationale": "This says “In front of the library, at five.” The requested response is “Yes, at the library door.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "برا، جنب الباب.",
+            "arabizi": "Barra, janb il-bāb.",
+            "meaning": "Outside, beside the door.",
+            "rationale": "This says “Outside, beside the door.” The requested response is “Yes, at the library door.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, at the library door. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, at the library door.",
+          "retryHint": "Keep this meaning and perspective: Yes, at the library door."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: In front of the library, at five.",
+        "prompt": {
+          "arabic": "وين نلتقي؟",
+          "arabizi": "Wēn niltaʾi?",
+          "meaning": "Where shall we meet?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "برا، جنب الباب.",
+            "arabizi": "Barra, janb il-bāb.",
+            "meaning": "Outside, beside the door.",
+            "rationale": "This says “Outside, beside the door.” The requested response is “In front of the library, at five.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، عند باب المكتبة.",
+            "arabizi": "Āh, ʿind bāb il-maktabe.",
+            "meaning": "Yes, at the library door.",
+            "rationale": "This says “Yes, at the library door.” The requested response is “In front of the library, at five.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "قدام المكتبة، الساعة خمسة.",
+            "arabizi": "ʾUddām il-maktabe, is-sāʿa khamse.",
+            "meaning": "In front of the library, at five.",
+            "rationale": "This gives the requested response: In front of the library, at five. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: In front of the library, at five. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: In front of the library, at five.",
+          "retryHint": "Keep this meaning and perspective: In front of the library, at five."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Outside, beside the door.",
+        "prompt": {
+          "arabic": "جوا المكتبة، ولا برا؟",
+          "arabizi": "Juwwa il-maktabe, walla barra?",
+          "meaning": "Inside the library, or outside?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "قدام المكتبة، الساعة خمسة.",
+            "arabizi": "ʾUddām il-maktabe, is-sāʿa khamse.",
+            "meaning": "In front of the library, at five.",
+            "rationale": "This says “In front of the library, at five.” The requested response is “Outside, beside the door.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "برا، جنب الباب.",
+            "arabizi": "Barra, janb il-bāb.",
+            "meaning": "Outside, beside the door.",
+            "rationale": "This gives the requested response: Outside, beside the door. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، عند باب المكتبة.",
+            "arabizi": "Āh, ʿind bāb il-maktabe.",
+            "meaning": "Yes, at the library door.",
+            "rationale": "This says “Yes, at the library door.” The requested response is “Outside, beside the door.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Outside, beside the door. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Outside, beside the door.",
+          "retryHint": "Keep this meaning and perspective: Outside, beside the door."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, at the library door.",
+        "prompt": {
+          "arabic": "باب المكتبة، مش باب المقهى؟",
+          "arabizi": "Bāb il-maktabe, mish bāb il-maʾha?",
+          "meaning": "The library door, not the cafe door?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، عند باب المكتبة.",
+            "arabizi": "Āh, ʿind bāb il-maktabe.",
+            "meaning": "Yes, at the library door.",
+            "rationale": "This gives the requested response: Yes, at the library door. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance."
+          },
+          {
+            "id": "b",
+            "arabic": "قدام المكتبة، الساعة خمسة.",
+            "arabizi": "ʾUddām il-maktabe, is-sāʿa khamse.",
+            "meaning": "In front of the library, at five.",
+            "rationale": "This says “In front of the library, at five.” The requested response is “Yes, at the library door.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "برا، جنب الباب.",
+            "arabizi": "Barra, janb il-bāb.",
+            "meaning": "Outside, beside the door.",
+            "rationale": "This says “Outside, beside the door.” The requested response is “Yes, at the library door.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, at the library door. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, at the library door.",
+          "retryHint": "Keep this meaning and perspective: Yes, at the library door."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-neighborhood-06",
+    "unitTitle": "Around the neighborhood",
+    "courseOrder": 28,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-neighborhood-06-03/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to check the meeting point.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وين نلتقي؟",
+            "arabizi": "Wēn niltaʾi?",
+            "meaning": "Where shall we meet?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "قدام المكتبة، الساعة خمسة.",
+            "arabizi": "ʾUddām il-maktabe, is-sāʿa khamse.",
+            "meaning": "In front of the library, at five.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "جوا المكتبة، ولا برا؟",
+            "arabizi": "Juwwa il-maktabe, walla barra?",
+            "meaning": "Inside the library, or outside?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "برا، جنب الباب.",
+            "arabizi": "Barra, janb il-bāb.",
+            "meaning": "Outside, beside the door.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "باب المكتبة، مش باب المقهى؟",
+            "arabizi": "Bāb il-maktabe, mish bāb il-maʾha?",
+            "meaning": "The library door, not the cafe door?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، عند باب المكتبة.",
+            "arabizi": "Āh, ʿind bāb il-maktabe.",
+            "meaning": "Yes, at the library door.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "وين نلتقي؟",
+          "arabizi": "Wēn niltaʾi?",
+          "meaning": "Where shall we meet?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "قدام المكتبة، الساعة خمسة.",
+          "arabizi": "ʾUddām il-maktabe, is-sāʿa khamse.",
+          "meaning": "In front of the library, at five.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "برا، جنب الباب.",
+          "arabizi": "Barra, janb il-bāb.",
+          "meaning": "Outside, beside the door.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، عند باب المكتبة.",
+          "arabizi": "Āh, ʿind bāb il-maktabe.",
+          "meaning": "Yes, at the library door.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+        "internal:ismi/f12-expansion/levantine-neighborhood-06-03/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Where shall we meet?",
+          "phrase": {
+            "arabic": "وين نلتقي؟",
+            "arabizi": "Wēn niltaʾi?",
+            "meaning": "Where shall we meet?",
+            "audioUrl": null
+          },
+          "note": "Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance. In this scene: Where shall we meet?",
+          "recallCue": "In this scene, express: Where shall we meet?",
+          "chunks": [
+            {
+              "arabic": "وين",
+              "arabizi": "Wēn",
+              "meaning": "Where shall we"
+            },
+            {
+              "arabic": "نلتقي؟",
+              "arabizi": "niltaʾi?",
+              "meaning": "meet?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-03/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "In front of the library, at five.",
+          "phrase": {
+            "arabic": "قدام المكتبة، الساعة خمسة.",
+            "arabizi": "ʾUddām il-maktabe, is-sāʿa khamse.",
+            "meaning": "In front of the library, at five.",
+            "audioUrl": null
+          },
+          "note": "Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance. In this scene: In front of the library, at five.",
+          "recallCue": "In this scene, express: In front of the library, at five.",
+          "chunks": [
+            {
+              "arabic": "قدام المكتبة،",
+              "arabizi": "ʾUddām il-maktabe,",
+              "meaning": "In front of the library,"
+            },
+            {
+              "arabic": "الساعة خمسة.",
+              "arabizi": "is-sāʿa khamse.",
+              "meaning": "at five."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Outside, beside the door.",
+          "phrase": {
+            "arabic": "برا، جنب الباب.",
+            "arabizi": "Barra, janb il-bāb.",
+            "meaning": "Outside, beside the door.",
+            "audioUrl": null
+          },
+          "note": "Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance. In this scene: Outside, beside the door.",
+          "recallCue": "In this scene, express: Outside, beside the door.",
+          "chunks": [
+            {
+              "arabic": "برا،",
+              "arabizi": "Barra,",
+              "meaning": "Outside,"
+            },
+            {
+              "arabic": "جنب الباب.",
+              "arabizi": "janb il-bāb.",
+              "meaning": "beside the door."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, at the library door.",
+          "phrase": {
+            "arabic": "آه، عند باب المكتبة.",
+            "arabizi": "Āh, ʿind bāb il-maktabe.",
+            "meaning": "Yes, at the library door.",
+            "audioUrl": null
+          },
+          "note": "Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance. In this scene: Yes, at the library door.",
+          "recallCue": "In this scene, express: Yes, at the library door.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "عند باب المكتبة.",
+              "arabizi": "ʿind bāb il-maktabe.",
+              "meaning": "at the library door."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: In front of the library, at five.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "In front of the library, at five."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "قدام المكتبة، الساعة خمسة.",
+            "arabizi": "ʾUddām il-maktabe, is-sāʿa khamse.",
+            "meaning": "In front of the library, at five.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "In front of the library, at five.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Confirming an exact meeting point and distinguishing inside from outside. Respond to: Where shall we meet? Your intended meaning: In front of the library, at five.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: In front of the library, at five.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Outside, beside the door.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Outside, beside the door."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "برا، جنب الباب.",
+            "arabizi": "Barra, janb il-bāb.",
+            "meaning": "Outside, beside the door.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Outside, beside the door.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Confirming an exact meeting point and distinguishing inside from outside. Respond to: Inside the library, or outside? Your intended meaning: Outside, beside the door.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Outside, beside the door.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Yes, at the library door.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, at the library door."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، عند باب المكتبة.",
+            "arabizi": "Āh, ʿind bāb il-maktabe.",
+            "meaning": "Yes, at the library door.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, at the library door.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Confirming an exact meeting point and distinguishing inside from outside. Respond to: The library door, not the cafe door? Your intended meaning: Yes, at the library door.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, at the library door.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · cars-and-other-transportation-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · adverbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Check the meeting point",
+      "locator": "internal:ismi/f12-expansion/levantine-neighborhood-06-03/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Confirming an exact meeting point and distinguishing inside from outside. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

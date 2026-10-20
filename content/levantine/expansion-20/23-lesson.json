@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-food-05-03",
+    "trackId": "levantine",
+    "title": "Explain a food preference",
+    "scenario": "Explaining a food preference and checking an ingredient without making medical guarantees.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: I like vegetables, and I don't eat meat.",
+        "prompt": {
+          "arabic": "شو بتحب تاكل؟",
+          "arabizi": "Shū bitḥibb tākul?",
+          "meaning": "What do you like to eat?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، وبنسأل عن المكونات.",
+            "arabizi": "Tamām, w-bnisʾal ʿan il-mukawwināt.",
+            "meaning": "Okay, and we'll ask about the ingredients.",
+            "rationale": "This says “Okay, and we'll ask about the ingredients.” The requested response is “I like vegetables, and I don't eat meat.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "بحب الخضرة، وما باكل لحمة.",
+            "arabizi": "Baḥibb il-khuḍra, w-mā bākul laḥme.",
+            "meaning": "I like vegetables, and I don't eat meat.",
+            "rationale": "This gives the requested response: I like vegetables, and I don't eat meat. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، فيها دجاج.",
+            "arabizi": "Āh, fīha djāj.",
+            "meaning": "Yes, it has chicken.",
+            "rationale": "This says “Yes, it has chicken.” The requested response is “I like vegetables, and I don't eat meat.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I like vegetables, and I don't eat meat. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I like vegetables, and I don't eat meat.",
+          "retryHint": "Keep this meaning and perspective: I like vegetables, and I don't eat meat."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, it has chicken.",
+        "prompt": {
+          "arabic": "هاي الشوربة فيها لحمة؟",
+          "arabizi": "Hāy ish-shōraba fīha laḥme?",
+          "meaning": "Does this soup have meat in it?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، فيها دجاج.",
+            "arabizi": "Āh, fīha djāj.",
+            "meaning": "Yes, it has chicken.",
+            "rationale": "This gives the requested response: Yes, it has chicken. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، وبنسأل عن المكونات.",
+            "arabizi": "Tamām, w-bnisʾal ʿan il-mukawwināt.",
+            "meaning": "Okay, and we'll ask about the ingredients.",
+            "rationale": "This says “Okay, and we'll ask about the ingredients.” The requested response is “Yes, it has chicken.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "بحب الخضرة، وما باكل لحمة.",
+            "arabizi": "Baḥibb il-khuḍra, w-mā bākul laḥme.",
+            "meaning": "I like vegetables, and I don't eat meat.",
+            "rationale": "This says “I like vegetables, and I don't eat meat.” The requested response is “Yes, it has chicken.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, it has chicken. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, it has chicken.",
+          "retryHint": "Keep this meaning and perspective: Yes, it has chicken."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Okay, and we'll ask about the ingredients.",
+        "prompt": {
+          "arabic": "خلينا نطلب سلطة بدون لحمة.",
+          "arabizi": "Khallīna niṭlub salaṭa bidūn laḥme.",
+          "meaning": "Let's order a salad without meat.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بحب الخضرة، وما باكل لحمة.",
+            "arabizi": "Baḥibb il-khuḍra, w-mā bākul laḥme.",
+            "meaning": "I like vegetables, and I don't eat meat.",
+            "rationale": "This says “I like vegetables, and I don't eat meat.” The requested response is “Okay, and we'll ask about the ingredients.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، فيها دجاج.",
+            "arabizi": "Āh, fīha djāj.",
+            "meaning": "Yes, it has chicken.",
+            "rationale": "This says “Yes, it has chicken.” The requested response is “Okay, and we'll ask about the ingredients.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، وبنسأل عن المكونات.",
+            "arabizi": "Tamām, w-bnisʾal ʿan il-mukawwināt.",
+            "meaning": "Okay, and we'll ask about the ingredients.",
+            "rationale": "This gives the requested response: Okay, and we'll ask about the ingredients. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, and we'll ask about the ingredients. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, and we'll ask about the ingredients.",
+          "retryHint": "Keep this meaning and perspective: Okay, and we'll ask about the ingredients."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: I like vegetables, and I don't eat meat.",
+        "prompt": {
+          "arabic": "شو بتحب تاكل؟",
+          "arabizi": "Shū bitḥibb tākul?",
+          "meaning": "What do you like to eat?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، وبنسأل عن المكونات.",
+            "arabizi": "Tamām, w-bnisʾal ʿan il-mukawwināt.",
+            "meaning": "Okay, and we'll ask about the ingredients.",
+            "rationale": "This says “Okay, and we'll ask about the ingredients.” The requested response is “I like vegetables, and I don't eat meat.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "بحب الخضرة، وما باكل لحمة.",
+            "arabizi": "Baḥibb il-khuḍra, w-mā bākul laḥme.",
+            "meaning": "I like vegetables, and I don't eat meat.",
+            "rationale": "This gives the requested response: I like vegetables, and I don't eat meat. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، فيها دجاج.",
+            "arabizi": "Āh, fīha djāj.",
+            "meaning": "Yes, it has chicken.",
+            "rationale": "This says “Yes, it has chicken.” The requested response is “I like vegetables, and I don't eat meat.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I like vegetables, and I don't eat meat. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I like vegetables, and I don't eat meat.",
+          "retryHint": "Keep this meaning and perspective: I like vegetables, and I don't eat meat."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, it has chicken.",
+        "prompt": {
+          "arabic": "هاي الشوربة فيها لحمة؟",
+          "arabizi": "Hāy ish-shōraba fīha laḥme?",
+          "meaning": "Does this soup have meat in it?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، فيها دجاج.",
+            "arabizi": "Āh, fīha djāj.",
+            "meaning": "Yes, it has chicken.",
+            "rationale": "This gives the requested response: Yes, it has chicken. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، وبنسأل عن المكونات.",
+            "arabizi": "Tamām, w-bnisʾal ʿan il-mukawwināt.",
+            "meaning": "Okay, and we'll ask about the ingredients.",
+            "rationale": "This says “Okay, and we'll ask about the ingredients.” The requested response is “Yes, it has chicken.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "بحب الخضرة، وما باكل لحمة.",
+            "arabizi": "Baḥibb il-khuḍra, w-mā bākul laḥme.",
+            "meaning": "I like vegetables, and I don't eat meat.",
+            "rationale": "This says “I like vegetables, and I don't eat meat.” The requested response is “Yes, it has chicken.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, it has chicken. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, it has chicken.",
+          "retryHint": "Keep this meaning and perspective: Yes, it has chicken."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Okay, and we'll ask about the ingredients.",
+        "prompt": {
+          "arabic": "خلينا نطلب سلطة بدون لحمة.",
+          "arabizi": "Khallīna niṭlub salaṭa bidūn laḥme.",
+          "meaning": "Let's order a salad without meat.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بحب الخضرة، وما باكل لحمة.",
+            "arabizi": "Baḥibb il-khuḍra, w-mā bākul laḥme.",
+            "meaning": "I like vegetables, and I don't eat meat.",
+            "rationale": "This says “I like vegetables, and I don't eat meat.” The requested response is “Okay, and we'll ask about the ingredients.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، فيها دجاج.",
+            "arabizi": "Āh, fīha djāj.",
+            "meaning": "Yes, it has chicken.",
+            "rationale": "This says “Yes, it has chicken.” The requested response is “Okay, and we'll ask about the ingredients.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، وبنسأل عن المكونات.",
+            "arabizi": "Tamām, w-bnisʾal ʿan il-mukawwināt.",
+            "meaning": "Okay, and we'll ask about the ingredients.",
+            "rationale": "This gives the requested response: Okay, and we'll ask about the ingredients. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, and we'll ask about the ingredients. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, and we'll ask about the ingredients.",
+          "retryHint": "Keep this meaning and perspective: Okay, and we'll ask about the ingredients."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-food-05",
+    "unitTitle": "Share a meal",
+    "courseOrder": 23,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-food-05-03/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to explain a food preference.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "شو بتحب تاكل؟",
+            "arabizi": "Shū bitḥibb tākul?",
+            "meaning": "What do you like to eat?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "بحب الخضرة، وما باكل لحمة.",
+            "arabizi": "Baḥibb il-khuḍra, w-mā bākul laḥme.",
+            "meaning": "I like vegetables, and I don't eat meat.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "هاي الشوربة فيها لحمة؟",
+            "arabizi": "Hāy ish-shōraba fīha laḥme?",
+            "meaning": "Does this soup have meat in it?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، فيها دجاج.",
+            "arabizi": "Āh, fīha djāj.",
+            "meaning": "Yes, it has chicken.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "خلينا نطلب سلطة بدون لحمة.",
+            "arabizi": "Khallīna niṭlub salaṭa bidūn laḥme.",
+            "meaning": "Let's order a salad without meat.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "تمام، وبنسأل عن المكونات.",
+            "arabizi": "Tamām, w-bnisʾal ʿan il-mukawwināt.",
+            "meaning": "Okay, and we'll ask about the ingredients.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "شو بتحب تاكل؟",
+          "arabizi": "Shū bitḥibb tākul?",
+          "meaning": "What do you like to eat?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "بحب الخضرة، وما باكل لحمة.",
+          "arabizi": "Baḥibb il-khuḍra, w-mā bākul laḥme.",
+          "meaning": "I like vegetables, and I don't eat meat.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، فيها دجاج.",
+          "arabizi": "Āh, fīha djāj.",
+          "meaning": "Yes, it has chicken.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام، وبنسأل عن المكونات.",
+          "arabizi": "Tamām, w-bnisʾal ʿan il-mukawwināt.",
+          "meaning": "Okay, and we'll ask about the ingredients.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/f12-expansion/levantine-food-05-03/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "What do you like to eat?",
+          "phrase": {
+            "arabic": "شو بتحب تاكل؟",
+            "arabizi": "Shū bitḥibb tākul?",
+            "meaning": "What do you like to eat?",
+            "audioUrl": null
+          },
+          "note": "Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim. In this scene: What do you like to eat?",
+          "recallCue": "In this scene, express: What do you like to eat?",
+          "chunks": [
+            {
+              "arabic": "شو",
+              "arabizi": "Shū",
+              "meaning": "What"
+            },
+            {
+              "arabic": "بتحب تاكل؟",
+              "arabizi": "bitḥibb tākul?",
+              "meaning": "do you like to eat?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-03/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "I like vegetables, and I don't eat meat.",
+          "phrase": {
+            "arabic": "بحب الخضرة، وما باكل لحمة.",
+            "arabizi": "Baḥibb il-khuḍra, w-mā bākul laḥme.",
+            "meaning": "I like vegetables, and I don't eat meat.",
+            "audioUrl": null
+          },
+          "note": "Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim. In this scene: I like vegetables, and I don't eat meat.",
+          "recallCue": "In this scene, express: I like vegetables, and I don't eat meat.",
+          "chunks": [
+            {
+              "arabic": "بحب الخضرة،",
+              "arabizi": "Baḥibb il-khuḍra,",
+              "meaning": "I like vegetables,"
+            },
+            {
+              "arabic": "وما باكل لحمة.",
+              "arabizi": "w-mā bākul laḥme.",
+              "meaning": "and I don't eat meat."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, it has chicken.",
+          "phrase": {
+            "arabic": "آه، فيها دجاج.",
+            "arabizi": "Āh, fīha djāj.",
+            "meaning": "Yes, it has chicken.",
+            "audioUrl": null
+          },
+          "note": "Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim. In this scene: Yes, it has chicken.",
+          "recallCue": "In this scene, express: Yes, it has chicken.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "فيها دجاج.",
+              "arabizi": "fīha djāj.",
+              "meaning": "it has chicken."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Okay, and we'll ask about the ingredients.",
+          "phrase": {
+            "arabic": "تمام، وبنسأل عن المكونات.",
+            "arabizi": "Tamām, w-bnisʾal ʿan il-mukawwināt.",
+            "meaning": "Okay, and we'll ask about the ingredients.",
+            "audioUrl": null
+          },
+          "note": "Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim. In this scene: Okay, and we'll ask about the ingredients.",
+          "recallCue": "In this scene, express: Okay, and we'll ask about the ingredients.",
+          "chunks": [
+            {
+              "arabic": "تمام،",
+              "arabizi": "Tamām,",
+              "meaning": "Okay,"
+            },
+            {
+              "arabic": "وبنسأل عن المكونات.",
+              "arabizi": "w-bnisʾal ʿan il-mukawwināt.",
+              "meaning": "and we'll ask about the ingredients."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: I like vegetables, and I don't eat meat.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "I like vegetables, and I don't eat meat."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "بحب الخضرة، وما باكل لحمة.",
+            "arabizi": "Baḥibb il-khuḍra, w-mā bākul laḥme.",
+            "meaning": "I like vegetables, and I don't eat meat.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "I like vegetables, and I don't eat meat.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Explaining a food preference and checking an ingredient without making medical guarantees. Respond to: What do you like to eat? Your intended meaning: I like vegetables, and I don't eat meat.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: I like vegetables, and I don't eat meat.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Yes, it has chicken.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, it has chicken."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، فيها دجاج.",
+            "arabizi": "Āh, fīha djāj.",
+            "meaning": "Yes, it has chicken.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, it has chicken.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Explaining a food preference and checking an ingredient without making medical guarantees. Respond to: Does this soup have meat in it? Your intended meaning: Yes, it has chicken.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, it has chicken.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Okay, and we'll ask about the ingredients.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Okay, and we'll ask about the ingredients."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "تمام، وبنسأل عن المكونات.",
+            "arabizi": "Tamām, w-bnisʾal ʿan il-mukawwināt.",
+            "meaning": "Okay, and we'll ask about the ingredients.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Okay, and we'll ask about the ingredients.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Explaining a food preference and checking an ingredient without making medical guarantees. Respond to: Let's order a salad without meat. Your intended meaning: Okay, and we'll ask about the ingredients.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Okay, and we'll ask about the ingredients.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · food-and-drink-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · verbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Explain a food preference",
+      "locator": "internal:ismi/f12-expansion/levantine-food-05-03/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Explaining a food preference and checking an ingredient without making medical guarantees. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

@@ -83,6 +83,18 @@ on the existing preview. It grants no reviewed-content claim, beta inclusion,
 changed/additional episode publication or human acceptance; the normal review path
 and subsequent-episode review dependency remain. Current delivery belongs in F23.
 
+On October 19 the owner revised the current F12 completion cycle: author twenty
+additional Levantine lessons (weeks 3–6, course orders 11–30), move the final thirty
+to a separate roadmap checkpoint, complete the current cycle, commit, deploy and
+publish. This supersedes review-before-authoring for those twenty only. Release
+them on the existing development preview as **unreviewed, text-only**, using the
+exact pins in `content/levantine/expansion-20/review-manifest.json`; retain pending
+linguistic/source-rights acceptance, an empty reviewer and no human audio. Changed
+or additional text, prior Plans/correction candidates, native-expert-reviewed
+claims and beta inclusion receive no blanket waiver. F12.6 retains the final thirty
+lessons; F12.5 retains human/source/audio/outcome/access acceptance and the original
+full twelve-week quality target. Current delivery belongs in ROADMAP.md.
+
 ## Primary audience and promise
 
 - First users are false beginners who already know enough Arabic for basic questions or directions.

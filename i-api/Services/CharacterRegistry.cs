@@ -15,14 +15,24 @@ public static class CharacterRegistry
     };
 
     // Display rename only: the persisted publication and its audit history stay intact.
-    public static string CurrentNames(string text) => Regex.Replace(text,
-        @"\b(Lina|Omar|lina|omar)\b|لينا|\\u0644\\u064[Aa]\\u0646\\u0627",
+    private static string RenameWords(string text) => Regex.Replace(text,
+        @"\b(Lina|Omar|lina|omar)\b|(?<![\p{L}\p{M}\p{N}_])لينا(?![\p{L}\p{M}\p{N}_])",
         match => match.Value switch
         {
             "Lina" => "Fattoush", "Omar" => "Knafeh",
-            "lina" => "fattoush", "omar" => "knafeh", "لينا" => "فتوش",
-            _ => "فتوش"
+            "lina" => "fattoush", "omar" => "knafeh", _ => "فتوش"
         });
+
+    public static string CurrentNames(string text)
+    {
+        // Read JSON string tokens as strings before testing word boundaries.
+        // Matching escaped name bytes globally also matched the suffix in خلينا.
+        if (text.TrimStart().StartsWith('{') || text.TrimStart().StartsWith('['))
+            return Regex.Replace(text, "\"(?:\\\\.|[^\"\\\\])*\"", match =>
+                System.Text.Json.JsonSerializer.Serialize(RenameWords(
+                    System.Text.Json.JsonSerializer.Deserialize<string>(match.Value)!)));
+        return RenameWords(text);
+    }
 
     public static void Validate(LessonResponse lesson, List<string> errors)
     {

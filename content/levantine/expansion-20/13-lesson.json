@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-home-03-03",
+    "trackId": "levantine",
+    "title": "Share household tasks",
+    "scenario": "Sharing the dishes and table after a meal; speakers keep their own tasks distinct.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: I'll wash the dishes.",
+        "prompt": {
+          "arabic": "خلينا نرتب المطبخ.",
+          "arabizi": "Khallīna nrattib il-maṭbakh.",
+          "meaning": "Let's tidy the kitchen.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وين الصابون؟",
+            "arabizi": "Wēn iṣ-ṣābūn?",
+            "meaning": "Where is the soap?",
+            "rationale": "This says “Where is the soap?” The requested response is “I'll wash the dishes.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، وبعدين بنرتاح.",
+            "arabizi": "Tamām, w-baʿdēn bnirtāḥ.",
+            "meaning": "Okay, and afterwards we'll rest.",
+            "rationale": "This says “Okay, and afterwards we'll rest.” The requested response is “I'll wash the dishes.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا بغسل الصحون.",
+            "arabizi": "Ana baghsil iṣ-ṣuḥūn.",
+            "meaning": "I'll wash the dishes.",
+            "rationale": "This gives the requested response: I'll wash the dishes. Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I'll wash the dishes. Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I'll wash the dishes.",
+          "retryHint": "Keep this meaning and perspective: I'll wash the dishes."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Where is the soap?",
+        "prompt": {
+          "arabic": "وأنا بمسح الطاولة.",
+          "arabizi": "W-ana bamsaḥ iṭ-ṭāwle.",
+          "meaning": "And I'll wipe the table.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا بغسل الصحون.",
+            "arabizi": "Ana baghsil iṣ-ṣuḥūn.",
+            "meaning": "I'll wash the dishes.",
+            "rationale": "This says “I'll wash the dishes.” The requested response is “Where is the soap?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "وين الصابون؟",
+            "arabizi": "Wēn iṣ-ṣābūn?",
+            "meaning": "Where is the soap?",
+            "rationale": "This gives the requested response: Where is the soap? Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، وبعدين بنرتاح.",
+            "arabizi": "Tamām, w-baʿdēn bnirtāḥ.",
+            "meaning": "Okay, and afterwards we'll rest.",
+            "rationale": "This says “Okay, and afterwards we'll rest.” The requested response is “Where is the soap?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Where is the soap? Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Where is the soap?",
+          "retryHint": "Keep this meaning and perspective: Where is the soap?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Okay, and afterwards we'll rest.",
+        "prompt": {
+          "arabic": "جنب المجلى.",
+          "arabizi": "Janb il-majla.",
+          "meaning": "Beside the sink.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، وبعدين بنرتاح.",
+            "arabizi": "Tamām, w-baʿdēn bnirtāḥ.",
+            "meaning": "Okay, and afterwards we'll rest.",
+            "rationale": "This gives the requested response: Okay, and afterwards we'll rest. Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا بغسل الصحون.",
+            "arabizi": "Ana baghsil iṣ-ṣuḥūn.",
+            "meaning": "I'll wash the dishes.",
+            "rationale": "This says “I'll wash the dishes.” The requested response is “Okay, and afterwards we'll rest.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "وين الصابون؟",
+            "arabizi": "Wēn iṣ-ṣābūn?",
+            "meaning": "Where is the soap?",
+            "rationale": "This says “Where is the soap?” The requested response is “Okay, and afterwards we'll rest.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, and afterwards we'll rest. Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, and afterwards we'll rest.",
+          "retryHint": "Keep this meaning and perspective: Okay, and afterwards we'll rest."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: I'll wash the dishes.",
+        "prompt": {
+          "arabic": "خلينا نرتب المطبخ.",
+          "arabizi": "Khallīna nrattib il-maṭbakh.",
+          "meaning": "Let's tidy the kitchen.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "وين الصابون؟",
+            "arabizi": "Wēn iṣ-ṣābūn?",
+            "meaning": "Where is the soap?",
+            "rationale": "This says “Where is the soap?” The requested response is “I'll wash the dishes.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، وبعدين بنرتاح.",
+            "arabizi": "Tamām, w-baʿdēn bnirtāḥ.",
+            "meaning": "Okay, and afterwards we'll rest.",
+            "rationale": "This says “Okay, and afterwards we'll rest.” The requested response is “I'll wash the dishes.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "أنا بغسل الصحون.",
+            "arabizi": "Ana baghsil iṣ-ṣuḥūn.",
+            "meaning": "I'll wash the dishes.",
+            "rationale": "This gives the requested response: I'll wash the dishes. Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I'll wash the dishes. Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I'll wash the dishes.",
+          "retryHint": "Keep this meaning and perspective: I'll wash the dishes."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Where is the soap?",
+        "prompt": {
+          "arabic": "وأنا بمسح الطاولة.",
+          "arabizi": "W-ana bamsaḥ iṭ-ṭāwle.",
+          "meaning": "And I'll wipe the table.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أنا بغسل الصحون.",
+            "arabizi": "Ana baghsil iṣ-ṣuḥūn.",
+            "meaning": "I'll wash the dishes.",
+            "rationale": "This says “I'll wash the dishes.” The requested response is “Where is the soap?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "وين الصابون؟",
+            "arabizi": "Wēn iṣ-ṣābūn?",
+            "meaning": "Where is the soap?",
+            "rationale": "This gives the requested response: Where is the soap? Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، وبعدين بنرتاح.",
+            "arabizi": "Tamām, w-baʿdēn bnirtāḥ.",
+            "meaning": "Okay, and afterwards we'll rest.",
+            "rationale": "This says “Okay, and afterwards we'll rest.” The requested response is “Where is the soap?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Where is the soap? Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Where is the soap?",
+          "retryHint": "Keep this meaning and perspective: Where is the soap?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Okay, and afterwards we'll rest.",
+        "prompt": {
+          "arabic": "جنب المجلى.",
+          "arabizi": "Janb il-majla.",
+          "meaning": "Beside the sink.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، وبعدين بنرتاح.",
+            "arabizi": "Tamām, w-baʿdēn bnirtāḥ.",
+            "meaning": "Okay, and afterwards we'll rest.",
+            "rationale": "This gives the requested response: Okay, and afterwards we'll rest. Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division."
+          },
+          {
+            "id": "b",
+            "arabic": "أنا بغسل الصحون.",
+            "arabizi": "Ana baghsil iṣ-ṣuḥūn.",
+            "meaning": "I'll wash the dishes.",
+            "rationale": "This says “I'll wash the dishes.” The requested response is “Okay, and afterwards we'll rest.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "وين الصابون؟",
+            "arabizi": "Wēn iṣ-ṣābūn?",
+            "meaning": "Where is the soap?",
+            "rationale": "This says “Where is the soap?” The requested response is “Okay, and afterwards we'll rest.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, and afterwards we'll rest. Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, and afterwards we'll rest.",
+          "retryHint": "Keep this meaning and perspective: Okay, and afterwards we'll rest."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-home-03",
+    "unitTitle": "At home together",
+    "courseOrder": 13,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/around-the-house-2/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-home-03-03/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to share household tasks.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "خلينا نرتب المطبخ.",
+            "arabizi": "Khallīna nrattib il-maṭbakh.",
+            "meaning": "Let's tidy the kitchen.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "أنا بغسل الصحون.",
+            "arabizi": "Ana baghsil iṣ-ṣuḥūn.",
+            "meaning": "I'll wash the dishes.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وأنا بمسح الطاولة.",
+            "arabizi": "W-ana bamsaḥ iṭ-ṭāwle.",
+            "meaning": "And I'll wipe the table.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "وين الصابون؟",
+            "arabizi": "Wēn iṣ-ṣābūn?",
+            "meaning": "Where is the soap?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "جنب المجلى.",
+            "arabizi": "Janb il-majla.",
+            "meaning": "Beside the sink.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "تمام، وبعدين بنرتاح.",
+            "arabizi": "Tamām, w-baʿdēn bnirtāḥ.",
+            "meaning": "Okay, and afterwards we'll rest.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "خلينا نرتب المطبخ.",
+          "arabizi": "Khallīna nrattib il-maṭbakh.",
+          "meaning": "Let's tidy the kitchen.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أنا بغسل الصحون.",
+          "arabizi": "Ana baghsil iṣ-ṣuḥūn.",
+          "meaning": "I'll wash the dishes.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "وين الصابون؟",
+          "arabizi": "Wēn iṣ-ṣābūn?",
+          "meaning": "Where is the soap?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام، وبعدين بنرتاح.",
+          "arabizi": "Tamām, w-baʿdēn bnirtāḥ.",
+          "meaning": "Okay, and afterwards we'll rest.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+        "internal:ismi/f12-expansion/levantine-home-03-03/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Let's tidy the kitchen.",
+          "phrase": {
+            "arabic": "خلينا نرتب المطبخ.",
+            "arabizi": "Khallīna nrattib il-maṭbakh.",
+            "meaning": "Let's tidy the kitchen.",
+            "audioUrl": null
+          },
+          "note": "Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division. In this scene: Let's tidy the kitchen.",
+          "recallCue": "In this scene, express: Let's tidy the kitchen.",
+          "chunks": [
+            {
+              "arabic": "خلينا",
+              "arabizi": "Khallīna",
+              "meaning": "Let's"
+            },
+            {
+              "arabic": "نرتب المطبخ.",
+              "arabizi": "nrattib il-maṭbakh.",
+              "meaning": "tidy the kitchen."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-03/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "I'll wash the dishes.",
+          "phrase": {
+            "arabic": "أنا بغسل الصحون.",
+            "arabizi": "Ana baghsil iṣ-ṣuḥūn.",
+            "meaning": "I'll wash the dishes.",
+            "audioUrl": null
+          },
+          "note": "Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division. In this scene: I'll wash the dishes.",
+          "recallCue": "In this scene, express: I'll wash the dishes.",
+          "chunks": [
+            {
+              "arabic": "أنا بغسل",
+              "arabizi": "Ana baghsil",
+              "meaning": "I'll wash"
+            },
+            {
+              "arabic": "الصحون.",
+              "arabizi": "iṣ-ṣuḥūn.",
+              "meaning": "the dishes."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Where is the soap?",
+          "phrase": {
+            "arabic": "وين الصابون؟",
+            "arabizi": "Wēn iṣ-ṣābūn?",
+            "meaning": "Where is the soap?",
+            "audioUrl": null
+          },
+          "note": "Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division. In this scene: Where is the soap?",
+          "recallCue": "In this scene, express: Where is the soap?",
+          "chunks": [
+            {
+              "arabic": "وين",
+              "arabizi": "Wēn",
+              "meaning": "Where is"
+            },
+            {
+              "arabic": "الصابون؟",
+              "arabizi": "iṣ-ṣābūn?",
+              "meaning": "the soap?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Okay, and afterwards we'll rest.",
+          "phrase": {
+            "arabic": "تمام، وبعدين بنرتاح.",
+            "arabizi": "Tamām, w-baʿdēn bnirtāḥ.",
+            "meaning": "Okay, and afterwards we'll rest.",
+            "audioUrl": null
+          },
+          "note": "Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division. In this scene: Okay, and afterwards we'll rest.",
+          "recallCue": "In this scene, express: Okay, and afterwards we'll rest.",
+          "chunks": [
+            {
+              "arabic": "تمام،",
+              "arabizi": "Tamām,",
+              "meaning": "Okay,"
+            },
+            {
+              "arabic": "وبعدين بنرتاح.",
+              "arabizi": "w-baʿdēn bnirtāḥ.",
+              "meaning": "and afterwards we'll rest."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-03/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: I'll wash the dishes.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "I'll wash the dishes."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "أنا بغسل الصحون.",
+            "arabizi": "Ana baghsil iṣ-ṣuḥūn.",
+            "meaning": "I'll wash the dishes.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "I'll wash the dishes.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Sharing the dishes and table after a meal; speakers keep their own tasks distinct. Respond to: Let's tidy the kitchen. Your intended meaning: I'll wash the dishes.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: I'll wash the dishes.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Where is the soap?",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Where is the soap?"
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "وين الصابون؟",
+            "arabizi": "Wēn iṣ-ṣābūn?",
+            "meaning": "Where is the soap?",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Where is the soap?",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Sharing the dishes and table after a meal; speakers keep their own tasks distinct. Respond to: And I'll wipe the table. Your intended meaning: Where is the soap?",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Where is the soap?",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Okay, and afterwards we'll rest.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Okay, and afterwards we'll rest."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-03/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "تمام، وبعدين بنرتاح.",
+            "arabizi": "Tamām, w-baʿdēn bnirtāḥ.",
+            "meaning": "Okay, and afterwards we'll rest.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Okay, and afterwards we'll rest.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Sharing the dishes and table after a meal; speakers keep their own tasks distinct. Respond to: Beside the sink. Your intended meaning: Okay, and afterwards we'll rest.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Okay, and afterwards we'll rest.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · around-the-house-2",
+      "locator": "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · adverbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Share household tasks",
+      "locator": "internal:ismi/f12-expansion/levantine-home-03-03/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Sharing the dishes and table after a meal; speakers keep their own tasks distinct. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

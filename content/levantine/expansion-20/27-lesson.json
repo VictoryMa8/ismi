@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-neighborhood-06-02",
+    "trackId": "levantine",
+    "title": "Understand a short route",
+    "scenario": "Checking a short walking route in a fictional neighborhood and repairing a left/right misunderstanding.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: We walk straight, then right.",
+        "prompt": {
+          "arabic": "كيف نوصل عالمخبز؟",
+          "arabizi": "Kīf nōṣal ʿa-l-makhbaz?",
+          "meaning": "How do we get to the bakery?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بنمشي دغري، وبعدين يمين.",
+            "arabizi": "Bnimshi dughri, w-baʿdēn yamīn.",
+            "meaning": "We walk straight, then right.",
+            "rationale": "This gives the requested response: We walk straight, then right. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، مش شمال.",
+            "arabizi": "Āh, mish shmāl.",
+            "meaning": "Yes, not left.",
+            "rationale": "This says “Yes, not left.” The requested response is “We walk straight, then right.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، عاليمين.",
+            "arabizi": "Āh, ʿa-l-yamīn.",
+            "meaning": "Yes, on the right.",
+            "rationale": "This says “Yes, on the right.” The requested response is “We walk straight, then right.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: We walk straight, then right. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: We walk straight, then right.",
+          "retryHint": "Keep this meaning and perspective: We walk straight, then right."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, not left.",
+        "prompt": {
+          "arabic": "يمين بعد الصيدلية؟",
+          "arabizi": "Yamīn baʿd iṣ-ṣēdaliyye?",
+          "meaning": "Right after the pharmacy?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، عاليمين.",
+            "arabizi": "Āh, ʿa-l-yamīn.",
+            "meaning": "Yes, on the right.",
+            "rationale": "This says “Yes, on the right.” The requested response is “Yes, not left.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "بنمشي دغري، وبعدين يمين.",
+            "arabizi": "Bnimshi dughri, w-baʿdēn yamīn.",
+            "meaning": "We walk straight, then right.",
+            "rationale": "This says “We walk straight, then right.” The requested response is “Yes, not left.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، مش شمال.",
+            "arabizi": "Āh, mish shmāl.",
+            "meaning": "Yes, not left.",
+            "rationale": "This gives the requested response: Yes, not left. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, not left. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, not left.",
+          "retryHint": "Keep this meaning and perspective: Yes, not left."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, on the right.",
+        "prompt": {
+          "arabic": "وبعدين بنشوف المخبز؟",
+          "arabizi": "W-baʿdēn bnshūf il-makhbaz?",
+          "meaning": "And then we'll see the bakery?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، مش شمال.",
+            "arabizi": "Āh, mish shmāl.",
+            "meaning": "Yes, not left.",
+            "rationale": "This says “Yes, not left.” The requested response is “Yes, on the right.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، عاليمين.",
+            "arabizi": "Āh, ʿa-l-yamīn.",
+            "meaning": "Yes, on the right.",
+            "rationale": "This gives the requested response: Yes, on the right. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension."
+          },
+          {
+            "id": "c",
+            "arabic": "بنمشي دغري، وبعدين يمين.",
+            "arabizi": "Bnimshi dughri, w-baʿdēn yamīn.",
+            "meaning": "We walk straight, then right.",
+            "rationale": "This says “We walk straight, then right.” The requested response is “Yes, on the right.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, on the right. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, on the right.",
+          "retryHint": "Keep this meaning and perspective: Yes, on the right."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: We walk straight, then right.",
+        "prompt": {
+          "arabic": "كيف نوصل عالمخبز؟",
+          "arabizi": "Kīf nōṣal ʿa-l-makhbaz?",
+          "meaning": "How do we get to the bakery?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بنمشي دغري، وبعدين يمين.",
+            "arabizi": "Bnimshi dughri, w-baʿdēn yamīn.",
+            "meaning": "We walk straight, then right.",
+            "rationale": "This gives the requested response: We walk straight, then right. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، مش شمال.",
+            "arabizi": "Āh, mish shmāl.",
+            "meaning": "Yes, not left.",
+            "rationale": "This says “Yes, not left.” The requested response is “We walk straight, then right.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، عاليمين.",
+            "arabizi": "Āh, ʿa-l-yamīn.",
+            "meaning": "Yes, on the right.",
+            "rationale": "This says “Yes, on the right.” The requested response is “We walk straight, then right.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: We walk straight, then right. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: We walk straight, then right.",
+          "retryHint": "Keep this meaning and perspective: We walk straight, then right."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, not left.",
+        "prompt": {
+          "arabic": "يمين بعد الصيدلية؟",
+          "arabizi": "Yamīn baʿd iṣ-ṣēdaliyye?",
+          "meaning": "Right after the pharmacy?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، عاليمين.",
+            "arabizi": "Āh, ʿa-l-yamīn.",
+            "meaning": "Yes, on the right.",
+            "rationale": "This says “Yes, on the right.” The requested response is “Yes, not left.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "بنمشي دغري، وبعدين يمين.",
+            "arabizi": "Bnimshi dughri, w-baʿdēn yamīn.",
+            "meaning": "We walk straight, then right.",
+            "rationale": "This says “We walk straight, then right.” The requested response is “Yes, not left.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، مش شمال.",
+            "arabizi": "Āh, mish shmāl.",
+            "meaning": "Yes, not left.",
+            "rationale": "This gives the requested response: Yes, not left. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, not left. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, not left.",
+          "retryHint": "Keep this meaning and perspective: Yes, not left."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, on the right.",
+        "prompt": {
+          "arabic": "وبعدين بنشوف المخبز؟",
+          "arabizi": "W-baʿdēn bnshūf il-makhbaz?",
+          "meaning": "And then we'll see the bakery?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، مش شمال.",
+            "arabizi": "Āh, mish shmāl.",
+            "meaning": "Yes, not left.",
+            "rationale": "This says “Yes, not left.” The requested response is “Yes, on the right.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، عاليمين.",
+            "arabizi": "Āh, ʿa-l-yamīn.",
+            "meaning": "Yes, on the right.",
+            "rationale": "This gives the requested response: Yes, on the right. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension."
+          },
+          {
+            "id": "c",
+            "arabic": "بنمشي دغري، وبعدين يمين.",
+            "arabizi": "Bnimshi dughri, w-baʿdēn yamīn.",
+            "meaning": "We walk straight, then right.",
+            "rationale": "This says “We walk straight, then right.” The requested response is “Yes, on the right.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, on the right. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, on the right.",
+          "retryHint": "Keep this meaning and perspective: Yes, on the right."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-neighborhood-06",
+    "unitTitle": "Around the neighborhood",
+    "courseOrder": 27,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-neighborhood-06-02/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to understand a short route.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "كيف نوصل عالمخبز؟",
+            "arabizi": "Kīf nōṣal ʿa-l-makhbaz?",
+            "meaning": "How do we get to the bakery?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "بنمشي دغري، وبعدين يمين.",
+            "arabizi": "Bnimshi dughri, w-baʿdēn yamīn.",
+            "meaning": "We walk straight, then right.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "يمين بعد الصيدلية؟",
+            "arabizi": "Yamīn baʿd iṣ-ṣēdaliyye?",
+            "meaning": "Right after the pharmacy?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، مش شمال.",
+            "arabizi": "Āh, mish shmāl.",
+            "meaning": "Yes, not left.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وبعدين بنشوف المخبز؟",
+            "arabizi": "W-baʿdēn bnshūf il-makhbaz?",
+            "meaning": "And then we'll see the bakery?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، عاليمين.",
+            "arabizi": "Āh, ʿa-l-yamīn.",
+            "meaning": "Yes, on the right.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "كيف نوصل عالمخبز؟",
+          "arabizi": "Kīf nōṣal ʿa-l-makhbaz?",
+          "meaning": "How do we get to the bakery?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "بنمشي دغري، وبعدين يمين.",
+          "arabizi": "Bnimshi dughri, w-baʿdēn yamīn.",
+          "meaning": "We walk straight, then right.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، مش شمال.",
+          "arabizi": "Āh, mish shmāl.",
+          "meaning": "Yes, not left.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، عاليمين.",
+          "arabizi": "Āh, ʿa-l-yamīn.",
+          "meaning": "Yes, on the right.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+        "internal:ismi/f12-expansion/levantine-neighborhood-06-02/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "How do we get to the bakery?",
+          "phrase": {
+            "arabic": "كيف نوصل عالمخبز؟",
+            "arabizi": "Kīf nōṣal ʿa-l-makhbaz?",
+            "meaning": "How do we get to the bakery?",
+            "audioUrl": null
+          },
+          "note": "Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension. In this scene: How do we get to the bakery?",
+          "recallCue": "In this scene, express: How do we get to the bakery?",
+          "chunks": [
+            {
+              "arabic": "كيف نوصل",
+              "arabizi": "Kīf nōṣal",
+              "meaning": "How do we get"
+            },
+            {
+              "arabic": "عالمخبز؟",
+              "arabizi": "ʿa-l-makhbaz?",
+              "meaning": "to the bakery?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-02/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "We walk straight, then right.",
+          "phrase": {
+            "arabic": "بنمشي دغري، وبعدين يمين.",
+            "arabizi": "Bnimshi dughri, w-baʿdēn yamīn.",
+            "meaning": "We walk straight, then right.",
+            "audioUrl": null
+          },
+          "note": "Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension. In this scene: We walk straight, then right.",
+          "recallCue": "In this scene, express: We walk straight, then right.",
+          "chunks": [
+            {
+              "arabic": "بنمشي دغري،",
+              "arabizi": "Bnimshi dughri,",
+              "meaning": "We walk straight,"
+            },
+            {
+              "arabic": "وبعدين يمين.",
+              "arabizi": "w-baʿdēn yamīn.",
+              "meaning": "then right."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, not left.",
+          "phrase": {
+            "arabic": "آه، مش شمال.",
+            "arabizi": "Āh, mish shmāl.",
+            "meaning": "Yes, not left.",
+            "audioUrl": null
+          },
+          "note": "Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension. In this scene: Yes, not left.",
+          "recallCue": "In this scene, express: Yes, not left.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "مش شمال.",
+              "arabizi": "mish shmāl.",
+              "meaning": "not left."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, on the right.",
+          "phrase": {
+            "arabic": "آه، عاليمين.",
+            "arabizi": "Āh, ʿa-l-yamīn.",
+            "meaning": "Yes, on the right.",
+            "audioUrl": null
+          },
+          "note": "Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension. In this scene: Yes, on the right.",
+          "recallCue": "In this scene, express: Yes, on the right.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "عاليمين.",
+              "arabizi": "ʿa-l-yamīn.",
+              "meaning": "on the right."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-neighborhood-06-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: We walk straight, then right.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "We walk straight, then right."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "بنمشي دغري، وبعدين يمين.",
+            "arabizi": "Bnimshi dughri, w-baʿdēn yamīn.",
+            "meaning": "We walk straight, then right.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "We walk straight, then right.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Checking a short walking route in a fictional neighborhood and repairing a left/right misunderstanding. Respond to: How do we get to the bakery? Your intended meaning: We walk straight, then right.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: We walk straight, then right.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Yes, not left.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, not left."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، مش شمال.",
+            "arabizi": "Āh, mish shmāl.",
+            "meaning": "Yes, not left.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, not left.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Checking a short walking route in a fictional neighborhood and repairing a left/right misunderstanding. Respond to: Right after the pharmacy? Your intended meaning: Yes, not left.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, not left.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Yes, on the right.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, on the right."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-neighborhood-06-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، عاليمين.",
+            "arabizi": "Āh, ʿa-l-yamīn.",
+            "meaning": "Yes, on the right.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, on the right.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Checking a short walking route in a fictional neighborhood and repairing a left/right misunderstanding. Respond to: And then we'll see the bakery? Your intended meaning: Yes, on the right.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, on the right.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · cars-and-other-transportation-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/cars-and-other-transportation-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · adverbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Understand a short route",
+      "locator": "internal:ismi/f12-expansion/levantine-neighborhood-06-02/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Checking a short walking route in a fictional neighborhood and repairing a left/right misunderstanding. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

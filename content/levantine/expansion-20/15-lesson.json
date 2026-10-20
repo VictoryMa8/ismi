@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-home-03-05",
+    "trackId": "levantine",
+    "title": "Agree on an evening at home",
+    "scenario": "Agreeing to stay home, cook and have tea in that order.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, let's cook together.",
+        "prompt": {
+          "arabic": "نضل بالبيت الليلة؟",
+          "arabizi": "Nḍall bil-bēt il-lēle?",
+          "meaning": "Shall we stay home tonight?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، خلينا نطبخ سوا.",
+            "arabizi": "Āh, khallīna nuṭbukh sawa.",
+            "meaning": "Yes, let's cook together.",
+            "rationale": "This gives the requested response: Yes, let's cook together. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، الساعة سبعة.",
+            "arabizi": "Tamām, is-sāʿa sabʿa.",
+            "meaning": "Okay, at seven.",
+            "rationale": "This says “Okay, at seven.” The requested response is “Yes, let's cook together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "يعني أول إشي الأكل، وبعدين الشاي.",
+            "arabizi": "Yaʿni awwal ishi il-akil, w-baʿdēn ish-shāy.",
+            "meaning": "So food first, and then tea.",
+            "rationale": "This says “So food first, and then tea.” The requested response is “Yes, let's cook together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, let's cook together. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, let's cook together.",
+          "retryHint": "Keep this meaning and perspective: Yes, let's cook together."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Okay, at seven.",
+        "prompt": {
+          "arabic": "نعمل رز وسلطة؟",
+          "arabizi": "Niʿmal ruzz w-salaṭa?",
+          "meaning": "Shall we make rice and salad?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "يعني أول إشي الأكل، وبعدين الشاي.",
+            "arabizi": "Yaʿni awwal ishi il-akil, w-baʿdēn ish-shāy.",
+            "meaning": "So food first, and then tea.",
+            "rationale": "This says “So food first, and then tea.” The requested response is “Okay, at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، خلينا نطبخ سوا.",
+            "arabizi": "Āh, khallīna nuṭbukh sawa.",
+            "meaning": "Yes, let's cook together.",
+            "rationale": "This says “Yes, let's cook together.” The requested response is “Okay, at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، الساعة سبعة.",
+            "arabizi": "Tamām, is-sāʿa sabʿa.",
+            "meaning": "Okay, at seven.",
+            "rationale": "This gives the requested response: Okay, at seven. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, at seven. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, at seven.",
+          "retryHint": "Keep this meaning and perspective: Okay, at seven."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: So food first, and then tea.",
+        "prompt": {
+          "arabic": "وبعدين نشرب شاي.",
+          "arabizi": "W-baʿdēn nishrab shāy.",
+          "meaning": "And afterwards we'll drink tea.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، الساعة سبعة.",
+            "arabizi": "Tamām, is-sāʿa sabʿa.",
+            "meaning": "Okay, at seven.",
+            "rationale": "This says “Okay, at seven.” The requested response is “So food first, and then tea.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "يعني أول إشي الأكل، وبعدين الشاي.",
+            "arabizi": "Yaʿni awwal ishi il-akil, w-baʿdēn ish-shāy.",
+            "meaning": "So food first, and then tea.",
+            "rationale": "This gives the requested response: So food first, and then tea. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، خلينا نطبخ سوا.",
+            "arabizi": "Āh, khallīna nuṭbukh sawa.",
+            "meaning": "Yes, let's cook together.",
+            "rationale": "This says “Yes, let's cook together.” The requested response is “So food first, and then tea.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: So food first, and then tea. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: So food first, and then tea.",
+          "retryHint": "Keep this meaning and perspective: So food first, and then tea."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, let's cook together.",
+        "prompt": {
+          "arabic": "نضل بالبيت الليلة؟",
+          "arabizi": "Nḍall bil-bēt il-lēle?",
+          "meaning": "Shall we stay home tonight?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، خلينا نطبخ سوا.",
+            "arabizi": "Āh, khallīna nuṭbukh sawa.",
+            "meaning": "Yes, let's cook together.",
+            "rationale": "This gives the requested response: Yes, let's cook together. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، الساعة سبعة.",
+            "arabizi": "Tamām, is-sāʿa sabʿa.",
+            "meaning": "Okay, at seven.",
+            "rationale": "This says “Okay, at seven.” The requested response is “Yes, let's cook together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "يعني أول إشي الأكل، وبعدين الشاي.",
+            "arabizi": "Yaʿni awwal ishi il-akil, w-baʿdēn ish-shāy.",
+            "meaning": "So food first, and then tea.",
+            "rationale": "This says “So food first, and then tea.” The requested response is “Yes, let's cook together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, let's cook together. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, let's cook together.",
+          "retryHint": "Keep this meaning and perspective: Yes, let's cook together."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Okay, at seven.",
+        "prompt": {
+          "arabic": "نعمل رز وسلطة؟",
+          "arabizi": "Niʿmal ruzz w-salaṭa?",
+          "meaning": "Shall we make rice and salad?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "يعني أول إشي الأكل، وبعدين الشاي.",
+            "arabizi": "Yaʿni awwal ishi il-akil, w-baʿdēn ish-shāy.",
+            "meaning": "So food first, and then tea.",
+            "rationale": "This says “So food first, and then tea.” The requested response is “Okay, at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، خلينا نطبخ سوا.",
+            "arabizi": "Āh, khallīna nuṭbukh sawa.",
+            "meaning": "Yes, let's cook together.",
+            "rationale": "This says “Yes, let's cook together.” The requested response is “Okay, at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، الساعة سبعة.",
+            "arabizi": "Tamām, is-sāʿa sabʿa.",
+            "meaning": "Okay, at seven.",
+            "rationale": "This gives the requested response: Okay, at seven. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, at seven. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, at seven.",
+          "retryHint": "Keep this meaning and perspective: Okay, at seven."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: So food first, and then tea.",
+        "prompt": {
+          "arabic": "وبعدين نشرب شاي.",
+          "arabizi": "W-baʿdēn nishrab shāy.",
+          "meaning": "And afterwards we'll drink tea.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، الساعة سبعة.",
+            "arabizi": "Tamām, is-sāʿa sabʿa.",
+            "meaning": "Okay, at seven.",
+            "rationale": "This says “Okay, at seven.” The requested response is “So food first, and then tea.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "يعني أول إشي الأكل، وبعدين الشاي.",
+            "arabizi": "Yaʿni awwal ishi il-akil, w-baʿdēn ish-shāy.",
+            "meaning": "So food first, and then tea.",
+            "rationale": "This gives the requested response: So food first, and then tea. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، خلينا نطبخ سوا.",
+            "arabizi": "Āh, khallīna nuṭbukh sawa.",
+            "meaning": "Yes, let's cook together.",
+            "rationale": "This says “Yes, let's cook together.” The requested response is “So food first, and then tea.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: So food first, and then tea. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: So food first, and then tea.",
+          "retryHint": "Keep this meaning and perspective: So food first, and then tea."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-home-03",
+    "unitTitle": "At home together",
+    "courseOrder": 15,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/around-the-house-2/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-home-03-05/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to agree on an evening at home.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "نضل بالبيت الليلة؟",
+            "arabizi": "Nḍall bil-bēt il-lēle?",
+            "meaning": "Shall we stay home tonight?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، خلينا نطبخ سوا.",
+            "arabizi": "Āh, khallīna nuṭbukh sawa.",
+            "meaning": "Yes, let's cook together.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "نعمل رز وسلطة؟",
+            "arabizi": "Niʿmal ruzz w-salaṭa?",
+            "meaning": "Shall we make rice and salad?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "تمام، الساعة سبعة.",
+            "arabizi": "Tamām, is-sāʿa sabʿa.",
+            "meaning": "Okay, at seven.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وبعدين نشرب شاي.",
+            "arabizi": "W-baʿdēn nishrab shāy.",
+            "meaning": "And afterwards we'll drink tea.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "يعني أول إشي الأكل، وبعدين الشاي.",
+            "arabizi": "Yaʿni awwal ishi il-akil, w-baʿdēn ish-shāy.",
+            "meaning": "So food first, and then tea.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "نضل بالبيت الليلة؟",
+          "arabizi": "Nḍall bil-bēt il-lēle?",
+          "meaning": "Shall we stay home tonight?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، خلينا نطبخ سوا.",
+          "arabizi": "Āh, khallīna nuṭbukh sawa.",
+          "meaning": "Yes, let's cook together.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام، الساعة سبعة.",
+          "arabizi": "Tamām, is-sāʿa sabʿa.",
+          "meaning": "Okay, at seven.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "يعني أول إشي الأكل، وبعدين الشاي.",
+          "arabizi": "Yaʿni awwal ishi il-akil, w-baʿdēn ish-shāy.",
+          "meaning": "So food first, and then tea.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+        "internal:ismi/f12-expansion/levantine-home-03-05/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Shall we stay home tonight?",
+          "phrase": {
+            "arabic": "نضل بالبيت الليلة؟",
+            "arabizi": "Nḍall bil-bēt il-lēle?",
+            "meaning": "Shall we stay home tonight?",
+            "audioUrl": null
+          },
+          "note": "Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time. In this scene: Shall we stay home tonight?",
+          "recallCue": "In this scene, express: Shall we stay home tonight?",
+          "chunks": [
+            {
+              "arabic": "نضل بالبيت",
+              "arabizi": "Nḍall bil-bēt",
+              "meaning": "Shall we stay home"
+            },
+            {
+              "arabic": "الليلة؟",
+              "arabizi": "il-lēle?",
+              "meaning": "tonight?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-05/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Yes, let's cook together.",
+          "phrase": {
+            "arabic": "آه، خلينا نطبخ سوا.",
+            "arabizi": "Āh, khallīna nuṭbukh sawa.",
+            "meaning": "Yes, let's cook together.",
+            "audioUrl": null
+          },
+          "note": "Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time. In this scene: Yes, let's cook together.",
+          "recallCue": "In this scene, express: Yes, let's cook together.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "خلينا نطبخ سوا.",
+              "arabizi": "khallīna nuṭbukh sawa.",
+              "meaning": "let's cook together."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Okay, at seven.",
+          "phrase": {
+            "arabic": "تمام، الساعة سبعة.",
+            "arabizi": "Tamām, is-sāʿa sabʿa.",
+            "meaning": "Okay, at seven.",
+            "audioUrl": null
+          },
+          "note": "Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time. In this scene: Okay, at seven.",
+          "recallCue": "In this scene, express: Okay, at seven.",
+          "chunks": [
+            {
+              "arabic": "تمام،",
+              "arabizi": "Tamām,",
+              "meaning": "Okay,"
+            },
+            {
+              "arabic": "الساعة سبعة.",
+              "arabizi": "is-sāʿa sabʿa.",
+              "meaning": "at seven."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "So food first, and then tea.",
+          "phrase": {
+            "arabic": "يعني أول إشي الأكل، وبعدين الشاي.",
+            "arabizi": "Yaʿni awwal ishi il-akil, w-baʿdēn ish-shāy.",
+            "meaning": "So food first, and then tea.",
+            "audioUrl": null
+          },
+          "note": "Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time. In this scene: So food first, and then tea.",
+          "recallCue": "In this scene, express: So food first, and then tea.",
+          "chunks": [
+            {
+              "arabic": "يعني أول إشي الأكل،",
+              "arabizi": "Yaʿni awwal ishi il-akil,",
+              "meaning": "So food first,"
+            },
+            {
+              "arabic": "وبعدين الشاي.",
+              "arabizi": "w-baʿdēn ish-shāy.",
+              "meaning": "and then tea."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: Yes, let's cook together.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, let's cook together."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، خلينا نطبخ سوا.",
+            "arabizi": "Āh, khallīna nuṭbukh sawa.",
+            "meaning": "Yes, let's cook together.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, let's cook together.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Agreeing to stay home, cook and have tea in that order. Respond to: Shall we stay home tonight? Your intended meaning: Yes, let's cook together.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, let's cook together.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Okay, at seven.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Okay, at seven."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "تمام، الساعة سبعة.",
+            "arabizi": "Tamām, is-sāʿa sabʿa.",
+            "meaning": "Okay, at seven.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Okay, at seven.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Agreeing to stay home, cook and have tea in that order. Respond to: Shall we make rice and salad? Your intended meaning: Okay, at seven.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Okay, at seven.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: So food first, and then tea.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "So food first, and then tea."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "يعني أول إشي الأكل، وبعدين الشاي.",
+            "arabizi": "Yaʿni awwal ishi il-akil, w-baʿdēn ish-shāy.",
+            "meaning": "So food first, and then tea.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "So food first, and then tea.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Agreeing to stay home, cook and have tea in that order. Respond to: And afterwards we'll drink tea. Your intended meaning: So food first, and then tea.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: So food first, and then tea.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · around-the-house-2",
+      "locator": "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · adverbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Agree on an evening at home",
+      "locator": "internal:ismi/f12-expansion/levantine-home-03-05/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Agreeing to stay home, cook and have tea in that order. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

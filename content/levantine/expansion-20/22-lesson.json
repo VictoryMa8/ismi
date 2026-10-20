@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-food-05-02",
+    "trackId": "levantine",
+    "title": "Order together",
+    "scenario": "Agreeing on an order together; each person chooses a meal and they share water.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: I'd like a plate of hummus and a salad.",
+        "prompt": {
+          "arabic": "شو بدك تطلب؟",
+          "arabizi": "Shū biddak tiṭlub?",
+          "meaning": "What would you like to order?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "نطلب مي للإتنين؟",
+            "arabizi": "Niṭlub mayy lil-itnēn?",
+            "meaning": "Shall we order water for both of us?",
+            "rationale": "This says “Shall we order water for both of us?” The requested response is “I'd like a plate of hummus and a salad.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، هيك الطلب كامل.",
+            "arabizi": "Tamām, hēk iṭ-ṭalab kāmil.",
+            "meaning": "Okay, that completes the order.",
+            "rationale": "This says “Okay, that completes the order.” The requested response is “I'd like a plate of hummus and a salad.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "بدي صحن حمص وسلطة.",
+            "arabizi": "Biddi ṣaḥn ḥummuṣ w-salaṭa.",
+            "meaning": "I'd like a plate of hummus and a salad.",
+            "rationale": "This gives the requested response: I'd like a plate of hummus and a salad. Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I'd like a plate of hummus and a salad. Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I'd like a plate of hummus and a salad.",
+          "retryHint": "Keep this meaning and perspective: I'd like a plate of hummus and a salad."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Shall we order water for both of us?",
+        "prompt": {
+          "arabic": "وأنا بدي شوربة.",
+          "arabizi": "W-ana biddi shōraba.",
+          "meaning": "And I would like soup.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بدي صحن حمص وسلطة.",
+            "arabizi": "Biddi ṣaḥn ḥummuṣ w-salaṭa.",
+            "meaning": "I'd like a plate of hummus and a salad.",
+            "rationale": "This says “I'd like a plate of hummus and a salad.” The requested response is “Shall we order water for both of us?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "نطلب مي للإتنين؟",
+            "arabizi": "Niṭlub mayy lil-itnēn?",
+            "meaning": "Shall we order water for both of us?",
+            "rationale": "This gives the requested response: Shall we order water for both of us? Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، هيك الطلب كامل.",
+            "arabizi": "Tamām, hēk iṭ-ṭalab kāmil.",
+            "meaning": "Okay, that completes the order.",
+            "rationale": "This says “Okay, that completes the order.” The requested response is “Shall we order water for both of us?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Shall we order water for both of us? Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Shall we order water for both of us?",
+          "retryHint": "Keep this meaning and perspective: Shall we order water for both of us?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Okay, that completes the order.",
+        "prompt": {
+          "arabic": "آه، قنينة كبيرة.",
+          "arabizi": "Āh, ʾnīne kbīre.",
+          "meaning": "Yes, a large bottle.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، هيك الطلب كامل.",
+            "arabizi": "Tamām, hēk iṭ-ṭalab kāmil.",
+            "meaning": "Okay, that completes the order.",
+            "rationale": "This gives the requested response: Okay, that completes the order. Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct."
+          },
+          {
+            "id": "b",
+            "arabic": "بدي صحن حمص وسلطة.",
+            "arabizi": "Biddi ṣaḥn ḥummuṣ w-salaṭa.",
+            "meaning": "I'd like a plate of hummus and a salad.",
+            "rationale": "This says “I'd like a plate of hummus and a salad.” The requested response is “Okay, that completes the order.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "نطلب مي للإتنين؟",
+            "arabizi": "Niṭlub mayy lil-itnēn?",
+            "meaning": "Shall we order water for both of us?",
+            "rationale": "This says “Shall we order water for both of us?” The requested response is “Okay, that completes the order.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, that completes the order. Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, that completes the order.",
+          "retryHint": "Keep this meaning and perspective: Okay, that completes the order."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: I'd like a plate of hummus and a salad.",
+        "prompt": {
+          "arabic": "شو بدك تطلب؟",
+          "arabizi": "Shū biddak tiṭlub?",
+          "meaning": "What would you like to order?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "نطلب مي للإتنين؟",
+            "arabizi": "Niṭlub mayy lil-itnēn?",
+            "meaning": "Shall we order water for both of us?",
+            "rationale": "This says “Shall we order water for both of us?” The requested response is “I'd like a plate of hummus and a salad.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، هيك الطلب كامل.",
+            "arabizi": "Tamām, hēk iṭ-ṭalab kāmil.",
+            "meaning": "Okay, that completes the order.",
+            "rationale": "This says “Okay, that completes the order.” The requested response is “I'd like a plate of hummus and a salad.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "بدي صحن حمص وسلطة.",
+            "arabizi": "Biddi ṣaḥn ḥummuṣ w-salaṭa.",
+            "meaning": "I'd like a plate of hummus and a salad.",
+            "rationale": "This gives the requested response: I'd like a plate of hummus and a salad. Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: I'd like a plate of hummus and a salad. Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: I'd like a plate of hummus and a salad.",
+          "retryHint": "Keep this meaning and perspective: I'd like a plate of hummus and a salad."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Shall we order water for both of us?",
+        "prompt": {
+          "arabic": "وأنا بدي شوربة.",
+          "arabizi": "W-ana biddi shōraba.",
+          "meaning": "And I would like soup.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "بدي صحن حمص وسلطة.",
+            "arabizi": "Biddi ṣaḥn ḥummuṣ w-salaṭa.",
+            "meaning": "I'd like a plate of hummus and a salad.",
+            "rationale": "This says “I'd like a plate of hummus and a salad.” The requested response is “Shall we order water for both of us?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "نطلب مي للإتنين؟",
+            "arabizi": "Niṭlub mayy lil-itnēn?",
+            "meaning": "Shall we order water for both of us?",
+            "rationale": "This gives the requested response: Shall we order water for both of us? Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، هيك الطلب كامل.",
+            "arabizi": "Tamām, hēk iṭ-ṭalab kāmil.",
+            "meaning": "Okay, that completes the order.",
+            "rationale": "This says “Okay, that completes the order.” The requested response is “Shall we order water for both of us?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Shall we order water for both of us? Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Shall we order water for both of us?",
+          "retryHint": "Keep this meaning and perspective: Shall we order water for both of us?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Okay, that completes the order.",
+        "prompt": {
+          "arabic": "آه، قنينة كبيرة.",
+          "arabizi": "Āh, ʾnīne kbīre.",
+          "meaning": "Yes, a large bottle.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، هيك الطلب كامل.",
+            "arabizi": "Tamām, hēk iṭ-ṭalab kāmil.",
+            "meaning": "Okay, that completes the order.",
+            "rationale": "This gives the requested response: Okay, that completes the order. Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct."
+          },
+          {
+            "id": "b",
+            "arabic": "بدي صحن حمص وسلطة.",
+            "arabizi": "Biddi ṣaḥn ḥummuṣ w-salaṭa.",
+            "meaning": "I'd like a plate of hummus and a salad.",
+            "rationale": "This says “I'd like a plate of hummus and a salad.” The requested response is “Okay, that completes the order.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "نطلب مي للإتنين؟",
+            "arabizi": "Niṭlub mayy lil-itnēn?",
+            "meaning": "Shall we order water for both of us?",
+            "rationale": "This says “Shall we order water for both of us?” The requested response is “Okay, that completes the order.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, that completes the order. Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, that completes the order.",
+          "retryHint": "Keep this meaning and perspective: Okay, that completes the order."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-food-05",
+    "unitTitle": "Share a meal",
+    "courseOrder": 22,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-food-05-02/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to order together.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "شو بدك تطلب؟",
+            "arabizi": "Shū biddak tiṭlub?",
+            "meaning": "What would you like to order?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "بدي صحن حمص وسلطة.",
+            "arabizi": "Biddi ṣaḥn ḥummuṣ w-salaṭa.",
+            "meaning": "I'd like a plate of hummus and a salad.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وأنا بدي شوربة.",
+            "arabizi": "W-ana biddi shōraba.",
+            "meaning": "And I would like soup.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "نطلب مي للإتنين؟",
+            "arabizi": "Niṭlub mayy lil-itnēn?",
+            "meaning": "Shall we order water for both of us?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "آه، قنينة كبيرة.",
+            "arabizi": "Āh, ʾnīne kbīre.",
+            "meaning": "Yes, a large bottle.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "تمام، هيك الطلب كامل.",
+            "arabizi": "Tamām, hēk iṭ-ṭalab kāmil.",
+            "meaning": "Okay, that completes the order.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "شو بدك تطلب؟",
+          "arabizi": "Shū biddak tiṭlub?",
+          "meaning": "What would you like to order?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "بدي صحن حمص وسلطة.",
+          "arabizi": "Biddi ṣaḥn ḥummuṣ w-salaṭa.",
+          "meaning": "I'd like a plate of hummus and a salad.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "نطلب مي للإتنين؟",
+          "arabizi": "Niṭlub mayy lil-itnēn?",
+          "meaning": "Shall we order water for both of us?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام، هيك الطلب كامل.",
+          "arabizi": "Tamām, hēk iṭ-ṭalab kāmil.",
+          "meaning": "Okay, that completes the order.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/f12-expansion/levantine-food-05-02/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "What would you like to order?",
+          "phrase": {
+            "arabic": "شو بدك تطلب؟",
+            "arabizi": "Shū biddak tiṭlub?",
+            "meaning": "What would you like to order?",
+            "audioUrl": null
+          },
+          "note": "Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct. In this scene: What would you like to order?",
+          "recallCue": "In this scene, express: What would you like to order?",
+          "chunks": [
+            {
+              "arabic": "شو",
+              "arabizi": "Shū",
+              "meaning": "What"
+            },
+            {
+              "arabic": "بدك تطلب؟",
+              "arabizi": "biddak tiṭlub?",
+              "meaning": "would you like to order?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-02/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "I'd like a plate of hummus and a salad.",
+          "phrase": {
+            "arabic": "بدي صحن حمص وسلطة.",
+            "arabizi": "Biddi ṣaḥn ḥummuṣ w-salaṭa.",
+            "meaning": "I'd like a plate of hummus and a salad.",
+            "audioUrl": null
+          },
+          "note": "Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct. In this scene: I'd like a plate of hummus and a salad.",
+          "recallCue": "In this scene, express: I'd like a plate of hummus and a salad.",
+          "chunks": [
+            {
+              "arabic": "بدي صحن حمص",
+              "arabizi": "Biddi ṣaḥn ḥummuṣ",
+              "meaning": "I'd like a plate of hummus"
+            },
+            {
+              "arabic": "وسلطة.",
+              "arabizi": "w-salaṭa.",
+              "meaning": "and a salad."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Shall we order water for both of us?",
+          "phrase": {
+            "arabic": "نطلب مي للإتنين؟",
+            "arabizi": "Niṭlub mayy lil-itnēn?",
+            "meaning": "Shall we order water for both of us?",
+            "audioUrl": null
+          },
+          "note": "Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct. In this scene: Shall we order water for both of us?",
+          "recallCue": "In this scene, express: Shall we order water for both of us?",
+          "chunks": [
+            {
+              "arabic": "نطلب مي",
+              "arabizi": "Niṭlub mayy",
+              "meaning": "Shall we order water"
+            },
+            {
+              "arabic": "للإتنين؟",
+              "arabizi": "lil-itnēn?",
+              "meaning": "for both of us?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Okay, that completes the order.",
+          "phrase": {
+            "arabic": "تمام، هيك الطلب كامل.",
+            "arabizi": "Tamām, hēk iṭ-ṭalab kāmil.",
+            "meaning": "Okay, that completes the order.",
+            "audioUrl": null
+          },
+          "note": "Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct. In this scene: Okay, that completes the order.",
+          "recallCue": "In this scene, express: Okay, that completes the order.",
+          "chunks": [
+            {
+              "arabic": "تمام،",
+              "arabizi": "Tamām,",
+              "meaning": "Okay,"
+            },
+            {
+              "arabic": "هيك الطلب كامل.",
+              "arabizi": "hēk iṭ-ṭalab kāmil.",
+              "meaning": "that completes the order."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-02/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: I'd like a plate of hummus and a salad.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "I'd like a plate of hummus and a salad."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "بدي صحن حمص وسلطة.",
+            "arabizi": "Biddi ṣaḥn ḥummuṣ w-salaṭa.",
+            "meaning": "I'd like a plate of hummus and a salad.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "I'd like a plate of hummus and a salad.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Agreeing on an order together; each person chooses a meal and they share water. Respond to: What would you like to order? Your intended meaning: I'd like a plate of hummus and a salad.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: I'd like a plate of hummus and a salad.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Shall we order water for both of us?",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Shall we order water for both of us?"
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "نطلب مي للإتنين؟",
+            "arabizi": "Niṭlub mayy lil-itnēn?",
+            "meaning": "Shall we order water for both of us?",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Shall we order water for both of us?",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Agreeing on an order together; each person chooses a meal and they share water. Respond to: And I would like soup. Your intended meaning: Shall we order water for both of us?",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Shall we order water for both of us?",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Okay, that completes the order.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Okay, that completes the order."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-02/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "تمام، هيك الطلب كامل.",
+            "arabizi": "Tamām, hēk iṭ-ṭalab kāmil.",
+            "meaning": "Okay, that completes the order.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Okay, that completes the order.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Agreeing on an order together; each person chooses a meal and they share water. Respond to: Yes, a large bottle. Your intended meaning: Okay, that completes the order.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Okay, that completes the order.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · food-and-drink-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · verbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Order together",
+      "locator": "internal:ismi/f12-expansion/levantine-food-05-02/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Agreeing on an order together; each person chooses a meal and they share water. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

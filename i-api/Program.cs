@@ -146,6 +146,7 @@ builder.Services.AddSingleton<RecordingStore>();
 builder.Services.AddSingleton<CurriculumValidator>();
 builder.Services.AddSingleton<KhmerTextPreviewPolicy>();
 builder.Services.AddSingleton<FrenchTextPreviewPolicy>();
+builder.Services.AddSingleton<LevantineExpansionTextPreviewPolicy>();
 builder.Services.AddSingleton<CourseTextPreviewPolicy>();
 builder.Services.AddSingleton<CurriculumAccessService>();
 builder.Services.AddSingleton(TimeProvider.System);

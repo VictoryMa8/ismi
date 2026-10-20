@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-food-05-01",
+    "trackId": "levantine",
+    "title": "Choose somewhere to eat",
+    "scenario": "Choosing somewhere nearby to eat, asking about the menu and agreeing on a place.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: There's a small restaurant near here.",
+        "prompt": {
+          "arabic": "وين ناكل اليوم؟",
+          "arabizi": "Wēn nākul il-yōm?",
+          "meaning": "Where shall we eat today?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "في مطعم صغير قريب من هون.",
+            "arabizi": "Fī maṭʿam zghīr ʾarīb min hōn.",
+            "meaning": "There's a small restaurant near here.",
+            "rationale": "This gives the requested response: There's a small restaurant near here. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، عندهم حمص وفلافل.",
+            "arabizi": "Āh, ʿindhum ḥummuṣ w-falāfil.",
+            "meaning": "Yes, they have hummus and falafel.",
+            "rationale": "This says “Yes, they have hummus and falafel.” The requested response is “There's a small restaurant near here.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، قريب من بيتنا.",
+            "arabizi": "Laʾ, ʾarīb min bētna.",
+            "meaning": "No, it's near our home.",
+            "rationale": "This says “No, it's near our home.” The requested response is “There's a small restaurant near here.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: There's a small restaurant near here. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: There's a small restaurant near here.",
+          "retryHint": "Keep this meaning and perspective: There's a small restaurant near here."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, they have hummus and falafel.",
+        "prompt": {
+          "arabic": "عندهم أكل نباتي؟",
+          "arabizi": "ʿIndhum akil nabāti?",
+          "meaning": "Do they have vegetarian food?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، قريب من بيتنا.",
+            "arabizi": "Laʾ, ʾarīb min bētna.",
+            "meaning": "No, it's near our home.",
+            "rationale": "This says “No, it's near our home.” The requested response is “Yes, they have hummus and falafel.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "في مطعم صغير قريب من هون.",
+            "arabizi": "Fī maṭʿam zghīr ʾarīb min hōn.",
+            "meaning": "There's a small restaurant near here.",
+            "rationale": "This says “There's a small restaurant near here.” The requested response is “Yes, they have hummus and falafel.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، عندهم حمص وفلافل.",
+            "arabizi": "Āh, ʿindhum ḥummuṣ w-falāfil.",
+            "meaning": "Yes, they have hummus and falafel.",
+            "rationale": "This gives the requested response: Yes, they have hummus and falafel. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, they have hummus and falafel. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, they have hummus and falafel.",
+          "retryHint": "Keep this meaning and perspective: Yes, they have hummus and falafel."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: No, it's near our home.",
+        "prompt": {
+          "arabic": "بعيد عن البيت؟",
+          "arabizi": "Bʿīd ʿan il-bēt?",
+          "meaning": "Is it far from home?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، عندهم حمص وفلافل.",
+            "arabizi": "Āh, ʿindhum ḥummuṣ w-falāfil.",
+            "meaning": "Yes, they have hummus and falafel.",
+            "rationale": "This says “Yes, they have hummus and falafel.” The requested response is “No, it's near our home.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، قريب من بيتنا.",
+            "arabizi": "Laʾ, ʾarīb min bētna.",
+            "meaning": "No, it's near our home.",
+            "rationale": "This gives the requested response: No, it's near our home. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization."
+          },
+          {
+            "id": "c",
+            "arabic": "في مطعم صغير قريب من هون.",
+            "arabizi": "Fī maṭʿam zghīr ʾarīb min hōn.",
+            "meaning": "There's a small restaurant near here.",
+            "rationale": "This says “There's a small restaurant near here.” The requested response is “No, it's near our home.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: No, it's near our home. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: No, it's near our home.",
+          "retryHint": "Keep this meaning and perspective: No, it's near our home."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: There's a small restaurant near here.",
+        "prompt": {
+          "arabic": "وين ناكل اليوم؟",
+          "arabizi": "Wēn nākul il-yōm?",
+          "meaning": "Where shall we eat today?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "في مطعم صغير قريب من هون.",
+            "arabizi": "Fī maṭʿam zghīr ʾarīb min hōn.",
+            "meaning": "There's a small restaurant near here.",
+            "rationale": "This gives the requested response: There's a small restaurant near here. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، عندهم حمص وفلافل.",
+            "arabizi": "Āh, ʿindhum ḥummuṣ w-falāfil.",
+            "meaning": "Yes, they have hummus and falafel.",
+            "rationale": "This says “Yes, they have hummus and falafel.” The requested response is “There's a small restaurant near here.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، قريب من بيتنا.",
+            "arabizi": "Laʾ, ʾarīb min bētna.",
+            "meaning": "No, it's near our home.",
+            "rationale": "This says “No, it's near our home.” The requested response is “There's a small restaurant near here.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: There's a small restaurant near here. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: There's a small restaurant near here.",
+          "retryHint": "Keep this meaning and perspective: There's a small restaurant near here."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, they have hummus and falafel.",
+        "prompt": {
+          "arabic": "عندهم أكل نباتي؟",
+          "arabizi": "ʿIndhum akil nabāti?",
+          "meaning": "Do they have vegetarian food?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، قريب من بيتنا.",
+            "arabizi": "Laʾ, ʾarīb min bētna.",
+            "meaning": "No, it's near our home.",
+            "rationale": "This says “No, it's near our home.” The requested response is “Yes, they have hummus and falafel.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "في مطعم صغير قريب من هون.",
+            "arabizi": "Fī maṭʿam zghīr ʾarīb min hōn.",
+            "meaning": "There's a small restaurant near here.",
+            "rationale": "This says “There's a small restaurant near here.” The requested response is “Yes, they have hummus and falafel.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، عندهم حمص وفلافل.",
+            "arabizi": "Āh, ʿindhum ḥummuṣ w-falāfil.",
+            "meaning": "Yes, they have hummus and falafel.",
+            "rationale": "This gives the requested response: Yes, they have hummus and falafel. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, they have hummus and falafel. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, they have hummus and falafel.",
+          "retryHint": "Keep this meaning and perspective: Yes, they have hummus and falafel."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: No, it's near our home.",
+        "prompt": {
+          "arabic": "بعيد عن البيت؟",
+          "arabizi": "Bʿīd ʿan il-bēt?",
+          "meaning": "Is it far from home?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، عندهم حمص وفلافل.",
+            "arabizi": "Āh, ʿindhum ḥummuṣ w-falāfil.",
+            "meaning": "Yes, they have hummus and falafel.",
+            "rationale": "This says “Yes, they have hummus and falafel.” The requested response is “No, it's near our home.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، قريب من بيتنا.",
+            "arabizi": "Laʾ, ʾarīb min bētna.",
+            "meaning": "No, it's near our home.",
+            "rationale": "This gives the requested response: No, it's near our home. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization."
+          },
+          {
+            "id": "c",
+            "arabic": "في مطعم صغير قريب من هون.",
+            "arabizi": "Fī maṭʿam zghīr ʾarīb min hōn.",
+            "meaning": "There's a small restaurant near here.",
+            "rationale": "This says “There's a small restaurant near here.” The requested response is “No, it's near our home.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: No, it's near our home. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: No, it's near our home.",
+          "retryHint": "Keep this meaning and perspective: No, it's near our home."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-food-05",
+    "unitTitle": "Share a meal",
+    "courseOrder": 21,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-food-05-01/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to choose somewhere to eat.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وين ناكل اليوم؟",
+            "arabizi": "Wēn nākul il-yōm?",
+            "meaning": "Where shall we eat today?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "في مطعم صغير قريب من هون.",
+            "arabizi": "Fī maṭʿam zghīr ʾarīb min hōn.",
+            "meaning": "There's a small restaurant near here.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "عندهم أكل نباتي؟",
+            "arabizi": "ʿIndhum akil nabāti?",
+            "meaning": "Do they have vegetarian food?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، عندهم حمص وفلافل.",
+            "arabizi": "Āh, ʿindhum ḥummuṣ w-falāfil.",
+            "meaning": "Yes, they have hummus and falafel.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "بعيد عن البيت؟",
+            "arabizi": "Bʿīd ʿan il-bēt?",
+            "meaning": "Is it far from home?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "لا، قريب من بيتنا.",
+            "arabizi": "Laʾ, ʾarīb min bētna.",
+            "meaning": "No, it's near our home.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "وين ناكل اليوم؟",
+          "arabizi": "Wēn nākul il-yōm?",
+          "meaning": "Where shall we eat today?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "في مطعم صغير قريب من هون.",
+          "arabizi": "Fī maṭʿam zghīr ʾarīb min hōn.",
+          "meaning": "There's a small restaurant near here.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، عندهم حمص وفلافل.",
+          "arabizi": "Āh, ʿindhum ḥummuṣ w-falāfil.",
+          "meaning": "Yes, they have hummus and falafel.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "لا، قريب من بيتنا.",
+          "arabizi": "Laʾ, ʾarīb min bētna.",
+          "meaning": "No, it's near our home.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/f12-expansion/levantine-food-05-01/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Where shall we eat today?",
+          "phrase": {
+            "arabic": "وين ناكل اليوم؟",
+            "arabizi": "Wēn nākul il-yōm?",
+            "meaning": "Where shall we eat today?",
+            "audioUrl": null
+          },
+          "note": "Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization. In this scene: Where shall we eat today?",
+          "recallCue": "In this scene, express: Where shall we eat today?",
+          "chunks": [
+            {
+              "arabic": "وين",
+              "arabizi": "Wēn",
+              "meaning": "Where shall we"
+            },
+            {
+              "arabic": "ناكل اليوم؟",
+              "arabizi": "nākul il-yōm?",
+              "meaning": "eat today?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-01/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "There's a small restaurant near here.",
+          "phrase": {
+            "arabic": "في مطعم صغير قريب من هون.",
+            "arabizi": "Fī maṭʿam zghīr ʾarīb min hōn.",
+            "meaning": "There's a small restaurant near here.",
+            "audioUrl": null
+          },
+          "note": "Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization. In this scene: There's a small restaurant near here.",
+          "recallCue": "In this scene, express: There's a small restaurant near here.",
+          "chunks": [
+            {
+              "arabic": "في مطعم صغير",
+              "arabizi": "Fī maṭʿam zghīr",
+              "meaning": "There's a small restaurant"
+            },
+            {
+              "arabic": "قريب من هون.",
+              "arabizi": "ʾarīb min hōn.",
+              "meaning": "near here."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-01/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, they have hummus and falafel.",
+          "phrase": {
+            "arabic": "آه، عندهم حمص وفلافل.",
+            "arabizi": "Āh, ʿindhum ḥummuṣ w-falāfil.",
+            "meaning": "Yes, they have hummus and falafel.",
+            "audioUrl": null
+          },
+          "note": "Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization. In this scene: Yes, they have hummus and falafel.",
+          "recallCue": "In this scene, express: Yes, they have hummus and falafel.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "عندهم حمص وفلافل.",
+              "arabizi": "ʿindhum ḥummuṣ w-falāfil.",
+              "meaning": "they have hummus and falafel."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-01/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "No, it's near our home.",
+          "phrase": {
+            "arabic": "لا، قريب من بيتنا.",
+            "arabizi": "Laʾ, ʾarīb min bētna.",
+            "meaning": "No, it's near our home.",
+            "audioUrl": null
+          },
+          "note": "Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization. In this scene: No, it's near our home.",
+          "recallCue": "In this scene, express: No, it's near our home.",
+          "chunks": [
+            {
+              "arabic": "لا،",
+              "arabizi": "Laʾ,",
+              "meaning": "No,"
+            },
+            {
+              "arabic": "قريب من بيتنا.",
+              "arabizi": "ʾarīb min bētna.",
+              "meaning": "it's near our home."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-01/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: There's a small restaurant near here.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "There's a small restaurant near here."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-01/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "في مطعم صغير قريب من هون.",
+            "arabizi": "Fī maṭʿam zghīr ʾarīb min hōn.",
+            "meaning": "There's a small restaurant near here.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "There's a small restaurant near here.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Choosing somewhere nearby to eat, asking about the menu and agreeing on a place. Respond to: Where shall we eat today? Your intended meaning: There's a small restaurant near here.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: There's a small restaurant near here.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Yes, they have hummus and falafel.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, they have hummus and falafel."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-01/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، عندهم حمص وفلافل.",
+            "arabizi": "Āh, ʿindhum ḥummuṣ w-falāfil.",
+            "meaning": "Yes, they have hummus and falafel.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, they have hummus and falafel.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Choosing somewhere nearby to eat, asking about the menu and agreeing on a place. Respond to: Do they have vegetarian food? Your intended meaning: Yes, they have hummus and falafel.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, they have hummus and falafel.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: No, it's near our home.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "No, it's near our home."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-01/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "لا، قريب من بيتنا.",
+            "arabizi": "Laʾ, ʾarīb min bētna.",
+            "meaning": "No, it's near our home.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "No, it's near our home.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Choosing somewhere nearby to eat, asking about the menu and agreeing on a place. Respond to: Is it far from home? Your intended meaning: No, it's near our home.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: No, it's near our home.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · food-and-drink-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · verbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Choose somewhere to eat",
+      "locator": "internal:ismi/f12-expansion/levantine-food-05-01/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Choosing somewhere nearby to eat, asking about the menu and agreeing on a place. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

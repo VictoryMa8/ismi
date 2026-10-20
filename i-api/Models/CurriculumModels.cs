@@ -28,7 +28,11 @@ public sealed record CurriculumVersionSummary(
     string Status,
     DateTime CreatedAtUtc,
     string CreatedBy,
-    DateTime? PublishedAtUtc);
+    DateTime? PublishedAtUtc,
+    string TrackId,
+    string? UnitId,
+    int CourseOrder,
+    string? ReviewStatus);
 
 public sealed record CurriculumAuditEntry(
     long Id,

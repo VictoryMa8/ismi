@@ -38,7 +38,7 @@ export function renameCharacterContent<T>(value: T): T {
   if (typeof value === 'string') return value
     .replace(/\bLina\b/g, 'Fattoush').replace(/\bOmar\b/g, 'Knafeh')
     .replace(/\blina\b/g, 'fattoush').replace(/\bomar\b/g, 'knafeh')
-    .replace(/لينا/g, 'فتوش') as T
+    .replace(/(?<![\p{L}\p{M}\p{N}_])لينا(?![\p{L}\p{M}\p{N}_])/gu, 'فتوش') as T
   if (Array.isArray(value)) return value.map(item => renameCharacterContent(item)) as T
   if (value && typeof value === 'object') return Object.fromEntries(
     Object.entries(value).map(([key, item]) => [key, renameCharacterContent(item)]),

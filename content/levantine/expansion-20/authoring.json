@@ -1,0 +1,1906 @@
+{
+  "authoredOn": "2026-10-19",
+  "status": "unreviewed-text-only-development-preview",
+  "lessons": [
+    {
+      "lessonId": "levantine-home-03-01",
+      "title": "Find something at home",
+      "courseOrder": 11,
+      "unitId": "levantine-home-03",
+      "unitTitle": "At home together",
+      "scene": "Finding the key before leaving; the bag is a plausible but wrong location.",
+      "note": "Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag.",
+      "phrases": [
+        {
+          "arabic": [
+            "وين",
+            "المفتاح؟"
+          ],
+          "arabizi": [
+            "Wēn",
+            "il-miftāḥ?"
+          ],
+          "meaning": [
+            "Where is",
+            "the key?"
+          ]
+        },
+        {
+          "arabic": [
+            "المفتاح",
+            "عالطاولة."
+          ],
+          "arabizi": [
+            "Il-miftāḥ",
+            "ʿa-ṭ-ṭāwle."
+          ],
+          "meaning": [
+            "The key is",
+            "on the table."
+          ]
+        },
+        {
+          "arabic": [
+            "مش",
+            "بالشنطة؟"
+          ],
+          "arabizi": [
+            "Mish",
+            "bish-shanṭa?"
+          ],
+          "meaning": [
+            "Isn't it",
+            "in the bag?"
+          ]
+        },
+        {
+          "arabic": [
+            "لا،",
+            "جنب الكتاب."
+          ],
+          "arabizi": [
+            "Laʾ,",
+            "janb il-ktāb."
+          ],
+          "meaning": [
+            "No,",
+            "beside the book."
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "لقيته عالطاولة."
+          ],
+          "arabizi": [
+            "Āh,",
+            "laʾētu ʿa-ṭ-ṭāwle."
+          ],
+          "meaning": [
+            "Ah,",
+            "I found it on the table."
+          ]
+        },
+        {
+          "arabic": [
+            "يلا",
+            "نطلع سوا."
+          ],
+          "arabizi": [
+            "Yalla",
+            "niṭlaʿ sawa."
+          ],
+          "meaning": [
+            "Come on,",
+            "let's go out together."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-home-03-02",
+      "title": "Ask for a little help",
+      "courseOrder": 12,
+      "unitId": "levantine-home-03",
+      "unitTitle": "At home together",
+      "scene": "Opening a window at home; asking for help is different from saying where an object is.",
+      "note": "Mumkin makes a request. Tiftaḥ addresses a male listener; biddik in the reply addresses Fattoush. Open-window language is contextual, not a universal instruction.",
+      "phrases": [
+        {
+          "arabic": [
+            "ممكن",
+            "تساعدني شوي؟"
+          ],
+          "arabizi": [
+            "Mumkin",
+            "tsāʿidni shway?"
+          ],
+          "meaning": [
+            "Could you",
+            "help me a little?"
+          ]
+        },
+        {
+          "arabic": [
+            "أكيد،",
+            "شو بدك؟"
+          ],
+          "arabizi": [
+            "Akīd,",
+            "shū biddik?"
+          ],
+          "meaning": [
+            "Of course,",
+            "what do you need?"
+          ]
+        },
+        {
+          "arabic": [
+            "ممكن تفتح",
+            "الشباك شوي؟"
+          ],
+          "arabizi": [
+            "Mumkin tiftaḥ",
+            "ish-shubbāk shway?"
+          ],
+          "meaning": [
+            "Could you open",
+            "the window a little?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "الشباك مسكر."
+          ],
+          "arabizi": [
+            "Āh,",
+            "ish-shubbāk msakkar."
+          ],
+          "meaning": [
+            "Yes,",
+            "the window is closed."
+          ]
+        },
+        {
+          "arabic": [
+            "شكرا،",
+            "هيك أحسن."
+          ],
+          "arabizi": [
+            "Shukran,",
+            "hēk aḥsan."
+          ],
+          "meaning": [
+            "Thanks,",
+            "that's better."
+          ]
+        },
+        {
+          "arabic": [
+            "بدك",
+            "إشي تاني؟"
+          ],
+          "arabizi": [
+            "Biddik",
+            "ishi tāni?"
+          ],
+          "meaning": [
+            "Do you need",
+            "anything else?"
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-home-03-03",
+      "title": "Share household tasks",
+      "courseOrder": 13,
+      "unitId": "levantine-home-03",
+      "unitTitle": "At home together",
+      "scene": "Sharing the dishes and table after a meal; speakers keep their own tasks distinct.",
+      "note": "Ana and inta preserve who does each task. Nimsaḥ and nighsil are shared suggestions; the first-person forms describe the agreed division.",
+      "phrases": [
+        {
+          "arabic": [
+            "خلينا",
+            "نرتب المطبخ."
+          ],
+          "arabizi": [
+            "Khallīna",
+            "nrattib il-maṭbakh."
+          ],
+          "meaning": [
+            "Let's",
+            "tidy the kitchen."
+          ]
+        },
+        {
+          "arabic": [
+            "أنا بغسل",
+            "الصحون."
+          ],
+          "arabizi": [
+            "Ana baghsil",
+            "iṣ-ṣuḥūn."
+          ],
+          "meaning": [
+            "I'll wash",
+            "the dishes."
+          ]
+        },
+        {
+          "arabic": [
+            "وأنا بمسح",
+            "الطاولة."
+          ],
+          "arabizi": [
+            "W-ana bamsaḥ",
+            "iṭ-ṭāwle."
+          ],
+          "meaning": [
+            "And I'll wipe",
+            "the table."
+          ]
+        },
+        {
+          "arabic": [
+            "وين",
+            "الصابون؟"
+          ],
+          "arabizi": [
+            "Wēn",
+            "iṣ-ṣābūn?"
+          ],
+          "meaning": [
+            "Where is",
+            "the soap?"
+          ]
+        },
+        {
+          "arabic": [
+            "جنب",
+            "المجلى."
+          ],
+          "arabizi": [
+            "Janb",
+            "il-majla."
+          ],
+          "meaning": [
+            "Beside",
+            "the sink."
+          ]
+        },
+        {
+          "arabic": [
+            "تمام،",
+            "وبعدين بنرتاح."
+          ],
+          "arabizi": [
+            "Tamām,",
+            "w-baʿdēn bnirtāḥ."
+          ],
+          "meaning": [
+            "Okay,",
+            "and afterwards we'll rest."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-home-03-04",
+      "title": "Say what you need",
+      "courseOrder": 14,
+      "unitId": "levantine-home-03",
+      "unitTitle": "At home together",
+      "scene": "Choosing rest and water after work; a need is different from an invitation to go out.",
+      "note": "Biddi states a want/need. Mish hal-laʾ declines the current timing while leaving another time possible. Do not interpret every refusal as a permanent dislike.",
+      "phrases": [
+        {
+          "arabic": [
+            "شو بدك",
+            "بعد الشغل؟"
+          ],
+          "arabizi": [
+            "Shū biddak",
+            "baʿd ish-shughl?"
+          ],
+          "meaning": [
+            "What would you like",
+            "after work?"
+          ]
+        },
+        {
+          "arabic": [
+            "بدي أرتاح",
+            "شوي."
+          ],
+          "arabizi": [
+            "Biddi artāḥ",
+            "shway."
+          ],
+          "meaning": [
+            "I want to rest",
+            "a little."
+          ]
+        },
+        {
+          "arabic": [
+            "بدك",
+            "مي؟"
+          ],
+          "arabizi": [
+            "Biddak",
+            "mayy?"
+          ],
+          "meaning": [
+            "Would you like",
+            "water?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "مي باردة."
+          ],
+          "arabizi": [
+            "Āh,",
+            "mayy bārde."
+          ],
+          "meaning": [
+            "Yes,",
+            "cold water."
+          ]
+        },
+        {
+          "arabic": [
+            "نطلع",
+            "هلأ؟"
+          ],
+          "arabizi": [
+            "Niṭlaʿ",
+            "hallaʾ?"
+          ],
+          "meaning": [
+            "Shall we go out",
+            "now?"
+          ]
+        },
+        {
+          "arabic": [
+            "مش هلأ،",
+            "بعد شوي."
+          ],
+          "arabizi": [
+            "Mish hallaʾ,",
+            "baʿd shway."
+          ],
+          "meaning": [
+            "Not now,",
+            "in a little while."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-home-03-05",
+      "title": "Agree on an evening at home",
+      "courseOrder": 15,
+      "unitId": "levantine-home-03",
+      "unitTitle": "At home together",
+      "scene": "Agreeing to stay home, cook and have tea in that order.",
+      "note": "Bil-bēt names being at home. Khallīna proposes a shared action; aw-wal is first and baʿdēn is afterwards. The accepted plan includes both order and time.",
+      "phrases": [
+        {
+          "arabic": [
+            "نضل بالبيت",
+            "الليلة؟"
+          ],
+          "arabizi": [
+            "Nḍall bil-bēt",
+            "il-lēle?"
+          ],
+          "meaning": [
+            "Shall we stay home",
+            "tonight?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "خلينا نطبخ سوا."
+          ],
+          "arabizi": [
+            "Āh,",
+            "khallīna nuṭbukh sawa."
+          ],
+          "meaning": [
+            "Yes,",
+            "let's cook together."
+          ]
+        },
+        {
+          "arabic": [
+            "نعمل رز",
+            "وسلطة؟"
+          ],
+          "arabizi": [
+            "Niʿmal ruzz",
+            "w-salaṭa?"
+          ],
+          "meaning": [
+            "Shall we make rice",
+            "and salad?"
+          ]
+        },
+        {
+          "arabic": [
+            "تمام،",
+            "الساعة سبعة."
+          ],
+          "arabizi": [
+            "Tamām,",
+            "is-sāʿa sabʿa."
+          ],
+          "meaning": [
+            "Okay,",
+            "at seven."
+          ]
+        },
+        {
+          "arabic": [
+            "وبعدين",
+            "نشرب شاي."
+          ],
+          "arabizi": [
+            "W-baʿdēn",
+            "nishrab shāy."
+          ],
+          "meaning": [
+            "And afterwards",
+            "we'll drink tea."
+          ]
+        },
+        {
+          "arabic": [
+            "يعني أول إشي الأكل،",
+            "وبعدين الشاي."
+          ],
+          "arabizi": [
+            "Yaʿni awwal ishi il-akil,",
+            "w-baʿdēn ish-shāy."
+          ],
+          "meaning": [
+            "So food first,",
+            "and then tea."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-family-04-01",
+      "title": "Introduce someone close",
+      "courseOrder": 16,
+      "unitId": "levantine-family-04",
+      "unitTitle": "People and plans",
+      "scene": "Introducing a sister in a family photograph without assigning that identity to either guide.",
+      "note": "Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker.",
+      "phrases": [
+        {
+          "arabic": [
+            "مين هاي",
+            "بالصورة؟"
+          ],
+          "arabizi": [
+            "Mīn hāy",
+            "biṣ-ṣūra?"
+          ],
+          "meaning": [
+            "Who is this",
+            "in the picture?"
+          ]
+        },
+        {
+          "arabic": [
+            "هاي",
+            "أختي سارة."
+          ],
+          "arabizi": [
+            "Hāy",
+            "ukhti Sāra."
+          ],
+          "meaning": [
+            "This is",
+            "my sister Sara."
+          ]
+        },
+        {
+          "arabic": [
+            "هي ساكنة",
+            "هون؟"
+          ],
+          "arabizi": [
+            "Hiyye sākne",
+            "hōn?"
+          ],
+          "meaning": [
+            "Does she live",
+            "here?"
+          ]
+        },
+        {
+          "arabic": [
+            "لا،",
+            "ساكنة برام الله."
+          ],
+          "arabizi": [
+            "Laʾ,",
+            "sākne b-Rāmalla."
+          ],
+          "meaning": [
+            "No,",
+            "she lives in Ramallah."
+          ]
+        },
+        {
+          "arabic": [
+            "بتزوركم",
+            "كتير؟"
+          ],
+          "arabizi": [
+            "Bitzūrkum",
+            "ktīr?"
+          ],
+          "meaning": [
+            "Does she visit you",
+            "often?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "بتزورنا كل أسبوع."
+          ],
+          "arabizi": [
+            "Āh,",
+            "bitzūrna kull usbūʿ."
+          ],
+          "meaning": [
+            "Yes,",
+            "she visits us every week."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-family-04-02",
+      "title": "Ask about family",
+      "courseOrder": 17,
+      "unitId": "levantine-family-04",
+      "unitTitle": "People and plans",
+      "scene": "Checking on a family and arranging a brief visit tomorrow.",
+      "note": "Ahlak asks a male listener about his family; ahli refers to the speaker's family. Mnāḥ is a proposed plural form from F12.2, not a claim of speaker-verified pronunciation.",
+      "phrases": [
+        {
+          "arabic": [
+            "كيف أهلك",
+            "اليوم؟"
+          ],
+          "arabizi": [
+            "Kīf ahlak",
+            "il-yōm?"
+          ],
+          "meaning": [
+            "How is your family",
+            "today?"
+          ]
+        },
+        {
+          "arabic": [
+            "الحمد لله،",
+            "أهلي مناح."
+          ],
+          "arabizi": [
+            "Il-ḥamdu lillāh,",
+            "ahli mnāḥ."
+          ],
+          "meaning": [
+            "Thank God,",
+            "my family are well."
+          ]
+        },
+        {
+          "arabic": [
+            "وأمك،",
+            "كيفها؟"
+          ],
+          "arabizi": [
+            "W-immak,",
+            "kīfha?"
+          ],
+          "meaning": [
+            "And your mother,",
+            "how is she?"
+          ]
+        },
+        {
+          "arabic": [
+            "منيحة،",
+            "بالبيت اليوم."
+          ],
+          "arabizi": [
+            "Mnīḥa,",
+            "bil-bēt il-yōm."
+          ],
+          "meaning": [
+            "She's well,",
+            "at home today."
+          ]
+        },
+        {
+          "arabic": [
+            "نزورها",
+            "بكرا؟"
+          ],
+          "arabizi": [
+            "Nzūrha",
+            "bukra?"
+          ],
+          "meaning": [
+            "Shall we visit her",
+            "tomorrow?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "بعد الشغل."
+          ],
+          "arabizi": [
+            "Āh,",
+            "baʿd ish-shughl."
+          ],
+          "meaning": [
+            "Yes,",
+            "after work."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-family-04-03",
+      "title": "Talk about today",
+      "courseOrder": 18,
+      "unitId": "levantine-family-04",
+      "unitTitle": "People and plans",
+      "scene": "Catching up after work and adapting the evening to someone who wants a rest.",
+      "note": "Kīf kān is a past-time question about the day; raḥ introduces the next action. Compare resting now with a later shared meal, without treating a selection exercise as free conversation.",
+      "phrases": [
+        {
+          "arabic": [
+            "كيف كان",
+            "يومك؟"
+          ],
+          "arabizi": [
+            "Kīf kān",
+            "yōmak?"
+          ],
+          "meaning": [
+            "How was",
+            "your day?"
+          ]
+        },
+        {
+          "arabic": [
+            "كان طويل،",
+            "بس منيح."
+          ],
+          "arabizi": [
+            "Kān ṭawīl,",
+            "bas mnīḥ."
+          ],
+          "meaning": [
+            "It was long,",
+            "but good."
+          ]
+        },
+        {
+          "arabic": [
+            "شو عملت",
+            "بعد الشغل؟"
+          ],
+          "arabizi": [
+            "Shū ʿmilt",
+            "baʿd ish-shughl?"
+          ],
+          "meaning": [
+            "What did you do",
+            "after work?"
+          ]
+        },
+        {
+          "arabic": [
+            "رحت عالبيت",
+            "وارتحت شوي."
+          ],
+          "arabizi": [
+            "Ruḥt ʿa-l-bēt",
+            "w-irtaḥt shway."
+          ],
+          "meaning": [
+            "I went home",
+            "and rested a little."
+          ]
+        },
+        {
+          "arabic": [
+            "وهلأ",
+            "شو رح نعمل؟"
+          ],
+          "arabizi": [
+            "W-hallaʾ",
+            "shū raḥ niʿmal?"
+          ],
+          "meaning": [
+            "And now,",
+            "what will we do?"
+          ]
+        },
+        {
+          "arabic": [
+            "خلينا ناكل",
+            "سوا."
+          ],
+          "arabizi": [
+            "Khallīna nākul",
+            "sawa."
+          ],
+          "meaning": [
+            "Let's eat",
+            "together."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-family-04-04",
+      "title": "Invite someone for a meal",
+      "courseOrder": 19,
+      "unitId": "levantine-family-04",
+      "unitTitle": "People and plans",
+      "scene": "Inviting a friend for tomorrow rather than tonight and confirming the shared meal.",
+      "note": "ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement.",
+      "phrases": [
+        {
+          "arabic": [
+            "بتيجي عنا",
+            "بكرا؟"
+          ],
+          "arabizi": [
+            "Btīji ʿanna",
+            "bukra?"
+          ],
+          "meaning": [
+            "Will you come to our place",
+            "tomorrow?"
+          ]
+        },
+        {
+          "arabic": [
+            "أكيد،",
+            "أي ساعة؟"
+          ],
+          "arabizi": [
+            "Akīd,",
+            "ayy sāʿa?"
+          ],
+          "meaning": [
+            "Of course,",
+            "what time?"
+          ]
+        },
+        {
+          "arabic": [
+            "تعال",
+            "الساعة ستة."
+          ],
+          "arabizi": [
+            "Taʿāl",
+            "is-sāʿa sitte."
+          ],
+          "meaning": [
+            "Come",
+            "at six."
+          ]
+        },
+        {
+          "arabic": [
+            "شو",
+            "رح ناكل؟"
+          ],
+          "arabizi": [
+            "Shū",
+            "raḥ nākul?"
+          ],
+          "meaning": [
+            "What",
+            "will we eat?"
+          ]
+        },
+        {
+          "arabic": [
+            "رح نعمل",
+            "شوربة وسلطة."
+          ],
+          "arabizi": [
+            "Raḥ niʿmal",
+            "shōraba w-salaṭa."
+          ],
+          "meaning": [
+            "We'll make",
+            "soup and salad."
+          ]
+        },
+        {
+          "arabic": [
+            "تمام،",
+            "بكرا الساعة ستة عندكم."
+          ],
+          "arabizi": [
+            "Tamām,",
+            "bukra is-sāʿa sitte ʿindkum."
+          ],
+          "meaning": [
+            "Okay,",
+            "tomorrow at six at your place."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-family-04-05",
+      "title": "Month-one conversation checkpoint",
+      "courseOrder": 20,
+      "unitId": "levantine-family-04",
+      "unitTitle": "People and plans",
+      "scene": "Text-supported month-one rehearsal: catch up, ask about family, adapt food and confirm tomorrow.",
+      "note": "This cumulative scene rehearses linked topics and repairs a plan. It supplies no timed speaking score or evidence that the five-minute outcome has been met.",
+      "phrases": [
+        {
+          "arabic": [
+            "كيف كان يومك،",
+            "وكيف أهلك؟"
+          ],
+          "arabizi": [
+            "Kīf kān yōmak,",
+            "w-kīf ahlak?"
+          ],
+          "meaning": [
+            "How was your day,",
+            "and how is your family?"
+          ]
+        },
+        {
+          "arabic": [
+            "يومي منيح،",
+            "وأهلي مناح."
+          ],
+          "arabizi": [
+            "Yōmi mnīḥ,",
+            "w-ahli mnāḥ."
+          ],
+          "meaning": [
+            "My day is good,",
+            "and my family are well."
+          ]
+        },
+        {
+          "arabic": [
+            "ناكل سوا اليوم،",
+            "ولا بكرا؟"
+          ],
+          "arabizi": [
+            "Nākul sawa il-yōm,",
+            "walla bukra?"
+          ],
+          "meaning": [
+            "Shall we eat together today,",
+            "or tomorrow?"
+          ]
+        },
+        {
+          "arabic": [
+            "بكرا أحسن،",
+            "بعد الشغل."
+          ],
+          "arabizi": [
+            "Bukra aḥsan,",
+            "baʿd ish-shughl."
+          ],
+          "meaning": [
+            "Tomorrow is better,",
+            "after work."
+          ]
+        },
+        {
+          "arabic": [
+            "تمام،",
+            "شوربة وسلطة الساعة سبعة؟"
+          ],
+          "arabizi": [
+            "Tamām,",
+            "shōraba w-salaṭa is-sāʿa sabʿa?"
+          ],
+          "meaning": [
+            "Okay,",
+            "soup and salad at seven?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "بكرا الساعة سبعة."
+          ],
+          "arabizi": [
+            "Āh,",
+            "bukra is-sāʿa sabʿa."
+          ],
+          "meaning": [
+            "Yes,",
+            "tomorrow at seven."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-food-05-01",
+      "title": "Choose somewhere to eat",
+      "courseOrder": 21,
+      "unitId": "levantine-food-05",
+      "unitTitle": "Share a meal",
+      "scene": "Choosing somewhere nearby to eat, asking about the menu and agreeing on a place.",
+      "note": "Qarīb and baʿīd contrast distance; a near restaurant is not a direction. The urban q-to-ʾ convention here is pronunciation help requiring review, not one universal Palestinian realization.",
+      "phrases": [
+        {
+          "arabic": [
+            "وين",
+            "ناكل اليوم؟"
+          ],
+          "arabizi": [
+            "Wēn",
+            "nākul il-yōm?"
+          ],
+          "meaning": [
+            "Where shall we",
+            "eat today?"
+          ]
+        },
+        {
+          "arabic": [
+            "في مطعم صغير",
+            "قريب من هون."
+          ],
+          "arabizi": [
+            "Fī maṭʿam zghīr",
+            "ʾarīb min hōn."
+          ],
+          "meaning": [
+            "There's a small restaurant",
+            "near here."
+          ]
+        },
+        {
+          "arabic": [
+            "عندهم",
+            "أكل نباتي؟"
+          ],
+          "arabizi": [
+            "ʿIndhum",
+            "akil nabāti?"
+          ],
+          "meaning": [
+            "Do they have",
+            "vegetarian food?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "عندهم حمص وفلافل."
+          ],
+          "arabizi": [
+            "Āh,",
+            "ʿindhum ḥummuṣ w-falāfil."
+          ],
+          "meaning": [
+            "Yes,",
+            "they have hummus and falafel."
+          ]
+        },
+        {
+          "arabic": [
+            "بعيد",
+            "عن البيت؟"
+          ],
+          "arabizi": [
+            "Bʿīd",
+            "ʿan il-bēt?"
+          ],
+          "meaning": [
+            "Is it far",
+            "from home?"
+          ]
+        },
+        {
+          "arabic": [
+            "لا،",
+            "قريب من بيتنا."
+          ],
+          "arabizi": [
+            "Laʾ,",
+            "ʾarīb min bētna."
+          ],
+          "meaning": [
+            "No,",
+            "it's near our home."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-food-05-02",
+      "title": "Order together",
+      "courseOrder": 22,
+      "unitId": "levantine-food-05",
+      "unitTitle": "Share a meal",
+      "scene": "Agreeing on an order together; each person chooses a meal and they share water.",
+      "note": "Biddi marks an individual request while nṭlub is a shared proposal. Keep my order, your order and the shared drink distinct.",
+      "phrases": [
+        {
+          "arabic": [
+            "شو",
+            "بدك تطلب؟"
+          ],
+          "arabizi": [
+            "Shū",
+            "biddak tiṭlub?"
+          ],
+          "meaning": [
+            "What",
+            "would you like to order?"
+          ]
+        },
+        {
+          "arabic": [
+            "بدي صحن حمص",
+            "وسلطة."
+          ],
+          "arabizi": [
+            "Biddi ṣaḥn ḥummuṣ",
+            "w-salaṭa."
+          ],
+          "meaning": [
+            "I'd like a plate of hummus",
+            "and a salad."
+          ]
+        },
+        {
+          "arabic": [
+            "وأنا",
+            "بدي شوربة."
+          ],
+          "arabizi": [
+            "W-ana",
+            "biddi shōraba."
+          ],
+          "meaning": [
+            "And I",
+            "would like soup."
+          ]
+        },
+        {
+          "arabic": [
+            "نطلب مي",
+            "للإتنين؟"
+          ],
+          "arabizi": [
+            "Niṭlub mayy",
+            "lil-itnēn?"
+          ],
+          "meaning": [
+            "Shall we order water",
+            "for both of us?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "قنينة كبيرة."
+          ],
+          "arabizi": [
+            "Āh,",
+            "ʾnīne kbīre."
+          ],
+          "meaning": [
+            "Yes,",
+            "a large bottle."
+          ]
+        },
+        {
+          "arabic": [
+            "تمام،",
+            "هيك الطلب كامل."
+          ],
+          "arabizi": [
+            "Tamām,",
+            "hēk iṭ-ṭalab kāmil."
+          ],
+          "meaning": [
+            "Okay,",
+            "that completes the order."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-food-05-03",
+      "title": "Explain a food preference",
+      "courseOrder": 23,
+      "unitId": "levantine-food-05",
+      "unitTitle": "Share a meal",
+      "scene": "Explaining a food preference and checking an ingredient without making medical guarantees.",
+      "note": "Bākul states a personal eating practice; fīha asks what is in this dish. This is a language scenario, not an allergy-safety or dietary-certification claim.",
+      "phrases": [
+        {
+          "arabic": [
+            "شو",
+            "بتحب تاكل؟"
+          ],
+          "arabizi": [
+            "Shū",
+            "bitḥibb tākul?"
+          ],
+          "meaning": [
+            "What",
+            "do you like to eat?"
+          ]
+        },
+        {
+          "arabic": [
+            "بحب الخضرة،",
+            "وما باكل لحمة."
+          ],
+          "arabizi": [
+            "Baḥibb il-khuḍra,",
+            "w-mā bākul laḥme."
+          ],
+          "meaning": [
+            "I like vegetables,",
+            "and I don't eat meat."
+          ]
+        },
+        {
+          "arabic": [
+            "هاي الشوربة",
+            "فيها لحمة؟"
+          ],
+          "arabizi": [
+            "Hāy ish-shōraba",
+            "fīha laḥme?"
+          ],
+          "meaning": [
+            "Does this soup",
+            "have meat in it?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "فيها دجاج."
+          ],
+          "arabizi": [
+            "Āh,",
+            "fīha djāj."
+          ],
+          "meaning": [
+            "Yes,",
+            "it has chicken."
+          ]
+        },
+        {
+          "arabic": [
+            "خلينا نطلب",
+            "سلطة بدون لحمة."
+          ],
+          "arabizi": [
+            "Khallīna niṭlub",
+            "salaṭa bidūn laḥme."
+          ],
+          "meaning": [
+            "Let's order",
+            "a salad without meat."
+          ]
+        },
+        {
+          "arabic": [
+            "تمام،",
+            "وبنسأل عن المكونات."
+          ],
+          "arabizi": [
+            "Tamām,",
+            "w-bnisʾal ʿan il-mukawwināt."
+          ],
+          "meaning": [
+            "Okay,",
+            "and we'll ask about the ingredients."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-food-05-04",
+      "title": "Ask for a change",
+      "courseOrder": 24,
+      "unitId": "levantine-food-05",
+      "unitTitle": "Share a meal",
+      "scene": "Asking to change a drink and its temperature before the order is final.",
+      "note": "Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly.",
+      "phrases": [
+        {
+          "arabic": [
+            "بدك عصير",
+            "مع الأكل؟"
+          ],
+          "arabizi": [
+            "Biddak ʿaṣīr",
+            "maʿ il-akil?"
+          ],
+          "meaning": [
+            "Would you like juice",
+            "with the food?"
+          ]
+        },
+        {
+          "arabic": [
+            "ممكن مي",
+            "بدل العصير؟"
+          ],
+          "arabizi": [
+            "Mumkin mayy",
+            "badal il-ʿaṣīr?"
+          ],
+          "meaning": [
+            "Could I have water",
+            "instead of juice?"
+          ]
+        },
+        {
+          "arabic": [
+            "أكيد،",
+            "باردة ولا عادية؟"
+          ],
+          "arabizi": [
+            "Akīd,",
+            "bārde walla ʿādiyye?"
+          ],
+          "meaning": [
+            "Of course,",
+            "cold or room temperature?"
+          ]
+        },
+        {
+          "arabic": [
+            "عادية،",
+            "لو سمحتِ."
+          ],
+          "arabizi": [
+            "ʿĀdiyye,",
+            "law samaḥti."
+          ],
+          "meaning": [
+            "Room temperature,",
+            "please."
+          ]
+        },
+        {
+          "arabic": [
+            "وقنينة",
+            "كبيرة؟"
+          ],
+          "arabizi": [
+            "W-ʾnīne",
+            "kbīre?"
+          ],
+          "meaning": [
+            "And a",
+            "large bottle?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "مي عادية بقنينة كبيرة."
+          ],
+          "arabizi": [
+            "Āh,",
+            "mayy ʿādiyye b-ʾnīne kbīre."
+          ],
+          "meaning": [
+            "Yes,",
+            "room-temperature water in a large bottle."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-food-05-05",
+      "title": "Plan a meal for friends",
+      "courseOrder": 25,
+      "unitId": "levantine-food-05",
+      "unitTitle": "Share a meal",
+      "scene": "Planning a meal for four guests and distributing preparation tasks without claiming measured serving sizes.",
+      "note": "Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal.",
+      "phrases": [
+        {
+          "arabic": [
+            "كم شخص",
+            "رح ييجي؟"
+          ],
+          "arabizi": [
+            "Kam shakhṣ",
+            "raḥ yīji?"
+          ],
+          "meaning": [
+            "How many people",
+            "will come?"
+          ]
+        },
+        {
+          "arabic": [
+            "أربعة أشخاص،",
+            "الساعة سبعة."
+          ],
+          "arabizi": [
+            "Arbaʿ ashkhāṣ,",
+            "is-sāʿa sabʿa."
+          ],
+          "meaning": [
+            "Four people,",
+            "at seven."
+          ]
+        },
+        {
+          "arabic": [
+            "نعمل شوربة",
+            "وسلطة؟"
+          ],
+          "arabizi": [
+            "Niʿmal shōraba",
+            "w-salaṭa?"
+          ],
+          "meaning": [
+            "Shall we make soup",
+            "and salad?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "وأنا بجيب خبز."
+          ],
+          "arabizi": [
+            "Āh,",
+            "w-ana bajīb khubiz."
+          ],
+          "meaning": [
+            "Yes,",
+            "and I'll bring bread."
+          ]
+        },
+        {
+          "arabic": [
+            "بنطبخ أول،",
+            "وبعدين بنجهز الطاولة."
+          ],
+          "arabizi": [
+            "Bnuṭbukh awwal,",
+            "w-baʿdēn bnjahhiz iṭ-ṭāwle."
+          ],
+          "meaning": [
+            "We'll cook first,",
+            "then we'll set the table."
+          ]
+        },
+        {
+          "arabic": [
+            "تمام،",
+            "خلينا نبلش هلأ."
+          ],
+          "arabizi": [
+            "Tamām,",
+            "khallīna nballish hallaʾ."
+          ],
+          "meaning": [
+            "Okay,",
+            "let's start now."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-neighborhood-06-01",
+      "title": "Ask where a place is",
+      "courseOrder": 26,
+      "unitId": "levantine-neighborhood-06",
+      "unitTitle": "Around the neighborhood",
+      "scene": "Locating a bakery relative to a pharmacy and asking whether it is near.",
+      "note": "Wēn asks location, janb marks beside and qarīb marks near. No real business location or current directions are asserted in this fictional scene.",
+      "phrases": [
+        {
+          "arabic": [
+            "وين",
+            "المخبز هون؟"
+          ],
+          "arabizi": [
+            "Wēn",
+            "il-makhbaz hōn?"
+          ],
+          "meaning": [
+            "Where is",
+            "the bakery here?"
+          ]
+        },
+        {
+          "arabic": [
+            "جنب الصيدلية،",
+            "بآخر الشارع."
+          ],
+          "arabizi": [
+            "Janb iṣ-ṣēdaliyye,",
+            "b-ākhir ish-shāriʿ."
+          ],
+          "meaning": [
+            "Beside the pharmacy,",
+            "at the end of the street."
+          ]
+        },
+        {
+          "arabic": [
+            "قريب",
+            "من هون؟"
+          ],
+          "arabizi": [
+            "ʾArīb",
+            "min hōn?"
+          ],
+          "meaning": [
+            "Is it near",
+            "here?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "قريب كتير."
+          ],
+          "arabizi": [
+            "Āh,",
+            "ʾarīb ktīr."
+          ],
+          "meaning": [
+            "Yes,",
+            "it's very close."
+          ]
+        },
+        {
+          "arabic": [
+            "يعني المخبز",
+            "جنب الصيدلية؟"
+          ],
+          "arabizi": [
+            "Yaʿni il-makhbaz",
+            "janb iṣ-ṣēdaliyye?"
+          ],
+          "meaning": [
+            "So the bakery is",
+            "beside the pharmacy?"
+          ]
+        },
+        {
+          "arabic": [
+            "بالضبط،",
+            "مش جنب المطعم."
+          ],
+          "arabizi": [
+            "Biz-zabṭ,",
+            "mish janb il-maṭʿam."
+          ],
+          "meaning": [
+            "Exactly,",
+            "not beside the restaurant."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-neighborhood-06-02",
+      "title": "Understand a short route",
+      "courseOrder": 27,
+      "unitId": "levantine-neighborhood-06",
+      "unitTitle": "Around the neighborhood",
+      "scene": "Checking a short walking route in a fictional neighborhood and repairing a left/right misunderstanding.",
+      "note": "Dughri means straight ahead here, not a distance. Yamīn and shmāl contrast the turn. Māshi remains a proposal, not proof of listening comprehension.",
+      "phrases": [
+        {
+          "arabic": [
+            "كيف نوصل",
+            "عالمخبز؟"
+          ],
+          "arabizi": [
+            "Kīf nōṣal",
+            "ʿa-l-makhbaz?"
+          ],
+          "meaning": [
+            "How do we get",
+            "to the bakery?"
+          ]
+        },
+        {
+          "arabic": [
+            "بنمشي دغري،",
+            "وبعدين يمين."
+          ],
+          "arabizi": [
+            "Bnimshi dughri,",
+            "w-baʿdēn yamīn."
+          ],
+          "meaning": [
+            "We walk straight,",
+            "then right."
+          ]
+        },
+        {
+          "arabic": [
+            "يمين",
+            "بعد الصيدلية؟"
+          ],
+          "arabizi": [
+            "Yamīn",
+            "baʿd iṣ-ṣēdaliyye?"
+          ],
+          "meaning": [
+            "Right",
+            "after the pharmacy?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "مش شمال."
+          ],
+          "arabizi": [
+            "Āh,",
+            "mish shmāl."
+          ],
+          "meaning": [
+            "Yes,",
+            "not left."
+          ]
+        },
+        {
+          "arabic": [
+            "وبعدين",
+            "بنشوف المخبز؟"
+          ],
+          "arabizi": [
+            "W-baʿdēn",
+            "bnshūf il-makhbaz?"
+          ],
+          "meaning": [
+            "And then",
+            "we'll see the bakery?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "عاليمين."
+          ],
+          "arabizi": [
+            "Āh,",
+            "ʿa-l-yamīn."
+          ],
+          "meaning": [
+            "Yes,",
+            "on the right."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-neighborhood-06-03",
+      "title": "Check the meeting point",
+      "courseOrder": 28,
+      "unitId": "levantine-neighborhood-06",
+      "unitTitle": "Around the neighborhood",
+      "scene": "Confirming an exact meeting point and distinguishing inside from outside.",
+      "note": "Quddām names in front of. Juwwa and barra contrast inside/outside. The dialogue checks both which place and which side of its entrance.",
+      "phrases": [
+        {
+          "arabic": [
+            "وين",
+            "نلتقي؟"
+          ],
+          "arabizi": [
+            "Wēn",
+            "niltaʾi?"
+          ],
+          "meaning": [
+            "Where shall we",
+            "meet?"
+          ]
+        },
+        {
+          "arabic": [
+            "قدام المكتبة،",
+            "الساعة خمسة."
+          ],
+          "arabizi": [
+            "ʾUddām il-maktabe,",
+            "is-sāʿa khamse."
+          ],
+          "meaning": [
+            "In front of the library,",
+            "at five."
+          ]
+        },
+        {
+          "arabic": [
+            "جوا المكتبة،",
+            "ولا برا؟"
+          ],
+          "arabizi": [
+            "Juwwa il-maktabe,",
+            "walla barra?"
+          ],
+          "meaning": [
+            "Inside the library,",
+            "or outside?"
+          ]
+        },
+        {
+          "arabic": [
+            "برا،",
+            "جنب الباب."
+          ],
+          "arabizi": [
+            "Barra,",
+            "janb il-bāb."
+          ],
+          "meaning": [
+            "Outside,",
+            "beside the door."
+          ]
+        },
+        {
+          "arabic": [
+            "باب المكتبة،",
+            "مش باب المقهى؟"
+          ],
+          "arabizi": [
+            "Bāb il-maktabe,",
+            "mish bāb il-maʾha?"
+          ],
+          "meaning": [
+            "The library door,",
+            "not the cafe door?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "عند باب المكتبة."
+          ],
+          "arabizi": [
+            "Āh,",
+            "ʿind bāb il-maktabe."
+          ],
+          "meaning": [
+            "Yes,",
+            "at the library door."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-neighborhood-06-04",
+      "title": "Explain where you are",
+      "courseOrder": 29,
+      "unitId": "levantine-neighborhood-06",
+      "unitTitle": "Around the neighborhood",
+      "scene": "Telling someone where you are now and correcting the wrong street.",
+      "note": "Hallaʾ marks now. Lissa means still/not yet depending on context; lissa barra here is still outside. The street distinction is fictional, not navigational advice.",
+      "phrases": [
+        {
+          "arabic": [
+            "وينك",
+            "هلأ؟"
+          ],
+          "arabizi": [
+            "Wēnak",
+            "hallaʾ?"
+          ],
+          "meaning": [
+            "Where are you",
+            "now?"
+          ]
+        },
+        {
+          "arabic": [
+            "أنا عند الصيدلية،",
+            "جنب البنك."
+          ],
+          "arabizi": [
+            "Ana ʿind iṣ-ṣēdaliyye,",
+            "janb il-bank."
+          ],
+          "meaning": [
+            "I'm at the pharmacy,",
+            "beside the bank."
+          ]
+        },
+        {
+          "arabic": [
+            "بالشارع الكبير،",
+            "صح؟"
+          ],
+          "arabizi": [
+            "Bish-shāriʿ il-kbīr,",
+            "ṣaḥḥ?"
+          ],
+          "meaning": [
+            "On the big street,",
+            "right?"
+          ]
+        },
+        {
+          "arabic": [
+            "لا،",
+            "بالشارع الصغير."
+          ],
+          "arabizi": [
+            "Laʾ,",
+            "bish-shāriʿ iṣ-ṣghīr."
+          ],
+          "meaning": [
+            "No,",
+            "on the small street."
+          ]
+        },
+        {
+          "arabic": [
+            "دخلت",
+            "عالصيدلية؟"
+          ],
+          "arabizi": [
+            "Dakhalt",
+            "ʿa-ṣ-ṣēdaliyye?"
+          ],
+          "meaning": [
+            "Did you go into",
+            "the pharmacy?"
+          ]
+        },
+        {
+          "arabic": [
+            "لا،",
+            "لسا برا."
+          ],
+          "arabizi": [
+            "Laʾ,",
+            "lissa barra."
+          ],
+          "meaning": [
+            "No,",
+            "I'm still outside."
+          ]
+        }
+      ]
+    },
+    {
+      "lessonId": "levantine-neighborhood-06-05",
+      "title": "Find each other",
+      "courseOrder": 30,
+      "unitId": "levantine-neighborhood-06",
+      "unitTitle": "Around the neighborhood",
+      "scene": "Finding each other by the bakery after correcting a location and waiting outside.",
+      "note": "Both people keep the agreed bakery landmark while distinguishing near, opposite and beside. A response that changes the landmark needs clarification rather than automatic acceptance.",
+      "phrases": [
+        {
+          "arabic": [
+            "أنا قدام المخبز،",
+            "وإنت وين؟"
+          ],
+          "arabizi": [
+            "Ana ʾuddām il-makhbaz,",
+            "w-inta wēn?"
+          ],
+          "meaning": [
+            "I'm in front of the bakery,",
+            "and where are you?"
+          ]
+        },
+        {
+          "arabic": [
+            "أنا قبال المخبز،",
+            "جنب المكتبة."
+          ],
+          "arabizi": [
+            "Ana ʾbāl il-makhbaz,",
+            "janb il-maktabe."
+          ],
+          "meaning": [
+            "I'm opposite the bakery,",
+            "beside the library."
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "شايفتك هلأ."
+          ],
+          "arabizi": [
+            "Āh,",
+            "shāyiftak hallaʾ."
+          ],
+          "meaning": [
+            "Ah,",
+            "I can see you now."
+          ]
+        },
+        {
+          "arabic": [
+            "أجي",
+            "لعندك؟"
+          ],
+          "arabizi": [
+            "Āji",
+            "la-ʿindik?"
+          ],
+          "meaning": [
+            "Shall I come",
+            "over to you?"
+          ]
+        },
+        {
+          "arabic": [
+            "آه،",
+            "أنا بستناك برا."
+          ],
+          "arabizi": [
+            "Āh,",
+            "ana bastannāk barra."
+          ],
+          "meaning": [
+            "Yes,",
+            "I'm waiting for you outside."
+          ]
+        },
+        {
+          "arabic": [
+            "تمام،",
+            "جاي هلأ."
+          ],
+          "arabizi": [
+            "Tamām,",
+            "jāy hallaʾ."
+          ],
+          "meaning": [
+            "Okay,",
+            "I'm coming now."
+          ]
+        }
+      ]
+    }
+  ]
+}

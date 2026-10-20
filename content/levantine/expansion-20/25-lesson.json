@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-food-05-05",
+    "trackId": "levantine",
+    "title": "Plan a meal for friends",
+    "scenario": "Planning a meal for four guests and distributing preparation tasks without claiming measured serving sizes.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Four people, at seven.",
+        "prompt": {
+          "arabic": "كم شخص رح ييجي؟",
+          "arabizi": "Kam shakhṣ raḥ yīji?",
+          "meaning": "How many people will come?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، وأنا بجيب خبز.",
+            "arabizi": "Āh, w-ana bajīb khubiz.",
+            "meaning": "Yes, and I'll bring bread.",
+            "rationale": "This says “Yes, and I'll bring bread.” The requested response is “Four people, at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، خلينا نبلش هلأ.",
+            "arabizi": "Tamām, khallīna nballish hallaʾ.",
+            "meaning": "Okay, let's start now.",
+            "rationale": "This says “Okay, let's start now.” The requested response is “Four people, at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "أربعة أشخاص، الساعة سبعة.",
+            "arabizi": "Arbaʿ ashkhāṣ, is-sāʿa sabʿa.",
+            "meaning": "Four people, at seven.",
+            "rationale": "This gives the requested response: Four people, at seven. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Four people, at seven. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Four people, at seven.",
+          "retryHint": "Keep this meaning and perspective: Four people, at seven."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, and I'll bring bread.",
+        "prompt": {
+          "arabic": "نعمل شوربة وسلطة؟",
+          "arabizi": "Niʿmal shōraba w-salaṭa?",
+          "meaning": "Shall we make soup and salad?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أربعة أشخاص، الساعة سبعة.",
+            "arabizi": "Arbaʿ ashkhāṣ, is-sāʿa sabʿa.",
+            "meaning": "Four people, at seven.",
+            "rationale": "This says “Four people, at seven.” The requested response is “Yes, and I'll bring bread.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، وأنا بجيب خبز.",
+            "arabizi": "Āh, w-ana bajīb khubiz.",
+            "meaning": "Yes, and I'll bring bread.",
+            "rationale": "This gives the requested response: Yes, and I'll bring bread. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، خلينا نبلش هلأ.",
+            "arabizi": "Tamām, khallīna nballish hallaʾ.",
+            "meaning": "Okay, let's start now.",
+            "rationale": "This says “Okay, let's start now.” The requested response is “Yes, and I'll bring bread.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, and I'll bring bread. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, and I'll bring bread.",
+          "retryHint": "Keep this meaning and perspective: Yes, and I'll bring bread."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Okay, let's start now.",
+        "prompt": {
+          "arabic": "بنطبخ أول، وبعدين بنجهز الطاولة.",
+          "arabizi": "Bnuṭbukh awwal, w-baʿdēn bnjahhiz iṭ-ṭāwle.",
+          "meaning": "We'll cook first, then we'll set the table.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، خلينا نبلش هلأ.",
+            "arabizi": "Tamām, khallīna nballish hallaʾ.",
+            "meaning": "Okay, let's start now.",
+            "rationale": "This gives the requested response: Okay, let's start now. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal."
+          },
+          {
+            "id": "b",
+            "arabic": "أربعة أشخاص، الساعة سبعة.",
+            "arabizi": "Arbaʿ ashkhāṣ, is-sāʿa sabʿa.",
+            "meaning": "Four people, at seven.",
+            "rationale": "This says “Four people, at seven.” The requested response is “Okay, let's start now.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، وأنا بجيب خبز.",
+            "arabizi": "Āh, w-ana bajīb khubiz.",
+            "meaning": "Yes, and I'll bring bread.",
+            "rationale": "This says “Yes, and I'll bring bread.” The requested response is “Okay, let's start now.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, let's start now. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, let's start now.",
+          "retryHint": "Keep this meaning and perspective: Okay, let's start now."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Four people, at seven.",
+        "prompt": {
+          "arabic": "كم شخص رح ييجي؟",
+          "arabizi": "Kam shakhṣ raḥ yīji?",
+          "meaning": "How many people will come?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، وأنا بجيب خبز.",
+            "arabizi": "Āh, w-ana bajīb khubiz.",
+            "meaning": "Yes, and I'll bring bread.",
+            "rationale": "This says “Yes, and I'll bring bread.” The requested response is “Four people, at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، خلينا نبلش هلأ.",
+            "arabizi": "Tamām, khallīna nballish hallaʾ.",
+            "meaning": "Okay, let's start now.",
+            "rationale": "This says “Okay, let's start now.” The requested response is “Four people, at seven.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "أربعة أشخاص، الساعة سبعة.",
+            "arabizi": "Arbaʿ ashkhāṣ, is-sāʿa sabʿa.",
+            "meaning": "Four people, at seven.",
+            "rationale": "This gives the requested response: Four people, at seven. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Four people, at seven. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Four people, at seven.",
+          "retryHint": "Keep this meaning and perspective: Four people, at seven."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, and I'll bring bread.",
+        "prompt": {
+          "arabic": "نعمل شوربة وسلطة؟",
+          "arabizi": "Niʿmal shōraba w-salaṭa?",
+          "meaning": "Shall we make soup and salad?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أربعة أشخاص، الساعة سبعة.",
+            "arabizi": "Arbaʿ ashkhāṣ, is-sāʿa sabʿa.",
+            "meaning": "Four people, at seven.",
+            "rationale": "This says “Four people, at seven.” The requested response is “Yes, and I'll bring bread.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، وأنا بجيب خبز.",
+            "arabizi": "Āh, w-ana bajīb khubiz.",
+            "meaning": "Yes, and I'll bring bread.",
+            "rationale": "This gives the requested response: Yes, and I'll bring bread. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، خلينا نبلش هلأ.",
+            "arabizi": "Tamām, khallīna nballish hallaʾ.",
+            "meaning": "Okay, let's start now.",
+            "rationale": "This says “Okay, let's start now.” The requested response is “Yes, and I'll bring bread.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, and I'll bring bread. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, and I'll bring bread.",
+          "retryHint": "Keep this meaning and perspective: Yes, and I'll bring bread."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Okay, let's start now.",
+        "prompt": {
+          "arabic": "بنطبخ أول، وبعدين بنجهز الطاولة.",
+          "arabizi": "Bnuṭbukh awwal, w-baʿdēn bnjahhiz iṭ-ṭāwle.",
+          "meaning": "We'll cook first, then we'll set the table.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، خلينا نبلش هلأ.",
+            "arabizi": "Tamām, khallīna nballish hallaʾ.",
+            "meaning": "Okay, let's start now.",
+            "rationale": "This gives the requested response: Okay, let's start now. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal."
+          },
+          {
+            "id": "b",
+            "arabic": "أربعة أشخاص، الساعة سبعة.",
+            "arabizi": "Arbaʿ ashkhāṣ, is-sāʿa sabʿa.",
+            "meaning": "Four people, at seven.",
+            "rationale": "This says “Four people, at seven.” The requested response is “Okay, let's start now.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، وأنا بجيب خبز.",
+            "arabizi": "Āh, w-ana bajīb khubiz.",
+            "meaning": "Yes, and I'll bring bread.",
+            "rationale": "This says “Yes, and I'll bring bread.” The requested response is “Okay, let's start now.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, let's start now. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, let's start now.",
+          "retryHint": "Keep this meaning and perspective: Okay, let's start now."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-food-05",
+    "unitTitle": "Share a meal",
+    "courseOrder": 25,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-food-05-05/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to plan a meal for friends.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "كم شخص رح ييجي؟",
+            "arabizi": "Kam shakhṣ raḥ yīji?",
+            "meaning": "How many people will come?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "أربعة أشخاص، الساعة سبعة.",
+            "arabizi": "Arbaʿ ashkhāṣ, is-sāʿa sabʿa.",
+            "meaning": "Four people, at seven.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "نعمل شوربة وسلطة؟",
+            "arabizi": "Niʿmal shōraba w-salaṭa?",
+            "meaning": "Shall we make soup and salad?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، وأنا بجيب خبز.",
+            "arabizi": "Āh, w-ana bajīb khubiz.",
+            "meaning": "Yes, and I'll bring bread.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "بنطبخ أول، وبعدين بنجهز الطاولة.",
+            "arabizi": "Bnuṭbukh awwal, w-baʿdēn bnjahhiz iṭ-ṭāwle.",
+            "meaning": "We'll cook first, then we'll set the table.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "تمام، خلينا نبلش هلأ.",
+            "arabizi": "Tamām, khallīna nballish hallaʾ.",
+            "meaning": "Okay, let's start now.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "كم شخص رح ييجي؟",
+          "arabizi": "Kam shakhṣ raḥ yīji?",
+          "meaning": "How many people will come?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أربعة أشخاص، الساعة سبعة.",
+          "arabizi": "Arbaʿ ashkhāṣ, is-sāʿa sabʿa.",
+          "meaning": "Four people, at seven.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، وأنا بجيب خبز.",
+          "arabizi": "Āh, w-ana bajīb khubiz.",
+          "meaning": "Yes, and I'll bring bread.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام، خلينا نبلش هلأ.",
+          "arabizi": "Tamām, khallīna nballish hallaʾ.",
+          "meaning": "Okay, let's start now.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/f12-expansion/levantine-food-05-05/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "How many people will come?",
+          "phrase": {
+            "arabic": "كم شخص رح ييجي؟",
+            "arabizi": "Kam shakhṣ raḥ yīji?",
+            "meaning": "How many people will come?",
+            "audioUrl": null
+          },
+          "note": "Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal. In this scene: How many people will come?",
+          "recallCue": "In this scene, express: How many people will come?",
+          "chunks": [
+            {
+              "arabic": "كم شخص",
+              "arabizi": "Kam shakhṣ",
+              "meaning": "How many people"
+            },
+            {
+              "arabic": "رح ييجي؟",
+              "arabizi": "raḥ yīji?",
+              "meaning": "will come?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-05/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Four people, at seven.",
+          "phrase": {
+            "arabic": "أربعة أشخاص، الساعة سبعة.",
+            "arabizi": "Arbaʿ ashkhāṣ, is-sāʿa sabʿa.",
+            "meaning": "Four people, at seven.",
+            "audioUrl": null
+          },
+          "note": "Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal. In this scene: Four people, at seven.",
+          "recallCue": "In this scene, express: Four people, at seven.",
+          "chunks": [
+            {
+              "arabic": "أربعة أشخاص،",
+              "arabizi": "Arbaʿ ashkhāṣ,",
+              "meaning": "Four people,"
+            },
+            {
+              "arabic": "الساعة سبعة.",
+              "arabizi": "is-sāʿa sabʿa.",
+              "meaning": "at seven."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, and I'll bring bread.",
+          "phrase": {
+            "arabic": "آه، وأنا بجيب خبز.",
+            "arabizi": "Āh, w-ana bajīb khubiz.",
+            "meaning": "Yes, and I'll bring bread.",
+            "audioUrl": null
+          },
+          "note": "Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal. In this scene: Yes, and I'll bring bread.",
+          "recallCue": "In this scene, express: Yes, and I'll bring bread.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "وأنا بجيب خبز.",
+              "arabizi": "w-ana bajīb khubiz.",
+              "meaning": "and I'll bring bread."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Okay, let's start now.",
+          "phrase": {
+            "arabic": "تمام، خلينا نبلش هلأ.",
+            "arabizi": "Tamām, khallīna nballish hallaʾ.",
+            "meaning": "Okay, let's start now.",
+            "audioUrl": null
+          },
+          "note": "Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal. In this scene: Okay, let's start now.",
+          "recallCue": "In this scene, express: Okay, let's start now.",
+          "chunks": [
+            {
+              "arabic": "تمام،",
+              "arabizi": "Tamām,",
+              "meaning": "Okay,"
+            },
+            {
+              "arabic": "خلينا نبلش هلأ.",
+              "arabizi": "khallīna nballish hallaʾ.",
+              "meaning": "let's start now."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-05/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: Four people, at seven.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Four people, at seven."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "أربعة أشخاص، الساعة سبعة.",
+            "arabizi": "Arbaʿ ashkhāṣ, is-sāʿa sabʿa.",
+            "meaning": "Four people, at seven.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Four people, at seven.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Planning a meal for four guests and distributing preparation tasks without claiming measured serving sizes. Respond to: How many people will come? Your intended meaning: Four people, at seven.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Four people, at seven.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Yes, and I'll bring bread.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, and I'll bring bread."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، وأنا بجيب خبز.",
+            "arabizi": "Āh, w-ana bajīb khubiz.",
+            "meaning": "Yes, and I'll bring bread.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, and I'll bring bread.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Planning a meal for four guests and distributing preparation tasks without claiming measured serving sizes. Respond to: Shall we make soup and salad? Your intended meaning: Yes, and I'll bring bread.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, and I'll bring bread.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Okay, let's start now.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Okay, let's start now."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-05/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "تمام، خلينا نبلش هلأ.",
+            "arabizi": "Tamām, khallīna nballish hallaʾ.",
+            "meaning": "Okay, let's start now.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Okay, let's start now.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Planning a meal for four guests and distributing preparation tasks without claiming measured serving sizes. Respond to: We'll cook first, then we'll set the table. Your intended meaning: Okay, let's start now.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Okay, let's start now.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · food-and-drink-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · verbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Arbaʿ ashkhāṣ is a count of people, not a recipe quantity. Baʿdēn sequences tasks; The preparation phrase here is a shared preparation proposal. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Plan a meal for friends",
+      "locator": "internal:ismi/f12-expansion/levantine-food-05-05/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Planning a meal for four guests and distributing preparation tasks without claiming measured serving sizes. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

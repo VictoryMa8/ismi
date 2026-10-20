@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-family-04-04",
+    "trackId": "levantine",
+    "title": "Invite someone for a meal",
+    "scenario": "Inviting a friend for tomorrow rather than tonight and confirming the shared meal.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Of course, what time?",
+        "prompt": {
+          "arabic": "بتيجي عنا بكرا؟",
+          "arabizi": "Btīji ʿanna bukra?",
+          "meaning": "Will you come to our place tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "شو رح ناكل؟",
+            "arabizi": "Shū raḥ nākul?",
+            "meaning": "What will we eat?",
+            "rationale": "This says “What will we eat?” The requested response is “Of course, what time?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، بكرا الساعة ستة عندكم.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte ʿindkum.",
+            "meaning": "Okay, tomorrow at six at your place.",
+            "rationale": "This says “Okay, tomorrow at six at your place.” The requested response is “Of course, what time?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "أكيد، أي ساعة؟",
+            "arabizi": "Akīd, ayy sāʿa?",
+            "meaning": "Of course, what time?",
+            "rationale": "This gives the requested response: Of course, what time? ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Of course, what time? ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Of course, what time?",
+          "retryHint": "Keep this meaning and perspective: Of course, what time?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: What will we eat?",
+        "prompt": {
+          "arabic": "تعال الساعة ستة.",
+          "arabizi": "Taʿāl is-sāʿa sitte.",
+          "meaning": "Come at six.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أكيد، أي ساعة؟",
+            "arabizi": "Akīd, ayy sāʿa?",
+            "meaning": "Of course, what time?",
+            "rationale": "This says “Of course, what time?” The requested response is “What will we eat?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "شو رح ناكل؟",
+            "arabizi": "Shū raḥ nākul?",
+            "meaning": "What will we eat?",
+            "rationale": "This gives the requested response: What will we eat? ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، بكرا الساعة ستة عندكم.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte ʿindkum.",
+            "meaning": "Okay, tomorrow at six at your place.",
+            "rationale": "This says “Okay, tomorrow at six at your place.” The requested response is “What will we eat?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: What will we eat? ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: What will we eat?",
+          "retryHint": "Keep this meaning and perspective: What will we eat?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Okay, tomorrow at six at your place.",
+        "prompt": {
+          "arabic": "رح نعمل شوربة وسلطة.",
+          "arabizi": "Raḥ niʿmal shōraba w-salaṭa.",
+          "meaning": "We'll make soup and salad.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، بكرا الساعة ستة عندكم.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte ʿindkum.",
+            "meaning": "Okay, tomorrow at six at your place.",
+            "rationale": "This gives the requested response: Okay, tomorrow at six at your place. ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement."
+          },
+          {
+            "id": "b",
+            "arabic": "أكيد، أي ساعة؟",
+            "arabizi": "Akīd, ayy sāʿa?",
+            "meaning": "Of course, what time?",
+            "rationale": "This says “Of course, what time?” The requested response is “Okay, tomorrow at six at your place.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "شو رح ناكل؟",
+            "arabizi": "Shū raḥ nākul?",
+            "meaning": "What will we eat?",
+            "rationale": "This says “What will we eat?” The requested response is “Okay, tomorrow at six at your place.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, tomorrow at six at your place. ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, tomorrow at six at your place.",
+          "retryHint": "Keep this meaning and perspective: Okay, tomorrow at six at your place."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Of course, what time?",
+        "prompt": {
+          "arabic": "بتيجي عنا بكرا؟",
+          "arabizi": "Btīji ʿanna bukra?",
+          "meaning": "Will you come to our place tomorrow?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "شو رح ناكل؟",
+            "arabizi": "Shū raḥ nākul?",
+            "meaning": "What will we eat?",
+            "rationale": "This says “What will we eat?” The requested response is “Of course, what time?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "تمام، بكرا الساعة ستة عندكم.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte ʿindkum.",
+            "meaning": "Okay, tomorrow at six at your place.",
+            "rationale": "This says “Okay, tomorrow at six at your place.” The requested response is “Of course, what time?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "أكيد، أي ساعة؟",
+            "arabizi": "Akīd, ayy sāʿa?",
+            "meaning": "Of course, what time?",
+            "rationale": "This gives the requested response: Of course, what time? ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Of course, what time? ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Of course, what time?",
+          "retryHint": "Keep this meaning and perspective: Of course, what time?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: What will we eat?",
+        "prompt": {
+          "arabic": "تعال الساعة ستة.",
+          "arabizi": "Taʿāl is-sāʿa sitte.",
+          "meaning": "Come at six.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "أكيد، أي ساعة؟",
+            "arabizi": "Akīd, ayy sāʿa?",
+            "meaning": "Of course, what time?",
+            "rationale": "This says “Of course, what time?” The requested response is “What will we eat?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "شو رح ناكل؟",
+            "arabizi": "Shū raḥ nākul?",
+            "meaning": "What will we eat?",
+            "rationale": "This gives the requested response: What will we eat? ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement."
+          },
+          {
+            "id": "c",
+            "arabic": "تمام، بكرا الساعة ستة عندكم.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte ʿindkum.",
+            "meaning": "Okay, tomorrow at six at your place.",
+            "rationale": "This says “Okay, tomorrow at six at your place.” The requested response is “What will we eat?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: What will we eat? ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: What will we eat?",
+          "retryHint": "Keep this meaning and perspective: What will we eat?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Okay, tomorrow at six at your place.",
+        "prompt": {
+          "arabic": "رح نعمل شوربة وسلطة.",
+          "arabizi": "Raḥ niʿmal shōraba w-salaṭa.",
+          "meaning": "We'll make soup and salad.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "تمام، بكرا الساعة ستة عندكم.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte ʿindkum.",
+            "meaning": "Okay, tomorrow at six at your place.",
+            "rationale": "This gives the requested response: Okay, tomorrow at six at your place. ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement."
+          },
+          {
+            "id": "b",
+            "arabic": "أكيد، أي ساعة؟",
+            "arabizi": "Akīd, ayy sāʿa?",
+            "meaning": "Of course, what time?",
+            "rationale": "This says “Of course, what time?” The requested response is “Okay, tomorrow at six at your place.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "شو رح ناكل؟",
+            "arabizi": "Shū raḥ nākul?",
+            "meaning": "What will we eat?",
+            "rationale": "This says “What will we eat?” The requested response is “Okay, tomorrow at six at your place.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Okay, tomorrow at six at your place. ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Okay, tomorrow at six at your place.",
+          "retryHint": "Keep this meaning and perspective: Okay, tomorrow at six at your place."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-family-04",
+    "unitTitle": "People and plans",
+    "courseOrder": 19,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/family-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-family-04-04/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to invite someone for a meal.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "بتيجي عنا بكرا؟",
+            "arabizi": "Btīji ʿanna bukra?",
+            "meaning": "Will you come to our place tomorrow?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "أكيد، أي ساعة؟",
+            "arabizi": "Akīd, ayy sāʿa?",
+            "meaning": "Of course, what time?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "تعال الساعة ستة.",
+            "arabizi": "Taʿāl is-sāʿa sitte.",
+            "meaning": "Come at six.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "شو رح ناكل؟",
+            "arabizi": "Shū raḥ nākul?",
+            "meaning": "What will we eat?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "رح نعمل شوربة وسلطة.",
+            "arabizi": "Raḥ niʿmal shōraba w-salaṭa.",
+            "meaning": "We'll make soup and salad.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "تمام، بكرا الساعة ستة عندكم.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte ʿindkum.",
+            "meaning": "Okay, tomorrow at six at your place.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "بتيجي عنا بكرا؟",
+          "arabizi": "Btīji ʿanna bukra?",
+          "meaning": "Will you come to our place tomorrow?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "أكيد، أي ساعة؟",
+          "arabizi": "Akīd, ayy sāʿa?",
+          "meaning": "Of course, what time?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "شو رح ناكل؟",
+          "arabizi": "Shū raḥ nākul?",
+          "meaning": "What will we eat?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "تمام، بكرا الساعة ستة عندكم.",
+          "arabizi": "Tamām, bukra is-sāʿa sitte ʿindkum.",
+          "meaning": "Okay, tomorrow at six at your place.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/family-3/",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/f12-expansion/levantine-family-04-04/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Will you come to our place tomorrow?",
+          "phrase": {
+            "arabic": "بتيجي عنا بكرا؟",
+            "arabizi": "Btīji ʿanna bukra?",
+            "meaning": "Will you come to our place tomorrow?",
+            "audioUrl": null
+          },
+          "note": "ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement. In this scene: Will you come to our place tomorrow?",
+          "recallCue": "In this scene, express: Will you come to our place tomorrow?",
+          "chunks": [
+            {
+              "arabic": "بتيجي عنا",
+              "arabizi": "Btīji ʿanna",
+              "meaning": "Will you come to our place"
+            },
+            {
+              "arabic": "بكرا؟",
+              "arabizi": "bukra?",
+              "meaning": "tomorrow?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-04/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Of course, what time?",
+          "phrase": {
+            "arabic": "أكيد، أي ساعة؟",
+            "arabizi": "Akīd, ayy sāʿa?",
+            "meaning": "Of course, what time?",
+            "audioUrl": null
+          },
+          "note": "ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement. In this scene: Of course, what time?",
+          "recallCue": "In this scene, express: Of course, what time?",
+          "chunks": [
+            {
+              "arabic": "أكيد،",
+              "arabizi": "Akīd,",
+              "meaning": "Of course,"
+            },
+            {
+              "arabic": "أي ساعة؟",
+              "arabizi": "ayy sāʿa?",
+              "meaning": "what time?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "What will we eat?",
+          "phrase": {
+            "arabic": "شو رح ناكل؟",
+            "arabizi": "Shū raḥ nākul?",
+            "meaning": "What will we eat?",
+            "audioUrl": null
+          },
+          "note": "ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement. In this scene: What will we eat?",
+          "recallCue": "In this scene, express: What will we eat?",
+          "chunks": [
+            {
+              "arabic": "شو",
+              "arabizi": "Shū",
+              "meaning": "What"
+            },
+            {
+              "arabic": "رح ناكل؟",
+              "arabizi": "raḥ nākul?",
+              "meaning": "will we eat?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Okay, tomorrow at six at your place.",
+          "phrase": {
+            "arabic": "تمام، بكرا الساعة ستة عندكم.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte ʿindkum.",
+            "meaning": "Okay, tomorrow at six at your place.",
+            "audioUrl": null
+          },
+          "note": "ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement. In this scene: Okay, tomorrow at six at your place.",
+          "recallCue": "In this scene, express: Okay, tomorrow at six at your place.",
+          "chunks": [
+            {
+              "arabic": "تمام،",
+              "arabizi": "Tamām,",
+              "meaning": "Okay,"
+            },
+            {
+              "arabic": "بكرا الساعة ستة عندكم.",
+              "arabizi": "bukra is-sāʿa sitte ʿindkum.",
+              "meaning": "tomorrow at six at your place."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: Of course, what time?",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Of course, what time?"
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "أكيد، أي ساعة؟",
+            "arabizi": "Akīd, ayy sāʿa?",
+            "meaning": "Of course, what time?",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Of course, what time?",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Inviting a friend for tomorrow rather than tonight and confirming the shared meal. Respond to: Will you come to our place tomorrow? Your intended meaning: Of course, what time?",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Of course, what time?",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: What will we eat?",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "What will we eat?"
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "شو رح ناكل؟",
+            "arabizi": "Shū raḥ nākul?",
+            "meaning": "What will we eat?",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "What will we eat?",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Inviting a friend for tomorrow rather than tonight and confirming the shared meal. Respond to: Come at six. Your intended meaning: What will we eat?",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: What will we eat?",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Okay, tomorrow at six at your place.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Okay, tomorrow at six at your place."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "تمام، بكرا الساعة ستة عندكم.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte ʿindkum.",
+            "meaning": "Okay, tomorrow at six at your place.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Okay, tomorrow at six at your place.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Inviting a friend for tomorrow rather than tonight and confirming the shared meal. Respond to: We'll make soup and salad. Your intended meaning: Okay, tomorrow at six at your place.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Okay, tomorrow at six at your place.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · family-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · verbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. ʿAnna means at our place. The day and time are part of the invitation: an otherwise natural response with the wrong day does not confirm this arrangement. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Invite someone for a meal",
+      "locator": "internal:ismi/f12-expansion/levantine-family-04-04/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Inviting a friend for tomorrow rather than tonight and confirming the shared meal. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

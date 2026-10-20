@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CourseCoverage from './CourseCoverage.vue';
 import LanguageSupportReview from './LanguageSupportReview.vue';
 import { computed, onMounted, ref } from 'vue';
 import { courses, type CourseId } from './courses';
@@ -62,6 +63,7 @@ const dirty = computed(
     savedSnapshot.value !== JSON.stringify([lessonJson.value, sources.value]),
 );
 const loading = ref(true);
+const coverageUnavailable = ref(false);
 const consoleHeader = ref<HTMLElement | null>(null);
 const error = ref<string | null>(null);
 const notice = ref<string | null>(null);
@@ -82,9 +84,11 @@ async function loadVersions(preferredId?: number) {
   error.value = null;
   try {
     versions.value = await getCurriculumVersions();
+    coverageUnavailable.value = false;
     const id = preferredId ?? selected.value?.id ?? versions.value[0]?.id;
     if (id) await selectVersion(id);
   } catch (caught) {
+    coverageUnavailable.value = true;
     error.value = messageFor(caught);
   } finally {
     loading.value = false;
@@ -442,6 +446,8 @@ function formatDate(value: string | null): string {
       {{ notice }}
     </p>
 
+    <CourseCoverage :versions="versions" :loading="loading" :unavailable="coverageUnavailable" @select="selectVersion" />
+
     <RecallReports />
 
     <label class="package-import">Course for new drafts
@@ -570,7 +576,7 @@ function formatDate(value: string | null): string {
               >
                 <CheckCircle2 :size="17" aria-hidden="true" /> Approve
               </button>
-              <button v-if="selected.status === 'draft' && /^(khmer|french)-meet-01-0[1-5]$/.test(selected.lesson.id)"
+              <button v-if="selected.status === 'draft' && /^(?:(khmer|french)-meet-01|levantine-(home-03|family-04|food-05|neighborhood-06))-0[1-5]$/.test(selected.lesson.id)"
                 class="secondary-action" type="button" :disabled="busy || uploading || dirty" @click="approvePreview">
                 Approve text-only preview
               </button>

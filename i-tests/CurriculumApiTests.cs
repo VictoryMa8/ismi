@@ -418,6 +418,74 @@ public sealed class CurriculumApiTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task TwentyExpansionPackagesRequireExactPreviewAuthorityAndPreservePendingReview()
+    {
+        using var previewFactory = _factory.WithWebHostBuilder(builder => builder.ConfigureAppConfiguration((_, config) =>
+            config.AddInMemoryCollection(new Dictionary<string, string?> { ["Curriculum:AllowLevantineExpansionTextPreview"] = "true" })));
+        using var owner = previewFactory.CreateClient();
+        using var guest = previewFactory.CreateClient();
+        await RegisterAsync(owner, "Owner", "owner@example.test");
+        using var scope = previewFactory.Services.CreateScope();
+        var importer = scope.ServiceProvider.GetRequiredService<CurriculumPackageImporter>();
+        var validator = scope.ServiceProvider.GetRequiredService<CurriculumValidator>();
+        var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
+        var policy = scope.ServiceProvider.GetRequiredService<CourseTextPreviewPolicy>();
+        var directory = Path.Combine(AppContext.BaseDirectory, "expansion-20");
+        Assert.Equal(20, (await importer.ImportAsync(directory)).Count);
+        foreach (var file in Directory.GetFiles(directory, "*-lesson.json"))
+        {
+            var opts = new System.Text.Json.JsonSerializerOptions(System.Text.Json.JsonSerializerDefaults.Web);
+            var expected = System.Text.Json.JsonSerializer.Deserialize<CurriculumDraftRequest>(await File.ReadAllTextAsync(file), opts)!;
+            var summary = (await publishing.ListAsync()).Single(v => v.LessonId == expected.Lesson.Id);
+            var saved = (await publishing.GetAsync(summary.Id))!;
+            var before = System.Text.Json.JsonSerializer.Serialize(expected with { Lesson = expected.Lesson with { Version = "" } }, opts);
+            var after = System.Text.Json.JsonSerializer.Serialize(new CurriculumDraftRequest(saved.Lesson with { Version = "" }, saved.Sources), opts);
+            Assert.Equal(before, after);
+        }
+
+        Assert.All(await importer.ImportAsync(directory), line => Assert.StartsWith("Unchanged:", line));
+        var versions = (await publishing.ListAsync()).Where(v => LevantineExpansionTextPreviewPolicy.IsExpansionLesson(v.LessonId)).ToList();
+        Assert.Equal(20, versions.Count);
+        Assert.Equal(Enumerable.Range(11, 20), versions.Select(v => v.CourseOrder).Order());
+        foreach (var version in versions)
+        {
+            var detail = (await publishing.GetAsync(version.Id))!;
+            Assert.True(validator.ValidateDraft(detail.Lesson, detail.Sources).IsValid);
+            Assert.False(validator.Validate(detail.Lesson, detail.Sources).IsValid);
+            Assert.Equal(HttpStatusCode.NotFound, (await guest.GetAsync($"/api/lessons/{detail.Lesson.Id}")).StatusCode);
+            Assert.Equal(HttpStatusCode.BadRequest, (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{version.Id}/approve", new { })).StatusCode);
+            var candidate = detail.Lesson with { PublicationNotice = LevantineExpansionTextPreviewPolicy.Notice };
+            Assert.True(policy.IsAuthorized(candidate, detail.Sources));
+            Assert.False(policy.IsAuthorized(candidate with { Title = "changed" }, detail.Sources));
+            Assert.False(policy.IsAuthorized(candidate, detail.Sources.Select(s => s with { Notes = "changed" }).ToArray()));
+            Assert.False(policy.IsAuthorized(candidate with { Id = candidate.Id + "-extra" }, detail.Sources));
+            var disabled = new ConfigurationBuilder().Build();
+            Assert.False(new LevantineExpansionTextPreviewPolicy(disabled).IsAuthorized(candidate, detail.Sources));
+            Assert.All(candidate.Introduction!.TeachingCards!, card => Assert.True(card.Chunks.Count >= 2));
+            Assert.Equal(6, candidate.Introduction.Dialogue.Count);
+            Assert.Equal(6, candidate.Steps.Count);
+            Assert.Equal(3, candidate.Recall!.Count);
+            Assert.All(candidate.Steps, step => Assert.Null(step.Prompt.AudioUrl));
+            var approvedResponse = await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{version.Id}/approve-text-preview", new { });
+            approvedResponse.EnsureSuccessStatusCode();
+            (await SendWithCsrfAsync(owner, HttpMethod.Post,
+                $"/api/admin/curriculum/versions/{version.Id}/publish", new { })).EnsureSuccessStatusCode();
+            var published = (await guest.GetFromJsonAsync<LessonResponse>($"/api/lessons/{detail.Lesson.Id}"))!;
+            Assert.Equal(LevantineExpansionTextPreviewPolicy.Notice, published.PublicationNotice);
+            Assert.Equal("pending", published.ContentReview!.ReviewDisposition);
+            Assert.Equal("pending", published.ContentReview.RightsDisposition);
+            Assert.Equal("", published.ContentReview.Reviewer);
+            Assert.Contains((await publishing.GetAsync(version.Id))!.Audit, a => a.Action == "approved-text-preview");
+        }
+        // No other Arabic package inherits the exception.
+        var first = (await publishing.GetAsync(versions[0].Id))!;
+        Assert.Null(policy.NoticeFor(first.Lesson with { Id = "levantine-visits-07-01" }));
+        Assert.Null(policy.NoticeFor(first.Lesson with { Id = "levantine-plans-02-01" }));
+    }
+
+    [Fact]
     public async Task PlanningUnitImportsPrivatelyAndPublishesAfterTheFirstUnit()
     {
         using var owner = CreateClient();
@@ -433,6 +501,18 @@ public sealed class CurriculumApiTests : IAsyncLifetime
         var authored = (await publishing.ListAsync())
             .Where(v => v.LessonId.StartsWith("levantine-plans-02-")).ToList();
         Assert.Equal(3, authored.Count);
+        Assert.Equal(HttpStatusCode.Unauthorized,
+            (await guest.GetAsync("/api/admin/curriculum/versions")).StatusCode);
+        var summaries = (await owner.GetFromJsonAsync<List<CurriculumVersionSummary>>(
+            "/api/admin/curriculum/versions"))!;
+        foreach (var version in summaries.Where(v => v.LessonId.StartsWith("levantine-plans-02-")))
+        {
+            Assert.Equal("levantine", version.TrackId);
+            Assert.Equal("levantine-plans-02", version.UnitId);
+            Assert.InRange(version.CourseOrder, 8, 10);
+            Assert.Equal("owner-review", version.ReviewStatus);
+        }
+
         foreach (var version in authored)
         {
             Assert.Equal(CurriculumStatuses.Draft, version.Status);

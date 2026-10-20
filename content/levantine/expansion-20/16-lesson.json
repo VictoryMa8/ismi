@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-family-04-01",
+    "trackId": "levantine",
+    "title": "Introduce someone close",
+    "scenario": "Introducing a sister in a family photograph without assigning that identity to either guide.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: This is my sister Sara.",
+        "prompt": {
+          "arabic": "مين هاي بالصورة؟",
+          "arabizi": "Mīn hāy biṣ-ṣūra?",
+          "meaning": "Who is this in the picture?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، ساكنة برام الله.",
+            "arabizi": "Laʾ, sākne b-Rāmalla.",
+            "meaning": "No, she lives in Ramallah.",
+            "rationale": "This says “No, she lives in Ramallah.” The requested response is “This is my sister Sara.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، بتزورنا كل أسبوع.",
+            "arabizi": "Āh, bitzūrna kull usbūʿ.",
+            "meaning": "Yes, she visits us every week.",
+            "rationale": "This says “Yes, she visits us every week.” The requested response is “This is my sister Sara.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "هاي أختي سارة.",
+            "arabizi": "Hāy ukhti Sāra.",
+            "meaning": "This is my sister Sara.",
+            "rationale": "This gives the requested response: This is my sister Sara. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: This is my sister Sara. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: This is my sister Sara.",
+          "retryHint": "Keep this meaning and perspective: This is my sister Sara."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: No, she lives in Ramallah.",
+        "prompt": {
+          "arabic": "هي ساكنة هون؟",
+          "arabizi": "Hiyye sākne hōn?",
+          "meaning": "Does she live here?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "هاي أختي سارة.",
+            "arabizi": "Hāy ukhti Sāra.",
+            "meaning": "This is my sister Sara.",
+            "rationale": "This says “This is my sister Sara.” The requested response is “No, she lives in Ramallah.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، ساكنة برام الله.",
+            "arabizi": "Laʾ, sākne b-Rāmalla.",
+            "meaning": "No, she lives in Ramallah.",
+            "rationale": "This gives the requested response: No, she lives in Ramallah. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بتزورنا كل أسبوع.",
+            "arabizi": "Āh, bitzūrna kull usbūʿ.",
+            "meaning": "Yes, she visits us every week.",
+            "rationale": "This says “Yes, she visits us every week.” The requested response is “No, she lives in Ramallah.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: No, she lives in Ramallah. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: No, she lives in Ramallah.",
+          "retryHint": "Keep this meaning and perspective: No, she lives in Ramallah."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, she visits us every week.",
+        "prompt": {
+          "arabic": "بتزوركم كتير؟",
+          "arabizi": "Bitzūrkum ktīr?",
+          "meaning": "Does she visit you often?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، بتزورنا كل أسبوع.",
+            "arabizi": "Āh, bitzūrna kull usbūʿ.",
+            "meaning": "Yes, she visits us every week.",
+            "rationale": "This gives the requested response: Yes, she visits us every week. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker."
+          },
+          {
+            "id": "b",
+            "arabic": "هاي أختي سارة.",
+            "arabizi": "Hāy ukhti Sāra.",
+            "meaning": "This is my sister Sara.",
+            "rationale": "This says “This is my sister Sara.” The requested response is “Yes, she visits us every week.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، ساكنة برام الله.",
+            "arabizi": "Laʾ, sākne b-Rāmalla.",
+            "meaning": "No, she lives in Ramallah.",
+            "rationale": "This says “No, she lives in Ramallah.” The requested response is “Yes, she visits us every week.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, she visits us every week. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, she visits us every week.",
+          "retryHint": "Keep this meaning and perspective: Yes, she visits us every week."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: This is my sister Sara.",
+        "prompt": {
+          "arabic": "مين هاي بالصورة؟",
+          "arabizi": "Mīn hāy biṣ-ṣūra?",
+          "meaning": "Who is this in the picture?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، ساكنة برام الله.",
+            "arabizi": "Laʾ, sākne b-Rāmalla.",
+            "meaning": "No, she lives in Ramallah.",
+            "rationale": "This says “No, she lives in Ramallah.” The requested response is “This is my sister Sara.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، بتزورنا كل أسبوع.",
+            "arabizi": "Āh, bitzūrna kull usbūʿ.",
+            "meaning": "Yes, she visits us every week.",
+            "rationale": "This says “Yes, she visits us every week.” The requested response is “This is my sister Sara.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "هاي أختي سارة.",
+            "arabizi": "Hāy ukhti Sāra.",
+            "meaning": "This is my sister Sara.",
+            "rationale": "This gives the requested response: This is my sister Sara. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: This is my sister Sara. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: This is my sister Sara.",
+          "retryHint": "Keep this meaning and perspective: This is my sister Sara."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: No, she lives in Ramallah.",
+        "prompt": {
+          "arabic": "هي ساكنة هون؟",
+          "arabizi": "Hiyye sākne hōn?",
+          "meaning": "Does she live here?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "هاي أختي سارة.",
+            "arabizi": "Hāy ukhti Sāra.",
+            "meaning": "This is my sister Sara.",
+            "rationale": "This says “This is my sister Sara.” The requested response is “No, she lives in Ramallah.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، ساكنة برام الله.",
+            "arabizi": "Laʾ, sākne b-Rāmalla.",
+            "meaning": "No, she lives in Ramallah.",
+            "rationale": "This gives the requested response: No, she lives in Ramallah. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، بتزورنا كل أسبوع.",
+            "arabizi": "Āh, bitzūrna kull usbūʿ.",
+            "meaning": "Yes, she visits us every week.",
+            "rationale": "This says “Yes, she visits us every week.” The requested response is “No, she lives in Ramallah.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: No, she lives in Ramallah. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: No, she lives in Ramallah.",
+          "retryHint": "Keep this meaning and perspective: No, she lives in Ramallah."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, she visits us every week.",
+        "prompt": {
+          "arabic": "بتزوركم كتير؟",
+          "arabizi": "Bitzūrkum ktīr?",
+          "meaning": "Does she visit you often?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، بتزورنا كل أسبوع.",
+            "arabizi": "Āh, bitzūrna kull usbūʿ.",
+            "meaning": "Yes, she visits us every week.",
+            "rationale": "This gives the requested response: Yes, she visits us every week. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker."
+          },
+          {
+            "id": "b",
+            "arabic": "هاي أختي سارة.",
+            "arabizi": "Hāy ukhti Sāra.",
+            "meaning": "This is my sister Sara.",
+            "rationale": "This says “This is my sister Sara.” The requested response is “Yes, she visits us every week.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، ساكنة برام الله.",
+            "arabizi": "Laʾ, sākne b-Rāmalla.",
+            "meaning": "No, she lives in Ramallah.",
+            "rationale": "This says “No, she lives in Ramallah.” The requested response is “Yes, she visits us every week.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, she visits us every week. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, she visits us every week.",
+          "retryHint": "Keep this meaning and perspective: Yes, she visits us every week."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-family-04",
+    "unitTitle": "People and plans",
+    "courseOrder": 16,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/family-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-family-04-01/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to introduce someone close.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "مين هاي بالصورة؟",
+            "arabizi": "Mīn hāy biṣ-ṣūra?",
+            "meaning": "Who is this in the picture?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "هاي أختي سارة.",
+            "arabizi": "Hāy ukhti Sāra.",
+            "meaning": "This is my sister Sara.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "هي ساكنة هون؟",
+            "arabizi": "Hiyye sākne hōn?",
+            "meaning": "Does she live here?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "لا، ساكنة برام الله.",
+            "arabizi": "Laʾ, sākne b-Rāmalla.",
+            "meaning": "No, she lives in Ramallah.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "بتزوركم كتير؟",
+            "arabizi": "Bitzūrkum ktīr?",
+            "meaning": "Does she visit you often?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، بتزورنا كل أسبوع.",
+            "arabizi": "Āh, bitzūrna kull usbūʿ.",
+            "meaning": "Yes, she visits us every week.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "مين هاي بالصورة؟",
+          "arabizi": "Mīn hāy biṣ-ṣūra?",
+          "meaning": "Who is this in the picture?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "هاي أختي سارة.",
+          "arabizi": "Hāy ukhti Sāra.",
+          "meaning": "This is my sister Sara.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "لا، ساكنة برام الله.",
+          "arabizi": "Laʾ, sākne b-Rāmalla.",
+          "meaning": "No, she lives in Ramallah.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، بتزورنا كل أسبوع.",
+          "arabizi": "Āh, bitzūrna kull usbūʿ.",
+          "meaning": "Yes, she visits us every week.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/family-3/",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/f12-expansion/levantine-family-04-01/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Who is this in the picture?",
+          "phrase": {
+            "arabic": "مين هاي بالصورة؟",
+            "arabizi": "Mīn hāy biṣ-ṣūra?",
+            "meaning": "Who is this in the picture?",
+            "audioUrl": null
+          },
+          "note": "Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker. In this scene: Who is this in the picture?",
+          "recallCue": "In this scene, express: Who is this in the picture?",
+          "chunks": [
+            {
+              "arabic": "مين هاي",
+              "arabizi": "Mīn hāy",
+              "meaning": "Who is this"
+            },
+            {
+              "arabic": "بالصورة؟",
+              "arabizi": "biṣ-ṣūra?",
+              "meaning": "in the picture?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-01/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "This is my sister Sara.",
+          "phrase": {
+            "arabic": "هاي أختي سارة.",
+            "arabizi": "Hāy ukhti Sāra.",
+            "meaning": "This is my sister Sara.",
+            "audioUrl": null
+          },
+          "note": "Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker. In this scene: This is my sister Sara.",
+          "recallCue": "In this scene, express: This is my sister Sara.",
+          "chunks": [
+            {
+              "arabic": "هاي",
+              "arabizi": "Hāy",
+              "meaning": "This is"
+            },
+            {
+              "arabic": "أختي سارة.",
+              "arabizi": "ukhti Sāra.",
+              "meaning": "my sister Sara."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-01/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "No, she lives in Ramallah.",
+          "phrase": {
+            "arabic": "لا، ساكنة برام الله.",
+            "arabizi": "Laʾ, sākne b-Rāmalla.",
+            "meaning": "No, she lives in Ramallah.",
+            "audioUrl": null
+          },
+          "note": "Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker. In this scene: No, she lives in Ramallah.",
+          "recallCue": "In this scene, express: No, she lives in Ramallah.",
+          "chunks": [
+            {
+              "arabic": "لا،",
+              "arabizi": "Laʾ,",
+              "meaning": "No,"
+            },
+            {
+              "arabic": "ساكنة برام الله.",
+              "arabizi": "sākne b-Rāmalla.",
+              "meaning": "she lives in Ramallah."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-01/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, she visits us every week.",
+          "phrase": {
+            "arabic": "آه، بتزورنا كل أسبوع.",
+            "arabizi": "Āh, bitzūrna kull usbūʿ.",
+            "meaning": "Yes, she visits us every week.",
+            "audioUrl": null
+          },
+          "note": "Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker. In this scene: Yes, she visits us every week.",
+          "recallCue": "In this scene, express: Yes, she visits us every week.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "بتزورنا كل أسبوع.",
+              "arabizi": "bitzūrna kull usbūʿ.",
+              "meaning": "she visits us every week."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/family-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-family-04-01/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: This is my sister Sara.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "This is my sister Sara."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-01/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "هاي أختي سارة.",
+            "arabizi": "Hāy ukhti Sāra.",
+            "meaning": "This is my sister Sara.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "This is my sister Sara.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Introducing a sister in a family photograph without assigning that identity to either guide. Respond to: Who is this in the picture? Your intended meaning: This is my sister Sara.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: This is my sister Sara.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: No, she lives in Ramallah.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "No, she lives in Ramallah."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-01/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "لا، ساكنة برام الله.",
+            "arabizi": "Laʾ, sākne b-Rāmalla.",
+            "meaning": "No, she lives in Ramallah.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "No, she lives in Ramallah.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Introducing a sister in a family photograph without assigning that identity to either guide. Respond to: Does she live here? Your intended meaning: No, she lives in Ramallah.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: No, she lives in Ramallah.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Yes, she visits us every week.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, she visits us every week."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/family-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-family-04-01/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، بتزورنا كل أسبوع.",
+            "arabizi": "Āh, bitzūrna kull usbūʿ.",
+            "meaning": "Yes, she visits us every week.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, she visits us every week.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Introducing a sister in a family photograph without assigning that identity to either guide. Respond to: Does she visit you often? Your intended meaning: Yes, she visits us every week.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, she visits us every week.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · family-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/family-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · verbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Hāy points to a feminine referent. Ukhti is my sister; ukhtak would be your sister to a male listener. The guides discuss a photograph, not a third illustrated speaker. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Introduce someone close",
+      "locator": "internal:ismi/f12-expansion/levantine-family-04-01/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Introducing a sister in a family photograph without assigning that identity to either guide. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

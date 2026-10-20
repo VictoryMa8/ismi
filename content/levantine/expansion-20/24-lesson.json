@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-food-05-04",
+    "trackId": "levantine",
+    "title": "Ask for a change",
+    "scenario": "Asking to change a drink and its temperature before the order is final.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Could I have water instead of juice?",
+        "prompt": {
+          "arabic": "بدك عصير مع الأكل؟",
+          "arabizi": "Biddak ʿaṣīr maʿ il-akil?",
+          "meaning": "Would you like juice with the food?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "ممكن مي بدل العصير؟",
+            "arabizi": "Mumkin mayy badal il-ʿaṣīr?",
+            "meaning": "Could I have water instead of juice?",
+            "rationale": "This gives the requested response: Could I have water instead of juice? Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly."
+          },
+          {
+            "id": "b",
+            "arabic": "عادية، لو سمحتِ.",
+            "arabizi": "ʿĀdiyye, law samaḥti.",
+            "meaning": "Room temperature, please.",
+            "rationale": "This says “Room temperature, please.” The requested response is “Could I have water instead of juice?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، مي عادية بقنينة كبيرة.",
+            "arabizi": "Āh, mayy ʿādiyye b-ʾnīne kbīre.",
+            "meaning": "Yes, room-temperature water in a large bottle.",
+            "rationale": "This says “Yes, room-temperature water in a large bottle.” The requested response is “Could I have water instead of juice?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Could I have water instead of juice? Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Could I have water instead of juice?",
+          "retryHint": "Keep this meaning and perspective: Could I have water instead of juice?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Room temperature, please.",
+        "prompt": {
+          "arabic": "أكيد، باردة ولا عادية؟",
+          "arabizi": "Akīd, bārde walla ʿādiyye?",
+          "meaning": "Of course, cold or room temperature?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، مي عادية بقنينة كبيرة.",
+            "arabizi": "Āh, mayy ʿādiyye b-ʾnīne kbīre.",
+            "meaning": "Yes, room-temperature water in a large bottle.",
+            "rationale": "This says “Yes, room-temperature water in a large bottle.” The requested response is “Room temperature, please.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "ممكن مي بدل العصير؟",
+            "arabizi": "Mumkin mayy badal il-ʿaṣīr?",
+            "meaning": "Could I have water instead of juice?",
+            "rationale": "This says “Could I have water instead of juice?” The requested response is “Room temperature, please.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "عادية، لو سمحتِ.",
+            "arabizi": "ʿĀdiyye, law samaḥti.",
+            "meaning": "Room temperature, please.",
+            "rationale": "This gives the requested response: Room temperature, please. Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Room temperature, please. Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Room temperature, please.",
+          "retryHint": "Keep this meaning and perspective: Room temperature, please."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Yes, room-temperature water in a large bottle.",
+        "prompt": {
+          "arabic": "وقنينة كبيرة؟",
+          "arabizi": "W-ʾnīne kbīre?",
+          "meaning": "And a large bottle?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "عادية، لو سمحتِ.",
+            "arabizi": "ʿĀdiyye, law samaḥti.",
+            "meaning": "Room temperature, please.",
+            "rationale": "This says “Room temperature, please.” The requested response is “Yes, room-temperature water in a large bottle.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، مي عادية بقنينة كبيرة.",
+            "arabizi": "Āh, mayy ʿādiyye b-ʾnīne kbīre.",
+            "meaning": "Yes, room-temperature water in a large bottle.",
+            "rationale": "This gives the requested response: Yes, room-temperature water in a large bottle. Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly."
+          },
+          {
+            "id": "c",
+            "arabic": "ممكن مي بدل العصير؟",
+            "arabizi": "Mumkin mayy badal il-ʿaṣīr?",
+            "meaning": "Could I have water instead of juice?",
+            "rationale": "This says “Could I have water instead of juice?” The requested response is “Yes, room-temperature water in a large bottle.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, room-temperature water in a large bottle. Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, room-temperature water in a large bottle.",
+          "retryHint": "Keep this meaning and perspective: Yes, room-temperature water in a large bottle."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Could I have water instead of juice?",
+        "prompt": {
+          "arabic": "بدك عصير مع الأكل؟",
+          "arabizi": "Biddak ʿaṣīr maʿ il-akil?",
+          "meaning": "Would you like juice with the food?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "ممكن مي بدل العصير؟",
+            "arabizi": "Mumkin mayy badal il-ʿaṣīr?",
+            "meaning": "Could I have water instead of juice?",
+            "rationale": "This gives the requested response: Could I have water instead of juice? Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly."
+          },
+          {
+            "id": "b",
+            "arabic": "عادية، لو سمحتِ.",
+            "arabizi": "ʿĀdiyye, law samaḥti.",
+            "meaning": "Room temperature, please.",
+            "rationale": "This says “Room temperature, please.” The requested response is “Could I have water instead of juice?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "آه، مي عادية بقنينة كبيرة.",
+            "arabizi": "Āh, mayy ʿādiyye b-ʾnīne kbīre.",
+            "meaning": "Yes, room-temperature water in a large bottle.",
+            "rationale": "This says “Yes, room-temperature water in a large bottle.” The requested response is “Could I have water instead of juice?” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Could I have water instead of juice? Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Could I have water instead of juice?",
+          "retryHint": "Keep this meaning and perspective: Could I have water instead of juice?"
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Room temperature, please.",
+        "prompt": {
+          "arabic": "أكيد، باردة ولا عادية؟",
+          "arabizi": "Akīd, bārde walla ʿādiyye?",
+          "meaning": "Of course, cold or room temperature?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "آه، مي عادية بقنينة كبيرة.",
+            "arabizi": "Āh, mayy ʿādiyye b-ʾnīne kbīre.",
+            "meaning": "Yes, room-temperature water in a large bottle.",
+            "rationale": "This says “Yes, room-temperature water in a large bottle.” The requested response is “Room temperature, please.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "ممكن مي بدل العصير؟",
+            "arabizi": "Mumkin mayy badal il-ʿaṣīr?",
+            "meaning": "Could I have water instead of juice?",
+            "rationale": "This says “Could I have water instead of juice?” The requested response is “Room temperature, please.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "عادية، لو سمحتِ.",
+            "arabizi": "ʿĀdiyye, law samaḥti.",
+            "meaning": "Room temperature, please.",
+            "rationale": "This gives the requested response: Room temperature, please. Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Room temperature, please. Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Room temperature, please.",
+          "retryHint": "Keep this meaning and perspective: Room temperature, please."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Yes, room-temperature water in a large bottle.",
+        "prompt": {
+          "arabic": "وقنينة كبيرة؟",
+          "arabizi": "W-ʾnīne kbīre?",
+          "meaning": "And a large bottle?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "عادية، لو سمحتِ.",
+            "arabizi": "ʿĀdiyye, law samaḥti.",
+            "meaning": "Room temperature, please.",
+            "rationale": "This says “Room temperature, please.” The requested response is “Yes, room-temperature water in a large bottle.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "آه، مي عادية بقنينة كبيرة.",
+            "arabizi": "Āh, mayy ʿādiyye b-ʾnīne kbīre.",
+            "meaning": "Yes, room-temperature water in a large bottle.",
+            "rationale": "This gives the requested response: Yes, room-temperature water in a large bottle. Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly."
+          },
+          {
+            "id": "c",
+            "arabic": "ممكن مي بدل العصير؟",
+            "arabizi": "Mumkin mayy badal il-ʿaṣīr?",
+            "meaning": "Could I have water instead of juice?",
+            "rationale": "This says “Could I have water instead of juice?” The requested response is “Yes, room-temperature water in a large bottle.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Yes, room-temperature water in a large bottle. Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Yes, room-temperature water in a large bottle.",
+          "retryHint": "Keep this meaning and perspective: Yes, room-temperature water in a large bottle."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-food-05",
+    "unitTitle": "Share a meal",
+    "courseOrder": 24,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-food-05-04/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to ask for a change.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "بدك عصير مع الأكل؟",
+            "arabizi": "Biddak ʿaṣīr maʿ il-akil?",
+            "meaning": "Would you like juice with the food?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "ممكن مي بدل العصير؟",
+            "arabizi": "Mumkin mayy badal il-ʿaṣīr?",
+            "meaning": "Could I have water instead of juice?",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "أكيد، باردة ولا عادية؟",
+            "arabizi": "Akīd, bārde walla ʿādiyye?",
+            "meaning": "Of course, cold or room temperature?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "عادية، لو سمحتِ.",
+            "arabizi": "ʿĀdiyye, law samaḥti.",
+            "meaning": "Room temperature, please.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وقنينة كبيرة؟",
+            "arabizi": "W-ʾnīne kbīre?",
+            "meaning": "And a large bottle?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "آه، مي عادية بقنينة كبيرة.",
+            "arabizi": "Āh, mayy ʿādiyye b-ʾnīne kbīre.",
+            "meaning": "Yes, room-temperature water in a large bottle.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "بدك عصير مع الأكل؟",
+          "arabizi": "Biddak ʿaṣīr maʿ il-akil?",
+          "meaning": "Would you like juice with the food?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "ممكن مي بدل العصير؟",
+          "arabizi": "Mumkin mayy badal il-ʿaṣīr?",
+          "meaning": "Could I have water instead of juice?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "عادية، لو سمحتِ.",
+          "arabizi": "ʿĀdiyye, law samaḥti.",
+          "meaning": "Room temperature, please.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "آه، مي عادية بقنينة كبيرة.",
+          "arabizi": "Āh, mayy ʿādiyye b-ʾnīne kbīre.",
+          "meaning": "Yes, room-temperature water in a large bottle.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+        "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+        "internal:ismi/f12-expansion/levantine-food-05-04/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Would you like juice with the food?",
+          "phrase": {
+            "arabic": "بدك عصير مع الأكل؟",
+            "arabizi": "Biddak ʿaṣīr maʿ il-akil?",
+            "meaning": "Would you like juice with the food?",
+            "audioUrl": null
+          },
+          "note": "Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly. In this scene: Would you like juice with the food?",
+          "recallCue": "In this scene, express: Would you like juice with the food?",
+          "chunks": [
+            {
+              "arabic": "بدك عصير",
+              "arabizi": "Biddak ʿaṣīr",
+              "meaning": "Would you like juice"
+            },
+            {
+              "arabic": "مع الأكل؟",
+              "arabizi": "maʿ il-akil?",
+              "meaning": "with the food?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-04/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "Could I have water instead of juice?",
+          "phrase": {
+            "arabic": "ممكن مي بدل العصير؟",
+            "arabizi": "Mumkin mayy badal il-ʿaṣīr?",
+            "meaning": "Could I have water instead of juice?",
+            "audioUrl": null
+          },
+          "note": "Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly. In this scene: Could I have water instead of juice?",
+          "recallCue": "In this scene, express: Could I have water instead of juice?",
+          "chunks": [
+            {
+              "arabic": "ممكن مي",
+              "arabizi": "Mumkin mayy",
+              "meaning": "Could I have water"
+            },
+            {
+              "arabic": "بدل العصير؟",
+              "arabizi": "badal il-ʿaṣīr?",
+              "meaning": "instead of juice?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Room temperature, please.",
+          "phrase": {
+            "arabic": "عادية، لو سمحتِ.",
+            "arabizi": "ʿĀdiyye, law samaḥti.",
+            "meaning": "Room temperature, please.",
+            "audioUrl": null
+          },
+          "note": "Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly. In this scene: Room temperature, please.",
+          "recallCue": "In this scene, express: Room temperature, please.",
+          "chunks": [
+            {
+              "arabic": "عادية،",
+              "arabizi": "ʿĀdiyye,",
+              "meaning": "Room temperature,"
+            },
+            {
+              "arabic": "لو سمحتِ.",
+              "arabizi": "law samaḥti.",
+              "meaning": "please."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Yes, room-temperature water in a large bottle.",
+          "phrase": {
+            "arabic": "آه، مي عادية بقنينة كبيرة.",
+            "arabizi": "Āh, mayy ʿādiyye b-ʾnīne kbīre.",
+            "meaning": "Yes, room-temperature water in a large bottle.",
+            "audioUrl": null
+          },
+          "note": "Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly. In this scene: Yes, room-temperature water in a large bottle.",
+          "recallCue": "In this scene, express: Yes, room-temperature water in a large bottle.",
+          "chunks": [
+            {
+              "arabic": "آه،",
+              "arabizi": "Āh,",
+              "meaning": "Yes,"
+            },
+            {
+              "arabic": "مي عادية بقنينة كبيرة.",
+              "arabizi": "mayy ʿādiyye b-ʾnīne kbīre.",
+              "meaning": "room-temperature water in a large bottle."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+            "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+            "internal:ismi/f12-expansion/levantine-food-05-04/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: Could I have water instead of juice?",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Could I have water instead of juice?"
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "ممكن مي بدل العصير؟",
+            "arabizi": "Mumkin mayy badal il-ʿaṣīr?",
+            "meaning": "Could I have water instead of juice?",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Could I have water instead of juice?",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Asking to change a drink and its temperature before the order is final. Respond to: Would you like juice with the food? Your intended meaning: Could I have water instead of juice?",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Could I have water instead of juice?",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: Room temperature, please.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Room temperature, please."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "عادية، لو سمحتِ.",
+            "arabizi": "ʿĀdiyye, law samaḥti.",
+            "meaning": "Room temperature, please.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Room temperature, please.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Asking to change a drink and its temperature before the order is final. Respond to: Of course, cold or room temperature? Your intended meaning: Room temperature, please.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Room temperature, please.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Yes, room-temperature water in a large bottle.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Yes, room-temperature water in a large bottle."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+          "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+          "internal:ismi/f12-expansion/levantine-food-05-04/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "آه، مي عادية بقنينة كبيرة.",
+            "arabizi": "Āh, mayy ʿādiyye b-ʾnīne kbīre.",
+            "meaning": "Yes, room-temperature water in a large bottle.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Yes, room-temperature water in a large bottle.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Asking to change a drink and its temperature before the order is final. Respond to: And a large bottle? Your intended meaning: Yes, room-temperature water in a large bottle.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Yes, room-temperature water in a large bottle.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · food-and-drink-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/food-and-drink-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · verbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/verbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Badal substitutes one item for another. Bārde/kbīre are feminine agreement with mayy/ʾnīne in these authored phrases. Confirm the changed order explicitly. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Ask for a change",
+      "locator": "internal:ismi/f12-expansion/levantine-food-05-04/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Asking to change a drink and its temperature before the order is final. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

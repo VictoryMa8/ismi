@@ -1,0 +1,690 @@
+{
+  "lesson": {
+    "id": "levantine-home-03-01",
+    "trackId": "levantine",
+    "title": "Find something at home",
+    "scenario": "Finding the key before leaving; the bag is a plausible but wrong location.",
+    "steps": [
+      {
+        "id": "context-1",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: The key is on the table.",
+        "prompt": {
+          "arabic": "وين المفتاح؟",
+          "arabizi": "Wēn il-miftāḥ?",
+          "meaning": "Where is the key?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "يلا نطلع سوا.",
+            "arabizi": "Yalla niṭlaʿ sawa.",
+            "meaning": "Come on, let's go out together.",
+            "rationale": "This says “Come on, let's go out together.” The requested response is “The key is on the table.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "المفتاح عالطاولة.",
+            "arabizi": "Il-miftāḥ ʿa-ṭ-ṭāwle.",
+            "meaning": "The key is on the table.",
+            "rationale": "This gives the requested response: The key is on the table. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، جنب الكتاب.",
+            "arabizi": "Laʾ, janb il-ktāb.",
+            "meaning": "No, beside the book.",
+            "rationale": "This says “No, beside the book.” The requested response is “The key is on the table.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: The key is on the table. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: The key is on the table.",
+          "retryHint": "Keep this meaning and perspective: The key is on the table."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-2",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: No, beside the book.",
+        "prompt": {
+          "arabic": "مش بالشنطة؟",
+          "arabizi": "Mish bish-shanṭa?",
+          "meaning": "Isn't it in the bag?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، جنب الكتاب.",
+            "arabizi": "Laʾ, janb il-ktāb.",
+            "meaning": "No, beside the book.",
+            "rationale": "This gives the requested response: No, beside the book. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag."
+          },
+          {
+            "id": "b",
+            "arabic": "يلا نطلع سوا.",
+            "arabizi": "Yalla niṭlaʿ sawa.",
+            "meaning": "Come on, let's go out together.",
+            "rationale": "This says “Come on, let's go out together.” The requested response is “No, beside the book.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "المفتاح عالطاولة.",
+            "arabizi": "Il-miftāḥ ʿa-ṭ-ṭāwle.",
+            "meaning": "The key is on the table.",
+            "rationale": "This says “The key is on the table.” The requested response is “No, beside the book.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: No, beside the book. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: No, beside the book.",
+          "retryHint": "Keep this meaning and perspective: No, beside the book."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-3",
+        "instruction": "As Knafeh in this exchange, respond with this meaning: Come on, let's go out together.",
+        "prompt": {
+          "arabic": "آه، لقيته عالطاولة.",
+          "arabizi": "Āh, laʾētu ʿa-ṭ-ṭāwle.",
+          "meaning": "Ah, I found it on the table.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "المفتاح عالطاولة.",
+            "arabizi": "Il-miftāḥ ʿa-ṭ-ṭāwle.",
+            "meaning": "The key is on the table.",
+            "rationale": "This says “The key is on the table.” The requested response is “Come on, let's go out together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، جنب الكتاب.",
+            "arabizi": "Laʾ, janb il-ktāb.",
+            "meaning": "No, beside the book.",
+            "rationale": "This says “No, beside the book.” The requested response is “Come on, let's go out together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "يلا نطلع سوا.",
+            "arabizi": "Yalla niṭlaʿ sawa.",
+            "meaning": "Come on, let's go out together.",
+            "rationale": "This gives the requested response: Come on, let's go out together. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Come on, let's go out together. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Come on, let's go out together.",
+          "retryHint": "Keep this meaning and perspective: Come on, let's go out together."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-4",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: The key is on the table.",
+        "prompt": {
+          "arabic": "وين المفتاح؟",
+          "arabizi": "Wēn il-miftāḥ?",
+          "meaning": "Where is the key?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "يلا نطلع سوا.",
+            "arabizi": "Yalla niṭlaʿ sawa.",
+            "meaning": "Come on, let's go out together.",
+            "rationale": "This says “Come on, let's go out together.” The requested response is “The key is on the table.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "المفتاح عالطاولة.",
+            "arabizi": "Il-miftāḥ ʿa-ṭ-ṭāwle.",
+            "meaning": "The key is on the table.",
+            "rationale": "This gives the requested response: The key is on the table. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag."
+          },
+          {
+            "id": "c",
+            "arabic": "لا، جنب الكتاب.",
+            "arabizi": "Laʾ, janb il-ktāb.",
+            "meaning": "No, beside the book.",
+            "rationale": "This says “No, beside the book.” The requested response is “The key is on the table.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "b",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: The key is on the table. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: The key is on the table.",
+          "retryHint": "Keep this meaning and perspective: The key is on the table."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-5",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: No, beside the book.",
+        "prompt": {
+          "arabic": "مش بالشنطة؟",
+          "arabizi": "Mish bish-shanṭa?",
+          "meaning": "Isn't it in the bag?",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "لا، جنب الكتاب.",
+            "arabizi": "Laʾ, janb il-ktāb.",
+            "meaning": "No, beside the book.",
+            "rationale": "This gives the requested response: No, beside the book. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag."
+          },
+          {
+            "id": "b",
+            "arabic": "يلا نطلع سوا.",
+            "arabizi": "Yalla niṭlaʿ sawa.",
+            "meaning": "Come on, let's go out together.",
+            "rationale": "This says “Come on, let's go out together.” The requested response is “No, beside the book.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "المفتاح عالطاولة.",
+            "arabizi": "Il-miftāḥ ʿa-ṭ-ṭāwle.",
+            "meaning": "The key is on the table.",
+            "rationale": "This says “The key is on the table.” The requested response is “No, beside the book.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "a",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: No, beside the book. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: No, beside the book.",
+          "retryHint": "Keep this meaning and perspective: No, beside the book."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      },
+      {
+        "id": "context-6",
+        "instruction": "You are helping Fattoush reconstruct the agreed details for a later message. As Knafeh, preserve this meaning: Come on, let's go out together.",
+        "prompt": {
+          "arabic": "آه، لقيته عالطاولة.",
+          "arabizi": "Āh, laʾētu ʿa-ṭ-ṭāwle.",
+          "meaning": "Ah, I found it on the table.",
+          "audioUrl": null
+        },
+        "answers": [
+          {
+            "id": "a",
+            "arabic": "المفتاح عالطاولة.",
+            "arabizi": "Il-miftāḥ ʿa-ṭ-ṭāwle.",
+            "meaning": "The key is on the table.",
+            "rationale": "This says “The key is on the table.” The requested response is “Come on, let's go out together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "b",
+            "arabic": "لا، جنب الكتاب.",
+            "arabizi": "Laʾ, janb il-ktāb.",
+            "meaning": "No, beside the book.",
+            "rationale": "This says “No, beside the book.” The requested response is “Come on, let's go out together.” It changes the requested detail or conversational purpose; it can be appropriate in another context."
+          },
+          {
+            "id": "c",
+            "arabic": "يلا نطلع سوا.",
+            "arabizi": "Yalla niṭlaʿ sawa.",
+            "meaning": "Come on, let's go out together.",
+            "rationale": "This gives the requested response: Come on, let's go out together. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag."
+          }
+        ],
+        "evaluation": {
+          "correctAnswerId": "c",
+          "correctTitle": "That fits the exchange.",
+          "correctExplanation": "This gives the requested response: Come on, let's go out together. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag.",
+          "incorrectTitle": "Check the intended meaning.",
+          "incorrectExplanation": "The reply must preserve the requested detail: Come on, let's go out together.",
+          "retryHint": "Keep this meaning and perspective: Come on, let's go out together."
+        },
+        "characters": {
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh",
+          "responseSpeakerId": "knafeh",
+          "responseAddresseeId": "fattoush"
+        }
+      }
+    ],
+    "estimatedMinutes": 7,
+    "version": "draft",
+    "unitId": "levantine-home-03",
+    "unitTitle": "At home together",
+    "courseOrder": 11,
+    "reviewStatus": "owner-review",
+    "englishHelpInitiallyHidden": true,
+    "characters": {
+      "registryVersion": "ismi-cast-v1",
+      "characterIds": [
+        "fattoush",
+        "knafeh"
+      ]
+    },
+    "contentReview": {
+      "languageTag": "ar-PS",
+      "variety": "palestinian-urban",
+      "helpConvention": "ismi-levantine-help-v1",
+      "reviewer": "",
+      "reviewDisposition": "pending",
+      "rightsDisposition": "pending",
+      "sourceLanguages": {
+        "https://resources.lingualism.com/levantine-arabic/around-the-house-2/": "ar-PS",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/": "ar-PS",
+        "internal:ismi/f12-expansion/levantine-home-03-01/v1": "ar-PS"
+      },
+      "criticalIssues": [
+        "Exact dialogue, urban usage, gender/address, transliteration, teaching chunks, alternatives and rationales await linguistic acceptance.",
+        "Reference consultation is not blanket source-rights acceptance.",
+        "No human model audio, actual device/accessibility or observed timing/recall evidence."
+      ]
+    },
+    "introduction": {
+      "goal": "Use the dialogue to find something at home.",
+      "dialogue": [
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "وين المفتاح؟",
+            "arabizi": "Wēn il-miftāḥ?",
+            "meaning": "Where is the key?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "المفتاح عالطاولة.",
+            "arabizi": "Il-miftāḥ ʿa-ṭ-ṭāwle.",
+            "meaning": "The key is on the table.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "مش بالشنطة؟",
+            "arabizi": "Mish bish-shanṭa?",
+            "meaning": "Isn't it in the bag?",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "لا، جنب الكتاب.",
+            "arabizi": "Laʾ, janb il-ktāb.",
+            "meaning": "No, beside the book.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "speaker": "Fattoush",
+          "line": {
+            "arabic": "آه، لقيته عالطاولة.",
+            "arabizi": "Āh, laʾētu ʿa-ṭ-ṭāwle.",
+            "meaning": "Ah, I found it on the table.",
+            "audioUrl": null
+          },
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "speaker": "Knafeh",
+          "line": {
+            "arabic": "يلا نطلع سوا.",
+            "arabizi": "Yalla niṭlaʿ sawa.",
+            "meaning": "Come on, let's go out together.",
+            "audioUrl": null
+          },
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ],
+      "expressions": [
+        {
+          "arabic": "وين المفتاح؟",
+          "arabizi": "Wēn il-miftāḥ?",
+          "meaning": "Where is the key?",
+          "audioUrl": null
+        },
+        {
+          "arabic": "المفتاح عالطاولة.",
+          "arabizi": "Il-miftāḥ ʿa-ṭ-ṭāwle.",
+          "meaning": "The key is on the table.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "لا، جنب الكتاب.",
+          "arabizi": "Laʾ, janb il-ktāb.",
+          "meaning": "No, beside the book.",
+          "audioUrl": null
+        },
+        {
+          "arabic": "يلا نطلع سوا.",
+          "arabizi": "Yalla niṭlaʿ sawa.",
+          "meaning": "Come on, let's go out together.",
+          "audioUrl": null
+        }
+      ],
+      "usageNote": "Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag.",
+      "dialectNote": "Urban Palestinian reference model, unreviewed. Fattoush uses feminine self-reference where relevant and addresses Knafeh as male; Knafeh addresses Fattoush as female. Pronunciation help is approximate and not reviewed sound evidence. No unlabeled Jordanian alternative is introduced.",
+      "recordingNote": "Unreviewed, text-only development preview. No human audio; optional device speech is not a reviewed model.",
+      "sourceLocators": [
+        "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+        "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+        "internal:ismi/f12-expansion/levantine-home-03-01/v1"
+      ],
+      "teachingCards": [
+        {
+          "title": "Where is the key?",
+          "phrase": {
+            "arabic": "وين المفتاح؟",
+            "arabizi": "Wēn il-miftāḥ?",
+            "meaning": "Where is the key?",
+            "audioUrl": null
+          },
+          "note": "Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag. In this scene: Where is the key?",
+          "recallCue": "In this scene, express: Where is the key?",
+          "chunks": [
+            {
+              "arabic": "وين",
+              "arabizi": "Wēn",
+              "meaning": "Where is"
+            },
+            {
+              "arabic": "المفتاح؟",
+              "arabizi": "il-miftāḥ?",
+              "meaning": "the key?"
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-01/v1"
+          ],
+          "speakerId": "fattoush",
+          "addresseeId": "knafeh"
+        },
+        {
+          "title": "The key is on the table.",
+          "phrase": {
+            "arabic": "المفتاح عالطاولة.",
+            "arabizi": "Il-miftāḥ ʿa-ṭ-ṭāwle.",
+            "meaning": "The key is on the table.",
+            "audioUrl": null
+          },
+          "note": "Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag. In this scene: The key is on the table.",
+          "recallCue": "In this scene, express: The key is on the table.",
+          "chunks": [
+            {
+              "arabic": "المفتاح",
+              "arabizi": "Il-miftāḥ",
+              "meaning": "The key is"
+            },
+            {
+              "arabic": "عالطاولة.",
+              "arabizi": "ʿa-ṭ-ṭāwle.",
+              "meaning": "on the table."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-01/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "No, beside the book.",
+          "phrase": {
+            "arabic": "لا، جنب الكتاب.",
+            "arabizi": "Laʾ, janb il-ktāb.",
+            "meaning": "No, beside the book.",
+            "audioUrl": null
+          },
+          "note": "Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag. In this scene: No, beside the book.",
+          "recallCue": "In this scene, express: No, beside the book.",
+          "chunks": [
+            {
+              "arabic": "لا،",
+              "arabizi": "Laʾ,",
+              "meaning": "No,"
+            },
+            {
+              "arabic": "جنب الكتاب.",
+              "arabizi": "janb il-ktāb.",
+              "meaning": "beside the book."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-01/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        },
+        {
+          "title": "Come on, let's go out together.",
+          "phrase": {
+            "arabic": "يلا نطلع سوا.",
+            "arabizi": "Yalla niṭlaʿ sawa.",
+            "meaning": "Come on, let's go out together.",
+            "audioUrl": null
+          },
+          "note": "Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag. In this scene: Come on, let's go out together.",
+          "recallCue": "In this scene, express: Come on, let's go out together.",
+          "chunks": [
+            {
+              "arabic": "يلا",
+              "arabizi": "Yalla",
+              "meaning": "Come on,"
+            },
+            {
+              "arabic": "نطلع سوا.",
+              "arabizi": "niṭlaʿ sawa.",
+              "meaning": "let's go out together."
+            }
+          ],
+          "sourceLocators": [
+            "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+            "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+            "internal:ismi/f12-expansion/levantine-home-03-01/v1"
+          ],
+          "speakerId": "knafeh",
+          "addresseeId": "fattoush"
+        }
+      ]
+    },
+    "recall": [
+      {
+        "id": "recall-1",
+        "intent": "Respond in context: The key is on the table.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "The key is on the table."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-01/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "المفتاح عالطاولة.",
+            "arabizi": "Il-miftāḥ ʿa-ṭ-ṭāwle.",
+            "meaning": "The key is on the table.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "The key is on the table.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Finding the key before leaving; the bag is a plausible but wrong location. Respond to: Where is the key? Your intended meaning: The key is on the table.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: The key is on the table.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-2",
+        "intent": "Respond in context: No, beside the book.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "No, beside the book."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-01/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "لا، جنب الكتاب.",
+            "arabizi": "Laʾ, janb il-ktāb.",
+            "meaning": "No, beside the book.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "No, beside the book.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Finding the key before leaving; the bag is a plausible but wrong location. Respond to: Isn't it in the bag? Your intended meaning: No, beside the book.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: No, beside the book.",
+            "reservedForLater": true
+          }
+        ]
+      },
+      {
+        "id": "recall-3",
+        "intent": "Respond in context: Come on, let's go out together.",
+        "dialect": "palestinian-urban",
+        "register": "conversational",
+        "requiredConcepts": [
+          "Come on, let's go out together."
+        ],
+        "sourceLocators": [
+          "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+          "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+          "internal:ismi/f12-expansion/levantine-home-03-01/v1"
+        ],
+        "acceptedAnswers": [
+          {
+            "arabic": "يلا نطلع سوا.",
+            "arabizi": "Yalla niṭlaʿ sawa.",
+            "meaning": "Come on, let's go out together.",
+            "rationale": "This is the exact authored model for the assigned meaning and perspective. Other plausible forms require review; this preview has no accepted human linguistic review.",
+            "arabicVariants": [],
+            "arabiziVariants": []
+          }
+        ],
+        "knownErrors": [],
+        "hint": "Come on, let's go out together.",
+        "variants": [
+          {
+            "id": "scene",
+            "situation": "Finding the key before leaving; the bag is a plausible but wrong location. Respond to: Ah, I found it on the table. Your intended meaning: Come on, let's go out together.",
+            "reservedForLater": false
+          },
+          {
+            "id": "message",
+            "situation": "Later, summarize this detail in a message to the same person without changing speaker perspective: Come on, let's go out together.",
+            "reservedForLater": true
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · around-the-house-2",
+      "locator": "https://resources.lingualism.com/levantine-arabic/around-the-house-2/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "publisher-reference",
+      "title": "Lingualism Palestinian Arabic · adverbs-3",
+      "locator": "https://resources.lingualism.com/levantine-arabic/adverbs-3/",
+      "rights": "Consultation for lexical facts only. No publisher dialogues, exercises, datasets or recordings redistributed; no broader rights clearance claimed.",
+      "notes": "Reference pointers checked October 19, 2026. Use wēn for location, ʿa for on, and janb for beside. The negative corrects the proposed location, not the usefulness of the bag. Original compositions and contextual grading remain unreviewed; publisher varieties are not proof of urban Palestinian speaker acceptance."
+    },
+    {
+      "sourceType": "original-authoring-record",
+      "title": "Ismi F12 · Find something at home",
+      "locator": "internal:ismi/f12-expansion/levantine-home-03-01/v1",
+      "rights": "Original AI-assisted composition for Ismi. No external media copied. Exact linguistic/source acceptance remains pending.",
+      "notes": "Authored October 19, 2026. Finding the key before leaving; the bag is a plausible but wrong location. No human reviewer, human recordings, measured learner timing or outcome evidence. Owner authorized this twenty-lesson development preview batch after being informed of those gaps."
+    }
+  ]
+}

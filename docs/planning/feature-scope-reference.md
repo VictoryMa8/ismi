@@ -216,12 +216,26 @@ and provider failure paths are verified. Baseline practice stays free.
 
 ### F12 Levantine course expansion
 
-**Outcome:** twelve weeks of substantive urban Palestinian content, with useful
-Jordanian variants labeled.
+**Original outcome:** twelve weeks of substantive urban Palestinian content, with
+useful Jordanian variants labeled. October 19 owner revised the current F12 cycle
+to plan/coverage plus twenty new lessons and exact unreviewed text-preview delivery;
+the final thirty are F12.6 and full human acceptance/outcome/release quality is F12.5.
 
-**Done when:** the full target is source-linked, validated, owner-approved/published,
-downloadable and backed by observed timing/recall evidence. Fixtures do not count
-as curriculum depth; guided choices do not prove the thirty-day speaking outcome.
+**Current cycle done when:** twenty exact substantive packages are validated,
+committed, application-deployed and published with honest unreviewed text-only
+notices; original publications/data/assets are preserved and verification evidence
+is linked. This is not a full twelve-week curriculum completion claim.
+
+**Retained full-depth gate (F12.5/F12.6):** the full target is source-linked,
+validated, owner-approved/published, downloadable and backed by observed timing/
+recall evidence. Fixtures do not count as curriculum depth; guided choices do not
+prove the thirty-day speaking outcome.
+
+The [expanded twelve-week design and implementation contracts](../levantine-course-expansion.md)
+define F12.3 course-plan/coverage, F12.4 the twenty-lesson batch, F12.5 human
+acceptance/outcome/release evidence, F12.6 the final thirty and F12.7 the necessary
+Arabic-name compatibility fix. Sixty planning slots remain an editable authoring
+budget; original full-depth quality obligations are retained under F12.5/F12.6.
 
 ### F12.1 Make a plan together
 

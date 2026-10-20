@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 1,
+  "courseId": "levantine",
+  "title": "Palestinian Levantine · twelve-week authoring plan",
+  "model": "Urban Palestinian; supported Jordanian alternatives explicitly labeled.",
+  "cadence": "Planning target: 15 minutes per day for this course, combining 5–7 minute lessons with spaced review and conversation. Timing remains unmeasured.",
+  "thirtyDayOutcome": "A five-minute guided conversation about a day, plans, food, family or directions without switching to English.",
+  "authoringGate": "Twenty lessons in weeks 3–6 are an owner-authorized unreviewed text-preview batch. Review exact text, sources and outcomes before the separate thirty-lesson checkpoint for weeks 7–12.",
+  "weeks": [
+    {
+      "week": 1,
+      "unitId": "levantine-everyday-01",
+      "title": "Everyday conversations",
+      "outcome": "Check in, describe a day, and arrange time with someone close.",
+      "languageFocus": "Questions, present descriptions, possessives and basic plans.",
+      "recycleFromWeeks": [],
+      "checkpoint": false,
+      "lessons": [
+        {
+          "lessonId": "levantine-everyday-01-01",
+          "title": "How was your day?",
+          "courseOrder": 1
+        },
+        {
+          "lessonId": "levantine-everyday-01-02",
+          "title": "What did you do today?",
+          "courseOrder": 2
+        },
+        {
+          "lessonId": "levantine-everyday-01-03",
+          "title": "Want tea or coffee?",
+          "courseOrder": 3
+        },
+        {
+          "lessonId": "levantine-everyday-01-04",
+          "title": "Let's eat together",
+          "courseOrder": 4
+        },
+        {
+          "lessonId": "levantine-everyday-01-05",
+          "title": "How's your family?",
+          "courseOrder": 5
+        },
+        {
+          "lessonId": "levantine-everyday-01-06",
+          "title": "What are we doing tomorrow?",
+          "courseOrder": 6
+        },
+        {
+          "lessonId": "levantine-everyday-01-07",
+          "title": "Put it together",
+          "courseOrder": 7
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "unitId": "levantine-plans-02",
+      "title": "Make a plan together",
+      "outcome": "Propose, sequence, clarify and confirm a shared plan.",
+      "languageFocus": "Time questions, sequencing and perspective repair.",
+      "recycleFromWeeks": [
+        1
+      ],
+      "checkpoint": false,
+      "lessons": [
+        {
+          "lessonId": "levantine-plans-02-01",
+          "title": "Choose a plan",
+          "courseOrder": 8
+        },
+        {
+          "lessonId": "levantine-plans-02-02",
+          "title": "What happens first?",
+          "courseOrder": 9
+        },
+        {
+          "lessonId": "levantine-plans-02-03",
+          "title": "Clear up the plan",
+          "courseOrder": 10
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "unitId": "levantine-home-03",
+      "title": "At home together",
+      "outcome": "Coordinate small household tasks and express preferences.",
+      "languageFocus": "Requests, location, negation and want/need patterns.",
+      "recycleFromWeeks": [
+        1,
+        2
+      ],
+      "checkpoint": false,
+      "lessons": [
+        {
+          "lessonId": "levantine-home-03-01",
+          "title": "Find something at home",
+          "courseOrder": 11
+        },
+        {
+          "lessonId": "levantine-home-03-02",
+          "title": "Ask for a little help",
+          "courseOrder": 12
+        },
+        {
+          "lessonId": "levantine-home-03-03",
+          "title": "Share household tasks",
+          "courseOrder": 13
+        },
+        {
+          "lessonId": "levantine-home-03-04",
+          "title": "Say what you need",
+          "courseOrder": 14
+        },
+        {
+          "lessonId": "levantine-home-03-05",
+          "title": "Agree on an evening at home",
+          "courseOrder": 15
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "unitId": "levantine-family-04",
+      "title": "People and plans",
+      "outcome": "Sustain a guided exchange about a day, family, food and plans.",
+      "languageFocus": "Recycle questions, descriptions, possessives and future plans.",
+      "recycleFromWeeks": [
+        1,
+        2,
+        3
+      ],
+      "checkpoint": true,
+      "lessons": [
+        {
+          "lessonId": "levantine-family-04-01",
+          "title": "Introduce someone close",
+          "courseOrder": 16
+        },
+        {
+          "lessonId": "levantine-family-04-02",
+          "title": "Ask about family",
+          "courseOrder": 17
+        },
+        {
+          "lessonId": "levantine-family-04-03",
+          "title": "Talk about today",
+          "courseOrder": 18
+        },
+        {
+          "lessonId": "levantine-family-04-04",
+          "title": "Invite someone for a meal",
+          "courseOrder": 19
+        },
+        {
+          "lessonId": "levantine-family-04-05",
+          "title": "Month-one conversation checkpoint",
+          "courseOrder": 20
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "unitId": "levantine-food-05",
+      "title": "Share a meal",
+      "outcome": "Choose, order and adapt a meal with a companion.",
+      "languageFocus": "Quantities, preferences, polite requests and reasons.",
+      "recycleFromWeeks": [
+        2,
+        3,
+        4
+      ],
+      "checkpoint": false,
+      "lessons": [
+        {
+          "lessonId": "levantine-food-05-01",
+          "title": "Choose somewhere to eat",
+          "courseOrder": 21
+        },
+        {
+          "lessonId": "levantine-food-05-02",
+          "title": "Order together",
+          "courseOrder": 22
+        },
+        {
+          "lessonId": "levantine-food-05-03",
+          "title": "Explain a food preference",
+          "courseOrder": 23
+        },
+        {
+          "lessonId": "levantine-food-05-04",
+          "title": "Ask for a change",
+          "courseOrder": 24
+        },
+        {
+          "lessonId": "levantine-food-05-05",
+          "title": "Plan a meal for friends",
+          "courseOrder": 25
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "unitId": "levantine-neighborhood-06",
+      "title": "Around the neighborhood",
+      "outcome": "Ask for directions and confirm the route and meeting point.",
+      "languageFocus": "Location, direction, distance and clarification.",
+      "recycleFromWeeks": [
+        3,
+        4,
+        5
+      ],
+      "checkpoint": false,
+      "lessons": [
+        {
+          "lessonId": "levantine-neighborhood-06-01",
+          "title": "Ask where a place is",
+          "courseOrder": 26
+        },
+        {
+          "lessonId": "levantine-neighborhood-06-02",
+          "title": "Understand a short route",
+          "courseOrder": 27
+        },
+        {
+          "lessonId": "levantine-neighborhood-06-03",
+          "title": "Check the meeting point",
+          "courseOrder": 28
+        },
+        {
+          "lessonId": "levantine-neighborhood-06-04",
+          "title": "Explain where you are",
+          "courseOrder": 29
+        },
+        {
+          "lessonId": "levantine-neighborhood-06-05",
+          "title": "Find each other",
+          "courseOrder": 30
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "unitId": "levantine-visits-07",
+      "title": "Visit and welcome",
+      "outcome": "Welcome a guest and navigate a short family visit.",
+      "languageFocus": "Offers, polite acceptance/decline and social questions.",
+      "recycleFromWeeks": [
+        4,
+        5,
+        6
+      ],
+      "checkpoint": false,
+      "lessons": [
+        {
+          "lessonId": "levantine-visits-07-01",
+          "title": "Welcome someone in",
+          "courseOrder": 31
+        },
+        {
+          "lessonId": "levantine-visits-07-02",
+          "title": "Offer a drink",
+          "courseOrder": 32
+        },
+        {
+          "lessonId": "levantine-visits-07-03",
+          "title": "Accept or decline warmly",
+          "courseOrder": 33
+        },
+        {
+          "lessonId": "levantine-visits-07-04",
+          "title": "Ask about the visit",
+          "courseOrder": 34
+        },
+        {
+          "lessonId": "levantine-visits-07-05",
+          "title": "Arrange the next visit",
+          "courseOrder": 35
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "unitId": "levantine-days-08",
+      "title": "Tell me about your week",
+      "outcome": "Describe a recent day and ask follow-up questions.",
+      "languageFocus": "Bounded past-event language, sequence and reasons.",
+      "recycleFromWeeks": [
+        5,
+        6,
+        7
+      ],
+      "checkpoint": true,
+      "lessons": [
+        {
+          "lessonId": "levantine-days-08-01",
+          "title": "Ask about yesterday",
+          "courseOrder": 36
+        },
+        {
+          "lessonId": "levantine-days-08-02",
+          "title": "Describe a good moment",
+          "courseOrder": 37
+        },
+        {
+          "lessonId": "levantine-days-08-03",
+          "title": "Explain a changed plan",
+          "courseOrder": 38
+        },
+        {
+          "lessonId": "levantine-days-08-04",
+          "title": "Ask a follow-up question",
+          "courseOrder": 39
+        },
+        {
+          "lessonId": "levantine-days-08-05",
+          "title": "Month-two conversation checkpoint",
+          "courseOrder": 40
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "unitId": "levantine-shopping-09",
+      "title": "Choose things together",
+      "outcome": "Compare options, ask a price and make a shared choice.",
+      "languageFocus": "Numbers, comparison, amount and preference.",
+      "recycleFromWeeks": [
+        6,
+        7,
+        8
+      ],
+      "checkpoint": false,
+      "lessons": [
+        {
+          "lessonId": "levantine-shopping-09-01",
+          "title": "Ask about a price",
+          "courseOrder": 41
+        },
+        {
+          "lessonId": "levantine-shopping-09-02",
+          "title": "Choose a size or amount",
+          "courseOrder": 42
+        },
+        {
+          "lessonId": "levantine-shopping-09-03",
+          "title": "Compare two options",
+          "courseOrder": 43
+        },
+        {
+          "lessonId": "levantine-shopping-09-04",
+          "title": "Explain your choice",
+          "courseOrder": 44
+        },
+        {
+          "lessonId": "levantine-shopping-09-05",
+          "title": "Shop for a shared meal",
+          "courseOrder": 45
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "unitId": "levantine-travel-10",
+      "title": "A day out",
+      "outcome": "Arrange transport and handle a small travel change.",
+      "languageFocus": "Departure/arrival times, requests and repair.",
+      "recycleFromWeeks": [
+        7,
+        8,
+        9
+      ],
+      "checkpoint": false,
+      "lessons": [
+        {
+          "lessonId": "levantine-travel-10-01",
+          "title": "Choose how to get there",
+          "courseOrder": 46
+        },
+        {
+          "lessonId": "levantine-travel-10-02",
+          "title": "Check the departure time",
+          "courseOrder": 47
+        },
+        {
+          "lessonId": "levantine-travel-10-03",
+          "title": "Ask for a stop",
+          "courseOrder": 48
+        },
+        {
+          "lessonId": "levantine-travel-10-04",
+          "title": "Explain a delay",
+          "courseOrder": 49
+        },
+        {
+          "lessonId": "levantine-travel-10-05",
+          "title": "Change the meeting plan",
+          "courseOrder": 50
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "unitId": "levantine-support-11",
+      "title": "Care and connection",
+      "outcome": "Check how someone feels and offer everyday practical support.",
+      "languageFocus": "Feelings, needs, suggestions and gentle refusals.",
+      "recycleFromWeeks": [
+        8,
+        9,
+        10
+      ],
+      "checkpoint": false,
+      "lessons": [
+        {
+          "lessonId": "levantine-support-11-01",
+          "title": "Ask how someone feels",
+          "courseOrder": 51
+        },
+        {
+          "lessonId": "levantine-support-11-02",
+          "title": "Say what would help",
+          "courseOrder": 52
+        },
+        {
+          "lessonId": "levantine-support-11-03",
+          "title": "Offer practical help",
+          "courseOrder": 53
+        },
+        {
+          "lessonId": "levantine-support-11-04",
+          "title": "Respect a preference",
+          "courseOrder": 54
+        },
+        {
+          "lessonId": "levantine-support-11-05",
+          "title": "Make a gentler plan",
+          "courseOrder": 55
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "unitId": "levantine-connection-12",
+      "title": "Keep the conversation going",
+      "outcome": "Combine familiar topics in a guided conversation and repair misunderstandings.",
+      "languageFocus": "Cumulative retrieval, follow-up questions and clarification.",
+      "recycleFromWeeks": [
+        9,
+        10,
+        11
+      ],
+      "checkpoint": true,
+      "lessons": [
+        {
+          "lessonId": "levantine-connection-12-01",
+          "title": "Catch up with someone close",
+          "courseOrder": 56
+        },
+        {
+          "lessonId": "levantine-connection-12-02",
+          "title": "Tell a short story about your day",
+          "courseOrder": 57
+        },
+        {
+          "lessonId": "levantine-connection-12-03",
+          "title": "Make a plan with alternatives",
+          "courseOrder": 58
+        },
+        {
+          "lessonId": "levantine-connection-12-04",
+          "title": "Ask and clarify without switching language",
+          "courseOrder": 59
+        },
+        {
+          "lessonId": "levantine-connection-12-05",
+          "title": "Twelve-week conversation checkpoint",
+          "courseOrder": 60
+        }
+      ]
+    }
+  ]
+}
