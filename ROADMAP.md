@@ -788,7 +788,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Review pending.
 - **Readiness:** Implementation — shared text-story machinery complete; source-update drafts added locally as F23.1.2; content — all three review candidates authored, original first preview retained; verification — 19 story API checks and private browser completion of both new drafts pass; exact review/rights and real access/learner evidence missing.
-- **Delivery:** Application — Deployed 0.0.4 story baseline, application source `99f2de4`; Beta 0.0.11 source-update addition local/uncommitted. Content publication — original first episode v1 unreviewed/text-only with old source pin; current-source first-episode candidate and episodes two/three are local unpublished drafts.
+- **Delivery:** Application — Deployed 0.0.4 story baseline, application source `99f2de4`; Beta 0.0.12 release committed locally as `0523aac`, not pushed/deployed. Content publication — original first episode v1 unreviewed/text-only with old source pin; current-source first-episode candidate and episodes two/three are unpublished candidates for F23.4.
 - **Scope:** Linked three-episode text story arc using taught Levantine language; audio is a separate extension.
 - **Next action:** Owner: disposition the three exact scene/check/role/source candidates and arc continuity; restore deployment access for F23.4. Agent: deliver the separately authorized exact unreviewed preview through F23.4, reconcile later review feedback and collect agreed real access/learner evidence.
 - **Authorization:** Owner authorized F23 implementation October 18, unpublished drafts October 27 and then requested publish/deploy after the missing review/rights were explained. F23.4 owns the new exact unreviewed/text-only exception; normal human/source/access/learner gates and no-assumed-Today-accounting rule remain.
@@ -799,7 +799,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Review pending.
 - **Readiness:** Implementation — Complete: console, reader, source/version/identity and offline safeguards, plus local source-update drafts; content — original unreviewed preview and unpublished v5-source review candidate; verification — automated API/browser/build checks, actual screen-reader/device/Safari/learner checks missing.
-- **Delivery:** Application — Deployed 0.0.4 baseline, application source `99f2de4`; Beta 0.0.11 addition local/uncommitted. Content publication — original first episode v1 unreviewed/text-only with old v4 source pin; current-source candidate unpublished, normal approval absent.
+- **Delivery:** Application — Deployed 0.0.4 baseline, application source `99f2de4`; source-update addition included in locally committed Beta 0.0.12 (`0523aac`), rollout pending. Content publication — original first episode v1 unreviewed/text-only with old v4 source pin; current-source candidate unpublished, normal approval absent.
 - **Scope:** One reviewed text episode, two comprehension checks and a response, with offline/version/identity safeguards.
 - **Next action:** Owner: disposition the prepared v5-source A little rest candidate's scenes, checks, response rationales, roles and source/rights reuse; agent validates against the selected target. Actual access checks and normal reviewed publication still precede completion.
 - **Authorization:** Owner authorized implementation October 18; later authorized deployment and only the exact unreviewed text-preview publication, keeping review/rights pending. Audio is outside this text scope; no Today credit added.
@@ -821,7 +821,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — Complete; content — unpublished current-source first-episode draft, original preview pin preserved; verification — 17 story API checks and ten distinct story browser checks pass, production build/displayed version and roadmap checks pass.
-- **Delivery:** Application — Beta 0.0.11 local/uncommitted, not deployed; content publication — unchanged, prepared candidate unpublished.
+- **Delivery:** Application — implemented as Beta 0.0.11, included in locally committed Beta 0.0.12 (`0523aac`), not deployed; content publication — unchanged, prepared candidate unpublished.
 - **Scope:** Prepare a private story draft against current regular source publications only when text, roles, response choices and targets still match; clear review/rights evidence and retain immutable historical versions.
 - **Next action:** None for this bounded local implementation. F23.1 retains exact review/rights/access acceptance; F23.4 owns the newly authorized application rollout and exact preview publication.
 - **Authorization:** Owner requested F23 implementation October 27; no changed/additional episode publication or review acceptance follows. Later October 27 reply permits unpublished episodes two/three before first review only.
@@ -854,7 +854,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Delivery pending.
 - **Readiness:** Implementation — Complete: three pinned packages, explicit transactional/idempotent publication command and honest notices; content — exact unreviewed first-source-update/second/third candidates; verification — 81 API tests (20 story), 12 story browser checks, production build/version, five deployment fixtures and roadmap checks pass; hosted checks not run.
-- **Delivery:** Application — Beta 0.0.12 local/uncommitted, not deployed; content publication — three-candidate release pending, prior first-story publication unchanged.
+- **Delivery:** Application — Beta 0.0.12 committed locally as `0523aac` with verified API archive, not pushed/deployed; content publication — three-candidate release pending, prior first-story publication unchanged.
 - **Scope:** Deploy Beta 0.0.12 to existing preview targets and publish only the three October 27 hash-pinned candidates as unreviewed/text-only, preserving historical versions, review/rights gaps, learner data, assets and beta boundary.
 - **Next action:** Owner: restore ignored alwaysdata configuration/dedicated key and authorize the Vercel team connection. Agent: run hosting preflight, deploy exact revision, publish the transactional batch and verify public projections, source pins and preservation before recording delivery.
 - **Authorization:** Owner requested publish/deploy October 27 after the unreviewed status and missing review/rights were explained. Exact pins only; no normal review/source acceptance, changed/additional content, spending/provider changes or beta inclusion.
