@@ -12,6 +12,7 @@
     <Content Include="../content/french/meet-01/*-lesson.json" Link="french-meet-01/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/khmer/meet-01/*-lesson.json" Link="khmer-meet-01/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/revisions/phrase-anatomy/*-lesson.json" Link="phrase-anatomy/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../content/levantine/everyday-01/revisions/phrase-anatomy/release/01-lesson.json" Link="phrase-anatomy-release/01-lesson.json" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/revisions/recall/*-lesson.json" Link="recall/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/revisions/transliteration-audit/*-lesson.json" Link="transliteration-audit/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/levantine/everyday-01/revisions/pilot-release/*-lesson.json" Link="pilot-release/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
@@ -36,6 +37,7 @@
 
   <ItemGroup>
     <Content Include="Fixtures/*.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../content/stories/after-a-long-day/*.pack.json" Link="story-drafts/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="../content/alphabet/text-only/*.pack.json" Link="alphabet-text-only/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 

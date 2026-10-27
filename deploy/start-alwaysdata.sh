@@ -28,6 +28,8 @@ export Curriculum__AllowFrenchTextPreview=true
 export Curriculum__AllowAlphabetTextPreview=true
 # Separate October 18 owner exception for one exact unreviewed story.
 export Curriculum__AllowStoryTextPreview=true
+# Separate October 27 owner request: three exact unreviewed text-story candidates.
+export Curriculum__AllowStoryArcTextPreview=true
 # Separate October 19 owner-directed twenty-lesson Levantine text preview.
 export Curriculum__AllowLevantineExpansionTextPreview=true
 # Reduce idle memory on the 256 MB free host; do not enable server GC.

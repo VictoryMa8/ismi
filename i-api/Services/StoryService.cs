@@ -112,6 +112,26 @@ public sealed class StoryService(IsmiDbContext db, CurriculumPublishingService c
         return new(errors.Count == 0, errors.Distinct().ToArray());
     }
     public async Task<StoryValidation> ValidateAsync(string id, int n, CancellationToken ct) => await Validate(Version(State(await Find(id, ct)), n), ct);
+    public async Task<StoryDetail> PrepareSourceUpdateAsync(string id, StoryCommand request, string actor, CancellationToken ct) {
+        var row = await Find(id, ct); Expected(row, request.ExpectedRevision);
+        var state = State(row); var version = Version(state, request.Version);
+        if (version.Number != state.Versions.Last().Number) throw new StoryException("Select the latest story version before preparing a source update.");
+        var sources = new List<StorySource>();
+        foreach (var source in version.Pack.Sources) {
+            var lesson = (await curriculum.FindPublishedLessonAsync(source.LessonId, ct))?.Response;
+            if (lesson is null || lesson.PublicationNotice is not null || lesson.TrackId != version.Pack.CourseId || lesson.UnitId != version.Pack.UnitId)
+                throw new StoryException($"{source.LessonId}: a regular published source in the same course/unit is required.", 400);
+            sources.Add(source with { Version = lesson.Version });
+        }
+        if (sources.SequenceEqual(version.Pack.Sources)) throw new StoryException("Source versions are already current. No draft was changed.", 400);
+        var pack = version.Pack with { Sources = sources.ToArray(), Reviewer = "", ReviewEvidence = "", RightsEvidence = "" };
+        var candidate = new StoryVersion(0, "draft", pack, Hash(pack), null, null);
+        var check = await Validate(candidate, ct, false);
+        if (!check.IsValid) throw new StoryException("Source update needs manual reconciliation. " + string.Join(" ", check.Errors), 400);
+        // Save through the normal concurrency/version path. Never carry approval or
+        // the exact old preview exception into the new source snapshot.
+        return await SaveAsync(new(pack, request.ExpectedRevision), actor, ct);
+    }
     public async Task<StoryDetail> CommandAsync(string id, string action, StoryCommand request, string actor, CancellationToken ct) {
         if (request.Reason is null || request.Reason.Length > 1000) throw new StoryException("Use a brief reason.", 400);
         var r = await Find(id, ct); Expected(r, request.ExpectedRevision); var s = State(r); var v = Version(s, request.Version);
@@ -137,25 +157,43 @@ public sealed class StoryService(IsmiDbContext db, CurriculumPublishingService c
         }
         return await Write(r, s, action, v.Number, actor, request.Reason, ct);
     }
-    public static StoryPublicPack Public(StoryVersion v) { var p = v.Pack; var result = new StoryPublicPack(p.Id, p.CourseId, p.UnitId, p.ArcId, p.Episode, v.Number, "", p.Title, p.Summary, p.Sources, p.Scenes, p.Checks, v.TextPreview ? StoryTextPreviewPolicy.Notice : null); return result with { ContentHash = Hash(result) }; }
+    public static StoryPublicPack Public(StoryVersion v) { var p = v.Pack; var result = new StoryPublicPack(p.Id, p.CourseId, p.UnitId, p.ArcId, p.Episode, v.Number, "", p.Title, p.Summary, p.Sources, p.Scenes, p.Checks, v.TextPreview ? StoryTextPreviewPolicy.NoticeFor(p) : null); return result with { ContentHash = Hash(result) }; }
     public async Task<StoryPublicPack?> PublicAsync(string id, CancellationToken ct) {
         var r = await db.StoryPacks.AsNoTracking().SingleOrDefaultAsync(r => r.Id == id, ct); if (r is null) return null;
         var s = State(r); if (s.PublishedVersion is not int n) return null; var v = Version(s, n);
         if (v.TextPreview && !previews.IsAuthorized(v.Pack)) return null;
         return (await Validate(v, ct, false)).IsValid ? Public(v) : null;
     }
-    public async Task<StoryDetail> PublishExactTextPreviewAsync(string actor, CancellationToken ct) {
-        var p = previews.ExactPackage();
+    public Task<StoryDetail> PublishExactTextPreviewAsync(string actor, CancellationToken ct) => PublishExactPackage(previews.ExactPackage(), actor, ct);
+    private async Task CheckExactPackage(StoryPack p, CancellationToken ct) {
         if (!previews.IsAuthorized(p)) throw new StoryException("The exact story text-preview exception is disabled.", 400);
+        var check = await Validate(new(0, "draft", p, Hash(p), null, null), ct, false);
+        if (!check.IsValid) throw new StoryException(string.Join(" ", check.Errors), 400);
         var row = await db.StoryPacks.AsNoTracking().SingleOrDefaultAsync(r => r.Id == p.Id, ct);
         if (row is not null && State(row).Versions.Any(v => !previews.IsAuthorized(v.Pack))) throw new StoryException("Existing story differs from the authorized package; no replacement performed.");
+    }
+    private async Task<StoryDetail> PublishExactPackage(StoryPack p, string actor, CancellationToken ct) {
+        await CheckExactPackage(p, ct);
+        var row = await db.StoryPacks.AsNoTracking().SingleOrDefaultAsync(r => r.Id == p.Id, ct);
         var d = row is null ? await SaveAsync(new(p), actor, ct) : Detail(row);
-        if (d.State.PublishedVersion is int published && d.State.Versions.Single(v => v.Number == published).TextPreview) return d;
+        if (d.State.PublishedVersion is int published && d.State.Versions.Single(v => v.Number == published) is { TextPreview: true } current && current.Hash == Hash(p)) return d;
+        if (d.State.Versions.Last().Hash != Hash(p)) d = await SaveAsync(new(p, d.Revision), actor, ct);
         var v = d.State.Versions.Last();
         if (v.Status == "draft") d = await CommandAsync(p.Id, "authorize-text-preview", new(d.Revision, v.Number, "Owner explicitly requested this exact unreviewed text-only preview; review/rights remain pending."), actor, ct);
         if (d.State.Versions.Last().Status == "authorized-text-preview") return await CommandAsync(p.Id, "publish", new(d.Revision, v.Number, "Exact owner-authorized development preview; no beta inclusion."), actor, ct);
         if (v.TextPreview && v.PublishedAtUtc is not null) return await CommandAsync(p.Id, "rollback", new(d.Revision, v.Number, "Restore exact owner-authorized preview."), actor, ct);
         throw new StoryException("This existing episode is not an authorized preview draft/publication.");
+    }
+    public async Task<StoryDetail[]> PublishExactArcTextPreviewsAsync(string actor, CancellationToken ct) {
+        if (!previews.ArcEnabled) throw new StoryException("The exact October 27 story-arc text-preview exception is disabled.", 400);
+        var packages = previews.ExactArcPackages();
+        // A missing source or changed owner draft must not leave a partly published arc.
+        await using var transaction = await db.Database.BeginTransactionAsync(ct);
+        foreach (var p in packages) await CheckExactPackage(p, ct);
+        var results = new List<StoryDetail>();
+        foreach (var p in packages) results.Add(await PublishExactPackage(p, actor, ct));
+        await transaction.CommitAsync(ct);
+        return results.ToArray();
     }
     public async Task<StoryCatalog> CatalogAsync(CancellationToken ct) {
         var ids = await db.StoryPacks.AsNoTracking().Select(r => r.Id).ToArrayAsync(ct); var episodes = new List<StoryPublicPack>();

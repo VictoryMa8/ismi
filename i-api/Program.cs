@@ -173,6 +173,14 @@ await using (var scope = app.Services.CreateAsyncScope())
     var publishing = scope.ServiceProvider.GetRequiredService<CurriculumPublishingService>();
     var seed = scope.ServiceProvider.GetRequiredService<SeedCurriculum>();
     await publishing.EnsureSeededAsync(seed.GetInitialLessons());
+    if (builder.Configuration.GetValue<bool>("publish-story-arc-text-preview")) {
+        try {
+            var stories = scope.ServiceProvider.GetRequiredService<StoryService>();
+            var results = await stories.PublishExactArcTextPreviewsAsync("owner requested publish/deploy in chat 2026-10-27; exact unreviewed story arc", CancellationToken.None);
+            foreach (var d in results) Console.WriteLine($"{d.Id}: published unreviewed text-only preview v{d.State.PublishedVersion}; review/rights remain pending; no beta inclusion.");
+        } catch (Exception e) when (e is StoryException or InvalidOperationException) { Console.Error.WriteLine($"Story arc publication stopped: {e.Message}"); Environment.ExitCode = 1; }
+        return;
+    }
     if (builder.Configuration.GetValue<bool>("publish-story-text-preview")) {
         try {
             var stories = scope.ServiceProvider.GetRequiredService<StoryService>();

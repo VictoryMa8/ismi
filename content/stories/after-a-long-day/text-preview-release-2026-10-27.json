@@ -1,0 +1,29 @@
+{
+  "releaseId": "story-arc-text-preview-2026-10-27",
+  "applicationVersion": "0.0.12",
+  "target": "existing Ismi development preview only",
+  "authorization": "Owner requested publish and deploy on October 27 after being told the exact candidates were unreviewed and source-rights acceptance remained pending. Publish these three as unreviewed, text-only previews; do not record normal approval or human/source acceptance.",
+  "publication": "pending; this manifest is authorization and pins, not delivery evidence",
+  "configuration": "Curriculum:AllowStoryArcTextPreview",
+  "command": "--publish-story-arc-text-preview true",
+  "packages": [
+    {
+      "file": "revisions/current-source/01.pack.json",
+      "id": "after-a-long-day-01",
+      "sha256": "0203e02652ff44170cd56b7690fe13769e3b9fb8ab177b092399f99d855d22d8",
+      "sourceVersion": "curriculum-levantine-everyday-01-01-v5"
+    },
+    {
+      "file": "02.pack.json",
+      "id": "after-a-long-day-02",
+      "sha256": "a626b2410f688142b09545aae209313c92dd98e855efec35fc5e28eba5665c9c",
+      "sourceVersion": "curriculum-levantine-everyday-01-03-v3"
+    },
+    {
+      "file": "03.pack.json",
+      "id": "after-a-long-day-03",
+      "sha256": "4d67543fc4e53b1c8d257d050f588dfbf0ea209083578ac8f1b5990549642576",
+      "sourceVersion": "curriculum-levantine-everyday-01-06-v3"
+    }
+  ]
+}

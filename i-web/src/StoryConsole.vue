@@ -21,6 +21,11 @@ async function command(action: string) {
     if (action === 'preview') { preview.value = await request<Story>(`${base}/preview/${version.value}`); return }
     const payload = { expectedRevision: selected.value!.revision, version: version.value, reason: reason.value }
     if (action === 'validate') { validation.value = await request(`${base}/validate`, { method: 'POST', body: JSON.stringify(payload) }); notice.value = validation.value?.isValid ? 'Validation passed. Exact human approval is still required.' : ''; return }
+    if (action === 'prepare-source-update') {
+      set(await request<StoryDetail>(`${base}/${action}`, { method: 'POST', body: JSON.stringify(payload) })); summaries.value = await list()
+      notice.value = 'Private source-update draft saved. Text, roles, answers and targets still match the current sources. Review and rights evidence were cleared; exact review, approval and publication are required.'
+      return
+    }
     const n = version.value; set(await request<StoryDetail>(`${base}/${action}`, { method: 'POST', body: JSON.stringify(payload) }), n); summaries.value = await list()
     notice.value = action === 'authorize-text-preview' ? 'Exact unreviewed preview authorized; review and rights remain pending.' : action === 'approve' ? 'Exact story version approved. Publication remains separate.' : action === 'publish' ? 'Story version published.' : action === 'withdraw' ? 'Story withdrawn. Reconnecting clients will remove its download.' : 'Previous stories publication restored.'
   })
@@ -49,7 +54,9 @@ onMounted(() => void run(async () => { summaries.value = await list(); create() 
     <label>Story pack JSON<textarea v-model="json" spellcheck="false" rows="20" :disabled="busy" @input="preview = null; validation = null" /></label>
     <p v-if="dirty">Unsaved draft. Save before validating, previewing or approving.</p>
     <div class="stories-console-toolbar"><button type="button" class="primary-action" :disabled="busy || !dirty" @click="save">Save story draft</button><button type="button" class="secondary-action" :disabled="busy || dirty" @click="command('validate')">Validate stories</button><button type="button" class="secondary-action" :disabled="busy || dirty" @click="command('preview')">Preview stories</button><button type="button" class="secondary-action" :disabled="busy || dirty || current?.status !== 'draft' || !validation?.isValid" @click="command('approve')">Approve story version</button><button type="button" class="primary-action" :disabled="busy || dirty || !['approved','authorized-text-preview'].includes(current?.status ?? '')" @click="command('publish')">Publish story version</button></div>
-    <p>Only the exact October 18 owner-authorized first episode can use the unreviewed text-preview exception. This records no linguistic or source-rights acceptance.</p>
+    <p>Only the exact owner-authorized packages can use the development text-preview exception: the original October 18 first episode and the three pinned October 27 arc candidates. This records no linguistic or source-rights acceptance.</p>
+    <p>If a source lesson has a newer publication, prepare a private source-update draft. This only updates source versions when the existing text, roles, answers and targets still match. Review evidence is cleared and publication remains separate.</p>
+    <button type="button" class="secondary-action" :disabled="busy || dirty || version !== selected?.state.versions.at(-1)?.number" @click="command('prepare-source-update')">Prepare source-update draft</button>
     <button type="button" class="secondary-action" :disabled="busy || dirty || current?.status !== 'draft'" @click="command('authorize-text-preview')">Authorize exact unreviewed story preview</button>
     <div v-if="validation" aria-label="Story validation"><p>{{ validation.isValid ? 'Validation passed.' : `${validation.errors.length} issues block approval/publication.` }}</p><ul><li v-for="(issue, i) in validation.errors" :key="i">{{ issue }}</li></ul></div>
     <label>Story withdrawal or rollback reason<input v-model="reason" maxlength="1000" /></label>

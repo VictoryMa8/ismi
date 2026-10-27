@@ -1,0 +1,190 @@
+{
+  "id": "after-a-long-day-02",
+  "courseId": "levantine",
+  "unitId": "levantine-everyday-01",
+  "arcId": "after-a-long-day",
+  "episode": 2,
+  "title": "Tea after the pause",
+  "summary": "After resting, Fattoush and Knafeh choose different drinks and settle one small detail: sugar.",
+  "sources": [
+    {
+      "lessonId": "levantine-everyday-01-03",
+      "version": "curriculum-levantine-everyday-01-03-v3"
+    }
+  ],
+  "scenes": [
+    {
+      "title": "Ready for a drink",
+      "situation": "After their short rest, they have enough energy for a quiet catch-up. Knafeh offers Fattoush a choice of drinks.",
+      "lines": [
+        {
+          "speakerId": "knafeh",
+          "text": {
+            "arabic": "بدك شاي ولا قهوة؟",
+            "arabizi": "Biddik shāy walla ʾahwe?",
+            "meaning": "Do you want tea or coffee? (to Fattoush)",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        },
+        {
+          "speakerId": "fattoush",
+          "text": {
+            "arabic": "شاي، لو سمحت.",
+            "arabizi": "Shāy, law samaḥt.",
+            "meaning": "Tea, please. (to Knafeh)",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        }
+      ]
+    },
+    {
+      "title": "One small detail",
+      "situation": "The drink is chosen, but Knafeh still needs to know whether Fattoush wants sugar. Her answer settles that detail.",
+      "lines": [
+        {
+          "speakerId": "knafeh",
+          "text": {
+            "arabic": "بدك سكر؟",
+            "arabizi": "Biddik sukkar?",
+            "meaning": "Do you want sugar?",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        },
+        {
+          "speakerId": "fattoush",
+          "text": {
+            "arabic": "لا، بدون سكر، شكراً.",
+            "arabizi": "Laʾ, bidūn sukkar, shukran.",
+            "meaning": "No, without sugar, thank you.",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        }
+      ]
+    },
+    {
+      "title": "Different favorites",
+      "situation": "They do not have to choose the same drink to enjoy the break together. Knafeh says what he wants, and Fattoush explains her preference.",
+      "lines": [
+        {
+          "speakerId": "knafeh",
+          "text": {
+            "arabic": "أنا بدي قهوة.",
+            "arabizi": "Ana biddi ʾahwe.",
+            "meaning": "I want coffee.",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        },
+        {
+          "speakerId": "fattoush",
+          "text": {
+            "arabic": "بحب الشاي أكتر.",
+            "arabizi": "Baḥibb ish-shāy aktar.",
+            "meaning": "I like tea more.",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "choose-tea",
+      "kind": "comprehension",
+      "prompt": "Which drink does Fattoush ask Knafeh for?",
+      "choices": [
+        {
+          "id": "tea",
+          "text": "Tea.",
+          "rationale": "Fattoush says Shāy, law samaḥt: tea, please."
+        },
+        {
+          "id": "coffee",
+          "text": "Coffee.",
+          "rationale": "Coffee is Knafeh’s choice; Fattoush asks for tea."
+        },
+        {
+          "id": "both",
+          "text": "Both tea and coffee.",
+          "rationale": "The offer presents a choice, and Fattoush selects tea rather than both drinks."
+        }
+      ],
+      "acceptedId": "tea",
+      "explanation": "Fattoush chooses tea politely; Knafeh later says he wants coffee.",
+      "sourceIndex": 0,
+      "target": "e03-02"
+    },
+    {
+      "id": "without-sugar",
+      "kind": "comprehension",
+      "prompt": "What does Fattoush decline?",
+      "choices": [
+        {
+          "id": "tea",
+          "text": "The tea itself.",
+          "rationale": "Her no answers the sugar question. She has already asked for tea."
+        },
+        {
+          "id": "sugar",
+          "text": "Sugar in her tea.",
+          "rationale": "Bidūn sukkar means without sugar. She keeps the tea request and thanks Knafeh."
+        },
+        {
+          "id": "company",
+          "text": "Spending the break with Knafeh.",
+          "rationale": "The exchange is about a drink preference, not refusing his company."
+        }
+      ],
+      "acceptedId": "sugar",
+      "explanation": "The context matters: her no declines sugar, not the drink or the shared break.",
+      "sourceIndex": 0,
+      "target": "e03-03"
+    },
+    {
+      "id": "decline-sugar",
+      "kind": "response",
+      "prompt": "Reply as Fattoush to Knafeh’s sugar offer: keep your tea, but politely say you want it without sugar.",
+      "choices": [
+        {
+          "id": "preference",
+          "text": "بحب الشاي أكتر.",
+          "help": "Baḥibb ish-shāy aktar.",
+          "meaning": "I like tea more.",
+          "rationale": "This explains a preference for tea but does not say whether you want sugar."
+        },
+        {
+          "id": "tea",
+          "text": "شاي، لو سمحت.",
+          "help": "Shāy, law samaḥt.",
+          "meaning": "Tea, please. (to Knafeh)",
+          "rationale": "This repeats the tea request politely but leaves the sugar question unanswered."
+        },
+        {
+          "id": "without-sugar",
+          "text": "لا، بدون سكر، شكراً.",
+          "help": "Laʾ, bidūn sukkar, shukran.",
+          "meaning": "No, without sugar, thank you.",
+          "rationale": "This answers no to sugar, specifies without sugar and adds thanks."
+        }
+      ],
+      "acceptedId": "without-sugar",
+      "explanation": "Laʾ answers the sugar offer; bidūn sukkar states the preference and shukran adds thanks. This is practice with choices.",
+      "sourceIndex": 0,
+      "target": "e03-03"
+    }
+  ],
+  "reviewer": "",
+  "reviewEvidence": "",
+  "rightsEvidence": ""
+}

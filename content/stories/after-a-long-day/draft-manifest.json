@@ -1,0 +1,36 @@
+{
+  "authoredAt": "2026-10-27",
+  "arcId": "after-a-long-day",
+  "status": "unpublished-drafts",
+  "authorization": "Owner explicitly selected preparing episodes 2–3 as unpublished drafts. First-episode-review-before-authoring is superseded for these drafts only; review/rights/publication and release gates remain.",
+  "sourcePublicationEvidence": "../../../docs/releases/2026-10-13-recall-publication.json",
+  "sourceReleaseNote": "../../../docs/releases/2026-10-13-recall.md",
+  "firstEpisodeCurrentSourceCandidate": {
+    "file": "revisions/current-source/01.pack.json",
+    "sha256": "0203e02652ff44170cd56b7690fe13769e3b9fb8ab177b092399f99d855d22d8"
+  },
+  "packages": [
+    {
+      "file": "02.pack.json",
+      "sha256": "a626b2410f688142b09545aae209313c92dd98e855efec35fc5e28eba5665c9c",
+      "id": "after-a-long-day-02",
+      "episode": 2,
+      "predecessorId": "after-a-long-day-01",
+      "sourcePackage": "../../levantine/everyday-01/revisions/recall/03-lesson.json",
+      "sourcePackageSha256": "892f191054f59cb272ff80fb8c09be2f3fec82965410f046bb57ea8b54344dc0",
+      "sourceLessonId": "levantine-everyday-01-03",
+      "sourceVersion": "curriculum-levantine-everyday-01-03-v3"
+    },
+    {
+      "file": "03.pack.json",
+      "sha256": "4d67543fc4e53b1c8d257d050f588dfbf0ea209083578ac8f1b5990549642576",
+      "id": "after-a-long-day-03",
+      "episode": 3,
+      "predecessorId": "after-a-long-day-02",
+      "sourcePackage": "../../levantine/everyday-01/revisions/recall/06-lesson.json",
+      "sourcePackageSha256": "f62853b93a468bcc825891378c412b3d7cf7d361d6a57dc5e86575590139e5f2",
+      "sourceLessonId": "levantine-everyday-01-06",
+      "sourceVersion": "curriculum-levantine-everyday-01-06-v3"
+    }
+  ]
+}

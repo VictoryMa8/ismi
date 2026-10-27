@@ -129,8 +129,9 @@ homework. Reading a scene alone does not prove spoken competence.
 
 Re-use F06 portraits and F04 dialogue presentation without waiting for F06.1 art.
 F23.1 is the first text release boundary. F23's bounded parent target is a linked
-three-episode text arc; the remaining two episodes need child scopes after the first
-is reviewed. Audio editions need separate scope and evidence. One episode does not
+three-episode text arc; the owner explicitly authorized unpublished F23.2/F23.3
+drafts before first-episode review on October 27. Exact review/rights and
+publication/accessibility gates remain. Audio editions need separate scope and evidence. One episode does not
 complete F23, and the arc does not complete F12's course expansion. F21 external
 media curation stays separate.
 

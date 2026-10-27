@@ -1,0 +1,190 @@
+{
+  "id": "after-a-long-day-03",
+  "courseId": "levantine",
+  "unitId": "levantine-everyday-01",
+  "arcId": "after-a-long-day",
+  "episode": 3,
+  "title": "Catch up tomorrow",
+  "summary": "As their tea break ends, Fattoush and Knafeh turn a vague tomorrow into a shared plan.",
+  "sources": [
+    {
+      "lessonId": "levantine-everyday-01-06",
+      "version": "curriculum-levantine-everyday-01-06-v3"
+    }
+  ],
+  "scenes": [
+    {
+      "title": "Before the break ends",
+      "situation": "Their rest and tea have made room for a short conversation. Before ending the catch-up, Fattoush asks about tomorrow. Knafeh suggests a visit after work.",
+      "lines": [
+        {
+          "speakerId": "fattoush",
+          "text": {
+            "arabic": "شو رح نعمل بكرا؟",
+            "arabizi": "Shū raḥ niʿmal bukra?",
+            "meaning": "What will we do tomorrow?",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        },
+        {
+          "speakerId": "knafeh",
+          "text": {
+            "arabic": "نزور أهلي بعد الشغل؟",
+            "arabizi": "Nzūr ahli baʿd ish-shughl?",
+            "meaning": "Shall we visit my family after work?",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        }
+      ]
+    },
+    {
+      "title": "A missing time",
+      "situation": "The idea sounds good, but after work does not give a clock time. Fattoush asks for the detail they still need.",
+      "lines": [
+        {
+          "speakerId": "fattoush",
+          "text": {
+            "arabic": "تمام. أي ساعة؟",
+            "arabizi": "Tamām. Ayy sāʿa?",
+            "meaning": "Okay. What time?",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        },
+        {
+          "speakerId": "knafeh",
+          "text": {
+            "arabic": "الساعة ستة.",
+            "arabizi": "Is-sāʿa sitte.",
+            "meaning": "At six o’clock.",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        }
+      ]
+    },
+    {
+      "title": "The same plan",
+      "situation": "Fattoush confirms the day, time and whose family they will visit. Knafeh adds tea together afterwards, giving them another chance to catch up.",
+      "lines": [
+        {
+          "speakerId": "fattoush",
+          "text": {
+            "arabic": "تمام، بكرا الساعة ستة نزور أهلك.",
+            "arabizi": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
+            "meaning": "Okay, tomorrow at six we’ll visit your family. (to Knafeh)",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        },
+        {
+          "speakerId": "knafeh",
+          "text": {
+            "arabic": "وبعدين نشرب شاي سوا.",
+            "arabizi": "W-baʿdēn nishrab shāy sawa.",
+            "meaning": "And afterwards we’ll drink tea together.",
+            "audioUrl": null,
+            "recording": null
+          },
+          "sourceIndex": 0
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "whose-family",
+      "kind": "comprehension",
+      "prompt": "Whose family do they plan to visit tomorrow?",
+      "choices": [
+        {
+          "id": "fattoush",
+          "text": "Fattoush’s family.",
+          "rationale": "Knafeh says my family. When Fattoush confirms to him, she says your family."
+        },
+        {
+          "id": "knafeh",
+          "text": "Knafeh’s family.",
+          "rationale": "Knafeh proposes visiting his own family; Fattoush confirms that same family from her perspective."
+        },
+        {
+          "id": "neither",
+          "text": "Neither family; they only plan tea.",
+          "rationale": "Tea comes afterwards. The family visit is part of the agreed plan."
+        }
+      ],
+      "acceptedId": "knafeh",
+      "explanation": "Ahli is my family when Knafeh speaks. Ahlak in Fattoush’s confirmation refers back to his family.",
+      "sourceIndex": 0,
+      "target": "e06-02"
+    },
+    {
+      "id": "agreed-time",
+      "kind": "comprehension",
+      "prompt": "When do they agree to visit?",
+      "choices": [
+        {
+          "id": "tomorrow-six",
+          "text": "Tomorrow at six, after work.",
+          "rationale": "Knafeh suggests after work and gives six; Fattoush confirms tomorrow at six."
+        },
+        {
+          "id": "today-six",
+          "text": "Today at six, after work.",
+          "rationale": "Six is correct, but bukra places the plan tomorrow rather than today."
+        },
+        {
+          "id": "tomorrow-seven",
+          "text": "Tomorrow at seven, after work.",
+          "rationale": "Tomorrow is correct, but the scene agrees on six, not seven."
+        }
+      ],
+      "acceptedId": "tomorrow-six",
+      "explanation": "The final confirmation brings together tomorrow, six o’clock and the family visit after work.",
+      "sourceIndex": 0,
+      "target": "e06-04"
+    },
+    {
+      "id": "confirm-plan",
+      "kind": "response",
+      "prompt": "Reply as Fattoush: confirm tomorrow at six and the visit to Knafeh’s family.",
+      "choices": [
+        {
+          "id": "ask-again",
+          "text": "شو رح نعمل بكرا؟",
+          "help": "Shū raḥ niʿmal bukra?",
+          "meaning": "What will we do tomorrow?",
+          "rationale": "This asks what to do tomorrow instead of confirming the arrangement already made."
+        },
+        {
+          "id": "seven",
+          "text": "الساعة سبعة.",
+          "help": "Is-sāʿa sabʿa.",
+          "meaning": "At seven o’clock.",
+          "rationale": "This gives seven rather than six and leaves out the day and family visit."
+        },
+        {
+          "id": "confirm",
+          "text": "تمام، بكرا الساعة ستة نزور أهلك.",
+          "help": "Tamām, bukra is-sāʿa sitte nzūr ahlak.",
+          "meaning": "Okay, tomorrow at six we’ll visit your family. (to Knafeh)",
+          "rationale": "This preserves all three requested details: tomorrow, six and Knafeh’s family."
+        }
+      ],
+      "acceptedId": "confirm",
+      "explanation": "The confirmation keeps the day and time and uses your family when Fattoush addresses Knafeh. This is assisted written practice.",
+      "sourceIndex": 0,
+      "target": "e06-05"
+    }
+  ],
+  "reviewer": "",
+  "reviewEvidence": "",
+  "rightsEvidence": ""
+}

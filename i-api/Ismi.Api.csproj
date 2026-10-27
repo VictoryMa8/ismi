@@ -12,6 +12,9 @@
     <EmbeddedResource Include="../content/levantine/expansion-20/*-lesson.json" LogicalName="Ismi.LevantineExpansion.%(Filename)%(Extension)" />
     <EmbeddedResource Include="../content/levantine/expansion-20/review-manifest.json" LogicalName="Ismi.LevantineExpansion.review-manifest.json" />
     <EmbeddedResource Include="../content/stories/after-a-long-day/01.pack.json" LogicalName="Ismi.StoryPreview.01.pack.json" />
+    <EmbeddedResource Include="../content/stories/after-a-long-day/revisions/current-source/01.pack.json" LogicalName="Ismi.StoryArcPreview.01.pack.json" />
+    <EmbeddedResource Include="../content/stories/after-a-long-day/02.pack.json" LogicalName="Ismi.StoryArcPreview.02.pack.json" />
+    <EmbeddedResource Include="../content/stories/after-a-long-day/03.pack.json" LogicalName="Ismi.StoryArcPreview.03.pack.json" />
     <EmbeddedResource Include="../content/alphabet/inventory-preview/*.pack.json" LogicalName="Ismi.AlphabetPreview.%(Filename)%(Extension)" />
     <EmbeddedResource Include="../content/alphabet/sources/UNICODE-LICENSE-V3.txt" LogicalName="Ismi.AlphabetPreview.UnicodeLicense.txt" />
     <EmbeddedResource Include="../content/french/meet-01/*-lesson.json" LogicalName="Ismi.FrenchPreview.%(Filename)%(Extension)" />

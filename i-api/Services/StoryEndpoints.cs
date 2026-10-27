@@ -20,6 +20,8 @@ public static class StoryEndpoints
             Secure(c, csrf, () => s.SaveAsync(request, Actor(c), ct)));
         admin.MapPost("/packs/{id}/validate", (string id, StoryCommand request, StoryService s, HttpContext c, IAntiforgery csrf, CancellationToken ct) =>
             Secure(c, csrf, () => s.ValidateAsync(id, request.Version, ct)));
+        admin.MapPost("/packs/{id}/prepare-source-update", (string id, StoryCommand request, StoryService s, HttpContext c, IAntiforgery csrf, CancellationToken ct) =>
+            Secure(c, csrf, () => s.PrepareSourceUpdateAsync(id, request, Actor(c), ct)));
         foreach (var command in new[] { "approve", "publish", "withdraw", "rollback", "authorize-text-preview" })
         { var action = command; admin.MapPost($"/packs/{{id}}/{action}", (string id, StoryCommand request, StoryService s, HttpContext c, IAntiforgery csrf, CancellationToken ct) =>
             Secure(c, csrf, () => s.CommandAsync(id, action, request, Actor(c), ct))); }

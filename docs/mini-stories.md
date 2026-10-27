@@ -5,10 +5,13 @@ Implementation evidence, October 18, 2026. Current state and authorization remai
 
 ## Contract and first episode
 
-The owner requested “Implement F23” October 18. The existing contract sequences a
-three-episode text arc through first-episode review before authoring episodes two
-and three. This implementation provides the shared machinery and the first exact
-candidate, not approval/publication or completion of the three-episode parent.
+The owner requested “Implement F23” October 18. The original contract sequenced a
+three-episode text arc through first-episode review before later authoring. On
+October 27 the owner explicitly selected preparing episodes two and three as
+unpublished drafts, superseding that authoring sequence only. Exact review/rights,
+publication and all release gates remain. The original October 18 implementation
+provided shared machinery and the first candidate; the new drafts are described
+under [episodes two and three](#episodes-two-and-three).
 
 [A little rest](../content/stories/after-a-long-day/01.pack.json) recontextualizes
 six unchanged taught dialogue lines from `levantine-everyday-01-01`, exact local
@@ -29,18 +32,17 @@ The estimated 2–4 minutes is unmeasured and carries no timer. The
 [exact review sheet](../content/stories/after-a-long-day/01-review.md) includes all
 scene lines/checks/rationales and the candidate file SHA-256.
 
-The proposed linked arc (outlines only, pending first-episode review):
+The linked arc now has three review candidates (October 27):
 
 | Episode | Continuity and communicative target | Candidate taught source |
 | --- | --- | --- |
-| 1: A little rest | Discover shared tiredness and accept an offer to rest | Everyday lesson 1 v4 |
-| 2: Tea after the pause | After resting, clarify a drink preference and politely decline sugar | Everyday lesson 3; inspect exact publication before authoring |
-| 3: Catch up tomorrow | Close the visit with a mutually understood next plan | Everyday planning/checkpoint lesson; inspect exact publication before authoring |
+| 1: A little rest | Discover shared tiredness and accept an offer to rest | Everyday lesson 1; original v4 preview retained, unpublished v5-source candidate prepared |
+| 2: Tea after the pause | After resting, clarify a drink preference and politely decline sugar | Everyday lesson 3 v3; unpublished draft |
+| 3: Catch up tomorrow | Close the catch-up by confirming tomorrow, six and Knafeh’s family | Everyday lesson 6 v3; unpublished draft |
 
-No Arabic/check packages for episodes two/three are authored here. Reviewing the
-first episode establishes whether this degree of reused dialogue, scene framing,
-length and comprehension difficulty works before their child scopes are fixed.
-No listening edition or learner-outcome evidence is claimed.
+The owner reviews reuse, framing, length and difficulty across the exact three
+candidates before normal approval/publication. No listening edition or
+learner-outcome evidence is claimed.
 
 ## Review route
 
@@ -68,6 +70,131 @@ require authentication, curriculum approver access and CSRF. Public responses om
 reviewer identities, private review/rights evidence and audits. Private preview
 never persists learner progress or a download. There are no audio endpoints or
 external provider dependencies.
+
+## Source-update drafts
+
+October 27, 2026 — F23.1.2, application **0.0.11**. The original first-story
+package pins Everyday lesson-one v4. F17.5's recorded publication is v5, so the
+original story fails the exact-current-source requirement on a target with that
+publication. The source gate remains strict; no old publication or preview pin
+was changed. This finding comes from repository code/release records, not a new
+live-host inspection.
+
+In Account → Curriculum console → Stories, select the latest saved story version
+and use **Prepare source-update draft**. The protected POST action reads the
+actual target's current regular published sources in the same course/unit,
+checks existing Arabic/Arabizi/meaning, authored roles, response choices and
+taught step IDs, and saves a private draft only if they all match. Missing,
+withdrawn, preview, changed or mismatched sources require manual reconciliation.
+An already-current source set produces an error without a write.
+
+The action uses normal revision conflict/version rules. It never replaces an
+approved/published historical version, carries forward no approval or original
+text-preview exception, and clears reviewer, review evidence and rights evidence.
+The console displays the changed pins and explicit fresh-review requirement.
+Source-version changes alone cannot establish semantic or rights acceptance.
+Approval, publication, source withdrawal handling and offline hash invalidation
+continue through the existing machinery. No automatic startup import occurs.
+
+The [prepared first-episode draft](../content/stories/after-a-long-day/revisions/current-source/01.pack.json)
+changes only the source pin to `curriculum-levantine-everyday-01-01-v5`.
+Its file SHA-256 is `0203e02652ff44170cd56b7690fe13769e3b9fb8ab177b092399f99d855d22d8`.
+All six lines/roles, three checks and response text/help/meanings match the
+recorded F17.5 release input, SHA-256
+`1762dbf74a3dbbe52dc2924fda86197ad60075defceeee9652cea223d196f35b`;
+its accompanying publication record establishes assigned v5 (the release input
+itself still has v4 before the publisher assigns v5).
+The [exact review sheet](../content/stories/after-a-long-day/revisions/current-source/01-review.md)
+contains the complete unchanged scene/check/rationale candidate and remaining
+acceptance items. It is unreviewed/unpublished and cannot inherit the original
+October 18 preview exception. The original file hash remains unchanged.
+
+Verification: the full **78/78 API suite** passes, including **17/17 story API
+tests**. Ten distinct story browser checks pass
+(nine existing checks in the first run; the new console workflow passes after
+narrowing its status locator). The production Vue/TypeScript/PWA build passes and
+the displayed label is Beta 0.0.11. API coverage includes owner/CSRF, stale
+revisions, latest-version selection, immutable history, fresh review/publication
+gates, and unchanged-story rejection for text/help/meaning/role/answer/target,
+course/unit, preview and withdrawn-source mismatches. The real browser workflow
+saves a stale-pin synthetic draft, prepares it through HTTP/SQLite, checks the
+returned pins and cleared evidence, verifies review/publication remain blocked,
+and rejects a repeated update without a write. Only disposable test databases
+were changed. Original candidate SHA-256 and all package/lock versions were checked.
+
+Real screen-reader, physical-device, Safari offline and learner evidence remain
+F23.1 gates. The later October 27 owner reply permits unpublished episodes two/three
+before first-episode review; it grants no review acceptance or publication. This
+addition and the prepared candidate are local/uncommitted, not deployed/published.
+
+## Episodes two and three
+
+October 27, 2026 — the owner selected **Prepare episodes 2–3 as unpublished
+drafts**. F23.2 and F23.3 retain the full episode contract: linked scenes,
+two source-linked comprehension checks, one assisted response with individual
+rationales, exact roles/targets, help/retry/resume, offline/version/identity and
+accessibility requirements. The current deliverable is authored private review
+candidates; the parent is not complete until exact review, target reconciliation,
+publication and required real access evidence pass.
+
+- [Tea after the pause](../content/stories/after-a-long-day/02.pack.json) / [full review sheet](../content/stories/after-a-long-day/02-review.md): six taught lines in three scenes continue the rest with different drink preferences and clarify that declining sugar does not decline the tea or shared break.
+- [Catch up tomorrow](../content/stories/after-a-long-day/03.pack.json) / [full review sheet](../content/stories/after-a-long-day/03-review.md): six taught lines in three scenes resolve a vague plan by confirming tomorrow, six o’clock and Knafeh’s family, with tea afterwards.
+
+The [draft manifest](../content/stories/after-a-long-day/draft-manifest.json)
+records each exact package/source hash, episode/predecessor ID, and the first
+episode’s separate current-source candidate. Scene Arabic, Arabizi, meanings and
+speaker IDs are copied unchanged from the exact F22 source artifacts, not freshly
+composed. Response choices likewise preserve taught text/help/meaning. Source
+version pins come from the recorded [October 13 publication](releases/2026-10-13-recall.md)
+and its audit; this is not a new hosted inspection. Missing/currently changed
+sources must be reconciled on the actual target before acceptance/publication.
+
+All English scene framing, check prompts, explanations and rationales are new
+AI-assisted drafts. Reviewer/review/rights fields remain empty. No rights grant,
+native-expert review, audio or independent production/speaking evidence is
+inferred from source reuse. The original first-story exception remains limited
+to its original package and cannot publish either draft. Normal startup imports
+or publishes neither. Draft text is absent from the learner frontend; the later
+explicit publication path embeds three exact API resources as described below.
+
+Review using Account → Curriculum console → Stories → Import stories JSON;
+select `02.pack.json` or `03.pack.json`, save privately, preview and validate.
+The existing reader supports the complete scenes and checks without software
+changes. This authoring-only follow-up leaves the application version at
+**0.0.11**, with no new deployment or publication.
+
+Validation on October 27:
+
+- **19/19 story API tests pass**, including both real authored packages saved in
+  disposable databases with the recorded v3 source snapshots. Exact text/role/
+  response/target validation reports only the missing human/source-rights review
+  gate. Approval, publication and the first-story exception reject both drafts;
+  public endpoints return 404, and attempts do not change their saved revision.
+- **2/2 new Chromium checks pass** through owner login → JSON import → private
+  save → reader. All six scenes/twelve Arabic lines, both episodes’ six checks,
+  wrong-answer retry, correct responses, stage focus and completion render. No
+  learner progress/download is persisted; public access and publication stay
+  unavailable. Tests modify only their disposable databases.
+- The production Vue/TypeScript/PWA build passes as part of the browser setup.
+  Source/package hashes and manifest predecessor pins were checked against the
+  source artifacts and recorded publication audit. No original first-preview or
+  curriculum package was edited.
+
+Real device/AT/Safari/offline/learner observations remain release gates; private
+previews establish neither a published offline edition nor human acceptance.
+
+## October 27 requested publication and deployment
+
+The owner subsequently requested “publish and deploy” after being told the exact
+three candidates still lacked human/source-rights acceptance. Beta **0.0.12** adds
+a separately pinned, disabled-by-default arc preview exception with the same
+honest unreviewed/text-only notices and an explicit transactional operator
+command. The original October 18 pin remains unchanged. No human review is
+invented, and all normal F23 review/source/access/learner gates remain.
+
+[Exact pins, command, checks, deployment/access state and preservation contract](releases/2026-10-27-story-arc.md).
+Actual publication/deployment must be verified on the existing target; code or
+the release manifest alone does not establish either.
 
 ## Learner and data behavior
 

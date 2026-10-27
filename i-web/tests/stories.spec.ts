@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs'
 import { expect,test,request,type APIRequestContext,type Page } from '@playwright/test'
 import type { StoryDetail,StoryPack } from '../src/stories'
 import type { LessonResponse } from '../src/types'
+const appVersion = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version
 let owner:APIRequestContext
 const id='synthetic-browser-story'
 async function post(c:APIRequestContext,path:string,data:unknown){const csrf=await(await c.get('/api/auth/csrf')).json();return c.post(path,{data,headers:{'X-CSRF-TOKEN':csrf.token}})}
@@ -24,7 +25,7 @@ test.beforeAll(async()=>{
 test.afterAll(async()=>owner?.dispose())
 test.beforeEach(async()=>{const d=await detail();if(d.state.publishedVersion!==1)await command(d,'rollback',1)})
 for(const width of [320,1280])test(`fixed frame, keyboard focus and application version at ${width}px`,async({page},info)=>{
- await page.setViewportSize({width,height:844});await page.goto('/#/about');await expect(page.getByText('Beta 0.0.4',{exact:true}).first()).toBeVisible();await open(page)
+ await page.setViewportSize({width,height:844});await page.goto('/#/about');await expect(page.getByText(`Beta ${appVersion}`,{exact:true}).first()).toBeVisible();await open(page)
  const frame=page.locator('.story-frame'),height=(await frame.boundingBox())!.height
  await expect(frame.getByRole('heading',{name:'Scene 1'})).toBeFocused();await page.getByRole('button',{name:'Show help'}).focus();await page.keyboard.press('Enter');await expect(page.getByRole('button',{name:'Hide help'})).toHaveAttribute('aria-expanded','true')
  await page.getByRole('button',{name:'Continue',exact:true}).click();await expect(frame.getByRole('heading',{name:'Scene 2'})).toBeFocused();expect((await frame.boundingBox())!.height).toBe(height)
@@ -71,4 +72,65 @@ test('unreviewed text-only publication label remains visible in catalog and read
  s.publicationNotice={releaseId:'story-text-preview-2026-10-18',label:'Unreviewed · text-only preview',details:'Linguistic review and source-rights acceptance are pending. No story audio. Not beta content.'}
  s.contentHash=createHash('sha256').update(canonical({...s,contentHash:''})).digest('hex')
  await page.route('**/api/stories',r=>r.fulfill({json:{episodes:[s]}}));await page.goto('/#/practice/stories');await expect(page.locator('.story-notice')).toContainText('Unreviewed · text-only preview');await page.getByRole('button',{name:'Read or resume'}).click();await expect(page.getByRole('dialog').locator('.story-notice')).toContainText('source-rights acceptance are pending')
+})
+
+test('console reconciles stale source pins into a private draft requiring fresh review', async ({ page }) => {
+ const source = (await detail()).state.versions[0]!.pack
+ const pack = { ...source, id: 'source-update-browser-draft', sources: source.sources.map(s => ({ ...s, version: 'stale-source-version' })) }
+ expect((await post(page.request, '/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password' })).ok()).toBeTruthy()
+ await page.goto('/#/account'); await page.getByRole('button', { name: 'Open curriculum console' }).click(); await page.getByRole('button', { name: 'Stories', exact: true }).click()
+ await page.getByLabel('Import stories JSON').setInputFiles({ name: 'stale-story.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(pack)) })
+ await page.getByRole('button', { name: 'Save story draft' }).click()
+ await expect(page.getByText('Story draft saved privately.', { exact: true })).toBeVisible()
+ await page.getByRole('button', { name: 'Prepare source-update draft' }).click()
+ await expect(page.locator('.stories-console [role=status]')).toContainText('Private source-update draft saved.')
+ const updated = JSON.parse(await page.getByLabel('Story pack JSON').inputValue()) as StoryPack
+ expect(updated.sources).toEqual(source.sources)
+ expect(updated.reviewer).toBe(''); expect(updated.reviewEvidence).toBe(''); expect(updated.rightsEvidence).toBe('')
+ expect(updated.scenes).toEqual(source.scenes); expect(updated.checks).toEqual(source.checks)
+ await page.getByRole('button', { name: 'Validate stories' }).click()
+ await expect(page.getByLabel('Story validation')).toContainText('Record exact human linguistic/check/role review')
+ await expect(page.getByRole('button', { name: 'Approve story version' })).toBeDisabled()
+ await expect(page.getByRole('button', { name: 'Publish story version' })).toBeDisabled()
+ await page.getByRole('button', { name: 'Prepare source-update draft' }).click()
+ await expect(page.locator('.stories-console [role=alert]')).toContainText('already current')
+ expect((await page.request.get(`/api/stories/packs/${pack.id}`)).status()).toBe(404)
+})
+
+for (const episode of [2, 3]) test(`authored episode ${episode} imports and completes only in private preview`, async ({ page }) => {
+ const pack = JSON.parse(readFileSync(new URL(`../../content/stories/after-a-long-day/0${episode}.pack.json`, import.meta.url), 'utf8')) as StoryPack
+ expect((await post(page.request, '/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password' })).ok()).toBeTruthy()
+ await page.goto('/#/account'); await page.getByRole('button', { name: 'Open curriculum console' }).click(); await page.getByRole('button', { name: 'Stories', exact: true }).click()
+ await page.getByLabel('Import stories JSON').setInputFiles({ name: `0${episode}.pack.json`, mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(pack)) })
+ await page.getByRole('button', { name: 'Save story draft' }).click()
+ await expect(page.getByText('Story draft saved privately.', { exact: true })).toBeVisible()
+ await page.getByRole('button', { name: 'Preview stories' }).click()
+ const dialog = page.getByRole('dialog')
+ await expect(dialog.getByText('Private draft · unreviewed · text only')).toBeVisible()
+ for (const scene of pack.scenes) {
+  await expect(dialog.getByRole('heading', { name: scene.title, exact: true })).toBeFocused()
+  for (const line of scene.lines) await expect(dialog.getByText(line.text.arabic, { exact: true })).toBeVisible()
+  await dialog.getByRole('button', { name: 'Continue', exact: true }).click()
+ }
+ for (const [index, check] of pack.checks.entries()) {
+  await expect(dialog.getByRole('heading', { name: check.prompt, exact: true })).toBeFocused()
+  if (index === 0) {
+   await dialog.getByRole('radio').nth(check.choices.findIndex(c => c.id !== check.acceptedId)).check()
+   await dialog.getByRole('button', { name: 'Check response' }).click()
+   await expect(dialog.getByRole('status')).toContainText('Try again.')
+  }
+  await dialog.getByRole('radio').nth(check.choices.findIndex(c => c.id === check.acceptedId)).check()
+  await dialog.getByRole('button', { name: 'Check response' }).click()
+  await expect(dialog.getByRole('status')).toContainText('That fits.')
+  await dialog.getByRole('button', { name: 'Continue', exact: true }).click()
+ }
+ await expect(dialog.getByRole('heading', { name: 'Story complete' })).toBeFocused()
+ await expect(dialog.getByText(/not a speaking or proficiency assessment/)).toBeVisible()
+ await page.keyboard.press('Escape')
+ await page.getByRole('button', { name: 'Validate stories' }).click()
+ await expect(page.getByLabel('Story validation')).toContainText('Record exact human linguistic/check/role review')
+ await expect(page.getByRole('button', { name: 'Approve story version' })).toBeDisabled()
+ await expect(page.getByRole('button', { name: 'Publish story version' })).toBeDisabled()
+ expect((await page.request.get(`/api/stories/packs/${pack.id}`)).status()).toBe(404)
+ expect((await saved(page)).filter(s => s.key.includes(pack.id))).toEqual([])
 })

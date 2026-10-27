@@ -848,8 +848,10 @@ dialogues/F06 roles; F21 external cultural recommendations remain separate.
 
 **Bounded target:** a linked three-episode Levantine text arc using taught language,
 with source-linked comprehension/response practice and offline delivery. Start with
-F23.1; scope the remaining two episodes after reviewing the first. Audio editions
-are a separate extension dependent on F09, not a gate for the text arc.
+F23.1. On October 27 the owner explicitly selected unpublished drafts for F23.2
+and F23.3 before first-episode review; exact human/source-rights review and all
+publication/release gates remain. Audio editions are a separate extension
+dependent on F09, not a gate for the text arc.
 
 **Done when:** all three episodes meet F23.1's publication, practice, offline,
 version/identity and accessibility criteria, preserve a coherent arc and have distinct
@@ -879,8 +881,18 @@ typed/graded, otherwise report assisted evidence honestly. F09 is needed only fo
 
 **Evidence:** [implementation, first candidate and verification](../mini-stories.md); [expanded narrative scope and checks](../../docs/learning-engagement-plan.md#f23-recurring-mini-stories).
 
-**Parent limit:** F23's remaining two text episodes need their own child scopes;
-listening editions need separately scoped F09 recordings/transcripts.
+**Parent limit:** F23.2 and F23.3 own the remaining text episodes under the same
+review/publication/practice/offline/version/identity/accessibility contract.
+Authored private drafts do not complete those release scopes. Listening editions
+need separately scoped F09 recordings/transcripts.
+
+**Later episode evidence:** [Draft packages, exact review sheets, source pins and validation](../mini-stories.md#episodes-two-and-three).
+
+**Source reconciliation:** F23.1.2 prepares private source-update drafts only when
+the existing text, roles, response choices and taught targets still match current
+regular publications. Source changes clear exact review/rights evidence and never
+inherit approval or the original preview exception. Historical published versions
+remain immutable. [Contract and verification](../mini-stories.md#source-update-drafts).
 
 ### F24 Multi-language foundation and parallel study
 

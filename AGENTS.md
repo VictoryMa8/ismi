@@ -84,6 +84,23 @@ on the existing preview. It grants no reviewed-content claim, beta inclusion,
 changed/additional episode publication or human acceptance; the normal review path
 and subsequent-episode review dependency remain. Current delivery belongs in F23.
 
+On October 27 the owner explicitly selected preparing F23 episodes two and three
+as unpublished drafts. This supersedes the first-episode-review-before-authoring
+sequence for those drafts only; it does not record review/source-rights acceptance,
+approve changed/additional preview publication or waive accessibility/learner gates.
+The exact October 18 first-episode preview pin remains unchanged.
+
+Later October 27, after being told the three candidates still lacked review/rights
+acceptance, the owner requested “publish and deploy”. Release the three exact
+candidates pinned in `content/stories/after-a-long-day/text-preview-release-2026-10-27.json`
+on the existing development preview as **unreviewed, text-only**. This includes
+the separate v5-source first-episode candidate and episodes two/three. Preserve
+the original first-episode package/publication as immutable history and keep
+reviewer/review/rights fields empty; do not fabricate normal approval. No changed
+or additional content, beta inclusion, real-device/AT or learner acceptance is
+authorized or implied. Use the explicit transactional publication command;
+normal startup must not publish the arc.
+
 On October 19 the owner revised the current F12 completion cycle: author twenty
 additional Levantine lessons (weeks 3–6, course orders 11–30), move the final thirty
 to a separate roadmap checkpoint, complete the current cycle, commit, deploy and
