@@ -3,7 +3,7 @@
   "applicationVersion": "0.0.12",
   "target": "existing Ismi development preview only",
   "authorization": "Owner requested publish and deploy on October 27 after being told the exact candidates were unreviewed and source-rights acceptance remained pending. Publish these three as unreviewed, text-only previews; do not record normal approval or human/source acceptance.",
-  "publication": "pending; this manifest is authorization and pins, not delivery evidence",
+  "publication": "published under the exact unreviewed text-only exception; see publication-2026-10-27.json for target-verified delivery evidence",
   "configuration": "Curriculum:AllowStoryArcTextPreview",
   "command": "--publish-story-arc-text-preview true",
   "packages": [

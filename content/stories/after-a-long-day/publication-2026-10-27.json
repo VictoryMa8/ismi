@@ -1,0 +1,71 @@
+{
+  "releaseDate": "2026-10-27",
+  "verifiedAtUtc": "2026-10-28T00:37:38.158502+00:00",
+  "target": "existing development preview; not beta",
+  "applicationVersion": "0.0.12",
+  "apiRevision": "f52ed7e369c19776bef91bd564193c6da2736c1f",
+  "releaseId": "story-arc-text-preview-2026-10-27",
+  "publicationMode": "owner-authorized-unreviewed-text-only-preview",
+  "linguisticReview": "pending",
+  "sourceRightsAcceptance": "pending",
+  "reviewer": "",
+  "reviewEvidence": "",
+  "rightsEvidence": "",
+  "normalApprovedBy": null,
+  "storyAudio": "none",
+  "betaIncluded": false,
+  "publications": [
+    {
+      "id": "after-a-long-day-01",
+      "version": 2,
+      "savedContentHash": "9c0e64961c36261d6b5b97b675b8d1670110f40f4c4430147fb572450612c0d7",
+      "publishedAtUtc": "2026-10-28T00:36:54.4332555Z",
+      "auditActions": [
+        "draft-saved",
+        "authorize-text-preview",
+        "publish"
+      ],
+      "packageFile": "revisions/current-source/01.pack.json",
+      "packageSha256": "0203e02652ff44170cd56b7690fe13769e3b9fb8ab177b092399f99d855d22d8",
+      "sourceVersion": "curriculum-levantine-everyday-01-01-v5",
+      "publicContentHash": "2b2ecb196e5e55ae9e3f0c579512715d5dc23948c4707fbb76b1d796a72de087"
+    },
+    {
+      "id": "after-a-long-day-02",
+      "version": 1,
+      "savedContentHash": "5612a81b13636fbd90932ffa9b56975e77f6ac6636eea29e3d29eb7e478c7d17",
+      "publishedAtUtc": "2026-10-28T00:36:54.4768776Z",
+      "auditActions": [
+        "draft-saved",
+        "authorize-text-preview",
+        "publish"
+      ],
+      "packageFile": "02.pack.json",
+      "packageSha256": "a626b2410f688142b09545aae209313c92dd98e855efec35fc5e28eba5665c9c",
+      "sourceVersion": "curriculum-levantine-everyday-01-03-v3",
+      "publicContentHash": "24ca42472fa53ba9519d02c271cdb4808392938466024283fdf67670b62515d1"
+    },
+    {
+      "id": "after-a-long-day-03",
+      "version": 1,
+      "savedContentHash": "cd484addd4dff64b220475555a143b6acb3c6f22d6e50fc737e750556284fa3b",
+      "publishedAtUtc": "2026-10-28T00:36:54.5137276Z",
+      "auditActions": [
+        "draft-saved",
+        "authorize-text-preview",
+        "publish"
+      ],
+      "packageFile": "03.pack.json",
+      "packageSha256": "4d67543fc4e53b1c8d257d050f588dfbf0ea209083578ac8f1b5990549642576",
+      "sourceVersion": "curriculum-levantine-everyday-01-06-v3",
+      "publicContentHash": "2aa2d63e1ce316c8a1fbdd36a7ac60f0115c8cc61d8c31d1c80ec2cc0fec82b9"
+    }
+  ],
+  "preservation": {
+    "unchangedNonStoryTables": 17,
+    "unchangedRecordingAndKeyFiles": 7,
+    "originalFirstEpisodeVersionAndAudit": "preserved; only old version status became superseded",
+    "sqliteIntegrity": "ok"
+  },
+  "evidence": "../../../docs/releases/2026-10-27-story-arc.md"
+}

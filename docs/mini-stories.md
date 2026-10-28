@@ -1,5 +1,10 @@
 # F23 recurring mini-stories
 
+October 27 delivery: F23.4 deployed Beta 0.0.12 and published the exact three
+unreviewed/text-only previews (v2/1/1). [Target verification and preservation evidence](releases/2026-10-27-story-arc.md#delivered-october-27-americachicago).
+Earlier preparation notes below record the state at that step; normal
+linguistic/source-rights/access/learner acceptance remains pending.
+
 Implementation evidence, October 18, 2026. Current state and authorization remain in
 [ROADMAP.md](../ROADMAP.md#f23-recurring-mini-stories).
 
