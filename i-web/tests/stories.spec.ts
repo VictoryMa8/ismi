@@ -79,7 +79,9 @@ test('console reconciles stale source pins into a private draft requiring fresh 
  const pack = { ...source, id: 'source-update-browser-draft', sources: source.sources.map(s => ({ ...s, version: 'stale-source-version' })) }
  expect((await post(page.request, '/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password' })).ok()).toBeTruthy()
  await page.goto('/#/account'); await page.getByRole('button', { name: 'Open curriculum console' }).click(); await page.getByRole('button', { name: 'Stories', exact: true }).click()
+ await expect(page.getByLabel('Import stories JSON')).toBeEnabled()
  await page.getByLabel('Import stories JSON').setInputFiles({ name: 'stale-story.json', mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(pack)) })
+ await expect(page.locator('.stories-console [role=status]')).toContainText('File loaded. Save a private draft before validation.')
  await page.getByRole('button', { name: 'Save story draft' }).click()
  await expect(page.getByText('Story draft saved privately.', { exact: true })).toBeVisible()
  await page.getByRole('button', { name: 'Prepare source-update draft' }).click()
@@ -101,7 +103,9 @@ for (const episode of [2, 3]) test(`authored episode ${episode} imports and comp
  const pack = JSON.parse(readFileSync(new URL(`../../content/stories/after-a-long-day/0${episode}.pack.json`, import.meta.url), 'utf8')) as StoryPack
  expect((await post(page.request, '/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password' })).ok()).toBeTruthy()
  await page.goto('/#/account'); await page.getByRole('button', { name: 'Open curriculum console' }).click(); await page.getByRole('button', { name: 'Stories', exact: true }).click()
+ await expect(page.getByLabel('Import stories JSON')).toBeEnabled()
  await page.getByLabel('Import stories JSON').setInputFiles({ name: `0${episode}.pack.json`, mimeType: 'application/json', buffer: Buffer.from(JSON.stringify(pack)) })
+ await expect(page.locator('.stories-console [role=status]')).toContainText('File loaded. Save a private draft before validation.')
  await page.getByRole('button', { name: 'Save story draft' }).click()
  await expect(page.getByText('Story draft saved privately.', { exact: true })).toBeVisible()
  await page.getByRole('button', { name: 'Preview stories' }).click()
