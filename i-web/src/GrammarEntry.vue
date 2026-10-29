@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ReadingHelp from './ReadingHelp.vue'
 import { computed } from 'vue'
 import type { LessonResponse } from './types'
 import { textAttributes } from './courses'
@@ -14,7 +15,7 @@ const entry = computed(() => props.lesson.languageSupport?.references.find(r => 
       <li v-for="i in entry.exampleCardIndexes" :key="i">
         <template v-if="lesson.introduction?.teachingCards?.[i]">
           <p class="reference-target" v-bind="textAttributes(lesson.trackId)">{{ lesson.introduction.teachingCards[i]!.phrase.arabic }}</p>
-          <p dir="ltr">{{ lesson.introduction.teachingCards[i]!.phrase.arabizi }}</p>
+          <p dir="ltr"><ReadingHelp :text="lesson.introduction.teachingCards[i]!.phrase.arabizi" :course="lesson.trackId" /></p>
           <p>{{ lesson.introduction.teachingCards[i]!.phrase.meaning }}</p>
           <button v-if="linkContexts" type="button" @click="$emit('open-lesson', lesson.id, i)">Open lesson: {{ lesson.title }} · Phrase {{ i + 1 }}</button>
         </template>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ReadingHelp from './ReadingHelp.vue'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { BookOpen, Download, Search, Volume2 } from '@lucide/vue'
 import BackControl from './BackControl.vue'
@@ -262,13 +263,13 @@ onBeforeUnmount(() => { epoch++; closePractice(true); document.removeEventListen
       </template>
       <article v-else class="alphabet-detail">
         <BackControl @click="select(null)">Back to letters</BackControl>
-        <div class="alphabet-letter-title"><span class="alphabet-hero" v-bind="textAttributes(courseId)">{{ scriptEntry?.text }}</span><div><h2 ref="letterHeading" tabindex="-1">{{ entry.name }}</h2><p>{{ entry.help }}</p></div></div>
+        <div class="alphabet-letter-title"><span class="alphabet-hero" v-bind="textAttributes(courseId)">{{ scriptEntry?.text }}</span><div><h2 ref="letterHeading" tabindex="-1">{{ entry.name }}</h2><p><ReadingHelp :text="entry.help" :course="courseId" /></p></div></div>
         <p>{{ entry.note }}</p>
         <div class="alphabet-actions" v-if="entry.nameAudio.url || entry.soundAudio.url"><button v-if="entry.nameAudio.url" type="button" class="secondary-action" data-ui-sound="silent" @click="play(entry.nameAudio.url)"><Volume2 :size="18" aria-hidden="true" />Play name</button><button v-if="entry.soundAudio.url" type="button" class="secondary-action" data-ui-sound="silent" @click="play(entry.soundAudio.url)"><Volume2 :size="18" aria-hidden="true" />Play sound</button><button v-if="playingUrl" type="button" class="secondary-action" data-ui-sound="silent" @click="stopAudio">Stop audio</button></div>
         <p v-if="entry.soundContext"><strong>Sound context:</strong> {{ entry.soundContext }}</p><p v-if="entry.soundAudio.transcript">Sound transcript: <span v-bind="textAttributes(courseId)">{{ entry.soundAudio.transcript }}</span></p>
         <div class="alphabet-forms"><div v-for="f in scriptEntry?.forms" :key="f.label"><strong>{{ f.label }}</strong><span v-bind="textAttributes(courseId)">{{ f.text }}</span><small>{{ f.note }}</small></div></div>
         <h3 v-if="entry.examples.length">Words</h3>
-        <div class="alphabet-examples"><article v-for="w in entry.examples" :key="w.id"><p class="alphabet-word" v-bind="textAttributes(courseId)"><AlphabetWord :text="w.text" :target="w.target" :occurrences="w.occurrences" /></p><p><strong>{{ w.meaning }}</strong></p><p>{{ w.help }}</p><p>Find <bdi v-bind="textAttributes(courseId)">{{ w.target }}</bdi> · {{ w.occurrences.length }} {{ w.occurrences.length === 1 ? 'occurrence' : 'occurrences' }}.</p><p>{{ w.note }}</p><button v-if="w.audio.url" type="button" class="secondary-action" data-ui-sound="silent" :aria-label="`Play word: ${w.meaning}`" @click="play(w.audio.url)"><Volume2 :size="18" aria-hidden="true" />Play word</button></article></div>
+        <div class="alphabet-examples"><article v-for="w in entry.examples" :key="w.id"><p class="alphabet-word" v-bind="textAttributes(courseId)"><AlphabetWord :text="w.text" :target="w.target" :occurrences="w.occurrences" /></p><p><strong>{{ w.meaning }}</strong></p><p><ReadingHelp :text="w.help" :course="courseId" /></p><p>Find <bdi v-bind="textAttributes(courseId)">{{ w.target }}</bdi> · {{ w.occurrences.length }} {{ w.occurrences.length === 1 ? 'occurrence' : 'occurrences' }}.</p><p>{{ w.note }}</p><button v-if="w.audio.url" type="button" class="secondary-action" data-ui-sound="silent" :aria-label="`Play word: ${w.meaning}`" @click="play(w.audio.url)"><Volume2 :size="18" aria-hidden="true" />Play word</button></article></div>
         <button v-if="entry.activities.length" type="button" class="primary-action" @click="begin()">Practice this letter</button>
         <details><summary>Sources and version</summary><p>{{ pack.inventoryId }} v{{ pack.inventoryVersion }} · {{ pack.helpConvention }}</p><ul><li v-for="s in pack.sources.filter(s => entry?.sourceIds.includes(s.id) || entry?.examples.some(w => w.sourceIds.includes(s.id)))" :key="s.id">{{ s.citation }} · {{ s.locator }} · {{ s.version }}</li></ul><details v-if="pack.licenseText"><summary>Unicode license</summary><pre class="alphabet-license">{{ pack.licenseText }}</pre></details></details>
       </article>

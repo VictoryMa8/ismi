@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { listenReadingViewport } from './readingViewport';
+import ReadingComfort from './ReadingComfort.vue';
+import ReadingHelp from './ReadingHelp.vue';
+import { loadReading, listenReading } from './readingComfort';
 import RecordingAttribution from './RecordingAttribution.vue';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import {
@@ -106,6 +110,12 @@ const reviewAudioPlaying = ref(false);
 const alphabetAudioPlaying = ref(false);
 const reviewScope = ref('guest');
 const dashboardScope = ref('');
+watch(reviewScope, scope => { void loadReading(scope); }, { immediate: true });
+const stopReadingListener = listenReading();
+onBeforeUnmount(stopReadingListener);
+let stopReadingViewport: (() => void) | undefined;
+onMounted(() => { stopReadingViewport = listenReadingViewport(); });
+onBeforeUnmount(() => stopReadingViewport?.());
 const startupLoading = ref(true);
 const dashboardLoads = ref(0);
 const dashboardUnavailable = ref(false);
@@ -971,7 +981,7 @@ async function saveStartedLesson() {
   try { await storeStartedLesson(scope, lesson.value.trackId, state); }
   catch { /* An open lesson remains usable when device storage is unavailable. */ }
 }
-watch([currentStepIndex, introductionOpen, responseMode, selectedAnswer, attemptFeedback, showEnglishHelp,
+watch([currentStepIndex, introductionOpen, responseMode, selectedAnswer, attemptFeedback, practiceHelpUsed, showEnglishHelp,
   showAnswerMeanings, teachingCheckpoint, savedPieces, lessonFinished], () => {
   if (lessonOpen.value && !restoringLesson) void saveStartedLesson();
 }, { deep: true });
@@ -1937,6 +1947,7 @@ async function finishLesson() {
             Sign in to sync progress across devices.
           </p>
         </template>
+        <ReadingComfort :course="viewedCourse" />
         <section class="experience-setting" aria-label="Your experience">
           <SoundToggle />
           <div>
@@ -1984,6 +1995,7 @@ async function finishLesson() {
           <h2 id="lesson-title">{{ lesson?.title ?? 'Your lesson' }}</h2>
         </div>
         <div class="lesson-header-controls">
+          <ReadingComfort :course="lesson?.trackId ?? viewedCourse" />
           <SoundToggle /><button
             ref="lessonCloseButton"
             class="close-button"
@@ -2156,7 +2168,7 @@ async function finishLesson() {
                         {{ currentStep.prompt.arabic }}
                       </p>
                       <p class="arabizi-prompt">
-                        {{ currentStep.prompt.arabizi }}
+                        <ReadingHelp :text="currentStep.prompt.arabizi" :course="lesson?.trackId" @reveal="practiceHelpUsed = true" />
                       </p>
                       <p
                         v-if="showEnglishHelp || attemptFeedback"
@@ -2325,13 +2337,7 @@ async function finishLesson() {
                           )?.arabic
                         }}
                       </p>
-                      <p>
-                        {{
-                          currentStep.answers.find(
-                            (a) => a.id === attemptFeedback?.correctAnswerId,
-                          )?.arabizi
-                        }}
-                      </p>
+                      <p><ReadingHelp :text="currentStep.answers.find(a => a.id === attemptFeedback?.correctAnswerId)?.arabizi" :course="lesson?.trackId" /></p>
                     </div>
                     <p>{{ attemptFeedback.explanation }}</p>
                     <template v-for="(card, cardIndex) in lesson.introduction?.teachingCards ?? []" :key="cardIndex">

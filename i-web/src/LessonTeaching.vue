@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ReadingHelp from './ReadingHelp.vue'
 import { computed, nextTick, ref, watch } from 'vue';
 import {
   ArrowLeft,
@@ -152,7 +153,7 @@ async function back() {
             <template v-if="cards[cardIndex]">
               <p v-bind="textAttributes(lesson.trackId)">{{ cards[cardIndex]!.phrase.arabic }}</p>
               <details><summary>{{ cards[cardIndex]!.phrase.arabizi ? 'Show pronunciation help and meaning' : 'Show meaning' }}</summary>
-                <p v-if="cards[cardIndex]!.phrase.arabizi" dir="ltr">{{ cards[cardIndex]!.phrase.arabizi }}</p>
+                <p v-if="cards[cardIndex]!.phrase.arabizi" dir="ltr"><ReadingHelp :text="cards[cardIndex]!.phrase.arabizi" :course="lesson.trackId" /></p>
                 <p>{{ cards[cardIndex]!.phrase.meaning }}</p>
               </details>
             </template>
@@ -200,7 +201,7 @@ async function back() {
                 <strong v-else>{{ turn.speaker }}</strong>
                 <p v-bind="textAttributes(lesson.trackId)">{{ turn.line.arabic }}</p>
                 <p class="phrase-transliteration" dir="ltr">
-                  {{ turn.line.arabizi }}
+                  <ReadingHelp :text="turn.line.arabizi" :course="lesson.trackId" />
                 </p>
                 <p class="phrase-meaning">{{ turn.line.meaning }}</p>
               </li>
@@ -228,7 +229,7 @@ async function back() {
                 {{ card.phrase.arabic }}
               </p>
               <p class="phrase-transliteration" dir="ltr">
-                {{ card.phrase.arabizi }}
+                <ReadingHelp :text="card.phrase.arabizi" :course="lesson.trackId" />
               </p>
               <p class="phrase-meaning">{{ card.phrase.meaning }}</p>
             </div>
@@ -241,7 +242,7 @@ async function back() {
               <div v-for="(chunk, n) in card.chunks" :key="n">
                 <dt v-bind="textAttributes(lesson.trackId)">{{ chunk.arabic }}</dt>
                 <dd>
-                  <span dir="ltr">{{ chunk.arabizi }}</span
+                  <span dir="ltr"><ReadingHelp :text="chunk.arabizi" :course="lesson.trackId" /></span
                   ><strong>{{ chunk.meaning }}</strong>
                 </dd>
               </div>

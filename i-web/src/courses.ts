@@ -1,3 +1,4 @@
+import { readingStyle } from './readingComfort'
 import type { LessonResponse } from './types'
 
 export const courses = [
@@ -16,7 +17,7 @@ export const courseGroups = courses.filter(course => course.id === course.groupI
 export function groupFor(id?: string) { return courseGroups.find(group => group.id === courseFor(id).groupId)! }
 export function textAttributes(id?: string) {
   const course = courseFor(id)
-  return { lang: course.tag, dir: course.direction, 'data-script': course.font }
+  return { lang: course.tag, dir: course.direction, 'data-script': course.font, style: readingStyle(course.id) }
 }
 
 // Adapt in memory only. Published JSON, IDs, versions and IndexedDB records remain intact.

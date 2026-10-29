@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import ReadingComfort from './ReadingComfort.vue'
+import { textAttributes } from './courses'
+import ReadingHelp from './ReadingHelp.vue'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { ApiRequestError, getLesson } from './api'
 import { cacheLesson, getCachedLesson, getReviewHistory, removeCachedLesson, saveReviewAttempt } from './offline'
@@ -309,7 +312,7 @@ onBeforeUnmount(() => {
       <section ref="dialog" class="lesson-sheet" role="dialog" aria-modal="true" aria-labelledby="recall-title" @keydown="trap">
         <header class="lesson-sheet-header">
           <h2 id="recall-title">Write a response</h2>
-          <div class="lesson-header-controls"><SoundToggle /><button ref="closeButton" class="close-button" :disabled="busy" aria-label="Close writing practice" @click="close">×</button></div>
+          <div class="lesson-header-controls"><ReadingComfort :course="'levantine'" /><SoundToggle /><button ref="closeButton" class="close-button" :disabled="busy" aria-label="Close writing practice" @click="close">×</button></div>
         </header>
         <div class="practice-topline"><span>{{ finished ? 'Complete' : `Target ${index + 1} of ${queue.length}` }}</span></div>
         <LessonScroll>
@@ -329,13 +332,13 @@ onBeforeUnmount(() => {
               <label for="recall-input-mode">Write in</label>
               <select id="recall-input-mode" v-model="inputMode" :disabled="!!result || busy"><option value="arabizi">Arabizi / transliteration</option><option value="arabic">Arabic</option></select>
               <label for="recall-answer">Your response</label>
-              <textarea id="recall-answer" ref="field" v-model="answer" :lang="inputMode === 'arabic' ? 'ar' : 'en'" :dir="inputMode === 'arabic' ? 'rtl' : 'ltr'" :disabled="!!result || busy" maxlength="500" rows="3" autocomplete="off" autocorrect="off" spellcheck="false" />
+              <textarea id="recall-answer" ref="field" v-model="answer" :lang="inputMode === 'arabic' ? 'ar' : 'en'" :style="inputMode === 'arabic' ? textAttributes('levantine').style : {}" :dir="inputMode === 'arabic' ? 'rtl' : 'ltr'" :disabled="!!result || busy" maxlength="500" rows="3" autocomplete="off" autocorrect="off" spellcheck="false" />
               <p class="review-origin">Your typed response is kept only for this session unless you send a report.</p>
               <div class="review-actions"><button class="secondary-action" :disabled="busy" @click="assistance('hint')">Hint</button><button class="secondary-action" :disabled="busy" @click="assistance('model')">Show model</button></div>
               <p v-if="help === 'hint'">{{ turn.target.hint }}</p>
               <div v-if="help === 'model' || result" class="recall-models">
                 <h4>Accepted responses</h4>
-                <p v-for="model in turn.target.acceptedAnswers" :key="model.arabic"><span class="arabic-prompt" lang="ar" dir="rtl">{{ model.arabic }}</span><br>{{ model.arabizi }}<br>{{ model.meaning }}<br>{{ model.rationale }}</p>
+                <p v-for="model in turn.target.acceptedAnswers" :key="model.arabic"><span class="arabic-prompt" v-bind="textAttributes('levantine')">{{ model.arabic }}</span><br><ReadingHelp :text="model.arabizi" :course="'levantine'" /><br>{{ model.meaning }}<br>{{ model.rationale }}</p>
               </div>
               <div v-if="result" class="feedback-panel" role="status">
                 <h4>{{ result.kind === 'accepted' ? 'That fits.' : result.kind === 'context-error' ? 'Check the situation.' : 'Unable to judge.' }}</h4>

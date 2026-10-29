@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ReadingHelp from './ReadingHelp.vue'
 import PhraseAnatomy from './PhraseAnatomy.vue';
 import RecordingAttribution from './RecordingAttribution.vue';
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
@@ -137,7 +138,7 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
       <ul class="glossary-list">
         <li v-for="entry in visible" :key="entryKey(entry)" class="glossary-entry">
           <p class="glossary-arabic" v-bind="textAttributes(entry.trackId)">{{ entry.arabic }}</p>
-          <p dir="ltr">{{ entry.arabizi }}</p>
+          <p dir="ltr"><ReadingHelp :text="entry.arabizi" :course="entry.trackId" /></p>
           <p>{{ entry.meaning }}</p>
           <small>{{ trackName(entry.trackId) }} · {{ dialectName(entry.dialect) }} · {{ entry.register }} · {{ entry.kind }}</small>
           <p v-if="glossaryCaution(entry)" class="glossary-caution">{{ glossaryCaution(entry) }}</p>

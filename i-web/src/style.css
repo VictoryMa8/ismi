@@ -2152,3 +2152,33 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--teal); outline-
 
 .msa-path-actions { display: flex; flex-wrap: wrap; gap: .65rem; }
 .msa-path-actions [aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+/* F33: scale authored text only; retain language, direction and intact text nodes. */
+[data-script] { overflow-wrap: anywhere; min-width: 0; max-width: 100%; }
+.reading-help { overflow-wrap: anywhere; }
+.reading-comfort-panel { color: var(--ink); background: var(--paper); border: 2px solid var(--teal); border-radius: 12px; width: min(480px, calc(100% - 24px)); max-height: calc(var(--reading-viewport, 100dvh) - 24px); padding: 20px; overflow: auto; box-sizing: border-box; }
+.reading-comfort-panel::backdrop { background: #152a22a6; }
+.reading-comfort-panel label { display: grid; gap: 6px; margin-block: 12px; font-weight: 650; }
+.reading-comfort-panel select { width: 100%; min-height: 44px; font: inherit; color: inherit; background: white; }
+.reading-preview { overflow-wrap: anywhere; border-block: 1px solid var(--line); padding-block: 10px; }
+.reading-comfort-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.lesson-header-controls { flex-wrap: wrap; justify-content: flex-end; }
+.lesson-overlay { top: var(--reading-viewport-top, 0px); bottom: auto; height: var(--reading-viewport, 100dvh); box-sizing: border-box; }
+.lesson-sheet { height: min(860px, calc(var(--reading-viewport, 100dvh) - 48px)); }
+@media (max-width: 600px) {
+  .lesson-sheet { height: var(--reading-viewport, 100dvh); }
+  .lesson-sheet-header { gap: 8px; padding: 10px 14px; }
+  .lesson-header-controls { gap: 4px; }
+}
+@media (max-height: 500px) {
+  .lesson-sheet-header { padding: 6px 12px; }
+  .lesson-sheet-header h2 { font-size: 1rem; }
+  .journey-rail { padding-block: 4px; }
+  .coach-actions, .lesson-actions { min-height: 48px; padding: 6px 12px; }
+}
+.reading-comfort-trigger { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; }
+@media (max-width: 600px) {
+  .lesson-header-controls .reading-comfort-trigger { min-width: 44px; justify-content: center; }
+  .lesson-header-controls .reading-comfort-trigger span { display: none; }
+  .lesson-header-controls { flex-shrink: 0; }
+}

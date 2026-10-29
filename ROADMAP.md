@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 27, 2026 · **Single source of current feature state and next work.**
+Updated October 28, 2026 · **Single source of current feature state and next work.**
 
 ## Agent entry
 
@@ -160,6 +160,8 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F33 · Reading comfort and mobile lesson ergonomics](#f33-reading-comfort-and-mobile-lesson-ergonomics) | Owner/tester: actual Safari/VoiceOver and Android/TalkBack keyboard/IME/reading/offline sessions; commit/push authorized October 28; hosted deployment unverified. |
+| [F33.3 · Reading comfort verification and delivery](#f333-reading-comfort-verification-and-delivery) | Owner/tester: actual Safari/VoiceOver and Android/TalkBack keyboard/IME/reading/offline sessions; commit/push authorized October 28; hosted deployment unverified. |
 | [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Owner/agent: perform actual screen-reader/device checks; application and exact owner-approved lesson-one v5 are delivered. |
 | [F21.4 · Availability upkeep and corrections](#f214-availability-upkeep-and-corrections) | Agent/owner: execute one real unavailable-item/replacement/recheck cycle once F21.1 content is accepted. |
 | [F21.5 · Verification and authorized release](#f215-verification-and-authorized-release) | Agent/owner: finish real media checks and AT; publish only exact approved revisions; application rollout already verified. |
@@ -175,6 +177,10 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F32 · Downloads and recovery center](#f32-downloads-and-recovery-center) | Owner: authorize F32.1 against the prepared contract. Agent then builds inventory/transfers, learner controls and acceptance/delivery in order. |
+| [F32.1 · Download inventory and safe transfers](#f321-download-inventory-and-safe-transfers) | Owner: authorize software work. Agent then adds inventory/state and safe retry/update/removal primitives over existing caches. |
+| [F32.2 · Downloads interface and recovery controls](#f322-downloads-interface-and-recovery-controls) | Agent after F32.1 and implementation authorization: add Account → Downloads, course groups, storage, retry/update/removal and scoped sync recovery. |
+| [F32.3 · Downloads verification and delivery](#f323-downloads-verification-and-delivery) | Agent after F32.2: run fault/recovery/access checks. Owner/tester supplies real device sessions; owner separately authorizes app rollout. |
 | [F12.6 · Remaining thirty Levantine lessons](#f126-remaining-thirty-levantine-lessons) | Owner: resume at a separate roadmap checkpoint after exact first-batch review/outcome dispositions; agent then bounds weeks 7–12. |
 | [F25.4 · French remaining units and reference material](#f254-french-remaining-units-and-reference-material) | Reviewer/agent: use first-unit review/pilot before bounded units 2–12 batches. |
 | [F25.6 · French pilot, publication and release evidence](#f256-french-pilot-publication-and-release-evidence) | Owner/reviewer: accepted text/audio and agreed setup precede the prepared pilot protocol. |
@@ -196,6 +202,8 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F33.1 · Reading preferences and controls](#f331-reading-preferences-and-controls) | Software complete locally; physical-device/access evidence and authorized rollout remain F33.3. |
+| [F33.2 · Reading surfaces and mobile input](#f332-reading-surfaces-and-mobile-input) | Software complete locally; physical-device/access evidence and authorized rollout remain F33.3. |
 | [F23.4 · Exact three-story development preview](#f234-exact-three-story-development-preview) | Beta 0.0.12 deployed and exact v2/1/1 unreviewed/text-only previews published; source/hash/history/data/assets and Vercel verified. Normal F23 review/rights/access/learner gates remain. |
 | [F23.1.2 · Story source-update drafts](#f2312-story-source-update-drafts) | Private reconciliation action delivered in Beta 0.0.12 through F23.4; normal first-episode review/rights/access gates remain. |
 | [F13.1 · MSA umbrella presentation](#f131-msa-umbrella-presentation) | Beta 0.0.9 committed/pushed/deployed as `2a4cdee`; no work remains in this presentation rollout. Curriculum remains F13/F14. |
@@ -1332,7 +1340,97 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Completion gate / evidence:** [About page contract and verification](docs/releases/2026-10-18-about.md).
 - **Dependencies:** Existing landing/Account routing and shared FAQ; native-speaker review remains with course review gates.
 
+### F32 Downloads and recovery center
+
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; existing lesson/audio and alphabet cache foundations inspected; content — N/A: existing published packages only; verification — Not run for new scope.
+- **Delivery:** Application — Planning documents local/uncommitted; no new software delivered; content publication — N/A.
+- **Scope:** Account Downloads surface with per-course lesson/audio/alphabet inventory, honest storage/availability, download/retry/update/removal and scoped sync recovery; retain all learning evidence. Children F32.1–F32.3 define implementation, UI and actual acceptance/delivery.
+- **Next action:** Owner: authorize F32.1 against the linked contract. Agent then implements F32.1 → F32.2 → F32.3 without rebuilding the delivered offline core.
+- **Authorization:** Owner requested a concrete roadmap plan October 22; implementation, commit/push/deployment and publication were not requested by this planning instruction.
+- **Completion gate / evidence:** [Implementation and acceptance contract](docs/downloads-and-reading-comfort.md#f32-downloads-and-recovery-center); parent requires all three children, real-device/access evidence and authorized app delivery, not new content publication.
+- **Dependencies:** F01/F02/F24.1/F28.1 existing caches and identity/course conventions; actual device sessions for F32.3. New curriculum/audio acceptance is not a software prerequisite; current preview/review restrictions remain.
+
+#### F32.1 Download inventory and safe transfers
+
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — N/A; verification — Not run.
+- **Delivery:** Application — Plan only; content publication — N/A.
+- **Scope:** Unified inventory over existing lesson/audio and alphabet stores, explicit availability/transfer states, deduplicated size estimates and safe retry/update/removal primitives preserving old complete packages and learning data.
+- **Next action:** Owner: authorize software work. Agent then implements inventory/state and fault-safe storage operations against existing caches.
+- **Authorization:** Planning authorized October 22; no new code or rollout authority from this roadmap request.
+- **Completion gate / evidence:** [Inventory/transfer acceptance](docs/downloads-and-reading-comfort.md#f321-inventory-and-safe-transfer-lifecycle); software candidate and fault tests required; learner UI/release remains F32.2/F32.3.
+- **Dependencies:** Existing F01/F28 stores, immutable published versions and identity conventions; independent of F33.
+
+#### F32.2 Downloads interface and recovery controls
+
+- **Work state:** Planned.
+- **Readiness:** Implementation — Not started; content — N/A; verification — Not run.
+- **Delivery:** Application — Plan only; content publication — N/A.
+- **Scope:** Account → Downloads with course/status/storage rows, targeted transfer actions, safe content removal, durable manual-removal intent and scoped pending-sync retry; no new main tab or automatic data eviction.
+- **Next action:** Agent after F32.1 and implementation authorization: connect the inventory to learner controls and test refresh/reload, shared assets, active/paused lessons and identity isolation.
+- **Authorization:** Planning authorized October 22; software implementation and rollout remain separate.
+- **Completion gate / evidence:** [Learner controls/recovery acceptance](docs/downloads-and-reading-comfort.md#f322-learner-controls-and-recovery); functional/access automation required; real-device/release evidence remains F32.3.
+- **Dependencies:** F32.1, existing synchronization and lesson lifecycle; preserve guest/account evidence and free offline learning.
+
+#### F32.3 Downloads verification and delivery
+
+- **Work state:** Planned.
+- **Readiness:** Implementation — Acceptance protocol prepared; content — N/A; verification — Not run.
+- **Delivery:** Application — No candidate or rollout; content publication — N/A.
+- **Scope:** Failure/recovery and cross-tab checks, actual Safari/Android offline-completion/reconnection and AT evidence, version verification and authorized application delivery.
+- **Next action:** Agent after F32.2: execute automated fault/access checks. Owner/tester: provide actual device sessions; owner separately authorizes candidate commit/rollout.
+- **Authorization:** Acceptance planning only; no device evidence fabricated, beta expansion or app deployment authorized by this request.
+- **Completion gate / evidence:** [Verification/delivery contract](docs/downloads-and-reading-comfort.md#f323-verification-and-application-delivery); named real-device/AT evidence, version and authorized app rollout all required.
+- **Dependencies:** F32.1/F32.2 and actual supported-device/access sessions; F18.1 remains deferred and is not this technical acceptance session.
+
+### F33 Reading comfort and mobile lesson ergonomics
+
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — complete; content — N/A: existing authored text unchanged; verification — automated preference, offline, identity, reflow, focus and assessment checks; physical-device/AT evidence remains F33.3.
+- **Delivery:** Application — Beta 0.0.13 prepared for authorized commit/push; hosted deployment unverified; content publication — N/A, unchanged.
+- **Scope:** Persistent device-local identity/course text-size, line-spacing and pronunciation-help preferences; immediate preview; shared reading-surface integration and keyboard/viewport resilience. Preserve fixed lesson frame, script semantics and assessment evidence.
+- **Next action:** Owner/tester: supply actual iOS Safari/VoiceOver and Android/TalkBack reading, keyboard/IME, zoom/orientation and offline results. Agent: commit and push the candidate; hosted deployment remains unverified.
+- **Authorization:** Owner authorized F33 implementation October 27 and commit/push October 28, including the existing automatic frontend deployment; no curriculum publication or beta expansion; real-device gates retained.
+- **Completion gate / evidence:** [Implementation and acceptance contract](docs/downloads-and-reading-comfort.md#f33-reading-comfort-and-mobile-lesson-ergonomics); all three children plus real input/AT evidence and authorized app delivery required; F24 language/content gates remain separate. [October 27 implementation and verification](docs/reading-comfort-implementation.md).
+- **Dependencies:** F24.1/F24.2 delivered renderer, F15.1 identity/settings conventions and existing lesson/review/reading surfaces; independent of F32 and new curriculum publication.
+
+#### F33.1 Reading preferences and controls
+
+- **Work state:** Complete.
+- **Readiness:** Implementation — complete; content — N/A: existing authored text unchanged; verification — automated preference, offline, identity, reflow, focus and assessment checks; physical-device/AT evidence remains F33.3.
+- **Delivery:** Application — Beta 0.0.13 prepared for authorized commit/push; hosted deployment unverified; content publication — N/A, unchanged.
+- **Scope:** Versioned device-local course/identity preference snapshots, target-text size/spacing/help controls, immediate preview, course-only reset and accessible Account/lesson entry with focus restoration.
+- **Next action:** No work remains in this bounded software scope; physical-device/access verification and authorized rollout remain F33.3.
+- **Authorization:** Owner authorized F33 implementation October 27 and commit/push October 28, including the existing automatic frontend deployment; no curriculum publication or beta expansion; real-device gates retained.
+- **Completion gate / evidence:** [Preference/control acceptance](docs/downloads-and-reading-comfort.md#f331-preference-model-and-controls); offline round-trip, identity/reset/error/focus checks pass; device/access/release remains F33.3. [October 27 implementation and verification](docs/reading-comfort-implementation.md).
+- **Dependencies:** Existing device snapshot and course/identity conventions; keep stable MSA/Quranic IDs.
+
+#### F33.2 Reading surfaces and mobile input
+
+- **Work state:** Complete.
+- **Readiness:** Implementation — complete; content — N/A: existing authored text unchanged; verification — automated preference, offline, identity, reflow, focus and assessment checks; physical-device/AT evidence remains F33.3.
+- **Delivery:** Application — Beta 0.0.13 prepared for authorized commit/push; hosted deployment unverified; content publication — N/A, unchanged.
+- **Scope:** Shared target-text sizing/spacing/help across learning surfaces; viewport, orientation and real keyboard/IME resilience while preserving strings, bidi, help-used evidence, typed answers, focus and fixed dialog behavior.
+- **Next action:** No work remains in this bounded software scope; physical-device/access verification and authorized rollout remain F33.3.
+- **Authorization:** Owner authorized F33 implementation October 27 and commit/push October 28, including the existing automatic frontend deployment; no curriculum publication or beta expansion; real-device gates retained.
+- **Completion gate / evidence:** [Rendering/input acceptance](docs/downloads-and-reading-comfort.md#f332-rendering-and-mobile-input-integration); named surfaces and automated text/input/assessment checks pass; real-device and delivery remains F33.3. [October 27 implementation and verification](docs/reading-comfort-implementation.md).
+- **Dependencies:** F33.1, delivered F24.2 and existing reading/activity components; reviewed per-language outcomes remain with their courses.
+
+#### F33.3 Reading comfort verification and delivery
+
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — candidate and automated acceptance ready; content — N/A; verification — automated; actual iOS Safari/VoiceOver and Android/TalkBack keyboard/IME sessions not run.
+- **Delivery:** Application — Beta 0.0.13 prepared for authorized commit/push; hosted deployment unverified; content publication — N/A, unchanged.
+- **Scope:** Preference/offline/assessment regression, combined text enlargement and viewport checks, actual Safari/VoiceOver and Android/TalkBack keyboard/IME sessions, version verification and authorized app delivery.
+- **Next action:** Owner/tester: supply actual iOS Safari/VoiceOver and Android/TalkBack reading, keyboard/IME, zoom/orientation and offline results. Agent: commit and push the candidate; hosted deployment remains unverified.
+- **Authorization:** Owner authorized F33 implementation October 27 and commit/push October 28, including the existing automatic frontend deployment; no curriculum publication or beta expansion; real-device gates retained.
+- **Completion gate / evidence:** [Verification/delivery contract](docs/downloads-and-reading-comfort.md#f333-verification-and-application-delivery); named actual device/access results plus version and authorized rollout required. [October 27 implementation and verification](docs/reading-comfort-implementation.md).
+- **Dependencies:** F33.1/F33.2 and actual device/access sessions; existing F24.2 acceptance is separately recorded and remains independent.
+
 ## Recent roadmap changes
+
+- **October 28 — F33:** Beta 0.0.13 software complete with automated verification; commit/push authorized. Physical-device/AT and hosted delivery evidence remain separate. [Evidence](docs/reading-comfort-implementation.md).
 
 - **October 27 — F23.4:** Beta 0.0.12 deployed to API/Vercel; exact three unreviewed/text-only previews published as v2/1/1. Fresh local/hosted checks and preservation/idempotence pass. Normal F23 review/rights/access/learner gates remain. [Delivery evidence](docs/releases/2026-10-27-story-arc.md).
 
@@ -1341,5 +1439,3 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **October 19 — F13/F14:** owner joined MSA and Quranic study under one MSA umbrella. F13.1 completes Beta 0.0.9 presentation and owner-authorized rollout as `2a4cdee` (Vercel Ready, exact API health, build, 67 API tests and 59 browser checks pass); F14 remains the Quranic path with its full target and integrity/rights gates. [Contract/evidence](docs/msa-umbrella.md).
 
 - **October 19 — F12:** owner revised current completion to twenty newly authored lessons plus plan/coverage and authorized commit/deploy/unreviewed preview publication. Final thirty lessons moved to F12.6; human acceptance remains F12.5. Arabic name-fragment corruption fixed in API/browser; Beta 0.0.8 `f01fed0` deployed, twenty exact v1 unreviewed/text-only previews published with all prior rows/data/assets preserved; current cycle Complete. [Contract/evidence](docs/levantine-course-expansion.md).
-
-- **October 19 — F17.5:** Beta 0.0.5 `b7b910c` deployed and exact owner-accepted lesson-one v5 published with existing audio preserved. Six phrases/two patterns/three usage notes delivered; actual AT evidence remains. [Rollout](docs/releases/2026-10-19-phrase-anatomy.md).

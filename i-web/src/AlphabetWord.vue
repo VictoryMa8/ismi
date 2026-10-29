@@ -6,11 +6,11 @@ let observer: ResizeObserver | undefined, frame = 0, alive = true
 function measure() {
   frame = 0; const element = word.value, node = element?.firstChild
   if (!element || !node || node.nodeType !== Node.TEXT_NODE) return
-  const bounds = element.getBoundingClientRect(), result: typeof marks.value = []
+  const bounds = element.getBoundingClientRect(), scale = element.offsetWidth ? bounds.width / element.offsetWidth : 1, result: typeof marks.value = []
   for (const offset of props.occurrences) {
     if (offset < 0 || offset + props.target.length > props.text.length) continue
     const range = document.createRange(); range.setStart(node, offset); range.setEnd(node, offset + props.target.length)
-    for (const rect of range.getClientRects()) result.push({ left: rect.left - bounds.left, top: rect.top - bounds.top, width: rect.width, height: rect.height })
+    for (const rect of range.getClientRects()) result.push({ left: (rect.left - bounds.left) / scale, top: (rect.top - bounds.top) / scale, width: rect.width / scale, height: rect.height / scale })
   }
   marks.value = result
 }

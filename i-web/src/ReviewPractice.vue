@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ReadingComfort from './ReadingComfort.vue'
+import ReadingHelp from './ReadingHelp.vue'
 import PhraseAnatomy from './PhraseAnatomy.vue';
 import RecordingAttribution from './RecordingAttribution.vue';
 import {
@@ -608,7 +610,7 @@ defineExpose({ start });
                   : kind === 'due' ? 'Scheduled review' : 'Mixed review'
             }}
           </h2>
-          <div class="lesson-header-controls">
+          <div class="lesson-header-controls"><ReadingComfort :course="turn?.lesson.trackId ?? 'levantine'" />
             <SoundToggle /><button
               ref="closeButton"
               class="close-button"
@@ -685,7 +687,7 @@ defineExpose({ start });
                     <p class="arabic-prompt" v-bind="textAttributes(turn?.lesson.trackId)">
                       {{ turn.step.prompt.arabic }}
                     </p>
-                    <p class="arabizi-prompt">{{ turn.step.prompt.arabizi }}</p>
+                    <p class="arabizi-prompt"><ReadingHelp :text="turn.step.prompt.arabizi" :course="turn?.lesson.trackId" @reveal="helped = true" /></p>
                     <p v-if="promptHelp || feedback" class="prompt-meaning">
                       {{ turn.step.prompt.meaning }}
                     </p>
@@ -843,7 +845,7 @@ defineExpose({ start });
                   </p>
                   <div class="feedback-model">
                     <p v-bind="textAttributes(turn?.lesson.trackId)">{{ model?.arabic }}</p>
-                    <p>{{ model?.arabizi }}</p>
+                    <p><ReadingHelp :text="model?.arabizi" :course="turn?.lesson.trackId" @reveal="helped = true" /></p>
                     <p>{{ model?.meaning }}</p>
                   </div>
                   <p>{{ feedback.explanation }}</p>

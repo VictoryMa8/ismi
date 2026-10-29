@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ReadingHelp from './ReadingHelp.vue'
 import { computed, nextTick, ref, watch } from 'vue'
 import type { LessonResponse } from './types'
 import { textAttributes } from './courses'
@@ -33,7 +34,7 @@ async function back() {
         <div v-for="part in anatomy.functions" :key="part.chunkIndex">
           <template v-if="card.chunks[part.chunkIndex]">
             <dt class="reference-target" v-bind="textAttributes(lesson.trackId)">{{ card.chunks[part.chunkIndex]!.arabic }}</dt>
-            <dd><span dir="ltr">{{ card.chunks[part.chunkIndex]!.arabizi }}</span> · {{ card.chunks[part.chunkIndex]!.meaning }}<br /><strong>{{ part.label }}</strong>
+            <dd><span dir="ltr"><ReadingHelp :text="card.chunks[part.chunkIndex]!.arabizi" :course="lesson.trackId" /></span> · {{ card.chunks[part.chunkIndex]!.meaning }}<br /><strong>{{ part.label }}</strong>
               <button v-for="id in part.referenceIds" :key="id" type="button" @click="openReference(id, $event)">{{ lesson.languageSupport?.references.find(r => r.id === id)?.title ?? 'Reference unavailable' }}</button>
             </dd>
           </template>
