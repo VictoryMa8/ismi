@@ -83,7 +83,7 @@ restoration on those devices. Browser viewport automation is not that evidence.
 Existing F24.2 content/access acceptance is independent.
 
 On October 28 the owner authorized commit and push, including the existing automatic
-frontend deployment. The candidate is prepared for that push; hosted deployment is
-not yet verified. No curriculum publication or beta expansion is claimed. Recovery is removal of
+frontend deployment. Implementation commit `58581bb` was pushed successfully to
+`origin/main` October 28. Hosted deployment is not yet verified. No curriculum publication or beta expansion is claimed. Recovery is removal of
 this application's reading controls/styles; the new reading snapshots are isolated
 from learning progress and account/study settings and need not be deleted.

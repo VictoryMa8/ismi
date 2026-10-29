@@ -160,8 +160,8 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F33 · Reading comfort and mobile lesson ergonomics](#f33-reading-comfort-and-mobile-lesson-ergonomics) | Owner/tester: actual Safari/VoiceOver and Android/TalkBack keyboard/IME/reading/offline sessions; commit/push authorized October 28; hosted deployment unverified. |
-| [F33.3 · Reading comfort verification and delivery](#f333-reading-comfort-verification-and-delivery) | Owner/tester: actual Safari/VoiceOver and Android/TalkBack keyboard/IME/reading/offline sessions; commit/push authorized October 28; hosted deployment unverified. |
+| [F33 · Reading comfort and mobile lesson ergonomics](#f33-reading-comfort-and-mobile-lesson-ergonomics) | Owner/tester: actual Safari/VoiceOver and Android/TalkBack keyboard/IME/reading/offline sessions; `58581bb` pushed October 28; hosted deployment unverified. |
+| [F33.3 · Reading comfort verification and delivery](#f333-reading-comfort-verification-and-delivery) | Owner/tester: actual Safari/VoiceOver and Android/TalkBack keyboard/IME/reading/offline sessions; `58581bb` pushed October 28; hosted deployment unverified. |
 | [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Owner/agent: perform actual screen-reader/device checks; application and exact owner-approved lesson-one v5 are delivered. |
 | [F21.4 · Availability upkeep and corrections](#f214-availability-upkeep-and-corrections) | Agent/owner: execute one real unavailable-item/replacement/recheck cycle once F21.1 content is accepted. |
 | [F21.5 · Verification and authorized release](#f215-verification-and-authorized-release) | Agent/owner: finish real media checks and AT; publish only exact approved revisions; application rollout already verified. |
@@ -1388,9 +1388,9 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Verification pending.
 - **Readiness:** Implementation — complete; content — N/A: existing authored text unchanged; verification — automated preference, offline, identity, reflow, focus and assessment checks; physical-device/AT evidence remains F33.3.
-- **Delivery:** Application — Beta 0.0.13 prepared for authorized commit/push; hosted deployment unverified; content publication — N/A, unchanged.
+- **Delivery:** Application — Beta 0.0.13 committed as `58581bb` and pushed to `origin/main` October 28; hosted deployment unverified; content publication — N/A, unchanged.
 - **Scope:** Persistent device-local identity/course text-size, line-spacing and pronunciation-help preferences; immediate preview; shared reading-surface integration and keyboard/viewport resilience. Preserve fixed lesson frame, script semantics and assessment evidence.
-- **Next action:** Owner/tester: supply actual iOS Safari/VoiceOver and Android/TalkBack reading, keyboard/IME, zoom/orientation and offline results. Agent: commit and push the candidate; hosted deployment remains unverified.
+- **Next action:** Owner/tester: supply actual iOS Safari/VoiceOver and Android/TalkBack reading, keyboard/IME, zoom/orientation and offline results. Agent: verify the automatically triggered frontend deployment; physical-device/AT evidence remains outstanding.
 - **Authorization:** Owner authorized F33 implementation October 27 and commit/push October 28, including the existing automatic frontend deployment; no curriculum publication or beta expansion; real-device gates retained.
 - **Completion gate / evidence:** [Implementation and acceptance contract](docs/downloads-and-reading-comfort.md#f33-reading-comfort-and-mobile-lesson-ergonomics); all three children plus real input/AT evidence and authorized app delivery required; F24 language/content gates remain separate. [October 27 implementation and verification](docs/reading-comfort-implementation.md).
 - **Dependencies:** F24.1/F24.2 delivered renderer, F15.1 identity/settings conventions and existing lesson/review/reading surfaces; independent of F32 and new curriculum publication.
@@ -1399,7 +1399,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — complete; content — N/A: existing authored text unchanged; verification — automated preference, offline, identity, reflow, focus and assessment checks; physical-device/AT evidence remains F33.3.
-- **Delivery:** Application — Beta 0.0.13 prepared for authorized commit/push; hosted deployment unverified; content publication — N/A, unchanged.
+- **Delivery:** Application — Beta 0.0.13 committed as `58581bb` and pushed to `origin/main` October 28; hosted deployment unverified; content publication — N/A, unchanged.
 - **Scope:** Versioned device-local course/identity preference snapshots, target-text size/spacing/help controls, immediate preview, course-only reset and accessible Account/lesson entry with focus restoration.
 - **Next action:** No work remains in this bounded software scope; physical-device/access verification and authorized rollout remain F33.3.
 - **Authorization:** Owner authorized F33 implementation October 27 and commit/push October 28, including the existing automatic frontend deployment; no curriculum publication or beta expansion; real-device gates retained.
@@ -1410,7 +1410,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — complete; content — N/A: existing authored text unchanged; verification — automated preference, offline, identity, reflow, focus and assessment checks; physical-device/AT evidence remains F33.3.
-- **Delivery:** Application — Beta 0.0.13 prepared for authorized commit/push; hosted deployment unverified; content publication — N/A, unchanged.
+- **Delivery:** Application — Beta 0.0.13 committed as `58581bb` and pushed to `origin/main` October 28; hosted deployment unverified; content publication — N/A, unchanged.
 - **Scope:** Shared target-text sizing/spacing/help across learning surfaces; viewport, orientation and real keyboard/IME resilience while preserving strings, bidi, help-used evidence, typed answers, focus and fixed dialog behavior.
 - **Next action:** No work remains in this bounded software scope; physical-device/access verification and authorized rollout remain F33.3.
 - **Authorization:** Owner authorized F33 implementation October 27 and commit/push October 28, including the existing automatic frontend deployment; no curriculum publication or beta expansion; real-device gates retained.
@@ -1421,16 +1421,16 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Verification pending.
 - **Readiness:** Implementation — candidate and automated acceptance ready; content — N/A; verification — automated; actual iOS Safari/VoiceOver and Android/TalkBack keyboard/IME sessions not run.
-- **Delivery:** Application — Beta 0.0.13 prepared for authorized commit/push; hosted deployment unverified; content publication — N/A, unchanged.
+- **Delivery:** Application — Beta 0.0.13 committed as `58581bb` and pushed to `origin/main` October 28; hosted deployment unverified; content publication — N/A, unchanged.
 - **Scope:** Preference/offline/assessment regression, combined text enlargement and viewport checks, actual Safari/VoiceOver and Android/TalkBack keyboard/IME sessions, version verification and authorized app delivery.
-- **Next action:** Owner/tester: supply actual iOS Safari/VoiceOver and Android/TalkBack reading, keyboard/IME, zoom/orientation and offline results. Agent: commit and push the candidate; hosted deployment remains unverified.
+- **Next action:** Owner/tester: supply actual iOS Safari/VoiceOver and Android/TalkBack reading, keyboard/IME, zoom/orientation and offline results. Agent: verify the automatically triggered frontend deployment; physical-device/AT evidence remains outstanding.
 - **Authorization:** Owner authorized F33 implementation October 27 and commit/push October 28, including the existing automatic frontend deployment; no curriculum publication or beta expansion; real-device gates retained.
 - **Completion gate / evidence:** [Verification/delivery contract](docs/downloads-and-reading-comfort.md#f333-verification-and-application-delivery); named actual device/access results plus version and authorized rollout required. [October 27 implementation and verification](docs/reading-comfort-implementation.md).
 - **Dependencies:** F33.1/F33.2 and actual device/access sessions; existing F24.2 acceptance is separately recorded and remains independent.
 
 ## Recent roadmap changes
 
-- **October 28 — F33:** Beta 0.0.13 software complete with automated verification; commit/push authorized. Physical-device/AT and hosted delivery evidence remain separate. [Evidence](docs/reading-comfort-implementation.md).
+- **October 28 — F33:** Beta 0.0.13 `58581bb` committed and pushed to main with automated verification; hosted deployment unverified. Physical-device/AT and hosted delivery evidence remain separate. [Evidence](docs/reading-comfort-implementation.md).
 
 - **October 27 — F23.4:** Beta 0.0.12 deployed to API/Vercel; exact three unreviewed/text-only previews published as v2/1/1. Fresh local/hosted checks and preservation/idempotence pass. Normal F23 review/rights/access/learner gates remain. [Delivery evidence](docs/releases/2026-10-27-story-arc.md).
 
