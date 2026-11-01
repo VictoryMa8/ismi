@@ -303,10 +303,11 @@ onBeforeUnmount(() => { epoch++; closePractice(true); document.removeEventListen
 .alphabet-header h1 { margin:.2rem 0; } .alphabet-course { color:#325746; font-weight:700; margin:0; }
 .alphabet-toolbar { justify-content:flex-start; } .alphabet-actions { justify-content:flex-start; }
 .alphabet-explorer button { min-height:48px; } .alphabet-explorer p,.alphabet-explorer li { line-height:1.7; overflow-wrap:anywhere; }
-.alphabet-empty { border:1px solid #c2d3c8; border-top:5px solid #17684e; padding:2rem; border-radius:18px; background:#fff; margin:1.5rem 0; }
+.alphabet-empty { display:grid; justify-items:start; gap:16px; border:1px solid #c2d3c8; border-top:5px solid #17684e; padding:2rem; border-radius:18px; background:#fff; margin:1.5rem 0; }
 .alphabet-empty svg { color:#17684e; } .alphabet-error { color:#8f2929; font-weight:650; } .alphabet-notice { background:#f4d16f; color:#352a12; padding:1rem; border-radius:12px; }
 .alphabet-license { white-space:pre-wrap; overflow-wrap:anywhere; font:inherit; font-size:.8rem; }
 .alphabet-evidence-note { color:#4b5a52; font-size:.9rem; }
+.alphabet-empty h2,.alphabet-empty p { margin:0; }
 .alphabet-filters { display:flex; flex-wrap:wrap; gap:1rem; margin:1.5rem 0; }
 .alphabet-filters label { display:flex; flex:1 1 180px; flex-wrap:wrap; align-items:center; gap:.5rem; font-weight:650; }
 .alphabet-filters input,.alphabet-filters select { width:100%; min-height:48px; padding:.75rem; border:1px solid #6e897a; border-radius:10px; font:inherit; background:white; color:#263a34; }

@@ -87,19 +87,19 @@ onBeforeUnmount(() => { generation++; window.removeEventListener('online', refre
 </script>
 <template>
 <section class="stories" aria-labelledby="stories-heading">
- <BackControl v-if="!preview" href="#/practice">Back to Practice</BackControl>
- <h2 id="stories-heading">Mini-stories</h2>
+ <BackControl v-if="!preview" class="page-back" href="#/practice">Back to Practice</BackControl>
+ <header class="page-heading"><h2 v-if="preview" id="stories-heading">Mini-stories</h2><h1 v-else id="stories-heading">Mini-stories</h1></header>
  <p v-if="preview" role="status">Private draft preview · unreviewed · text only. No learning credit is recorded.</p>
  <p v-if="error && !active" role="alert">{{ error }}</p><p v-if="status && !active" role="status">{{ status }}</p><p v-if="loading">Loading stories…</p>
- <template v-if="!active">
+ <div v-if="!active" class="story-catalog">
   <p v-if="!loading && !episodes.length">No published stories for this course yet.</p>
   <button type="button" class="secondary-action" @click="refresh">Refresh stories</button>
-  <article v-for="s in episodes" :key="s.id" class="story-card"><h3>{{ s.title }}</h3><aside v-if="s.publicationNotice" class="story-notice"><strong>{{ s.publicationNotice.label }}</strong><p>{{ s.publicationNotice.details }}</p></aside><p>{{ s.summary }}</p><p>Episode {{ s.episode }} · Text · About 2–4 minutes</p>
-   <button type="button" class="primary-action" @click="open(s)">Read or resume</button>
+  <article v-for="s in episodes" :key="s.id" class="story-card"><h2>{{ s.title }}</h2><aside v-if="s.publicationNotice" class="story-notice"><strong>{{ s.publicationNotice.label }}</strong><p>{{ s.publicationNotice.details }}</p></aside><p>{{ s.summary }}</p><p>Episode {{ s.episode }} · Text · About 2–4 minutes</p>
+   <div class="story-card-actions"><button type="button" class="primary-action" @click="open(s)">Read or resume</button>
    <button v-if="!preview" type="button" class="secondary-action" :disabled="busy" @click="manage(s)">{{ downloads.some(d => d.id === s.id && d.contentHash === s.contentHash) ? 'Download again' : 'Download story' }}</button>
-   <button v-if="!preview && downloads.some(d => d.id === s.id)" type="button" class="secondary-action" :disabled="busy" @click="manage(s, true)">Remove download</button>
+   <button v-if="!preview && downloads.some(d => d.id === s.id)" type="button" class="secondary-action" :disabled="busy" @click="manage(s, true)">Remove download</button></div>
   </article>
- </template>
+ </div>
  <dialog v-else ref="dialog" class="story-frame" :aria-busy="busy" aria-labelledby="story-stage-heading" @cancel.prevent="close">
   <header><p v-if="error" role="alert">{{ error }}</p><p v-if="status" role="status">{{ status }}</p><p v-if="preview">Private draft · unreviewed · text only</p><h3 id="story-stage-heading" ref="heading" tabindex="-1">{{ finished ? 'Story complete' : scene?.title ?? check?.prompt }}</h3><p>{{ active.title }} · {{ finished ? 'Complete' : `${progress.position + 1} / ${active.scenes.length + active.checks.length}` }}</p><button type="button" class="secondary-action" @click="close">Close story</button></header>
   <LessonScroll :key="progress.position">
@@ -114,5 +114,5 @@ onBeforeUnmount(() => { generation++; window.removeEventListener('online', refre
 </section>
 </template>
 <style scoped>
-.story-notice { border:2px solid #966c19; padding:.75rem; margin:.75rem 0; border-radius:10px; } .story-card { padding:1rem; border:1px solid #7f9689; border-radius:16px; margin:1rem 0; } button { min-height:48px; margin:.25rem; } .story-frame { width:min(700px,calc(100% - 1rem)); max-width:none; padding:0; margin:auto; height:min(760px,calc(100dvh - 1rem)); max-height:calc(100dvh - 1rem); min-height:0; display:flex; flex-direction:column; border:2px solid #296248; border-radius:16px; overflow:hidden; background:white; } .story-frame::backdrop { background:rgb(15 35 26 / .65); } header,footer { padding:.75rem; flex:none; } header h3 { margin:0; } .story-frame :deep(.lesson-scroll-region) { flex:1; min-height:0; } .story-frame :deep(.lesson-content) { height:100%; } .story-line { margin:1rem 0; } .story-line :deep(.character-portrait) { --portrait-size:48px; } .story-arabic { font-size:1.8rem; line-height:1.8; } .story-choice small { display:block; line-height:1.6; } .story-choice { display:flex; align-items:center; gap:.75rem; padding:.8rem; min-height:48px; } fieldset { border:1px solid #7f9689; } details { margin:1rem 0; overflow-wrap:anywhere; } :focus-visible { outline:3px solid #ad2b32; outline-offset:3px; }
+.story-catalog { display:grid; gap:20px; } .story-catalog > p { margin:0; } .story-catalog > button { justify-self:start; margin:0; } .story-card { display:grid; gap:16px; } .story-card > h2,.story-card > p { margin:0; } .story-card > h2 { font-size:1.25rem; } .story-card > .story-notice { margin:0; } .story-card-actions { display:flex; flex-wrap:wrap; gap:12px; } .story-card-actions button { margin:0; } .story-notice { border:2px solid #966c19; padding:.75rem; margin:.75rem 0; border-radius:10px; } .story-card { padding:1rem; border:1px solid #7f9689; border-radius:16px; margin:0; } button { min-height:48px; margin:.25rem; } .story-frame { width:min(700px,calc(100% - 1rem)); max-width:none; padding:0; margin:auto; height:min(760px,calc(100dvh - 1rem)); max-height:calc(100dvh - 1rem); min-height:0; display:flex; flex-direction:column; border:2px solid #296248; border-radius:16px; overflow:hidden; background:white; } .story-frame::backdrop { background:rgb(15 35 26 / .65); } .story-frame > header,.story-frame > footer { padding:.75rem; flex:none; } header h3 { margin:0; } .story-frame :deep(.lesson-scroll-region) { flex:1; min-height:0; } .story-frame :deep(.lesson-content) { height:100%; } .story-line { margin:1rem 0; } .story-line :deep(.character-portrait) { --portrait-size:48px; } .story-arabic { font-size:1.8rem; line-height:1.8; } .story-choice small { display:block; line-height:1.6; } .story-choice { display:flex; align-items:center; gap:.75rem; padding:.8rem; min-height:48px; } fieldset { border:1px solid #7f9689; } details { margin:1rem 0; overflow-wrap:anywhere; } :focus-visible { outline:3px solid #ad2b32; outline-offset:3px; }
 </style>

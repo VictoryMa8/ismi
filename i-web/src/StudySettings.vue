@@ -63,7 +63,7 @@ function toggle(id: TrackId, checked: boolean) {
 
 <style scoped>
 .study-settings { margin: 1.5rem 0; padding: 1.25rem; border: 1px solid #b5c2b8; border-radius: 1rem; color: #192b23; background: #fff; }
-h2 { margin-top: 0; }
+h2 { margin: 0 0 1rem; }
 form { display: grid; gap: 1.25rem; }
 fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
 legend { padding: 0; margin-bottom: .65rem; }

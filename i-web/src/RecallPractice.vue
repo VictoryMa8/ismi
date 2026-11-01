@@ -286,7 +286,7 @@ onBeforeUnmount(() => {
 <template>
   <Teleport v-if="hubTarget" :to="hubTarget">
     <a v-if="hubView === 'tile'" class="feature-tile accent-red tile-recall" href="#/practice/recall" :aria-label="`Write a response, ${available.length} targets, ${dueTargets} due`">
-      <span class="feature-badge" aria-hidden="true"><PenLine :size="18" /></span>
+      <span class="feature-badge" aria-hidden="true"><PenLine :size="24" /></span>
       <span class="feature-copy"><strong>Write a response</strong><small>{{ dueTargets }} due</small></span>
       <span class="feature-count">{{ available.length }}</span>
     </a>

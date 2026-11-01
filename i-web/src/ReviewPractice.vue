@@ -517,12 +517,12 @@ defineExpose({ start });
   <Teleport v-if="hubTarget" :to="hubTarget">
     <div v-if="hubView === 'tiles'" class="feature-tiles">
       <a class="feature-tile accent-green tile-review" href="#/practice/review" :aria-label="`Review, ${dueCount} due, ${mistakeCount} mistakes`">
-        <span class="feature-badge" aria-hidden="true"><RotateCcw :size="18" /></span>
+        <span class="feature-badge" aria-hidden="true"><RotateCcw :size="24" /></span>
         <span class="feature-copy"><strong>Review</strong><small>{{ dueCount }} due</small></span>
         <span class="feature-count">{{ dueCount }}</span>
       </a>
       <a class="feature-tile accent-gold tile-checkpoints" href="#/practice/checkpoints" :aria-label="`Checkpoints, ${units.filter(unit => unit.complete && unit.available).length} ready`">
-        <span class="feature-badge" aria-hidden="true"><Flag :size="18" /></span>
+        <span class="feature-badge" aria-hidden="true"><Flag :size="24" /></span>
         <span class="feature-copy"><strong>Checkpoints</strong><small>{{ units.filter(unit => unit.complete && unit.available).length }} ready</small></span>
         <span class="feature-count">{{ units.filter(unit => unit.complete && unit.available).length }}</span>
       </a>

@@ -207,7 +207,7 @@ onBeforeUnmount(() => { generation++ })
 
 <style scoped>
 .placement-check { margin: 1.5rem 0; padding: 1.25rem; border: 1px solid #738d7b; border-radius: 1rem; background: white; color: #192b23; }
-h2 { margin-top: 0; }
+h2 { margin: 0 0 .75rem; }
 fieldset { border: 0; padding: 0; min-width: 0; margin: 1rem 0; }
 legend { font-weight: 700; }
 label { display: flex; align-items: start; gap: .6rem; padding: .7rem 0; min-height: 44px; }

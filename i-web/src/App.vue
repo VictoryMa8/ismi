@@ -8,6 +8,9 @@ import RecordingAttribution from './RecordingAttribution.vue';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import {
   BookOpen,
+  NotebookPen,
+  MessagesSquare,
+  Languages,
   BookCheck,
   Check,
   ChevronRight,
@@ -1610,8 +1613,10 @@ async function finishLesson() {
             {{ syncStatus }}
           </p>
         </header>
-        <a v-if="viewedCourse === 'levantine'" class="page-link" href="#/practice/stories"><BookOpen :size="18" aria-hidden="true" /> Mini-stories · Everyday</a>
-        <a class="page-link" href="#/practice/alphabet"><BookOpen :size="18" aria-hidden="true" /> Alphabet · {{ activeCourse.name }}</a>
+        <nav class="course-resources" aria-label="Course practice resources">
+          <a v-if="viewedCourse === 'levantine'" class="page-link" href="#/practice/stories"><MessagesSquare :size="20" aria-hidden="true" /><span>Mini-stories · Everyday</span></a>
+          <a class="page-link" href="#/practice/alphabet"><Languages :size="20" aria-hidden="true" /><span>Alphabet · {{ activeCourse.name }}</span></a>
+        </nav>
         <section v-if="activeCourse.groupId === 'msa'" class="section-block msa-paths" aria-labelledby="msa-paths-title">
           <h2 id="msa-paths-title">Modern Standard Arabic paths</h2>
           <p>General MSA builds formal reading and listening. Quranic Arabic focuses on vocabulary and direct meaning.</p>
@@ -1702,17 +1707,17 @@ async function finishLesson() {
           <h1>Practice</h1>
         </header>
         <div id="practice-hub" class="feature-grid">
-          <a class="feature-tile accent-red" href="#/practice/grammar"><span class="feature-badge" aria-hidden="true"><BookOpen :size="26" /></span><span class="feature-copy"><strong>Grammar reference</strong></span></a>
-          <a v-if="viewedCourse === 'levantine'" class="feature-tile accent-green" href="#/practice/stories"><span class="feature-badge" aria-hidden="true"><BookOpen :size="26" /></span><span class="feature-copy"><strong>Mini-stories</strong><small>Read with Fattoush and Knafeh</small></span></a>
+          <a class="feature-tile accent-red" href="#/practice/grammar"><span class="feature-badge" aria-hidden="true"><NotebookPen :size="24" /></span><span class="feature-copy"><strong>Grammar reference</strong></span></a>
+          <a v-if="viewedCourse === 'levantine'" class="feature-tile accent-green" href="#/practice/stories"><span class="feature-badge" aria-hidden="true"><MessagesSquare :size="24" /></span><span class="feature-copy"><strong>Mini-stories</strong><small>Read with Fattoush and Knafeh</small></span></a>
           <a class="feature-tile accent-gold tile-alphabet" href="#/practice/alphabet">
-            <span class="feature-badge" aria-hidden="true"><BookOpen :size="26" /></span><span class="feature-copy"><strong>Alphabet</strong><small>{{ activeCourse.name }}</small></span>
+            <span class="feature-badge" aria-hidden="true"><Languages :size="24" /></span><span class="feature-copy"><strong>Alphabet</strong><small>{{ activeCourse.name }}</small></span>
           </a>
           <a v-if="activeCourse.languageId === 'arabic'" class="feature-tile accent-ink tile-culture" href="#/practice/culture">
-            <span class="feature-badge" aria-hidden="true"><Clapperboard :size="18" /></span>
+            <span class="feature-badge" aria-hidden="true"><Clapperboard :size="24" /></span>
             <span class="feature-copy"><strong>Watch &amp; listen</strong><small>Weekly Arabic picks</small></span>
           </a>
           <a class="feature-tile accent-green tile-lessons" href="#/practice/lessons" :aria-label="`Lesson practice, ${activeLessons.length} lessons`">
-            <span class="feature-badge" aria-hidden="true"><Headphones :size="18" /></span>
+            <span class="feature-badge" aria-hidden="true"><Headphones :size="24" /></span>
             <span class="feature-copy"><strong>Lesson practice</strong><small>{{ activeLessons.length }} lessons</small></span>
             <span class="feature-count">{{ activeLessons.length }}</span>
           </a>

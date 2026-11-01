@@ -200,6 +200,12 @@ The next-action text names the actor; use the record before taking action.
 | --- | --- |
 | [F18.1 · First-unit observed rehearsal](#f181-first-unit-observed-rehearsal) | Owner: explicitly resume and arrange participation. Agent then reconciles task versions against current F22 publications before device preflight. |
 
+### Delivery pending
+
+| ID / scope | Next action or remaining gate |
+| --- | --- |
+| [F34 · Learner spacing and Practice icons](#f34-learner-spacing-and-practice-icons) | Agent: commit the reviewed Beta 0.0.16 candidate and verify its authorized deployment to the existing frontend preview. |
+
 ### Complete
 
 | ID / scope | Next action or remaining gate |
@@ -1452,7 +1458,20 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Completion gate / evidence:** [Verification/delivery contract](docs/downloads-and-reading-comfort.md#f333-verification-and-application-delivery); named actual device/access results plus version and authorized rollout required. [October 27 implementation and verification](docs/reading-comfort-implementation.md).
 - **Dependencies:** F33.1/F33.2 and actual device/access sessions; existing F24.2 acceptance is separately recorded and remains independent.
 
+### F34 Learner spacing and Practice icons
+
+- **Work state:** Delivery pending.
+- **Readiness:** Implementation — Complete local spacing/icon fix; content — N/A; verification — production build, 17 distinct navigation/story checks and 14-route 320 px overflow audit pass; desktop/mobile screenshots prepared, real-device/AT acceptance not claimed.
+- **Delivery:** Application — Local/uncommitted Beta 0.0.16; content publication — N/A.
+- **Scope:** Separate course resource links; repair planned-course card layout; space story/back/empty-state/action and Account headings; distinguish Practice icons and verify desktop/mobile wrapping.
+- **Next action:** Agent: commit/push the reviewed candidate, verify Vercel readiness and check the existing preview.
+- **Authorization:** November 1 owner requested the spacing/icon pass and screenshots before commit, then explicitly requested commit and deployment after the screenshots were sent. Existing-preview frontend rollout is authorized; no curriculum publication or provider changes.
+- **Completion gate / evidence:** [Bounded UI contract and visual checks](docs/learner-spacing-and-icons.md).
+- **Dependencies:** Existing learner routes/components; preserve curriculum text, progress and unrelated local edits.
+
 ## Recent roadmap changes
+
+- **November 1 — F34 UI polish:** local Beta 0.0.16 separates course links, repairs planned-course cards, spaces story/empty-state/Account content and distinguishes Practice icons. Build/17 browser checks and narrow-route audit pass; screenshots sent before commit; owner then authorized existing-preview commit/deployment. [Evidence](docs/learner-spacing-and-icons.md).
 
 - **October 31 — F16.1/F16.2 sign-in:** Beta 0.0.15 software passes 91 API/three browser checks; Google client and restricted Resend key created; real local email delivery/login/reload pass. Owner-authorized web/API rollout verified at `5a36744`; hosted version/options/Google button and prior-data preservation pass. Actual Google consent/linking and hosted email round trip remain. F16 deletion/retention is separate. [Evidence](docs/account-sign-in.md).
 
@@ -1461,5 +1480,3 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **October 27 — F23.4:** Beta 0.0.12 deployed to API/Vercel; exact three unreviewed/text-only previews published as v2/1/1. Fresh local/hosted checks and preservation/idempotence pass. Normal F23 review/rights/access/learner gates remain. [Delivery evidence](docs/releases/2026-10-27-story-arc.md).
 
 - **October 19 — F27.4:** owner requested removing the course-wide draft card and the confusing Week 1 restart. Local Beta 0.0.10 complete (production build and 27 browser checks pass) orders the main course numerically and keeps legacy demonstrations in Extra practice; lesson-level preview notices and published content remain intact. [Evidence](docs/course-path-clarity.md).
-
-- **October 19 — F13/F14:** owner joined MSA and Quranic study under one MSA umbrella. F13.1 completes Beta 0.0.9 presentation and owner-authorized rollout as `2a4cdee` (Vercel Ready, exact API health, build, 67 API tests and 59 browser checks pass); F14 remains the Quranic path with its full target and integrity/rights gates. [Contract/evidence](docs/msa-umbrella.md).
