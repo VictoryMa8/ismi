@@ -10,7 +10,7 @@ progress and the fixed lesson/dialog frame. Send screenshots of all changed
 surfaces before committing. After reviewing those screenshots, the owner
 explicitly requested commit and deployment to the existing preview.
 
-Application candidate: **Beta 0.0.16**, one patch increment for this shared UI fix.
+Application version: **Beta 0.0.16**, one patch increment for this shared UI fix.
 Current readiness and delivery belong in ROADMAP.md.
 
 ## Verification evidence
@@ -54,7 +54,28 @@ uses 16 px gaps; Account settings/placement headings have explicit bottom spacin
 
 ## Application delivery
 
-The owner authorized commit and deployment after the screenshot review. The
-frontend rollout is in progress on the existing `ismi-arabic.vercel.app` preview.
-This UI-only release requires no API upload or curriculum publication. Exact
-commit and Vercel readiness evidence will be recorded once verified.
+After the screenshots were sent, the owner explicitly requested commit and deploy.
+Implementation commit `99411dbd3a3782b71cdd2f2002ee6e716e980bdb` was pushed to main
+and verified **Ready** on November 1, 2026, at Vercel deployment
+`dpl_DrXewkbvTFzoJUvCovk987T87zoq`:
+[deployment](https://ismi-o1wnidq5r-victorys-projects-c1cb4594.vercel.app),
+[existing preview](https://ismi-arabic.vercel.app/#/practice).
+Both existing aliases are assigned. Documentation follow-ups may advance the
+frontend revision without changing application code or the version.
+
+Hosted browser verification confirms:
+
+- Account displays **Beta 0.0.16**; no browser warnings/errors were captured.
+- Practice uses notebook/pen, conversation and language/script icons with a
+  **16 px** grid gap, and fits without horizontal overflow.
+- Course resources have **12/24 px** wrapping gaps; planned-course actions remain
+  on one line in their repaired card layout.
+- Mini-stories has a top-level heading and **20 px** catalog gap; all **three**
+  existing published story cards load without an alert.
+- The previously cached application required another normal reload after the
+  service worker updated before the new icons/styles became visible.
+- The original French course view was restored after checking Arabic-specific
+  tiles. Existing unrelated local file hashes still match their saved baseline.
+
+This release changes the frontend only. No API upload, hosted configuration,
+credential change, data migration or curriculum publication was performed.

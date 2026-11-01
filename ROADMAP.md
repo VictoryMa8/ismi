@@ -66,7 +66,7 @@ This records each layer’s latest verified delivery, **not a full live-content 
 
 | Layer | Latest recorded state | Evidence / limit |
 | --- | --- | --- |
-| Frontend application | Beta 0.0.15 `5a36744` verified Vercel Ready on both existing aliases; documentation follow-ups may advance revision | [Sign-in rollout](docs/releases/2026-11-01-sign-in.md); hosted Account/version and real Google button pass |
+| Frontend application | Beta 0.0.16 `99411db` verified Vercel Ready on both existing aliases; documentation follow-ups may advance revision | [F34 rollout](docs/learner-spacing-and-icons.md#application-delivery); hosted version/icons/gaps and three-story catalog pass |
 | ASP.NET API | Healthy exact `5a36744` deployed with Google/Resend server configuration | [Sign-in rollout](docs/releases/2026-11-01-sign-in.md); SQLite integrity/assets/keys and all 17 prior tables preserved; no curriculum publication |
 | Levantine Everyday | Existing lesson-one v5/audio and all other publications unchanged; twenty new F12 v1 unreviewed/text-only lessons added at orders 11–30 | [F12 publication](content/levantine/expansion-20/publication.json); normal human/source/audio acceptance remains F12.5 |
 | French lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F25.2.1 audit](content/french/meet-01/publication.json); no accepted linguistic/rights review or human audio |
@@ -200,16 +200,11 @@ The next-action text names the actor; use the record before taking action.
 | --- | --- |
 | [F18.1 · First-unit observed rehearsal](#f181-first-unit-observed-rehearsal) | Owner: explicitly resume and arrange participation. Agent then reconciles task versions against current F22 publications before device preflight. |
 
-### Delivery pending
-
-| ID / scope | Next action or remaining gate |
-| --- | --- |
-| [F34 · Learner spacing and Practice icons](#f34-learner-spacing-and-practice-icons) | Agent: commit the reviewed Beta 0.0.16 candidate and verify its authorized deployment to the existing frontend preview. |
-
 ### Complete
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F34 · Learner spacing and Practice icons](#f34-learner-spacing-and-practice-icons) | Reviewed Beta 0.0.16 committed/pushed and verified live; bounded scope complete. |
 | [F33.1 · Reading preferences and controls](#f331-reading-preferences-and-controls) | Software complete locally; physical-device/access evidence and authorized rollout remain F33.3. |
 | [F33.2 · Reading surfaces and mobile input](#f332-reading-surfaces-and-mobile-input) | Software complete locally; physical-device/access evidence and authorized rollout remain F33.3. |
 | [F23.4 · Exact three-story development preview](#f234-exact-three-story-development-preview) | Beta 0.0.12 deployed and exact v2/1/1 unreviewed/text-only previews published; source/hash/history/data/assets and Vercel verified. Normal F23 review/rights/access/learner gates remain. |
@@ -1460,18 +1455,18 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F34 Learner spacing and Practice icons
 
-- **Work state:** Delivery pending.
-- **Readiness:** Implementation — Complete local spacing/icon fix; content — N/A; verification — production build, 17 distinct navigation/story checks and 14-route 320 px overflow audit pass; desktop/mobile screenshots prepared, real-device/AT acceptance not claimed.
-- **Delivery:** Application — Local/uncommitted Beta 0.0.16; content publication — N/A.
+- **Work state:** Complete.
+- **Readiness:** Implementation — Complete spacing/icon fix; content — N/A; verification — production build, 17 distinct navigation/story checks and 14-route 320 px overflow audit pass; desktop/mobile screenshots reviewed before commit; Vercel Ready and live version/icons/gaps/three-story catalog verified, real-device/AT acceptance not claimed.
+- **Delivery:** Application — Beta 0.0.16 `99411db` committed/pushed and verified Vercel Ready on the existing aliases; API unchanged; content publication — N/A.
 - **Scope:** Separate course resource links; repair planned-course card layout; space story/back/empty-state/action and Account headings; distinguish Practice icons and verify desktop/mobile wrapping.
-- **Next action:** Agent: commit/push the reviewed candidate, verify Vercel readiness and check the existing preview.
+- **Next action:** None in this bounded fix; broader real-device/accessibility and beta gates remain with F18/F24.
 - **Authorization:** November 1 owner requested the spacing/icon pass and screenshots before commit, then explicitly requested commit and deployment after the screenshots were sent. Existing-preview frontend rollout is authorized; no curriculum publication or provider changes.
 - **Completion gate / evidence:** [Bounded UI contract and visual checks](docs/learner-spacing-and-icons.md).
 - **Dependencies:** Existing learner routes/components; preserve curriculum text, progress and unrelated local edits.
 
 ## Recent roadmap changes
 
-- **November 1 — F34 UI polish:** local Beta 0.0.16 separates course links, repairs planned-course cards, spaces story/empty-state/Account content and distinguishes Practice icons. Build/17 browser checks and narrow-route audit pass; screenshots sent before commit; owner then authorized existing-preview commit/deployment. [Evidence](docs/learner-spacing-and-icons.md).
+- **November 1 — F34 UI polish:** reviewed Beta 0.0.16 committed/pushed as `99411db` and verified live on existing Vercel aliases. Distinct Practice icons, course/card/story/Account spacing and actual three-story catalog pass; API/content unchanged. [Evidence](docs/learner-spacing-and-icons.md#application-delivery).
 
 - **October 31 — F16.1/F16.2 sign-in:** Beta 0.0.15 software passes 91 API/three browser checks; Google client and restricted Resend key created; real local email delivery/login/reload pass. Owner-authorized web/API rollout verified at `5a36744`; hosted version/options/Google button and prior-data preservation pass. Actual Google consent/linking and hosted email round trip remain. F16 deletion/retention is separate. [Evidence](docs/account-sign-in.md).
 
