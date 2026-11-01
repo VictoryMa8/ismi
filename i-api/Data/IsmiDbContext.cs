@@ -26,6 +26,7 @@ public sealed class IsmiDbContext(DbContextOptions<IsmiDbContext> options)
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        builder.Entity<Ismi.Api.Services.EmailCodeRecord>(e => { e.ToTable("EmailCodes"); e.HasKey(r => r.Email); e.HasIndex(r => r.ChallengeId).IsUnique(); });
         builder.Entity<StoryPackRecord>(e => { e.HasKey(r => r.Id); e.Property(r => r.Revision).IsConcurrencyToken(); });
         builder.Entity<AlphabetPackRecord>(entity =>
         {

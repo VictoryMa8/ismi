@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { listenReadingViewport } from './readingViewport';
 import ReadingComfort from './ReadingComfort.vue';
+import PasswordlessSignIn from './PasswordlessSignIn.vue';
 import ReadingHelp from './ReadingHelp.vue';
 import { loadReading, listenReading } from './readingComfort';
 import RecordingAttribution from './RecordingAttribution.vue';
@@ -656,6 +657,19 @@ async function submitAccount() {
             accountPassword.value,
             rememberAccount.value,
           );
+    await finishSignIn(authSession.value);
+  } catch (error) {
+    accountError.value = error instanceof Error ? error.message : 'Could not finish that account request. Try again.';
+  } finally {
+    accountSubmitting.value = false;
+  }
+}
+
+async function finishSignIn(session: AuthSession) {
+  accountSubmitting.value = true;
+  accountError.value = null;
+  try {
+    authSession.value = session;
     accountPassword.value = '';
     reviewScope.value = authSession.value.userId
       ? `user:${authSession.value.userId}`
@@ -670,10 +684,7 @@ async function submitAccount() {
     await cacheUpcomingLessons();
     navigate('today');
   } catch (error) {
-    accountError.value =
-      error instanceof Error
-        ? error.message
-        : 'Could not finish that account request. Try again.';
+    accountError.value = error instanceof Error ? error.message : 'Signed in, but progress could not sync. Try again when online.';
   } finally {
     accountSubmitting.value = false;
   }
@@ -1825,6 +1836,7 @@ async function finishLesson() {
             </div>
           </div>
           <p class="account-copy" role="status">{{ syncStatus }}</p>
+          <PasswordlessSignIn :signed-in="true" :disabled="accountSubmitting || studySettings.busy.value" @authenticated="finishSignIn" />
           <p v-if="accountError" class="auth-error" role="alert">
             {{ accountError }}
           </p>
@@ -1852,6 +1864,7 @@ async function finishLesson() {
         </template>
 
         <template v-else>
+          <PasswordlessSignIn :signed-in="false" :disabled="accountSubmitting || studySettings.busy.value" @authenticated="finishSignIn" />
           <div class="auth-tabs" aria-label="Account action">
             <button
               type="button"

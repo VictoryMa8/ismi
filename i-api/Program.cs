@@ -98,6 +98,9 @@ builder.Services.Configure<CookieAuthenticationOptions>(
         };
     });
 builder.Services.AddAuthorization();
+builder.Services.AddScoped<EmailCodeService>();
+builder.Services.AddHttpClient<ILoginEmailSender, ResendLoginEmailSender>(client => client.Timeout = TimeSpan.FromSeconds(15));
+builder.Services.AddSingleton<IGoogleIdentityVerifier, GoogleIdentityVerifier>();
 builder.Services.AddAntiforgery(options =>
 {
     options.HeaderName = "X-CSRF-TOKEN";
@@ -112,6 +115,9 @@ builder.Services.AddAntiforgery(options =>
 builder.Services.AddRateLimiter(options =>
 {
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.AddPolicy("passwordless", context => RateLimitPartition.GetFixedWindowLimiter(
+        context.Connection.RemoteIpAddress?.ToString() ?? "unknown", _ => new FixedWindowRateLimiterOptions
+        { PermitLimit = 20, Window = TimeSpan.FromMinutes(1), QueueLimit = 0, AutoReplenishment = true }));
     options.AddPolicy("recall-report", context => RateLimitPartition.GetFixedWindowLimiter(
         context.Connection.RemoteIpAddress?.ToString() ?? "unknown", _ => new FixedWindowRateLimiterOptions
         { PermitLimit = 10, Window = TimeSpan.FromMinutes(1), QueueLimit = 0, AutoReplenishment = true }));
@@ -166,6 +172,7 @@ await using (var scope = app.Services.CreateAsyncScope())
     await database.Database.EnsureCreatedAsync();
     await CurriculumSchemaInitializer.EnsureCurriculumSchemaAsync(database);
     await StudySettingsService.EnsureSchemaAsync(database);
+    await EmailCodeService.EnsureSchemaAsync(database);
     await RecallReportService.EnsureSchemaAsync(database);
     await CulturalMediaService.EnsureSchemaAsync(database);
     await AlphabetService.EnsureSchemaAsync(database);
@@ -269,6 +276,12 @@ app.MapGet("/api/health", () => Results.Ok(new
 }));
 
 var auth = app.MapGroup("/api/auth");
+auth.AddEndpointFilter(async (context, next) =>
+{
+    context.HttpContext.Response.Headers.CacheControl = "no-store";
+    return await next(context);
+});
+auth.MapPasswordlessEndpoints();
 
 auth.MapGet("/csrf", (HttpContext context, IAntiforgery antiforgery) =>
 {

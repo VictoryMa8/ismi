@@ -370,7 +370,9 @@ Supporting references: [Rollout record](../../docs/releases/2026-10-11.md).
 
 **Done when:** agreed recovery/confirmation/deletion flows work end to end, including
 relevant progress/provider data and failure paths, with verified privacy behavior.
-External identity remains optional unresolved work, not a condition of F02 completion.
+External identity remains optional work, not a condition of F02 completion. The owner authorized Google and email-code access October 31; F16.1/F16.2 own their exact provider/verification contracts. Deletion and broader retention remain in F16.
+
+Supporting reference: [Google/email-code contract and evidence](../account-sign-in.md).
 
 ### F17 Learning support and gamification
 

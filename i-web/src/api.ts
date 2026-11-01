@@ -97,6 +97,23 @@ export function getAuthSession(): Promise<AuthSession> {
   return request<AuthSession>('/api/auth/me')
 }
 
+export type SignInOptions = { googleClientId: string | null; emailCode: boolean }
+export const getSignInOptions = () => request<SignInOptions>('/api/auth/options')
+export const getGoogleNonce = () => request<{ nonce: string }>('/api/auth/google/nonce', { method: 'POST', body: '{}' })
+export const requestEmailCode = (email: string) => request<{ challengeId: string }>('/api/auth/email-code/request', {
+  method: 'POST', body: JSON.stringify({ email }),
+})
+export async function verifyEmailCode(challengeId: string, code: string, rememberMe: boolean): Promise<AuthSession> {
+  const session = await request<AuthSession>('/api/auth/email-code/verify', { method: 'POST', body: JSON.stringify({ challengeId, code, rememberMe }) })
+  csrfToken = null
+  return session
+}
+export async function signInWithGoogle(credential: string, rememberMe: boolean): Promise<AuthSession> {
+  const session = await request<AuthSession>('/api/auth/google', { method: 'POST', body: JSON.stringify({ credential, rememberMe }) })
+  csrfToken = null
+  return session
+}
+
 export async function registerAccount(
   displayName: string,
   email: string,

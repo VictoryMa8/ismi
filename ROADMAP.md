@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated October 28, 2026 · **Single source of current feature state and next work.**
+Updated October 31, 2026 · **Single source of current feature state and next work.**
 
 ## Agent entry
 
@@ -112,6 +112,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F16 · Account recovery and deletion](#f16-account-recovery-and-deletion) | Agent: deploy/verify authorized F16.1/F16.2 slices; owner separately defines deletion/retention behavior before that remaining implementation. |
 | [F13 · MSA course](#f13-msa-course) | Agent/owner: define the general-MSA first unit and source/audio/control scope; F14 retains Quranic path gates. |
 | [F25 · French course](#f25-french-course) | Owner: designate fluent reviewer/source dispositions. Agent: first-unit review/pilot before bulk units 2–12. |
 | [F25.3 · French starting check, sounds and text support](#f253-french-starting-check-sounds-and-text-support) | Reviewer/agent: accept sample/spelling inputs, then calibrate starting check and sound/text support. |
@@ -153,13 +154,14 @@ The next-action text names the actor; use the record before taking action.
 | ID / scope | Next action or remaining gate |
 | --- | --- |
 | [F11 · Guided speaking](#f11-guided-speaking) | Owner: select a first scenario and provider/privacy setup. Agent: scope the selected branch and failure/text alternatives. |
-| [F16 · Account recovery and deletion](#f16-account-recovery-and-deletion) | Owner: decide email delivery, hosting constraints and deletion/retention requirements; then agent scopes flows. |
 | [F26.1 · Khmer definition, sources and review route](#f261-khmer-definition-sources-and-review-route) | Owner/reviewer: accept source/rights, help v0, eight-expression inventory and observed-outcome rubric. |
 
 ### Verification pending
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F16.1 · Google sign-in](#f161-google-sign-in) | Agent: deploy/check hosted client and button. Owner/agent: complete Google consent, sign-in and explicit existing-account linking. |
+| [F16.2 · Email-code sign-in](#f162-email-code-sign-in) | Agent: deploy server-only configuration and check hosted UI. Real local inbox/login/reload passed; permitted hosted round trip remains. |
 | [F33 · Reading comfort and mobile lesson ergonomics](#f33-reading-comfort-and-mobile-lesson-ergonomics) | Owner/tester: actual Safari/VoiceOver and Android/TalkBack keyboard/IME/reading/offline sessions; `58581bb` pushed October 28; hosted deployment unverified. |
 | [F33.3 · Reading comfort verification and delivery](#f333-reading-comfort-verification-and-delivery) | Owner/tester: actual Safari/VoiceOver and Android/TalkBack keyboard/IME/reading/offline sessions; `58581bb` pushed October 28; hosted deployment unverified. |
 | [F17.5 · Phrase anatomy and grammar reference](#f175-phrase-anatomy-and-grammar-reference) | Owner/agent: perform actual screen-reader/device checks; application and exact owner-approved lesson-one v5 are delivered. |
@@ -563,13 +565,35 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F16 Account recovery and deletion
 
-- **Work state:** Decision needed.
-- **Readiness:** Implementation — Not started; content — N/A; verification — Not run.
-- **Delivery:** Application — None; content publication — N/A.
-- **Scope:** Account confirmation/recovery and data deletion, with defined retention/delivery behavior.
-- **Next action:** Owner: decide email delivery, hosting constraints and deletion/retention requirements; then agent scopes flows.
-- **Authorization:** Provider, retention and external identity choices unresolved; no service signup/spend inferred.
-- **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f16-account-recovery-and-deletion).
+- **Work state:** Partial.
+- **Readiness:** Implementation — Google and email-code software complete in F16.1/F16.2; deletion/lifecycle remainder not started; content — N/A; verification — 91 API tests, three browser checks and real local email-code delivery/login/reload pass; full Google and hosted access checks remain.
+- **Delivery:** Application — Local Beta 0.0.15, commit/deployment to existing preview authorized; content publication — N/A.
+- **Scope:** Account confirmation/recovery and data deletion, with defined retention/delivery behavior; F16.1/F16.2 add optional Google and email-code access while preserving password/guest accounts and progress.
+- **Next action:** Agent: deploy authorized sign-in slices and verify hosted access. Owner: complete Google consent when ready and separately decide deletion/retention requirements before that remaining implementation.
+- **Authorization:** October 31 owner requested both methods, approved Google policy/client and restricted Resend key, selected existing domain and approved one test code email. Owner then authorized commit/deployment to the existing preview with server-only credentials. Paid plans/domain purchases, deletion policy, beta opening and curriculum publication are not approved.
+- **Completion gate / evidence:** [Full contract](docs/planning/feature-scope-reference.md#f16-account-recovery-and-deletion), [sign-in implementation and evidence](docs/account-sign-in.md).
+
+### F16.1 Google sign-in
+
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete Google Identity Services/API integration with nonce, token verification and explicit account linking; content — N/A; verification — Automated API/browser checks and real Google button load pass; actual consent/sign-in, cancellation, linking and hosted access remain.
+- **Delivery:** Application — Local Beta 0.0.15; Ismi Cloud policy/branding/client created and configured locally; existing-preview rollout authorized; content publication — N/A.
+- **Scope:** Optional Google sign-in with stable provider identity, existing Ismi sessions/progress, explicit existing-account linking and guest/password fallback.
+- **Next action:** Agent: deploy and check hosted configuration/button. Owner/agent: complete actual Google consent/sign-in and existing-account linking round trip.
+- **Authorization:** October 31 owner authorized implementation, Ismi Cloud policy/client creation and commit/deployment to the existing preview. No billing, extra Google data scopes, beta opening or curriculum publication.
+- **Completion gate / evidence:** [Bounded contract, configuration and checks](docs/account-sign-in.md#bounded-contract).
+- **Dependencies:** Actual Google consent and hosted round-trip evidence.
+
+### F16.2 Email-code sign-in
+
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Complete request/verify/recovery UI/API and Resend adapter, hashed single-use expiring codes, attempt/cooldown/daily limits; content — N/A; verification — Automated expiry/replay/concurrency/budget/identity/failure checks plus real local delivery/login/authenticated reload pass; hosted round trip remains.
+- **Delivery:** Application — Local Beta 0.0.15; restricted Resend key created, accepted sender and server-only local configuration verified; existing-preview rollout authorized; content publication — N/A.
+- **Scope:** Optional email-code account creation/sign-in/recovery, retaining existing account IDs/progress and password/guest access; no self-service deletion or password-management scope.
+- **Next action:** Agent: configure existing API server and deploy authorized candidate; verify hosted options/UI. Owner/agent: complete hosted inbox/login round trip with an explicitly permitted test email.
+- **Authorization:** October 31 owner selected existing Resend/domain, approved restricted key and one test code email, then authorized commit/deployment to the existing preview including server-only credentials. No paid service/domain purchase, unrelated key rotation, beta opening or curriculum publication.
+- **Completion gate / evidence:** [Bounded contract, configuration and checks](docs/account-sign-in.md#bounded-contract).
+- **Dependencies:** Hosted API configuration/delivery and permitted hosted email verification.
 
 ### F17 Learning support and gamification
 
@@ -1430,6 +1454,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **October 31 — F16.1/F16.2 sign-in:** Beta 0.0.15 software passes 91 API/three browser checks; Google client and restricted Resend key created; real local email delivery/login/reload pass. Owner authorized existing-preview commit/deployment. Hosted checks and actual Google consent/linking remain. F16 deletion/retention is separate. [Evidence](docs/account-sign-in.md).
+
 - **October 28 — F33:** Beta 0.0.13 `58581bb` committed and pushed to main with automated verification; hosted deployment unverified. Physical-device/AT and hosted delivery evidence remain separate. [Evidence](docs/reading-comfort-implementation.md).
 
 - **October 27 — F23.4:** Beta 0.0.12 deployed to API/Vercel; exact three unreviewed/text-only previews published as v2/1/1. Fresh local/hosted checks and preservation/idempotence pass. Normal F23 review/rights/access/learner gates remain. [Delivery evidence](docs/releases/2026-10-27-story-arc.md).
@@ -1437,5 +1463,3 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **October 19 — F27.4:** owner requested removing the course-wide draft card and the confusing Week 1 restart. Local Beta 0.0.10 complete (production build and 27 browser checks pass) orders the main course numerically and keeps legacy demonstrations in Extra practice; lesson-level preview notices and published content remain intact. [Evidence](docs/course-path-clarity.md).
 
 - **October 19 — F13/F14:** owner joined MSA and Quranic study under one MSA umbrella. F13.1 completes Beta 0.0.9 presentation and owner-authorized rollout as `2a4cdee` (Vercel Ready, exact API health, build, 67 API tests and 59 browser checks pass); F14 remains the Quranic path with its full target and integrity/rights gates. [Contract/evidence](docs/msa-umbrella.md).
-
-- **October 19 — F12:** owner revised current completion to twenty newly authored lessons plus plan/coverage and authorized commit/deploy/unreviewed preview publication. Final thirty lessons moved to F12.6; human acceptance remains F12.5. Arabic name-fragment corruption fixed in API/browser; Beta 0.0.8 `f01fed0` deployed, twenty exact v1 unreviewed/text-only previews published with all prior rows/data/assets preserved; current cycle Complete. [Contract/evidence](docs/levantine-course-expansion.md).

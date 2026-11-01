@@ -18,7 +18,7 @@ onMounted(() => heading.value?.focus({ preventScroll: true }));
     <main class="privacy-main" id="main-content">
       <BackControl href="#">Back to landing page</BackControl>
       <h1 ref="heading" tabindex="-1">Privacy policy</h1>
-      <p class="privacy-meta">Effective October 16, 2026 · {{ appVersionLabel }}</p>
+      <p class="privacy-meta">Effective October 31, 2026 · {{ appVersionLabel }}</p>
       <p class="privacy-lead">
         Ismi is an invite-only development preview for adults 18 and older. We
         collect as little as we can, show no ads, and never sell your data.
@@ -38,21 +38,36 @@ onMounted(() => heading.value?.focus({ preventScroll: true }));
         <h2 id="privacy-account">If you create an account</h2>
         <ul>
           <li>Your display name and email address.</li>
-          <li>Your password, stored only as a secure hash.</li>
+          <li>If you choose a password, it is stored only as a secure hash.</li>
+          <li>If you connect Google, your Google account identifier, name and verified email address.</li>
           <li>
             Learning progress, study settings and answers you choose to sync, so
             they follow you across devices.
           </li>
         </ul>
         <p>We use this only to run your account and your learning.</p>
+        <p>
+          Email-code sign-in sends your email address and a temporary sign-in code
+          through Resend. Codes expire after 10 minutes, are stored by Ismi only
+          as secure hashes, and are removed when used or when expired records are
+          cleaned up on the next code request. Resend processes delivery information
+          under its <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+        </p>
+        <p>
+          Google sign-in loads Google's sign-in service when you choose Continue
+          with Google. Google receives technical connection information and handles
+          your Google authentication. Ismi receives an identity token to verify your
+          account; we do not request access to your mail, files or contacts.
+        </p>
       </section>
 
       <section aria-labelledby="privacy-cookies">
         <h2 id="privacy-cookies">Cookies</h2>
         <p>
-          We use only essential cookies: one that keeps you signed in and one
-          that protects forms from forgery. There are no advertising,
-          analytics or tracking cookies.
+          Ismi uses essential cookies to keep you signed in, protect forms from
+          forgery and verify Google sign-in requests. Ismi does not use advertising
+          or analytics cookies. If you choose Google sign-in, Google's service is
+          also subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's privacy policy</a>.
         </p>
       </section>
 
