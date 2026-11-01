@@ -96,7 +96,16 @@ No address, code or private credential is retained in this evidence.
 
 Existing alwaysdata site/SSH access passed `npm run deploy:api -- --check`.
 The owner then explicitly authorized committing and deploying Beta 0.0.15 to the
-existing development preview, including server-only provider configuration.
+existing development preview, including server-only provider configuration; delivery
+is recorded below.
+
+## Delivered preview
+
+Beta 0.0.15 was committed/pushed as `5a36744` and deployed to the existing web/API
+preview. Hosted options and the real Google button load pass; existing session and
+progress continuity plus all 17 prior database tables were preserved. Full Google
+consent/sign-in/linking and hosted email round-trip verification remain.
+[Deployment, recovery and preservation evidence](releases/2026-11-01-sign-in.md).
 
 ## Configuration and activation
 
@@ -160,9 +169,9 @@ Before claiming hosted activation:
 - Real Resend inbox delivery, local code sign-in and authenticated reload passed.
   The real Google button loaded without console errors. Full Google user consent,
   sign-in/linking and hosted end-to-end access checks remain verification gates.
-- Commit/deployment to the existing preview is explicitly authorized. Deployment
-  evidence will record hosted configuration and exact delivered revisions; no
-  curriculum publication is part of this rollout.
+- The authorized existing-preview web/API deployment is verified at `5a36744`;
+  hosted configuration, Google button loading and existing session continuity pass.
+  No curriculum publication is part of this rollout.
 
 ## Primary references
 
