@@ -116,3 +116,42 @@ Real Google consent/linking, permitted hosted email delivery/login, authorized
 deletion rollout, physical-device/AT checks and backup-retention operations are
 not established by these local automated results. No learner accounts, provider
 credentials or code emails were used in these tests.
+
+## Preview rollout
+
+On November 3, 2026, the owner requested commit and deployment to the existing
+development preview. Beta **0.0.18** was committed on `main` as
+`21912ca5039d72a9d570d7af14116f8b2af3770e` and pushed to `origin/main`.
+
+- Vercel marked deployment `dpl_Ca566Z4NtH5G5v4aNEq2wmK87f6j` **Ready** in
+  33 seconds. The Account page displayed **Beta 0.0.18**. The secondary alias
+  redirected to the primary preview. [Account preview](https://ismi-arabic.vercel.app/#/account)
+- The alwaysdata API health endpoint reported the exact implementation revision.
+  The deployment verified the assembly, SQLite integrity, recording files and
+  cookie keys. Google and email-code options remained enabled through the
+  frontend proxy. [API health](https://ismi.alwaysdata.net/api/health)
+- In hosted Chromium, a disposable password account saved a lesson completion
+  and signed in on two browser contexts. Account deletion required typed
+  confirmation, revoked the other session, cleared the first browser and
+  prevented password sign-in with the deleted account. The second browser
+  cleared its account records after reconnecting without its old cookie.
+  Both browsers kept the seeded guest and shared records.
+- After deletion, aggregate row fingerprints matched all 19 application tables
+  in the pre-deployment SQLite backup. The release retained that backup and the
+  previous API application under
+  `/home/ismi/ismi/deployments/20261104-025202-21912ca5039d` (UTC release ID).
+
+The SSH check succeeded with the existing key through macOS Keychain. The
+initial local package build needed a fresh restore of the pinned NuGet
+dependencies. The next attempt stopped during archive extraction as the account
+approached its disk quota. The prior API remained healthy. The resumed install
+verified the uploaded archive and reused 47 byte-identical files from the
+previous application through hard links. It extracted the changed assembly and
+verified every staged file against the archive before the swap. The installer
+kept the rollback application and database backup and then verified the new
+revision after restart. Unrelated local edits were restored and verified by
+file hash after packaging.
+
+Hosted Google consent and account linking, email-code delivery and sign-in,
+physical device and assistive-technology acceptance, and backup/provider
+retention operations remain open.
