@@ -66,7 +66,7 @@ This records each layer’s latest verified delivery, **not a full live-content 
 
 | Layer | Latest recorded state | Evidence / limit |
 | --- | --- | --- |
-| Frontend application | Beta 0.0.18 `21912ca` verified Vercel Ready on both existing aliases. Documentation follow-ups may advance the revision. | [Account deletion rollout](docs/account-deletion.md#preview-rollout). Hosted version and account deletion/reconnection pass. |
+| Frontend application | Beta 0.0.19 `a0e9de5` verified Vercel Ready on both existing aliases. Documentation follow-ups may advance the revision. | [Pocket Path rollout](docs/pocket-path.md#preview-rollout). Hosted version, Today and translation reveal pass. |
 | ASP.NET API | Healthy exact `21912ca` deployed to the existing API preview. | [Account deletion rollout](docs/account-deletion.md#preview-rollout). SQLite integrity, all 19 application tables, recordings and cookie keys verified. |
 | Levantine Everyday | Existing lesson-one v5/audio and all other publications unchanged; twenty new F12 v1 unreviewed/text-only lessons added at orders 11–30 | [F12 publication](content/levantine/expansion-20/publication.json); normal human/source/audio acceptance remains F12.5 |
 | French lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F25.2.1 audit](content/french/meet-01/publication.json); no accepted linguistic/rights review or human audio |
@@ -203,7 +203,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F27.5 · Pocket Path learner refresh](#f275-pocket-path-learner-refresh) | Local Beta 0.0.19 build and Chromium regression checks pass. |
+| [F27.5 · Pocket Path learner refresh](#f275-pocket-path-learner-refresh) | Beta 0.0.19 `a0e9de5` deployed and verified on the existing preview. |
 | [F32.1 · Download inventory and safe transfers](#f321-download-inventory-and-safe-transfers) | Software and automated fault/cross-tab/reload checks complete in deployed Beta 0.0.17; field acceptance remains F32.3. |
 | [F32.2 · Downloads interface and recovery controls](#f322-downloads-interface-and-recovery-controls) | Account Downloads, progress preservation and automated/visual checks complete in deployed Beta 0.0.17; field acceptance remains F32.3. |
 | [F34 · Learner spacing and Practice icons](#f34-learner-spacing-and-practice-icons) | Reviewed Beta 0.0.16 committed/pushed and verified live; bounded scope complete. |
@@ -1260,9 +1260,9 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — complete; content — N/A; verification — production build, Chromium mobile/desktop layouts, keyboard controls, switching, offline resume and unit sync checked.
-- **Delivery:** Application — local Beta 0.0.19; content publication — N/A.
+- **Delivery:** Application — Beta 0.0.19 `a0e9de5` pushed and verified live on the existing Vercel preview; content publication — N/A.
 - **Scope:** Apply the approved Pocket Path layout, Red Seal learner mark, rounded solid course card, and simpler lesson presentation.
-- **Next action:** None in the bounded local implementation. Owner controls preview rollout.
+- **Next action:** None in this bounded implementation and preview rollout.
 - **Authorization:** Owner selected Red Seal and the rounded solid banner and requested implementation in the app. On November 4 the owner requested push to main, which triggers the existing Vercel development preview.
 - **Completion gate / evidence:** [Pocket Path implementation and checks](docs/pocket-path.md).
 - **Dependencies:** F24.8 course switching, F27.4 course ordering and F33 reading comfort.
@@ -1490,7 +1490,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
-- **November 4 — Pocket Path implemented:** local Beta 0.0.19 applies the approved Today layout, Red Seal, and compact lesson dialogue. Chromium layout, keyboard, switching, resume and sync checks pass. [Evidence](docs/pocket-path.md).
+- **November 4 — Pocket Path deployed:** Beta 0.0.19 `a0e9de5` applies the approved Today layout, Red Seal, and compact dialogue. Both existing aliases serve the release. [Evidence](docs/pocket-path.md#preview-rollout).
 
 - **November 3 — P5 deletion deployed:** Beta 0.0.18 `21912ca` is live on the existing web/API preview. Hosted disposable-account deletion, session revocation and browser reconnection cleanup pass. All 19 hosted application tables match the pre-deployment backup after the test. Device/AT, provider round trips and retention operations remain. [Evidence](docs/account-deletion.md#preview-rollout).
 

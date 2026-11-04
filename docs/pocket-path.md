@@ -21,7 +21,7 @@ offline checks.
   Translations are available per turn. Scene context, optional script help,
   and review records are accessible below the dialogue. Lessons use the
   fixed frame, internal scroll region, reading preferences and saved checkpoints.
-- Application version: **Beta 0.0.19**. Application delivery is local.
+- Application version: **Beta 0.0.19**.
 
 ## November 4 verification
 
@@ -35,3 +35,13 @@ offline checks.
 - Chromium verification used emulated and desktop viewports from 320 to
   1440 px. Physical-device and assistive-technology verification remain part
   of the broader release gates.
+
+## Preview rollout
+
+On November 4 the owner requested push. Commit `a0e9de5` on `main` reached
+Vercel Ready for the [Ismi development preview](https://ismi-arabic.vercel.app/).
+The `ismi-ruby.vercel.app` alias redirected to the same app. A clean Chromium
+session loaded Beta 0.0.19 through both aliases. At 390 px, Today showed the
+Red Seal and rounded green card, and opening a live lesson revealed the
+first dialogue translation on demand.
+[Deployment record](https://vercel.com/victorys-projects-c1cb4594/ismi/EJ1Xhn22tsz3CBp7968XWuY6E4w2)
