@@ -57,7 +57,7 @@ async function routeChanged() {
   about.value = isAboutRoute(window.location.hash);
   learner.value = isLearnerRoute(window.location.hash);
   privacy.value = isPrivacyRoute(window.location.hash);
-  if (changed) window.scrollTo(0, 0);
+  if (changed) window.scrollTo({ top: 0, behavior: 'instant' });
   if (learner.value) showWelcome();
   else welcomeOpen.value = false;
   if (about.value) {

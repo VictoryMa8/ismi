@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { listenReadingViewport } from './readingViewport';
 import ReadingComfort from './ReadingComfort.vue';
+import redSeal from './assets/red-seal.svg';
 import DownloadsCenter from './DownloadsCenter.vue';
 import { useDownloadPin } from './downloadSafety';
 import PasswordlessSignIn from './PasswordlessSignIn.vue';
@@ -19,7 +20,7 @@ import {
   BookCheck,
   Check,
   ChevronRight,
-  Flame,
+  MapPin,
   Headphones,
   Home,
   RotateCcw,
@@ -36,7 +37,7 @@ import CurriculumConsole from './CurriculumConsole.vue';
 import StudySettings from './StudySettings.vue';
 import LearningHabits from './LearningHabits.vue';
 import { useLearningHabits } from './useLearningHabits';
-import { emptyReviewAvailability, streakSummary, type QuestTask, type StudyActivity } from './learningHabits';
+import { emptyReviewAvailability, type QuestTask, type StudyActivity } from './learningHabits';
 import LoadingWords from './LoadingWords.vue';
 import PlacementCheck from './PlacementCheck.vue';
 import { buildStudyPlan, type TrackId } from './studyPlan';
@@ -389,7 +390,6 @@ const todayReviewLessons = computed(() => dashboard.value.dailyPlan.lessons.filt
   studySettings.preferences.value.selectedTrackIds.some(id => id === (item.trackId ?? 'levantine')),
 ));
 const hubReviewLessons = computed(() => activeLessons.value);
-const streak = computed(() => streakSummary(learningHabits.state.value, habitNow.value));
 const dailyGoal = computed(() => studySettings.preferences.value.goalMinutes);
 const questLessons = computed(() => dashboardScope.value === reviewScope.value
   ? todayReviewLessons.value.filter(item => apiLive.value || offlineQuestLessonIds.value.includes(item.id)) : []);
@@ -450,7 +450,6 @@ const nextStudyLesson = computed(() => {
 const manualCourseStudy = computed(() => Boolean(nextStudyLesson.value
   && !studyPlan.value.queue.some(item => item.id === nextStudyLesson.value!.id)));
 const upcomingPlanLessons = computed(() => studyPlan.value.queue.filter(item => item.id !== nextStudyLesson.value?.id));
-const nextStudyTrack = computed(() => ({ name: activeCourse.value.name }));
 const isCorrect = computed(() => attemptFeedback.value?.isCorrect ?? false);
 const selectedArabicVoice = computed(() => {
   const exactLocalePreferences = lessonCourse.value.id === 'levantine' ? ['ar-PS', 'ar-JO', 'ar-LB', 'ar-IL'] : [lessonCourse.value.audioLocale];
@@ -1412,18 +1411,18 @@ async function finishLesson() {
     >Skip to main content</a
   >
 
-  <div class="app-shell" :data-course="activeCourse.id" :inert="lessonOpen || consoleOpen || reviewOpen">
+  <div class="app-shell" :data-page="page" :data-course="activeCourse.id" :inert="lessonOpen || consoleOpen || reviewOpen">
     <aside class="side-nav" aria-label="Primary navigation">
       <a class="brand" href="#" aria-label="Ismi landing page">
         <img
           class="brand-mark"
-          src="/ismi-mark.svg"
+          :src="redSeal"
           width="38"
           height="38"
           alt=""
           aria-hidden="true"
         />
-        <span class="brand-word">ismi</span>
+        <span class="brand-word">Ismi</span>
       </a>
 
       <nav class="nav-links">
@@ -1467,18 +1466,19 @@ async function finishLesson() {
     </aside>
 
     <main id="main-content" class="main-content" tabindex="-1">
-      <header class="mobile-header">
+      <header class="mobile-header learner-toolbar" :class="{ 'toolbar-downloads': page === 'downloads' }">
         <a class="brand" href="#" aria-label="Ismi landing page">
           <img
             class="brand-mark"
-            src="/ismi-mark.svg"
+            :src="redSeal"
             width="38"
             height="38"
             alt=""
             aria-hidden="true"
           />
-          <span class="brand-word">ismi</span>
+          <span class="brand-word">Ismi</span>
         </a>
+        <CourseSwitcher v-if="page !== 'downloads'" :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || (!studyPageAvailable && page !== 'practice-alphabet') || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
         <div class="header-controls">
           <SoundToggle /><a
             class="profile-button"
@@ -1492,9 +1492,8 @@ async function finishLesson() {
         </div>
       </header>
 
-      <BackControl class="landing-return mobile-landing-return" href="#">Back to landing page</BackControl>
+      <BackControl v-if="page !== 'today'" class="landing-return mobile-landing-return" href="#">Back to landing page</BackControl>
 
-      <CourseSwitcher v-if="page !== 'downloads'" :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || (!studyPageAvailable && page !== 'practice-alphabet') || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
       <p v-if="courseStorageError" role="status">{{ courseStorageError }}</p>
       <section v-if="studyPageAvailable && !activeLessons.length && page !== 'account' && page !== 'downloads' && page !== 'practice-alphabet'" class="course-empty" role="status">
         <h2>{{ activeCourse.name }}</h2><p>Lessons not yet available. Your saved progress and daily study settings are unchanged.</p>
@@ -1533,87 +1532,55 @@ async function finishLesson() {
           </div>
         </section>
 
-        <section class="status-strip" aria-label="Today’s shortcuts">
-          <a class="feature-tile accent-gold" href="#/progress">
-            <span class="feature-badge" aria-hidden="true"><Flame :size="18" /></span>
-            <span class="feature-copy">
-              <strong>Streak</strong>
-              <small>{{ learningHabits.state.value.streakEnabled ? `${streak.studyDays} study ${streak.studyDays === 1 ? 'day' : 'days'}` : 'Off' }}</small>
-            </span>
-          </a>
-          <button
-            type="button"
-            class="feature-tile accent-green"
-            :disabled="!questReviewAvailability.due"
-            @click="questReview?.start('due')"
-          >
-            <span class="feature-badge" aria-hidden="true"><RotateCcw :size="18" /></span>
-            <span class="feature-copy">
-              <strong>Review due</strong>
-              <small>{{ questReviewAvailability.dueCount ?? 0 }}</small>
-            </span>
-          </button>
-        </section>
-
-        <section v-if="nextStudyLesson" class="section-block" aria-labelledby="next-heading">
-          <div class="section-heading">
-            <div>
-              <h2 id="next-heading">{{ nextStudyLesson.id === resumableLessonId ? 'Continue your lesson' : dailyCompleted >= dailyGoal ? 'Keep practicing' : 'Next lesson' }}</h2>
-            </div>
-            <span class="time-chip"
-              >{{ nextStudyLesson?.estimatedMinutes ?? 0 }} min</span
-            >
+        <section class="today-path" aria-label="Today’s study path">
+          <div v-if="nextStudyLesson" class="today-stop">
+            <span class="today-marker today-marker-progress" aria-hidden="true"><Check :size="18" /></span>
+            <a class="today-path-link" href="#/progress">{{ courseProgressLabel }}</a>
           </div>
 
-          <article class="primary-lesson-card">
-            <div class="track-label hero-track-label">
-              <span class="hero-bubble" v-bind="textAttributes(activeCourse.id)">{{ activeCourse.nativeName }}</span>
-              <span class="hero-track-copy">
-                <span>{{ activeCourse.languageName }}</span>
-                <small v-if="activeCourse.name !== activeCourse.languageName">{{ nextStudyTrack.name }}</small>
-              </span>
-            </div>
-            <div class="lesson-details">
-              <CharacterCast
-                :cast="
-                  nextStudyLesson?.characters
-                "
-                compact
-              />
-              <h3>
-                {{
-                  nextStudyLesson?.title
-                }}
-              </h3>
-              <button
-                class="primary-action"
-                type="button"
-                data-ui-sound="advance"
-                :aria-label="nextStudyLesson.id === resumableLessonId ? `Resume ${nextStudyLesson.title}` : manualCourseStudy ? `Open ${nextStudyLesson.title}` : `Continue in ${nextStudyTrack?.name?.includes('Levantine') ? 'Levantine' : (nextStudyTrack?.name ?? 'your track')}`"
-                @click="startLesson()"
-              >
-                {{ nextStudyLesson.id === resumableLessonId ? 'Resume lesson' : manualCourseStudy ? 'Open lesson' : 'Continue' }}
-                <ChevronRight :size="20" aria-hidden="true" />
-              </button>
-              <details class="lesson-about">
-                <summary>About this lesson</summary>
-                <p>
-                  {{
-                    nextStudyLesson?.publicationNotice?.label ?? (nextStudyLesson?.reviewStatus === 'demonstrative'
-                      ? 'Demonstration · not reviewed launch curriculum.'
-                      : 'Owner-approved · no native-expert review.')
-                  }}
+          <div v-if="nextStudyLesson" class="today-stop">
+            <span class="today-marker today-marker-lesson" aria-hidden="true"><MapPin :size="18" /></span>
+            <article class="primary-lesson-card" aria-labelledby="next-heading">
+              <div class="lesson-details">
+                <p class="today-lesson-meta">
+                  {{ manualCourseStudy && dailyCompleted < dailyGoal ? 'Extra practice' : nextStudyLesson.id === resumableLessonId ? 'In progress' : 'Next lesson' }}
+                  · {{ nextStudyLesson.estimatedMinutes }} min
                 </p>
-              </details>
-            </div>
-          </article>
-          <p v-if="manualCourseStudy && dailyCompleted < dailyGoal" class="review-status-note">Extra practice · your daily goal stays the same.</p>
+                <h2 id="next-heading">{{ nextStudyLesson.title }}</h2>
+                <button
+                  class="primary-action"
+                  type="button"
+                  data-ui-sound="advance"
+                  :aria-label="nextStudyLesson.id === resumableLessonId ? `Resume ${nextStudyLesson.title}` : manualCourseStudy ? `Open ${nextStudyLesson.title}` : `Continue in ${viewedCourse === 'levantine' ? 'Levantine' : activeCourse.name}`"
+                  @click="startLesson()"
+                >
+                  {{ nextStudyLesson.id === resumableLessonId ? 'Resume lesson' : manualCourseStudy ? 'Open lesson' : 'Continue' }}
+                  <ChevronRight :size="20" aria-hidden="true" />
+                </button>
+              </div>
+              <CharacterCast :cast="nextStudyLesson.characters" compact />
+            </article>
+          </div>
 
-          <a class="page-link" href="#/courses"
-            ><span>{{ courseProgressLabel }}</span
-            ><ChevronRight :size="16" aria-hidden="true"
-          /></a>
+          <div class="today-stop">
+            <span class="today-marker today-marker-review" aria-hidden="true"><RotateCcw :size="18" /></span>
+            <button
+              type="button"
+              class="today-path-link"
+              :disabled="!questReviewAvailability.due"
+              @click="questReview?.start('due')"
+            >Review due · {{ questReviewAvailability.dueCount ?? 0 }}</button>
+          </div>
         </section>
+
+        <details v-if="nextStudyLesson" class="lesson-about">
+          <summary>About this lesson</summary>
+          <p>{{ nextStudyLesson.publicationNotice?.label ?? (nextStudyLesson.reviewStatus === 'demonstrative'
+            ? 'Demonstration · not reviewed launch curriculum.'
+            : 'Owner-approved · no native-expert review.') }}</p>
+          <p v-if="manualCourseStudy && dailyCompleted < dailyGoal">Extra practice · your daily goal stays the same.</p>
+        </details>
+
         <section class="daily-progress" :class="{ 'goal-complete': dailyCompleted >= dailyGoal }" aria-labelledby="progress-heading">
           <div class="progress-copy">
             <span class="section-kicker"><Check v-if="dailyCompleted >= dailyGoal" :size="16" aria-hidden="true" /> {{ dailyCompleted >= dailyGoal ? 'Daily goal complete' : 'Daily goal' }}</span>
@@ -2057,6 +2024,7 @@ async function finishLesson() {
           <a href="#/about">About & FAQ</a> · <a href="#/privacy">Privacy policy</a> · {{ appVersionLabel }}
         </p>
       </section>
+      <BackControl v-if="page === 'today'" class="landing-return mobile-landing-return today-landing-return" href="#">Back to landing page</BackControl>
     </main>
 
     <nav class="bottom-nav" aria-label="Mobile navigation">
@@ -2081,7 +2049,7 @@ async function finishLesson() {
     @click.self="closeLesson"
   >
     <section
-      class="lesson-sheet"
+      class="lesson-sheet pocket-lesson"
       role="dialog"
       aria-modal="true"
       aria-labelledby="lesson-title"
@@ -2104,9 +2072,8 @@ async function finishLesson() {
             ×
           </button>
         </div>
+        <PublicationNotice class="lesson-status" :notice="lesson?.publicationNotice" compact />
       </header>
-
-      <PublicationNotice :notice="lesson?.publicationNotice" compact />
       <div class="lesson-workspace">
         <div
           v-if="lessonLoading || lessonError || lessonFinished"

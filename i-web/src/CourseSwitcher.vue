@@ -21,7 +21,6 @@ const languageChoices = computed(() => [...new Set(courses.map(c => c.languageId
 const arabicCourses = courseGroups.filter(c => c.languageId === 'arabic')
 const status = (id: string) => props.lessons.some(l => (l.trackId ?? 'levantine') === id && l.publicationNotice)
   ? 'Unreviewed preview' : hasLessons(id) ? '' : 'Planned'
-const currentDetail = computed(() => [current.value.name === current.value.languageName ? '' : current.value.name, status(current.value.id)].filter(Boolean).join(' · '))
 
 function close(restoreFocus = false) {
   open.value = false
@@ -40,17 +39,10 @@ onBeforeUnmount(() => document.removeEventListener('pointerdown', outside))
 </script>
 <template>
   <div ref="root" class="course-switcher" :data-course="current.id" @keydown.esc="open && close(true)" @focusout="event => event.relatedTarget && !root?.contains(event.relatedTarget as Node) && close()">
-    <section class="course-banner" aria-label="Current language and course">
-      <span :key="current.id" class="banner-bubble" v-bind="textAttributes(current.id)">{{ current.nativeName }}</span>
-      <p class="banner-copy">
-        <span class="banner-kicker">Studying</span>
-        <strong>{{ current.languageName }}</strong>
-        <span v-if="currentDetail" class="banner-detail">{{ currentDetail }}</span>
-      </p>
-      <button ref="toggle" type="button" class="banner-switch" :aria-expanded="open" :aria-controls="panelId" :disabled="disabled" data-ui-sound="reveal" @click="open = !open">
-        Switch<span class="sr-only"> language or course</span><ChevronDown :size="18" aria-hidden="true" />
-      </button>
-    </section>
+    <button ref="toggle" type="button" class="banner-switch" :aria-label="`Switch language or course: ${current.name}`" :aria-expanded="open" :aria-controls="panelId" :disabled="disabled" data-ui-sound="reveal" @click="open = !open">
+      <span class="banner-detail">{{ current.name }}</span>
+      <ChevronDown :size="17" aria-hidden="true" />
+    </button>
     <div v-show="open" :id="panelId" class="course-picker">
       <h2 class="picker-heading">Choose a language</h2>
       <ul class="picker-languages">
@@ -81,22 +73,15 @@ onBeforeUnmount(() => document.removeEventListener('pointerdown', outside))
   </div>
 </template>
 <style scoped>
-.course-switcher { position: relative; margin: 0 0 14px; }
-.course-banner { position: relative; display: flex; align-items: center; gap: 14px; min-height: 76px; padding: 12px 12px 16px 14px; overflow: hidden; border-radius: 18px; color: var(--course-ink); background: var(--course-surface); box-shadow: 0 8px 22px #1a2b2414; }
-.course-banner::after { content: ''; position: absolute; inset: auto 0 0; height: 6px; background: var(--course-stripe); }
-.banner-bubble { position: relative; display: grid; place-items: center; flex-shrink: 0; min-width: 64px; height: 50px; padding: 0 12px; border-radius: 16px 16px 16px 5px; color: var(--course-band-ink); background: var(--course-band); font-size: 21px; font-weight: 700; line-height: 1 !important; padding-block: 0 !important; animation: bubble-pop 420ms cubic-bezier(.3, 1.6, .5, 1); }
-.banner-bubble::after { content: ''; position: absolute; left: 6px; bottom: -8px; border: 8px solid transparent; border-top-color: var(--course-band); border-left-color: var(--course-band); border-bottom: 0; }
-.banner-copy { display: grid; flex: 1; min-width: 0; margin: 0; line-height: 1.2; }
-.banner-kicker { font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
-.banner-copy strong { font-size: 22px; }
-.banner-detail { font-size: 13px; line-height: 1.25; opacity: .92; }
-.banner-switch { display: inline-flex; align-items: center; gap: 4px; flex-shrink: 0; min-height: 48px; padding: 0 12px 0 16px; border: 0; border-radius: 999px; color: var(--course-text); background: white; font: inherit; font-weight: 800; cursor: pointer; box-shadow: 0 3px 0 #0000002a; transition: transform 160ms ease; }
-.banner-switch svg { transition: transform 200ms ease; }
+.course-switcher { min-width: 0; }
+.banner-switch { display: flex; align-items: center; gap: 7px; min-height: 44px; max-width: 100%; padding: 6px 10px; border: 1px solid #8ab5a1; border-radius: 12px; color: #fff8e6; background: #1d634f; font: inherit; font-size: .85rem; font-weight: 750; line-height: 1.2; text-align: start; cursor: pointer; }
+.banner-detail { min-width: 0; overflow-wrap: anywhere; }
+.banner-switch svg { flex: none; transition: transform 200ms ease; }
 .banner-switch[aria-expanded='true'] svg { transform: rotate(180deg); }
-.banner-switch:hover:not(:disabled) { transform: translateY(-1px); }
-.banner-switch:focus-visible { outline: 3px solid var(--course-ink); outline-offset: 3px; }
-.banner-switch:disabled { cursor: not-allowed; opacity: .6; }
-.course-picker { position: absolute; z-index: 30; top: calc(100% + 8px); left: 0; right: 0; padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: white; box-shadow: 0 18px 40px #1a2b2430; animation: picker-in 180ms ease-out; }
+.banner-switch:hover:not(:disabled) { background: #246f59; }
+.banner-switch:focus-visible { outline: 3px solid #ffd477; outline-offset: 3px; }
+.banner-switch:disabled { cursor: not-allowed; opacity: .65; }
+.course-picker { position: absolute; z-index: 30; top: calc(100% + 8px); inset-inline: 0; padding: 16px; border: 1px solid var(--line); border-radius: 18px; color: var(--ink); background: white; box-shadow: 0 18px 40px #1a2b2430; animation: picker-in 180ms ease-out; }
 .picker-heading { margin: 0 0 10px; color: var(--ink-soft); font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
 h3.picker-heading { margin-top: 16px; }
 .picker-languages, .picker-courses { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
@@ -117,24 +102,19 @@ h3.picker-heading { margin-top: 16px; }
 .picker-chip { min-height: 44px; padding: 8px 14px; border: 2px solid var(--course-text); border-radius: 999px; color: var(--course-text); background: white; font: inherit; font-weight: 700; cursor: pointer; }
 .picker-chip[aria-pressed='true'] { color: var(--course-ink); background: var(--course-surface); border-color: var(--course-surface); }
 .picker-chip small { font-weight: 600; }
-@keyframes bubble-pop { from { transform: scale(.6) rotate(-6deg); } to { transform: none; } }
 @keyframes picker-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 @media (max-width: 520px) {
-  .course-switcher { margin-bottom: 10px; }
-  .course-banner { gap: 10px; min-height: 0; padding: 8px 10px 12px 12px; }
-  .banner-bubble { min-width: 56px; height: 44px; font-size: 18px; }
-  .banner-kicker { font-size: 10px; }
-  .banner-copy strong { font-size: 19px; }
-  .banner-detail { font-size: 12.5px; }
-  .banner-switch { padding: 0 10px 0 13px; }
+  .banner-switch { font-size: .75rem; gap: 4px; padding-inline: 7px; }
+  .banner-switch svg { width: 13px; }
+  .picker-languages { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .banner-bubble, .course-picker { animation: none; }
-  .banner-switch, .banner-switch svg, .picker-tile { transition: none; }
-  .picker-tile:hover, .banner-switch:hover:not(:disabled) { transform: none; }
+  .course-picker { animation: none; }
+  .banner-switch svg, .picker-tile { transition: none; }
+  .picker-tile:hover { transform: none; }
 }
 @media (forced-colors: active) {
-  .course-banner, .picker-tile, .banner-bubble, .tile-bubble { border: 2px solid CanvasText; }
+  .banner-switch, .picker-tile, .tile-bubble { border: 2px solid CanvasText; }
   .picker-tile[aria-pressed='true'] { outline: 3px solid Highlight; }
 }
 </style>

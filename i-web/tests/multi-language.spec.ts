@@ -285,7 +285,10 @@ test('Today retains manual lessons and shared guides when switching outside the 
     await switchCourse(page, id)
     if (id !== 'levantine') {
       await expect(page.getByRole('button', { name: `Open ${id} engineering 1`, exact: true })).toBeVisible()
+      await expect(page.locator('.primary-lesson-card')).toContainText('Extra practice')
+      await page.getByText('About this lesson', { exact: true }).click()
       await expect(page.getByText('Extra practice · your daily goal stays the same.', { exact: true })).toBeVisible()
+      await page.getByText('About this lesson', { exact: true }).click()
       await expect(page.locator('.primary-lesson-card [data-character="fattoush"]')).toBeVisible()
       await expect(page.locator('.primary-lesson-card [data-character="knafeh"]')).toBeVisible()
     }

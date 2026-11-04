@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   ChevronRight,
   Lightbulb,
-  MessageCircle,
   RotateCcw,
 } from '@lucide/vue';
 import type { TeachingCheckpoint } from './lessonSessions';
@@ -138,44 +137,14 @@ async function back() {
       <p v-if="!lesson.publicationNotice && lesson.contentReview && lesson.contentReview.reviewDisposition !== 'accepted'" class="draft-review-notice" role="status">
         Unreviewed draft · fluent linguistic review pending.
       </p>
-      <details v-if="lesson.contentReview && stage === 'scene'" class="content-review-record">
-        <summary>Course and review record</summary>
-        <p>{{ lesson.contentReview.languageTag }} · {{ lesson.contentReview.variety }} · {{ lesson.version }}</p>
-        <p>Review credit: {{ lesson.contentReview.reviewer || 'Reviewer not yet designated' }} · {{ lesson.contentReview.reviewDisposition }}</p>
-        <p>Pronunciation help: {{ lesson.contentReview.helpConvention }}. Rights: {{ lesson.contentReview.rightsDisposition }}.</p>
-        <p v-if="lesson.contentReview.engineeringFixture">Engineering fixture · not approved curriculum.</p>
-      </details>
-      <details v-if="stage === 'scene' && lesson.introduction?.scriptSupport" class="script-support">
-        <summary>{{ lesson.introduction.scriptSupport.title }}</summary>
-        <p>{{ lesson.introduction.scriptSupport.note }}</p>
-        <ol>
-          <li v-for="cardIndex in lesson.introduction.scriptSupport.teachingCardIndexes" :key="cardIndex">
-            <template v-if="cards[cardIndex]">
-              <p v-bind="textAttributes(lesson.trackId)">{{ cards[cardIndex]!.phrase.arabic }}</p>
-              <details><summary>{{ cards[cardIndex]!.phrase.arabizi ? 'Show pronunciation help and meaning' : 'Show meaning' }}</summary>
-                <p v-if="cards[cardIndex]!.phrase.arabizi" dir="ltr"><ReadingHelp :text="cards[cardIndex]!.phrase.arabizi" :course="lesson.trackId" /></p>
-                <p>{{ cards[cardIndex]!.phrase.meaning }}</p>
-              </details>
-            </template>
-          </li>
-        </ol>
-        <p>No score is recorded. Continue the lesson whenever you are ready.</p>
-      </details>
       <LessonTransition @after-enter="focusHeading">
         <div :key="`${stage}-${index}-${revealed}`" class="teaching-page">
           <template v-if="stage === 'scene'">
-            <span class="coach-icon"
-              ><MessageCircle :size="24" aria-hidden="true"
-            /></span>
-            <h3 ref="heading" tabindex="-1">
+            <h3 ref="heading" tabindex="-1" :class="{ 'sr-only': dialogue.length }">
               {{ lesson.introduction?.goal ?? lesson.title }}
             </h3>
-            <p class="coach-context">{{ lesson.scenario }}</p>
-            <img v-if="sceneSource && !sceneFailed" class="lesson-scene-art" :src="sceneSource" alt="" aria-hidden="true" width="960" height="640" @error="sceneFailed = true" />
-            <CharacterCast :cast="sceneCast" />
-            <p v-if="Object.keys(sharedRoles).length" class="coach-caption">Fattoush and Knafeh act out this conversation using the names in the dialogue.</p>
             <ol
-              v-if="lesson.introduction"
+              v-if="dialogue.length"
               class="dialogue-transcript dialogue-bubbles"
               aria-label="Dialogue transcript"
             >
@@ -199,13 +168,48 @@ async function back() {
                   expression="attentive"
                 />
                 <strong v-else>{{ turn.speaker }}</strong>
-                <p v-bind="textAttributes(lesson.trackId)">{{ turn.line.arabic }}</p>
-                <p class="phrase-transliteration" dir="ltr">
-                  <ReadingHelp :text="turn.line.arabizi" :course="lesson.trackId" />
-                </p>
-                <p class="phrase-meaning">{{ turn.line.meaning }}</p>
+                <div class="dialogue-line">
+                  <p class="dialogue-target" v-bind="textAttributes(lesson.trackId)">{{ turn.line.arabic }}</p>
+                  <p v-if="turn.line.arabizi" class="phrase-transliteration" dir="ltr">
+                    <ReadingHelp :text="turn.line.arabizi" :course="lesson.trackId" />
+                  </p>
+                  <details v-if="turn.line.meaning" class="dialogue-translation">
+                    <summary><span class="translation-show">Show translation</span><span class="translation-hide">Hide translation</span></summary>
+                    <p class="phrase-meaning">{{ turn.line.meaning }}</p>
+                  </details>
+                </div>
               </li>
             </ol>
+            <details class="conversation-context" :open="!dialogue.length">
+              <summary>About this conversation</summary>
+              <p class="coach-context">{{ lesson.scenario }}</p>
+              <img v-if="sceneSource && !sceneFailed" class="lesson-scene-art" :src="sceneSource" alt="" aria-hidden="true" width="960" height="640" @error="sceneFailed = true" />
+              <CharacterCast :cast="sceneCast" />
+              <p v-if="Object.keys(sharedRoles).length" class="coach-caption">Fattoush and Knafeh act out this conversation using the names in the dialogue.</p>
+            </details>
+            <details v-if="lesson.contentReview" class="content-review-record">
+              <summary>Course and review record</summary>
+              <p>{{ lesson.contentReview.languageTag }} · {{ lesson.contentReview.variety }} · {{ lesson.version }}</p>
+              <p>Review credit: {{ lesson.contentReview.reviewer || 'Reviewer not yet designated' }} · {{ lesson.contentReview.reviewDisposition }}</p>
+              <p>Pronunciation help: {{ lesson.contentReview.helpConvention }}. Rights: {{ lesson.contentReview.rightsDisposition }}.</p>
+              <p v-if="lesson.contentReview.engineeringFixture">Engineering fixture · not approved curriculum.</p>
+            </details>
+            <details v-if="lesson.introduction?.scriptSupport" class="script-support">
+              <summary>{{ lesson.introduction.scriptSupport.title }}</summary>
+              <p>{{ lesson.introduction.scriptSupport.note }}</p>
+              <ol>
+                <li v-for="cardIndex in lesson.introduction.scriptSupport.teachingCardIndexes" :key="cardIndex">
+                  <template v-if="cards[cardIndex]">
+                    <p v-bind="textAttributes(lesson.trackId)">{{ cards[cardIndex]!.phrase.arabic }}</p>
+                    <details><summary>{{ cards[cardIndex]!.phrase.arabizi ? 'Show pronunciation help and meaning' : 'Show meaning' }}</summary>
+                      <p v-if="cards[cardIndex]!.phrase.arabizi" dir="ltr"><ReadingHelp :text="cards[cardIndex]!.phrase.arabizi" :course="lesson.trackId" /></p>
+                      <p>{{ cards[cardIndex]!.phrase.meaning }}</p>
+                    </details>
+                  </template>
+                </li>
+              </ol>
+              <p>No score is recorded. Continue the lesson whenever you are ready.</p>
+            </details>
           </template>
           <template v-else-if="stage === 'learn' || stage === 'recall'">
             <p class="section-kicker">

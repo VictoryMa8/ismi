@@ -10,9 +10,9 @@ test('weekly activities start off and saved habit choices are kept', async ({ pa
     tasks: [], studyDays: [], creditedIds: [], lastActivityDay: '',
   })))
   await page.reload()
-  await expect(page.getByRole('link', { name: /Streak/ })).toContainText('Off')
-  await expect(page.locator('.status-strip')).not.toContainText('This week')
+  await expect(page.locator('.today-path')).not.toContainText('This week')
   await page.getByRole('link', { name: 'Progress', exact: true }).click()
+  await expect(page.getByRole('checkbox', { name: 'Track my streak', exact: true })).not.toBeChecked()
   await page.getByRole('checkbox', { name: 'Track my streak', exact: true }).check()
   await page.reload()
   await page.getByText('Optional weekly activities', { exact: true }).click()
@@ -31,9 +31,10 @@ for (const width of [320, 390, 1280]) {
     for (const name of ['Today', 'Courses', 'Practice', 'Progress', 'Words']) {
       await expect(nav.getByRole('link', { name, exact: true })).toBeVisible()
     }
-    await expect(page.getByRole('link', { name: /Streak/ })).toBeVisible()
+    await expect(page.getByRole('link', { name: /lessons complete/ })).toHaveAttribute('href', '#/progress')
+    await expect(page.getByRole('link', { name: /Streak/ })).toHaveCount(0)
     await expect(page.getByRole('button', { name: /^Review due/ })).toBeVisible()
-    const badge = page.locator('.status-strip .feature-badge').first()
+    const badge = page.locator('.today-marker-progress')
     const contrast = await badge.evaluate(element => {
       const style = getComputedStyle(element)
       const parse = (hex: string) => {
@@ -92,12 +93,13 @@ test('Today uses its main card to resume a different started lesson', async ({ p
   await expect(card).toContainText(title)
   await expect(card.getByRole('button', { name: `Resume ${title}`, exact: true })).toHaveText('Resume lesson')
   await expect(page.locator('.resume-course')).toHaveCount(0)
-  await expect(page.locator('.status-strip')).not.toContainText(/grace|This week/i)
+  await expect(page.locator('.today-path')).not.toContainText(/grace|This week/i)
   await page.screenshot({ path: testInfo.outputPath('today-resume.png'), fullPage: true })
   await page.evaluate(async () => { await navigator.serviceWorker.ready })
   await context.setOffline(true)
   await page.reload()
   await expect(card).toContainText(title)
+  await expect(page.locator('.mobile-header .brand-mark')).toHaveJSProperty('complete', true)
   await card.getByRole('button', { name: `Resume ${title}`, exact: true }).click()
   await expect(dialog.getByRole('button', { name: 'Try from memory', exact: true })).toBeVisible()
 })

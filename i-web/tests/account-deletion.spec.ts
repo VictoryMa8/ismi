@@ -1,4 +1,7 @@
+import { readFileSync } from 'node:fs'
 import { expect, test, type BrowserContext, type Page } from '@playwright/test'
+
+const appVersion = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8')).version
 
 const password = 'long test password'
 async function post(context: BrowserContext, path: string, data: object) {
@@ -72,7 +75,7 @@ test('permanent deletion clears owned records and preserves guest, other account
   const { scope } = await account(page)
   await seed(page, scope)
   const before = await records(page, scope)
-  await expect(page.locator('.account-legal')).toContainText('Beta 0.0.18')
+  await expect(page.locator('.account-legal')).toContainText(`Beta ${appVersion}`)
   await page.getByRole('button', { name: 'Delete my account', exact: true }).click()
   await page.getByLabel('Type DELETE to confirm').fill('DELETE')
   await page.locator('.account-deletion').screenshot({ path: testInfo.outputPath('deletion-confirmation-mobile.png') })

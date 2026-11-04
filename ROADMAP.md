@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated November 3, 2026 · **Single source of current feature state and next work.**
+Updated November 4, 2026 · **Single source of current feature state and next work.**
 
 ## Agent entry
 
@@ -203,6 +203,7 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
+| [F27.5 · Pocket Path learner refresh](#f275-pocket-path-learner-refresh) | Local Beta 0.0.19 build and Chromium regression checks pass. |
 | [F32.1 · Download inventory and safe transfers](#f321-download-inventory-and-safe-transfers) | Software and automated fault/cross-tab/reload checks complete in deployed Beta 0.0.17; field acceptance remains F32.3. |
 | [F32.2 · Downloads interface and recovery controls](#f322-downloads-interface-and-recovery-controls) | Account Downloads, progress preservation and automated/visual checks complete in deployed Beta 0.0.17; field acceptance remains F32.3. |
 | [F34 · Learner spacing and Practice icons](#f34-learner-spacing-and-practice-icons) | Reviewed Beta 0.0.16 committed/pushed and verified live; bounded scope complete. |
@@ -1255,6 +1256,17 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Completion gate / evidence:** [Course path clarity contract and checks](docs/course-path-clarity.md).
 - **Dependencies:** Existing F12 course metadata, F15/F24 daily queue and F27 learner navigation; no publication rewrite or data migration.
 
+#### F27.5 Pocket Path learner refresh
+
+- **Work state:** Complete.
+- **Readiness:** Implementation — complete; content — N/A; verification — production build, Chromium mobile/desktop layouts, keyboard controls, switching, offline resume and unit sync checked.
+- **Delivery:** Application — local Beta 0.0.19; content publication — N/A.
+- **Scope:** Apply the approved Pocket Path layout, Red Seal learner mark, rounded solid course card, and simpler lesson presentation.
+- **Next action:** None in the bounded local implementation. Owner controls preview rollout.
+- **Authorization:** Owner selected Red Seal and the rounded solid banner and requested implementation in the app. On November 4 the owner requested push to main, which triggers the existing Vercel development preview.
+- **Completion gate / evidence:** [Pocket Path implementation and checks](docs/pocket-path.md).
+- **Dependencies:** F24.8 course switching, F27.4 course ordering and F33 reading comfort.
+
 ### F28 Alphabet explorer
 
 - **Work state:** Complete.
@@ -1478,6 +1490,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **November 4 — Pocket Path implemented:** local Beta 0.0.19 applies the approved Today layout, Red Seal, and compact lesson dialogue. Chromium layout, keyboard, switching, resume and sync checks pass. [Evidence](docs/pocket-path.md).
+
 - **November 3 — P5 deletion deployed:** Beta 0.0.18 `21912ca` is live on the existing web/API preview. Hosted disposable-account deletion, session revocation and browser reconnection cleanup pass. All 19 hosted application tables match the pre-deployment backup after the test. Device/AT, provider round trips and retention operations remain. [Evidence](docs/account-deletion.md#preview-rollout).
 
 - **November 3 — P4 delivered:** owner requested “build P4,” then “commit and deploy.” Beta 0.0.17 `a17936f` committed/pushed and verified live on existing aliases; 42 browser checks plus hosted version/inventory/offline recovery pass. F32/F32.3 retain named physical-device/AT acceptance. API/content unchanged. [Evidence](docs/downloads-implementation.md#application-delivery).
@@ -1485,5 +1499,3 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **November 1 — F34 UI polish:** reviewed Beta 0.0.16 committed/pushed as `99411db` and verified live on existing Vercel aliases. Distinct Practice icons, course/card/story/Account spacing and actual three-story catalog pass; API/content unchanged. [Evidence](docs/learner-spacing-and-icons.md#application-delivery).
 
 - **October 31 — F16.1/F16.2 sign-in:** Beta 0.0.15 software passes 91 API/three browser checks; Google client and restricted Resend key created; real local email delivery/login/reload pass. Owner-authorized web/API rollout verified at `5a36744`; hosted version/options/Google button and prior-data preservation pass. Actual Google consent/linking and hosted email round trip remain. F16 deletion/retention is separate. [Evidence](docs/account-sign-in.md).
-
-- **October 28 — F33:** Beta 0.0.13 `58581bb` committed and pushed to main with automated verification; hosted deployment unverified. Physical-device/AT and hosted delivery evidence remain separate. [Evidence](docs/reading-comfort-implementation.md).

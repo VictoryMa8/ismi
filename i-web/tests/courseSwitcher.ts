@@ -1,6 +1,6 @@
 import { expect, type Page } from '@playwright/test'
 
-export const courseSwitch = (page: Page) => page.getByRole('button', { name: 'Switch language or course', exact: true })
+export const courseSwitch = (page: Page) => page.getByRole('button', { name: /^Switch language or course:/ })
 
 export async function chooseCourse(page: Page, id: string) {
   await expect(courseSwitch(page)).toBeEnabled()

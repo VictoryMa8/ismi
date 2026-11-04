@@ -72,6 +72,7 @@ async function complete(page: Page, dialog: Locator, lesson: LessonResponse, wro
 
 test('all authored lessons preview, then published test copies complete offline and reopen for review', async ({ page, context }, testInfo) => {
   test.setTimeout(240_000)
+  await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/#/today')
   const registration = await post(page, '/api/auth/register', { displayName: 'Preview owner', email: 'preview-owner@example.test', password: 'test-only-long-password' })
   if (!registration.ok()) expect((await post(page, '/api/auth/login', { email: 'preview-owner@example.test', password: 'test-only-long-password', rememberMe: false })).ok()).toBeTruthy()
@@ -94,7 +95,16 @@ test('all authored lessons preview, then published test copies complete offline 
     expect(await dialog.locator('.character-portrait img').first().evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth > 0)).toBeTruthy()
     await expect(dialog.locator('[lang|="ar"][dir="rtl"]').first()).toBeVisible()
     expect(await dialog.evaluate(element => element.scrollWidth <= element.clientWidth + 1)).toBeTruthy()
-    await expect(dialog.getByText(pack.lesson.introduction!.dialogue[0]!.line.meaning, { exact: true }).first()).toBeVisible()
+    const firstTurn = dialog.getByRole('list', { name: 'Dialogue transcript' }).getByRole('listitem').first()
+    const translation = firstTurn.locator('.phrase-meaning')
+    await expect(translation).toBeHidden()
+    const reveal = firstTurn.locator('summary')
+    await expect(reveal).toHaveAccessibleName('Show translation')
+    await reveal.focus()
+    await expect(reveal).toBeFocused()
+    await page.keyboard.press('Enter')
+    await expect(translation).toHaveText(pack.lesson.introduction!.dialogue[0]!.line.meaning)
+    await expect(translation).toBeVisible()
     if (pack.lesson.courseOrder === 1) await page.screenshot({ path: testInfo.outputPath('lesson-01-dialogue.png') })
     await complete(page, dialog, pack.lesson, true)
     await expect(dialog.getByText('Preview complete', { exact: true })).toBeVisible()
@@ -162,7 +172,10 @@ test('all authored lessons preview, then published test copies complete offline 
   await expect(page.getByText('7 completions waiting to sync', { exact: true })).toHaveCount(0)
   await page.reload()
   await expect(unit.getByRole('heading', { name: 'Unit complete' })).toBeVisible()
-  await expect(page.getByText('7 of 13 lessons complete', { exact: true })).toBeVisible()
+  // Course depth can change independently of this unit; the six legacy demos
+  // are now extra practice. Check the seven synced completions and idempotence.
+  const completedCount = page.getByText(/^7 of \d+ lessons complete$/)
+  await expect(completedCount).toBeVisible()
   await page.evaluate(() => window.dispatchEvent(new Event('online')))
-  await expect(page.getByText('7 of 13 lessons complete', { exact: true })).toBeVisible()
+  await expect(completedCount).toBeVisible()
 })
