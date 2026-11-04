@@ -66,7 +66,7 @@ This records each layer’s latest verified delivery, **not a full live-content 
 
 | Layer | Latest recorded state | Evidence / limit |
 | --- | --- | --- |
-| Frontend application | Beta 0.0.16 `99411db` verified Vercel Ready on both existing aliases; documentation follow-ups may advance revision | [F34 rollout](docs/learner-spacing-and-icons.md#application-delivery); hosted version/icons/gaps and three-story catalog pass |
+| Frontend application | Beta 0.0.17 `a17936f` verified Vercel Ready on both existing aliases; documentation follow-ups may advance revision | [P4 rollout](docs/downloads-implementation.md#application-delivery); hosted version, 48-row inventory, text-only alphabet save/offline reopen/removal and reconnection persistence pass |
 | ASP.NET API | Healthy exact `5a36744` deployed with Google/Resend server configuration | [Sign-in rollout](docs/releases/2026-11-01-sign-in.md); SQLite integrity/assets/keys and all 17 prior tables preserved; no curriculum publication |
 | Levantine Everyday | Existing lesson-one v5/audio and all other publications unchanged; twenty new F12 v1 unreviewed/text-only lessons added at orders 11–30 | [F12 publication](content/levantine/expansion-20/publication.json); normal human/source/audio acceptance remains F12.5 |
 | French lessons | Five exact v1 **unreviewed, text-only** first-unit previews | [F25.2.1 audit](content/french/meet-01/publication.json); no accepted linguistic/rights review or human audio |
@@ -160,8 +160,8 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F32 · Downloads and recovery center](#f32-downloads-and-recovery-center) | Owner/tester: named physical-device/AT acceptance; agent completes the now-authorized Beta 0.0.17 commit/push/rollout. Software is complete locally. |
-| [F32.3 · Downloads verification and delivery](#f323-downloads-verification-and-delivery) | Owner/tester: run the iOS Safari/Android offline and VoiceOver/TalkBack protocol. Agent: commit/push and verify the now-authorized application rollout. |
+| [F32 · Downloads and recovery center](#f32-downloads-and-recovery-center) | Owner/tester: named Safari/Android and VoiceOver/TalkBack acceptance. Beta 0.0.17 `a17936f` is committed/pushed and verified live; no remaining rollout gate. |
+| [F32.3 · Downloads verification and delivery](#f323-downloads-verification-and-delivery) | Owner/tester: record the physical-device offline-completion/reconnection and AT sessions; hosted recovery/version and existing-preview rollout are verified. |
 | [F16.1 · Google sign-in](#f161-google-sign-in) | Owner/agent: complete Google consent, sign-in and explicit existing-account linking; hosted client/button and existing-session continuity pass. |
 | [F16.2 · Email-code sign-in](#f162-email-code-sign-in) | Owner/agent: complete permitted hosted inbox/login round trip; real local delivery/login/reload and hosted configuration checks pass. |
 | [F33 · Reading comfort and mobile lesson ergonomics](#f33-reading-comfort-and-mobile-lesson-ergonomics) | Owner/tester: actual Safari/VoiceOver and Android/TalkBack keyboard/IME/reading/offline sessions; `58581bb` pushed October 28; hosted deployment unverified. |
@@ -202,8 +202,8 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F32.1 · Download inventory and safe transfers](#f321-download-inventory-and-safe-transfers) | Software and automated fault/cross-tab/reload checks complete in local Beta 0.0.17; field acceptance and rollout remain F32.3. |
-| [F32.2 · Downloads interface and recovery controls](#f322-downloads-interface-and-recovery-controls) | Account Downloads software, progress preservation and automated/visual checks complete in local Beta 0.0.17; field acceptance and rollout remain F32.3. |
+| [F32.1 · Download inventory and safe transfers](#f321-download-inventory-and-safe-transfers) | Software and automated fault/cross-tab/reload checks complete in deployed Beta 0.0.17; field acceptance remains F32.3. |
+| [F32.2 · Downloads interface and recovery controls](#f322-downloads-interface-and-recovery-controls) | Account Downloads, progress preservation and automated/visual checks complete in deployed Beta 0.0.17; field acceptance remains F32.3. |
 | [F34 · Learner spacing and Practice icons](#f34-learner-spacing-and-practice-icons) | Reviewed Beta 0.0.16 committed/pushed and verified live; bounded scope complete. |
 | [F33.1 · Reading preferences and controls](#f331-reading-preferences-and-controls) | Software complete locally; physical-device/access evidence and authorized rollout remain F33.3. |
 | [F33.2 · Reading surfaces and mobile input](#f332-reading-surfaces-and-mobile-input) | Software complete locally; physical-device/access evidence and authorized rollout remain F33.3. |
@@ -1369,21 +1369,21 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Verification pending.
 - **Readiness:** Implementation — Complete inventory, transfers and Account → Downloads software; content — N/A: existing published packages only; verification — automated fault/reload/shared-asset/identity/offline-completion checks pass; actual device/AT acceptance remains F32.3.
-- **Delivery:** Application — Beta 0.0.17 local/uncommitted candidate; not pushed or deployed; content publication — N/A, unchanged.
+- **Delivery:** Application — Beta 0.0.17 `a17936f` committed/pushed and verified Vercel Ready on both existing aliases; documentation follow-ups may advance revision; content publication — N/A, unchanged.
 - **Scope:** Account Downloads surface with per-course lesson/audio/alphabet inventory, honest storage/availability, download/retry/update/removal and scoped sync recovery; retain all learning evidence. Children F32.1–F32.3 define implementation, UI and actual acceptance/delivery.
-- **Next action:** Owner/tester: supply named iOS Safari and Android browser/PWA offline-completion/reconnection plus VoiceOver/TalkBack acceptance. Agent: commit/push the authorized Beta 0.0.17 candidate and verify its rollout on the existing preview.
-- **Authorization:** Owner authorized P4 software implementation November 3 (“build P4”), superseding the October 22 planning-only boundary; Owner subsequently requested “commit and deploy” November 3, authorizing this candidate’s commit/push and existing-preview frontend rollout; curriculum publication and beta expansion remain separate.
+- **Next action:** Owner/tester: supply named iOS Safari and Android browser/PWA offline-completion/reconnection plus VoiceOver/TalkBack acceptance. Agent: record accepted field evidence when supplied; application rollout is verified.
+- **Authorization:** Owner authorized P4 software implementation November 3 (“build P4”), superseding the October 22 planning-only boundary; owner subsequently requested “commit and deploy” November 3, authorizing this candidate’s commit/push and existing-preview frontend rollout; curriculum publication and beta expansion remain separate.
 - **Completion gate / evidence:** [Implementation and acceptance contract](docs/downloads-and-reading-comfort.md#f32-downloads-and-recovery-center), [software and verification evidence](docs/downloads-implementation.md); parent requires all three children, actual device/access evidence and authorized app delivery.
-- **Dependencies:** F01/F02/F24.1/F28.1 reused caches and identity/course conventions; F32.1/F32.2 software complete; actual device sessions and rollout for F32.3. New curriculum/audio acceptance is not a software prerequisite.
+- **Dependencies:** F01/F02/F24.1/F28.1 reused caches and identity/course conventions; F32.1/F32.2 software complete; actual device/AT sessions remain for F32.3; application rollout is verified. New curriculum/audio acceptance is not a software prerequisite.
 
 #### F32.1 Download inventory and safe transfers
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — Complete unified inventory, complete-package checks, bounded cross-tab transfers and safe content removal; content — N/A; verification — corrupt/missing/interrupted audio, quota failure, prior-version preservation, shared assets, withdrawal, two-tab and reload recovery automation passes.
-- **Delivery:** Application — Beta 0.0.17 local/uncommitted candidate; rollout belongs to F32.3; content publication — N/A, unchanged.
+- **Delivery:** Application — Beta 0.0.17 `a17936f` committed/pushed and verified Vercel Ready on both existing aliases; documentation follow-ups may advance revision; content publication — N/A, unchanged.
 - **Scope:** Unified inventory over existing lesson/audio and alphabet stores, explicit availability/transfer states, deduplicated size estimates and safe retry/update/removal primitives preserving old complete packages and learning data.
-- **Next action:** None in this bounded software scope; actual device/access evidence and application rollout remain F32.3.
-- **Authorization:** Owner authorized software implementation November 3 (“build P4”); Owner subsequently requested commit and existing-preview deployment November 3; curriculum publication remains separate.
+- **Next action:** None in this bounded software scope; actual device/access evidence remains F32.3; application rollout is verified.
+- **Authorization:** Owner authorized software implementation November 3 (“build P4”); owner subsequently requested commit and existing-preview deployment November 3; curriculum publication remains separate.
 - **Completion gate / evidence:** [Inventory/transfer acceptance](docs/downloads-and-reading-comfort.md#f321-inventory-and-safe-transfer-lifecycle), [implementation and fault evidence](docs/downloads-implementation.md#automated-and-visual-verification); learner UI is F32.2 and field acceptance/release is F32.3.
 - **Dependencies:** Existing F01/F28 stores, immutable published versions and identity conventions; independent of F33.
 
@@ -1391,23 +1391,23 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 - **Work state:** Complete.
 - **Readiness:** Implementation — Complete Account → Downloads, per-course controls, durable removal intent, scoped pending-sync retry and accessible state/error notices; content — N/A; verification — interface/fault/keyboard/focus/identity/offline-completion checks and 320/1280px screenshot review pass; real-device/AT remains F32.3.
-- **Delivery:** Application — Beta 0.0.17 local/uncommitted candidate; not deployed; content publication — N/A, unchanged.
+- **Delivery:** Application — Beta 0.0.17 `a17936f` committed/pushed and verified Vercel Ready on both existing aliases; documentation follow-ups may advance revision; content publication — N/A, unchanged.
 - **Scope:** Account → Downloads with course/status/storage rows, targeted transfer actions, safe content removal, durable manual-removal intent and scoped pending-sync retry; no new main tab or automatic data eviction.
-- **Next action:** None in this bounded software scope; named physical-device/AT acceptance and owner-authorized application delivery remain F32.3.
-- **Authorization:** Owner authorized software implementation November 3 (“build P4”); Owner subsequently requested commit and existing-preview deployment November 3; curriculum publication remains separate.
+- **Next action:** None in this bounded software scope; named physical-device/AT acceptance remains F32.3; application rollout is verified.
+- **Authorization:** Owner authorized software implementation November 3 (“build P4”); owner subsequently requested commit and existing-preview deployment November 3; curriculum publication remains separate.
 - **Completion gate / evidence:** [Learner controls/recovery acceptance](docs/downloads-and-reading-comfort.md#f322-learner-controls-and-recovery), [functional/visual evidence](docs/downloads-implementation.md#automated-and-visual-verification); no physical-device or screen-reader pass inferred.
 - **Dependencies:** F32.1 complete, existing synchronization and lesson lifecycle; guest/account evidence and free offline learning retained.
 
 #### F32.3 Downloads verification and delivery
 
 - **Work state:** Verification pending.
-- **Readiness:** Implementation — Software candidate and acceptance protocol complete; content — N/A; verification — automated fault/offline/recovery/access checks pass and version is verified; actual iOS Safari, Android browser/PWA, VoiceOver/TalkBack and hosted rollout checks not run.
-- **Delivery:** Application — Beta 0.0.17 local/uncommitted candidate; no commit/push/rollout for this feature; content publication — N/A, unchanged.
+- **Readiness:** Implementation — Software candidate and acceptance protocol complete; content — N/A; verification — automated fault/offline/recovery/access checks pass and version is verified; hosted version/inventory/offline save/reopen/removal and both-alias checks pass; actual iOS Safari, Android browser/PWA and VoiceOver/TalkBack sessions not run.
+- **Delivery:** Application — Beta 0.0.17 `a17936f` committed/pushed and verified Vercel Ready on both existing aliases; documentation follow-ups may advance revision; content publication — N/A, unchanged.
 - **Scope:** Failure/recovery and cross-tab checks, actual Safari/Android offline-completion/reconnection and AT evidence, version verification and authorized application delivery.
-- **Next action:** Owner/tester: record named physical-device/AT sessions against the prepared protocol. Agent: commit/push and verify the authorized frontend rollout and recovery behavior on the existing preview.
+- **Next action:** Owner/tester: record named physical-device/AT sessions against the prepared protocol. Agent: record accepted field evidence when supplied; exact frontend rollout and hosted recovery behavior are verified.
 - **Authorization:** Owner authorized implementation and automated acceptance November 3, then requested “commit and deploy,” authorizing this candidate’s commit/push and existing-preview frontend rollout. No device evidence, curriculum publication or beta expansion is inferred.
-- **Completion gate / evidence:** [Verification/delivery contract](docs/downloads-and-reading-comfort.md#f323-verification-and-application-delivery), [automated evidence and remaining field/delivery protocol](docs/downloads-implementation.md); actual device/AT evidence, version and authorized app rollout all required.
-- **Dependencies:** F32.1/F32.2 software complete; actual supported-device/access sessions and rollout authority remain. F18.1 stays deferred and is not this technical acceptance session.
+- **Completion gate / evidence:** [Verification/delivery contract](docs/downloads-and-reading-comfort.md#f323-verification-and-application-delivery), [automated/field protocol and verified delivery](docs/downloads-implementation.md#application-delivery); actual device/AT evidence, version and authorized app rollout all required.
+- **Dependencies:** F32.1/F32.2 software complete; actual supported-device/access sessions remain; application rollout is verified. F18.1 stays deferred and is not this technical acceptance session.
 
 ### F33 Reading comfort and mobile lesson ergonomics
 
@@ -1466,7 +1466,7 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
-- **November 3 — P4 built:** owner authorized “build P4.” Downloads inventory/transfers and Account controls complete locally in Beta 0.0.17 with fault/offline/cross-tab/data-preservation checks; F32/F32.3 remain Verification pending for named device/AT sessions and authorized application delivery. No curriculum/API/hosted mutation. [Evidence](docs/downloads-implementation.md).
+- **November 3 — P4 delivered:** owner requested “build P4,” then “commit and deploy.” Beta 0.0.17 `a17936f` committed/pushed and verified live on existing aliases; 42 browser checks plus hosted version/inventory/offline recovery pass. F32/F32.3 retain named physical-device/AT acceptance. API/content unchanged. [Evidence](docs/downloads-implementation.md#application-delivery).
 
 - **November 1 — F34 UI polish:** reviewed Beta 0.0.16 committed/pushed as `99411db` and verified live on existing Vercel aliases. Distinct Practice icons, course/card/story/Account spacing and actual three-story catalog pass; API/content unchanged. [Evidence](docs/learner-spacing-and-icons.md#application-delivery).
 

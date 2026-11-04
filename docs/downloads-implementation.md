@@ -1,6 +1,6 @@
 # Downloads implementation and acceptance evidence
 
-November 3, 2026 · P4 / stable F32 · local **Beta 0.0.17** candidate.
+November 3, 2026 · P4 / stable F32 · **Beta 0.0.17** release.
 
 The owner requested “build P4,” authorizing the software in the
 [existing contract](downloads-and-reading-comfort.md#f32-downloads-and-recovery-center).
@@ -132,8 +132,46 @@ Storage-denial/unavailable estimates must stay honest. This technical session do
 not resume the deferred F18.1 observed learner rehearsal.
 
 The owner authorized commit/push and the existing-preview application rollout
-on November 3 (“commit and deploy”). The API, publication pins and hosted content remain unchanged. The agent will deploy the frontend candidate, verify its displayed version and
-repeat save → offline reopen → removal on the actual origin. Recovery is a
-frontend rollback; no database migration or learning-data deletion is needed.
-Do not mark F32 or F32.3 Complete until both the named field acceptance and
-authorized application delivery are recorded.
+on November 3 (“commit and deploy”); that rollout is verified below. The API,
+publication pins and hosted content remain unchanged. Recovery is a frontend
+rollback; no database migration or learning-data deletion is needed. F32 and
+F32.3 remain Verification pending until the named physical-device/AT evidence
+is recorded.
+
+
+## Application delivery
+
+On November 3, 2026, implementation commit
+`a17936f013d00476edbafdb38bbe5f7e4f2f12eb` was committed and pushed to `main`.
+Vercel deployment `dpl_CQdw6u14L3NcUfj6VQmeA2VFXFKx` is **Ready**, built from that
+exact Git SHA:
+[deployment](https://ismi-25801l0bg-victorys-projects-c1cb4594.vercel.app),
+[existing preview Downloads](https://ismi-arabic.vercel.app/#/account/downloads).
+Both existing aliases are assigned; `ismi-ruby.vercel.app` redirects to the Arabic
+alias. Documentation follow-ups may advance the deployed revision without changing
+application code or the package-sourced **Beta 0.0.17** version.
+
+A disposable hosted Chromium session verified:
+
+- Account displays Beta 0.0.17 on both existing aliases and opens Downloads.
+- The inventory has **48** real published/saved-content rows across all five stable
+  course IDs, with the MSA and Quranic path groups distinct.
+- The published Levantine inventory alphabet saves as **Saved · text only** and
+  retains its unreviewed notice.
+- At 390px and 1280px there is no horizontal overflow; screenshots were captured.
+- With browser network access disabled, the actual hosted PWA reloads Downloads,
+  retains the saved alphabet and opens all **28** alphabet entries. A direct
+  `/api/health` request fails, proving the verification was using offline bytes.
+  No fixture transport or API mocking was used in this hosted session.
+- The alphabet can be removed offline. After reconnecting and reloading it remains
+  Not saved; the disposable guest still has zero queued completions.
+- No browser runtime errors were captured.
+
+Hosted aggregate results/screenshots are retained for this session under
+`/tmp/ismi-p4-hosted/`; no learner identities or recordings are stored in Git.
+Thirty unrelated local files were checked against their pre-commit hashes and
+remain unchanged. Shared roadmap/scope files were staged only for F32, preserving
+other uncommitted audits and curriculum work in the checkout. This deployment
+changes only the frontend; no API upload, content publication, paid resource or
+beta opening occurred. Hosted automation does not supply the remaining physical
+Safari/Android or VoiceOver/TalkBack acceptance.
