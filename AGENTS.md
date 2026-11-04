@@ -215,6 +215,7 @@ Core study must work with keyboard and screen reader, scalable Arabic text, high
 
 ### Accounts and privacy
 
+- On November 3, 2026 the owner selected permanent account deletion after recent sign-in: remove the active account and server learning data, clear its history/pending work in this browser, and preserve guest/other-account data and shared curriculum/downloads. Receipt-capable browsers clear local account data when they reconnect, including after logout or cookie expiry; offline/older browsers may require manual clearing. Backups and provider logs have separate retention; numeric expiration and restore/deletion reconciliation remain F16 operations decisions. Do not invent erasure deadlines or delete backups under this software authorization.
 - Let users begin as guests. Require an account only for durable or cross-device synchronization.
 - Delete raw voice recordings promptly after feedback is produced.
 - Retain derived scores and learning progress; retaining recordings for product improvement requires separate informed opt-in consent.
@@ -255,7 +256,7 @@ Do not include billing, a social network, or a live-news content operation in th
 - Web only for the initial release.
 - ASP.NET backend and Vue frontend; the browser client must be PWA-capable.
 - Design the learner experience mobile-browser first while keeping it fully usable on desktop. Design the internal curriculum console primarily for desktop.
-- The beta account slice uses ASP.NET Core Identity, HttpOnly cookie sessions, and a local SQLite database; the production hosting/database remain unresolved. The owner selected Google basic-identity sign-in and Resend email codes on October 31, 2026, using the existing verified vexillologists.com domain and a domain-restricted sending key; keep credentials server-side. Full provider verification and lifecycle/deletion scope remain in F16.
+- The beta account slice uses ASP.NET Core Identity, HttpOnly cookie sessions, and a local SQLite database; the production hosting/database remain unresolved. The owner selected Google basic-identity sign-in and Resend email codes on October 31, 2026, using the existing verified vexillologists.com domain and a domain-restricted sending key; keep credentials server-side. Full provider verification and lifecycle/retention operations remain in F16; the owner selected permanent account deletion on November 3 (see Accounts and privacy).
 - A free development preview runs at `https://ismi-arabic.vercel.app` (Vercel Hobby), with `https://ismi-ruby.vercel.app` redirecting there, and the ASP.NET API at `https://ismi.alwaysdata.net` (alwaysdata Free, .NET 10). Persistent SQLite, recordings, and cookie keys live outside the uploaded application directory. This is not a commercial hosting commitment or a completed beta release; paid hosting requires explicit user approval.
 - Prefer `npm run deploy:api` for authorized alwaysdata API updates after the one-time reusable SSH-key/API-token setup described in `deploy/README.md`. The owner requested a programmatic workflow instead of repeated browser uploads/temporary-key setup. Credentials belong only in the ignored owner-only local config; inspect `--check` before claiming access.
 - Keep AI and speech-provider credentials server-side.
@@ -296,7 +297,7 @@ Do not include billing, a social network, or a live-news content operation in th
 - French exact sources/review/audio and assessment acceptance; Khmer exact reading inventory/help convention and both courses' content/audio sources, linguistic review arrangements and beta inclusion. Khmer's Cambodian/Phnom Penh model, twelve-unit/sixty-lesson target and draft-first/fluent-review-before-publication route were approved October 16. The F24 queue policy was approved October 15: whole sessions, about 60% primary when useful, rotating secondary courses, due review first within each allocation, visible overruns/omissions and manual access.
 - Final approved Quran translation, word-level, morphology, and recitation resource IDs and written permissions.
 - Subscription pricing, trials, family plans, and regional pricing.
-- Production account lifecycle/recovery/deletion scope beyond the selected Google/Resend sign-in methods, analytics, and detailed data-retention periods. See F16 and docs/account-sign-in.md for the selected providers and verification boundaries.
+- Production account lifecycle beyond the selected Google/Resend sign-in and permanent active-account deletion methods, backup expiration/restore reconciliation, provider-log retention, analytics, and detailed data-retention periods. See F16 and docs/account-sign-in.md for the selected providers and verification boundaries.
 - Speech recognition, recording, pronunciation-scoring, and AI providers.
 - Production database, content schema, curriculum authoring/review workflow, and admin tooling. SQLite is adopted only for the bounded beta account slice.
 - Moderation/safety policy and invite-only beta cohort selection.

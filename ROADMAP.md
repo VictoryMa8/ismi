@@ -112,7 +112,6 @@ The next-action text names the actor; use the record before taking action.
 
 | ID / scope | Next action or remaining gate |
 | --- | --- |
-| [F16 · Account recovery and deletion](#f16-account-recovery-and-deletion) | Agent/owner: complete remaining real-provider checks for deployed F16.1/F16.2; owner separately defines deletion/retention behavior before that remaining implementation. |
 | [F13 · MSA course](#f13-msa-course) | Agent/owner: define the general-MSA first unit and source/audio/control scope; F14 retains Quranic path gates. |
 | [F25 · French course](#f25-french-course) | Owner: designate fluent reviewer/source dispositions. Agent: first-unit review/pilot before bulk units 2–12. |
 | [F25.3 · French starting check, sounds and text support](#f253-french-starting-check-sounds-and-text-support) | Reviewer/agent: accept sample/spelling inputs, then calibrate starting check and sound/text support. |
@@ -162,6 +161,8 @@ The next-action text names the actor; use the record before taking action.
 | --- | --- |
 | [F32 · Downloads and recovery center](#f32-downloads-and-recovery-center) | Owner/tester: named Safari/Android and VoiceOver/TalkBack acceptance. Beta 0.0.17 `a17936f` is committed/pushed and verified live; no remaining rollout gate. |
 | [F32.3 · Downloads verification and delivery](#f323-downloads-verification-and-delivery) | Owner/tester: record the physical-device offline-completion/reconnection and AT sessions; hosted recovery/version and existing-preview rollout are verified. |
+| [F16 · Account recovery and deletion](#f16-account-recovery-and-deletion) | Owner/agent: complete real-provider checks and deletion device/rollout evidence; owner: define backup expiration, restore/deletion reconciliation and provider-log retention operations. |
+| [F16.3 · Account deletion](#f163-account-deletion) | Owner/tester: physical-device/AT acceptance. Agent: deploy the authorized Beta 0.0.18 web/API release and verify deletion on a disposable account. |
 | [F16.1 · Google sign-in](#f161-google-sign-in) | Owner/agent: complete Google consent, sign-in and explicit existing-account linking; hosted client/button and existing-session continuity pass. |
 | [F16.2 · Email-code sign-in](#f162-email-code-sign-in) | Owner/agent: complete permitted hosted inbox/login round trip; real local delivery/login/reload and hosted configuration checks pass. |
 | [F33 · Reading comfort and mobile lesson ergonomics](#f33-reading-comfort-and-mobile-lesson-ergonomics) | Owner/tester: actual Safari/VoiceOver and Android/TalkBack keyboard/IME/reading/offline sessions; `58581bb` pushed October 28; hosted deployment unverified. |
@@ -566,13 +567,13 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ### F16 Account recovery and deletion
 
-- **Work state:** Partial.
-- **Readiness:** Implementation — Google and email-code software complete in F16.1/F16.2; deletion/lifecycle remainder not started; content — N/A; verification — 91 API tests, three browser checks and real local email-code delivery/login/reload pass; hosted configuration/button and existing-session continuity pass; actual Google and hosted email round trips remain.
-- **Delivery:** Application — Beta 0.0.15 `5a36744` deployed to existing web/API preview; content publication — N/A.
-- **Scope:** Account confirmation/recovery and data deletion, with defined retention/delivery behavior; F16.1/F16.2 add optional Google and email-code access while preserving password/guest accounts and progress.
-- **Next action:** Owner/agent: complete remaining real-provider round trips in F16.1/F16.2. Owner: separately decide deletion/retention requirements before that remaining implementation.
-- **Authorization:** October 31 owner requested both methods, approved Google policy/client and restricted Resend key, selected existing domain and approved one test code email. Owner then authorized commit/deployment to the existing preview with server-only credentials. Paid plans/domain purchases, deletion policy, beta opening and curriculum publication are not approved.
-- **Completion gate / evidence:** [Full contract](docs/planning/feature-scope-reference.md#f16-account-recovery-and-deletion), [sign-in implementation and evidence](docs/account-sign-in.md), [verified rollout](docs/releases/2026-11-01-sign-in.md).
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — Google/email-code software complete in F16.1/F16.2 and owner-selected account deletion complete locally in F16.3; content — N/A; verification — full 98-case API suite and 33 distinct targeted browser checks pass; existing local real-email and hosted configuration/session checks retained; actual Google/hosted email round trips, deletion device/rollout evidence and retention operations remain.
+- **Delivery:** Application — Google/email software Beta 0.0.15 `5a36744` deployed to existing web/API preview; account deletion Beta 0.0.18 prepared for the authorized preview rollout; content publication — N/A.
+- **Scope:** Account confirmation/recovery and data deletion with explicit retention/delivery behavior; preserve guest/password access, separate learning progress and shared curriculum. F16.1/F16.2 own access; F16.3 owns permanent live-account and device-data deletion.
+- **Next action:** Owner/agent: complete actual Google consent/linking and permitted hosted email round trips. Owner/tester: deletion device/AT acceptance. Agent: complete the authorized commit and web/API rollout. Owner: settle backup expiration, restore/deletion reconciliation and provider-log retention operations before full F16 completion.
+- **Authorization:** October 31 Google/Resend methods, selected domain/restricted key, one local test email and their existing-preview deployment remain authorized. November 3 owner requested “Implement p5” and explicitly selected permanent deletion after recent sign-in, server/browser cleanup and other-device reconnection cleanup, retaining shared curriculum and separate backup/provider retention. The owner then authorized commit and deployment to the existing preview. Verification uses only disposable account data.
+- **Completion gate / evidence:** [Full contract](docs/planning/feature-scope-reference.md#f16-account-recovery-and-deletion), [sign-in evidence](docs/account-sign-in.md), [verified sign-in rollout](docs/releases/2026-11-01-sign-in.md), [deletion contract and verification](docs/account-deletion.md).
 
 ### F16.1 Google sign-in
 
@@ -595,6 +596,17 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Authorization:** October 31 owner selected existing Resend/domain, approved restricted key and one test code email, then authorized commit/deployment to the existing preview including server-only credentials. No paid service/domain purchase, unrelated key rotation, beta opening or curriculum publication.
 - **Completion gate / evidence:** [Bounded contract, configuration and checks](docs/account-sign-in.md#bounded-contract).
 - **Dependencies:** Permitted hosted email delivery/login verification.
+
+### F16.3 Account deletion
+
+- **Work state:** Verification pending.
+- **Readiness:** Implementation — complete permanent deletion UI/API, recent-proof/CSRF protection, transactional owned-data removal, session revocation and receipt-based device cleanup; content — N/A, curriculum unchanged; verification — 98 API tests and 33 distinct targeted Chromium checks pass; named physical-device/AT and hosted disposable-account acceptance remain.
+- **Delivery:** Application — Beta 0.0.18 prepared for the authorized preview rollout; content publication — N/A.
+- **Scope:** Delete only the selected account's active server identity/progress/settings/codes and local history/pending work; preserve guest/other-account records and shared downloads/curriculum. Other receipt-capable browsers clear local data on reconnection, including after cookie expiry. No remote erasure of offline/older browsers or automatic deletion of external logs/backups.
+- **Next action:** Owner/tester: verify deletion confirmation/recovery with actual device/AT. Agent: commit, deploy and verify version, disposable-account deletion/reconnection and preservation on the existing preview. Parent F16 retains backup/log retention operations and real-provider access checks.
+- **Authorization:** November 3 owner requested P5 implementation and explicitly accepted the proposed permanent deletion scope. The owner then requested commit and deployment to the existing preview. Hosted verification uses a disposable test account.
+- **Completion gate / evidence:** [Bounded deletion contract, privacy behavior and automated evidence](docs/account-deletion.md).
+- **Dependencies:** Existing Identity/progress/offline foundations and F16.1/F16.2 proof methods; preserve persistent Data Protection keys so older browser receipts remain readable.
 
 ### F17 Learning support and gamification
 
@@ -1466,6 +1478,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **November 3 — P5 deletion implemented:** owner selected permanent account/server/browser deletion after recent sign-in, with shared curriculum preserved. Beta 0.0.18 is ready for the authorized preview rollout. 98 API and 33 distinct targeted browser checks pass. F16.3 retains device/AT and authorized rollout; F16 retains real-provider/backup-retention gates. [Evidence](docs/account-deletion.md).
+
 - **November 3 — P4 delivered:** owner requested “build P4,” then “commit and deploy.” Beta 0.0.17 `a17936f` committed/pushed and verified live on existing aliases; 42 browser checks plus hosted version/inventory/offline recovery pass. F32/F32.3 retain named physical-device/AT acceptance. API/content unchanged. [Evidence](docs/downloads-implementation.md#application-delivery).
 
 - **November 1 — F34 UI polish:** reviewed Beta 0.0.16 committed/pushed as `99411db` and verified live on existing Vercel aliases. Distinct Practice icons, course/card/story/Account spacing and actual three-story catalog pass; API/content unchanged. [Evidence](docs/learner-spacing-and-icons.md#application-delivery).
@@ -1473,5 +1487,3 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **October 31 — F16.1/F16.2 sign-in:** Beta 0.0.15 software passes 91 API/three browser checks; Google client and restricted Resend key created; real local email delivery/login/reload pass. Owner-authorized web/API rollout verified at `5a36744`; hosted version/options/Google button and prior-data preservation pass. Actual Google consent/linking and hosted email round trip remain. F16 deletion/retention is separate. [Evidence](docs/account-sign-in.md).
 
 - **October 28 — F33:** Beta 0.0.13 `58581bb` committed and pushed to main with automated verification; hosted deployment unverified. Physical-device/AT and hosted delivery evidence remain separate. [Evidence](docs/reading-comfort-implementation.md).
-
-- **October 27 — F23.4:** Beta 0.0.12 deployed to API/Vercel; exact three unreviewed/text-only previews published as v2/1/1. Fresh local/hosted checks and preservation/idempotence pass. Normal F23 review/rights/access/learner gates remain. [Delivery evidence](docs/releases/2026-10-27-story-arc.md).

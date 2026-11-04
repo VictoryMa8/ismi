@@ -18,7 +18,7 @@ onMounted(() => heading.value?.focus({ preventScroll: true }));
     <main class="privacy-main" id="main-content">
       <BackControl href="#">Back to landing page</BackControl>
       <h1 ref="heading" tabindex="-1">Privacy policy</h1>
-      <p class="privacy-meta">Effective October 31, 2026 · {{ appVersionLabel }}</p>
+      <p class="privacy-meta">Effective November 3, 2026 · {{ appVersionLabel }}</p>
       <p class="privacy-lead">
         Ismi is an invite-only development preview for adults 18 and older. We
         collect as little as we can, show no ads, and never sell your data.
@@ -94,9 +94,31 @@ onMounted(() => heading.value?.focus({ preventScroll: true }));
       <section aria-labelledby="privacy-choices">
         <h2 id="privacy-choices">Your choices</h2>
         <p>
-          You can keep studying as a guest, and sign out at any time. To see, correct or delete your
-          account data, contact the person who invited you to the preview and
-          we'll handle it.
+          You can keep studying as a guest and sign out at any time. In Account,
+          choose Delete my account after signing in within the last 10 minutes.
+          Confirming permanently removes your account, password hash, connected
+          Google identifier, synced progress, study settings and unused email codes
+          from the active Ismi database. Signing in again creates a new account.
+        </p>
+        <p>
+          Deletion clears this account’s history and pending work in this browser.
+          Other browsers that previously saved an account receipt clear their local
+          account data when they next connect to Ismi. An offline device cannot be
+          erased remotely; you can also clear its browser data. Guest data and shared
+          lesson downloads are kept. Browsers that have not used this version need
+          manual clearing of their old local account data. A minimal local deletion
+          marker prevents delayed history writes. The account receipt only checks whether an
+          account still exists and cannot access learning or identity data.
+        </p>
+        <p>
+          Account deletion does not delete your Google account or erase delivery
+          records held by Resend or technical logs held by hosting providers. Existing
+          protected backups may still contain account data; backup expiration and
+          provider retention periods have not yet been finalized for this development
+          preview. Deletion does not promise immediate erasure of those copies.
+          Shared curriculum, editorial audit history and reports submitted without
+          an account identifier remain. To request help with access, corrections,
+          backups or deletion, contact the person who invited you.
         </p>
       </section>
 

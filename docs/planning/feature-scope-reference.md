@@ -370,9 +370,17 @@ Supporting references: [Rollout record](../../docs/releases/2026-10-11.md).
 
 **Done when:** agreed recovery/confirmation/deletion flows work end to end, including
 relevant progress/provider data and failure paths, with verified privacy behavior.
-External identity remains optional work, not a condition of F02 completion. The owner authorized Google and email-code access October 31; F16.1/F16.2 own their exact provider/verification contracts. Deletion and broader retention remain in F16.
+External identity remains optional work, not a condition of F02 completion. The owner authorized Google and email-code access October 31; F16.1/F16.2 own their exact provider/verification contracts. The November 3 owner-selected permanent deletion scope is implemented under F16.3; broader backup/log retention and the parent completion gate remain in F16.
 
-Supporting reference: [Google/email-code contract and evidence](../account-sign-in.md).
+Supporting references: [Google/email-code contract and evidence](../account-sign-in.md), [account deletion contract and evidence](../account-deletion.md).
+
+#### F16.3 Account deletion
+
+**Outcome:** a learner can permanently remove their live account and learning data after recent sign-in, with explicit confirmation and recoverable failure behavior.
+
+**Done when:** the [bounded deletion contract](../account-deletion.md#contract-and-owner-decision) passes, including owned server/device cleanup, revoked sessions, guest/other-account/shared-curriculum preservation, offline/reconnection and storage failures, keyboard/actual-device/AT acceptance, truthful privacy copy and verified authorized web/API delivery. Offline browsers cannot be remotely erased; receipt-capable browsers clean up on reconnection. Parent F16 retains backup/provider retention operations and real-provider access acceptance.
+
+**Evidence:** [Implementation and local verification](../account-deletion.md#november-3-verification).
 
 ### F17 Learning support and gamification
 
@@ -1613,13 +1621,13 @@ rollout is verified separately; full drafts remain unpublished.
 
 **Scope:** a public privacy page at `#/privacy` describing current behavior (guest
 local storage, account fields, essential cookies only, no voice/AI processing yet,
-Vercel/alwaysdata hosting, deletion by request until F16) and a single app version
+Vercel/alwaysdata hosting, provider sign-in and F16.3 deletion/retention boundaries) and a single app version
 sourced from `i-web/package.json` (`0.0.1`), shown as "Beta 0.0.1".
 
 **Evidence:** linked from the landing footer and Account; production build passes.
 
-**Limits:** update the policy before F11 speaking, F16 deletion or any analytics
-ship; it is not legal review. Commit/deploy needs owner authorization.
+**Limits:** F16.3 updates the policy alongside account deletion. Update it before
+F11 speaking, retention-policy changes or any analytics ship; it is not legal review. Commit/deploy needs owner authorization.
 
 ### F30 Alphabet content acceptance and release
 

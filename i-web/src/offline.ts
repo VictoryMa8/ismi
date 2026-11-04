@@ -62,16 +62,23 @@ async function useStore<T>(
   storeName: string,
   mode: IDBTransactionMode,
   operation: (store: IDBObjectStore) => IDBRequest<T>,
+  scope?: string,
 ): Promise<T> {
   const database = await openDatabase()
 
   return new Promise((resolve, reject) => {
-    const transaction = database.transaction(storeName, mode)
+    const transaction = database.transaction([...new Set([storeName, ...(scope ? [snapshotStore] : [])])], mode)
     let request: IDBRequest<T>
     transaction.oncomplete = () => { database.close(); resolve(request.result) }
     transaction.onabort = () => { database.close(); reject(transaction.error ?? new Error('Storage operation could not finish.')) }
     transaction.onerror = () => reject(transaction.error)
-    try { request = operation(transaction.objectStore(storeName)); request.onerror = () => reject(request.error) }
+    function run() { request = operation(transaction.objectStore(storeName)); request.onerror = () => reject(request.error) }
+    try {
+      if (scope) {
+        const guard = transaction.objectStore(snapshotStore).get(`deleted-account:${scope}`)
+        guard.onsuccess = () => { if (guard.result) transaction.abort(); else run() }
+      } else run()
+    }
     catch (error) { transaction.abort(); database.close(); reject(error) }
   })
 }
@@ -208,7 +215,7 @@ export async function getCachedLessonCount(): Promise<number> {
 
 export function cacheDashboard(dashboard: DashboardResponse, scope = 'guest'): Promise<IDBValidKey> {
   const snapshot: Snapshot<DashboardResponse> = { key: `dashboard:${scope}`, value: JSON.parse(JSON.stringify(dashboard)) }
-  return useStore(snapshotStore, 'readwrite', store => store.put(snapshot))
+  return useStore(snapshotStore, 'readwrite', store => store.put(snapshot), scope)
 }
 
 export async function getCachedDashboard(scope = 'guest'): Promise<DashboardResponse | undefined> {
@@ -221,7 +228,7 @@ export async function getCachedDashboard(scope = 'guest'): Promise<DashboardResp
 }
 
 export function queueCompletion(completion: PendingCompletion): Promise<IDBValidKey> {
-  return useStore(completionStore, 'readwrite', store => store.put(completion))
+  return useStore(completionStore, 'readwrite', store => store.put(completion), completion.scope)
 }
 
 export async function getPendingCompletions(scope = 'guest'): Promise<PendingCompletion[]> {
@@ -234,7 +241,47 @@ export function removePendingCompletion(completionId: string): Promise<undefined
 }
 
 export function saveDeviceSnapshot<T>(key: string, value: T): Promise<IDBValidKey> {
-  return useStore(snapshotStore, 'readwrite', store => store.put({ key, value: JSON.parse(JSON.stringify(value)) }))
+  return useStore(snapshotStore, 'readwrite', store => store.put({ key, value: JSON.parse(JSON.stringify(value)) }), snapshotScope(key))
+}
+
+function snapshotScope(key: string): string | undefined {
+  const id = key.match(/(?:^|:)user:([^:]+)/)?.[1]
+  return id ? `user:${id}` : undefined
+}
+
+export async function accountStateReceipts(): Promise<Array<{ scope: string; token: string }>> {
+  const records = await useStore<Snapshot<unknown>[]>(snapshotStore, 'readonly', store => store.getAll())
+  return records.filter((item): item is Snapshot<string> => /^account-state:user:[^:]+$/.test(item.key) && typeof item.value === 'string')
+    .map(item => ({ scope: item.key.slice('account-state:'.length), token: item.value }))
+}
+
+// Keep a local tombstone so delayed writes from another tab cannot restore data.
+// Downloads are shared curriculum, and guest/other-account records are untouched.
+export async function clearAccountDeviceData(scope: string): Promise<void> {
+  if (!/^user:[^:]+$/.test(scope)) throw new Error('Invalid account scope.')
+  // Leave the receipt available for retry if either storage system is unavailable.
+  localStorage.setItem(`ismi-deleted:${scope}`, 'yes')
+  localStorage.removeItem(`ismi-learning-habits-v1:${scope}`)
+  const database = await openDatabase()
+  await new Promise<void>((resolve, reject) => {
+    const tx = database.transaction([snapshotStore, completionStore, reviewStore], 'readwrite')
+    tx.objectStore(snapshotStore).put({ key: `deleted-account:${scope}`, value: true })
+    for (const name of [snapshotStore, completionStore, reviewStore]) {
+      const request = tx.objectStore(name).openCursor()
+      request.onsuccess = () => {
+        const cursor = request.result
+        if (!cursor) return
+        const value = cursor.value
+        if (name === snapshotStore) {
+          if (!String(cursor.key).startsWith('deleted-account:') && snapshotScope(String(cursor.key)) === scope) cursor.delete()
+          else if (cursor.key === 'review-scope' && value.value === scope) cursor.update({ key: 'review-scope', value: 'guest' })
+        } else if (value.scope === scope) cursor.delete()
+        cursor.continue()
+      }
+    }
+    tx.oncomplete = () => { database.close(); resolve() }
+    tx.onabort = () => { database.close(); reject(tx.error ?? new Error('Account data could not be cleared from this browser.')) }
+  })
 }
 
 export async function getDeviceSnapshot<T>(key: string): Promise<T | undefined> {
@@ -248,6 +295,9 @@ export async function updateDeviceSnapshot<T>(key: string, update: (value: T | u
   await new Promise<void>((resolve, reject) => {
     const transaction = database.transaction(snapshotStore, 'readwrite')
     const store = transaction.objectStore(snapshotStore)
+    const scope = snapshotScope(key)
+    const guard = scope ? store.get(`deleted-account:${scope}`) : undefined
+    if (guard) guard.onsuccess = () => { if (guard.result) transaction.abort() }
     const request = store.get(key)
     request.onsuccess = () => {
       try { store.put({ key, value: JSON.parse(JSON.stringify(update(request.result?.value as T | undefined))) }) }
@@ -284,7 +334,9 @@ export async function saveReviewAttempt(
   const key = JSON.stringify([scope, lesson.id, lesson.version, stepId])
   const database = await openDatabase()
   await new Promise<void>((resolve, reject) => {
-    const transaction = database.transaction(reviewStore, 'readwrite')
+    const transaction = database.transaction([reviewStore, snapshotStore], 'readwrite')
+    const guard = transaction.objectStore(snapshotStore).get(`deleted-account:${scope}`)
+    guard.onsuccess = () => { if (guard.result) transaction.abort() }
     const store = transaction.objectStore(reviewStore)
     const request = store.get(key)
     request.onsuccess = () => {

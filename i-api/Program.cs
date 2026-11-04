@@ -98,6 +98,32 @@ builder.Services.Configure<CookieAuthenticationOptions>(
         };
     });
 builder.Services.AddAuthorization();
+// Deleted accounts must lose access on their very next request, on every device.
+builder.Services.Configure<SecurityStampValidatorOptions>(options =>
+{
+    options.ValidationInterval = TimeSpan.Zero;
+    options.OnRefreshingPrincipal = context =>
+    {
+        var signedIn = context.CurrentPrincipal?.FindFirst(AccountLifecycleEndpoints.SignInTimeClaim);
+        if (signedIn is not null && context.NewPrincipal?.Identity is System.Security.Claims.ClaimsIdentity identity)
+            identity.AddClaim(signedIn);
+        return Task.CompletedTask;
+    };
+});
+builder.Services.Configure<CookieAuthenticationOptions>(IdentityConstants.ApplicationScheme, options =>
+{
+    options.Events.OnSigningIn = context =>
+    {
+        if (context.Principal?.Identity is System.Security.Claims.ClaimsIdentity identity)
+        {
+            foreach (var claim in identity.FindAll(AccountLifecycleEndpoints.SignInTimeClaim).ToList()) identity.RemoveClaim(claim);
+            var clock = context.HttpContext.RequestServices.GetRequiredService<TimeProvider>();
+            identity.AddClaim(new System.Security.Claims.Claim(AccountLifecycleEndpoints.SignInTimeClaim,
+                clock.GetUtcNow().ToUnixTimeSeconds().ToString(System.Globalization.CultureInfo.InvariantCulture)));
+        }
+        return Task.CompletedTask;
+    };
+});
 builder.Services.AddScoped<EmailCodeService>();
 builder.Services.AddHttpClient<ILoginEmailSender, ResendLoginEmailSender>(client => client.Timeout = TimeSpan.FromSeconds(15));
 builder.Services.AddSingleton<IGoogleIdentityVerifier, GoogleIdentityVerifier>();
@@ -115,6 +141,9 @@ builder.Services.AddAntiforgery(options =>
 builder.Services.AddRateLimiter(options =>
 {
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.AddPolicy("account-state", context => RateLimitPartition.GetFixedWindowLimiter(
+        context.Connection.RemoteIpAddress?.ToString() ?? "unknown", _ => new FixedWindowRateLimiterOptions
+        { PermitLimit = 60, Window = TimeSpan.FromMinutes(1), QueueLimit = 0, AutoReplenishment = true }));
     options.AddPolicy("passwordless", context => RateLimitPartition.GetFixedWindowLimiter(
         context.Connection.RemoteIpAddress?.ToString() ?? "unknown", _ => new FixedWindowRateLimiterOptions
         { PermitLimit = 20, Window = TimeSpan.FromMinutes(1), QueueLimit = 0, AutoReplenishment = true }));
@@ -282,6 +311,7 @@ auth.AddEndpointFilter(async (context, next) =>
     return await next(context);
 });
 auth.MapPasswordlessEndpoints();
+auth.MapAccountLifecycleEndpoints();
 
 auth.MapGet("/csrf", (HttpContext context, IAntiforgery antiforgery) =>
 {

@@ -6,7 +6,8 @@ F16.1 adds Google sign-in and explicit connection to an existing Ismi account.
 F16.2 adds email one-time-code account creation and sign-in/recovery. Both reuse
 ASP.NET Core Identity, HttpOnly cookies, the existing progress identity and guest
 access. Password accounts continue to work. Neither child completes the broader
-F16 deletion/retention contract or opens a beta cohort.
+F16 deletion/retention contract or opens a beta cohort. The November 3 owner-selected
+permanent deletion implementation is documented separately in [F16.3](account-deletion.md).
 
 The owner requested both methods October 31, 2026, authorized a separate Google
 Cloud project and selected their existing Resend account. Their only verified

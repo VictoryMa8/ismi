@@ -206,6 +206,28 @@ public sealed class PasswordlessApiTests : IDisposable
         Assert.Null(await real.VerifyAsync("malformed"));
     }
 
+    [Theory]
+    [InlineData("google")]
+    [InlineData("email")]
+    public async Task PasswordlessAccountsCanDeleteAfterFreshIdentityProof(string method)
+    {
+        using var client = Client();
+        if (method == "google")
+        {
+            var nonce = (await (await Post(client, "google/nonce", new { })).Content.ReadFromJsonAsync<Nonce>())!.Value;
+            google.Identity = new("delete-subject", "delete-google@example.test", "Learner", nonce);
+            Assert.Equal(HttpStatusCode.OK, (await Post(client, "google", new { credential = "valid" })).StatusCode);
+        }
+        else
+        {
+            var challengeId = await SendCode(client, "delete-email@example.test");
+            Assert.Equal(HttpStatusCode.OK, (await Post(client, "email-code/verify", new { challengeId, code = mailbox.Code })).StatusCode);
+        }
+        Assert.Equal(HttpStatusCode.NoContent, (await Post(client, "delete-account", new { confirmation = "DELETE" })).StatusCode);
+        using var scope = factory.Services.CreateScope();
+        Assert.Empty(await scope.ServiceProvider.GetRequiredService<IsmiDbContext>().Users.ToListAsync());
+    }
+
     public void Dispose()
     {
         factory.Dispose();

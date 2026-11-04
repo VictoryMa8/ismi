@@ -93,8 +93,20 @@ export function culturalCommand<T = CulturalDetail>(id: string, action: string, 
   return request<T>(`/api/admin/culture/editions/${encodeURIComponent(id)}/${action}`, { method: 'POST', body: JSON.stringify(payload) })
 }
 
-export function getAuthSession(): Promise<AuthSession> {
-  return request<AuthSession>('/api/auth/me')
+export async function getAuthSession(): Promise<AuthSession> {
+  const session = await request<AuthSession>('/api/auth/me')
+  // Another device may have deleted the account since our last form submission.
+  csrfToken = null
+  return session
+}
+
+export const getAccountStateToken = () => request<{ token: string }>('/api/auth/account-state')
+export const checkAccountDeleted = (token: string) => request<{ deleted: boolean }>('/api/auth/account-state', {
+  method: 'POST', body: JSON.stringify({ token }),
+})
+export async function deleteAccount(confirmation: string): Promise<void> {
+  try { await request<void>('/api/auth/delete-account', { method: 'POST', body: JSON.stringify({ confirmation }) }) }
+  finally { csrfToken = null } // A lost response may still have revoked this session.
 }
 
 export type SignInOptions = { googleClientId: string | null; emailCode: boolean }

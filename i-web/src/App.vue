@@ -4,6 +4,8 @@ import ReadingComfort from './ReadingComfort.vue';
 import DownloadsCenter from './DownloadsCenter.vue';
 import { useDownloadPin } from './downloadSafety';
 import PasswordlessSignIn from './PasswordlessSignIn.vue';
+import AccountDeletion from './AccountDeletion.vue';
+import { checkAccountDeleted, deleteAccount, getAccountStateToken } from './api';
 import ReadingHelp from './ReadingHelp.vue';
 import { loadReading, listenReading } from './readingComfort';
 import RecordingAttribution from './RecordingAttribution.vue';
@@ -80,6 +82,8 @@ import {
 import {
   recordingPlaybackUrl,
   cacheDashboard,
+  clearAccountDeviceData,
+  accountStateReceipts,
   migrateLegacyDashboard,
   cacheLesson,
   downloadKey,
@@ -238,6 +242,9 @@ let consoleOpener: HTMLElement | null = null;
 const accountMode = ref<'login' | 'register'>('login');
 const accountSubmitting = ref(false);
 const accountError = ref<string | null>(null);
+const deletionBusy = ref(false);
+const deletionError = ref('');
+const deletionNotice = ref('');
 const accountDisplayName = ref('');
 const accountEmail = ref('');
 const accountPassword = ref('');
@@ -403,6 +410,7 @@ function updateHabitClock() {
   learningHabits.refresh();
 }
 function handleHabitStorage(event: StorageEvent) {
+  if (event.key === `ismi-deleted:${reviewScope.value}` && event.newValue === 'yes') window.location.reload();
   if (event.key === null || event.key === `ismi-learning-habits-v1:${reviewScope.value}`) updateHabitClock();
 }
 function creditStudyActivity(activity: StudyActivity, scope: string) {
@@ -595,12 +603,23 @@ function loadSpeechVoices() {
 
 async function loadAuthSession() {
   try {
-    authSession.value = await getAuthSession();
+    const session = await getAuthSession();
+    // Check remembered accounts even after logout or cookie expiry.
+    try {
+      for (const { scope, token } of await accountStateReceipts()) {
+        if ((await checkAccountDeleted(token)).deleted) {
+          await clearAccountDeviceData(scope);
+          deletionNotice.value = 'Your account was deleted. Its data has been cleared from this browser.';
+        }
+      }
+    } catch { deletionNotice.value = 'Local account cleanup could not be checked. Reconnect and reload to try again.'; }
+    authSession.value = session;
     reviewScope.value = authSession.value.userId
       ? `user:${authSession.value.userId}`
       : 'guest';
     try {
       await saveDeviceSnapshot('review-scope', reviewScope.value);
+      if (session.isAuthenticated) await rememberAccountState();
     } catch {
       /* Review can run in memory. */
     }
@@ -688,6 +707,7 @@ async function finishSignIn(session: AuthSession) {
       : 'guest';
     try {
       await saveDeviceSnapshot('review-scope', reviewScope.value);
+      await rememberAccountState();
     } catch {
       /* Learning remains available. */
     }
@@ -700,6 +720,37 @@ async function finishSignIn(session: AuthSession) {
   } finally {
     accountSubmitting.value = false;
   }
+}
+
+async function rememberAccountState() {
+  const scope = reviewScope.value;
+  const { token } = await getAccountStateToken();
+  await saveDeviceSnapshot(`account-state:${scope}`, token);
+}
+
+async function removeAccount(confirmation: string) {
+  if (accountSubmitting.value || studySettings.busy.value || deletionBusy.value) return;
+  deletionBusy.value = true;
+  accountSubmitting.value = true;
+  deletionError.value = '';
+  const scope = reviewScope.value;
+  try {
+    // Keep the receipt until local cleanup succeeds, including after a lost response.
+    const receipt = await getDeviceSnapshot<string>(`account-state:${scope}`);
+    try { await deleteAccount(confirmation); }
+    catch (error) {
+      if (!receipt || !(await checkAccountDeleted(receipt)).deleted) throw error;
+    }
+    await clearAccountDeviceData(scope);
+    await loadAuthSession();
+    await loadDashboard();
+    deletionNotice.value = 'Your account was permanently deleted. You can continue as a guest.';
+    navigate('account');
+    await nextTick();
+    document.querySelector<HTMLElement>('#deletion-notice')?.focus();
+  } catch (error) {
+    deletionError.value = error instanceof Error ? error.message : 'Account deletion could not finish. Reconnect and try again.';
+  } finally { deletionBusy.value = false; accountSubmitting.value = false; }
 }
 
 async function signOut() {
@@ -1849,6 +1900,7 @@ async function finishLesson() {
         </header>
 
         <a class="page-link" href="#/account/downloads"><Download :size="20" aria-hidden="true" /> Downloads</a>
+        <p v-if="deletionNotice" id="deletion-notice" role="status" tabindex="-1">{{ deletionNotice }}</p>
         <StudySettings
           :available-course-ids="dashboard.dailyPlan.lessons.map(l => l.trackId ?? 'levantine')" :preferences="studySettings.preferences.value" :busy="studySettings.busy.value"
           :message="studySettings.message.value" :conflict="Boolean(studySettings.conflict.value)"
@@ -1893,6 +1945,7 @@ async function finishLesson() {
           >
             <BookCheck :size="18" aria-hidden="true" /> Open curriculum console
           </button>
+          <AccountDeletion :busy="deletionBusy" :error="deletionError" :disabled="accountSubmitting || studySettings.busy.value" @delete="removeAccount" />
         </template>
 
         <template v-else>

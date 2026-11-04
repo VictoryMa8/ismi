@@ -27,6 +27,7 @@ export function useLearningHabits() {
   function mutate(update: (current: HabitState) => HabitState) {
     if (!scope) return
     try {
+      if (localStorage.getItem(`ismi-deleted:${scope}`)) return
       const current = read()
       const next = update(rollWeek(current, Date.now()))
       if (JSON.stringify(next) !== JSON.stringify(current)) localStorage.setItem(key(), JSON.stringify(next))
