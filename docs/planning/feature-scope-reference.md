@@ -1639,3 +1639,23 @@ claims require actual reviewed human recordings with transcripts/rights through 
 **Evidence:** [remaining boundary](../../docs/alphabet-text-only-completion.md),
 [original full-pack design](../../docs/alphabet-explorer-plan.md).
 
+### F32 Downloads and recovery center
+
+**Outcome:** a course-grouped Account Downloads surface makes saved lesson/audio
+and published alphabet availability, size and recovery understandable. Content-only
+removal preserves learning evidence and queued progress. Reuse F01/F28 stores and
+normal publication/withdrawal rules; do not expose private or unpublished packages.
+
+**Contracts:** [F32.1 inventory and safe transfers](../downloads-and-reading-comfort.md#f321-inventory-and-safe-transfer-lifecycle),
+[F32.2 learner controls and recovery](../downloads-and-reading-comfort.md#f322-learner-controls-and-recovery),
+[F32.3 verification and application delivery](../downloads-and-reading-comfort.md#f323-verification-and-application-delivery).
+
+**Done when:** all three bounded contracts pass, including fault/reload/shared-asset
+and identity preservation, actual mobile offline/reconnection and screen-reader
+evidence, application version verification and separately authorized app delivery.
+No new curriculum publication, human-audio claim or beta inclusion follows.
+
+**Evidence:** [Software and verification record](../downloads-implementation.md).
+
+**Depends on:** F01/F02/F24.1/F28.1 delivered foundations; named device/access
+sessions for acceptance. F33 and new content authoring are not prerequisites.

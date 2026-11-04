@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ReadingHelp from './ReadingHelp.vue'
+import { useDownloadPin } from './downloadSafety'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { BookOpen, Download, Search, Volume2 } from '@lucide/vue'
 import BackControl from './BackControl.vue'
@@ -22,6 +23,7 @@ const dialog = ref<HTMLDialogElement>(), activityIndex = ref(0), practice = ref<
 const answers = ref<string[]>([]), help = ref(false), feedback = ref<string | null>(null), correct = ref<boolean | null>(null), finished = ref(false), results = ref<AlphabetEvidence[]>([])
 let epoch = 0, playback = 0, audio: HTMLAudioElement | null = null, objectUrl: string | null = null, opener: HTMLElement | null = null
 const playingUrl = ref<string | null>(null), played = ref(false)
+useDownloadPin(() => Boolean(playingUrl.value || practice.value.length))
 let contextScope = props.scope
 let currentRecorded = false
 let snapshotHash = ''
@@ -143,7 +145,7 @@ async function download() {
   } catch (caught) { if (token === epoch) error.value = `Alphabet download failed. Previous download retained. ${caught instanceof Error ? caught.message : ''}` }
   finally { saving.value = false }
 }
-async function remove() { if (saving.value) return; const id = props.courseId; try { await removeAlphabet(id); if (props.courseId === id) { downloaded.value = null; status.value = 'Download removed.' } } catch { error.value = 'The download could not be removed.' } }
+async function remove() { if (saving.value) return; const id = props.courseId; try { stopAudio(); closePractice(true); await removeAlphabet(id, true); if (props.courseId === id) { downloaded.value = null; status.value = 'Download removed.' } } catch { error.value = 'The download could not be removed.' } }
 function begin(mixed = false) {
   if (!pack.value) return
   opener = document.activeElement as HTMLElement
@@ -222,6 +224,7 @@ onBeforeUnmount(() => { epoch++; closePractice(true); document.removeEventListen
 <template>
   <section class="alphabet-explorer" aria-labelledby="alphabet-heading">
     <BackControl v-if="!previewPack" href="#/practice">Back to Practice</BackControl>
+    <a v-if="!previewPack" href="#/account/downloads" class="page-link">Downloads</a>
     <header class="alphabet-header">
       <div><p class="alphabet-course">{{ course.name }}</p><h1 id="alphabet-heading" ref="heading" tabindex="-1">Alphabet</h1></div>
       <button v-if="!previewPack" type="button" class="secondary-action" :disabled="busy || saving" @click="load">Refresh alphabet</button>

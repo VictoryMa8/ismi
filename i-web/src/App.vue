@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { listenReadingViewport } from './readingViewport';
 import ReadingComfort from './ReadingComfort.vue';
+import DownloadsCenter from './DownloadsCenter.vue';
+import { useDownloadPin } from './downloadSafety';
 import PasswordlessSignIn from './PasswordlessSignIn.vue';
 import ReadingHelp from './ReadingHelp.vue';
 import { loadReading, listenReading } from './readingComfort';
@@ -8,6 +10,7 @@ import RecordingAttribution from './RecordingAttribution.vue';
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import {
   BookOpen,
+  Download,
   NotebookPen,
   MessagesSquare,
   Languages,
@@ -79,6 +82,9 @@ import {
   cacheDashboard,
   migrateLegacyDashboard,
   cacheLesson,
+  downloadKey,
+  downloadMeta,
+  setDownloadMeta,
   getCachedDashboard,
   getCachedLesson,
   getCachedLessonCount,
@@ -110,6 +116,7 @@ const lessonOpen = ref(false);
 const previewMode = ref(false);
 const practiceMode = ref(false);
 const reviewOpen = ref(false);
+useDownloadPin(() => lessonOpen.value || reviewOpen.value);
 const reviewAudioPlaying = ref(false);
 const alphabetAudioPlaying = ref(false);
 const reviewScope = ref('guest');
@@ -173,18 +180,18 @@ const completionSummary = computed(() => {
   };
 });
 const pendingSyncCount = ref(0);
-type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'practice-culture' | 'practice-alphabet' | 'practice-stories' | 'practice-grammar' | 'progress' | 'words' | 'account';
+type PageName = 'today' | 'courses' | 'practice' | 'practice-review' | 'practice-checkpoints' | 'practice-recall' | 'practice-lessons' | 'practice-culture' | 'practice-alphabet' | 'practice-stories' | 'practice-grammar' | 'progress' | 'words' | 'account' | 'downloads';
 const pageNames: Record<string, PageName> = {
   today: 'today', courses: 'courses', practice: 'practice', 'practice/review': 'practice-review',
   'practice/checkpoints': 'practice-checkpoints', 'practice/recall': 'practice-recall', 'practice/lessons': 'practice-lessons',
   'practice/culture': 'practice-culture', 'practice/alphabet': 'practice-alphabet', 'practice/stories': 'practice-stories', 'practice/grammar': 'practice-grammar',
-  progress: 'progress', words: 'words', account: 'account',
+  progress: 'progress', words: 'words', account: 'account', 'account/downloads': 'downloads',
 };
 const pageTitles: Record<PageName, string> = {
   today: 'Today', courses: 'Courses', practice: 'Practice', 'practice-review': 'Review',
   'practice-checkpoints': 'Checkpoints', 'practice-recall': 'Write a response', 'practice-lessons': 'Lesson practice',
   'practice-culture': 'Watch & listen', 'practice-alphabet': 'Alphabet', 'practice-stories': 'Mini-stories', 'practice-grammar': 'Grammar reference',
-  progress: 'Progress', words: 'Learned words', account: 'Account',
+  progress: 'Progress', words: 'Learned words', account: 'Account', downloads: 'Downloads',
 };
 const navigation = [
   { id: 'today', label: 'Today', icon: Home },
@@ -201,7 +208,7 @@ function readPage(): PageName {
 }
 const page = ref<PageName>(readPage());
 const culturalEditionId = ref<string | null>(window.location.hash.split('/')[3] ?? null);
-const primaryPage = computed(() => page.value.startsWith('practice') ? 'practice' : page.value);
+const primaryPage = computed(() => page.value.startsWith('practice') ? 'practice' : page.value === 'downloads' ? 'account' : page.value);
 const pageTitle = computed(() => pageTitles[page.value]);
 const reviewView = computed(() => page.value === 'practice' ? 'tiles' : page.value === 'practice-review' ? 'review' : page.value === 'practice-checkpoints' ? 'checkpoints' : 'hidden');
 const recallView = computed(() => page.value === 'practice' ? 'tile' : page.value === 'practice-recall' ? 'recall' : page.value === 'progress' ? 'can-do' : 'hidden');
@@ -597,6 +604,7 @@ async function loadAuthSession() {
     } catch {
       /* Review can run in memory. */
     }
+    return true;
   } catch {
     try {
       reviewScope.value =
@@ -611,6 +619,7 @@ async function loadAuthSession() {
       email: null,
       canManageCurriculum: false,
     };
+    return false;
   }
 }
 
@@ -860,11 +869,16 @@ async function cacheUpcomingLessons() {
   const upcoming = studyPlan.value.queue;
   for (const item of upcoming) {
     try {
+      const download = await downloadMeta(downloadKey('lesson', item.id));
+      if (download?.removed) continue;
+      if (download?.error) {
+        downloadError.value = `${item.title}: download could not finish. ${download.error} Previously saved versions remain available.`;
+        continue;
+      }
       await cacheLesson(await getLesson(item.id));
     } catch {
       downloadError.value =
-        'Some lesson downloads could not finish. Previously downloaded lessons remain available. Reconnect to retry.';
-      break;
+        `${item.title}: download could not finish. Previously saved versions remain available.`;
     }
   }
 
@@ -910,17 +924,26 @@ async function handleOnline() {
   await cacheUpcomingLessons();
 }
 
+async function retryDownloadsSync() {
+  const scope = reviewScope.value;
+  if (!await loadAuthSession()) throw new Error('Current account could not be checked. Reconnect and retry sync.');
+  if (scope !== reviewScope.value) return;
+  await syncPendingCompletions();
+}
+
 async function syncPendingCompletions() {
   if (!navigator.onLine) return;
 
+  const scope = reviewScope.value;
   let pending: PendingCompletion[];
   try {
-    pending = await getPendingCompletions(reviewScope.value);
+    pending = await getPendingCompletions(scope);
   } catch {
     return;
   }
 
   for (const completion of pending) {
+    if (scope !== reviewScope.value) return;
     try {
       await submitLessonCompletion(
         completion.lessonId,
@@ -1040,13 +1063,14 @@ async function startLesson(requestedId?: string, practiceOnly = false, cardIndex
   lessonLoading.value = true;
 
   const lessonId = requestedId ?? nextStudyLesson.value?.id ?? '';
+  try { await setDownloadMeta(downloadKey('lesson', lessonId), { removed: false }); } catch { /* Live learning remains usable. */ }
   try {
     const fetched = await getLesson(lessonId);
     if (session !== lessonSession) return;
     lesson.value = fetched;
     apiLive.value = true;
     try {
-      await cacheLesson(lesson.value);
+      await cacheLesson(lesson.value, true);
     } catch {
       // Keep the live lesson available even if device storage is blocked.
     }
@@ -1419,15 +1443,15 @@ async function finishLesson() {
 
       <BackControl class="landing-return mobile-landing-return" href="#">Back to landing page</BackControl>
 
-      <CourseSwitcher :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || (!studyPageAvailable && page !== 'practice-alphabet') || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
+      <CourseSwitcher v-if="page !== 'downloads'" :last-courses="lastCourses" :model-value="viewedCourse" :lessons="dashboard.dailyPlan.lessons" :disabled="!viewedReady || (!studyPageAvailable && page !== 'practice-alphabet') || lessonOpen || reviewOpen" @update:model-value="switchViewedCourse" />
       <p v-if="courseStorageError" role="status">{{ courseStorageError }}</p>
-      <section v-if="studyPageAvailable && !activeLessons.length && page !== 'account' && page !== 'practice-alphabet'" class="course-empty" role="status">
+      <section v-if="studyPageAvailable && !activeLessons.length && page !== 'account' && page !== 'downloads' && page !== 'practice-alphabet'" class="course-empty" role="status">
         <h2>{{ activeCourse.name }}</h2><p>Lessons not yet available. Your saved progress and daily study settings are unchanged.</p>
       </section>
-      <p v-if="downloadError" role="status">{{ downloadError }}</p>
+      <p v-if="downloadError" role="status">{{ downloadError }} <a href="#/account/downloads">Manage downloads</a></p>
 
-      <LoadingWords v-if="dashboardLoading && page !== 'practice-culture' && page !== 'practice-alphabet'" :compact="!initialDashboardLoading" />
-      <section v-else-if="dashboardUnavailable && page !== 'account' && page !== 'practice-culture' && page !== 'practice-alphabet'" class="dashboard-error" aria-labelledby="dashboard-error-heading">
+      <LoadingWords v-if="dashboardLoading && page !== 'downloads' && page !== 'practice-culture' && page !== 'practice-alphabet'" :compact="!initialDashboardLoading" />
+      <section v-else-if="dashboardUnavailable && page !== 'account' && page !== 'downloads' && page !== 'practice-culture' && page !== 'practice-alphabet'" class="dashboard-error" aria-labelledby="dashboard-error-heading">
         <WifiOff :size="28" aria-hidden="true" />
         <h1 id="dashboard-error-heading">Your lessons couldn’t load</h1>
         <p>Reconnect and try again. No saved lessons are available on this device.</p>
@@ -1802,6 +1826,8 @@ async function finishLesson() {
           @prompt-playback="reviewAudioPlaying = $event"
         />
       </template>
+      <p v-if="page === 'downloads' && startupLoading" role="status">Reading downloads…</p>
+      <DownloadsCenter v-if="page === 'downloads' && !startupLoading" :key="reviewScope" :scope="reviewScope" :retry-sync="retryDownloadsSync" />
       <section
         v-if="page === 'account'"
         class="account-sheet account-page"
@@ -1822,6 +1848,7 @@ async function finishLesson() {
           </div>
         </header>
 
+        <a class="page-link" href="#/account/downloads"><Download :size="20" aria-hidden="true" /> Downloads</a>
         <StudySettings
           :available-course-ids="dashboard.dailyPlan.lessons.map(l => l.trackId ?? 'levantine')" :preferences="studySettings.preferences.value" :busy="studySettings.busy.value"
           :message="studySettings.message.value" :conflict="Boolean(studySettings.conflict.value)"
@@ -2046,7 +2073,7 @@ async function finishLesson() {
             >
               <WifiOff :size="28" aria-hidden="true" />
               <strong>Lesson unavailable</strong>
-              <p>{{ lessonError }}</p>
+              <p>{{ lessonError }} <a href="#/account/downloads" @click="closeLesson">Downloads</a></p>
             </div>
 
             <div

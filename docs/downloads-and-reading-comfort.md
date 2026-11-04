@@ -6,7 +6,7 @@ Current states, priority, next actions and authority live only in
 bounded implementation and acceptance contracts. The original October 22 request
 created a plan. F33 implementation was subsequently authorized October 27; see
 [implementation evidence](reading-comfort-implementation.md). No physical-device
-pass or deployment is implied. F32 remains a separate planned scope.
+pass or deployment is implied. F32 software was subsequently authorized November 3 (“build P4”); see [implementation and verification evidence](downloads-implementation.md). Actual field acceptance and application rollout remain separate gates.
 
 ## F32 Downloads and recovery center
 

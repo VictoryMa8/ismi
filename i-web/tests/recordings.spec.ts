@@ -176,7 +176,8 @@ for (const failure of ['missing', 'corrupt'] as const) {
       contentType: 'audio/wav', body: silentWave(),
     }))
     await page.reload()
-    await expect(page.getByText('Some lesson downloads could not finish.', { exact: false })).toBeVisible()
+    await expect(page.getByText(/download could not finish\./)).toBeVisible()
+    await expect(page.getByRole('link', { name: 'Manage downloads', exact: true })).toBeVisible()
     const saved = await page.evaluate(async () => {
       const database = await new Promise<IDBDatabase>(resolve => {
         const request = indexedDB.open('ismi-offline')

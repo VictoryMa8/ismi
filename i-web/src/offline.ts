@@ -1,3 +1,4 @@
+import { downloadFetch, downloadLock, downloadsChanged, safeRemoval } from './downloadSafety'
 import { readableLesson } from './courses'
 import { nextReviewSchedule, type ReviewSchedule } from './reviewSchedule'
 import { renameCharacterContent } from './characters'
@@ -66,26 +67,57 @@ async function useStore<T>(
 
   return new Promise((resolve, reject) => {
     const transaction = database.transaction(storeName, mode)
-    const request = operation(transaction.objectStore(storeName))
-
-    request.onerror = () => reject(request.error)
+    let request: IDBRequest<T>
     transaction.oncomplete = () => { database.close(); resolve(request.result) }
-    transaction.onabort = () => { database.close(); reject(transaction.error) }
+    transaction.onabort = () => { database.close(); reject(transaction.error ?? new Error('Storage operation could not finish.')) }
     transaction.onerror = () => reject(transaction.error)
+    try { request = operation(transaction.objectStore(storeName)); request.onerror = () => reject(request.error) }
+    catch (error) { transaction.abort(); database.close(); reject(error) }
   })
 }
 
+export type DownloadMeta = {
+  savedAt?: string; checkedAt?: string; available?: boolean; liveVersion?: string
+  error?: string; removed?: boolean; title?: string; notice?: string; requiredAudio?: number
+}
+export const downloadKey = (type: 'lesson' | 'alphabet', id: string) => `download-v1:${type}:${id}`
+export const downloadMeta = (key: string) => getDeviceSnapshot<DownloadMeta>(key)
+export const setDownloadMeta = (key: string, patch: Partial<DownloadMeta>) => updateDeviceSnapshot<DownloadMeta>(key, old => ({ ...old, ...patch }))
+export function lessonAudio(lesson: LessonResponse): string[] {
+  // Include introduction/teaching recordings as well as exercise prompts.
+  const urls = new Set<string>()
+  function visit(value: unknown) {
+    if (!value || typeof value !== 'object') return
+    for (const [key, child] of Object.entries(value)) {
+      if (key === 'audioUrl' && typeof child === 'string' && child) urls.add(child)
+      else visit(child)
+    }
+  }
+  visit(lesson)
+  return [...urls]
+}
 type CachedRecording = { url: string; blob: Blob }
 
-export async function cacheLesson(lesson: LessonResponse): Promise<void> {
+export async function cacheLesson(lesson: LessonResponse, explicit = false): Promise<void> {
+  return downloadLock(async () => {
+    const key = downloadKey('lesson', lesson.id)
+    const meta = await downloadMeta(key)
+    if (!explicit && (meta?.removed || meta?.error)) return
+    try { await writeLesson(lesson, key, meta); downloadsChanged() }
+    catch (error) {
+      await setDownloadMeta(key, { error: error instanceof Error ? error.message : 'Download failed. Try again.' }).catch(() => {})
+      downloadsChanged(); throw error
+    }
+  }, downloadKey('lesson', lesson.id))
+}
+async function writeLesson(lesson: LessonResponse, key: string, meta?: DownloadMeta): Promise<void> {
   const recordings: CachedRecording[] = []
-  for (const url of new Set(lesson.steps.map(step => step.prompt.audioUrl).filter((url): url is string => Boolean(url)))) {
+  for (const url of lessonAudio(lesson)) {
     if (!/^\/api\/recordings\/[a-f0-9]{64}\.wav$/.test(url)) throw new Error('Unsupported recording URL.')
     const existing = await useStore<CachedRecording | undefined>(recordingStore, 'readonly', store => store.get(url))
-    if (existing) continue
-    const response = await fetch(url)
-    if (!response.ok) throw new Error('Recording download failed.')
-    const blob = await response.blob()
+    const response = existing ? undefined : await downloadFetch(url)
+    if (response && !response.ok) throw new Error('Recording download failed. Reconnect and retry.')
+    const blob = existing?.blob ?? await response!.blob()
     if (blob.size > 10 * 1024 * 1024) throw new Error('Recording exceeds the download limit.')
     const digest = await crypto.subtle.digest('SHA-256', await blob.arrayBuffer())
     const hash = Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('')
@@ -93,16 +125,29 @@ export async function cacheLesson(lesson: LessonResponse): Promise<void> {
     recordings.push({ url, blob: new Blob([blob], { type: 'audio/wav' }) })
   }
 
+  const published = await downloadFetch(`/api/lessons/${encodeURIComponent(lesson.id)}`)
+  if ([403, 404, 410].includes(published.status)) {
+    await setDownloadMeta(key, { available: false, checkedAt: new Date().toISOString() })
+    await useStore(lessonStore, 'readwrite', store => store.delete(lesson.id))
+    throw new Error('This lesson is no longer available.')
+  }
+  if (!published.ok) throw new Error('Availability could not be checked. Reconnect and retry.')
+  if ((await published.json() as LessonResponse).version !== lesson.version) throw new Error('This lesson changed during download. Retry for the latest version.')
+
   // A package becomes available only after every recording is downloaded and verified.
   // Failed updates leave the previous complete lesson version intact.
   const database = await openDatabase()
   await new Promise<void>((resolve, reject) => {
-    const transaction = database.transaction([lessonStore, recordingStore], 'readwrite')
-    for (const recording of recordings) transaction.objectStore(recordingStore).put(recording)
-    transaction.objectStore(lessonStore).put(JSON.parse(JSON.stringify(lesson)))
+    const transaction = database.transaction([lessonStore, recordingStore, snapshotStore], 'readwrite')
     transaction.oncomplete = () => { database.close(); resolve() }
-    transaction.onabort = () => { database.close(); reject(transaction.error) }
+    transaction.onabort = () => { database.close(); reject(transaction.error ?? new Error('Download could not be saved. Check browser storage and retry.')) }
     transaction.onerror = () => reject(transaction.error)
+    try {
+      const now = new Date().toISOString()
+      transaction.objectStore(snapshotStore).put({ key, value: { ...meta, savedAt: now, checkedAt: now, available: true, liveVersion: lesson.version, removed: false, error: undefined } })
+      for (const recording of recordings) transaction.objectStore(recordingStore).put(recording)
+      transaction.objectStore(lessonStore).put(JSON.parse(JSON.stringify(lesson)))
+    } catch (error) { transaction.abort(); database.close(); reject(error) }
   })
 }
 
@@ -116,16 +161,49 @@ export async function recordingPlaybackUrl(url: string): Promise<string> {
   return url
 }
 
-export function getCachedLesson(lessonId: string): Promise<LessonResponse | undefined> {
-  return useStore<LessonResponse | undefined>(lessonStore, 'readonly', store => store.get(lessonId)).then(renameCharacterContent).then(lesson => lesson ? readableLesson(lesson) : undefined)
+export async function lessonDownloads(): Promise<{ lessons: LessonResponse[]; recordings: CachedRecording[] }> {
+  const database = await openDatabase()
+  return new Promise((resolve, reject) => {
+    const tx = database.transaction([lessonStore, recordingStore])
+    const lessons = tx.objectStore(lessonStore).getAll(), recordings = tx.objectStore(recordingStore).getAll()
+    tx.oncomplete = () => { database.close(); resolve({ lessons: lessons.result, recordings: recordings.result }) }
+    tx.onabort = () => { database.close(); reject(tx.error) }
+  })
 }
-
-export function removeCachedLesson(lessonId: string): Promise<undefined> {
-  return useStore(lessonStore, 'readwrite', store => store.delete(lessonId))
+export async function getCachedLesson(lessonId: string): Promise<LessonResponse | undefined> {
+  const { lessons, recordings } = await lessonDownloads()
+  const lesson = lessons.find(item => item.id === lessonId)
+  if (!lesson || (await downloadMeta(downloadKey('lesson', lessonId)))?.available === false) return undefined
+  if (lessonAudio(lesson).some(url => !recordings.some(recording => recording.url === url))) return undefined
+  return readableLesson(renameCharacterContent(lesson))
 }
-
-export function getCachedLessonCount(): Promise<number> {
-  return useStore(lessonStore, 'readonly', store => store.count())
+export async function removeCachedLesson(lessonId: string, manual = false): Promise<void> {
+  return downloadLock(async () => {
+    const remove = async () => {
+      // Intent is durable before deletion; automatic caching cannot undo removal.
+      await setDownloadMeta(downloadKey('lesson', lessonId), manual ? { removed: true, error: undefined } : { available: false, checkedAt: new Date().toISOString(), error: undefined })
+      const database = await openDatabase()
+      await new Promise<void>((resolve, reject) => {
+        const tx = database.transaction([lessonStore, recordingStore], 'readwrite')
+        const store = tx.objectStore(lessonStore); store.delete(lessonId)
+        const all = store.getAll()
+        all.onsuccess = () => {
+          const keep = new Set((all.result as LessonResponse[]).flatMap(lessonAudio))
+          const request = tx.objectStore(recordingStore).openCursor()
+          request.onsuccess = () => { const cursor = request.result; if (!cursor) return; if (!keep.has(cursor.key as string)) cursor.delete(); cursor.continue() }
+        }
+        tx.oncomplete = () => { database.close(); resolve() }
+        tx.onabort = () => { database.close(); reject(tx.error) }
+      })
+    }
+    if (manual) await safeRemoval(remove); else await remove()
+    downloadsChanged()
+  })
+}
+export async function getCachedLessonCount(): Promise<number> {
+  const { lessons, recordings } = await lessonDownloads()
+  const metas = await Promise.all(lessons.map(lesson => downloadMeta(downloadKey('lesson', lesson.id))))
+  return lessons.filter((lesson, i) => metas[i]?.available !== false && lessonAudio(lesson).every(url => recordings.some(recording => recording.url === url))).length
 }
 
 export function cacheDashboard(dashboard: DashboardResponse, scope = 'guest'): Promise<IDBValidKey> {
