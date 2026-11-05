@@ -1,5 +1,5 @@
 import { expect, test, type Page } from '@playwright/test'
-import { finishTeaching, responseChoices } from './lesson-helpers'
+import { finishTeaching, responseChoices, openCourseMap } from './lesson-helpers'
 
 async function waitForOfflinePackage(page: Page) {
   await expect.poll(async () => page.evaluate(async () => {
@@ -22,6 +22,7 @@ async function waitForOfflinePackage(page: Page) {
 test('download, offline completion, and exactly-once reconnection advance the course', async ({ page, context }) => {
   test.setTimeout(60_000)
   await page.goto('/#/courses')
+  await openCourseMap(page)
   await expect(page.getByRole('list', { name: 'Levantine course path' }).getByRole('listitem')).toHaveCount(6)
   await expect(page.getByText('0 of 6 lessons complete')).toBeVisible()
   await page.getByRole('link', { name: 'Today', exact: true }).click()
@@ -50,6 +51,7 @@ test('download, offline completion, and exactly-once reconnection advance the co
   await page.getByRole('button', { name: 'Back to today' }).click()
   await expect(page.getByText('1 of 6 lessons complete')).toBeVisible()
   await page.getByRole('link', { name: 'Courses', exact: true }).click()
+  await openCourseMap(page)
   await expect(page.getByRole('listitem').filter({ hasText: 'Say what you did today' })).toContainText('Up next')
 
   await page.getByRole('link', { name: 'Today', exact: true }).click()

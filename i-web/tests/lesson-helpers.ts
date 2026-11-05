@@ -23,3 +23,14 @@ export async function responseChoices(dialog: Locator, stepId?: string) {
   else if (await builder.isVisible()) await builder.click()
   await expect(dialog.locator('.answer-option').first()).toBeVisible()
 }
+
+export async function openDisclosure(summary: Locator) {
+  await expect(summary).toBeVisible()
+  if (!(await summary.evaluate(el => (el.parentElement as HTMLDetailsElement).open))) await summary.click()
+}
+
+export async function openCourseMap(page: Page) {
+  const summaries = page.locator('.course-unit-details > summary')
+  await expect(summaries.first()).toBeVisible()
+  for (const summary of await summaries.all()) await openDisclosure(summary)
+}

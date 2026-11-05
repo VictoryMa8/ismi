@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { expect, test, type Page, type Locator } from '@playwright/test'
-import { finishTeaching, responseChoices } from './lesson-helpers'
+import { finishTeaching, responseChoices, openDisclosure } from './lesson-helpers'
 import type { LessonResponse } from '../src/types'
 
 const packages = [1, 2, 3].map(n => JSON.parse(readFileSync(
@@ -64,8 +64,10 @@ test('planning drafts preview privately; test publications complete offline and 
   await page.evaluate(async () => { await navigator.serviceWorker.ready })
   await page.getByRole('link', { name: 'Courses', exact: true }).click()
   const unit = page.getByRole('region', { name: 'Make a plan together', exact: true })
+  await openDisclosure(unit.locator('.course-unit-details > summary'))
   await expect(unit.getByRole('button', { name: /^Open / })).toHaveCount(3)
   for (const { lesson } of packages) {
+    await openDisclosure(unit.locator('.course-unit-details > summary'))
     await unit.getByRole('button', { name: `Open ${lesson.title}`, exact: true }).click()
     const dialog = page.getByRole('dialog', { name: lesson.title, exact: true })
     await expect(dialog.getByRole('list', { name: 'Dialogue transcript' })).toBeVisible()
@@ -74,6 +76,7 @@ test('planning drafts preview privately; test publications complete offline and 
   await context.setOffline(true)
   await page.reload()
   for (const { lesson } of packages) {
+    await openDisclosure(unit.locator('.course-unit-details > summary'))
     await unit.getByRole('button', { name: `Open ${lesson.title}`, exact: true }).click()
     const dialog = page.getByRole('dialog', { name: lesson.title, exact: true })
     await complete(page, dialog, lesson)
@@ -86,5 +89,6 @@ test('planning drafts preview privately; test publications complete offline and 
   await page.evaluate(() => window.dispatchEvent(new Event('online')))
   await expect(page.getByText('3 completions waiting to sync', { exact: true })).toHaveCount(0)
   await page.reload()
+  await openDisclosure(unit.locator('.course-unit-details > summary'))
   await expect(unit.getByRole('heading', { name: 'Unit complete' })).toBeVisible()
 })

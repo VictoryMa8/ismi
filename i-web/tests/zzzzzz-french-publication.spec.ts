@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { expect, test, type Page } from '@playwright/test'
-import { finishTeaching, responseChoices } from './lesson-helpers'
+import { finishTeaching, responseChoices, openCourseMap } from './lesson-helpers'
 import { chooseCourse } from './courseSwitcher'
 import { placementQuestions } from '../src/placement'
 import type { LessonResponse } from '../src/types'
@@ -47,7 +47,8 @@ test('owner publishes exact French unreviewed text previews; labels, offline com
   await chooseCourse(page, 'french')
   await page.getByRole('link', { name: 'Courses', exact: true }).click()
   await expect(page.locator('.publication-notice')).toHaveCount(0)
-  await expect(page.getByRole('button', { name: /^Open / })).toHaveCount(5)
+  await openCourseMap(page)
+  await expect(page.locator('.course-path').getByRole('button', { name: /^Open / })).toHaveCount(5)
   const pack = packs[0]!
   await page.getByRole('button', { name: `Open ${pack.lesson.title}`, exact: true }).click()
   let dialog = page.getByRole('dialog', { name: pack.lesson.title, exact: true })
@@ -57,6 +58,7 @@ test('owner publishes exact French unreviewed text previews; labels, offline com
   await page.evaluate(async () => { await navigator.serviceWorker.ready })
   await context.setOffline(true)
   await page.reload()
+  await openCourseMap(page)
   await page.getByRole('button', { name: `Open ${pack.lesson.title}`, exact: true }).click()
   dialog = page.getByRole('dialog', { name: pack.lesson.title, exact: true })
   await expect(dialog.locator('.publication-notice')).toContainText('Unreviewed · text-only preview')

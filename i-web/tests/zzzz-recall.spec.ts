@@ -1,3 +1,4 @@
+import { openDisclosure } from './lesson-helpers'
 import { readFileSync } from 'node:fs'
 import { expect, test, request, type APIRequestContext, type Page } from '@playwright/test'
 import { evaluateRecall, normalizeRecall } from '../src/recallEvaluation'
@@ -271,7 +272,7 @@ test('can-do empty state offers a working next step and compact, accessible targ
   await action.focus()
   await page.keyboard.press('Enter')
   await expect(page).toHaveURL(/#\/courses$/)
-  await expect(page.getByRole('button', { name: `Open ${lessons[0]!.title}`, exact: true })).toBeVisible()
+  await expect(page.getByRole('button', { name: `Open next lesson: ${lessons[0]!.title}`, exact: true })).toBeVisible()
 })
 
 test('F17.6 real first responses and offline later review earn one optional, persistent outcome achievement', async ({ page, context }, testInfo) => {
@@ -307,10 +308,13 @@ test('F17.6 real first responses and offline later review earn one optional, per
   expect(saved.filter(e => e.variantId.endsWith('-later')).every(e => e.reviewDueAt && Date.parse(e.reviewDueAt) <= Date.parse(e.shownAt))).toBe(true)
   await page.reload()
   await expect(achievements).toBeVisible()
+  await openDisclosure(progress.locator('.can-do-rules > summary'))
   await progress.getByLabel('Show outcome achievements').uncheck()
   await expect(achievements).toHaveCount(0)
   await page.reload()
+  await openDisclosure(progress.locator('.can-do-rules > summary'))
   await expect(progress.getByLabel('Show outcome achievements')).not.toBeChecked()
+  await openDisclosure(progress.locator('.can-do-rules > summary'))
   await progress.getByLabel('Show outcome achievements').check()
   await expect(achievements).toBeVisible()
   // Becoming due again leaves the demonstrated states and award intact.
@@ -337,6 +341,7 @@ test('F17.6 real first responses and offline later review earn one optional, per
   await expect(progress.getByRole('link', { name: 'Explore lessons' })).toBeVisible()
   await expect(achievements).toContainText('Historical achievement')
   expect((await snapshots(page)).find(s => s.key === 'can-do-v1:guest')!.value.achievements).toHaveLength(1)
+  await openDisclosure(progress.locator('[data-can-do="request-tea"] > summary'))
   await progress.locator('[data-can-do="request-tea"]').getByText('Attempts and sources', { exact: true }).click()
   await expect(progress.locator('[data-can-do="request-tea"]')).toContainText('Historical')
 })
@@ -349,6 +354,7 @@ test('F17.6 targeted practice, help facts, keyboard, enlarged layout and identit
   await page.addStyleTag({ content: 'html { font-size: 200%; }' })
   const progress = page.getByRole('region', { name: 'What you can do' })
   const card = progress.locator('[data-can-do="request-tea"]')
+  await openDisclosure(card.locator(':scope > summary'))
   const button = card.getByRole('button', { name: 'Try writing a response: Request tea politely' })
   await button.focus(); await page.keyboard.press('Enter')
   const dialog = page.getByRole('dialog', { name: 'Write a response' })
@@ -366,15 +372,18 @@ test('F17.6 targeted practice, help facts, keyboard, enlarged layout and identit
   await expect(card).toContainText('0 retries')
   await expect(card).toContainText(lessons[1]!.version)
   expect(await progress.evaluate(e => e.scrollWidth <= e.clientWidth + 1)).toBe(true)
+  await openDisclosure(progress.locator('.can-do-rules > summary'))
   await progress.getByLabel('Show outcome achievements').uncheck()
   const registered = await post(page.request, '/api/auth/register', { displayName: 'Can-do learner', email: `cando-${Date.now()}@example.test`, password: 'test-only-long-password' })
   expect(registered.ok()).toBeTruthy()
   await page.reload()
   await expect(progress.getByText('Not yet practiced', { exact: true })).toHaveCount(3)
+  await openDisclosure(progress.locator('.can-do-rules > summary'))
   await expect(progress.getByLabel('Show outcome achievements')).toBeChecked()
   await post(page.request, '/api/auth/logout', {})
   await page.reload()
   await expect(card).toContainText('Practiced with help')
+  await openDisclosure(progress.locator('.can-do-rules > summary'))
   await expect(progress.getByLabel('Show outcome achievements')).not.toBeChecked()
 })
 

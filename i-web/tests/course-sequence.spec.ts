@@ -1,3 +1,4 @@
+import { openCourseMap } from './lesson-helpers'
 import { readFileSync } from 'node:fs'
 import { expect, test } from '@playwright/test'
 import { buildStudyPlan } from '../src/studyPlan'
@@ -35,6 +36,7 @@ for (const width of [390, 1280]) test(`one ordered course, no draft card, legacy
   await expect(page.locator('.publication-notice')).toHaveCount(0)
   await expect(page.locator('.primary-lesson-card')).toContainText(packs[0]!.title)
   await page.getByRole('link', { name: 'Courses', exact: true }).click()
+  await openCourseMap(page)
   await expect(page.locator('.course-path-copy strong')).toHaveText(expected.map(l => l.title))
   await expect(page.locator('.course-path-marker')).toHaveText(['1', '11', '16', '21', '26'])
   await expect(page.getByRole('heading', { name: /Week 1/ })).toHaveCount(0)
@@ -63,6 +65,7 @@ for (const width of [390, 1280]) test(`one ordered course, no draft card, legacy
   await expect(page.getByRole('dialog').getByRole('button', { name: 'Try from memory', exact: true })).toBeVisible()
   await page.getByRole('button', { name: 'Close lesson' }).click()
   await page.getByRole('link', { name: 'Courses', exact: true }).click()
+  await openCourseMap(page)
   await expect(page.locator('.course-path-copy strong')).toHaveText(expected.map(l => l.title))
   await expect(page.locator('.publication-notice')).toHaveCount(0)
   expect(await page.locator('body').evaluate(el => el.scrollWidth <= innerWidth)).toBeTruthy()

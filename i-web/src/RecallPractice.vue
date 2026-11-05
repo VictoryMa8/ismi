@@ -287,8 +287,7 @@ onBeforeUnmount(() => {
   <Teleport v-if="hubTarget" :to="hubTarget">
     <a v-if="hubView === 'tile'" class="feature-tile accent-red tile-recall" href="#/practice/recall" :aria-label="`Write a response, ${available.length} targets, ${dueTargets} due`">
       <span class="feature-badge" aria-hidden="true"><PenLine :size="24" /></span>
-      <span class="feature-copy"><strong>Write a response</strong><small>{{ dueTargets }} due</small></span>
-      <span class="feature-count">{{ available.length }}</span>
+      <span class="feature-copy"><strong>Write a response</strong></span>
     </a>
     <CanDoProgress v-else-if="hubView === 'can-do'" :scope="scope" :lessons="packages" :evidence="savedEvidence" :history="savedHistory"
       :now="now" :loading="loading" @practice="start" />

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ReadingHelp from './ReadingHelp.vue'
+import { ChevronRight, Search, SlidersHorizontal } from '@lucide/vue'
 import PhraseAnatomy from './PhraseAnatomy.vue';
 import RecordingAttribution from './RecordingAttribution.vue';
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
@@ -16,6 +17,7 @@ const packages = ref<LessonResponse[]>([])
 const loading = ref(false)
 const notice = ref('')
 const query = ref('')
+const filtersOpen = ref(false)
 const track = ref('')
 const dialect = ref('')
 const kind = ref('')
@@ -55,12 +57,12 @@ async function play(entry: GlossaryEntry) {
   const url = entry.contexts.find(context => context.audioUrl)?.audioUrl
   if (!url) return
   const token = audioGeneration
+  playing.value = key
   try {
     const resolved = await recordingPlaybackUrl(url)
     if (token !== audioGeneration) { if (resolved.startsWith('blob:')) URL.revokeObjectURL(resolved); return }
     if (resolved.startsWith('blob:')) objectUrl = resolved
     audio = new Audio(resolved)
-    playing.value = key
     emit('prompt-playback', true)
     audio.addEventListener('ended', stopAudio, { once: true })
     audio.addEventListener('error', () => { if (token === audioGeneration) { stopAudio(); audioError.value = 'Recording unavailable. Read the text or reopen the lesson.' } }, { once: true })
@@ -109,7 +111,7 @@ async function refresh() {
 }
 watch(() => [props.scope, props.lessons.map(item => `${item.id}:${item.isCompleted}`).join('|')], () => {
   if (lastScope !== props.scope) {
-    query.value = ''; track.value = ''; dialect.value = ''; kind.value = ''; page.value = 0
+    query.value = ''; track.value = ''; dialect.value = ''; kind.value = ''; page.value = 0; filtersOpen.value = false
     lastScope = props.scope
   }
   void refresh()
@@ -123,12 +125,16 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
 <template>
   <section class="glossary" aria-labelledby="learned-words-title" :aria-busy="loading">
     <h1 id="learned-words-title">Learned words</h1>
-    <p>Words and expressions from completed lessons. Completion does not mean mastery.</p>
-    <div class="glossary-filters">
-      <label class="glossary-search">Search words<input v-model="query" type="search" placeholder="Word, English or pronunciation help" dir="auto" /></label>
-      <label>Course<select v-model="track"><option value="">All courses</option><template v-for="group in courseGroups" :key="group.id"><optgroup v-if="group.paths.length > 1" :label="group.name"><option v-for="path in group.paths" :key="path.id" :value="path.id">{{ path.pathName }}</option></optgroup><option v-else :value="group.id">{{ group.name }}</option></template></select></label>
-      <label>Dialect<select v-model="dialect"><option value="">All dialects</option><option v-for="id in dialects" :key="id" :value="id">{{ dialectName(id) }}</option></select></label>
-      <label>Type<select v-model="kind"><option value="">Words and expressions</option><option value="word">Words</option><option value="expression">Expressions</option></select></label>
+    <div class="glossary-tools">
+      <label class="glossary-search"><Search :size="19" aria-hidden="true" /><span class="sr-only">Search words</span><input v-model="query" type="search" placeholder="Search words" dir="auto" /></label>
+      <button type="button" class="glossary-filter-toggle" :aria-expanded="filtersOpen" aria-controls="word-filter-panel" @click="filtersOpen = !filtersOpen">
+        <SlidersHorizontal :size="17" aria-hidden="true" /> Filters<span v-if="track || dialect || kind" class="filter-active"> · Active</span>
+      </button>
+      <div v-show="filtersOpen" id="word-filter-panel" class="glossary-filters">
+        <label>Course<select v-model="track"><option value="">All courses</option><template v-for="group in courseGroups" :key="group.id"><optgroup v-if="group.paths.length > 1" :label="group.name"><option v-for="path in group.paths" :key="path.id" :value="path.id">{{ path.pathName }}</option></optgroup><option v-else :value="group.id">{{ group.name }}</option></template></select></label>
+        <label>Dialect<select v-model="dialect"><option value="">All dialects</option><option v-for="id in dialects" :key="id" :value="id">{{ dialectName(id) }}</option></select></label>
+        <label>Type<select v-model="kind"><option value="">Words and expressions</option><option value="word">Words</option><option value="expression">Expressions</option></select></label>
+      </div>
     </div>
     <p v-if="loading" role="status">Loading learned words…</p>
     <template v-else>
@@ -137,24 +143,31 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
       <p v-else-if="!filtered.length">No matching words. Try another search or filter.</p>
       <ul class="glossary-list">
         <li v-for="entry in visible" :key="entryKey(entry)" class="glossary-entry">
-          <p class="glossary-arabic" v-bind="textAttributes(entry.trackId)">{{ entry.arabic }}</p>
-          <p dir="ltr"><ReadingHelp :text="entry.arabizi" :course="entry.trackId" /></p>
-          <p>{{ entry.meaning }}</p>
-          <small>{{ trackName(entry.trackId) }} · {{ dialectName(entry.dialect) }} · {{ entry.register }} · {{ entry.kind }}</small>
-          <p v-if="glossaryCaution(entry)" class="glossary-caution">{{ glossaryCaution(entry) }}</p>
-          <button v-if="entry.contexts.some(context => context.audioUrl)" type="button" :aria-label="`${playing === entryKey(entry) ? 'Stop' : 'Play'} recording: ${entry.meaning}`" @click="play(entry)">{{ playing === entryKey(entry) ? 'Stop recording' : 'Play recording' }}</button>
-          <p v-else class="glossary-audio-status">Reviewed audio not supplied.</p>
-          <details>
-            <summary>Forms and teaching context</summary>
-            <p v-if="!entry.forms.length">Additional grammatical forms not supplied. Context notes below describe the taught usage.</p>
-            <ul v-else><li v-for="form in entry.forms" :key="form" dir="auto">{{ form }}</li></ul>
-            <div v-for="context in entry.contexts" :key="`${context.lessonId}:${context.cardIndex}`" class="glossary-context">
-              <p>{{ context.note }}</p>
-              <PhraseAnatomy v-if="packages.find(p => p.id === context.lessonId)" :lesson="packages.find(p => p.id === context.lessonId)!" :card-index="context.cardIndex" />
-              <p v-if="context.recording"><RecordingAttribution :recording="context.recording" /><br /><bdi>{{ context.recording.sourceLocator }}</bdi><br />{{ context.recording.reviewNotes }}</p>
-              <button type="button" @click="stopAudio(); emit('open-lesson', context.lessonId, context.cardIndex)">Open lesson: {{ context.title }}</button>
-              <small>{{ context.version }} · Teaching card {{ context.cardIndex + 1 }}</small>
-              <ul aria-label="Source records"><li v-for="locator in context.sourceLocators" :key="locator"><a v-if="/^https?:\/\//.test(locator)" :href="locator"><bdi>{{ locator }}</bdi></a><bdi v-else>{{ locator }}</bdi></li></ul>
+          <details class="glossary-word" @toggle="event => { if (!(event.currentTarget as HTMLDetailsElement).open && playing === entryKey(entry)) stopAudio(); }">
+            <summary class="glossary-word-summary">
+              <span>{{ entry.meaning }}</span>
+              <bdi class="glossary-arabic" v-bind="textAttributes(entry.trackId)">{{ entry.arabic }}</bdi>
+              <ChevronRight :size="18" class="glossary-chevron" aria-hidden="true" />
+            </summary>
+            <div class="glossary-word-detail">
+              <p dir="ltr"><ReadingHelp :text="entry.arabizi" :course="entry.trackId" /></p>
+              <small>{{ trackName(entry.trackId) }} · {{ dialectName(entry.dialect) }} · {{ entry.register }} · {{ entry.kind }}</small>
+              <p v-if="glossaryCaution(entry)" class="glossary-caution">{{ glossaryCaution(entry) }}</p>
+              <button v-if="entry.contexts.some(context => context.audioUrl)" type="button" :aria-label="`${playing === entryKey(entry) ? 'Stop' : 'Play'} recording: ${entry.meaning}`" @click="play(entry)">{{ playing === entryKey(entry) ? 'Stop recording' : 'Play recording' }}</button>
+              <p v-else class="glossary-audio-status">Reviewed audio not supplied.</p>
+              <details>
+                <summary>Forms and teaching context</summary>
+                <p v-if="!entry.forms.length">Additional grammatical forms not supplied. Context notes below describe the taught usage.</p>
+                <ul v-else><li v-for="form in entry.forms" :key="form" dir="auto">{{ form }}</li></ul>
+                <div v-for="context in entry.contexts" :key="`${context.lessonId}:${context.cardIndex}`" class="glossary-context">
+                  <p>{{ context.note }}</p>
+                  <PhraseAnatomy v-if="packages.find(p => p.id === context.lessonId)" :lesson="packages.find(p => p.id === context.lessonId)!" :card-index="context.cardIndex" />
+                  <p v-if="context.recording"><RecordingAttribution :recording="context.recording" /><br /><bdi>{{ context.recording.sourceLocator }}</bdi><br />{{ context.recording.reviewNotes }}</p>
+                  <button type="button" @click="stopAudio(); emit('open-lesson', context.lessonId, context.cardIndex)">Open lesson: {{ context.title }}</button>
+                  <small>{{ context.version }} · Teaching card {{ context.cardIndex + 1 }}</small>
+                  <ul aria-label="Source records"><li v-for="locator in context.sourceLocators" :key="locator"><a v-if="/^https?:\/\//.test(locator)" :href="locator"><bdi>{{ locator }}</bdi></a><bdi v-else>{{ locator }}</bdi></li></ul>
+                </div>
+              </details>
             </div>
           </details>
         </li>
@@ -172,16 +185,29 @@ onBeforeUnmount(() => { generation++; stopAudio(); window.removeEventListener('o
 </template>
 
 <style scoped>
-.glossary { margin: 1.5rem 0; padding: 1.2rem; border: 1px solid var(--border, #c9cec8); border-radius: 1rem; background: #fff; color: #202820; }
-.glossary h1 { margin-top: 0; }
-.glossary-filters { display: flex; flex-wrap: wrap; gap: .75rem; position: sticky; top: 0; z-index: 2; background: #fff; padding-bottom: .35rem; }
-.glossary-filters label { display: grid; gap: .35rem; font-weight: 600; flex: 1 1 10rem; min-width: 0; }
-.glossary-search { flex-basis: 100% !important; }
-.glossary input, .glossary select { width: 100%; min-width: 0; padding: .65rem; border: 1px solid #657465; border-radius: .4rem; background: #fff; color: #202820; font: inherit; }
-.glossary-list { list-style: none; padding: 0; display: grid; gap: .8rem; }
-.glossary-entry { padding: 1rem; border: 1px solid #c9cec8; border-inline-start: 4px solid #167144; border-radius: .5rem; overflow-wrap: anywhere; }
+.glossary { color: var(--ink); min-width: 0; }
+.glossary h1 { margin: 0 0 18px; }
+.glossary-tools { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: start; }
+.glossary-search { display: flex; align-items: center; gap: 8px; min-width: 0; padding-inline: 12px; border: 1px solid #78877e; border-radius: 12px; background: var(--paper); color: var(--teal-dark); }
+.glossary-search svg { flex: none; }
+.glossary-search:focus-within { outline: 2px solid var(--teal-dark); }
+.glossary-search input { min-width: 0; width: 100%; min-height: 46px; padding: 6px 0; border: 0; outline-offset: 0; color: var(--ink); background: transparent; font: inherit; }
+.glossary .glossary-search input:focus-visible { outline: none; }
+.glossary .glossary-filter-toggle { display: flex; align-items: center; gap: 6px; min-height: 48px; margin: 0; padding: 7px 10px; border: 1px solid #78877e; border-radius: 12px; color: var(--teal-dark); background: var(--paper); font-weight: 700; }
+.glossary summary::-webkit-details-marker { display: none; }
+.filter-active { font-size: .75em; }
+.glossary-filters { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 148px), 1fr)); gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.glossary-filters label { display: grid; gap: 4px; min-width: 0; font-weight: 650; }
+.glossary select { min-height: 44px; width: 100%; min-width: 0; padding: 6px; border: 1px solid #78877e; border-radius: 8px; background: var(--paper); color: var(--ink); font: inherit; }
+.glossary-list { list-style: none; padding: 0; margin-block: 14px; border: 1px solid var(--line); border-radius: 15px; background: var(--paper); }
+.glossary-entry { overflow-wrap: anywhere; }
+.glossary-entry + .glossary-entry { border-top: 1px solid var(--line); }
 .glossary-entry p { margin: .45rem 0; }
-.glossary-arabic { font-size: 1.7rem; line-height: 1.8; text-align: start; }
+.glossary .glossary-word-summary { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr) auto; align-items: center; gap: 10px; min-height: 61px; padding: 8px 12px; list-style: none; }
+.glossary-arabic { font-size: 1.55rem; line-height: 1.5; justify-self: end; }
+.glossary-chevron { color: var(--teal-dark); }
+.glossary-word[open] .glossary-chevron { transform: rotate(90deg); }
+.glossary-word-detail { padding: 10px 12px 14px; background: #f3f8f3; }
 .glossary small { display: block; line-height: 1.6; }
 .glossary summary { cursor: pointer; padding: .7rem 0; font-weight: 600; }
 .glossary button { padding: .65rem .85rem; margin: .4rem 0; border: 1px solid #167144; border-radius: .4rem; color: #115832; background: #fff; font: inherit; cursor: pointer; }

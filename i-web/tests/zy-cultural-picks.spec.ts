@@ -1,3 +1,4 @@
+import { openDisclosure } from './lesson-helpers'
 import { expect, test, type APIRequestContext } from '@playwright/test'
 import { emptyCulturalEdition, validCulturalCatalog, validPublicEdition, type CulturalDetail, type CulturalEdition } from '../src/culture'
 
@@ -60,7 +61,8 @@ test('unpublished catalog and failed refresh have clear guest states', async ({ 
   await page.getByRole('button', { name: 'Refresh picks' }).click()
   await expect(page.getByRole('alert')).toBeVisible()
   await page.getByRole('link', { name: 'Back to Practice', exact: true }).click()
-  await expect(page.getByRole('link', { name: 'Watch & listen Weekly Arabic picks' })).toBeVisible()
+  await openDisclosure(page.locator('.learner-disclosure > summary'))
+  await expect(page.getByRole('link', { name: 'Watch & listen', exact: true })).toBeVisible()
 })
 
 test('owner can save preview validate approve publish and inspect a real API-delivered edition', async ({ page }) => {

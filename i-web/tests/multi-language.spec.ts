@@ -3,7 +3,7 @@ import { readableLesson, courses } from '../src/courses'
 import { placementQuestions, placementStorageKey } from '../src/placement'
 import { learnedVocabulary } from '../src/glossary'
 import type { DashboardResponse, LessonResponse } from '../src/types'
-import { finishTeaching, responseChoices } from './lesson-helpers'
+import { finishTeaching, responseChoices, openCourseMap } from './lesson-helpers'
 import { chooseCourse, courseSwitch, expectViewedCourse } from './courseSwitcher'
 
 // Synthetic transport/rendering fixtures. No curriculum, linguistic or review claims.
@@ -101,6 +101,7 @@ for (const width of [320, 1280]) test(`course switching filters all pages and su
   await page.goto('/#/courses')
   await page.evaluate(async () => { await navigator.serviceWorker.ready })
   await switchCourse(page, 'khmer')
+  await openCourseMap(page)
   await expect(page.getByRole('button', { name: 'Open khmer engineering 1', exact: true })).toBeVisible()
   await expect(page.getByRole('button', { name: /Open Answer a friend/ })).toHaveCount(0)
   await page.getByRole('button', { name: 'Open khmer engineering 1', exact: true }).click()
@@ -117,8 +118,10 @@ for (const width of [320, 1280]) test(`course switching filters all pages and su
   await expect(dialog.locator('.practice-page:not([inert])')).toHaveAttribute('data-step-id', 'step-2')
   await dialog.getByRole('button', { name: 'Close lesson', exact: true }).click()
   await switchCourse(page, 'french')
+  await openCourseMap(page)
   await expect(page.getByRole('button', { name: 'Open french engineering 1', exact: true })).toBeVisible()
   await switchCourse(page, 'khmer')
+  await openCourseMap(page)
   await page.getByRole('button', { name: 'Open khmer engineering 1', exact: true }).click()
   await expect(dialog.locator('.practice-page:not([inert])')).toHaveAttribute('data-step-id', 'step-2')
   await dialog.getByRole('button', { name: 'Close lesson', exact: true }).click()
@@ -137,6 +140,7 @@ for (const width of [320, 1280]) test(`course switching filters all pages and su
   await page.getByRole('link', { name: 'Courses', exact: true }).first().click()
   disconnect(); await context.setOffline(true); await page.reload()
   await expectViewedCourse(page, 'khmer')
+  await openCourseMap(page)
   await page.getByRole('button', { name: 'Open khmer engineering 1', exact: true }).click()
   await expect(dialog.locator('.practice-page:not([inert])')).toHaveAttribute('data-step-id', 'step-2')
   await responseChoices(dialog)
@@ -147,15 +151,15 @@ for (const width of [320, 1280]) test(`course switching filters all pages and su
   expect(await page.evaluate(() => document.fonts.check('24px "Ismi Khmer"'))).toBeTruthy()
   await page.screenshot({ path: info.outputPath(`khmer-offline-${width}.png`), fullPage: true })
   await dialog.getByRole('button', { name: 'Back to courses', exact: true }).click()
-  await expect(page.getByText('Khmer · 1 of 3 lessons complete', { exact: true })).toBeVisible()
+  await expect(page.locator('.course-map').getByText('1 of 3 lessons complete', { exact: true })).toBeVisible()
   await switchCourse(page, 'french')
-  await expect(page.getByText('French · 0 of 3 lessons complete', { exact: true })).toBeVisible()
+  await expect(page.locator('.course-map').getByText('0 of 3 lessons complete', { exact: true })).toBeVisible()
   expect(await page.locator('body').evaluate(el => el.scrollWidth <= innerWidth)).toBeTruthy()
   reconnect(); await context.setOffline(false)
   await page.evaluate(() => window.dispatchEvent(new Event('online')))
   await expect.poll(() => pendingRows(page)).toEqual([])
   await switchCourse(page, 'khmer')
-  await expect(page.getByText('Khmer · 1 of 3 lessons complete', { exact: true })).toBeVisible()
+  await expect(page.locator('.course-map').getByText('1 of 3 lessons complete', { exact: true })).toBeVisible()
   expect(errors).toEqual([])
 })
 
@@ -189,6 +193,7 @@ test('Khmer uses exact authored pieces, enlarged text and keyboard; no Arabic vo
   await page.emulateMedia({ reducedMotion: 'reduce' })
   await page.goto('/#/courses')
   await switchCourse(page, 'khmer')
+  await openCourseMap(page)
   await page.getByRole('button', { name: 'Open khmer engineering 1', exact: true }).click()
   const dialog = page.getByRole('dialog', { name: 'khmer engineering 1', exact: true })
   await finishTeaching(page, dialog)
@@ -226,6 +231,7 @@ test('legacy IndexedDB Arabic download and scoped pending completions survive up
   const rows = await pendingRows(page) as Array<{ scope: string; completionId: string; lessonId: string }>
   expect(rows.map(r => r.completionId).sort()).toEqual(['upgrade-guest', 'upgrade-user:other'])
   await page.getByRole('link', { name: 'Courses', exact: true }).first().click()
+  await openCourseMap(page)
   await page.getByRole('button', { name: 'Review Answer a friend’s check-in', exact: true }).click()
   await expect(page.getByRole('dialog')).toContainText(lesson.title)
   await page.getByRole('button', { name: 'Close lesson', exact: true }).click()

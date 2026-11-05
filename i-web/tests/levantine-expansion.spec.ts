@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { expect, test } from '@playwright/test'
-import { finishTeaching, responseChoices } from './lesson-helpers'
+import { finishTeaching, responseChoices, openDisclosure } from './lesson-helpers'
 import type { LessonResponse } from '../src/types'
 import { renameCharacterContent } from '../src/characters'
 const packages = Array.from({ length: 20 }, (_, i) => JSON.parse(readFileSync(
@@ -38,6 +38,7 @@ test('all twenty text previews disclose status, complete offline and sync withou
   await page.getByRole('link', { name: 'Courses', exact: true }).click()
   for (const { lesson } of packages) {
     const unit = page.getByRole('region', { name: lesson.unitTitle!, exact: true })
+    await openDisclosure(unit.locator('.course-unit-details > summary'))
     await unit.getByRole('button', { name: `Open ${lesson.title}`, exact: true }).click()
     const dialog = page.getByRole('dialog', { name: lesson.title, exact: true })
     await expect(dialog.getByText('Unreviewed · text-only preview', { exact: true }).first()).toBeVisible()
@@ -48,6 +49,7 @@ test('all twenty text previews disclose status, complete offline and sync withou
   await page.reload()
   for (const [index, { lesson }] of packages.entries()) {
     const unit = page.getByRole('region', { name: lesson.unitTitle!, exact: true })
+    await openDisclosure(unit.locator('.course-unit-details > summary'))
     await unit.getByRole('button', { name: `Open ${lesson.title}`, exact: true }).click()
     const dialog = page.getByRole('dialog', { name: lesson.title, exact: true })
     await expect(dialog.getByText('Unreviewed · text-only preview', { exact: true }).first()).toBeVisible()
@@ -75,6 +77,8 @@ test('all twenty text previews disclose status, complete offline and sync withou
   await expect(page.getByText('20 completions waiting to sync', { exact: true })).toHaveCount(0)
   await page.reload()
   for (const unitTitle of new Set(packages.map(p => p.lesson.unitTitle))) {
-    await expect(page.getByRole('region', { name: unitTitle!, exact: true }).getByRole('heading', { name: 'Unit complete' })).toBeVisible()
+    const unit = page.getByRole('region', { name: unitTitle!, exact: true })
+    await openDisclosure(unit.locator('.course-unit-details > summary'))
+    await expect(unit.getByRole('heading', { name: 'Unit complete' })).toBeVisible()
   }
 })

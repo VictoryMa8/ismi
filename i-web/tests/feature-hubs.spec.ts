@@ -1,3 +1,4 @@
+import { openDisclosure } from './lesson-helpers'
 import { expect, test } from '@playwright/test'
 import { freshHabits } from '../src/learningHabits'
 
@@ -12,9 +13,11 @@ test('weekly activities start off and saved habit choices are kept', async ({ pa
   await page.reload()
   await expect(page.locator('.today-path')).not.toContainText('This week')
   await page.getByRole('link', { name: 'Progress', exact: true }).click()
+  await openDisclosure(page.locator('.study-habits > summary'))
   await expect(page.getByRole('checkbox', { name: 'Track my streak', exact: true })).not.toBeChecked()
   await page.getByRole('checkbox', { name: 'Track my streak', exact: true }).check()
   await page.reload()
+  await openDisclosure(page.locator('.study-habits > summary'))
   await page.getByText('Optional weekly activities', { exact: true }).click()
   await expect(page.getByRole('checkbox', { name: 'Weekly activities', exact: true })).not.toBeChecked()
   await expect(page.getByRole('checkbox', { name: 'Track my streak', exact: true })).toBeChecked()
@@ -57,8 +60,8 @@ for (const width of [320, 390, 1280]) {
       expect(await tile.evaluate(el => [...el.children].every(child => child.scrollWidth <= child.clientWidth + 1))).toBeTruthy()
     }
     await page.screenshot({ path: `/tmp/ismi-practice-${width}.png`, fullPage: true })
-    const review = page.getByRole('link', { name: /^Review,/ })
-    await expect(review).toContainText('due')
+    const review = page.getByRole('link', { name: /^Review(?: options)?,/ })
+    await expect(page.locator('.practice-feature h2')).toContainText(/due|Review/)
     await review.click()
     await expect(page).toHaveURL(/#\/practice\/review$/)
     await expect(nav.getByRole('link', { name: 'Practice', exact: true })).toHaveAttribute('aria-current', 'page')
@@ -70,6 +73,8 @@ for (const width of [320, 390, 1280]) {
     await expect(page.getByRole('region', { name: 'Write a response' })).toBeVisible()
     await page.getByRole('link', { name: 'Back to Practice', exact: true }).focus()
     await nav.getByRole('link', { name: 'Progress', exact: true }).click()
+    await expect(page.getByRole('region', { name: 'Streak' })).not.toBeVisible()
+    await openDisclosure(page.locator('.study-habits > summary'))
     await expect(page.getByRole('region', { name: 'Streak' })).toBeVisible()
     await expect(page.getByRole('region', { name: 'Weekly activities' })).not.toBeVisible()
     await expect(page.getByRole('region', { name: 'What you can do' })).toBeVisible()

@@ -18,19 +18,32 @@ for (const width of [320, 390, 768, 1280]) {
       await expect(page.locator('#main-content')).toBeFocused()
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy()
       if (name === 'Courses') {
+        const unit = page.locator('.course-unit-details > summary').first()
+        await expect(page.locator('.course-unit-details[open]')).toHaveCount(0)
+        await unit.focus()
+        await page.keyboard.press('Enter')
         await expect(page.getByRole('list', { name: 'Levantine course path' })).toBeVisible()
         // Accessible button names must not become visible duplicate labels.
         expect(await page.locator('.course-path .sr-only').first().evaluate(element => element.getBoundingClientRect().width)).toBeLessThanOrEqual(1)
         expect(await page.locator('.course-path-copy').first().evaluate(element => element.getBoundingClientRect().width)).toBeGreaterThan(120)
       }
       if (name === 'Practice') {
-        await expect(page.getByRole('link', { name: /^Review,/ })).toBeVisible()
-        await page.getByRole('link', { name: /^Review,/ }).click()
+        await expect(page.getByRole('link', { name: /^Review(?: options)?,/ })).toBeVisible()
+        await page.getByRole('link', { name: /^Review(?: options)?,/ }).click()
         await expect(page).toHaveURL(/#\/practice\/review$/)
         await expect(links.getByRole('link', { name: 'Practice', exact: true })).toHaveAttribute('aria-current', 'page')
         await page.getByRole('link', { name: 'Back to Practice', exact: true }).click()
         await expect(page).toHaveURL(/#\/practice$/)
         if (width === 390) await page.screenshot({ path: testInfo.outputPath('practice.png'), scale: 'css' })
+      }
+      if (name === 'Progress') {
+        const skills = (await page.locator('#progress-cando').boundingBox())!
+        const total = (await page.locator('.progress-course').boundingBox())!
+        const habits = (await page.locator('.study-habits').boundingBox())!
+        expect(total.y - skills.y - skills.height).toBeGreaterThanOrEqual(20)
+        expect(habits.y - total.y - total.height).toBeGreaterThanOrEqual(20)
+        await expect(page.locator('.study-habits[open]')).toHaveCount(0)
+        await page.screenshot({ path: testInfo.outputPath('progress.png'), scale: 'css' })
       }
       if (name === 'Words') {
         await expect(page.getByRole('heading', { name: 'Learned words', level: 1 })).toBeVisible()

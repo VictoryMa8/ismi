@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs'
 import { expect, test, type Page, type Locator } from '@playwright/test'
-import { finishTeaching, responseChoices } from './lesson-helpers'
+import { finishTeaching, responseChoices, openCourseMap } from './lesson-helpers'
 import type { LessonResponse } from '../src/types'
 
 const packages = Array.from({ length: 7 }, (_, index) => JSON.parse(readFileSync(
@@ -122,6 +122,7 @@ test('all authored lessons preview, then published test copies complete offline 
   await page.evaluate(async () => { await navigator.serviceWorker.ready })
   await page.getByRole('link', { name: 'Courses', exact: true }).click()
   // Open each published package once so the entire unit, including notes, is cached.
+  await openCourseMap(page)
   for (const { lesson } of packages) {
     await page.getByRole('button', { name: `Open ${lesson.title}`, exact: true }).click()
     const dialog = page.getByRole('dialog', { name: lesson.title, exact: true })
@@ -130,6 +131,7 @@ test('all authored lessons preview, then published test copies complete offline 
   }
   await context.setOffline(true)
   await page.reload()
+  await openCourseMap(page)
   for (const { lesson } of packages) {
     await page.getByRole('button', { name: `Open ${lesson.title}`, exact: true }).click()
     const dialog = page.getByRole('dialog', { name: lesson.title, exact: true })
@@ -139,6 +141,7 @@ test('all authored lessons preview, then published test copies complete offline 
     await dialog.getByRole('button', { name: 'Back to courses' }).click()
   }
   const unit = page.getByRole('region', { name: 'Everyday conversations with someone you love', exact: true })
+  await openCourseMap(page)
   await expect(unit.getByRole('heading', { name: 'Unit complete' })).toBeVisible()
   await expect(page.getByText('7 completions waiting to sync', { exact: true })).toBeVisible()
   await unit.getByRole('button', { name: 'Review and checkpoint' }).click()
@@ -171,6 +174,7 @@ test('all authored lessons preview, then published test copies complete offline 
   await page.evaluate(() => window.dispatchEvent(new Event('online')))
   await expect(page.getByText('7 completions waiting to sync', { exact: true })).toHaveCount(0)
   await page.reload()
+  await openCourseMap(page)
   await expect(unit.getByRole('heading', { name: 'Unit complete' })).toBeVisible()
   // Course depth can change independently of this unit; the six legacy demos
   // are now extra practice. Check the seven synced completions and idempotence.

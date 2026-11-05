@@ -37,7 +37,7 @@ import CurriculumConsole from './CurriculumConsole.vue';
 import StudySettings from './StudySettings.vue';
 import LearningHabits from './LearningHabits.vue';
 import { useLearningHabits } from './useLearningHabits';
-import { emptyReviewAvailability, type QuestTask, type StudyActivity } from './learningHabits';
+import { emptyReviewAvailability, streakSummary, type QuestTask, type StudyActivity } from './learningHabits';
 import LoadingWords from './LoadingWords.vue';
 import PlacementCheck from './PlacementCheck.vue';
 import { buildStudyPlan, type TrackId } from './studyPlan';
@@ -216,7 +216,7 @@ const culturalEditionId = ref<string | null>(window.location.hash.split('/')[3] 
 const primaryPage = computed(() => page.value.startsWith('practice') ? 'practice' : page.value === 'downloads' ? 'account' : page.value);
 const pageTitle = computed(() => pageTitles[page.value]);
 const reviewView = computed(() => page.value === 'practice' ? 'tiles' : page.value === 'practice-review' ? 'review' : page.value === 'practice-checkpoints' ? 'checkpoints' : 'hidden');
-const recallView = computed(() => page.value === 'practice' ? 'tile' : page.value === 'practice-recall' ? 'recall' : page.value === 'progress' ? 'can-do' : 'hidden');
+const recallView = computed(() => page.value === 'practice' ? 'tile' : page.value === 'practice-recall' ? 'recall' : page.value === 'progress' && viewedCourse.value === 'levantine' ? 'can-do' : 'hidden');
 const practiceChild = computed(() => page.value.startsWith('practice-') && page.value !== 'practice-culture' && page.value !== 'practice-alphabet' && page.value !== 'practice-stories');
 function navigate(destination: PageName) {
   window.location.hash = `/${Object.keys(pageNames).find(path => pageNames[path] === destination) ?? destination}`;
@@ -390,6 +390,7 @@ const todayReviewLessons = computed(() => dashboard.value.dailyPlan.lessons.filt
   studySettings.preferences.value.selectedTrackIds.some(id => id === (item.trackId ?? 'levantine')),
 ));
 const hubReviewLessons = computed(() => activeLessons.value);
+const streak = computed(() => streakSummary(learningHabits.state.value, habitNow.value));
 const dailyGoal = computed(() => studySettings.preferences.value.goalMinutes);
 const questLessons = computed(() => dashboardScope.value === reviewScope.value
   ? todayReviewLessons.value.filter(item => apiLive.value || offlineQuestLessonIds.value.includes(item.id)) : []);
@@ -526,6 +527,7 @@ const courseUnits = computed(() => {
   }
   return [...units.values()];
 });
+const nextCourseUnit = computed(() => courseUnits.value.find(unit => unit.id === nextPathLesson.value?.unitId));
 const completedCourseLessons = computed(
   () =>
     pathLessons.value.filter((item) => item.isCompleted).length,
@@ -1645,8 +1647,6 @@ async function finishLesson() {
       <template v-if="page === 'courses' && studyPageAvailable">
         <header class="page-heading">
           <h1>Courses</h1>
-          <p>Choose a language or Arabic course. Modern Standard Arabic includes general MSA and Quranic study paths.</p>
-          <p class="review-status-note"><span>{{ activeCourse.name }}</span> · <span>{{ courseProgressLabel }}</span></p>
           <p
             v-if="!apiLive || pendingSyncCount > 0"
             class="review-status-note"
@@ -1655,10 +1655,15 @@ async function finishLesson() {
             {{ syncStatus }}
           </p>
         </header>
-        <nav class="course-resources" aria-label="Course practice resources">
-          <a v-if="viewedCourse === 'levantine'" class="page-link" href="#/practice/stories"><MessagesSquare :size="20" aria-hidden="true" /><span>Mini-stories · Everyday</span></a>
-          <a class="page-link" href="#/practice/alphabet"><Languages :size="20" aria-hidden="true" /><span>Alphabet · {{ activeCourse.name }}</span></a>
-        </nav>
+        <article v-if="nextPathLesson && nextCourseUnit" class="learner-feature course-feature">
+          <div>
+            <p class="learner-feature-meta">{{ nextCourseUnit.title }} · Lesson {{ nextCourseUnit.lessons.indexOf(nextPathLesson) + 1 }} of {{ nextCourseUnit.lessons.length }}</p>
+            <h2>{{ nextPathLesson.title }}</h2>
+            <p v-if="nextPathLesson.publicationNotice" class="learner-feature-notice">{{ nextPathLesson.publicationNotice.label }}</p>
+            <button type="button" class="primary-action" :aria-label="`Open next lesson: ${nextPathLesson.title}`" @click="startLesson(nextPathLesson.id)">Open next lesson <ChevronRight :size="19" aria-hidden="true" /></button>
+          </div>
+          <CharacterCast :cast="nextPathLesson.characters" compact />
+        </article>
         <section v-if="activeCourse.groupId === 'msa'" class="section-block msa-paths" aria-labelledby="msa-paths-title">
           <h2 id="msa-paths-title">Modern Standard Arabic paths</h2>
           <p>General MSA builds formal reading and listening. Quranic Arabic focuses on vocabulary and direct meaning.</p>
@@ -1666,68 +1671,81 @@ async function finishLesson() {
             <button v-for="path in groupFor('msa').paths" :key="path.id" class="secondary-action" :aria-pressed="viewedCourse === path.id" @click="switchViewedCourse(path.id)">{{ path.pathName }}</button>
           </div>
         </section>
-        <div class="course-units">
-          <section
-            v-for="unit in courseUnits"
-            :key="unit.id"
-            :aria-label="unit.title"
-          >
-            <h2>{{ unit.title }}</h2>
-            <ol class="course-path" :aria-label="`${activeCourse.id === 'levantine' ? 'Levantine' : activeCourse.name} course path`">
-              <li
-                v-for="item in unit.lessons"
-                :key="item.id"
-                :class="{
-                  completed: item.isCompleted,
-                  current: item.id === nextPathLesson?.id,
-                }"
-              >
-                <span class="course-path-marker" aria-hidden="true">
-                  <Check v-if="item.isCompleted" :size="16" />
-                  <span v-else>{{ item.courseOrder }}</span>
-                </span>
-                <span class="course-path-copy">
-                  <strong>{{ item.title }}</strong>
-                  <span v-if="item.publicationNotice">{{ item.publicationNotice.label }}</span>
-                  <span
-                    >{{ item.estimatedMinutes }} min ·
-                    {{
-                      item.isCompleted
-                        ? 'Complete'
-                        : item.id === nextPathLesson?.id
-                          ? 'Up next'
-                          : 'Later'
-                    }}</span
+        <section v-if="courseUnits.length" class="course-map" aria-labelledby="course-map-heading">
+          <div class="learner-section-heading"><h2 id="course-map-heading">Course map</h2><span>{{ courseProgressLabel }}</span></div>
+          <div class="course-units">
+            <section v-for="(unit, index) in courseUnits" :key="unit.id" :aria-label="unit.title" class="course-unit">
+              <details class="course-unit-details">
+                <summary class="unit-summary">
+                  <span class="unit-stop" :class="{ 'current-unit': unit.id === nextCourseUnit?.id }" aria-hidden="true">{{ index + 1 }}</span>
+                  <span class="unit-copy"><strong>{{ unit.title }}</strong><small v-if="unit.id === nextCourseUnit?.id">{{ unit.lessons.filter(item => item.isCompleted).length }} of {{ unit.lessons.length }} complete</small></span>
+                  <ChevronRight :size="18" class="disclosure-arrow" aria-hidden="true" />
+                </summary>
+                <ol class="course-path" :aria-label="`${activeCourse.id === 'levantine' ? 'Levantine' : activeCourse.name} course path`">
+                  <li
+                    v-for="item in unit.lessons"
+                    :key="item.id"
+                    :class="{
+                      completed: item.isCompleted,
+                      current: item.id === nextPathLesson?.id,
+                    }"
                   >
-                </span>
-                <CharacterCast :cast="item.characters" compact />
-                <button
-                  class="text-button"
-                  type="button"
-                  :aria-label="`${item.isCompleted ? 'Review' : 'Open'} ${item.title}`"
-                  @click="startLesson(item.id)"
+                    <span class="course-path-marker" aria-hidden="true">
+                      <Check v-if="item.isCompleted" :size="16" />
+                      <span v-else>{{ item.courseOrder }}</span>
+                    </span>
+                    <span class="course-path-copy">
+                      <strong>{{ item.title }}</strong>
+                      <span v-if="item.publicationNotice">{{ item.publicationNotice.label }}</span>
+                      <span
+                        >{{ item.estimatedMinutes }} min ·
+                        {{
+                          item.isCompleted
+                            ? 'Complete'
+                            : item.id === nextPathLesson?.id
+                              ? 'Up next'
+                              : 'Later'
+                        }}</span
+                      >
+                    </span>
+                    <CharacterCast :cast="item.characters" compact />
+                    <button
+                      class="text-button"
+                      type="button"
+                      :aria-label="`${item.isCompleted ? 'Review' : 'Open'} ${item.title}`"
+                      @click="startLesson(item.id)"
+                    >
+                      {{ item.isCompleted ? 'Review' : 'Open'
+                      }}<span class="sr-only"> {{ item.title }}</span>
+                    </button>
+                  </li>
+                </ol>
+                <div
+                  v-if="unit.lessons.every((item) => item.isCompleted)"
+                  class="unit-complete"
+                  role="status"
                 >
-                  {{ item.isCompleted ? 'Review' : 'Open'
-                  }}<span class="sr-only"> {{ item.title }}</span>
-                </button>
-              </li>
-            </ol>
-            <div
-              v-if="unit.lessons.every((item) => item.isCompleted)"
-              class="unit-complete"
-              role="status"
-            >
-              <h3>Unit complete</h3>
-              <button
-                class="secondary-action"
-                type="button"
-                @click="navigate('practice-checkpoints')"
-              >
-                Review and checkpoint
-              </button>
-            </div>
-          </section>
-        </div>
+                  <h3>Unit complete</h3>
+                  <button
+                    class="secondary-action"
+                    type="button"
+                    @click="navigate('practice-checkpoints')"
+                  >
+                    Review and checkpoint
+                  </button>
+                </div>
+              </details>
+            </section>
+          </div>
+        </section>
+        <details class="learner-disclosure course-extras">
+          <summary>Course extras <ChevronRight :size="18" class="disclosure-arrow" aria-hidden="true" /></summary>
+          <nav class="course-resources" aria-label="Course practice resources">
+            <a v-if="viewedCourse === 'levantine'" class="page-link" href="#/practice/stories"><MessagesSquare :size="20" aria-hidden="true" /><span>Mini-stories · Everyday</span></a>
+            <a class="page-link" href="#/practice/alphabet"><Languages :size="20" aria-hidden="true" /><span>Alphabet · {{ activeCourse.name }}</span></a>
+            <a v-if="extraPracticeLessons.length" class="page-link" href="#/practice/lessons"><Headphones :size="20" aria-hidden="true" /><span>Extra lesson practice</span></a>
+          </nav>
+        </details>
         <section class="section-block" aria-labelledby="tracks-heading">
           <div class="section-heading compact-heading">
             <div>
@@ -1748,22 +1766,33 @@ async function finishLesson() {
         <header class="page-heading">
           <h1>Practice</h1>
         </header>
-        <div id="practice-hub" class="feature-grid">
-          <a class="feature-tile accent-red" href="#/practice/grammar"><span class="feature-badge" aria-hidden="true"><NotebookPen :size="24" /></span><span class="feature-copy"><strong>Grammar reference</strong></span></a>
-          <a v-if="viewedCourse === 'levantine'" class="feature-tile accent-green" href="#/practice/stories"><span class="feature-badge" aria-hidden="true"><MessagesSquare :size="24" /></span><span class="feature-copy"><strong>Mini-stories</strong><small>Read with Fattoush and Knafeh</small></span></a>
-          <a class="feature-tile accent-gold tile-alphabet" href="#/practice/alphabet">
-            <span class="feature-badge" aria-hidden="true"><Languages :size="24" /></span><span class="feature-copy"><strong>Alphabet</strong><small>{{ activeCourse.name }}</small></span>
-          </a>
-          <a v-if="activeCourse.languageId === 'arabic'" class="feature-tile accent-ink tile-culture" href="#/practice/culture">
-            <span class="feature-badge" aria-hidden="true"><Clapperboard :size="24" /></span>
-            <span class="feature-copy"><strong>Watch &amp; listen</strong><small>Weekly Arabic picks</small></span>
-          </a>
-          <a class="feature-tile accent-green tile-lessons" href="#/practice/lessons" :aria-label="`Lesson practice, ${activeLessons.length} lessons`">
-            <span class="feature-badge" aria-hidden="true"><Headphones :size="24" /></span>
-            <span class="feature-copy"><strong>Lesson practice</strong><small>{{ activeLessons.length }} lessons</small></span>
-            <span class="feature-count">{{ activeLessons.length }}</span>
-          </a>
-        </div>
+        <article class="learner-feature practice-feature" aria-labelledby="practice-feature-title">
+          <div>
+            <h2 id="practice-feature-title">{{ !questReviewAvailability.ready ? 'Review' : questReviewAvailability.due ? `${questReviewAvailability.dueCount} ${questReviewAvailability.dueCount === 1 ? 'item' : 'items'} due` : 'No reviews due' }}</h2>
+            <button v-if="questReviewAvailability.due" class="primary-action" type="button" @click="questReview?.start('due')">Start review <ChevronRight :size="19" aria-hidden="true" /></button>
+            <a class="review-option" :class="{ 'primary-action': !questReviewAvailability.due }" href="#/practice/review" :aria-label="`${questReviewAvailability.due ? 'Review options' : 'Review'}, ${questReviewAvailability.dueCount ?? 0} due`">{{ questReviewAvailability.due ? 'Review options' : 'Review' }} <ChevronRight :size="17" aria-hidden="true" /></a>
+          </div>
+          <CharacterCast compact />
+        </article>
+        <section class="learner-practice" aria-labelledby="other-practice-heading">
+          <h2 id="other-practice-heading">Other activities</h2>
+          <div class="feature-grid learner-practice-grid">
+            <div id="practice-hub"></div>
+            <a class="feature-tile accent-ink tile-lessons" href="#/practice/lessons" :aria-label="`Lesson practice, ${activeLessons.length} lessons`">
+              <span class="feature-badge" aria-hidden="true"><Headphones :size="24" /></span>
+              <span class="feature-copy"><strong>Lesson practice</strong></span>
+            </a>
+          </div>
+        </section>
+        <details class="learner-disclosure">
+          <summary>Explore resources <ChevronRight :size="18" class="disclosure-arrow" aria-hidden="true" /></summary>
+          <div class="feature-grid learner-practice-grid">
+            <a class="feature-tile accent-red" href="#/practice/grammar"><span class="feature-badge" aria-hidden="true"><NotebookPen :size="24" /></span><span class="feature-copy"><strong>Grammar reference</strong></span></a>
+            <a v-if="viewedCourse === 'levantine'" class="feature-tile accent-green" href="#/practice/stories"><span class="feature-badge" aria-hidden="true"><MessagesSquare :size="24" /></span><span class="feature-copy"><strong>Mini-stories</strong></span></a>
+            <a class="feature-tile accent-gold tile-alphabet" href="#/practice/alphabet"><span class="feature-badge" aria-hidden="true"><Languages :size="24" /></span><span class="feature-copy"><strong>Alphabet</strong></span></a>
+            <a v-if="activeCourse.languageId === 'arabic'" class="feature-tile accent-ink tile-culture" href="#/practice/culture"><span class="feature-badge" aria-hidden="true"><Clapperboard :size="24" /></span><span class="feature-copy"><strong>Watch &amp; listen</strong></span></a>
+          </div>
+        </details>
         <p v-if="reviewHistoryError" role="alert">{{ reviewHistoryError }}</p>
       </template>
       <StoryReader v-if="page === 'practice-stories' && viewedReady && !lessonOpen && !reviewOpen && !consoleOpen" :course-id="viewedCourse" :scope="reviewScope" />
@@ -1802,14 +1831,33 @@ async function finishLesson() {
         </section>
       </template>
       <template v-if="page === 'progress' && studyPageAvailable">
-        <header class="page-heading"><h1>Progress</h1><p><span>{{ activeCourse.name }}</span> · <span>{{ courseProgressLabel }}</span></p></header>
-        <LearningHabits section="streak" :state="learningHabits.state.value" :now="habitNow" :error="learningHabits.error.value" @toggle="learningHabits.toggle" />
-        <details class="optional-activities"><summary>Optional weekly activities</summary>
-        <p>A small checklist of lessons and practice for Monday–Sunday. Turn it on if you find it helpful.</p>
-        <LearningHabits section="quests" :state="learningHabits.state.value" :now="habitNow" :error="''" :review-ready="questReviewAvailability.ready" @toggle="learningHabits.toggle" @start="startQuest" />
-        </details>
-        <div id="progress-cando"></div>
-        <LearningHabits section="rules" :state="learningHabits.state.value" :now="habitNow" error="" />
+        <div class="learner-progress">
+          <header class="page-heading"><h1>Progress</h1></header>
+          <div v-if="viewedCourse === 'levantine'" id="progress-cando"></div>
+          <section v-else class="progress-skills-empty" aria-labelledby="other-skills-title">
+            <h2 id="other-skills-title">What you can do</h2>
+            <p>Written response targets are currently available for Palestinian Levantine.</p>
+          </section>
+          <div class="progress-course">
+            <p><strong>{{ activeCourse.name }}</strong> · {{ courseProgressLabel }}</p>
+            <a class="page-link" href="#/courses">View course <ChevronRight :size="17" aria-hidden="true" /></a>
+          </div>
+          <details class="learner-disclosure study-habits">
+            <summary>
+              <span>Study habits<small>{{ learningHabits.state.value.streakEnabled ? `${streak.studyDays} ${streak.studyDays === 1 ? 'day' : 'days'} in current streak` : 'Streak off' }}</small></span>
+              <ChevronRight :size="18" class="disclosure-arrow" aria-hidden="true" />
+            </summary>
+            <div class="study-habits-content">
+              <LearningHabits section="streak" :state="learningHabits.state.value" :now="habitNow" :error="learningHabits.error.value" @toggle="learningHabits.toggle" />
+              <details class="optional-activities">
+                <summary>Optional weekly activities</summary>
+                <p>A checklist of lessons and practice for Monday–Sunday.</p>
+                <LearningHabits section="quests" :state="learningHabits.state.value" :now="habitNow" :error="''" :review-ready="questReviewAvailability.ready" @toggle="learningHabits.toggle" @start="startQuest" />
+              </details>
+              <LearningHabits section="rules" :state="learningHabits.state.value" :now="habitNow" error="" />
+            </div>
+          </details>
+        </div>
       </template>
       <ReviewPractice v-if="studyPageAvailable" ref="plannedReview" view="hidden" :scope="reviewScope"
         :history-revision="reviewHistoryRevision" :lessons="todayReviewLessons"

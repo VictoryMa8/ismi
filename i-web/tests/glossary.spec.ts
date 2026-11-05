@@ -1,10 +1,10 @@
 import { readFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import catalog from '../src/content/glossary-catalog.json' with { type: 'json' }
-import { expect, test, type Page } from '@playwright/test'
+import { expect, test, type Locator, type Page } from '@playwright/test'
 import { learnedVocabulary, matchesGlossary, vocabularyForLesson } from '../src/glossary'
 import type { LessonResponse, LessonVocabulary } from '../src/types'
-import { finishTeaching, responseChoices } from './lesson-helpers'
+import { finishTeaching, responseChoices, openDisclosure } from './lesson-helpers'
 
 function approved(index = 1): LessonResponse {
   return JSON.parse(readFileSync(`../content/levantine/everyday-01/revisions/pilot-release/0${index}-lesson.json`, 'utf8')).lesson
@@ -21,6 +21,11 @@ async function fixture(page: Page, completed: string[] = [first.id]) {
     await route.fulfill({ json: dashboard })
   })
   for (const lesson of [first, second]) await page.route(`**/api/lessons/${lesson.id}`, route => route.fulfill({ json: lesson }))
+}
+
+async function showFilters(glossary: Locator) {
+  const toggle = glossary.getByRole('button', { name: /^Filters/ })
+  if (await toggle.getAttribute('aria-expanded') === 'false') await toggle.click()
 }
 
 test('catalog pins approved records, preserves senses and variants, and refuses changed text', () => {
@@ -62,6 +67,7 @@ test('completed lessons populate searchable accessible words and context links; 
   const glossary = page.getByRole('region', { name: 'Learned words', exact: true })
   const expected = learnedVocabulary([first])
   await expect(glossary.getByText(`${expected.length} entries`, { exact: true })).toBeVisible()
+  await showFilters(glossary)
   await glossary.getByRole('combobox', { name: 'Dialect', exact: true }).selectOption('palestinian-urban')
   await expect(glossary.getByText(`${expected.length} entries`, { exact: true })).toBeVisible()
   if (expected.length > 20) {
@@ -74,8 +80,10 @@ test('completed lessons populate searchable accessible words and context links; 
   await expect(glossary.locator('.glossary-entry')).not.toHaveCount(0)
   await expect(glossary.locator('.glossary-arabic').first()).toHaveAttribute('dir', 'rtl')
   await expect(glossary.locator('.glossary-arabic').first()).toHaveAttribute('lang', 'ar-PS')
+  await showFilters(glossary)
   await glossary.getByRole('combobox', { name: 'Type', exact: true }).selectOption('word')
   await expect(glossary.locator('.glossary-entry')).not.toHaveCount(0)
+  await openDisclosure(glossary.locator('.glossary-word > summary').first())
   const details = glossary.getByText('Forms and teaching context', { exact: true }).first()
   await details.focus(); await page.keyboard.press('Enter')
   await expect(glossary.getByText(/Additional grammatical forms not supplied/).first()).toBeVisible()
@@ -95,9 +103,12 @@ test('completed lessons populate searchable accessible words and context links; 
   await context.setOffline(true)
   await page.reload()
   await expect(glossary.getByText(`${expected.length} entries`, { exact: true })).toBeVisible()
+  await openDisclosure(glossary.locator('.glossary-word > summary').first())
   await expect(glossary.getByText('Reviewed audio not supplied.').first()).toBeVisible()
+  await showFilters(glossary)
   await glossary.getByRole('combobox', { name: 'Course', exact: true }).selectOption('msa')
   await expect(glossary.getByText('No matching words. Try another search or filter.')).toBeVisible()
+  await showFilters(glossary)
   await glossary.getByRole('combobox', { name: 'Course', exact: true }).selectOption('')
   await glossary.getByLabel('Search words').fill('impossibleword')
   await expect(glossary.getByText('No matching words. Try another search or filter.')).toBeVisible()
@@ -114,6 +125,7 @@ test('changed versions replace glossary text and withdrawn lessons cannot fall b
   await page.route(`**/api/lessons/${first.id}`, route => route.fulfill({ json: updated }))
   await page.reload()
   await expect(glossary.getByText('1 entry', { exact: true })).toBeVisible()
+  await openDisclosure(glossary.locator('.glossary-word > summary').first())
   await glossary.getByText('Forms and teaching context', { exact: true }).click()
   await expect(glossary.getByText(/test-v-next/)).toBeVisible()
   await expect(glossary.getByText('Supplied form note', { exact: true })).toBeVisible()
@@ -182,11 +194,13 @@ test('supplied audio plays from verified offline bytes and stops when opening co
       return audio
     } as typeof Audio
   })
+  await openDisclosure(glossary.locator('.glossary-word > summary').first())
   await glossary.getByRole('button', { name: /^Play recording:/ }).click()
   await expect.poll(() => page.evaluate(() => {
     const audio = (window as unknown as { testAudio: HTMLAudioElement }).testAudio
     return audio?.src.startsWith('blob:') && audio.currentTime > 0
   })).toBe(true)
+  await openDisclosure(glossary.locator('.glossary-word > summary').first())
   await glossary.getByText('Forms and teaching context', { exact: true }).click()
   await glossary.getByRole('button', { name: `Open lesson: ${first.title}`, exact: true }).click()
   expect(await page.evaluate(() => (window as unknown as { testAudio: HTMLAudioElement }).testAudio.paused)).toBe(true)
