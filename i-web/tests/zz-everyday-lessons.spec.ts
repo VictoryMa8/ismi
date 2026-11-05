@@ -129,6 +129,9 @@ test('all authored lessons preview, then published test copies complete offline 
     await expect(dialog.getByRole('list', { name: 'Dialogue transcript' })).toBeVisible()
     await dialog.getByRole('button', { name: 'Close lesson' }).click()
   }
+  const courseCount = page.getByRole('region', { name: 'Course map' }).locator('.learner-section-heading > span')
+  await expect(courseCount).toHaveText(/^\d+ of \d+ lessons complete$/)
+  const [, completedBefore, lessonTotal] = (await courseCount.textContent())!.match(/^(\d+) of (\d+) lessons complete$/)!
   await context.setOffline(true)
   await page.reload()
   await openCourseMap(page)
@@ -176,10 +179,9 @@ test('all authored lessons preview, then published test copies complete offline 
   await page.reload()
   await openCourseMap(page)
   await expect(unit.getByRole('heading', { name: 'Unit complete' })).toBeVisible()
-  // Course depth can change independently of this unit; the six legacy demos
-  // are now extra practice. Check the seven synced completions and idempotence.
-  const completedCount = page.getByText(/^7 of \d+ lessons complete$/)
-  await expect(completedCount).toBeVisible()
+  // Other units may already be complete when the suite shares its test account.
+  const expectedCount = `${Number(completedBefore) + packages.length} of ${lessonTotal} lessons complete`
+  await expect(courseCount).toHaveText(expectedCount)
   await page.evaluate(() => window.dispatchEvent(new Event('online')))
-  await expect(completedCount).toBeVisible()
+  await expect(courseCount).toHaveText(expectedCount)
 })

@@ -29,6 +29,10 @@ glossary state from the existing learner flows.
   search and filtering, audio, and offline course and glossary access.
 - Inspected the Progress layout at mobile and desktop sizes and checked
   the gaps between skills, course progress and Study habits.
+- Offline completion and reconnection passed for the twenty Levantine
+  expansion lessons, all seven Everyday lessons and the three Planning
+  lessons. The Everyday check also verifies that a second reconnect does
+  not add completions.
 - The saved curriculum preview focus assertion and the guest writing
   availability assertion after account logout also fail on a clean build
   of the previous deployed commit, `59f86b1`.
