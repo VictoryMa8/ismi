@@ -1,6 +1,6 @@
 # Ismi roadmap
 
-Updated November 4, 2026 · **Single source of current feature state and next work.**
+Updated November 5, 2026 · **Single source of current feature state and next work.**
 
 ## Agent entry
 
@@ -231,6 +231,7 @@ The next-action text names the actor; use the record before taking action.
 | [F06 · Recurring character support](#f06-recurring-character-support) | Bounded scope delivered; deployed. |
 | [F06.1.1 · Selected art integration](#f0611-selected-art-integration) | No curriculum change |
 | [F07 · Landing page and app welcome](#f07-landing-page-and-app-welcome) | Bounded scope delivered; deployed. |
+| [F07.1 · Landing Red Seal alignment](#f071-landing-red-seal-alignment) | Beta 0.0.21 local/uncommitted; header/footer reuse the selected mark. Three redesign directions prepared separately from implementation. |
 | [F08 · First-unit revision release](#f08-first-unit-revision-release) | Published; F22 supersedes lessons 1/3/6 |
 | [F09.1 · First recording batch preparation](#f091-first-recording-batch-preparation) | Unpublished scripts |
 | [F10 · Scheduled review](#f10-scheduled-review) | Bounded scope delivered; deployed. |
@@ -365,6 +366,17 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **Next action:** None in this bounded scope; broader release evidence remains F18.
 - **Authorization:** Delivered scope; extensions need their own authorization.
 - **Completion gate / evidence:** [Full contract and linked evidence](docs/planning/feature-scope-reference.md#f07-landing-page-and-app-welcome).
+
+#### F07.1 Landing Red Seal alignment
+
+- **Work state:** Complete.
+- **Readiness:** Implementation — complete for landing header/footer; content — N/A, three redesign concepts prepared separately; verification — production build and local built-page image/version inspection passed; broader deferred testing remains on hold.
+- **Delivery:** Application — Beta 0.0.21 local/uncommitted, not deployed; content publication — N/A.
+- **Scope:** Reuse the learner app's selected Red Seal asset in the landing header and footer. Three exploratory concepts were simplified after owner feedback: light backgrounds, no extra Arabic brand word, fewer captions/eyebrows. No full landing overhaul implemented.
+- **Next action:** Agent: push the authorized Red Seal candidate and confirm the existing Vercel preview rollout. The owner preferred the current landing over the exploratory designs.
+- **Authorization:** November 5 owner requested the local correction and design exploration, then requested pushing the Red Seal. Commit/push to main and the existing preview rollout are authorized; no full redesign, API change or curriculum publication.
+- **Completion gate / evidence:** [Landing mark alignment, design directions and checks](docs/landing-refresh-options.md).
+- **Dependencies:** F27.5 selected Red Seal; existing F07 landing/prerendering. F24.7 real accessibility/mobile acceptance remains deferred.
 
 ### F08 First-unit revision release
 
@@ -1502,6 +1514,8 @@ not a fresh execution of every feature's tests or inspection of each database.
 
 ## Recent roadmap changes
 
+- **November 5 — Landing Red Seal prepared:** Beta 0.0.21 aligns the header/footer with the learner mark. The owner preferred the existing landing and authorized pushing this bounded fix. [Evidence](docs/landing-refresh-options.md).
+
 - **November 4 — Pocket Path learner tabs deployed:** Beta 0.0.20 `4f60b41` refreshes Courses, Practice, Progress and Words, with more space between Progress sections. Both preview aliases serve the release. [Evidence](docs/pocket-path-tabs.md#preview-rollout).
 
 - **November 4 — Pocket Path deployed:** Beta 0.0.19 `a0e9de5` applies the approved Today layout, Red Seal, and compact dialogue. Both existing aliases serve the release. [Evidence](docs/pocket-path.md#preview-rollout).
@@ -1509,5 +1523,3 @@ not a fresh execution of every feature's tests or inspection of each database.
 - **November 3 — P5 deletion deployed:** Beta 0.0.18 `21912ca` is live on the existing web/API preview. Hosted disposable-account deletion, session revocation and browser reconnection cleanup pass. All 19 hosted application tables match the pre-deployment backup after the test. Device/AT, provider round trips and retention operations remain. [Evidence](docs/account-deletion.md#preview-rollout).
 
 - **November 3 — P4 delivered:** owner requested “build P4,” then “commit and deploy.” Beta 0.0.17 `a17936f` committed/pushed and verified live on existing aliases; 42 browser checks plus hosted version/inventory/offline recovery pass. F32/F32.3 retain named physical-device/AT acceptance. API/content unchanged. [Evidence](docs/downloads-implementation.md#application-delivery).
-
-- **November 1 — F34 UI polish:** reviewed Beta 0.0.16 committed/pushed as `99411db` and verified live on existing Vercel aliases. Distinct Practice icons, course/card/story/Account spacing and actual three-story catalog pass; API/content unchanged. [Evidence](docs/learner-spacing-and-icons.md#application-delivery).

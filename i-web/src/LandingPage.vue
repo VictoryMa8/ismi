@@ -11,6 +11,7 @@ import {
   Coffee,
 } from '@lucide/vue';
 import CharacterPortrait from './CharacterPortrait.vue';
+import redSeal from './assets/red-seal.svg';
 import { benefits, faqs } from './landing/content';
 import './landing/landing.css';
 import { courseGroups } from './courses';
@@ -51,7 +52,7 @@ onMounted(() => {
       <a class="skip-link" href="#landing-main">Skip to content</a>
       <header class="landing-header">
         <a class="landing-brand" href="#" aria-label="Ismi landing page"
-          ><img src="/ismi-mark.svg" width="36" height="36" alt="" />ismi<span
+          ><img :src="redSeal" width="36" height="36" alt="" />ismi<span
             class="brand-arabic"
             lang="ar"
             dir="rtl"
@@ -376,7 +377,7 @@ onMounted(() => {
       </main>
       <footer class="landing-footer landing-wrap">
         <a class="landing-brand" href="#" aria-label="Ismi landing page"
-          ><img src="/ismi-mark.svg" width="30" height="30" alt="" />ismi</a
+          ><img :src="redSeal" width="30" height="30" alt="" />ismi</a
         >
         <p>Arabic for the conversations that matter.</p>
         <a href="#/account">Sign in</a
